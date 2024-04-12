@@ -67,6 +67,17 @@
       "module": "acks-packs"
     },
 
+
+    {
+      "name": "acks-barding",
+      "label": "ACKS Barding",
+      "system": "acks",
+      "path": "packs/acks-barding.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+
     {
       "name": "acks-class-abilities",
       "label": "ACKS Class Abilities",
