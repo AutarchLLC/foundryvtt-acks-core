@@ -36,7 +36,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 37.5
+  cost: 38
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -68,7 +68,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 12.5
+  cost: 13
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -224,7 +224,7 @@ data:
     value: 2
   ac:
     value: 2
-  cost: 37.5
+  cost: 38
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -628,7 +628,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 37.5
+  cost: 38
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -660,7 +660,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 56.25
+  cost: 56
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
     \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
@@ -707,7 +707,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Very Light
-  weight: 4.5
+  weight: 5
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -723,7 +723,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 28.125
+  cost: 28
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
     \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
@@ -739,7 +739,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Very Light
-  weight: 4.5
+  weight: 5
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -786,7 +786,7 @@ data:
     value: 2
   ac:
     value: 2
-  cost: 112.5
+  cost: 113
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -818,7 +818,7 @@ data:
     value: 2
   ac:
     value: 2
-  cost: 37.5
+  cost: 38
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -850,7 +850,7 @@ data:
     value: 2
   ac:
     value: 2
-  cost: 56.25
+  cost: 56
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
     \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
@@ -959,7 +959,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Medium
-  weight: 13.5
+  weight: 14
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -975,7 +975,7 @@ data:
     value: 3
   ac:
     value: 3
-  cost: 112.5
+  cost: 113
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -992,7 +992,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Medium
-  weight: 13.5
+  weight: 14
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1210,7 +1210,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Heavy
-  weight: 22.5
+  weight: 23
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1242,7 +1242,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Heavy
-  weight: 22.5
+  weight: 23
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1258,7 +1258,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 112.5
+  cost: 113
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -1321,7 +1321,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 56.25
+  cost: 56
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
     \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
@@ -1337,7 +1337,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Very Light
-  weight: 13.5
+  weight: 14
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1353,7 +1353,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 84.375
+  cost: 84
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
     \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
@@ -1369,7 +1369,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Very Light
-  weight: 13.5
+  weight: 14
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1416,7 +1416,7 @@ data:
     value: 2
   ac:
     value: 2
-  cost: 337.5
+  cost: 338
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -1448,7 +1448,7 @@ data:
     value: 2
   ac:
     value: 2
-  cost: 112.5
+  cost: 113
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -1589,7 +1589,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Medium
-  weight: 40.5
+  weight: 41
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1605,7 +1605,7 @@ data:
     value: 3
   ac:
     value: 3
-  cost: 337.5
+  cost: 338
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -1622,7 +1622,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Medium
-  weight: 40.5
+  weight: 41
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1840,7 +1840,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Heavy
-  weight: 67.5
+  weight: 68
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1872,7 +1872,7 @@ data:
     \ and the tusk swords used on elephants."
   equipped: false
   type: Heavy
-  weight: 67.5
+  weight: 69
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
 flags: {}
 img: systems/acks/assets/default/armor.png
@@ -1981,7 +1981,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 337.5
+  cost: 338
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
@@ -2602,7 +2602,7 @@ data:
     value: 1
   ac:
     value: 1
-  cost: 1687.5
+  cost: 1688
 #Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
   description: "Barding is armor for non-humanoid creatures. It is made from a variety\
     \ of materials (see the descriptions of each type of armor for details). Historical\
