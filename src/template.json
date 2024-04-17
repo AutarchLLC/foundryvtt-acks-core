@@ -181,7 +181,7 @@
       },
       "treasure": false,
       "cost": 0,
-      "weight": 166.6
+      "weight": 1
     },
     "weapon": {
       "range": {
@@ -200,7 +200,7 @@
       "melee": true,
       "cost": 0,
       "equipped": false,
-      "weight": 166.6,
+      "weight": 1,
       "counter": {
         "value": 0,
         "max": 0
@@ -213,7 +213,7 @@
       "type": "light",
       "cost": 0,
       "equipped": false,
-      "weight": 2000
+      "weight": 12
     },
     "spell": {
       "lvl": 1,
