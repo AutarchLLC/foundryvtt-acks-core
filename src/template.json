@@ -146,7 +146,7 @@
         }
       },
       "encumbrance": {
-        "max": 20000
+        "max": 120
       },
       "languages": {
         "value": []
