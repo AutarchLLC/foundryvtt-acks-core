@@ -1,0 +1,715 @@
+
+---
+data:
+  cost: 0.1
+  description: Embossed leather or silk belts are worn as a sign of wealth and status.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/belt.webp
+name: Belt/Sash, Leather
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.2
+  description: Embossed leather or silk belts are worn as a sign of wealth and status.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/belt.webp
+name: Belt/Sash, Embossed Leather
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 8.0
+  description: Embossed leather or silk belts are worn as a sign of wealth and status.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/belt.webp
+name: Belt/Sash, Silk
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.4
+  description: High boots come to the knee or thigh and are popular for riding.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/leather-boot.webp
+name: Boots, Leather, High
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.2
+  description: 'Low boots come to mid-calf. '
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/leather-boot.webp
+name: Boots, Leather, Low
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.4
+  description: This is a band of wool or linen wrapped across the breasts for support.
+    Silk breastwraps signify a woman of wealth and status. Historical examples include
+    the Greek apodesmos and Roman mamillare.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Breastwrap, Linen or Wool
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 20.0
+  description: This is a band of wool or linen wrapped across the breasts for support.
+    Silk breastwraps signify a woman of wealth and status. Historical examples include
+    the Greek apodesmos and Roman mamillare.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Breastwrap, Silk
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 10.0
+  description: 'The often ornamental coverings for an animal, eecially a horse or
+    an elephant.  '
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/horse-head.png
+name: Caparison, Linen or Wool
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 5.0
+  description: A cassock is an ankle-length close-fitting outer garment, buttoned
+    up the front, often worn by crusaders, mages, and priestesses. Cassocks of fine
+    make might include piping, sashes, and other decorations.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/tunic.webp
+name: Cassock, Linen or Wool
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 2.0
+  description: The chiton is a linen or wool garment made up of a single rectangle
+    of fabric, worn draped over the shoulders and girdled around the waist. A silk
+    chiton is a mark of status and money.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/roman-toga.png
+name: Chiton, Linen or Wool
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 45.0
+  description: The chiton is a linen or wool garment made up of a single rectangle
+    of fabric, worn draped over the shoulders and girdled around the waist. A silk
+    chiton is a mark of status and money.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/roman-toga.png
+name: Chiton, Silk
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 25.0
+  description: A cloak is a cloth, fur, or leather garment of knee to ankle length,
+    worn outdoors like an overcoat. Cloaks usually include a hood. Adventurers often
+    favor military cloaks, generally worn pinned on one shoulder for ease of movement
+    and access to a sword.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/cloak.webp
+name: Cloak, Fur-lined
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 2.0
+  description: A cloak is a cloth, fur, or leather garment of knee to ankle length,
+    worn outdoors like an overcoat. Cloaks usually include a hood. Adventurers often
+    favor military cloaks, generally worn pinned on one shoulder for ease of movement
+    and access to a sword.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/cloak.webp
+name: Cloak, Leather, Hooded
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 1.0
+  description: A cloak is a cloth, fur, or leather garment of knee to ankle length,
+    worn outdoors like an overcoat. Cloaks usually include a hood. Adventurers often
+    favor military cloaks, generally worn pinned on one shoulder for ease of movement
+    and access to a sword.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/cloak.webp
+name: Cloak, Linen or Wool, Hooded
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 90.0
+  description: A cloak is a cloth, fur, or leather garment of knee to ankle length,
+    worn outdoors like an overcoat. Cloaks usually include a hood. Adventurers often
+    favor military cloaks, generally worn pinned on one shoulder for ease of movement
+    and access to a sword.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/cloak.webp
+name: Cloak, Silk, Hooded
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 2.0
+  description: 'A dress is a one-piece garment containing a top piece that contains
+    a top piece covering the torso and drapes down over the legs. Depending on their
+    quality, dresses can be simple and plain or dyed, decorated, and embroidered.
+    They are available in sleeveless, short-sleeved, or long-sleeved variants. '
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/large-dress.png
+name: Dress, Crafter/Freeholder
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 10.0
+  description: 'A dress is a one-piece garment containing a top piece that contains
+    a top piece covering the torso and drapes down over the legs. Depending on their
+    quality, dresses can be simple and plain or dyed, decorated, and embroidered.
+    They are available in sleeveless, short-sleeved, or long-sleeved variants. '
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/large-dress.png
+name: Dress, Armiger
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 100.0
+  description: 'A gown is a one-piece garment containing a top piece that contains
+    a top piece covering the torso and drapes down over the legs. Depending on their
+    quality, gown can be simple and plain or dyed, decorated, and embroidered. They
+    are available in sleeveless, short-sleeved, or long-sleeved variants. '
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/travel-dress.png
+name: Gown, Lady-in-Waiting/Noble
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 1000.0
+  description: 'A gown is a one-piece garment containing a top piece that contains
+    a top piece covering the torso and drapes down over the legs. Depending on their
+    quality, gown can be simple and plain or dyed, decorated, and embroidered. They
+    are available in sleeveless, short-sleeved, or long-sleeved variants. '
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/travel-dress.png
+name: Gown, Duchess
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 1.0
+  description: Gloves are garments covering the hands, worn for comfort, fashion,
+    or protection. However, wearing gloves does not protect against curses or oozes.
+    Thief abilities such as pickpocketing, lockpicking, or trapbreaking cannot be
+    performed while wearing gloves.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/gloves.webp
+name: Gloves, Leather or Wool, Long
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.4
+  description: Gloves are garments covering the hands, worn for comfort, fashion,
+    or protection. However, wearing gloves does not protect against curses or oozes.
+    Thief abilities such as pickpocketing, lockpicking, or trapbreaking cannot be
+    performed while wearing gloves.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/gloves.webp
+name: Gloves, Leather or Wool, Short
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 1.0
+  description: A hat is a cap, fez, turban, or other headgear for protecting the head
+    from the elements. Citizens of the Auran Empire rarely wear hats, but in the sunbaked
+    Sunset Kingdoms they are quite common.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/pointy-hat.webp
+name: Hat, Armiger
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.4
+  description: Crudely crafted linen cloth
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Linen, Cheap (1 lb)
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.8
+  description: Finely crafted linen cloth
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Linen, Fine (1 lb)
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.1
+  description: A loincloth is a one-piece garment, either wrapped around itself or
+    kept in place by a belt. It covers the genitals and sometimes the buttocks.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/loincloth.png
+name: Loincloth
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 5.0
+  description: A robe is an ankle-length loose-fitting outer garment, open or closed
+    at the front, sometimes worn with a belt or sash. In the Auran Empire they are
+    worn by mages of the Tower of Knowledge, but in the Sunset Kingdoms, they are
+    widely worn. Historical examples include the jellabiya, kaftan, and thawb.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/default/robe.png
+name: Robe, Linen or Wool
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.3
+  description: Simple leather shoes or sandals are suitable for walking long distances.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/sonic-shoes.webp
+name: Sandals/Shoes, Leather, High
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.1
+  description: Simple leather shoes or sandals are suitable for walking long distances.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/sonic-shoes.webp
+name: Sandals/Shoes, Leather, Low
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 22.0
+  description: Silk Cloth
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Silk (1 lb)
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 3.0
+  description: A small domed cap that covers the area from the forehead to just above
+    the back of the neck.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/phrygian-cap.webp
+name: Skullcap
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 1.0
+  description: A tunic is a loose-fitting linen, silk or wool garment that covers
+    the body between the shoulders and the knees. Depending on their quality, tunics
+    can be simple and plain or dyed, decorated, and embroidered. They are available
+    in sleeveless, short-sleeved, or long-sleeved variants. In cool temperatures,
+    tunics are usually worn with matching trousers. Historical examples include the
+    Greek exomis, Roman tunica, and Byzantine dalmatica.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/tunic.webp
+name: Tunic and Pants, Serf
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 2.0
+  description: A tunic is a loose-fitting linen, silk or wool garment that covers
+    the body between the shoulders and the knees. Depending on their quality, tunics
+    can be simple and plain or dyed, decorated, and embroidered. They are available
+    in sleeveless, short-sleeved, or long-sleeved variants. In cool temperatures,
+    tunics are usually worn with matching trousers. Historical examples include the
+    Greek exomis, Roman tunica, and Byzantine dalmatica.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/tunic.webp
+name: Tunic and Pants, Crafter/Freeholder
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 10.0
+  description: A tunic is a loose-fitting linen, silk or wool garment that covers
+    the body between the shoulders and the knees. Depending on their quality, tunics
+    can be simple and plain or dyed, decorated, and embroidered. They are available
+    in sleeveless, short-sleeved, or long-sleeved variants. In cool temperatures,
+    tunics are usually worn with matching trousers. Historical examples include the
+    Greek exomis, Roman tunica, and Byzantine dalmatica.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/tunic.webp
+name: Tunic and Pants, Armiger
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 100.0
+  description: A tunic is a loose-fitting linen, silk or wool garment that covers
+    the body between the shoulders and the knees. Depending on their quality, tunics
+    can be simple and plain or dyed, decorated, and embroidered. They are available
+    in sleeveless, short-sleeved, or long-sleeved variants. In cool temperatures,
+    tunics are usually worn with matching trousers. Historical examples include the
+    Greek exomis, Roman tunica, and Byzantine dalmatica.
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/tunic.webp
+name: Tunic and Pants, Noble
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 5.0
+  description: 'Something hung up or read out to hide or protect the face, or hide
+    an object from view; usually of translucent material.  '
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Veil, Silk
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.1
+  description: Crudely crafted wool cloth
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Wool, Cheap (1 lb)
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.2
+  description: Wool cloth
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Wool, Good (1 lb)
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item
+
+---
+data:
+  cost: 0.4
+  description: Finely crafted wool cloth
+  quantity:
+    max: 0
+    value: 1
+  treasure: true
+  weight: 0
+flags: {}
+img: systems/acks/assets/icons/rolled-cloth.webp
+name: Wool, Fine (1 lb)
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: item

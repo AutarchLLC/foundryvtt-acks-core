@@ -79,6 +79,16 @@
 
 
     {
+      "name": "acks-clothes",
+      "label": "ACKS Clothing",
+      "system": "acks",
+      "path": "packs/acks-clothes.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+
+    {
       "name": "acks-class-abilities",
       "label": "ACKS Class Abilities",
       "system": "acks",
