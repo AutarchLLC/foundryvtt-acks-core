@@ -133,7 +133,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/horse-head.png
+img: systems/acks/assets/default/horse-head.webp
 name: Caparison, Linen or Wool
 permission:
   8aW4oRW193riCvGu: 3
@@ -171,7 +171,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/roman-toga.png
+img: systems/acks/assets/default/roman-toga.webp
 name: Chiton, Linen or Wool
 permission:
   8aW4oRW193riCvGu: 3
@@ -190,7 +190,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/roman-toga.png
+img: systems/acks/assets/default/roman-toga.webp
 name: Chiton, Silk
 permission:
   8aW4oRW193riCvGu: 3
@@ -290,7 +290,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/large-dress.png
+img: systems/acks/assets/default/large-dress.webp
 name: Dress, Crafter/Freeholder
 permission:
   8aW4oRW193riCvGu: 3
@@ -310,7 +310,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/large-dress.png
+img: systems/acks/assets/default/large-dress.webp
 name: Dress, Armiger
 permission:
   8aW4oRW193riCvGu: 3
@@ -330,7 +330,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/travel-dress.png
+img: systems/acks/assets/default/travel-dress.webp
 name: Gown, Lady-in-Waiting/Noble
 permission:
   8aW4oRW193riCvGu: 3
@@ -350,7 +350,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/travel-dress.png
+img: systems/acks/assets/default/travel-dress.webp
 name: Gown, Duchess
 permission:
   8aW4oRW193riCvGu: 3
@@ -461,7 +461,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/loincloth.png
+img: systems/acks/assets/default/loincloth.webp
 name: Loincloth
 permission:
   8aW4oRW193riCvGu: 3
@@ -481,7 +481,7 @@ data:
   treasure: true
   weight: 0
 flags: {}
-img: systems/acks/assets/default/robe.png
+img: systems/acks/assets/default/robe.webp
 name: Robe, Linen or Wool
 permission:
   8aW4oRW193riCvGu: 3
