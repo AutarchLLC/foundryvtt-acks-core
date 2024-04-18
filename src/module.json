@@ -1,0 +1,156 @@
+{"packs": [
+    {
+      "name": "acks-arcane-spells-1",
+      "label": "ACKS Arcane Spells 1",
+      "system": "acks",
+      "path": "packs/acks-arcane-spells-1.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-arcane-spells-2",
+      "label": "ACKS Arcane Spells 2",
+      "system": "acks",
+      "path": "packs/acks-arcane-spells-2.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-arcane-spells-3",
+      "label": "ACKS Arcane Spells 3",
+      "system": "acks",
+      "path": "packs/acks-arcane-spells-3.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-arcane-spells-4",
+      "label": "ACKS Arcane Spells 4",
+      "system": "acks",
+      "path": "packs/acks-arcane-spells-4.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-armor",
+      "label": "ACKS Armor",
+      "system": "acks",
+      "path": "packs/acks-armor.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+
+    {
+      "name": "acks-barding",
+      "label": "ACKS Barding",
+      "system": "acks",
+      "path": "packs/acks-barding.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+
+    {
+      "name": "acks-clothes",
+      "label": "ACKS Clothing",
+      "system": "acks",
+      "path": "packs/acks-clothes.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+
+    {
+      "name": "acks-class-abilities",
+      "label": "ACKS Class Abilities",
+      "system": "acks",
+      "path": "packs/acks-class-abilities.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-divine-spells-1",
+      "label": "ACKS Divine Spells 1",
+      "system": "acks",
+      "path": "packs/acks-divine-spells-1.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-divine-spells-2",
+      "label": "ACKS Divine Spells 2",
+      "system": "acks",
+      "path": "packs/acks-divine-spells-2.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+    { 
+      "name": "acks-equipment",
+      "label": "ACKS Equipment",
+      "system": "acks",
+      "path": "packs/acks-equipment.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    { 
+      "name": "acks-monster-abilities",
+      "label": "ACKS Monster Abilities",
+      "system": "acks",
+      "path": "packs/acks-monster-abilities.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    { 
+      "name": "acks-monsters",
+      "label": "ACKS Monsters",
+      "system": "acks",
+      "path": "packs/acks-monsters.db",
+      "type": "Actor",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-proficiencies",
+      "label": "ACKS Proficiencies",
+      "system": "acks",
+      "path": "packs/acks-proficiencies.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-treasure",
+      "label": "ACKS Treasure Tables",
+      "system": "acks",
+      "path": "packs/acks-treasure.db",
+      "type": "RollTable",
+      "module": "acks-packs"
+    },
+
+    {
+      "name": "acks-weapons",
+      "label": "ACKS Weapons",
+      "system": "acks",
+      "path": "packs/acks-weapons.db",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+    
+    {
+      "name": "acks-maps",
+      "label": "ACKS Maps",
+      "system": "acks",
+      "path": "packs/acks-maps.db",
+      "type": "Scene",
+      "module": "acks-packs"
+    }    
+]}
