@@ -3,3 +3,6 @@
 /src/packs/*/CURRENT
 /src/packs/*/LOG
 /src/packs/*/LOCK
+build
+dist
+node_modules

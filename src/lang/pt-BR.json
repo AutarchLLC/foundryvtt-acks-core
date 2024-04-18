@@ -217,8 +217,10 @@
   "ACKS.items.Charge": "Carga",
 
   "ACKS.armor.type": "Tipo de armadura",
-  "ACKS.armor.unarmored": "Sem armadura",
+  "ACKS.armor.helm": "Capacete",
+  "ACKS.armor.verylight": "Muito Leve",
   "ACKS.armor.light": "Leve",
+  "ACKS.armor.medium": "Médio",
   "ACKS.armor.heavy": "Pesada",
   "ACKS.armor.shield": "Escudo",
 

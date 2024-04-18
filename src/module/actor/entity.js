@@ -639,18 +639,18 @@ export class AcksActor extends Actor {
           if (item.system.treasure) {
             totalEncumbrance += item.system.weight * item.system.quantity.value;
           } else {
-            totalEncumbrance += 166.6;
+            totalEncumbrance += 1;
           }
         } else if (item.system.treasure) {
-          totalEncumbrance += 1000 * item.system.quantity.value;
+          totalEncumbrance += 6 * item.system.quantity.value;
         } else {
-          totalEncumbrance += 1000;
+          totalEncumbrance += 6;
         }
       } else if (["weapon", "armor"].includes(item.type)) {
         if (option === "detailed") {
           totalEncumbrance += item.system.weight;
         } else {
-          totalEncumbrance += 1000;
+          totalEncumbrance += 6;
         }
       }
     });
@@ -677,11 +677,11 @@ export class AcksActor extends Actor {
   _calculateMovement() {
     if (this.system.encumbrance.value > this.system.encumbrance.max) {
       this.system.movement.base = 0;
-    } else if (this.system.encumbrance.value > 10000) {
+    } else if (this.system.encumbrance.value > 60) {
       this.system.movement.base = 30;
-    } else if (this.system.encumbrance.value > 7000) {
+    } else if (this.system.encumbrance.value > 42) {
       this.system.movement.base = 60;
-    } else if (this.system.encumbrance.value > 5000) {
+    } else if (this.system.encumbrance.value > 30) {
       this.system.movement.base = 90;
     } else {
       this.system.movement.base = 120;

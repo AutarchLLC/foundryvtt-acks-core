@@ -1,0 +1,3125 @@
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 25.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 6.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 38
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 6.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 13
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 3.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 18.75
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 3.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 50.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 12.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 75.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 12.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 25.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 6.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 38
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 6.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 100.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 18.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 150.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 18.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 50.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 9.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 75.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 9.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 200.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 24.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 300.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 24.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 100.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 12.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 150.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 12.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 400.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 30.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 600.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 30.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 200.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 15.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 300.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 15.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Man-Sized Spiked Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 38
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 9.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 56
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 9.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 18.75
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 5
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 28
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 5
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 75.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 18.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 113
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 18.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 38
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 9.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 56
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 9.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 150.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 27.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 225.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 27.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 75.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 14
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 113
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 14
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 300.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 36.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 450.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 36.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 150.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 18.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 225.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 18.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 600.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 45.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 900.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 45.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 300.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 23
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 450.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 23
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Large Spiked Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 113
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 27.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 168.75
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 27.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 56
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 14
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 84
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 14
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 225.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 54.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 338
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 54.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 113
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 27.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 168.75
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 27.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 450.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 81.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 675.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 81.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 225.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 41
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 338
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 41
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 900.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 108.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 1350.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 108.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 450.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 54.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 675.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 54.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 1800.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 135.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 2700.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 135.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 900.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 68
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 1350.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 69
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Huge Spiked Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 450.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 108.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 675.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 108.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 225.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 54.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 338
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 54.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 900.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 216.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 1350.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 216.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 450.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 108.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 675.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 108.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 1800.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 324.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 2700.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 324.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 900.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 162.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 1350.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 162.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 3600.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 432.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 5400.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 432.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 1800.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 216.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 2700.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 216.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 7200.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 540.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 10800.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 540.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 3600.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 270.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 5400.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 270.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Gigantic Spiked Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 2250.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 540.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 3375.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 540.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Leather Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 1125.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 270.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 1
+  ac:
+    value: 1
+  cost: 1688
+#Above is an edge case, currently awaiting to see how to handle halves of sixths of stone
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Very Light
+  weight: 270.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Leather Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 4500.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 1080.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 6750.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 1080.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Scale Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 2250.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 540.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 2
+  ac:
+    value: 2
+  cost: 3375.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: light
+  weight: 540.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Scale Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 9000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 1620.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 13500.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 1620.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Chain Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 4500.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 810.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 3
+  ac:
+    value: 3
+  cost: 6750.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Medium
+  weight: 810.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Chain Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 18000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 2160.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 27000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 2160.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Lamellar Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 9000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 1080.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 4
+  ac:
+    value: 4
+  cost: 13500.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 1080.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Lamellar Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 36000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 2700.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 54000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 2700.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Plate Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 18000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 1350.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor
+
+---
+data:
+  aac:
+    value: 5
+  ac:
+    value: 5
+  cost: 27000.0
+  description: "Barding is armor for non-humanoid creatures. It is made from a variety\
+    \ of materials (see the descriptions of each type of armor for details). Historical\
+    \ examples include Byzantine and Persian cataphract\u2019s barding and medieval\
+    \ destrier\u2019s barding. Most barding is sized for large animals such as war\
+    \ camels or horses. However, barding can be constructed for smaller or bigger\
+    \ creatures. <br>Half-barding only covers the front half of the mount. Half-barding\
+    \ costs and weighs half as much as full barding. However, the AC bonus from half-barding\
+    \ is lost if the creature (or its unit) is flanked or vulnerable. Half-barding\
+    \ is favored by cavalry that need protection from archery while still staying\
+    \ light.<br>Spiked barding costs 50% more than standard barding of the same type.\
+    \ It adds +1 damage per die to the animal\u2019s bite, claw, hoof, tail, tusk,\
+    \ or trample attacks. Historical examples include the wolf collars used on dogs\
+    \ and the tusk swords used on elephants."
+  equipped: false
+  type: Heavy
+  weight: 1350.0
+flags: {}
+img: systems/acks/assets/default/armor.png
+name: Colossal Spiked Plate Half-Barding
+permission:
+  8aW4oRW193riCvGu: 3
+  default: 0
+type: armor

@@ -185,8 +185,10 @@
   "ACKS.items.typeTag": "Escriba una lista de etiquetas separadas por comas, por ejemplo 'Melee, Misile (5'-10' / 11'-20' / 21'-30')'",
 
   "ACKS.armor.type": "Tipo Armadura",
-  "ACKS.armor.unarmored": "Sin Armadura",
+  "ACKS.armor.helm": "Casco",
+  "ACKS.armor.verylight": "Muy Ligera",
   "ACKS.armor.light": "Ligera",
+  "ACKS.armor.medium": "Medio",
   "ACKS.armor.heavy": "Pesada",
   "ACKS.armor.shield": "Escudo",
 

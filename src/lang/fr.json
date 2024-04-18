@@ -222,8 +222,10 @@
   "ACKS.items.Charge": "Charge",
 
   "ACKS.armor.type": "Type d'Armure",
-  "ACKS.armor.unarmored": "Sans Armure",
+  "ACKS.armor.helm": "Casque",
+  "ACKS.armor.verylight": "Très Légere",
   "ACKS.armor.light": "Légère",
+  "ACKS.armor.medium": "Moyen",
   "ACKS.armor.heavy": "Lourde",
   "ACKS.armor.shield": "Bouclier",
 

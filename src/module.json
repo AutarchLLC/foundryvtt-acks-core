@@ -1,27 +1,4 @@
-{
-  "id": "acks",
-  "title": "Adventurer Conqueror King System",
-  "description": "Play B/X or other OSR compatible content using the ACKS system",
-  "version": "#{VERSION}#",
-  "relationships": {
-    "requires": [
-    ]
-  },
-  "compatibility": {
-    "minimum": "11",
-    "verified": "11"
-  },
-  "authors": [
-    {
-      "name": "LeRatierBretonnien"
-    },
-    {
-      "name": "The Happy Anarchist"
-    }
-  ],
-  "esmodules": ["acks.js"],
-  "styles": ["acks.css"],
-  "packs": [
+{"packs": [
     {
       "name": "acks-arcane-spells-1",
       "label": "ACKS Arcane Spells 1",
@@ -176,37 +153,4 @@
       "type": "Scene",
       "module": "acks-packs"
     }    
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    },
-    {
-      "lang": "fr",
-      "name": "French (FRANCE)",
-      "path": "lang/fr.json"
-    },
-    {
-    "lang": "pt-BR",
-    "name": "Português (Brasil)",
-    "path": "lang/pt-BR.json"
-    },
-    {
-      "lang": "fr",
-      "name": "French (FRANCE)",
-      "path": "lang/fr.json"
-    },
-    {
-      "lang": "es",
-      "name": "Spanish",
-      "path": "lang/es.json"
-    }
-  ],
-  "gridDistance": 5,
-  "gridUnits": "ft",
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#"  
-}
+]}

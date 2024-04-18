@@ -27,8 +27,10 @@ export const ACKS = {
     spell: "ACKS.saves.spell.long",
   },
   armor : {
-    unarmored: "ACKS.armor.unarmored",
+    helm: "ACKS.armor.helm",
+    verylight: "ACKS.armor.verylight",
     light: "ACKS.armor.light",
+    medium: "ACKS.armor.medium",
     heavy: "ACKS.armor.heavy",
     shield: "ACKS.armor.shield",
   },
