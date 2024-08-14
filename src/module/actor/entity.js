@@ -126,12 +126,14 @@ export class AcksActor extends Actor {
 
   async rollHP(options = {}) {
     let roll = new Roll(this.system.hp.hd);
-    await roll.evaluate({
-      async: true,
-    });
+    //evaluate function is now async only in v12, setting a flag manually will return an error.
+    //https://foundryvtt.com/api/classes/foundry.dice.Roll.html#evaluate
+    //https://github.com/foundryvtt/foundryvtt/issues/9774
+    await roll.evaluate();
 
+    //unsure if there's a better way to handle this
     await this.update({
-      data: {
+      system: {
         hp: {
           max: roll.total,
           value: roll.total,
