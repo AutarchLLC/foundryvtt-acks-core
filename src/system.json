@@ -122,6 +122,15 @@
       "module": "acks-packs"
     },
     {
+      "name": "acks-clothing",
+      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "label": "Clothing (ACKS II)",
+      "system": "acks",
+      "path": "packs/acks-clothing",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+    {
       "name": "acks-journals",
       "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
       "label": "Game System Help",
@@ -155,10 +164,11 @@
         },
         {
           "name": "Equipment",
-          "sorting": "a",
+          "sorting": "m",
           "color": "#822638",
           "packs": [
-            "acks-all-equipment"
+            "acks-all-equipment",
+            "acks-clothing"
           ],
           "folders": []
         },

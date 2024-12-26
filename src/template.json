@@ -230,7 +230,9 @@
       "treasure": false,
       "cost": 0,
       "weight": 166.6,
-      "weight6": -1
+      "weight6": -1,
+      "iconsource": "",
+      "iconlicense": ""
     },
     "weapon": {
       "range": {
