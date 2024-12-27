@@ -28,7 +28,7 @@
   "packs": [
     {
       "name": "acks-arcane-spells",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p78_evil_eye2.webp",
       "color": "#822650",
       "label": "Arcane Spells",
       "system": "acks",
@@ -38,7 +38,7 @@
     },
     {
       "name": "acks-divine-spells",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p293_divine_spell_progression_01.webp",
       "label": "Divine Spells",
       "system": "acks",
       "path": "packs/acks-divine-spells",
@@ -47,7 +47,7 @@
     },
     {
       "name": "acks-all-equipment",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/page141_helmets_colored.webp",
       "color": "#822650",
       "label": "Equipment",
       "system": "acks",
@@ -57,7 +57,7 @@
     },
     {
       "name": "acks-class-abilities",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p94_nobiran_wonderworker_shooting_fire.webp",
       "label": "Powers",
       "system": "acks",
       "path": "packs/acks-class-abilities",
@@ -66,7 +66,7 @@
     },
     { 
       "name": "acks-monster-abilities",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/page99_zaharan_full_page_colored.webp",
       "label": "Monster Abilities",
       "system": "acks",
       "path": "packs/acks-monster-abilities",
@@ -75,7 +75,7 @@
     },
     { 
       "name": "acks-languages",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/page186_187_colored.webp",
       "label": "Languages",
       "system": "acks",
       "path": "packs/acks-languages",
@@ -84,7 +84,7 @@
     },
     { 
       "name": "acks-monsters",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/page407_colored.webp",
       "label": "Monsters",
       "system": "acks",
       "path": "packs/acks-monsters",
@@ -94,7 +94,7 @@
 
     {
       "name": "acks-proficiencies",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p108_proficiency_treatises2.webp",
       "label": "Proficiencies",
       "system": "acks",
       "path": "packs/acks-proficiencies",
@@ -105,7 +105,7 @@
     {
       "name": "acks-treasure",
       "label": "Treasure",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p42_treasure_shelf.webp",
       "system": "acks",
       "path": "packs/acks-treasure",
       "type": "RollTable",
@@ -114,7 +114,7 @@
 
     {
       "name": "acks-maps",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p273_marching_mapping.webp",
       "label": "Maps",
       "system": "acks",
       "path": "packs/acks-maps",
@@ -123,7 +123,7 @@
     },
     {
       "name": "acks-clothing",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p146_chiton.webp",
       "label": "Clothing (ACKS II)",
       "system": "acks",
       "path": "packs/acks-clothing",
@@ -132,7 +132,7 @@
     },
     {
       "name": "acks-journals",
-      "banner": "systems/acks/assets/ui/acks_red_background_fade75.webp",
+      "banner": "systems/acks/assets/ui/banners/p108_proficiency_treatises2.webp",
       "label": "Game System Help",
       "system": "acks",
       "path": "packs/acks-journals",
