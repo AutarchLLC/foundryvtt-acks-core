@@ -48,7 +48,7 @@ export class AcksActorSheet extends ActorSheet {
     if (data) {
       let dataItem = JSON.parse( data);
       let actorId = dataItem.uuid.split('.')[1]
-      if ( dataItem.uuid.includes("Actor") && actorId && actorId != this.actor.id) {  
+      if ( dataItem.uuid.includes("Actor") && !dataItem.uuid.includes("Item") && actorId && actorId != this.actor.id) {  
         this.actor.addHenchman( actorId);
         return;
       }

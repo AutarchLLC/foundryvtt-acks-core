@@ -1,7 +1,4 @@
-2024/12/25-18:18:54.738813 7fb2467fc6c0 Recovering log #430
-2024/12/25-18:18:54.768834 7fb2467fc6c0 Delete type=3 #428
-2024/12/25-18:18:54.768918 7fb2467fc6c0 Delete type=0 #430
-2024/12/25-18:19:15.677990 7fb244bff6c0 Level-0 table #435: started
-2024/12/25-18:19:15.678022 7fb244bff6c0 Level-0 table #435: 0 bytes OK
-2024/12/25-18:19:15.709867 7fb244bff6c0 Delete type=0 #433
-2024/12/25-18:19:15.789252 7fb244bff6c0 Manual compaction at level-0 from '!folders!6SjuYRK6RIpAEqyE' @ 72057594037927935 : 1 .. '!items!zInu0StJTVCSmqRY' @ 0 : 0; will stop at (end)
+2024/12/27-21:26:48.992798 7f6e9bfff6c0 Log #448: 0 ops saved to Table #449 OK
+2024/12/27-21:26:48.992872 7f6e9bfff6c0 Archiving /home/morr/foundry/foundrydata-v12/Data/systems/acks/packs/acks-divine-spells/000448.log: OK
+2024/12/27-21:26:48.992937 7f6e9bfff6c0 Table #62: 21 entries OK
+2024/12/27-21:26:48.996900 7f6e9bfff6c0 **** Repaired leveldb /home/morr/foundry/foundrydata-v12/Data/systems/acks/packs/acks-divine-spells; recovered 1 files; 13749 bytes. Some data may have been lost. ****

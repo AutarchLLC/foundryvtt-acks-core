@@ -1,7 +1,4 @@
-2024/12/25-18:18:54.870548 7fb2467fc6c0 Recovering log #332
-2024/12/25-18:18:54.901422 7fb2467fc6c0 Delete type=3 #330
-2024/12/25-18:18:54.901498 7fb2467fc6c0 Delete type=0 #332
-2024/12/25-18:19:15.789383 7fb244bff6c0 Level-0 table #337: started
-2024/12/25-18:19:15.789456 7fb244bff6c0 Level-0 table #337: 0 bytes OK
-2024/12/25-18:19:15.826446 7fb244bff6c0 Delete type=0 #335
-2024/12/25-18:19:15.943261 7fb244bff6c0 Manual compaction at level-0 from '!items!0kWw8Mkl7W3QsuV5' @ 72057594037927935 : 1 .. '!items!xWmx3R7LcXdxiwfU' @ 0 : 0; will stop at (end)
+2024/12/27-21:26:49.067035 7f6ea0bf86c0 Log #350: 0 ops saved to Table #351 OK
+2024/12/27-21:26:49.067148 7f6ea0bf86c0 Archiving /home/morr/foundry/foundrydata-v12/Data/systems/acks/packs/acks-languages/000350.log: OK
+2024/12/27-21:26:49.067222 7f6ea0bf86c0 Table #235: 58 entries OK
+2024/12/27-21:26:49.070583 7f6ea0bf86c0 **** Repaired leveldb /home/morr/foundry/foundrydata-v12/Data/systems/acks/packs/acks-languages; recovered 1 files; 9916 bytes. Some data may have been lost. ****
