@@ -33,6 +33,23 @@
 .compendium-sidebar .directory-item.compendium .compendium-name {
   align-self: flex-start;
 }
+
+/**
+ * Single Compendium Pack
+ */
+.compendium.directory .directory-header {
+  border-bottom: none;
+}
+.compendium.directory .directory-header .header-banner {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 84px;
+  flex: 0 0 84px;
+  border-radius: 2px;
+  background-size: cover;
+}
+
 /* ----------------------------------------- */
 /* Combat tracker specific overloads */
 .combat-sidebar li.combatant .roll {
