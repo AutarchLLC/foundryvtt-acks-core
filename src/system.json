@@ -21,6 +21,9 @@
     },
     {
       "name": "The Happy Anarchist"
+    },
+    {
+      "name": "ArcanistWill"
     }
   ],
   "esmodules": ["acks.js"],
@@ -52,6 +55,16 @@
       "label": "Equipment",
       "system": "acks",
       "path": "packs/acks-all-equipment",
+      "type": "Item",
+      "module": "acks-packs"
+    },
+    {
+      "name": "acks-adventuring-equipment",
+      "banner": "systems/acks/assets/ui/banners/page141_helmets_colored.webp",
+      "color": "#822650",
+      "label": "Adventuring Equipment (ACKS II)",
+      "system": "acks",
+      "path": "packs/acks-adventuring-equipment",
       "type": "Item",
       "module": "acks-packs"
     },
@@ -168,6 +181,7 @@
           "color": "#822638",
           "packs": [
             "acks-all-equipment",
+            "acks-adventuring-equipment",
             "acks-clothing"
           ],
           "folders": []
