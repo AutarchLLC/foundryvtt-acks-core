@@ -63,7 +63,7 @@
       "name": "acks-adventuring-equipment",
       "banner": "systems/acks/assets/ui/banners/page141_helmets_colored.webp",
       "color": "#822650",
-      "label": "Equipment (II)",
+      "label": "Adventuring Equipment",
       "system": "acks",
       "path": "packs/acks-adventuring-equipment",
       "type": "Item",
@@ -72,7 +72,7 @@
     {
       "name": "acks-class-abilities",
       "banner": "systems/acks/assets/ui/banners/p94_nobiran_wonderworker_shooting_fire.webp",
-      "label": "Powers",
+      "label": "Class Powers",
       "system": "acks",
       "path": "packs/acks-class-abilities",
       "type": "Item",
@@ -138,7 +138,7 @@
     {
       "name": "acks-clothing",
       "banner": "systems/acks/assets/ui/banners/p146_chiton.webp",
-      "label": "Clothing (II)",
+      "label": "Clothing",
       "system": "acks",
       "path": "packs/acks-clothing",
       "type": "Item",
@@ -156,90 +156,121 @@
   ],
   "packFolders": [
     {
-      "name": "ACKS II Revised Rulebook",
+      "name": "ACKS I",
       "sorting": "m",
       "color": "#620630",
-      "folders": [
-        {
-          "name": "Classes",
-          "sorting": "a",
-          "color": "#822638",
-          "packs": [
-            "acks-class-abilities"
-          ]
-        },
-        {
-          "name": "Proficiencies",
-          "sorting": "a",
-          "color": "#620630",
-          "packs": [
-            "acks-proficiencies"
-          ]
-        },
-        {
-          "name": "Equipment",
-          "sorting": "m",
-          "color": "#822638",
-          "packs": [
-            "acks-all-equipment",
-            "acks-clothing",
-            "acks-adventuring-equipment"
-          ],
-          "folders": []
-        },
-        {
-          "name": "Spells",
-          "sorting": "a",
-          "color": "#620630",
-          "packs": [
-            "acks-arcane-spells",
-            "acks-divine-spells"
-          ],
-          "folders": []
-        },
-        {
-          "name": "Setting",
-          "sorting": "a",
-          "color": "#822638",
-          "packs": [
-            "acks-languages",
-            "acks-maps"
-          ],
-          "folders": []
-        }
-      ],
-      "packs": []
-    },
-    {
-      "name": "ACKS II Judges Journal",
-      "sorting": "m",
-      "color": "#620630",
-      "folders": [
-      ],
+      "folders": [],
       "packs": [
+        "acks-class-abilities",
+        "acks-proficiencies",
+        "acks-all-equipment",
+        "acks-arcane-spells",
+        "acks-divine-spells",
+        "acks-monster-abilities",
+        "acks-monsters",
         "acks-treasure"
       ]
     },
     {
-      "name": "ACKS II Monstrous Manual",
+      "name": "ACKS II",
       "sorting": "m",
-      "color": "#620630",
+      "color": "#822638",
       "folders": [
-      ], 
-      "packs": [
-        "acks-monster-abilities",
-        "acks-monsters"
-      ]
-    },
-    {
-      "name": "ACKS II VTT Vitals",
-      "sorting": "m",
-      "color": "#620630",
-      "folders": [
+        {
+          "name": "Revised Rulebook",
+          "sorting": "m",
+          "color": "#620630",
+          "folders": [
+            {
+              "name": "Classes",
+              "sorting": "m",
+              "color": "#822638",
+              "folders": [],
+              "packs": [
+              ]
+            },
+            {
+              "name": "Proficiencies",
+              "sorting": "a",
+              "color": "#620630",
+              "folders": [],
+              "packs": [
+              ]
+            },
+            {
+              "name": "Equipment",
+              "sorting": "m",
+              "color": "#822638",
+              "folders": [
+              ],
+              "packs": [
+                "acks-adventuring-equipment",
+                "acks-clothing"
+              ]
+            },
+            {
+              "name": "Setting",
+              "sorting": "m",
+              "color": "#620630",
+              "folders": [
+              ],
+              "packs": [
+                "acks-languages",
+                "acks-maps"
+              ]
+            }
+          ],
+          "packs": []
+        },
+        {
+          "name": "Judges Journal",
+          "sorting": "m",
+          "color": "#822638",
+          "folders": [
+            {
+              "name": "Treasure",
+              "sorting": "m",
+              "color": "#620630",
+              "folders": [
+              ],
+              "packs": [
+                "acks-treasure"
+              ]
+            }
+          ],
+          "packs": []
+        },
+        {
+          "name": "Monstrous Manual",
+          "sorting": "m",
+          "color": "#620630",
+          "folders": [
+            {
+              "name": "Monsters",
+              "sorting": "m",
+              "color": "#822638",
+              "folders": [
+              ],
+              "packs": [
+                "acks-monster-abilities",
+                "acks-monsters"
+              ]
+            }
+          ],
+          "packs": []
+        },
+        {
+          "name": "VTT Vitals",
+          "sorting": "m",
+          "color": "#822638",
+          "folders": [
+          ],
+          "packs": [
+            "acks-journals"
+          ]
+        }
       ],
-      "packs": [
-        "acks-journals"
-      ]
+      "packs": []
     }
   ],
   "languages": [
