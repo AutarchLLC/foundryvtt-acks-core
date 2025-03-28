@@ -65,7 +65,8 @@
           "mod": 0
         },
         "movement": {
-          "base": 120
+          "base": 120,
+          "mod": 0
         },
         "initiative": {
           "value": 0,
@@ -156,32 +157,32 @@
         "str": {
           "value": 10,
           "bonus": 0,
-          "mod": 0            
+          "mod": 0
         },
         "int": {
           "value": 10,
           "bonus": 0,
-          "mod": 0            
+          "mod": 0
         },
         "wis": {
           "value": 10,
           "bonus": 0,
-          "mod": 0  
+          "mod": 0
         },
         "dex": {
           "value": 10,
           "bonus": 0,
-          "mod": 0  
+          "mod": 0
         },
         "con": {
           "value": 10,
           "bonus": 0,
-          "mod": 0  
+          "mod": 0
         },
         "cha": {
           "value": 10,
           "bonus": 0,
-          "mod": 0  
+          "mod": 0
         }
       },
       "encumbrance": {

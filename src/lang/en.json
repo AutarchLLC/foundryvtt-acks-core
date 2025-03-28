@@ -21,7 +21,7 @@
   "COMBAT.ToggleDead": "Defeated",
   "COMBAT.CombatNotStarted": "Combat is not started. Please start the combat first.",
   "COMBAT.createGroup": "Create a NPC group from selected tokens",
-  
+
   "EFFECT.StatusDead": "Defeated",
 
   "ACKS.Edit": "Edit",
@@ -110,7 +110,7 @@
   "ACKS.money.quantitycarried": "Quantity (Carried)",
   "ACKS.money.quantitybank": "Quantity (Bank)",
   "ACKS.money.valuecopper": "Value (CP)",
-  "ACKS.money.valuegold": "Value (gp)" , 
+  "ACKS.money.valuegold": "Value (gp)" ,
 
   "ACKS.Retainer": "Retainer",
   "ACKS.RetainerWage": "Wage",
@@ -146,7 +146,7 @@
   "ACKS.saves.spell.long": "Spells",
   "ACKS.saves.implements.long": "Implements",
   "ACKS.saves.magic.long": "Bonus vs Magic",
-  "ACKS.saves.magic.short": "vs Magic",									   
+  "ACKS.saves.magic.short": "vs Magic",
   "ACKS.SaveBonus": "Saving Throw Bonus",
 
   "ACKS.Health": "Hit Points",
@@ -172,7 +172,8 @@
   "ACKS.movement.expedition": "Expedition",
   "ACKS.movement.stealth": "Stealth",
   "ACKS.movement.climb": "Climb",
-  
+  "ACKS.movement.bonus": "Movement Bonus",
+
   "ACKS.SurpriseOthers": "Surprise Others",
   "ACKS.AvoidSurprise": "Avoid Surprise",
 
@@ -248,7 +249,7 @@
   "ACKS.bonuses.initiativebonus": "Initiative Bonus",
   "ACKS.bonuses.initiativebonushint": "Initiative Bonus (bonus from tweaks + dex modifier)",
   "ACKS.bonuses.surprisebonus": "Surprise Bonus",
-  
+
   "ACKS.Setting.InitiativeHint": "Grouped or individual initiative.",
   "ACKS.Setting.InitiativeIndividual": "Individual initiative",
   "ACKS.Setting.InitiativeGroup": "Grouped Initiative",
@@ -391,7 +392,7 @@
   "ACKS.reaction.Neutral": "{name} is Neutral and uncertain",
   "ACKS.reaction.Indifferent": "{name} is Indifferent and uninterested",
   "ACKS.reaction.Friendly": "{name} is Friendly and helpful",
-  
+
   "ACKS.loyalty.check": "Henchman Loyalty Check",
   "ACKS.loyalty.hostility": "Becomes Hostile",
   "ACKS.loyalty.resignation": "Tenders Resignation",
@@ -410,7 +411,7 @@
   "ACKS.surprise.forelos.fore": "Monsters roll surprise (+1)<br>Adventurers not surprised<br>Adventurers can evade",
   "ACKS.surprise.forelos.los": "Monsters roll surprise<br>Adventures not surprised<br>Adventurers can evade",
   "ACKS.surprise.forelos.none": "Monsters roll surprise (-1)<br>Adventurers not surprised<br>Adventurers can always evade",
-  
+
   "ACKS.surprise.fore.forelos": "Monsters not surprised<br>Adventurers roll surprise (+1)<br>Adventurers cannot evade",
   "ACKS.surprise.fore.fore": "Monsters roll surprise (+1)<br>Adventurers roll surprise (+1)<br>Adventurers can evade",
   "ACKS.surprise.fore.los": "Monsters roll surprise<br>Adventurers roll surprise (+1)<br>Adventurers can evade",
@@ -443,7 +444,7 @@
   "ACKS.Effect.Passive": "Passive",
   "ACKS.Effect.Inactive": "Inactive",
   "ACKS.Effect.Source"  : "Source",
-  
+
   "ACKS.error.HenchmanCharacter": "Henchman must be dropped on a character only",
   "ACKS.error.HenchmanMonster": "Henchman must be of character type",
   "ACKS.error.HenchmanNot": "Dropped character is not an Henchman (enable it in the Tweaks settings of the actor)",

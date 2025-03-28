@@ -105,7 +105,7 @@
               data-dtype="String" />
           </div>
         </li>
-  
+
         <li class="attribute">
           <h4 class="attribute-name box-title box-title-min-height" title="{{ localize 'ACKS.Initiative' }}">
             {{ localize "ACKS.InitiativeShort" }}</h4>
@@ -218,32 +218,24 @@
       </ul>
 
     </div>
-    
+
     <div class="flexrow acks-attribute-row">
       <ul class="attributes flexrow">
         <li class="attribute attribute-movement">
           {{#each system.movementacks as |move key|}}
             {{#if (eq key "exploration")}}
               <h4 class="attribute-name box-title" title="{{localize (concat 'ACKS.movement.' key)}} feet/turn">
+            {{else if (eq key "expedition")}}
+              <h4 class="attribute-name box-title" title="{{localize (concat 'ACKS.movement.' key)}} miles/day">
             {{else}}
               <h4 class="attribute-name box-title" title="{{localize (concat 'ACKS.movement.' key)}} feet/round">
             {{/if}}
             {{localize (concat 'ACKS.movement.' key)}}</h4>
-            {{#if (eq key "climb")}}
-              {{#if @root.system.config.movementAuto}}
-              <span class="attribute-value">{{toFixed move 1}}</span>
-              {{else}}
-              <input name="system.movementacks.{{key}}" type="text" value="{{toFixed move 1}}" placeholder="0"
-                data-dtype="Number" />
-              {{/if}}
-            {{else}}
-              {{#if @root.system.config.movementAuto}}
+            {{#if @root.system.config.movementAuto}}
               <span class="attribute-value">{{move}}</span>
-              {{else}}
+            {{else}}
               <input name="system.movementacks.{{key}}" type="text" value="{{move}}" placeholder="0"
                 data-dtype="Number" />
-              {{/if}}
-  
             {{/if}}
           {{/each}}
         </li>

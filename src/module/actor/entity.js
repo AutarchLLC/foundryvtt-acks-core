@@ -68,10 +68,10 @@ export class AcksActor extends Actor {
       }
     }
 
-    data.movement.encounter = data.movement.base / 3;
+    data.movement.encounter = Math.floor(data.movement.base / 3 * 10) / 10;
     if (this.type == "character" && this.system.config.movementAuto) {
-      data.movementacks.stealth = data.movementacks.combat / 2;
-      data.movementacks.climb = data.movementacks.combat / 3;
+      data.movementacks.stealth = Math.floor(data.movementacks.combat / 2 * 10) / 10;
+      data.movementacks.climb = Math.floor(data.movementacks.combat / 3 * 10) / 10;
     }
   }
 
@@ -205,7 +205,7 @@ export class AcksActor extends Actor {
     subActors.push(subActorId);
     await this.update({ 'system.henchmenList': subActors });
 
-    // Set the name of the manager in the henchman data 
+    // Set the name of the manager in the henchman data
     await npc.update({ 'system.retainer.managerid': this.id });
   }
   /* -------------------------------------------- */
@@ -217,7 +217,7 @@ export class AcksActor extends Actor {
       }
     }
     await this.update({ 'system.henchmenList': newArray });
-    // Cleanup the manager id 
+    // Cleanup the manager id
     let npc = game.actors.get(subActorId);
     await npc.update({ 'system.retainer.managerid': "" });
   }
@@ -353,7 +353,7 @@ export class AcksActor extends Actor {
     let langList = languages.map(i => i.toObject())
 
     let toPush = [];
-    if (this.system?.languages?.value) { 
+    if (this.system?.languages?.value) {
       for (let langName of this.system?.languages?.value) {
 
         let lang = langList.find((i) => i.name.toLowerCase() == langName.toLowerCase());
@@ -653,13 +653,13 @@ export class AcksActor extends Actor {
         score: label,
       }),
     };
-    
+
     let skip = false
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
     }
-    
+
     // Roll and return
     return AcksDice.Roll({
       event: options.event,
@@ -1020,37 +1020,28 @@ export class AcksActor extends Actor {
 
   /* -------------------------------------------- */
   _calculateMovement() {
+    let baseSpeed;
     if (this.system.encumbrance.value > this.system.encumbrance.max) {
-      this.system.movementacks.exploration = 0
-      this.system.movementacks.combat = 0
-      this.system.movementacks.chargerun = 0
-      this.system.movementacks.expedition = 0
-      this.system.movement.base = 0;
+      baseSpeed = CONFIG.ACKS.base_speed.overburdened; // 0
     } else if (this.system.encumbrance.value > 10) {
-      this.system.movementacks.exploration = 30
-      this.system.movementacks.combat = 10
-      this.system.movementacks.chargerun = 30
-      this.system.movementacks.expedition = 6
-      this.system.movement.base = 30;
+      baseSpeed = CONFIG.ACKS.base_speed.high_encumbrance; // 30
     } else if (this.system.encumbrance.value > 7) {
-      this.system.movementacks.exploration = 60
-      this.system.movementacks.combat = 20
-      this.system.movementacks.chargerun = 60
-      this.system.movementacks.expedition = 12
-      this.system.movement.base = 60;
+      baseSpeed = CONFIG.ACKS.base_speed.mid_encumbrance; // 60
     } else if (this.system.encumbrance.value > 5) {
-      this.system.movementacks.exploration = 90
-      this.system.movementacks.combat = 30
-      this.system.movementacks.chargerun = 90
-      this.system.movementacks.expedition = 18
-      this.system.movement.base = 90;
+      baseSpeed = CONFIG.ACKS.base_speed.low_encumbrance; // 90
     } else {
-      this.system.movementacks.exploration = 120
-      this.system.movementacks.combat = 40
-      this.system.movementacks.chargerun = 120
-      this.system.movementacks.expedition = 24
-      this.system.movement.base = 120;
+      baseSpeed = CONFIG.ACKS.base_speed.unencumbered; // 120
     }
+
+    // apply movement mod but make sure speed can't be less than 0
+    baseSpeed = Math.max(baseSpeed + this.system.movement.mod, 0);
+
+    // Formulas from ACKS Revised Rulebook page 17
+    this.system.movementacks.exploration = baseSpeed;
+    this.system.movementacks.combat = Math.floor(baseSpeed / 3 * 10) / 10;
+    this.system.movementacks.chargerun = baseSpeed;
+    this.system.movementacks.expedition = Math.floor(baseSpeed / 5 * 10) / 10;
+    this.system.movement.base = baseSpeed;
   }
 
   /* -------------- ------------------------------ */
@@ -1238,7 +1229,7 @@ export class AcksActor extends Actor {
       141: "5d10",
       171: "6d10"
     };
-    
+
     let newBHR = "1d3"
     let value = data.hp.max
     if ( value > 171) {

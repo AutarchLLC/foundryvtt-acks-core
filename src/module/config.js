@@ -200,4 +200,11 @@ export const ACKS = {
       s: 8
     },
   },
+  base_speed: {
+    unencumbered: 120,
+    low_encumbrance: 90,
+    mid_encumbrance: 60,
+    high_encumbrance: 30,
+    overburdened: 0
+  },
 };
