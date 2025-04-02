@@ -22,6 +22,7 @@ import { AcksPolyglot } from "./module/apps/polyglot-support.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", async function () {
+  //CONFIG.debug.hooks = true;
 
   // Clamp/Clamped management v11/v12
   if (Math.clamp === undefined) {
@@ -53,7 +54,7 @@ Hooks.once("init", async function () {
   CONFIG.Actor.documentClass = AcksActor;
   CONFIG.Item.documentClass = AcksItem;
   CONFIG.Combat.documentClass = AcksCombatClass;
-  
+
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("acks", AcksActorSheetCharacter, {
@@ -74,7 +75,30 @@ Hooks.once("init", async function () {
   AcksTokenHud.init()
 
   // Ensure new effect transfer
-  CONFIG.ActiveEffect.legacyTransferral = false
+  CONFIG.ActiveEffect.legacyTransferral = false;
+
+  Hooks.on("getSceneControlButtons", (controls) => {
+    const targetControl = controls.find((control) => control.name === "token");
+    const isGM = game.user.isGM;
+    if(!targetControl) {
+      return;
+    }
+    targetControl.tools.push({
+      name: "party-button",
+      title: "ACKS.dialog.partysheet",
+      icon: "fas fa-users",
+      button: true,
+      visible: isGM,
+      onClick: () => {
+        const actorDirectory = game.actors.apps.find((app) => app instanceof ActorDirectory);
+        if(actorDirectory) {
+          party.showPartySheet(actorDirectory);
+        } else {
+          ui.notifications.error("Something went wrong. Can't find ActorDirectory.");
+        }
+      }
+    });
+  });
 });
 
 // Setup Polyglot stuff if needed
@@ -98,20 +122,14 @@ Hooks.once("ready", async () => {
   Hooks.on("hotbarDrop", (bar, data, slot) =>
     macros.createAcksMacro(data, slot)
   );
-  
+
   AcksUtility.updateWeightsLanguages()
   AcksUtility.displayWelcomeMessage()
   AcksUtility.setupSocket()
-  
+
 });
 
 // License and KOFI infos
-Hooks.on("renderSidebarTab", async (object, html) => {
-  if (object instanceof ActorDirectory) {
-    party.addControl(object, html);
-  }
-});
-
 Hooks.on("preUpdateCombatant", AcksCombat.updateCombatant);
 Hooks.on("renderCombatTracker", AcksCombat.format);
 Hooks.on("preUpdateCombat", AcksCombat.preUpdateCombat);

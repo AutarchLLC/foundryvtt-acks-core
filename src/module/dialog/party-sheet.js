@@ -100,8 +100,9 @@ export class AcksPartySheet extends FormApplication {
     event.preventDefault();
 
     const template = "systems/acks/templates/apps/party-select.html";
+    const characters = this.object.documents.filter((actor) => actor.type === "character");
     const templateData = {
-      actors: this.object.documents,
+      actors: characters,
     };
     const content = await renderTemplate(template, templateData);
     new Dialog({
@@ -112,11 +113,15 @@ export class AcksPartySheet extends FormApplication {
           icon: '<i class="fas fa-save"></i>',
           label: game.i18n.localize("ACKS.Update"),
           callback: (html) => {
-            let checks = html.find("input[data-action='select-actor']");
+            const checks = html.find("input[data-action='select-actor']");
             checks.each(async (_, c) => {
-              let key = c.getAttribute('name');
-              console.log("KEY", key, c.checked);
-              await this.object.documents[key].setFlag('acks', 'party', c.checked);
+              const actorId = c.dataset.actorId;
+              const actor = this.object.documents.find((actor) => actor.id === actorId);
+              if(actor) {
+                await actor.setFlag('acks', 'party', c.checked);
+              } else {
+                ui.notifications.error(`Something went wrong. Can't find ${actor.name}.`);
+              }
             });
           },
         },
