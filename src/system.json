@@ -4,8 +4,7 @@
   "description": "Play B/X or other OSR compatible content using the ACKS system",
   "version": "#{VERSION}#",
   "socket": true,
-  "relationships": {
-  },
+  "relationships": {},
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -176,42 +175,33 @@
           "name": "Classes",
           "sorting": "a",
           "color": "#822638",
-          "packs": [
-          ]
+          "packs": []
         },
         {
           "name": "Proficiencies",
           "sorting": "m",
           "color": "#620630",
-          "packs": [
-          ]
+          "packs": []
         },
         {
           "name": "Equipment",
           "sorting": "m",
           "color": "#822638",
-          "packs": [
-            "acks-clothing",
-            "acks-adventuring-equipment"
-          ],
+          "packs": ["acks-clothing", "acks-adventuring-equipment"],
           "folders": []
         },
         {
           "name": "Spells",
           "sorting": "a",
           "color": "#620630",
-          "packs": [
-          ],
+          "packs": [],
           "folders": []
         },
         {
           "name": "Setting",
           "sorting": "m",
           "color": "#822638",
-          "packs": [
-            "acks-languages",
-            "acks-maps"
-          ],
+          "packs": ["acks-languages", "acks-maps"],
           "folders": []
         }
       ],
@@ -221,30 +211,22 @@
       "name": "ACKS II Judges Journal",
       "sorting": "m",
       "color": "#822638",
-      "folders": [
-      ],
-      "packs": [
-        "acks-treasure"
-      ]
+      "folders": [],
+      "packs": ["acks-treasure"]
     },
     {
       "name": "ACKS II Monstrous Manual",
       "sorting": "m",
       "color": "#620630",
-      "folders": [
-      ],
-      "packs": [
-      ]
+      "folders": [],
+      "packs": []
     },
     {
       "name": "ACKS II VTT Vitals",
       "sorting": "m",
       "color": "#620630",
-      "folders": [
-      ],
-      "packs": [
-        "acks-journals"
-      ]
+      "folders": [],
+      "packs": ["acks-journals"]
     }
   ],
   "languages": [
@@ -259,9 +241,9 @@
       "path": "lang/fr.json"
     },
     {
-    "lang": "pt-BR",
-    "name": "Português (Brasil)",
-    "path": "lang/pt-BR.json"
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
     },
     {
       "lang": "fr",

@@ -1,6 +1,7 @@
 # Ignore artifacts:
 build
 coverage
+srcdata
 
 .github
 .husky

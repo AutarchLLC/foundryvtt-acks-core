@@ -27,10 +27,10 @@
           "mod": 0
         },
         "damage": {
-            "mod": {
-                "missile": 0,
-                "melee": 0
-            }
+          "mod": {
+            "missile": 0,
+            "melee": 0
+          }
         },
         "thac0": {
           "value": 19,
@@ -135,7 +135,7 @@
         "climb": 0
       },
       "adventuring": {
-        "dungeonbashing":18,
+        "dungeonbashing": 18,
         "climb": 8,
         "listening": 18,
         "searching": 18,

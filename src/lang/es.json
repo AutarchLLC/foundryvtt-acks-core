@@ -36,7 +36,7 @@
   "ACKS.roll.reaction": "Tirada de Reacción",
 
   "ACKS.table.treasure.roll": "Roll Treasure",
-  
+
   "ACKS.details.name": "Nombre",
   "ACKS.details.class": "Clase",
   "ACKS.details.title": "Titulo",
@@ -92,7 +92,7 @@
   "ACKS.HealthShort": "PG",
   "ACKS.HitDice": "Puntos de Golpe",
   "ACKS.HitDiceShort": "DG",
-  
+
   "ACKS.movement.base": "Movimiento",
   "ACKS.movement.short": "MV",
   "ACKS.movement.details": "Detalles de Movimiento",

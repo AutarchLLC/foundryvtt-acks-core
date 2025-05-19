@@ -38,7 +38,7 @@ export class AcksDice {
       // Reaction, MORALE
       // Roll cannot be less than 2 on a 2d6 roll
       if (roll.total < 2) {
-        roll._total = 2
+        roll._total = 2;
       }
       let table = data.roll.table;
       let output = "";
@@ -52,14 +52,7 @@ export class AcksDice {
     return result;
   }
 
-  static async sendRoll({
-    parts = [],
-    data = {},
-    title = null,
-    flavor = null,
-    speaker = null,
-    form = null,
-  } = {}) {
+  static async sendRoll({ parts = [], data = {}, title = null, flavor = null, speaker = null, form = null } = {}) {
     const template = "systems/acks/templates/chat/roll-result.html";
 
     let chatData = {
@@ -77,7 +70,7 @@ export class AcksDice {
     if (form !== null && form.bonus.value) {
       parts.push(form.bonus.value);
     }
-    
+
     const roll = new Roll(parts.join("+"), data);
     await roll.evaluate();
 
@@ -110,18 +103,10 @@ export class AcksDice {
           chatData.content = content;
           // Dice So Nice
           if (game.dice3d) {
-            game.dice3d
-              .showForRoll(
-                roll,
-                game.user,
-                true,
-                chatData.whisper,
-                chatData.blind
-              )
-              .then((displayed) => {
-                ChatMessage.create(chatData);
-                resolve(roll);
-              });
+            game.dice3d.showForRoll(roll, game.user, true, chatData.whisper, chatData.blind).then((displayed) => {
+              ChatMessage.create(chatData);
+              resolve(roll);
+            });
           } else {
             chatData.sound = CONFIG.sounds.dice;
             ChatMessage.create(chatData);
@@ -141,42 +126,32 @@ export class AcksDice {
     };
     result.target = data.roll.thac0;
 
-    const targetAc = data.roll.target
-      ? data.roll.target.actor.system.ac.value
-      : 9;
-    const targetAac = data.roll.target
-      ? data.roll.target.actor.system.aac.value
-      : 0;
+    const targetAc = data.roll.target ? data.roll.target.actor.system.ac.value : 9;
+    const targetAac = data.roll.target ? data.roll.target.actor.system.aac.value : 0;
     result.victim = data.roll.target ? data.roll.target.name : null;
 
-    const hfh = game.settings.get("acks", "exploding20s")
-    const die = roll.dice[0].total
-    
+    const hfh = game.settings.get("acks", "exploding20s");
+    const die = roll.dice[0].total;
+
     if (game.settings.get("acks", "ascendingAC")) {
       if (die == 1 && !hfh) {
-        result.details = game.i18n.format(
-          "ACKS.messages.Fumble",
-          {
-            result: roll.total,
-            bonus: result.target,
-          }
-        );
+        result.details = game.i18n.format("ACKS.messages.Fumble", {
+          result: roll.total,
+          bonus: result.target,
+        });
         return result;
       } else if (roll.total < targetAac + 10 && (die < 20 || hfh)) {
-        result.details = game.i18n.format(
-          "ACKS.messages.AttackAscendingFailure",
-          {
-            result: roll.total - 10,
-            bonus: result.target,
-          }
-        );
+        result.details = game.i18n.format("ACKS.messages.AttackAscendingFailure", {
+          result: roll.total - 10,
+          bonus: result.target,
+        });
         return result;
       }
       if (!hfh && die == 20) {
         result.details = game.i18n.format("ACKS.messages.Critical", {
           result: roll.total,
         });
-      } else {      
+      } else {
         result.details = game.i18n.format("ACKS.messages.AttackAscendingSuccess", {
           result: roll.total - 10,
         });
@@ -226,7 +201,7 @@ export class AcksDice {
     if (form !== null && form.bonus.value) {
       parts.push(form.bonus.value);
     }
-    
+
     const roll = new Roll(parts.join("+"), data);
     await roll.evaluate();
 
@@ -247,8 +222,7 @@ export class AcksDice {
       rollMode = game.user.isGM ? "selfroll" : "blindroll";
     }
 
-    if (["gmroll", "blindroll"].includes(rollMode))
-      chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
+    if (["gmroll", "blindroll"].includes(rollMode)) chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
     if (rollMode === "selfroll") chatData["whisper"] = [game.user._id];
     if (rollMode === "blindroll") {
       chatData["blind"] = true;
@@ -266,34 +240,18 @@ export class AcksDice {
             chatData.content = content;
             // 2 Step Dice So Nice
             if (game.dice3d) {
-              game.dice3d
-                .showForRoll(
-                  roll,
-                  game.user,
-                  true,
-                  chatData.whisper,
-                  chatData.blind
-                )
-                .then(() => {
-                  if (templateData.result.isSuccess) {
-                    templateData.result.dmg = dmgRoll.total;
-                    game.dice3d
-                      .showForRoll(
-                        dmgRoll,
-                        game.user,
-                        true,
-                        chatData.whisper,
-                        chatData.blind
-                      )
-                      .then(() => {
-                        ChatMessage.create(chatData);
-                        resolve(roll);
-                      });
-                  } else {
+              game.dice3d.showForRoll(roll, game.user, true, chatData.whisper, chatData.blind).then(() => {
+                if (templateData.result.isSuccess) {
+                  templateData.result.dmg = dmgRoll.total;
+                  game.dice3d.showForRoll(dmgRoll, game.user, true, chatData.whisper, chatData.blind).then(() => {
                     ChatMessage.create(chatData);
                     resolve(roll);
-                  }
-                });
+                  });
+                } else {
+                  ChatMessage.create(chatData);
+                  resolve(roll);
+                }
+              });
             } else {
               chatData.sound = CONFIG.sounds.dice;
               ChatMessage.create(chatData);
@@ -329,9 +287,11 @@ export class AcksDice {
       flavor: flavor,
       speaker: speaker,
     };
-    
-    let buttons = {}
-    if (skipDialog) { return AcksDice.sendRoll(rollData); }
+
+    let buttons = {};
+    if (skipDialog) {
+      return AcksDice.sendRoll(rollData);
+    }
     if (game.settings.get("acks", "removeMagicBonus") == false) {
       buttons = {
         ok: {
@@ -357,7 +317,7 @@ export class AcksDice {
         cancel: {
           icon: '<i class="fas fa-times"></i>',
           label: game.i18n.localize("ACKS.Cancel"),
-          callback: (html) => { },
+          callback: (html) => {},
         },
       };
     } else {
@@ -375,7 +335,7 @@ export class AcksDice {
         cancel: {
           icon: '<i class="fas fa-times"></i>',
           label: game.i18n.localize("ACKS.Cancel"),
-          callback: (html) => { },
+          callback: (html) => {},
         },
       };
     }
@@ -396,14 +356,7 @@ export class AcksDice {
     });
   }
 
-  static async Roll({
-    parts = [],
-    data = {},
-    skipDialog = false,
-    speaker = null,
-    flavor = null,
-    title = null,
-  } = {}) {
+  static async Roll({ parts = [], data = {}, skipDialog = false, speaker = null, flavor = null, title = null } = {}) {
     let rolled = false;
     const template = "systems/acks/templates/chat/roll-dialog.html";
     let dialogData = {
@@ -441,7 +394,7 @@ export class AcksDice {
       cancel: {
         icon: '<i class="fas fa-times"></i>',
         label: game.i18n.localize("ACKS.Cancel"),
-        callback: (html) => { },
+        callback: (html) => {},
       },
     };
 

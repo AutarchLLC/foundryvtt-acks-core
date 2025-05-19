@@ -6,7 +6,11 @@
     text-shadow: none;
   }
   to {
-    text-shadow: -1px -1px 4px #4b4a44, 1px -1px 4px #4b4a44, -1px 1px 4px #4b4a44, 1px 1px 4px #4b4a44;
+    text-shadow:
+      -1px -1px 4px #4b4a44,
+      1px -1px 4px #4b4a44,
+      -1px 1px 4px #4b4a44,
+      1px 1px 4px #4b4a44;
   }
 }
 
@@ -24,11 +28,11 @@
 /* Font section */
 @font-face {
   font-family: "oranienbaum";
-  src: url('./assets/fonts/oranienbaum.regular.ttf');
+  src: url("./assets/fonts/oranienbaum.regular.ttf");
 }
 @font-face {
   font-family: "ebgaramond-regular";
-  src: url('./assets/fonts/EBGaramond-Regular.ttf');
+  src: url("./assets/fonts/EBGaramond-Regular.ttf");
 }
 
 /* Compendium specific */
@@ -71,32 +75,31 @@
 .chat-message {
   font-size: 1.1rem;
 }
-.chat-message .message-header .flavor-text, .chat-message .message-header .whisper-to {
+.chat-message .message-header .flavor-text,
+.chat-message .message-header .whisper-to {
   font-size: 0.9rem;
 }
 
 .acks.sheet.actor {
-  background:rgba(212, 211, 211, 1)
+  background: rgba(212, 211, 211, 1);
   /* Header Summary Details */
 }
-.acks.sheet.actor .window-header{
+.acks.sheet.actor .window-header {
   background: var(--acks-purple);
 }
-.window-header{
+.window-header {
   background: var(--acks-purple);
 }
-.application .window-header{
+.application .window-header {
   background: var(--acks-purple);
 }
 
 .acks.sheet.actor .window-content {
   background: var(--acks-sheet-background-fade);
-  overflow:hidden;
+  overflow: hidden;
   padding: 0px;
-
 }
-.acks.sheet.actor
-.acks.sheet.actor .blinking {
+.acks.sheet.actor .acks.sheet.actor .blinking {
   font-weight: bold;
   animation: 0.8s ease-in 1s infinite alternate notify;
 }
@@ -262,13 +265,13 @@
 .acks.sheet.actor .sheet-body .attribute-group .attributes {
   display: flex;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content: flex-start;
   margin-top: 12px;
 }
 .acks.sheet.actor .sheet-body .attribute-group .attributes .attribute {
   display: flex;
   flex-direction: row;
-  max-height:fit-content;
+  max-height: fit-content;
   margin-top: 8px;
 }
 .acks.sheet.actor .sheet-body .attribute-group .attributes .attribute .attribute-name {
@@ -485,8 +488,12 @@
   color: rgba(0, 0, 0, 0.2);
 }
 .acks.sheet.actor .sheet-body .inventory .item-controls a:hover {
-  color: #44191A;
-  text-shadow: 0 0 5px #d8d6c9, 1px 0 5px #d8d6c9, 0 1px 5px #d8d6c9, 1px 1px 5px #d8d6c9;
+  color: #44191a;
+  text-shadow:
+    0 0 5px #d8d6c9,
+    1px 0 5px #d8d6c9,
+    0 1px 5px #d8d6c9,
+    1px 1px 5px #d8d6c9;
 }
 .acks.sheet.actor .sheet-body .inventory.spells .item-titles {
   line-height: 24px;
@@ -643,7 +650,8 @@
   cursor: pointer;
   filter: grayscale(1) opacity(0.5);
 }
-.sheet.roll-table-config .sheet-header .toggle-treasure.active, .sheet.roll-table-config .sheet-header .toggle-treasure:hover {
+.sheet.roll-table-config .sheet-header .toggle-treasure.active,
+.sheet.roll-table-config .sheet-header .toggle-treasure:hover {
   filter: none;
 }
 @keyframes activated {
@@ -932,7 +940,7 @@
   min-width: 20rem;
 }
 
-.acks.sheet.actor.character .sheet-body .resources .flexrow{
+.acks.sheet.actor.character .sheet-body .resources .flexrow {
   margin-bottom: 0.4rem;
 }
 .acks.sheet.actor.character .sheet-body .resources .attribute {
@@ -951,7 +959,7 @@
   min-height: 2.5rem;
 }
 .adventure-value {
-  max-width:1.5rem;
+  max-width: 1.5rem;
 }
 .acks.sheet.actor.character .sheet-body .notes-tab .inventory .languages {
   margin: 2px;
@@ -994,7 +1002,7 @@
 .acks.sheet.actor.character .sheet-body .health {
   height: 64px;
   position: relative;
-  margin-left:1rem;
+  margin-left: 1rem;
   max-width: 4rem;
 }
 .acks.sheet.actor.character .sheet-body .health.armor-class {
@@ -1011,7 +1019,11 @@
   font-size: 16px;
   text-align: center;
   font-weight: bolder;
-  text-shadow: 0 0 2px white, 0 1px 2px white, 1px 0 2px white, 1px 1px 2px white;
+  text-shadow:
+    0 0 2px white,
+    0 1px 2px white,
+    1px 0 2px white,
+    1px 1px 2px white;
 }
 .acks.sheet.actor.character .sheet-body .health .health-top {
   border-bottom: none;
@@ -1075,7 +1087,7 @@
   font-size: 13px;
   line-height: 12px;
   text-align: right;
-  color: #EEE;
+  color: #eee;
   text-shadow: 0 0 5px #000;
 }
 .acks.sheet.actor.character .encumbrance .encumbrance-breakpoint {
@@ -1114,23 +1126,24 @@
 .acks .window-content input {
   text-align: center;
 }
-.acks .window-content input[type=number] {
+.acks .window-content input[type="number"] {
   -moz-appearance: textfield;
 }
-.acks .window-content input[type=number]::-webkit-inner-spin-button,
-.acks .window-content input[type=number]::-webkit-outer-spin-button {
+.acks .window-content input[type="number"]::-webkit-inner-spin-button,
+.acks .window-content input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin: 0;
 }
-.acks .window-content input:not([type=checkbox]) {
+.acks .window-content input:not([type="checkbox"]) {
   background: none;
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #7a7971;
 }
-.acks .window-content input:not([type=checkbox]):hover:not(:disabled), .acks .window-content input:not([type=checkbox]):focus:not(:disabled) {
+.acks .window-content input:not([type="checkbox"]):hover:not(:disabled),
+.acks .window-content input:not([type="checkbox"]):focus:not(:disabled) {
   box-shadow: none;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
 }
@@ -1270,7 +1283,8 @@
 .acks.sheet.item .sheet-body .stats .form-group.attack-type a {
   color: #969696;
 }
-.acks.sheet.item .sheet-body .stats .form-group.attack-type a.active, .acks.sheet.item .sheet-body .stats .form-group.attack-type a :hover {
+.acks.sheet.item .sheet-body .stats .form-group.attack-type a.active,
+.acks.sheet.item .sheet-body .stats .form-group.attack-type a :hover {
   color: rgba(0, 0, 0, 0.9);
 }
 .acks.sheet.item .sheet-body .stats .form-group {
@@ -1412,11 +1426,11 @@
 
 /** HUD SECTION */
 .hud-action-label {
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
 .tokenhudext {
-	display: flex;
-	flex: 0 !important;
+  display: flex;
+  flex: 0 !important;
   font-family: CaslonPro;
   font-weight: 600;
 }
@@ -1454,7 +1468,7 @@
 .control-icon.tokenhudicon.right {
   margin-left: 8px;
 }
-#token-hud .status-effects.active{
+#token-hud .status-effects.active {
   z-index: 2;
 }
 .acks-hud-menu label {
@@ -1468,25 +1482,25 @@
   margin-top: 0.5rem;
   border: 1px solid #7a7971;
   box-shadow: 0 0 2px #7a7971;
-   min-height: 8rem;
+  min-height: 8rem;
 }
 .favorite-title {
   padding-left: 0.4rem;
   background: var(--acks-purple);
-  color: whitesmoke
+  color: whitesmoke;
 }
 .favorite-item {
   margin-left: 0.2rem;
 }
 .acks-attribute-row {
   align-items: center;
-  align-self:center;
+  align-self: center;
   max-width: fit-content;
 }
 .acks-attribute-row .attribute-value {
   min-width: 1.8rem;
 }
-.wage-text-center{
+.wage-text-center {
   margin-top: 8px;
 }
 
@@ -1518,16 +1532,16 @@
   color: rgb(71, 70, 70);
 }
 
-.mortal-wounds-dialog  .treatment-timing,
-.mortal-wounds-dialog  .mortal-wound-table {
+.mortal-wounds-dialog .treatment-timing,
+.mortal-wounds-dialog .mortal-wound-table {
   min-width: 16rem;
   max-width: 16rem;
 }
-.mortal-wounds-dialog  .final-modifier-div {
+.mortal-wounds-dialog .final-modifier-div {
   margin: 8px;
   font-size: 1.2rem;
 }
-.mortal-wounds-dialog  .final-modifier-div input {
+.mortal-wounds-dialog .final-modifier-div input {
   font-size: 1.2rem;
 }
 .mortal-wounds-dialog input[type="number"] {
@@ -1541,7 +1555,7 @@
 
 .mortal-wounds-dialog .final-modifier-value {
   font-weight: bold;
-  color : darkgreen;
+  color: darkgreen;
 }
 
 .mortal-wounds-dialog .performing-healing {
@@ -1602,11 +1616,11 @@
   min-width: 8rem;
   max-width: 8rem;
 }
-.tampering-dialog  .final-modifier-div {
+.tampering-dialog .final-modifier-div {
   margin: 3px;
   font-size: 1.2rem;
 }
-.tampering-dialog  .final-modifier-div input {
+.tampering-dialog .final-modifier-div input {
   font-size: 1.2rem;
 }
 
@@ -1620,5 +1634,5 @@
 }
 .tampering-dialog .final-modifier-value {
   font-weight: bold;
-  color : darkgreen;
+  color: darkgreen;
 }

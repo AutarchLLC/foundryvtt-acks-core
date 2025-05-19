@@ -2,9 +2,8 @@
 export class AcksEntityTweaks extends FormApplication {
   static get defaultOptions() {
     const options = super.defaultOptions;
-    options.id = 'sheet-tweaks';
-    options.template =
-      'systems/acks/templates/actors/dialogs/tweaks-dialog.html';
+    options.id = "sheet-tweaks";
+    options.template = "systems/acks/templates/actors/dialogs/tweaks-dialog.html";
     options.width = 380;
     return options;
   }
@@ -16,7 +15,7 @@ export class AcksEntityTweaks extends FormApplication {
    * @type {String}
    */
   get title() {
-    return `${this.object.name}: ${game.i18n.localize('ACKS.dialog.tweaks')}`;
+    return `${this.object.name}: ${game.i18n.localize("ACKS.dialog.tweaks")}`;
   }
 
   /* -------------------------------------------- */
@@ -28,7 +27,7 @@ export class AcksEntityTweaks extends FormApplication {
   getData() {
     const data = this.object;
 
-    if (this.object.type === 'character') {
+    if (this.object.type === "character") {
       data.isCharacter = true;
     }
 

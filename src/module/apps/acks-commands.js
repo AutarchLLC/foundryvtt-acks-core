@@ -4,22 +4,29 @@ import { AcksTamperingDialog } from "../dialog/tampering-mortality.js";
 
 /* -------------------------------------------- */
 export class AcksCommands {
-
   static init() {
     if (!game.acks.commands) {
       const commands = new AcksCommands();
-      commands.registerCommand({ path: ["/mortal"], func: (content, msg, params) => AcksCommands.rollMortalWounds(msg, params), descr: "Roll Mortal Wounds" });
-      commands.registerCommand({ path: ["/tampering"], func: (content, msg, params) => AcksCommands.rollTampering(msg, params), descr: "Roll Tampering With Mortality" });
+      commands.registerCommand({
+        path: ["/mortal"],
+        func: (content, msg, params) => AcksCommands.rollMortalWounds(msg, params),
+        descr: "Roll Mortal Wounds",
+      });
+      commands.registerCommand({
+        path: ["/tampering"],
+        func: (content, msg, params) => AcksCommands.rollTampering(msg, params),
+        descr: "Roll Tampering With Mortality",
+      });
       game.acks.commands = commands;
     }
   }
   constructor() {
-    this.commandsTable = {}
+    this.commandsTable = {};
   }
 
   /* -------------------------------------------- */
   registerCommand(command) {
-    this._addCommand(this.commandsTable, command.path, '', command);
+    this._addCommand(this.commandsTable, command.path, "", command);
   }
 
   /* -------------------------------------------- */
@@ -28,16 +35,15 @@ export class AcksCommands {
       return;
     }
     const term = path[0];
-    fullPath = fullPath + term + ' '
+    fullPath = fullPath + term + " ";
     if (path.length == 1) {
       command.descr = `<strong>${fullPath}</strong>: ${command.descr}`;
       targetTable[term] = command;
-    }
-    else {
+    } else {
       if (!targetTable[term]) {
         targetTable[term] = { subTable: {} };
       }
-      this._addCommand(targetTable[term].subTable, path.slice(1), fullPath, command)
+      this._addCommand(targetTable[term].subTable, path.slice(1), fullPath, command);
     }
   }
 
@@ -50,10 +56,9 @@ export class AcksCommands {
     return false;
   }
 
-
   /* -------------------------------------------- */
   /* Manage chat commands */
-  processChatCommand(commandLine, content = '', msg = {}) {
+  processChatCommand(commandLine, content = "", msg = {}) {
     // Setup new message's visibility
     let rollMode = game.settings.get("core", "rollMode");
     if (["gmroll", "blindroll"].includes(rollMode)) msg["whisper"] = ChatMessage.getWhisperRecipients("GM");
@@ -72,15 +77,14 @@ export class AcksCommands {
   }
 
   /* -------------------------------------------- */
-  _processCommand(commandsTable, name, params, content = '', msg = {}, path = "") {
-    console.log("===> Processing command")
+  _processCommand(commandsTable, name, params, content = "", msg = {}, path = "") {
+    console.log("===> Processing command");
     let command = commandsTable[name];
     path = path + name + " ";
     if (command?.subTable) {
       if (params[0]) {
-        return this._processCommand(command.subTable, params[0], params.slice(1), content, msg, path)
-      }
-      else {
+        return this._processCommand(command.subTable, params[0], params.slice(1), content, msg, path);
+      } else {
         this.help(msg, command.subTable);
         return true;
       }
@@ -113,5 +117,4 @@ export class AcksCommands {
     let dialog = new AcksTamperingDialog();
     dialog.init();
   }
-
 }

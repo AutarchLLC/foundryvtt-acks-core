@@ -3,11 +3,11 @@ import { AcksActorSheet } from "./actor-sheet.js";
 
 // Define the Item sheet default options
 const __DEFAULT_ITEM_TYPES = [
-  {key:"weapon", label:"Weapon"}, 
-  {key:"armor", label:"Armor"},
-  {key:"ability", label:"Ability"},
-  {key:"item", label:"Item"}
-]
+  { key: "weapon", label: "Weapon" },
+  { key: "armor", label: "Armor" },
+  { key: "ability", label: "Ability" },
+  { key: "item", label: "Item" },
+];
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -48,32 +48,32 @@ export class AcksActorSheetMonster extends AcksActorSheet {
     let choices = CONFIG.ACKS.monster_saves;
 
     let templateData = { choices: choices },
-      dlg = await renderTemplate(
-        "systems/acks/templates/actors/dialogs/monster-saves.html",
-        templateData
-      );
+      dlg = await renderTemplate("systems/acks/templates/actors/dialogs/monster-saves.html", templateData);
     //Create Dialog window
-    new Dialog({
-      title: game.i18n.localize("ACKS.dialog.generateSaves"),
-      content: dlg,
-      buttons: {
-        ok: {
-          label: game.i18n.localize("ACKS.Ok"),
-          icon: '<i class="fas fa-check"></i>',
-          callback: (html) => {
-            let hd = html.find('select[name="choice"]').val();
-            this.actor.generateSave(hd);
+    new Dialog(
+      {
+        title: game.i18n.localize("ACKS.dialog.generateSaves"),
+        content: dlg,
+        buttons: {
+          ok: {
+            label: game.i18n.localize("ACKS.Ok"),
+            icon: '<i class="fas fa-check"></i>',
+            callback: (html) => {
+              let hd = html.find('select[name="choice"]').val();
+              this.actor.generateSave(hd);
+            },
+          },
+          cancel: {
+            icon: '<i class="fas fa-times"></i>',
+            label: game.i18n.localize("ACKS.Cancel"),
           },
         },
-        cancel: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize("ACKS.Cancel"),
-        },
+        default: "ok",
       },
-      default: "ok",
-    }, {
-      width: 250
-    }).render(true);
+      {
+        width: 250,
+      },
+    ).render(true);
   }
 
   /* -------------------------------------------- */
@@ -99,7 +99,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
     super._onDrop(event);
     let data;
     try {
-      data = JSON.parse(event.dataTransfer.getData('text/plain'));
+      data = JSON.parse(event.dataTransfer.getData("text/plain"));
       if (data.type !== "RollTable") return;
     } catch (err) {
       return false;
@@ -107,7 +107,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
 
     let link = "";
     if (data.pack) {
-      let tableData = game.packs.get(data.pack).index.filter(el => el._id = "laDZWR1TIe0MVNZe");
+      let tableData = game.packs.get(data.pack).index.filter((el) => (el._id = "laDZWR1TIe0MVNZe"));
       link = `@Compendium[${data.pack}.${data.id}]{${tableData[0].name}}`;
     } else {
       link = `@RollTable[${data.id}]`;
@@ -118,10 +118,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
   /* -------------------------------------------- */
   async _chooseItemType(choices = __DEFAULT_ITEM_TYPES) {
     let templateData = { types: choices },
-      dlg = await renderTemplate(
-        "systems/acks/templates/items/entity-create.html",
-        templateData
-      );
+      dlg = await renderTemplate("systems/acks/templates/items/entity-create.html", templateData);
     //Create Dialog window
     return new Promise((resolve) => {
       new Dialog({
@@ -197,10 +194,10 @@ export class AcksActorSheetMonster extends AcksActorSheet {
 
     html.find(".appearing-check a").click((ev) => {
       let actorObject = this.actor;
-      let check = $(ev.currentTarget).closest('.check-field').data('check');
+      let check = $(ev.currentTarget).closest(".check-field").data("check");
       actorObject.rollAppearing({ event: event, check: check });
     });
-    
+
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
@@ -214,9 +211,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
     // Delete Inventory Item
     html.find(".item-delete").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteEmbeddedDocuments("Item", [
-        li.data("itemId"),
-      ]);
+      this.actor.deleteEmbeddedDocuments("Item", [li.data("itemId")]);
       li.slideUp(200, () => this.render(false));
     });
 
@@ -228,7 +223,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
       let createItem = function (type, name = `New ${type.capitalize()}`) {
         const itemData = {
           name: name ?? `New ${type.capitalize()}`,
-          type: type
+          type: type,
         };
         return itemData;
       };
@@ -239,16 +234,12 @@ export class AcksActorSheetMonster extends AcksActorSheet {
         this._chooseItemType(choices).then(async (dialogInput) => {
           const itemData = createItem(dialogInput.type, dialogInput.name);
           console.log("Type: ", dialogInput);
-          await this.actor.createEmbeddedDocuments("Item", [
-            itemData,
-          ]);
+          await this.actor.createEmbeddedDocuments("Item", [itemData]);
         });
         return;
       }
       const itemData = createItem(type);
-      await this.actor.createEmbeddedDocuments("Item", [
-        itemData,
-      ]);
+      await this.actor.createEmbeddedDocuments("Item", [itemData]);
     });
 
     html.find(".item-reset").click((ev) => {
@@ -265,7 +256,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
       actorObject.rollHP({ event: ev });
     });
 
-    html.find(".item-pattern").click(ev => {
+    html.find(".item-pattern").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       let currentColor = item.system.pattern;
@@ -277,8 +268,8 @@ export class AcksActorSheetMonster extends AcksActorSheet {
         index++;
       }
       item.update({
-        "system.pattern": colors[index]
-      })
+        "system.pattern": colors[index],
+      });
     });
 
     html.find('button[data-action="generate-saves"]').click(() => this.generateSave());

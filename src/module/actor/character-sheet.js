@@ -44,9 +44,9 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
 
   /* -------------------------------------------- */
   /**
-     * Prepare data for rendering the Actor sheet
-     * The prepared data object contains both the actor data as well as additional sheet options
-     */
+   * Prepare data for rendering the Actor sheet
+   * The prepared data object contains both the actor data as well as additional sheet options
+   */
   async getData() {
     const data = await super.getData();
 
@@ -65,10 +65,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
     let choices = CONFIG.ACKS.languages;
 
     let templateData = { choices: choices },
-      dlg = await renderTemplate(
-        "systems/acks/templates/actors/dialogs/lang-create.html",
-        templateData
-      );
+      dlg = await renderTemplate("systems/acks/templates/actors/dialogs/lang-create.html", templateData);
     //Create Dialog window
     return new Promise((resolve) => {
       new Dialog({
@@ -162,7 +159,6 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
       this.actor.updateMoney(moneyId, 1);
     });
 
-
     html.find(".henchman-loyalty-check").click((ev) => {
       let henchId = $(ev.currentTarget).data("henchman-id");
       game.actors.get(henchId).rollLoyalty({ event: ev });
@@ -211,9 +207,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
     });
 
     html.find(".inventory .item-titles .item-caret").click((ev) => {
-      let items = $(ev.currentTarget.parentElement.parentElement).children(
-        ".item-list"
-      );
+      let items = $(ev.currentTarget.parentElement.parentElement).children(".item-list");
       if (items.css("display") == "none") {
         let el = $(ev.currentTarget).find(".fas.fa-caret-right");
         el.removeClass("fa-caret-right");
@@ -244,9 +238,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
     // Delete Inventory Item
     html.find(".item-delete").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteEmbeddedDocuments("Item", [
-        li.data("itemId"),
-      ]);
+      this.actor.deleteEmbeddedDocuments("Item", [li.data("itemId")]);
       li.slideUp(200, () => this.render(false));
     });
 
@@ -256,7 +248,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
       this.actor.showHenchman(li.data("henchmanId"));
     });
     html.find(".hireling-edit-quantity").change((ev) => {
-      // Get input value of the field 
+      // Get input value of the field
       let quantity = $(ev.currentTarget).val();
       // Get the hireling id
       let hirelingId = $(ev.currentTarget).parents(".item").data("henchmanId");
@@ -268,9 +260,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
     // Delete Inventory Item
     html.find(".henchman-delete").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.delHenchman(
-        li.data("henchmanId"),
-      );
+      this.actor.delHenchman(li.data("henchmanId"));
       li.slideUp(200, () => this.render(false));
     });
 
@@ -285,10 +275,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
       ev.preventDefault();
       const header = ev.currentTarget;
       const table = header.dataset.array;
-      this._popLang(
-        table,
-        $(ev.currentTarget).closest(".item").data("lang")
-      );
+      this._popLang(table, $(ev.currentTarget).closest(".item").data("lang"));
     });
 
     html.find(".item-create").click(async (event) => {
@@ -301,9 +288,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
         data: foundry.utils.duplicate(header.dataset),
       };
       //delete itemsystem["type"];
-      await this.actor.createEmbeddedDocuments("Item", [
-        itemData,
-      ]);
+      await this.actor.createEmbeddedDocuments("Item", [itemData]);
     });
 
     //Toggle Equipment
@@ -311,24 +296,28 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       //console.log("item", item.system.equipped);
-      await this.actor.updateEmbeddedDocuments("Item", [{
-        _id: li.data("itemId"),
-        system: {
-          equipped: !item.system.equipped,
+      await this.actor.updateEmbeddedDocuments("Item", [
+        {
+          _id: li.data("itemId"),
+          system: {
+            equipped: !item.system.equipped,
+          },
         },
-      }]);
+      ]);
     });
 
     html.find(".item-favorite").click(async (ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       //console.log("item", item.system.favorite);
-      await this.actor.updateEmbeddedDocuments("Item", [{
-        _id: li.data("itemId"),
-        system: {
-          favorite: !item.system.favorite,
+      await this.actor.updateEmbeddedDocuments("Item", [
+        {
+          _id: li.data("itemId"),
+          system: {
+            favorite: !item.system.favorite,
+          },
         },
-      }]);
+      ]);
     });
 
     html
