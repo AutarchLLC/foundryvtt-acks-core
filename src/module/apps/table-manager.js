@@ -1,22 +1,21 @@
 export class AcksTableManager {
-
   static init() {
     // Fetch the internal tables from the ruledata/internal_tables.json file
     // Fetch the files
     const filePath = "systems/acks/module/ruledata/internal_tables.json";
     const file = fetch(filePath)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         // Process the data
         console.log("Internal Tables Loaded", data);
         game.acks.tables = data;
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error loading internal tables:", error);
       });
   }
@@ -36,12 +35,12 @@ export class AcksTableManager {
       ui.notifications.error(`Table ${tableKey} not found`);
       return null;
     }
-    const roll = new Roll(`1d20+${modifier}` );
+    const roll = new Roll(`1d20+${modifier}`);
     await roll.evaluate();
     const result = roll.total;
 
     // Now search in the table to find the corresponding entry, by comparing the result with the table's min/max values
-    const entry = table.results.find(entry => {
+    const entry = table.results.find((entry) => {
       return result >= entry.min && result <= entry.max;
     });
     if (entry) {
@@ -70,5 +69,4 @@ export class AcksTableManager {
       return null;
     }
   }
-
 }

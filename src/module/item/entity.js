@@ -4,7 +4,6 @@ import { AcksDice } from "../dice.js";
  * Override and extend the basic :class:`Item` implementation
  */
 export class AcksItem extends Item {
-
   constructor(data, context) {
     if (!data.img) {
       let img = "systems/acks/assets/default/item.png";
@@ -50,7 +49,7 @@ export class AcksItem extends Item {
     const props = [];
 
     if (this.type == "weapon") {
-      this.system.tags.forEach(t => props.push(t.value));
+      this.system.tags.forEach((t) => props.push(t.value));
     }
     if (this.type == "spell") {
       props.push(`${this.system.class} ${this.system.lvl}`, this.system.range, this.system.duration);
@@ -68,17 +67,16 @@ export class AcksItem extends Item {
     let isNPC = this.actor.type != "character";
     const targets = 5;
     let type = isNPC ? "attack" : "melee";
-    const rollData =
-    {
+    const rollData = {
       item: this.toObject(),
       actor: this.actor.toObject(),
       roll: {
         save: this.system.save,
-        target: null
-      }
+        target: null,
+      },
     };
 
-    if ((this.system.missile && this.system.melee) && !isNPC) {
+    if (this.system.missile && this.system.melee && !isNPC) {
       // Dialog
       new Dialog({
         title: "Choose Attack Range",
@@ -142,7 +140,7 @@ export class AcksItem extends Item {
   }
 
   spendSpell() {
-    this.update({ 'system.cast': this.system.cast + 1, }).then(() => {
+    this.update({ "system.cast": this.system.cast + 1 }).then(() => {
       this.show({ skipDialog: true });
     });
   }
@@ -157,7 +155,7 @@ export class AcksItem extends Item {
       return `<li class='tag'>${fa}${tag}</li>`;
     };
 
-    let wTags, sTags, roll
+    let wTags, sTags, roll;
     switch (this.type) {
       case "weapon":
         wTags = formatTag(this.system.damage, "fa-tint");
@@ -168,7 +166,7 @@ export class AcksItem extends Item {
         if (this.system.missile) {
           wTags += formatTag(
             this.system.range.short + "/" + this.system.range.medium + "/" + this.system.range.long,
-            "fa-bullseye"
+            "fa-bullseye",
           );
         }
         return wTags;
@@ -178,7 +176,7 @@ export class AcksItem extends Item {
         return "";
       case "spell":
         sTags = `${formatTag(this.system.class)}${formatTag(
-          this.system.range
+          this.system.range,
         )}${formatTag(this.system.duration)}${formatTag(this.system.roll)}`;
         if (this.system.save) {
           sTags += formatTag(CONFIG.ACKS.saves_long[this.system.save], "fa-skull");
@@ -304,8 +302,7 @@ export class AcksItem extends Item {
 
     // Toggle default roll mode
     let rollMode = game.settings.get("core", "rollMode");
-    if (["gmroll", "blindroll"].includes(rollMode))
-      chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
+    if (["gmroll", "blindroll"].includes(rollMode)) chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
     if (rollMode === "selfroll") chatData["whisper"] = [game.user.id];
     if (rollMode === "blindroll") chatData["blind"] = true;
 
@@ -332,14 +329,13 @@ export class AcksItem extends Item {
 
   updateWeight() {
     if (this.system?.weight != undefined && this.system?.weight6 == -1) {
-      let nbStones6 = Math.ceil(this.system.weight / 166.66)
-      this.update({ 'system.weight6': nbStones6, 'system.weight': -1 })
+      let nbStones6 = Math.ceil(this.system.weight / 166.66);
+      this.update({ "system.weight6": nbStones6, "system.weight": -1 });
     }
   }
 
   static async _onChatCardAction(event) {
     event.preventDefault();
-
 
     // Extract card data
     const button = event.currentTarget;
@@ -353,22 +349,20 @@ export class AcksItem extends Item {
     // Validate permission to proceed with the roll
     const isTargetted = action === "save";
     if (!(isTargetted || game.user.isGM || message.isAuthor)) {
-      ui.notifications.warn(
-        `You do not have permission to use this feature for the selected chat card.`
-      );
+      ui.notifications.warn(`You do not have permission to use this feature for the selected chat card.`);
       return;
     }
     // Get the Actor from a synthetic Token
     const actor = this._getChatCardActor(card);
     if (!actor) {
-      ui.notifications.warn('Unable to get the actor')
+      ui.notifications.warn("Unable to get the actor");
       return;
     }
     // Get the Item
     const item = actor.items.get(card.dataset.itemId);
     if (!item) {
       return ui.notifications.error(
-        `The requested item ${card.dataset.itemId} no longer exists on Actor ${actor.name}`
+        `The requested item ${card.dataset.itemId} no longer exists on Actor ${actor.name}`,
       );
     }
 
@@ -381,16 +375,13 @@ export class AcksItem extends Item {
     // Attack and Damage Rolls
     if (action === "damage") {
       await item.rollDamage({ event });
-    }
-    else if (action === "formula") {
+    } else if (action === "formula") {
       await item.rollFormula({ event });
     }
     // Saving Throws for card targets
     else if (action == "save") {
       if (!targets.length) {
-        ui.notifications.warn(
-          `You must have one or more controlled Tokens in order to use this option.`
-        );
+        ui.notifications.warn(`You must have one or more controlled Tokens in order to use this option.`);
         return (button.disabled = false);
       }
       for (let t of targets) {
@@ -423,10 +414,7 @@ export class AcksItem extends Item {
   static _getChatCardTargets(card) {
     const character = game.user.character;
     const controlled = canvas.tokens.controlled;
-    const targets = controlled.reduce(
-      (arr, t) => (t.actor ? arr.concat([t.actor]) : arr),
-      []
-    );
+    const targets = controlled.reduce((arr, t) => (t.actor ? arr.concat([t.actor]) : arr), []);
     if (character && controlled.length === 0) targets.push(character);
     return targets;
   }

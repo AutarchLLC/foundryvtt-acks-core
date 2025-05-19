@@ -1,0 +1,18 @@
+# Ignore artifacts:
+build
+coverage
+srcdata
+
+.github
+.husky
+.idea
+7.5
+acks-tests
+docs
+old_packs
+package
+src/assets
+src/packs
+
+**/*.md
+**/*.html

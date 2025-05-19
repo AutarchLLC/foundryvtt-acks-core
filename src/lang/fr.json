@@ -209,7 +209,7 @@
   "ACKS.items.typeTag": "Tapez une liste de tags descriptifs ex. 'Mêlée,Missile (5’–10’ / 11’–20’ / 21’–30’)' puis Entrée",
   "ACKS.items.enterTag": "Tags",
   "ACKS.items.pattern": "Marqueur de schéma d'attaque",
-  
+
   "ACKS.items.Range": "Portée",
   "ACKS.items.Melee": "Mêlée",
   "ACKS.items.Missile": "Distance",

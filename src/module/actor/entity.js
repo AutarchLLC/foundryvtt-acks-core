@@ -2,9 +2,7 @@ import { AcksDice } from "../dice.js";
 import { AcksUtility } from "../utility.js";
 
 export class AcksActor extends Actor {
-
   static async create(data, options) {
-
     // Case of compendium global import
     if (data instanceof Array) {
       return super.create(data, options);
@@ -16,14 +14,13 @@ export class AcksActor extends Actor {
     }
 
     data.system = { isNew: true }; // Flag the actor as new
-    if (data.type == 'character') {
-      const skills = await AcksUtility.loadCompendium("acks.acks-all-equipment")
-      data.items = skills.map(i => i.toObject()).filter(i => i.type == "money")
+    if (data.type == "character") {
+      const skills = await AcksUtility.loadCompendium("acks.acks-all-equipment");
+      data.items = skills.map((i) => i.toObject()).filter((i) => i.type == "money");
     }
 
     return super.create(data, options);
   }
-
 
   async _onUpdate(changed, options, userId) {
     console.log("Regular update", changed, options, userId);
@@ -36,10 +33,14 @@ export class AcksActor extends Actor {
     }
     if (changed.system?.retainer?.enabled == false && this.system.retainer.managerid != "") {
       let manager = game.actors.get(this.system.retainer.managerid);
-      setTimeout(() => { manager.delHenchman(this.id) }, 200);
+      setTimeout(() => {
+        manager.delHenchman(this.id);
+      }, 200);
     }
     if ((this.type == "character" && changed.system?.scores) || (this.type == "monster" && changed.system?.saves)) {
-      setTimeout(() => { this.update({ 'system.isNew': false }) }, 200);
+      setTimeout(() => {
+        this.update({ "system.isNew": false });
+      }, 200);
     }
     await super._onUpdate(changed, options, userId);
   }
@@ -48,7 +49,6 @@ export class AcksActor extends Actor {
    * Extends data from base Actor class
    */
   computeAdditionnalData() {
-
     const data = this.system;
 
     // Compute modifiers from actor scores
@@ -72,10 +72,10 @@ export class AcksActor extends Actor {
       }
     }
 
-    data.movement.encounter = Math.floor(data.movement.base / 3 * 10) / 10;
+    data.movement.encounter = Math.floor((data.movement.base / 3) * 10) / 10;
     if (this.type == "character" && this.system.config.movementAuto) {
-      data.movementacks.stealth = Math.floor(data.movementacks.combat / 2 * 10) / 10;
-      data.movementacks.climb = Math.floor(data.movementacks.combat / 3 * 10) / 10;
+      data.movementacks.stealth = Math.floor((data.movementacks.combat / 2) * 10) / 10;
+      data.movementacks.climb = Math.floor((data.movementacks.combat / 3) * 10) / 10;
     }
   }
 
@@ -87,7 +87,7 @@ export class AcksActor extends Actor {
   /* -------------------------------------------- */
   prepareDerivedData() {
     super.prepareDerivedData();
-    this.computeAdditionnalData()
+    this.computeAdditionnalData();
   }
 
   /* -------------------------------------------- */
@@ -98,9 +98,7 @@ export class AcksActor extends Actor {
       return;
     }
 
-    let modified = Math.floor(
-      value + (this.system.details.xp.bonus * value) / 100
-    );
+    let modified = Math.floor(value + (this.system.details.xp.bonus * value) / 100);
 
     await this.update({
       "system.details.xp.value": modified + this.system.details.xp.value,
@@ -126,20 +124,25 @@ export class AcksActor extends Actor {
     if (newValue < 0) {
       newValue = 0;
     }
-    money.update({ 'system.quantity': newValue });
+    money.update({ "system.quantity": newValue });
   }
 
   /* -------------------------------------------- */
   /** Return true if the character has a "heavy helmet" equipped
    *
-  */
+   */
   hasHeavyHelm() {
     if (this.type != "character") {
       return false;
     }
     let hasHeavyHelm = false;
     this.items.forEach((item) => {
-      if (item.type == "armor" && item.system.equipped && (item.name.toLowerCase().includes("heavy") && item.name.toLowerCase().includes("helmet"))) {
+      if (
+        item.type == "armor" &&
+        item.system.equipped &&
+        item.name.toLowerCase().includes("heavy") &&
+        item.name.toLowerCase().includes("helmet")
+      ) {
         hasHeavyHelm = true;
       }
     });
@@ -207,15 +210,17 @@ export class AcksActor extends Actor {
           icon: '<i class="fas fa-check"></i>',
           label: "Yes",
           callback: async () => {
-            await henchman.update({ 'system.retainer.enabled': true, 'prototypeToken.actorLink': true });
+            await henchman.update({ "system.retainer.enabled": true, "prototypeToken.actorLink": true });
             this.addHenchman(subActorId);
-          }
+          },
         },
         two: {
           icon: '<i class="fas fa-times"></i>',
           label: "No",
-          callback: () => { return }
-        }
+          callback: () => {
+            return;
+          },
+        },
       },
       default: "two",
     });
@@ -251,14 +256,14 @@ export class AcksActor extends Actor {
     let henchmen = game.actors.filter((a) => a.type == "character" && a.system.henchmenList.includes(subActorId));
     if (henchmen.length > 0) {
       ui.notifications.error(game.i18n.localize("ACKS.error.HenchmanAlready"));
-      return
+      return;
     }
     let subActors = foundry.utils.duplicate(this.system.henchmenList);
     subActors.push(subActorId);
-    await this.update({ 'system.henchmenList': subActors });
+    await this.update({ "system.henchmenList": subActors });
 
     // Set the name of the manager in the henchman data
-    await npc.update({ 'system.retainer.managerid': this.id });
+    await npc.update({ "system.retainer.managerid": this.id });
   }
   /* -------------------------------------------- */
   async delHenchman(subActorId) {
@@ -268,10 +273,10 @@ export class AcksActor extends Actor {
         newArray.push(id);
       }
     }
-    await this.update({ 'system.henchmenList': newArray });
+    await this.update({ "system.henchmenList": newArray });
     // Cleanup the manager id
     let npc = game.actors.get(subActorId);
-    await npc.update({ 'system.retainer.managerid': "" });
+    await npc.update({ "system.retainer.managerid": "" });
   }
 
   /* -------------------------------------------- */
@@ -295,7 +300,7 @@ export class AcksActor extends Actor {
     if (newValue < 0) {
       newValue = 0;
     }
-    money.update({ 'system.quantity': newValue });
+    money.update({ "system.quantity": newValue });
   }
 
   /* -------------------------------------------- */
@@ -306,7 +311,7 @@ export class AcksActor extends Actor {
     }
     this.system.henchmenList.forEach((id) => {
       let henchman = game.actors.get(id);
-      let q = henchman.system.retainer?.quantity || 1
+      let q = henchman.system.retainer?.quantity || 1;
       total += Number(henchman.system.retainer.wage) * Number(q);
     });
     return total;
@@ -335,7 +340,7 @@ export class AcksActor extends Actor {
         quantity = item.system.quantity;
       }
       totalWages -= quantity * item.system.coppervalue;
-      item.update({ 'system.quantity': item.system.quantity - quantity });
+      item.update({ "system.quantity": item.system.quantity - quantity });
       if (totalWages == 0) {
         break;
       }
@@ -370,28 +375,28 @@ export class AcksActor extends Actor {
       }
     });
     let nbStone = Math.floor(total / 1000);
-    let nbItems = Math.ceil((total - (nbStone * 1000)) / 166);
+    let nbItems = Math.ceil((total - nbStone * 1000) / 166);
     return { stone: nbStone, item: nbItems };
   }
 
   /* -------------------------------------------- */
   updateWeight() {
-    let toUpdate = []
+    let toUpdate = [];
     for (let i of this.items) {
       if (i.system?.weight != undefined && i.system?.weight6 == -1) {
-        let nbStones6 = Math.floor(i.system.weight / 166.66)
-        toUpdate.push({ _id: i.id, 'system.weight6': nbStones6, 'system.weight': -1 })
+        let nbStones6 = Math.floor(i.system.weight / 166.66);
+        toUpdate.push({ _id: i.id, "system.weight6": nbStones6, "system.weight": -1 });
       }
     }
     if (toUpdate.length > 0) {
-      this.updateEmbeddedDocuments("Item", toUpdate)
+      this.updateEmbeddedDocuments("Item", toUpdate);
     }
   }
 
   /* -------------------------------------------- */
   async updateImplements() {
     if (this.system.saves.implements?.value == -1) {
-      this.update({ 'system.saves.implements.value': this.system.saves.wand.value });
+      this.update({ "system.saves.implements.value": this.system.saves.wand.value });
     }
   }
 
@@ -402,19 +407,18 @@ export class AcksActor extends Actor {
     }
     // Load compendium languages
     let languages = await AcksUtility.loadCompendium("acks.acks-languages");
-    let langList = languages.map(i => i.toObject())
+    let langList = languages.map((i) => i.toObject());
 
     let toPush = [];
     if (this.system?.languages?.value) {
       for (let langName of this.system?.languages?.value) {
-
         let lang = langList.find((i) => i.name.toLowerCase() == langName.toLowerCase());
         if (lang) {
           toPush.push(lang);
         }
       }
       if (toPush.length > 0) {
-        this.createEmbeddedDocuments("Item", toPush)
+        this.createEmbeddedDocuments("Item", toPush);
       }
     }
   }
@@ -422,7 +426,7 @@ export class AcksActor extends Actor {
   /* -------------------------------------------- */
   isNew() {
     const data = this.system;
-    return data.isNew
+    return data.isNew;
 
     /*if (this.type == "character") {
       let ct = 0;
@@ -485,8 +489,8 @@ export class AcksActor extends Actor {
         hp: {
           max: roll.total,
           value: roll.total,
-        }
-      }
+        },
+      },
     });
   }
 
@@ -507,7 +511,7 @@ export class AcksActor extends Actor {
       }),
     };
 
-    let skip = false
+    let skip = false;
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
@@ -538,12 +542,12 @@ export class AcksActor extends Actor {
       roll: {
         type: "above",
         target: this.system.saves[save].value,
-        magic: (this.type == "character") ? this.system.scores.wis.mod : undefined
+        magic: this.type == "character" ? this.system.scores.wis.mod : undefined,
       },
       details: game.i18n.format("ACKS.roll.details.save", { save: label }),
     };
 
-    let skip = false
+    let skip = false;
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
@@ -570,10 +574,10 @@ export class AcksActor extends Actor {
 
     const data = {
       actor: this,
-      roll: {}
+      roll: {},
     };
 
-    let skip = false
+    let skip = false;
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
@@ -620,7 +624,7 @@ export class AcksActor extends Actor {
       },
     };
 
-    let skip = false
+    let skip = false;
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
@@ -666,7 +670,7 @@ export class AcksActor extends Actor {
       },
     };
 
-    let skip = false
+    let skip = false;
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
@@ -706,7 +710,7 @@ export class AcksActor extends Actor {
       }),
     };
 
-    let skip = false
+    let skip = false;
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
@@ -826,7 +830,7 @@ export class AcksActor extends Actor {
       }),
     };
 
-    let skip = false
+    let skip = false;
     let skipKey = game.settings.get("acks", "skip-dialog-key");
     if (options.event && options.event[skipKey]) {
       skip = true;
@@ -931,15 +935,9 @@ export class AcksActor extends Actor {
       rollParts.push(data.thac0.bba.toString());
     }
     if (options.type == "missile") {
-      rollParts.push(
-        data.scores.dex.mod.toString(),
-        data.thac0.mod.missile.toString()
-      );
+      rollParts.push(data.scores.dex.mod.toString(), data.thac0.mod.missile.toString());
     } else if (options.type == "melee") {
-      rollParts.push(
-        data.scores.str.mod.toString(),
-        data.thac0.mod.melee.toString()
-      );
+      rollParts.push(data.scores.str.mod.toString(), data.thac0.mod.melee.toString());
     }
     if (attData?.item?.system.bonus) {
       rollParts.push(attData.item.system.bonus);
@@ -1017,7 +1015,6 @@ export class AcksActor extends Actor {
     return output;
   }
 
-
   /* -------------------------------------------- */
   _isSlow() {
     this.system.isSlow = false;
@@ -1046,21 +1043,18 @@ export class AcksActor extends Actor {
         totalEncumbrance += item.system.weight6;
       }
     });
-    totalEncumbrance /= 6 // Get the weight in stones
-    totalEncumbrance += this.getTotalMoneyEncumbrance().stone
+    totalEncumbrance /= 6; // Get the weight in stones
+    totalEncumbrance += this.getTotalMoneyEncumbrance().stone;
 
     // Select the max encumbrance value
-    let maxEncumbrance = (this.system.encumbrance.forcemax>0) ? this.system.encumbrance.forcemax : 20 + this.system.scores.str.mod;
+    let maxEncumbrance =
+      this.system.encumbrance.forcemax > 0 ? this.system.encumbrance.forcemax : 20 + this.system.scores.str.mod;
     if (this.system.encumbrance.max != maxEncumbrance && this._id) {
-      this.update({ 'system.encumbrance.max': maxEncumbrance });
+      this.update({ "system.encumbrance.max": maxEncumbrance });
     }
 
     this.system.encumbrance = {
-      pct: Math.clamp(
-        (totalEncumbrance / maxEncumbrance) * 100,
-        0,
-        100
-      ),
+      pct: Math.clamp((totalEncumbrance / maxEncumbrance) * 100, 0, 100),
       max: maxEncumbrance,
       encumbered: totalEncumbrance > maxEncumbrance,
       value: Math.round(totalEncumbrance),
@@ -1091,9 +1085,9 @@ export class AcksActor extends Actor {
 
     // Formulas from ACKS Revised Rulebook page 17
     this.system.movementacks.exploration = baseSpeed;
-    this.system.movementacks.combat = Math.floor(baseSpeed / 3 * 10) / 10;
+    this.system.movementacks.combat = Math.floor((baseSpeed / 3) * 10) / 10;
     this.system.movementacks.chargerun = baseSpeed;
-    this.system.movementacks.expedition = Math.floor(baseSpeed / 5 * 10) / 10;
+    this.system.movementacks.expedition = Math.floor((baseSpeed / 5) * 10) / 10;
     this.system.movement.base = baseSpeed;
   }
 
@@ -1107,12 +1101,17 @@ export class AcksActor extends Actor {
   }
   /*-------------------------------------------- */
   buildRollList() {
-    let rolls = []
+    let rolls = [];
     for (let key in this.system.scores) {
-      let attr = this.system.scores[key]
-      rolls.push({ key: key, value: attr.value, name: game.i18n.localize("ACKS.scores." + key + ".short"), type: "score" })
+      let attr = this.system.scores[key];
+      rolls.push({
+        key: key,
+        value: attr.value,
+        name: game.i18n.localize("ACKS.scores." + key + ".short"),
+        type: "score",
+      });
     }
-    return rolls
+    return rolls;
   }
 
   computeAC() {
@@ -1165,32 +1164,14 @@ export class AcksActor extends Actor {
       22: 7,
       23: 8,
       24: 9,
-      25: 10
+      25: 10,
     };
-    data.scores.str.mod = AcksActor._valueFromTable(
-      standard,
-      data.scores.str.value
-    );
-    data.scores.int.mod = AcksActor._valueFromTable(
-      standard,
-      data.scores.int.value
-    );
-    data.scores.dex.mod = AcksActor._valueFromTable(
-      standard,
-      data.scores.dex.value
-    );
-    data.scores.cha.mod = AcksActor._valueFromTable(
-      standard,
-      data.scores.cha.value
-    );
-    data.scores.wis.mod = AcksActor._valueFromTable(
-      standard,
-      data.scores.wis.value
-    );
-    data.scores.con.mod = AcksActor._valueFromTable(
-      standard,
-      data.scores.con.value
-    );
+    data.scores.str.mod = AcksActor._valueFromTable(standard, data.scores.str.value);
+    data.scores.int.mod = AcksActor._valueFromTable(standard, data.scores.int.value);
+    data.scores.dex.mod = AcksActor._valueFromTable(standard, data.scores.dex.value);
+    data.scores.cha.mod = AcksActor._valueFromTable(standard, data.scores.cha.value);
+    data.scores.wis.mod = AcksActor._valueFromTable(standard, data.scores.wis.value);
+    data.scores.con.mod = AcksActor._valueFromTable(standard, data.scores.con.value);
 
     const capped = {
       0: -2,
@@ -1202,14 +1183,8 @@ export class AcksActor extends Actor {
       16: 1,
       18: 2,
     };
-    data.scores.dex.init = AcksActor._valueFromTable(
-      standard,
-      data.scores.dex.value
-    );
-    data.scores.cha.npc = AcksActor._valueFromTable(
-      standard,
-      data.scores.cha.value
-    );
+    data.scores.dex.init = AcksActor._valueFromTable(standard, data.scores.dex.value);
+    data.scores.cha.npc = AcksActor._valueFromTable(standard, data.scores.cha.value);
     data.scores.cha.retain = data.scores.cha.mod + 4;
     data.scores.cha.loyalty = data.scores.cha.mod;
 
@@ -1224,10 +1199,7 @@ export class AcksActor extends Actor {
       18: 6,
       19: 2,
     };
-    data.exploration.odMod = AcksActor._valueFromTable(
-      od,
-      data.scores.str.value
-    );
+    data.exploration.odMod = AcksActor._valueFromTable(od, data.scores.str.value);
 
     const literacy = {
       3: "ACKS.Illiterate",
@@ -1256,7 +1228,6 @@ export class AcksActor extends Actor {
       spoken,
       data.scores.int.value
     );*/
-
   }
 
   /* -------------------------------------------- */
@@ -1280,11 +1251,11 @@ export class AcksActor extends Actor {
       90: "3d10",
       111: "4d10",
       141: "5d10",
-      171: "6d10"
+      171: "6d10",
     };
 
-    let newBHR = "1d3"
-    let value = data.hp.max
+    let newBHR = "1d3";
+    let value = data.hp.max;
     if (value > 171) {
       let diceNumber = Math.floor((value - 171) / 30) + 6;
       newBHR = diceNumber + "d10";
@@ -1292,14 +1263,14 @@ export class AcksActor extends Actor {
       newBHR = AcksActor._valueFromTable(bhrcalc, Number(data.hp.max));
     }
     if (!newBHR) {
-      newBHR = "1d2"
+      newBHR = "1d2";
     }
     if (newBHR != data.hp.bhr) {
       data.hp.bhr = newBHR;
-      this.update({ 'system.hp.bhr': newBHR });
-      this.update({ 'system.fight.healingrate': newBHR });
+      this.update({ "system.hp.bhr": newBHR });
+      this.update({ "system.fight.healingrate": newBHR });
     }
-  };
+  }
 
   /* -------------------------------------------- */
   computeAAB() {

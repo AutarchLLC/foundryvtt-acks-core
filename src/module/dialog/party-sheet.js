@@ -1,5 +1,4 @@
 export class AcksPartySheet extends FormApplication {
-
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["acks", "dialog", "party-sheet"],
@@ -28,20 +27,20 @@ export class AcksPartySheet extends FormApplication {
    */
   getData() {
     const settings = {
-      ascending: game.settings.get('acks', 'ascendingAC')
+      ascending: game.settings.get("acks", "ascendingAC"),
     };
 
     const data = {
       data: game.actors.contents,
       config: CONFIG.ACKS,
       user: game.user,
-      settings: settings
+      settings: settings,
     };
     console.log("PARTY", data);
     return data;
   }
 
-  _  /* -------------------------------------------- */
+  /* -------------------------------------------- */
   onDrop(event) {
     event.preventDefault();
     // WIP Drop Items
@@ -67,7 +66,7 @@ export class AcksPartySheet extends FormApplication {
     `;
 
     let pcs = game.actors.contents.filter((actor) => {
-      return actor.getFlag('acks', 'party') && actor.type === "character";
+      return actor.getFlag("acks", "party") && actor.type === "character";
     });
 
     new Dialog({
@@ -81,7 +80,9 @@ export class AcksPartySheet extends FormApplication {
             let toDeal = html.find('input[name="total"]').val();
             // calculate number of shares
             let shares = 0;
-            pcs.forEach(c => { shares += c.system.details.xp.share });
+            pcs.forEach((c) => {
+              shares += c.system.details.xp.share;
+            });
             const value = parseFloat(toDeal) / shares;
             if (value) {
               // Give experience
@@ -105,37 +106,38 @@ export class AcksPartySheet extends FormApplication {
       actors: game.actors.contents,
     };
     const content = await renderTemplate(template, templateData);
-    new Dialog({
-      title: "Select Party Characters",
-      content: content,
-      buttons: {
-        set: {
-          icon: '<i class="fas fa-save"></i>',
-          label: game.i18n.localize("ACKS.Update"),
-          callback: (html) => {
-            const checks = html.find("input[data-action='select-actor']");
-            checks.each(async (_, c) => {
-              const actorId = c.dataset.actorId;
-              const actor = game.actors.contents.find((actor) => actor.id === actorId);
-              if(actor) {
-                await actor.setFlag('acks', 'party', c.checked);
-              } else {
-                ui.notifications.error(`Something went wrong. Can't find ${actor.name}.`);
-              }
-            });
+    new Dialog(
+      {
+        title: "Select Party Characters",
+        content: content,
+        buttons: {
+          set: {
+            icon: '<i class="fas fa-save"></i>',
+            label: game.i18n.localize("ACKS.Update"),
+            callback: (html) => {
+              const checks = html.find("input[data-action='select-actor']");
+              checks.each(async (_, c) => {
+                const actorId = c.dataset.actorId;
+                const actor = game.actors.contents.find((actor) => actor.id === actorId);
+                if (actor) {
+                  await actor.setFlag("acks", "party", c.checked);
+                } else {
+                  ui.notifications.error(`Something went wrong. Can't find ${actor.name}.`);
+                }
+              });
+            },
           },
         },
       },
-    }, { height: "auto", width: 220 }).render(true);
+      { height: "auto", width: 220 },
+    ).render(true);
   }
 
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
 
-    html
-      .find(".item-controls .item-control .select-actors")
-      .click(this._selectActors.bind(this));
+    html.find(".item-controls .item-control .select-actors").click(this._selectActors.bind(this));
 
     html.find(".item-controls .item-control .deal-xp").click(this._dealXP.bind(this));
 
@@ -144,6 +146,6 @@ export class AcksPartySheet extends FormApplication {
     html.find(".field-img button[data-action='open-sheet']").click((ev) => {
       let actorId = ev.currentTarget.parentElement.parentElement.parentElement.dataset.actorId;
       game.actors.get(actorId).sheet.render(true);
-    })
+    });
   }
 }

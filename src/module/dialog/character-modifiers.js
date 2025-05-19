@@ -2,10 +2,9 @@
 export class AcksCharacterModifiers extends FormApplication {
   static get defaultOptions() {
     const options = super.defaultOptions;
-    options.classes = ["acks", "dialog", "modifiers"],
-    options.id = 'sheet-modifiers';
-    options.template =
-      'systems/acks/templates/actors/dialogs/modifiers-dialog.html';
+    options.classes = ["acks", "dialog", "modifiers"];
+    options.id = "sheet-modifiers";
+    options.template = "systems/acks/templates/actors/dialogs/modifiers-dialog.html";
     options.width = 240;
     return options;
   }
@@ -30,7 +29,7 @@ export class AcksCharacterModifiers extends FormApplication {
     const data = this.object;
 
     data.user = game.user;
-    console.log("MODIFIERS", data); 
+    console.log("MODIFIERS", data);
     return data;
   }
 

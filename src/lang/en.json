@@ -17,7 +17,7 @@
     }
   },
   "COMBAT.TurnPrev": "Prev. Combatant",
-  "COMBAT.TurnNext" : "Next Combatant",
+  "COMBAT.TurnNext": "Next Combatant",
   "COMBAT.ToggleDead": "Defeated",
   "COMBAT.CombatNotStarted": "Combat is not started. Please start the combat first.",
   "COMBAT.createGroup": "Create a NPC group from selected tokens",
@@ -111,7 +111,7 @@
   "ACKS.money.quantitycarried": "Quantity (Carried)",
   "ACKS.money.quantitybank": "Quantity (Bank)",
   "ACKS.money.valuecopper": "Value (CP)",
-  "ACKS.money.valuegold": "Value (gp)" ,
+  "ACKS.money.valuegold": "Value (gp)",
 
   "ACKS.Retainer": "Retainer",
   "ACKS.RetainerWage": "Wage",
@@ -448,7 +448,7 @@
   "ACKS.Effect.Temporary": "Temporary",
   "ACKS.Effect.Passive": "Passive",
   "ACKS.Effect.Inactive": "Inactive",
-  "ACKS.Effect.Source"  : "Source",
+  "ACKS.Effect.Source": "Source",
 
   "ACKS.error.HenchmanCharacter": "Henchman must be dropped on a character only",
   "ACKS.error.HenchmanMonster": "Henchman must be of character type",
@@ -457,7 +457,7 @@
   "ACKS.error.NotEnoughMoney": "Not enough money !",
   "ACKS.error.ActorLinked": "Actor must be a linked Actor (see Token settings of the actor)",
   "ACKS.error.HenchmanAlready": "Henchman already added to another actor",
-  "ACKS.employer" : "Employer",
+  "ACKS.employer": "Employer",
   "ACKS.hirelings": "Hirelings",
   "ACKS.hireling.mercenary": "Mercenary",
   "ACKS.hireling.henchman": "Henchman",

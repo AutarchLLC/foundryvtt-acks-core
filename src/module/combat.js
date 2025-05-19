@@ -2,7 +2,6 @@ import { AcksSurprise } from "./surprise-manager.js";
 import { AcksUtility } from "./utility.js";
 
 export class AcksCombatClass extends Combat {
-
   /*******************************************************/
   /**
    * Return the Array of combatants sorted into initiative order, breaking ties alphabetically by name.
@@ -11,7 +10,7 @@ export class AcksCombatClass extends Combat {
   setupTurns() {
     let locked = this.getFlag("acks", "lock-turns");
     if (locked) {
-      return
+      return;
     }
 
     console?.log("Setup Turns....");
@@ -28,7 +27,7 @@ export class AcksCombatClass extends Combat {
     if (!this.previous) this.previous = this.current;
 
     // Return the array of prepared turns
-    return this.turns = turns;
+    return (this.turns = turns);
   }
 
   /*******************************************************/
@@ -36,7 +35,7 @@ export class AcksCombatClass extends Combat {
     if (!game.user.isGM) {
       console.log("Emit Roll Initiative", ids, options);
       game.socket.emit("system.acks", { type: "rollInitiative", combatId: this.id, ids: ids, options: options });
-      return
+      return;
     }
     console.log("%%%%%%%%% Roll Initiative", ids, options);
     await this.setFlag("acks", "lock-turns", true);
@@ -46,29 +45,29 @@ export class AcksCombatClass extends Combat {
     let rollMode = game.settings.get("core", "rollMode");
 
     // Get current groups
-    let groups = this.getFlag('acks', 'groups') || [];
-    let maxInit = { value: -1, cId: "" }
+    let groups = this.getFlag("acks", "groups") || [];
+    let maxInit = { value: -1, cId: "" };
     let updates = [];
     for (let cId of ids) {
       const c = this.combatants.get(cId);
       //console.log("Init for combattant", cId, c, ids)
-      let id = c._id || c.id
+      let id = c._id || c.id;
       // get the associated token
       let tokenId = c.token.id;
       // Check if the current token ID is in a group
       let groupData = groups.find((groupData) => groupData.tokens.includes(tokenId));
       let initValue = -1;
-      let showMessage = true
-      let roll
+      let showMessage = true;
+      let roll;
       if (groupData) {
         if (groupData.initiative > 0) {
           initValue = groupData.initiative;
-          showMessage = false
+          showMessage = false;
         } else {
-          roll = new Roll(`1d6+${groupData.initiativeBonus}`)
+          roll = new Roll(`1d6+${groupData.initiativeBonus}`);
           await roll.evaluate();
           initValue = roll.total;
-          groupData.initiative = initValue
+          groupData.initiative = initValue;
         }
       } else {
         roll = c.getInitiativeRoll();
@@ -83,23 +82,25 @@ export class AcksCombatClass extends Combat {
 
       if (showMessage) {
         // Determine the roll mode
-        if ((c.token.hidden || c.hidden)
-          && (rollMode === "roll")) {
+        if ((c.token.hidden || c.hidden) && rollMode === "roll") {
           rollMode = "gmroll";
         }
 
         // Construct chat message data
-        const messageData = foundry.utils.mergeObject({
-          speaker: {
-            scene: canvas.scene._id,
-            actor: c.actor?.id || null,
-            token: c.token.id,
-            alias: c.token.name
+        const messageData = foundry.utils.mergeObject(
+          {
+            speaker: {
+              scene: canvas.scene._id,
+              actor: c.actor?.id || null,
+              token: c.token.id,
+              alias: c.token.name,
+            },
+            flavor: game.i18n.format("ACKS.roll.individualInit", {
+              name: c.token.name,
+            }),
           },
-          flavor: game.i18n.format('ACKS.roll.individualInit', {
-            name: c.token.name,
-          }),
-        }, {});
+          {},
+        );
 
         const chatData = await roll.toMessage(messageData, {
           rollMode,
@@ -125,7 +126,6 @@ export class AcksCombatClass extends Combat {
     }, 200);
 
     return this;
-
   }
   /*******************************************************/
   async rollAll(options) {
@@ -133,7 +133,7 @@ export class AcksCombatClass extends Combat {
       ui.notifications.warn(game.i18n.localize("COMBAT.CombatNotStarted"));
       return;
     }
-    return super.rollAll(options)
+    return super.rollAll(options);
   }
 
   /*******************************************************/
@@ -142,7 +142,7 @@ export class AcksCombatClass extends Combat {
       ui.notifications.warn(game.i18n.localize("COMBAT.CombatNotStarted"));
       return;
     }
-    return super.rollNPC(options)
+    return super.rollNPC(options);
   }
 
   /*******************************************************/
@@ -153,28 +153,28 @@ export class AcksCombatClass extends Combat {
 
     let d = new Dialog({
       title: "Actions declaration",
-      content: "<p>Start of Round 1. About to roll Initiative.</p><p>Ask players to declare any actions for this round.</p>",
+      content:
+        "<p>Start of Round 1. About to roll Initiative.</p><p>Ask players to declare any actions for this round.</p>",
       buttons: {
         init: {
           icon: '<i class="fas fa-check"></i>',
           label: "Action declared, start rolling Initiative",
           callback: async () => {
-            await this.rollAll()
+            await this.rollAll();
             Hooks.callAll("combatStart", this, updateData);
-            console.log(">>>>>>>>>> Start Combat", this, updateData)
+            console.log(">>>>>>>>>> Start Combat", this, updateData);
             return this.update(updateData);
-          }
+          },
         },
         cancel: {
           icon: '<i class="fas fa-times"></i>',
           label: "Cancel",
-          callback: () => {}
-        }
+          callback: () => {},
+        },
       },
-      default: "init"
+      default: "init",
     });
     d.render(true);
-
   }
 
   /*******************************************************/
@@ -192,12 +192,12 @@ export class AcksCombatClass extends Combat {
 
   /*******************************************************/
   async startCombat() {
-    console.log("Start Combat 1 !")
-    await this.cleanupStatus("outnumbering")
+    console.log("Start Combat 1 !");
+    await this.cleanupStatus("outnumbering");
     let pools = AcksCombat.getCombatantsPool();
     this.pools = pools;
 
-    console.log("Start Combat 2 !", pools)
+    console.log("Start Combat 2 !", pools);
     let surpriseDialog = new AcksSurprise({ pools, combatData: this });
     await surpriseDialog.render(true);
   }
@@ -229,7 +229,7 @@ export class AcksCombatClass extends Combat {
 
     // Maybe advance to the next round
     let round = this.round;
-    if ((this.round === 0) || (next === null) || (next >= this.turns.length)) {
+    if (this.round === 0 || next === null || next >= this.turns.length) {
       return this.nextRound();
     }
 
@@ -242,22 +242,24 @@ export class AcksCombatClass extends Combat {
 
   /*******************************************************/
   async nextRound() {
-    console.log('NEXT ROUND')
-    this.turnsDone = false
+    console.log("NEXT ROUND");
+    this.turnsDone = false;
 
     let turn = this.turn === null ? null : 0; // Preserve the fact that it's no-one's turn currently.
     // Remove surprised effects
     if (this.round == 1) {
-      this.turns.forEach(t => t.actor.hasEffect("surprised") ? AcksUtility.removeEffect(t.actor, "surprised") : null);
+      this.turns.forEach((t) =>
+        t.actor.hasEffect("surprised") ? AcksUtility.removeEffect(t.actor, "surprised") : null,
+      );
     }
-    this.turns.forEach(t => t.actor.hasEffect("delayed") ? AcksUtility.removeEffect(t.actor, "delayed") : null);
-    this.turns.forEach(t => t.actor.hasEffect("done") ? AcksUtility.removeEffect(t.actor, "done") : null);
+    this.turns.forEach((t) => (t.actor.hasEffect("delayed") ? AcksUtility.removeEffect(t.actor, "delayed") : null));
+    this.turns.forEach((t) => (t.actor.hasEffect("done") ? AcksUtility.removeEffect(t.actor, "done") : null));
     console.log("ROUND", this.round, this.turns);
 
     AcksCombat.resetInitiative(this);
 
-    if (this.settings.skipDefeated && (turn !== null)) {
-      turn = this.turns.findIndex(t => !t.isDefeated && (this.round == 1 && !t.actor.hasEffect("surprised")));
+    if (this.settings.skipDefeated && turn !== null) {
+      turn = this.turns.findIndex((t) => !t.isDefeated && this.round == 1 && !t.actor.hasEffect("surprised"));
       if (turn === -1) {
         ui.notifications.warn("COMBAT.NoneRemaining", { localize: true });
         turn = 0;
@@ -286,12 +288,12 @@ export class AcksCombatClass extends Combat {
     let friendlyMore = pools.friendly.length > pools.hostile.length;
     // DEBUG : console.log("Pools", pools, hostileMore, friendlyMore);
     for (let cbt of this.combatants) {
-      await cbt.setFlag("acks", "outnumbering", false)
+      await cbt.setFlag("acks", "outnumbering", false);
       if (cbt.token.disposition == -1 && hostileMore) {
-        await cbt.setFlag("acks", "outnumbering", true)
+        await cbt.setFlag("acks", "outnumbering", true);
       }
       if (cbt.token.disposition == 1 && friendlyMore) {
-        await cbt.setFlag("acks", "outnumbering", true)
+        await cbt.setFlag("acks", "outnumbering", true);
       }
     }
   }
@@ -331,8 +333,8 @@ export class AcksCombatClass extends Combat {
         await this.cleanupStatus("done");
         await this.cleanupStatus("readied");
         await this.cleanupStatus("delayed");
-        await this.delete()
-      }
+        await this.delete();
+      },
     });
   }
 
@@ -340,28 +342,28 @@ export class AcksCombatClass extends Combat {
   manageGroup(groupTokens) {
     // Check if the tokens are in the current combatant list
     let combatants = this.combatants;
-    let combatantTokens = combatants.map(c => c.token.id);
-    let missingTokens = groupTokens.filter(t => !combatantTokens.includes(t.id));
+    let combatantTokens = combatants.map((c) => c.token.id);
+    let missingTokens = groupTokens.filter((t) => !combatantTokens.includes(t.id));
     if (missingTokens.length > 0) {
       ui.notifications.warn("Tokens are not in the combatant list");
       return;
     }
 
-    let groups = foundry.utils.duplicate(this.getFlag('acks', 'groups') || [])
+    let groups = foundry.utils.duplicate(this.getFlag("acks", "groups") || []);
     // Group index is the group size
     let groupId = groups.length;
-    groups[groupId] = { initiative: -1, initiativeBonus: 1000, tokens: groupTokens.map(t => t.id) }
+    groups[groupId] = { initiative: -1, initiativeBonus: 1000, tokens: groupTokens.map((t) => t.id) };
 
     // Remove tokens already present in another group
     groups.forEach(function (groupData, id) {
       if (id != groupId) {
-        groupTokens.forEach(t => {
+        groupTokens.forEach((t) => {
           if (groupData.tokens.includes(t.id)) {
             groupData.tokens.splice(groupData.tokens.indexOf(t.id), 1);
           }
         });
       }
-    })
+    });
     // Then parse the group array and remove empty or single groups
     groups = groups.filter((groupData) => {
       return groupData.tokens.length > 1;
@@ -369,25 +371,23 @@ export class AcksCombatClass extends Combat {
 
     // Then get the worst initiative value
     groups.forEach(function (groupData, id) {
-      groupData.initiativeBonus = 10000
-      groupTokens.forEach(t => {
-        let combatant = combatants.find(cb => cb.token.id == t.id);
+      groupData.initiativeBonus = 10000;
+      groupTokens.forEach((t) => {
+        let combatant = combatants.find((cb) => cb.token.id == t.id);
         if (combatant.actor.system.initiative.value < groupData.initiativeBonus) {
           groupData.initiativeBonus = combatant.actor.system.initiative.value;
         }
       });
-    })
+    });
 
     // Save the groups
-    this.setFlag('acks', 'groups', groups);
+    this.setFlag("acks", "groups", groups);
     ui.notifications.info("Groups created/updated");
     // Log the current group state
     console.log("Groups", groups);
   }
-
 }
 export class AcksCombat {
-
   /*******************************************************/
   static async rollInitiative(combat, data) {
     console.log(">>>>Roll Initiative", combat, data);
@@ -404,7 +404,7 @@ export class AcksCombat {
       const roll = new Roll("1d6");
       await roll.evaluate();
       await roll.toMessage({
-        flavor: game.i18n.format('ACKS.roll.initiative', {
+        flavor: game.i18n.format("ACKS.roll.initiative", {
           group: CONFIG["ACKS"].colors[group],
         }),
       });
@@ -455,28 +455,29 @@ export class AcksCombat {
       _id: id,
       initiative: value,
       turn: 1,
-
     });
 
     // Determine the roll mode
     let rollMode = game.settings.get("core", "rollMode");
-    if ((combatant.token.hidden || combatant.hidden)
-      && (rollMode === "roll")) {
+    if ((combatant.token.hidden || combatant.hidden) && rollMode === "roll") {
       rollMode = "gmroll";
     }
 
     // Construct chat message data
-    const messageData = foundry.utils.mergeObject({
-      speaker: {
-        scene: canvas.scene._id,
-        actor: combatant.actor?.id || null,
-        token: combatant.token.id,
-        alias: combatant.token.name
+    const messageData = foundry.utils.mergeObject(
+      {
+        speaker: {
+          scene: canvas.scene._id,
+          actor: combatant.actor?.id || null,
+          token: combatant.token.id,
+          alias: combatant.token.name,
+        },
+        flavor: game.i18n.format("ACKS.roll.individualInit", {
+          name: combatant.token.name,
+        }),
       },
-      flavor: game.i18n.format('ACKS.roll.individualInit', {
-        name: combatant.token.name,
-      }),
-    }, {});
+      {},
+    );
 
     const chatData = await roll.toMessage(messageData, {
       rollMode,
@@ -489,7 +490,6 @@ export class AcksCombat {
     }
 
     messages.push(chatData);
-
   }
   /*******************************************************/
   static async individualInitiative(combat, data) {
@@ -542,17 +542,11 @@ export class AcksCombat {
     // in Application v2 html is NOT jQuery by default
     const $html = V13 ? $(html) : html;
     $html.find(".initiative").each((_, span) => {
-      span.innerHTML =
-        span.innerHTML == "-789.00"
-          ? '<i class="fas fa-weight-hanging"></i>'
-          : span.innerHTML;
-      span.innerHTML =
-        span.innerHTML == "-790.00"
-          ? '<i class="fas fa-dizzy"></i>'
-          : span.innerHTML;
+      span.innerHTML = span.innerHTML == "-789.00" ? '<i class="fas fa-weight-hanging"></i>' : span.innerHTML;
+      span.innerHTML = span.innerHTML == "-790.00" ? '<i class="fas fa-dizzy"></i>' : span.innerHTML;
     });
 
-    if(object.viewed) {
+    if (object.viewed) {
       let rollNPC = V13 ? $html.find(`[data-action='rollNPC']`) : $html.find(`[data-control='rollNPC']`);
       rollNPC.after(` <a class="combat-button combat-control create-group" aria-label="{{localize 'COMBAT.createGroup'}}" role="button"
         data-tooltip="COMBAT.createGroup" data-control="create-group">
@@ -569,39 +563,39 @@ export class AcksCombat {
         const cmbtant = game.combat.combatants.get(ct.dataset.combatantId);
         if (cmbtant?.actor) {
           const actionDone = cmbtant.actor.hasEffect("done") ? "active" : "";
-          const actionDoneHtml = V13 ?
-              `<button type="button" class="inline-control combatant-control action-done ${actionDone} icon fa-solid fa-check" data-tooltip aria-label="Done"></button>` :
-              `<a class='combatant-control action-done ${actionDone}' data-tooltip="Done"><i class='fas fa-check'></i></a>`;
+          const actionDoneHtml = V13
+            ? `<button type="button" class="inline-control combatant-control action-done ${actionDone} icon fa-solid fa-check" data-tooltip aria-label="Done"></button>`
+            : `<a class='combatant-control action-done ${actionDone}' data-tooltip="Done"><i class='fas fa-check'></i></a>`;
           controls.eq(1).after(actionDoneHtml);
 
           const readied = cmbtant.actor.hasEffect("readied") ? "active" : "";
-          const readiedHtml = V13 ?
-              `<button type="button" class="inline-control combatant-control click-readied ${readied} icon fa-solid fa-thumbs-up" data-tooltip aria-label="Readied"></button>` :
-              `<a class='combatant-control click-readied ${readied}' data-tooltip="Readied"><i class='fas fa-thumbs-up'></i></a>`;
+          const readiedHtml = V13
+            ? `<button type="button" class="inline-control combatant-control click-readied ${readied} icon fa-solid fa-thumbs-up" data-tooltip aria-label="Readied"></button>`
+            : `<a class='combatant-control click-readied ${readied}' data-tooltip="Readied"><i class='fas fa-thumbs-up'></i></a>`;
           controls.eq(1).after(readiedHtml);
 
           const delayed = cmbtant.actor.hasEffect("delayed") ? "active" : "";
-          const delayedHtml = V13 ?
-              `<button type="button" class="inline-control combatant-control click-delayed ${delayed} icon fa-solid fa-clock" data-tooltip aria-label="Delayed"></button>` :
-              `<a class='combatant-control click-delayed ${delayed}' data-tooltip="Delayed"><i class='fas fa-clock'></i></a>`;
+          const delayedHtml = V13
+            ? `<button type="button" class="inline-control combatant-control click-delayed ${delayed} icon fa-solid fa-clock" data-tooltip aria-label="Delayed"></button>`
+            : `<a class='combatant-control click-delayed ${delayed}' data-tooltip="Delayed"><i class='fas fa-clock'></i></a>`;
           controls.eq(1).after(delayedHtml);
 
           const slumbering = cmbtant.actor.hasEffect("slumbering") ? "active" : "";
-          const slumberingHtml = V13 ?
-              `<button type="button" class="inline-control combatant-control click-slumbering ${slumbering} icon fa-solid fa-person-falling-burst" data-tooltip aria-label="Slumbering"></button>` :
-              `<a class='combatant-control click-slumbering ${slumbering}' data-tooltip="Slumbering"><i class='fas fa-person-falling-burst'></i></a>`;
+          const slumberingHtml = V13
+            ? `<button type="button" class="inline-control combatant-control click-slumbering ${slumbering} icon fa-solid fa-person-falling-burst" data-tooltip aria-label="Slumbering"></button>`
+            : `<a class='combatant-control click-slumbering ${slumbering}' data-tooltip="Slumbering"><i class='fas fa-person-falling-burst'></i></a>`;
           controls.eq(1).after(slumberingHtml);
 
           const spellActive = cmbtant.flags.acks?.prepareSpell ? "active" : "";
-          const spellActiveHtml = V13 ?
-              `<button type="button" class="inline-control combatant-control prepare-spell ${spellActive} icon fa-solid fa-magic" data-tooltip aria-label="Casting"></button>` :
-              `<a class='combatant-control prepare-spell ${spellActive}' data-tooltip="Casting"><i class='fas fa-magic'></i></a>`;
+          const spellActiveHtml = V13
+            ? `<button type="button" class="inline-control combatant-control prepare-spell ${spellActive} icon fa-solid fa-magic" data-tooltip aria-label="Casting"></button>`
+            : `<a class='combatant-control prepare-spell ${spellActive}' data-tooltip="Casting"><i class='fas fa-magic'></i></a>`;
           controls.eq(1).after(spellActiveHtml);
 
           const outNumbering = cmbtant.flags.acks?.outnumbering ? "active" : "";
-          const outNumberingHtml = V13 ?
-              `<button type="button" class="inline-control combatant-control outnumbering ${outNumbering} icon fa-solid fa-people-group" data-tooltip aria-label="Outnumbering"></button>` :
-              `<span class='combatant-control outnumbering ${outNumbering}' data-tooltip="Outnumbering"><i class='fas fa-people-group'></i></span>`;
+          const outNumberingHtml = V13
+            ? `<button type="button" class="inline-control combatant-control outnumbering ${outNumbering} icon fa-solid fa-people-group" data-tooltip aria-label="Outnumbering"></button>`
+            : `<span class='combatant-control outnumbering ${outNumbering}' data-tooltip="Outnumbering"><i class='fas fa-people-group'></i></span>`;
           controls.eq(1).after(outNumberingHtml);
         }
       }
@@ -612,7 +606,7 @@ export class AcksCombat {
 
     $html.find(".combatant").each((_, ct) => {
       // Get the groups
-      const groups = game.combat.getFlag('acks', 'groups') || [];
+      const groups = game.combat.getFlag("acks", "groups") || [];
 
       if (colorEnabled) {
         const combatant = object.viewed.combatants.get(ct.dataset.combatantId);
@@ -623,7 +617,7 @@ export class AcksCombat {
             // Add the group ID to the H4 content text
             tokenH4.text(tokenH4.text() + ` [G${index}]`);
           }
-        })
+        });
         // Append colored flag
         let color = combatant?.token?.disposition === 1 ? colorFriendlies : colorHostiles;
         //console.log("Token H4", tokenH4, color);
@@ -635,7 +629,7 @@ export class AcksCombat {
 
   /*******************************************************/
   static updateCombatant(combat, combatant, data) {
-    let init = "individual" //UNUSED game.settings.get("acks", "initiative");
+    let init = "individual"; //UNUSED game.settings.get("acks", "initiative");
     // Why do you reroll ?
     // Legacy Slowness code from OSE
     //    if (combatant.actor.data.data.isSlow) {
@@ -667,7 +661,7 @@ export class AcksCombat {
 
       // Toggle hold announcement
       const id = $(event.currentTarget).closest(".combatant")[0].dataset.combatantId;
-      const isActive = event.currentTarget.classList.contains('active');
+      const isActive = event.currentTarget.classList.contains("active");
       const combatant = game.combat.combatants.get(id);
       await combatant.update({
         _id: id,
@@ -677,14 +671,14 @@ export class AcksCombat {
           },
         },
       });
-    })
+    });
 
     html.find(".combatant-control.prepare-spell").click(async (event) => {
       event.preventDefault();
 
       // Toggle spell announcement
       const id = $(event.currentTarget).closest(".combatant")[0].dataset.combatantId;
-      const isActive = event.currentTarget.classList.contains('active');
+      const isActive = event.currentTarget.classList.contains("active");
       const combatant = game.combat.combatants.get(id);
       if (isActive) {
         await combatant.setFlag("acks", "prepareSpell", false);
@@ -698,10 +692,10 @@ export class AcksCombat {
 
       // Toggle retreat announcement
       const id = $(event.currentTarget).closest(".combatant")[0].dataset.combatantId;
-      const isActive = event.currentTarget.classList.contains('active');
+      const isActive = event.currentTarget.classList.contains("active");
       const combatant = game.combat.combatants.get(id);
       if (isActive) {
-        AcksUtility.removeEffect(combatant.actor, "done")
+        AcksUtility.removeEffect(combatant.actor, "done");
       } else {
         AcksUtility.removeEffect(combatant.actor, "delayed");
         AcksUtility.removeEffect(combatant.actor, "readied");
@@ -714,7 +708,7 @@ export class AcksCombat {
 
       // Toggle retreat announcement
       const id = $(event.currentTarget).closest(".combatant")[0].dataset.combatantId;
-      const isActive = event.currentTarget.classList.contains('active');
+      const isActive = event.currentTarget.classList.contains("active");
       const combatant = game.combat.combatants.get(id);
       if (combatant.actor.hasEffect("done")) {
         ui.notifications.warn("You can't mark a delayed or done combatant as ready");
@@ -733,7 +727,7 @@ export class AcksCombat {
 
       // Toggle retreat announcement
       const id = $(event.currentTarget).closest(".combatant")[0].dataset.combatantId;
-      const isActive = event.currentTarget.classList.contains('active');
+      const isActive = event.currentTarget.classList.contains("active");
       const combatant = game.combat.combatants.get(id);
       if (combatant.actor.hasEffect("done")) {
         ui.notifications.warn("You can't mark a readied or done combatant as delayed");
@@ -752,7 +746,7 @@ export class AcksCombat {
 
       // Toggle retreat announcement
       const id = $(event.currentTarget).closest(".combatant")[0].dataset.combatantId;
-      const isActive = event.currentTarget.classList.contains('active');
+      const isActive = event.currentTarget.classList.contains("active");
       const combatant = game.combat.combatants.get(id);
       if (isActive) {
         AcksUtility.removeEffect(combatant.actor, "slumbering");
@@ -763,7 +757,7 @@ export class AcksCombat {
 
     html.find(".combat-control.create-group").click(async (event) => {
       event.preventDefault();
-      let groupTokens = canvas.tokens.controlled
+      let groupTokens = canvas.tokens.controlled;
       // Check if all tokens are NPCs
       for (let token of groupTokens) {
         if (token.actor.hasPlayerOwner) {
@@ -778,7 +772,6 @@ export class AcksCombat {
       }
       game.combat.manageGroup(groupTokens);
     });
-
   }
 
   /*******************************************************/
@@ -825,7 +818,7 @@ export class AcksCombat {
 
       await game.combat.update({
         data: data,
-      })
+      });
 
       game.combat.setupTurns();
     });
@@ -833,8 +826,8 @@ export class AcksCombat {
 
   /*******************************************************/
   static activateCombatant(li) {
-    const turn = game.combat.turns.findIndex(turn => turn._id === li.data('combatant-id'));
-    game.combat.update({ turn: turn })
+    const turn = game.combat.turns.findIndex((turn) => turn._id === li.data("combatant-id"));
+    game.combat.update({ turn: turn });
   }
 
   /*******************************************************/
@@ -842,7 +835,7 @@ export class AcksCombat {
     options.unshift({
       name: "Set Active",
       icon: '<i class="fas fa-star-of-life"></i>',
-      callback: AcksCombat.activateCombatant
+      callback: AcksCombat.activateCombatant,
     });
   }
 
@@ -868,17 +861,13 @@ export class AcksCombat {
   }
 
   /*******************************************************/
-  static combatTurn(combat, data, options) {
-  }
-
+  static combatTurn(combat, data, options) {}
 
   /*******************************************************/
   static combatRound(combat, data, options) {
     // Cleanup surprised effects
-
   }
 
   /*******************************************************/
-  static async preUpdateCombat(combat, data, diff, id) {
-  }
+  static async preUpdateCombat(combat, data, diff, id) {}
 }

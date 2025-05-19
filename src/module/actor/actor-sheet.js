@@ -3,7 +3,6 @@ import { AcksUtility } from "../utility.js";
 import { AcksMortalWoundsDialog } from "../dialog/mortal-wounds.js";
 import { AcksTamperingDialog } from "../dialog/tampering-mortality.js";
 export class AcksActorSheet extends ActorSheet {
-
   /* -------------------------------------------- */
   async getData() {
     const data = super.getData();
@@ -20,8 +19,8 @@ export class AcksActorSheet extends ActorSheet {
     this._prepareItems(data);
     data.henchmen = this.actor.getHenchmen();
     data.languages = this.actor.getLanguages();
-    data.description = await TextEditor.enrichHTML(this.object.system.details.description, { async: true })
-    data.notes = await TextEditor.enrichHTML(this.object.system.details.notes, { async: true })
+    data.description = await TextEditor.enrichHTML(this.object.system.details.description, { async: true });
+    data.notes = await TextEditor.enrichHTML(this.object.system.details.notes, { async: true });
     data.totalWages = this.actor.getTotalWages();
     data.totalMoneyGC = this.actor.getTotalMoneyGC();
     data.moneyEncumbrance = this.actor.getTotalMoneyEncumbrance();
@@ -42,12 +41,12 @@ export class AcksActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
   async _onDrop(event) {
-    let data = event.dataTransfer.getData('text/plain');
+    let data = event.dataTransfer.getData("text/plain");
     if (data) {
       let dataItem = JSON.parse(data);
-      let actorId = dataItem.uuid.split('.')[1]
-      if ( dataItem.uuid.includes("Actor") && !dataItem.uuid.includes("Item") && actorId && actorId != this.actor.id) {
-        this.actor.addHenchman( actorId);
+      let actorId = dataItem.uuid.split(".")[1];
+      if (dataItem.uuid.includes("Actor") && !dataItem.uuid.includes("Item") && actorId && actorId != this.actor.id) {
+        this.actor.addHenchman(actorId);
         return;
       }
     }
@@ -73,7 +72,7 @@ export class AcksActorSheet extends ActorSheet {
         else if (item.type === "money") arr[6].push(item);
         return arr;
       },
-      [[], [], [], [], [], [], []]
+      [[], [], [], [], [], [], []],
     );
 
     // Sort spells by level
@@ -89,7 +88,6 @@ export class AcksActorSheet extends ActorSheet {
       }
       slots[lvl] += spell.system.cast;
       sortedSpells[lvl].push(spell);
-
     }
     data.slots = {
       used: slots,
@@ -99,7 +97,7 @@ export class AcksActorSheet extends ActorSheet {
     // Compute total money value
     for (let m of money) {
       let valuegp = (m.system.coppervalue * (m.system.quantity + m.system.quantitybank)) / 100;
-      m.system.totalvalue = valuegp
+      m.system.totalvalue = valuegp;
     }
 
     // Assign and return
@@ -113,7 +111,7 @@ export class AcksActorSheet extends ActorSheet {
     data.spells = sortedSpells;
     data.languages = languages;
 
-    data.favorites = this.actor.getFavorites()
+    data.favorites = this.actor.getFavorites();
   }
 
   /* -------------------------------------------- */
@@ -129,7 +127,7 @@ export class AcksActorSheet extends ActorSheet {
     } else {
       // Add item tags
       let div = $(
-        `<div class="item-summary"><ol class="tag-list">${item.getTags()}</ol><div>${description}</div></div>`
+        `<div class="item-summary"><ol class="tag-list">${item.getTags()}</ol><div>${description}</div></div>`,
       );
       li.parents(".item-entry").append(div.hide());
       div.slideDown(200);
@@ -153,16 +151,14 @@ export class AcksActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
   async _resetSpells(event) {
-    let spells = $(event.currentTarget)
-      .closest(".inventory.spells")
-      .find(".item");
+    let spells = $(event.currentTarget).closest(".inventory.spells").find(".item");
     spells.each((_, el) => {
       let itemId = el.dataset.itemId;
       const item = this.actor.items.get(itemId);
       item.update({
         _id: item.id,
         "system.cast": 0,
-        "system.memorized": 0
+        "system.memorized": 0,
       });
     });
   }
@@ -171,18 +167,12 @@ export class AcksActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-
     // Item summaries
-    html
-      .find(".item .item-name h4")
-      .click((event) => this._onItemSummary(event));
+    html.find(".item .item-name h4").click((event) => this._onItemSummary(event));
 
-    html.on('click', '.effect-control', (ev) => {
-      const row = ev.currentTarget.closest('li');
-      const document =
-        row.dataset.parentId === this.actor.id
-          ? this.actor
-          : this.actor.items.get(row.dataset.parentId);
+    html.on("click", ".effect-control", (ev) => {
+      const row = ev.currentTarget.closest("li");
+      const document = row.dataset.parentId === this.actor.id ? this.actor : this.actor.items.get(row.dataset.parentId);
       AcksUtility.onManageActiveEffect(ev, document);
     });
 
@@ -190,13 +180,13 @@ export class AcksActorSheet extends ActorSheet {
       let actorObject = this.actor;
       let dialog = new AcksMortalWoundsDialog();
       dialog.init(actorObject);
-    })
+    });
 
     html.find(".tampering-dialog").click((ev) => {
       let actorObject = this.actor;
       let dialog = new AcksTamperingDialog();
       dialog.init(actorObject);
-    })
+    });
 
     html.find(".item .item-controls .item-show").click(async (ev) => {
       const li = $(ev.currentTarget).parents(".item");
@@ -215,7 +205,7 @@ export class AcksActorSheet extends ActorSheet {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
 
-      let skip = false
+      let skip = false;
       let skipKey = game.settings.get("acks", "skip-dialog-key");
       if (ev && ev[skipKey]) {
         skip = true;
@@ -223,7 +213,7 @@ export class AcksActorSheet extends ActorSheet {
 
       if (item.type == "weapon") {
         if (this.actor.type === "monster") {
-          item.update({ 'system.counter.value': item.system.counter.value - 1 });
+          item.update({ "system.counter.value": item.system.counter.value - 1 });
         }
         item.rollWeapon({ skipDialog: skip });
       } else if (item.type == "spell") {
@@ -237,7 +227,7 @@ export class AcksActorSheet extends ActorSheet {
       const li = $(ev.currentTarget);
       const item = this.actor.items.get(li.data("itemId"));
 
-      let skip = false
+      let skip = false;
       let skipKey = game.settings.get("acks", "skip-dialog-key");
       if (ev && ev[skipKey]) {
         skip = true;
@@ -245,7 +235,7 @@ export class AcksActorSheet extends ActorSheet {
 
       if (item.type == "weapon") {
         if (this.actor.type === "monster") {
-          item.update({ 'system.counter.value': item.system.counter.value - 1 });
+          item.update({ "system.counter.value": item.system.counter.value - 1 });
         }
         item.rollWeapon({ skipDialog: skip });
       } else if (item.type == "spell") {
@@ -269,7 +259,7 @@ export class AcksActorSheet extends ActorSheet {
         roll: {},
       };
 
-      let skip = false
+      let skip = false;
       let skipKey = game.settings.get("acks", "skip-dialog-key");
       if (ev[skipKey]) {
         skip = true;
@@ -302,7 +292,6 @@ export class AcksActorSheet extends ActorSheet {
       .find(".memorize input")
       .click((ev) => ev.target.select())
       .change(this._onSpellChange.bind(this));
-
 
     html.find(".spells .item-reset").click((ev) => {
       this._resetSpells(ev);
@@ -345,8 +334,7 @@ export class AcksActorSheet extends ActorSheet {
       let container = editor.closest(".resizable-editor");
       if (container) {
         let heightDelta = this.position.height - this.options.height;
-        editor.style.height = `${heightDelta + parseInt(container.dataset.editorSize)
-          }px`;
+        editor.style.height = `${heightDelta + parseInt(container.dataset.editorSize)}px`;
       }
     });
   }

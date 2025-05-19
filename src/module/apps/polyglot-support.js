@@ -1,10 +1,8 @@
 // Apps hooks
 export class AcksPolyglot {
-
   static init() {
     Hooks.once("polyglot.init", (LanguageProvider) => {
       class acksLanguageProvider extends LanguageProvider {
-
         requiresReady = true;
 
         getSystemDefaultLanguage() {
@@ -36,7 +34,7 @@ export class AcksPolyglot {
             if (item.type === "language") {
               const name = item?.flags?.babele?.originalName || item.name;
               knownLanguages.add(name);
-              if (actor.system.scores.int.value >= 9) {                
+              if (actor.system.scores.int.value >= 9) {
                 literateLanguages.add(name);
               }
             }
@@ -49,7 +47,6 @@ export class AcksPolyglot {
         }
       }
       game.polyglot.api.registerSystem(acksLanguageProvider);
-    })
+    });
   }
 }
-
