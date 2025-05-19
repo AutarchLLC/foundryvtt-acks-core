@@ -1,0 +1,40 @@
+{
+  "name": "foundryvtt-acks-core",
+  "version": "12.3.0",
+  "description": "Adventurer Conqueror King System Imperial Imprint (ACKS II) core game module for the Foundry Virtual Tabletop.",
+  "main": "src/acks.js",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format:check": "prettier . --check",
+    "format:fix": "prettier . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AutarchLLC/foundryvtt-acks-core.git"
+  },
+  "private": true,
+  "keywords": [
+    "acks",
+    "foundry",
+    "vtt"
+  ],
+  "author": "ArcanistWill",
+  "contributors": [
+    "LeRatierBretonnien"
+  ],
+  "license": "SEE LICENSE IN README.md",
+  "bugs": {
+    "url": "https://github.com/AutarchLLC/foundryvtt-acks-core/issues"
+  },
+  "homepage": "https://github.com/AutarchLLC/foundryvtt-acks-core#readme",
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^1.1.0",
+    "prettier": "3.5.3"
+  }
+}
