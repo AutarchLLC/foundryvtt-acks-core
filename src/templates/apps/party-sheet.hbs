@@ -22,61 +22,76 @@
     {{#each data as |actor|}}
       {{#if actor.flags.acks.party}}
         <li class="actor flexrow" data-actor-id="{{actor.id}}">
+          <!-- Image START -->
           <div class="field-img">
             <img src="{{actor.img}}" />
             <div class="img-btns flexrow">
               <button type="button" data-action="open-sheet"><i class="fas fa-user"></i></button>
             </div>
           </div>
+          <!-- Image END -->
           <div class="fields">
             <div class="flexrow field-row">
+              <!-- Name START -->
               <div class="field-name flex2">
                 <strong>{{actor.name}}</strong>
               </div>
+              <!-- Name END -->
+              <!-- Hit Points START -->
               <div class="field-long" title="{{localize 'ACKS.Health'}}">
                 <i class="fas fa-heart"></i>
                 {{actor.system.hp.value}}/{{actor.system.hp.max}}
               </div>
+              <!-- Hit Points END -->
+              <!-- Armor Class START -->
               <div class="field-short" title="{{localize 'ACKS.ArmorClass'}}">
                 <i class="fas fa-shield-alt"></i>
-                {{#if @root.settings.ascending}}<strong>{{actor.system.aac.value}}</strong>
-                  <sub>{{actor.system.aac.naked}}</sub>
-                {{else}}<strong>{{actor.system.ac.value}}</strong>
-                  <sub>{{actor.system.ac.naked}}</sub>
-                {{/if}}
+                <strong>{{actor.system.aac.value}}</strong><sub>{{actor.system.aac.naked}}</sub>
               </div>
+              <!-- Armor Class END -->
             </div>
             <div class="flexrow field-row">
+              <!-- Thac0 START -->
               <div class="field-short" title="{{localize 'ACKS.Thac0'}}">
                 <i class="fas fa-crosshairs"></i>
-                {{#unless @root.settings.ascending}}
-                  {{actor.system.thac0.value}}
-                {{else}}
-                  {{actor.system.thac0.throw}}
-                {{/unless}}
+                {{actor.system.thac0.throw}}
               </div>
+              <!-- Thac0 END -->
               {{#if (eq actor.type "character")}}
+                <!-- Melee START -->
                 <div class="field-short" title="{{localize 'ACKS.Melee'}}">
                   <i class="fas fa-fist-raised"></i>
                   {{add actor.system.scores.str.mod actor.system.thac0.mod.melee}}
                 </div>
+                <!-- Melee END -->
+                <!-- Missile START -->
                 <div class="field-short" title="{{localize 'ACKS.Missile'}}">
                   <i class="fas fa-bullseye"></i>
                   {{add actor.system.scores.dex.mod actor.system.thac0.mod.missile}}
                 </div>
+                <!-- Missile END -->
               {{/if}}
+              <!-- Movement START -->
               <div class="field-short flex2">
                 <i class="fas fa-shoe-prints" title="{{localize 'ACKS.movement.base'}}"></i>
                 <span title="{{localize 'ACKS.movement.encounter.long'}}">{{actor.system.movement.encounter}}</span>
                 <sub title="{{localize 'ACKS.movement.exploration.long'}}">{{actor.system.movement.base}}</sub>
               </div>
+              <!-- Movement END -->
+              <!-- Encumbrance START -->
               {{#if (eq actor.type "character")}}
                 <div class="field-short flex2">
                   <i class="fas fa-weight-hanging" title="{{localize 'ACKS.Encumbrance'}}"></i>
-                  {{roundWeight actor.system.encumbrance.value}}k
+                  <span title="{{getWeightTooltip actor.system.encumbrance.value actor.system.encumbrance.max}}">
+                    {{actor.system.encumbrance.value}}
+                    /
+                    {{actor.system.encumbrance.max}}
+                  </span>
                 </div>
               {{/if}}
+              <!-- Encumbrance END -->
             </div>
+            <!-- Saving Throws START -->
             <div class="flexrow field-row">
               <div class="field-longer flexrow">
                 {{#each actor.system.saves as |s i|}}
@@ -89,6 +104,7 @@
                     ></i>{{mod actor.system.scores.wis.mod}}</span>{{/if}}
               </div>
             </div>
+            <!-- Saving Throws END -->
           </div>
         </li>
       {{/if}}

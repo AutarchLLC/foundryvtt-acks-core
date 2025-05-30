@@ -104,6 +104,11 @@
   "ACKS.Attack": "Attack",
   "ACKS.Encumbrance": "Encumbrance",
   "ACKS.EncumbranceStone": "Encumbrance (st)",
+  "ACKS.EncumbranceTitle.Overburdened": "Overburdened",
+  "ACKS.EncumbranceTitle.High": "High Encumbrance",
+  "ACKS.EncumbranceTitle.Medium": "Medium Encumbrance",
+  "ACKS.EncumbranceTitle.Low": "Low Encumbrance",
+  "ACKS.EncumbranceTitle.Unencumbered": "Unencumbered",
 
   "ACKS.moneytitle": "Money",
   "ACKS.money.coppervalue": "Value (in Copper Coin)",

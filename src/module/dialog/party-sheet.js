@@ -2,8 +2,8 @@ export class AcksPartySheet extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["acks", "dialog", "party-sheet"],
-      template: "systems/acks/templates/apps/party-sheet.html",
-      width: 280,
+      template: "systems/acks/templates/apps/party-sheet.hbs",
+      width: 500,
       height: 400,
       resizable: true,
     });
@@ -26,18 +26,11 @@ export class AcksPartySheet extends FormApplication {
    * @return {Object}
    */
   getData() {
-    const settings = {
-      ascending: game.settings.get("acks", "ascendingAC"),
-    };
-
-    const data = {
+    return {
       data: game.actors.contents,
       config: CONFIG.ACKS,
       user: game.user,
-      settings: settings,
     };
-    console.log("PARTY", data);
-    return data;
   }
 
   /* -------------------------------------------- */

@@ -60,8 +60,18 @@ export const registerHelpers = async function () {
     return Math.round(value * 100) / 100;
   });
 
-  Handlebars.registerHelper("roundWeight", function (weight) {
-    return Math.round(parseFloat(weight) / 100) / 10;
+  Handlebars.registerHelper("getWeightTooltip", function (weight, maxWeight) {
+    if (weight > maxWeight) {
+      return game.i18n.localize("ACKS.EncumbranceTitle.Overburdened");
+    } else if (weight > 10) {
+      return game.i18n.localize("ACKS.EncumbranceTitle.High");
+    } else if (weight > 7) {
+      return game.i18n.localize("ACKS.EncumbranceTitle.Medium");
+    } else if (weight > 5) {
+      return game.i18n.localize("ACKS.EncumbranceTitle.Low");
+    } else {
+      return game.i18n.localize("ACKS.EncumbranceTitle.Unencumbered");
+    }
   });
 
   Handlebars.registerHelper("getTagIcon", function (tag) {
