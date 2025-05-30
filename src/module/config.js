@@ -281,12 +281,13 @@ export const ACKS = {
     4: { label: "4", value: 4 },
     5: { label: "5", value: 5 },
   },
-  tampering_span: {
-    2: { label: "Youthful (+2)", value: 2 },
-    "-5": { label: "Adult (-5)", value: -5 },
-    "-10": { label: "Old (-10)", value: -10 },
-    "-20": { label: "Ancient (-20)", value: -20 },
-  },
+  tampering_span: [
+    { label: "Youthful (+2)", value: 2 },
+    { label: "Adult (0)", value: 0 },
+    { label: "Middle Aged (-5)", value: -5 },
+    { label: "Old (-10)", value: -10 },
+    { label: "Ancient (-20)", value: -20 },
+  ],
   tampering_spine: {
     0: { label: "None (0)", value: 0 },
     "-5": { label: "1 (-5)", value: -5 },
