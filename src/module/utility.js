@@ -46,8 +46,9 @@ export class AcksUtility {
       let cr = new AcksTamperingDialog();
       cr.init();
     });
-    html.find(".header-actions").after(buttonTampering);
-    html.find(".header-actions").after(button);
+    const $html = game.release.generation < 13 ? html : $(html);
+    $html.find(".header-actions").after(buttonTampering);
+    $html.find(".header-actions").after(button);
   }
 
   /* -------------------------------------------- */
