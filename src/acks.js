@@ -82,7 +82,6 @@ Hooks.once("init", async function () {
   Hooks.on("getSceneControlButtons", (controls) => {
     const V13 = game.release.generation >= 13;
     const targetControl = V13 ? controls?.tokens : controls.find((control) => control.name === "token");
-    const isGM = game.user.isGM;
     if (!targetControl) {
       return;
     }
@@ -99,7 +98,7 @@ Hooks.once("init", async function () {
       title: "ACKS.dialog.partysheet",
       icon: "fas fa-users",
       button: true,
-      visible: isGM,
+      visible: true,
     };
     if (V13) {
       partyButtonTool.onChange = () => partyBtnAction();
