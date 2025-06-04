@@ -11,47 +11,30 @@
                   <input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number" placeholder="0" />
               </div>
           </li>
-          <li class="attribute hit-dice">
-              <h4 class="attribute-name box-title" title="{{localize 'ACKS.HitDice'}}">
-                  <a>{{ localize "ACKS.HitDiceShort" }}</a>
+          <li class="attribute">
+              <h4 class="attribute-name box-title hit-dice" title="{{localize 'ACKS.HitDice'}}">
+                  <a><i class="acks-roll-small fa-solid fa-dice-d20"></i>{{ localize "ACKS.HitDiceShort" }}</a>
               </h4>
               <div class="attribute-value">
                   <input name="system.hp.hd" type="text" value="{{system.hp.hd}}" data-dtype="String" />
               </div>
           </li>
           <li class="attribute">
-              {{#if config.ascendingAC}}
               <h4 class="attribute-name box-title" title="{{ localize 'ACKS.ArmorClass' }}">
                   {{ localize "ACKS.AscArmorClassShort" }}</h4>
               <div class="attribute-value">
                   <input name="system.aac.value" type="text" value="{{system.aac.value}}" data-dtype="Number"
                       placeholder="10" data-dtype="Number" />
               </div>
-              {{else}}
-              <h4 class="attribute-name box-title" title="{{ localize 'ACKS.ArmorClass' }}">
-                  {{ localize "ACKS.ArmorClassShort" }}</h4>
-              <div class="attribute-value">
-                  <input name="system.ac.value" type="text" value="{{system.ac.value}}" data-dtype="Number"
-                      placeholder="9" data-dtype="Number" />
-              </div>
-              {{/if}}
           </li>
           <li class="attribute attack">
-              {{#if config.ascendingAC}}
-              <h4 class="attribute-name box-title" title="{{localize 'ACKS.AB'}}"><a>{{ localize "ACKS.ABShort" }}</a>
+              <h4 class="attribute-name box-title" title="{{localize 'ACKS.AB'}}">
+                  <a><i class="acks-roll-small fa-solid fa-dice-d20"></i>{{ localize "ACKS.ABShort" }}</a>
               </h4>
               <div class="attribute-value">
                   <input name="system.thac0.throw" type="text" value="{{system.thac0.throw}}" placeholder=""
                       data-dtype="Number" />
               </div>
-              {{else}}
-              <h4 class="attribute-name box-title" title="{{localize 'ACKS.Thac0'}}"><a>{{ localize "ACKS.Thac0" }}</a>
-              </h4>
-              <div class="attribute-value">
-                  <input name="system.thac0.value" type="text" value="{{system.thac0.value}}" placeholder="0"
-                      data-dtype="Number" />
-              </div>
-              {{/if}}
           </li>
           {{#if system.retainer.enabled}}
           <li class="attribute">
@@ -64,7 +47,7 @@
               </div>
           </li>
           {{/if}}
-          
+
           <li class="attribute">
               <h4 class="attribute-name box-title" title="{{localize 'ACKS.movement.base'}}">
                   {{ localize "ACKS.movement.short" }}
@@ -74,7 +57,7 @@
                       data-dtype="Number" />
               </div>
           </li>
-          
+
           <li class="attribute flexrow" >
             <h4 class="attribute-name box-title" title="({{localize 'ACKS.bonuses.initiativebonus'}}) {{localize 'ACKS.exploration.ld.long'}}">
               {{ localize "ACKS.bonuses.initiativebonus" }}
