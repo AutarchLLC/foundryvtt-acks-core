@@ -69,8 +69,8 @@ export const ACKS = {
   scores: {
     str: "ACKS.scores.str.long",
     int: "ACKS.scores.int.long",
-    dex: "ACKS.scores.dex.long",
     wis: "ACKS.scores.wis.long",
+    dex: "ACKS.scores.dex.long",
     con: "ACKS.scores.con.long",
     cha: "ACKS.scores.cha.long",
   },
