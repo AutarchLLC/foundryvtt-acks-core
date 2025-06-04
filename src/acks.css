@@ -1637,3 +1637,8 @@
   font-weight: bold;
   color: darkgreen;
 }
+
+/* V13 fixes */
+.combat-tracker .combatant-controls {
+  flex-wrap: wrap;
+}
