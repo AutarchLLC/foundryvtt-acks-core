@@ -28,11 +28,11 @@
   ],
   "manifestPlusVersion": "1.2.0",
   "media": [
-  {
-    "type": "cover",
-    "url": "https://raw.githubusercontent.com/AutarchLLC/foundryvtt-acks-core/refs/heads/master/images/Cover_I_P.png",
-    "caption": "Adventurer Conqueror King System Imperial Imprint (ACKS II)"
-  }
+    {
+      "type": "cover",
+      "url": "https://raw.githubusercontent.com/AutarchLLC/foundryvtt-acks-core/refs/heads/master/images/Cover_I_P.png",
+      "caption": "Adventurer Conqueror King System Imperial Imprint (ACKS II)"
+    }
   ],
   "esmodules": ["acks.js"],
   "styles": ["acks.css"],

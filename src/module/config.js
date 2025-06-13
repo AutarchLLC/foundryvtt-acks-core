@@ -10,15 +10,15 @@ export const ACKS = {
     {
       acks: true,
       id: "surprised",
-      label: "Surprised",
-      icon: "systems/acks/assets/icons/surprised.svg",
+      name: "Surprised",
+      img: "systems/acks/assets/icons/surprised.svg",
       duration: { rounds: 1 },
     },
-    { acks: true, id: "overnumbering", label: "OverNumbered", icon: "icons/svg/regen.svg" },
-    { acks: true, id: "done", label: "Done", icon: "icons/svg/cancel.svg" },
-    { acks: true, id: "readied", label: "Readied", icon: "icons/svg/ice-aura.svg" },
-    { acks: true, id: "delayed", label: "Delayed", icon: "icons/svg/clockwork.svg" },
-    { acks: true, id: "slumbering", label: "Slumbering", icon: "icons/svg/stoned.svg" },
+    { acks: true, id: "overnumbering", name: "OverNumbered", img: "icons/svg/regen.svg" },
+    { acks: true, id: "done", name: "Done", img: "icons/svg/cancel.svg" },
+    { acks: true, id: "readied", name: "Readied", img: "icons/svg/ice-aura.svg" },
+    { acks: true, id: "delayed", name: "Delayed", img: "icons/svg/clockwork.svg" },
+    { acks: true, id: "slumbering", name: "Slumbering", img: "icons/svg/stoned.svg" },
   ],
   surpriseTableAdventurers: {
     forelos: {
