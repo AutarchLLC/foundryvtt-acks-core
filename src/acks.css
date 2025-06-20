@@ -1642,3 +1642,155 @@
 .combat-tracker .combatant-controls {
   flex-wrap: wrap;
 }
+
+/** item sheet v2 **/
+.application.sheet.acks.item-v2 {
+  min-width: 570px;
+  min-height: 400px;
+}
+
+.acks.item-v2 .window-content input:not([type="checkbox"]) {
+  background: revert-layer;
+  border: revert-layer;
+  border-radius: revert-layer;
+  border-bottom: revert-layer;
+}
+.acks.item-v2 .window-content input:not([type="checkbox"]):hover:not(:disabled),
+.acks.item-v2 .window-content input:not([type="checkbox"]):focus:not(:disabled) {
+  box-shadow: revert-layer;
+  background: revert-layer;
+}
+
+.sheet.acks.item-v2 .window-content {
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.sheet.acks.item-v2 .sheet-header {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sheet.acks.item-v2 .sheet-header .profile-img {
+  width: 84px;
+  height: 84px;
+  min-width: 84px;
+  min-height: 84px;
+  cursor: var(--cursor-pointer);
+}
+
+.sheet.acks.item-v2 .sheet-header .middle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.sheet.acks.item-v2 .sheet-header .middle input[type="text"] {
+  font-size: var(--font-size-28);
+  line-height: var(--font-size-28);
+}
+
+.sheet.acks.item-v2 .sheet-header .flexrow {
+  gap: 0.5rem;
+}
+
+.sheet.acks.item-v2 .description .content {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.sheet.acks.item-v2 .description .stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex: 0 0 84px;
+  font-size: var(--font-size-13);
+}
+
+.sheet.acks.item-v2 .description .stats .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet.acks.item-v2 .description .stats .form-group label {
+  height: 20px;
+  line-height: 20px;
+}
+
+.sheet.acks.item-v2 .description .stats .form-group .form-fields {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sheet.acks.item-v2 .description .stats select,
+.sheet.acks.item-v2 .description .stats input[type="text"] {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  padding: 0 0.2rem;
+}
+
+.sheet.acks.item-v2 .description .item-description {
+  display: flex;
+  flex: 1;
+}
+
+.sheet.acks.item-v2 .description .item-description prose-mirror {
+  flex: 1;
+}
+
+.sheet.acks.item-v2 .tab[data-tab].active {
+  display: flex;
+  flex: 1;
+  overflow: hidden auto;
+}
+
+.sheet.acks.item-v2 .tab[data-tab]:not(.active) {
+  display: none;
+}
+
+.sheet.acks.item-v2 .active-effects .effects-list-content {
+  gap: 0.5rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.sheet.acks.item-v2 .active-effects ol.effect-list {
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet.acks.item-v2 .active-effects ol.effect-list li {
+  margin: 0;
+  min-height: 2rem;
+  line-height: 1;
+}
+
+.sheet.acks.item-v2 .active-effects .effect-name {
+  flex: 2;
+  padding: 0 0.5rem;
+  gap: 0.25rem;
+}
+
+.sheet.acks.item-v2 .active-effects .effect-controls {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 0 0 110px;
+}
+
+.sheet.acks.item-v2 .active-effects .effect-header {
+  background-color: var(--table-header-bg-color);
+  border-radius: 4px;
+}
+
+.sheet.acks.item-v2 a.button:hover,
+.sheet.acks.item-v2 button:hover {
+  background: var(--acks-purple);
+}

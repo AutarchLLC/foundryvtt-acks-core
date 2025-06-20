@@ -1,4 +1,5 @@
 import { AcksDice } from "../dice.js";
+import { AcksUtility } from "../utility.js";
 
 /**
  * Override and extend the basic :class:`Item` implementation
@@ -33,7 +34,7 @@ export class AcksItem extends Item {
   }
 
   static chatListeners(html) {
-    const $html = game.release.generation < 13 ? html : $(html);
+    const $html = AcksUtility.isV13() ? $(html) : html;
     $html.on("click", ".card-buttons button", this._onChatCardAction.bind(this));
     $html.on("click", ".item-name", this._onChatCardToggleContent.bind(this));
   }

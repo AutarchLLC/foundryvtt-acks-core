@@ -9,10 +9,13 @@ srcdata
 7.5
 acks-tests
 docs
+images
 old_packs
 package
+
 src/assets
 src/packs
 
 **/*.md
 **/*.html
+**/*.hbs

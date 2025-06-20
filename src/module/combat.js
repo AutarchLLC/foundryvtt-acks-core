@@ -538,7 +538,7 @@ export class AcksCombat {
       console.log("Color settings not found", e);
     }
 
-    const V13 = game.release.generation >= 13;
+    const V13 = AcksUtility.isV13();
     // in Application v2 html is NOT jQuery by default
     const $html = V13 ? $(html) : html;
     $html.find(".initiative").each((_, span) => {

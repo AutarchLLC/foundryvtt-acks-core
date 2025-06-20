@@ -18,6 +18,7 @@ import { AcksUtility } from "./module/utility.js";
 import { AcksPolyglot } from "./module/apps/polyglot-support.js";
 import { AcksTableManager } from "./module/apps/table-manager.js";
 import { AcksCommands } from "./module/apps/acks-commands.js";
+import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -68,8 +69,14 @@ Hooks.once("init", async function () {
   });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("acks", AcksItemSheet, {
-    makeDefault: true,
+    makeDefault: !AcksUtility.isV13(),
   });
+  if (AcksUtility.isV13()) {
+    Items.registerSheet("acks", AcksItemSheetV2, {
+      types: ["item"],
+      makeDefault: true,
+    });
+  }
 
   await preloadHandlebarsTemplates();
 
@@ -80,7 +87,7 @@ Hooks.once("init", async function () {
   CONFIG.ActiveEffect.legacyTransferral = false;
 
   Hooks.on("getSceneControlButtons", (controls) => {
-    const V13 = game.release.generation >= 13;
+    const V13 = AcksUtility.isV13();
     const targetControl = V13 ? controls?.tokens : controls.find((control) => control.name === "token");
     if (!targetControl) {
       return;

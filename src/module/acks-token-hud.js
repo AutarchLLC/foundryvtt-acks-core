@@ -61,7 +61,7 @@ export class AcksTokenHud {
 
   /* -------------------------------------------- */
   static async addTokenHudExtensions(app, html, tokenId) {
-    const $html = game.release.generation < 13 ? html : $(html);
+    const $html = AcksUtility.isV13() ? $(html) : html;
     const controlIconCombat = $html.find(".control-icon[data-action=combat]");
     if (controlIconCombat.length > 0) {
       AcksTokenHud.addExtensionHud(app, $html, tokenId);

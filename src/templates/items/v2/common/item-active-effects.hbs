@@ -1,0 +1,42 @@
+<div class="effects-list-content">
+  {{#each effects as |section|}}
+    <div class="effect-header flexrow">
+      <div class="effect-name">{{localize section.label}}</div>
+      <div class="effect-source">{{localize "ACKS.Effect.Source"}}</div>
+      <div class="effect-duration">{{localize "EFFECT.TABS.duration"}}</div>
+      <div class="effect-controls flexrow">
+        <button type="button" data-action="createEffect" data-tooltip
+                aria-label="{{localize 'DOCUMENT.Create' type='Effect'}}" data-effect-type="{{section.type}}">
+          <i class="fas fa-plus"></i> {{localize "DOCUMENT.New" type="Effect"}}
+        </button>
+      </div>
+    </div>
+
+    <ol class="effect-list">
+      {{#each section.effects as |effect|}}
+        <li class="effect flexrow">
+          <div class="effect-name flexrow">
+            <img class="effect-image" src="{{effect.img}}"/>
+            <div>{{effect.name}}</div>
+          </div>
+          <div class="effect-source">{{effect.sourceName}}</div>
+          <div class="effect-duration">{{effect.duration.label}}</div>
+          <div class="effect-controls">
+            <a class="effect-control button" data-action="toggleEffect" data-effect-id="{{effect.id}}"
+               title="{{localize 'BOILERPLATE.Effect.Toggle'}}">
+              <i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
+            </a>
+            <a class="effect-control button" data-action="editEffect" data-effect-id="{{effect.id}}"
+               title="{{localize 'DOCUMENT.Update' type="Effect"}}">
+              <i class="fas fa-edit"></i>
+            </a>
+            <a class="effect-control button" data-action="deleteEffect" data-effect-id="{{effect.id}}"
+               title="{{localize 'DOCUMENT.Delete' type="Effect"}}">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  {{/each}}
+</div>
