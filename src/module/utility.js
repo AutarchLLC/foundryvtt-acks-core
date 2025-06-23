@@ -3,11 +3,12 @@ import { AcksTamperingDialog } from "./dialog/tampering-mortality.js";
 
 export class AcksUtility {
   /**
-   * Checks for Foundry version
-   * @return {boolean} true if version is 13 or more
+   * Checks for minimum Foundry version
+   * @param {number} minVersion - major Foundry Version, i.e. 13
+   * @return {boolean} true if version is minVersion or more
    */
-  static isV13() {
-    return game.release.generation >= 13;
+  static isMinVersion(minVersion) {
+    return game.release.generation >= minVersion;
   }
 
   /* -------------------------------------------- */
@@ -54,7 +55,7 @@ export class AcksUtility {
       let cr = new AcksTamperingDialog();
       cr.init();
     });
-    const $html = AcksUtility.isV13() ? $(html) : html;
+    const $html = AcksUtility.isMinVersion(13) ? $(html) : html;
     $html.find(".header-actions").after(buttonTampering);
     $html.find(".header-actions").after(button);
   }
