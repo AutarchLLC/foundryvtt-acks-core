@@ -19,6 +19,11 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/acks/templates/actors/partials/monster-attributes-tab.html",
 
     "systems/acks/templates/items/partials/item-generic-effects-tab.html",
+
+    // v2 sheet parts
+    "systems/acks/templates/items/v2/details/details-item.hbs",
+    "systems/acks/templates/items/v2/details/details-armor.hbs",
+    "systems/acks/templates/items/v2/common/item-description.hbs",
   ];
   return loadTemplates(templatePaths);
 };

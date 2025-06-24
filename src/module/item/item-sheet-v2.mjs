@@ -88,15 +88,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       isGM: game.user.isGM,
     };
 
-    const enrichmentOptions = {
-      secrets: this.item.isOwner,
-      relativeTo: this.item,
-    };
-
-    context.enriched = {
-      description: await TextEditorRef.enrichHTML(this.item.system.description, enrichmentOptions),
-    };
-
     return context;
   }
 
@@ -119,24 +110,51 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     switch (partId) {
       case "description":
         context.tab = context.tabs[partId];
+        context = await this._prepareDescriptionContext(context);
         break;
+
       case "effects":
         context.tab = context.tabs[partId];
         context = await this._prepareEffectsContext(context);
         break;
       default:
+        break;
     }
+
     return context;
   }
 
   /**
-   *
+   * Prepare context for Effects Tab
    * @param {ApplicationRenderContext} context
    * @return {Promise<ApplicationRenderContext>}
    * @private
    */
   async _prepareEffectsContext(context) {
     context.effects = await AcksUtility.prepareActiveEffectCategories(this.item.effects);
+
+    return context;
+  }
+
+  /**
+   * Prepare context for Description Tab
+   * @param {ApplicationRenderContext} context
+   * @return {Promise<ApplicationRenderContext>}
+   * @private
+   */
+  async _prepareDescriptionContext(context) {
+    context.getDetailsPartialPath = () => {
+      return `systems/acks/templates/items/v2/details/details-${this.item.type}.hbs`;
+    };
+
+    const enrichmentOptions = {
+      secrets: this.item.isOwner,
+      relativeTo: this.item,
+    };
+
+    context.enriched = {
+      description: await TextEditorRef.enrichHTML(this.item.system.description, enrichmentOptions),
+    };
 
     return context;
   }

@@ -1,39 +1,9 @@
-<section class="tab {{tab.cssClass}} description" data-group="primary" data-tab="description">
+<section class="tab {{ tab.cssClass }} description" data-group="primary" data-tab="description">
   <div class="content">
-    <div class="stats">
-      <div class="form-group">
-        <label>{{localize 'ACKS.items.subtype'}}</label>
-        <div class="form-fields">
-          <select name="system.subtype" value="{{system.subtype}}" data-dtype="String">
-            {{selectOptions config.item_subtypes selected=system.subtype localize=true}}
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>{{localize 'ACKS.items.quantity'}}</label>
-        <div class="form-fields">
-          <input type="text" name="system.quantity.value" value="{{system.quantity.value}}"
-                 data-dtype="Number"/>/<input type="text" name="system.quantity.max"
-                                              value="{{system.quantity.max}}" data-dtype="Number"/>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>{{localize 'ACKS.items.Cost'}}</label>
-        <div class="form-fields">
-          <input type="text" name="system.cost" value="{{system.cost}}" data-dtype="Number"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>{{localize 'ACKS.items.Weight'}}</label>
-        <div class="form-fields">
-          <input type="text" name="system.weight6" value="{{system.weight6}}" data-dtype="Number"/>
-        </div>
-      </div>
-    </div>
-    <div class="item-description">
-      <prose-mirror name="system.description" value="{{ system.description }}"
-                    document-uuid="{{ item.uuid }}" compact toggled>{{{ enriched.description }}}</prose-mirror>
-    </div>
+    {{! getDetailsPartialPath will return partial based on item's type }}
+    {{! systems/acks/templates/items/v2/details/details-ITEM_TYPE.hbs }}
+    {{! See AcksItemSheetV2 _prepareDescriptionContext }}
+    {{> (getDetailsPartialPath) }}
+    {{> "systems/acks/templates/items/v2/common/item-description.hbs" }}
   </div>
 </section>
