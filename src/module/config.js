@@ -95,7 +95,9 @@ export const ACKS = {
   },
   armor: {
     unarmored: "ACKS.armor.unarmored",
+    veryLight: "ACKS.armor.veryLight",
     light: "ACKS.armor.light",
+    medium: "ACKS.armor.medium",
     heavy: "ACKS.armor.heavy",
     shield: "ACKS.armor.shield",
   },

@@ -334,7 +334,9 @@
 
   "ACKS.armor.type": "Armor Type",
   "ACKS.armor.unarmored": "Unarmored",
+  "ACKS.armor.veryLight": "Very Light",
   "ACKS.armor.light": "Light",
+  "ACKS.armor.medium": "Medium",
   "ACKS.armor.heavy": "Heavy",
   "ACKS.armor.shield": "Shield",
 
