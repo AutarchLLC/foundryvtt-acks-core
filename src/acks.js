@@ -75,7 +75,7 @@ Hooks.once("init", async function () {
       makeDefault: false,
     });
     Items.registerSheet("acks", AcksItemSheetV2, {
-      types: ["item", "armor", "language"],
+      types: ["item", "armor", "language", "money"],
       makeDefault: true,
     });
   } else {

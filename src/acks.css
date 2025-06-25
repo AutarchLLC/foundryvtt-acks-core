@@ -1718,6 +1718,7 @@
 .sheet.acks.item-v2 .description .stats .form-group label {
   height: 20px;
   line-height: 20px;
+  flex: 1;
 }
 
 .sheet.acks.item-v2 .description .stats .form-group .form-fields {
