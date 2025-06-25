@@ -1715,6 +1715,12 @@
   flex-direction: column;
 }
 
+.sheet.acks.item-v2 .description .stats .form-group.form-group-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .sheet.acks.item-v2 .description .stats .form-group label {
   height: 20px;
   line-height: 20px;

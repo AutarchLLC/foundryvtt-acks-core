@@ -74,6 +74,20 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
+   * Modify the provided options passed to a render request.
+   * @param {RenderOptions} options Options which configure application rendering behavior
+   * @protected
+   */
+  _configureRenderOptions(options) {
+    super._configureRenderOptions(options);
+
+    // change initial height of window to accommodate for more details (left "stats" block with configuration)
+    if (this.item.type === "ability") {
+      Object.assign(options.position, { height: 525 });
+    }
+  }
+
+  /**
    * Allow subclasses to dynamically configure render parts.
    * @param {HandlebarsRenderOptions} options
    * @returns {Record<string, HandlebarsTemplatePart>}
