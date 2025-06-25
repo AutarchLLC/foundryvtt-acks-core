@@ -23,6 +23,7 @@ export const preloadHandlebarsTemplates = async function () {
     // v2 sheet parts
     "systems/acks/templates/items/v2/details/details-item.hbs",
     "systems/acks/templates/items/v2/details/details-armor.hbs",
+    "systems/acks/templates/items/v2/details/details-language.hbs",
     "systems/acks/templates/items/v2/common/item-description.hbs",
   ];
   return loadTemplates(templatePaths);
