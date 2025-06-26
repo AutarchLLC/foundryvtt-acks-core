@@ -74,6 +74,59 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
+   * Modify the provided options passed to a render request.
+   * @param {RenderOptions} options Options which configure application rendering behavior
+   * @protected
+   */
+  _configureRenderOptions(options) {
+    super._configureRenderOptions(options);
+
+    // change initial height of window to accommodate for more details (left "stats" block with configuration)
+    if (["spell", "ability"].includes(this.item.type)) {
+      Object.assign(options.position, { height: 525 });
+    }
+  }
+
+  /**
+   * Allow subclasses to dynamically configure render parts.
+   * @param {HandlebarsRenderOptions} options
+   * @returns {Record<string, HandlebarsTemplatePart>}
+   * @protected
+   */
+  _configureRenderParts(options) {
+    const parts = super._configureRenderParts(options);
+    // if item can't have Active Effects remove corresponding part
+    if (!this._hasActiveEffects()) {
+      delete parts.effects;
+    }
+    return parts;
+  }
+
+  /**
+   * Prepare application tab data for a single tab group.
+   * @param {string} group The ID of the tab group to prepare
+   * @returns {Record<string, ApplicationTab>}
+   * @protected
+   */
+  _prepareTabs(group) {
+    const tabs = super._prepareTabs(group);
+    // if item can't have Active Effects remove corresponding tab
+    if (!this._hasActiveEffects()) {
+      delete tabs.effects;
+    }
+    return tabs;
+  }
+
+  /**
+   * Returns true if item can have Active Effects
+   * @return {boolean}
+   * @protected
+   */
+  _hasActiveEffects() {
+    return ["item", "weapon", "armor", "spell", "ability"].includes(this.item.type);
+  }
+
+  /**
    * Prepare data for rendering the Item sheet
    * The prepared data object contains both the actor data and additional sheet options
    * @param {ApplicationRenderOptions} options https://foundryvtt.com/api/interfaces/foundry.applications.types.ApplicationRenderOptions.html

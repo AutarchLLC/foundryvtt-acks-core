@@ -1,0 +1,68 @@
+<div class="stats">
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.abilities.Requirements'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.requirements" value="{{system.requirements}}" data-dtype="String"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.items.proficiencyType'}}</label>
+    <div class="form-fields">
+      <select name="system.proficiencytype">
+        {{selectOptions config.proficiencyType localize=true selected=system.proficiencytype}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.items.Roll'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.roll" value="{{system.roll}}" data-dtype="String"/>
+    </div>
+  </div>
+
+  <div class="form-group form-group-row">
+    <label>{{localize 'ACKS.items.RollType'}}</label>
+    <div class="form-fields">
+      <select name="system.rollType">
+        {{selectOptions config.roll_type selected=system.rollType}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group form-group-row">
+    <label>{{localize 'ACKS.items.RollTarget'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.rollTarget" value="{{system.rollTarget}}" data-dtype="Number"/>
+    </div>
+  </div>
+
+  <div class="form-group form-group-row">
+    <label>{{localize 'ACKS.items.BlindRoll'}}</label>
+    <div class="form-fields">
+      <input type="checkbox" name="system.blindroll" value="{{system.blindroll}}" {{checked system.blindroll}}
+             data-dtype="Boolean"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.spells.Save'}}</label>
+    <div class="form-fields">
+      <select name="system.save">
+        <option value=""></option>
+        {{selectOptions config.saves_short selected=system.save}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group form-group-row">
+    <label>{{localize 'ACKS.favorite'}}</label>
+    <div class="form-fields">
+      <input type="checkbox" name="system.favorite" value="{{system.favorite}}" {{checked system.favorite}}
+             data-dtype="Boolean"/>
+    </div>
+  </div>
+
+</div>
