@@ -1,0 +1,56 @@
+<div class="stats">
+
+  <div class="form-group form-group-row">
+    <label>{{localize 'ACKS.spells.Level'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.lvl" value="{{system.lvl}}" data-dtype="Number"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.spells.Class'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.class" value="{{system.class}}" data-dtype="String"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.spells.Duration'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.duration" value="{{system.duration}}" data-dtype="String"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.spells.Range'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.range" value="{{system.range}}" data-dtype="String"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.spells.Save'}}</label>
+    <div class="form-fields">
+      <select name="system.save">
+        <option value=""></option>
+        {{selectOptions config.saves_short selected=system.save}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize 'ACKS.items.Roll'}}</label>
+    <div class="form-fields">
+      <input type="text" name="system.roll" value="{{system.roll}}" data-dtype="String"/>
+    </div>
+  </div>
+
+  <div class="form-group form-group-row">
+    <label>{{localize 'ACKS.favorite'}}</label>
+    <div class="form-fields">
+      <input type="checkbox" name="system.favorite" value="{{system.favorite}}" {{checked system.favorite}}
+             data-dtype="Boolean"/>
+    </div>
+  </div>
+
+</div>

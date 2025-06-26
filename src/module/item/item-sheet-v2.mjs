@@ -82,7 +82,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     super._configureRenderOptions(options);
 
     // change initial height of window to accommodate for more details (left "stats" block with configuration)
-    if (this.item.type === "ability") {
+    if (["spell", "ability"].includes(this.item.type)) {
       Object.assign(options.position, { height: 525 });
     }
   }
