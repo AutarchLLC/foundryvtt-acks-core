@@ -211,7 +211,7 @@
 
 .acks.sheet.actor .sheet-body {
   z-index: 1;
-  height: calc(100% - 140px);
+  height: calc(100% - 146px);
 }
 .acks.sheet.actor .sheet-body .tab {
   height: 100%;
@@ -881,7 +881,7 @@
 /*  Basic Structure                          */
 /* ----------------------------------------- */
 .acks.sheet.actor.character {
-  min-width: 450px;
+  min-width: 800px;
   min-height: 550px;
   /* ----------------------------------------- */
   /*  Sheet Header                             */
@@ -1317,8 +1317,8 @@
 }
 
 .acks.actor.monster {
-  min-height: 565px;
-  min-width: 460px;
+  min-height: 660px;
+  min-width: 580px;
 }
 .acks.actor.monster .header-details .summary .treasure-table {
   text-align: center;

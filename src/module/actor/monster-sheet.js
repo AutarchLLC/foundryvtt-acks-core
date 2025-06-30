@@ -28,7 +28,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
       classes: ["acks", "sheet", "monster", "actor"],
       template: "systems/acks/templates/actors/monster-sheet.html",
       width: 580,
-      height: 560,
+      height: 660,
       resizable: true,
       tabs: [
         {

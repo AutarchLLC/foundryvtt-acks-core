@@ -21,7 +21,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["acks", "sheet", "actor", "character"],
       template: "systems/acks/templates/actors/character-sheet.html",
-      width: 780,
+      width: 800,
       height: 580,
       resizable: true,
       tabs: [
