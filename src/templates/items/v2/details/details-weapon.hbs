@@ -1,0 +1,66 @@
+<div class="field-set field-set--narrow">
+
+  <div class="form-group">
+    <div class="form-group__fields">
+      <input type="text" data-action="add-tag" title="{{localize 'ACKS.items.typeTag'}}"
+             placeholder="{{localize 'ACKS.items.enterTag'}}"/>
+    </div>
+  </div>
+
+  <div class="form-group block-input">
+    <label class="form-group__label">{{localize 'ACKS.items.Damage'}}</label>
+    <div class="form-group__fields">
+      <input type="text" name="system.damage" value="{{system.damage}}" data-dtype="String"/>
+    </div>
+  </div>
+
+  <div class="form-group form-group--row">
+    <label class="form-group__label" title="{{localize 'ACKS.items.AtkBonus'}}">{{localize 'ACKS.items.Bonus'}}</label>
+    <div class="form-group__fields">
+      <input type="text" name="system.bonus" value="{{system.bonus}}" data-dtype="Number"/>
+    </div>
+  </div>
+
+  <div class="form-group form-group--row attack-type">
+    <div class="form-group__fields">
+      <button type="button" data-action="toggleMelee" title="{{localize 'ACKS.items.Melee'}}"
+              class="icon {{#if system.melee}}active{{else}}not-active{{/if}}">
+        <i class="{{#if system.melee}}fa-solid{{else}}fa-regular{{/if}} fa-fist-raised"></i>
+      </button>
+      <button type="button" data-action="toggleMissile" title="{{localize 'ACKS.items.Missile'}}"
+              class="icon {{#if system.missile}}active{{else}}not-active{{/if}}">
+        <i class="{{#if system.missile}}fa-solid{{else}}fa-regular{{/if}} fa-bullseye"></i>
+      </button>
+    </div>
+  </div>
+
+  {{#if system.missile}}
+    <div class="form-group block-input">
+      <label class="form-group__label">{{localize 'ACKS.items.Range'}}</label>
+      <div class="form-group__fields form-group__fields--column">
+        <input type="text" name="system.range.short" value="{{system.range.short}}" data-dtype="Number"/>
+        <input type="text" name="system.range.medium" value="{{system.range.medium}}" data-dtype="Number"/>
+        <input type="text" name="system.range.long" value="{{system.range.long}}" data-dtype="Number"/>
+      </div>
+    </div>
+  {{/if}}
+
+  <div class="form-group">
+    <label class="form-group__label">{{localize 'ACKS.spells.Save'}}</label>
+    <div class="form-group__fields">
+      <select name="system.save">
+        <option value=""></option>
+        {{selectOptions config.saves_short selected=system.save}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group form-group--row">
+    <label class="form-group__label">{{localize 'ACKS.favorite'}}</label>
+    <div class="form-group__fields">
+      <input type="checkbox" name="system.favorite" value="{{system.favorite}}" {{checked system.favorite}}
+             data-dtype="Boolean"/>
+    </div>
+  </div>
+
+</div>

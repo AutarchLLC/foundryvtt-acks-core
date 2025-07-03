@@ -1,7 +1,8 @@
-<div class="stats">
+<div class="field-set field-set--narrow">
+
   <div class="form-group">
-    <label>{{localize 'ACKS.items.subtype'}}</label>
-    <div class="form-fields">
+    <label class="form-group__label">{{localize 'ACKS.items.subtype'}}</label>
+    <div class="form-group__fields">
       <select name="system.subtype" value="{{system.subtype}}" data-dtype="String">
         {{selectOptions config.item_subtypes selected=system.subtype localize=true}}
       </select>
@@ -9,25 +10,12 @@
   </div>
 
   <div class="form-group">
-    <label>{{localize 'ACKS.items.quantity'}}</label>
-    <div class="form-fields">
+    <label class="form-group__label">{{localize 'ACKS.items.quantity'}}</label>
+    <div class="form-group__fields">
       <input type="text" name="system.quantity.value" value="{{system.quantity.value}}" data-dtype="Number"/>
       /
       <input type="text" name="system.quantity.max" value="{{system.quantity.max}}" data-dtype="Number"/>
     </div>
   </div>
 
-  <div class="form-group">
-    <label>{{localize 'ACKS.items.Cost'}}</label>
-    <div class="form-fields">
-      <input type="text" name="system.cost" value="{{system.cost}}" data-dtype="Number"/>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label>{{localize 'ACKS.items.Weight'}}</label>
-    <div class="form-fields">
-      <input type="text" name="system.weight6" value="{{system.weight6}}" data-dtype="Number"/>
-    </div>
-  </div>
 </div>

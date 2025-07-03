@@ -106,4 +106,8 @@ export const registerHelpers = async function () {
     }
     return outStr;
   });
+
+  Handlebars.registerHelper("isDefined", function (value) {
+    return typeof value !== typeof void 0;
+  });
 };

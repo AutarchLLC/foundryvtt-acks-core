@@ -1,4 +1,16 @@
 <div class="item-description">
+
+  {{#if hasTags}}
+    <div class="tag-list">
+      {{#each system.tags as |tag|}}
+        <div class="tag" title="{{tag.title}}">
+          <span>{{tag.value}}</span>
+          <a class="tag__delete" data-action="deleteTag" data-tag="{{tag.value}}"><i class="fas fa-times"></i></a>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+
   <prose-mirror name="system.description" value="{{ system.description }}" document-uuid="{{ item.uuid }}" compact
                 toggled>{{{ enriched.description }}}</prose-mirror>
 </div>

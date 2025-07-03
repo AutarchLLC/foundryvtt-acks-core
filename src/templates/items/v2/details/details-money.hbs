@@ -1,23 +1,23 @@
-<div class="stats">
+<div class="field-set field-set--narrow">
 
-  <div class="form-group block-input">
-    <label>{{localize 'ACKS.money.coppervalue'}}</label>
-    <div class="form-fields">
+  <div class="form-group">
+    <label class="form-group__label">{{localize 'ACKS.money.coppervalue'}}</label>
+    <div class="form-group__fields">
       <input type="text" name="system.coppervalue" value="{{system.coppervalue}}"
              data-dtype="Number" {{#if isGM}} {{else}} disabled {{/if}} />
     </div>
   </div>
 
   <div class="form-group">
-    <label>{{localize 'ACKS.money.quantitycarried'}}</label>
-    <div class="form-fields">
+    <label class="form-group__label">{{localize 'ACKS.money.quantitycarried'}}</label>
+    <div class="form-group__fields">
       <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
     </div>
   </div>
 
   <div class="form-group">
-    <label>{{localize 'ACKS.money.quantitybank'}}</label>
-    <div class="form-fields">
+    <label class="form-group__label">{{localize 'ACKS.money.quantitybank'}}</label>
+    <div class="form-group__fields">
       <input type="text" name="system.quantitybank" value="{{system.quantitybank}}" data-dtype="Number"/>
     </div>
   </div>
