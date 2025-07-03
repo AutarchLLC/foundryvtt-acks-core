@@ -1,3 +1,5 @@
+import { AcksUtility } from "./utility.js";
+
 export const registerMainSettings = async () => {
   game.settings.register("acks", "enable-combatant-color", {
     name: game.i18n.localize("ACKS.Setting.enableCombatantColor"),
@@ -48,10 +50,15 @@ export const registerMainSettings = async () => {
   });
 
   Hooks.on("renderSettingsConfig", (app, el, data) => {
-    let col = game.settings.get("acks", "color-friendlies");
-    el.find('[name="acks.color-friendlies"]')
-      .parent()
-      .append(`<input type="color" value="${col}" data-edit="acks.color-friendlies">`);
+    const col = game.settings.get("acks", "color-friendlies");
+    const ele = AcksUtility.isMinVersion(13) ? el : el[0];
+    const colorFriendliesEl = ele.querySelector(':scope [name="acks.color-friendlies"]');
+    const parent = colorFriendliesEl.parentElement;
+    const colorInput = document.createElement("input");
+    colorInput.type = "color";
+    colorInput.value = col;
+    colorInput.setAttribute("data-edit", "acks.color-friendlies");
+    parent.append(colorInput);
   });
 
   await game.settings.register("acks", "color-hostiles", {
@@ -67,10 +74,15 @@ export const registerMainSettings = async () => {
     },
   });
   Hooks.on("renderSettingsConfig", (app, el, data) => {
-    let col = game.settings.get("acks", "color-hostiles");
-    el.find('[name="acks.color-hostiles"]')
-      .parent()
-      .append(`<input type="color" value="${col}" data-edit="acks.color-hostiles">`);
+    const col = game.settings.get("acks", "color-hostiles");
+    const ele = AcksUtility.isMinVersion(13) ? el : el[0];
+    const colorHostilesEl = ele.querySelector(':scope [name="acks.color-hostiles"]');
+    const parent = colorHostilesEl.parentElement;
+    const colorInput = document.createElement("input");
+    colorInput.type = "color";
+    colorInput.value = col;
+    colorInput.setAttribute("data-edit", "acks.color-hostiles");
+    parent.append(colorInput);
   });
 
   /*game.settings.register("acks", "initiative", {

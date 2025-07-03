@@ -1,8 +1,31 @@
 <section class="sheet-header">
-  <div class="left">
-    <img class="profile-img" src="{{item.img}}" alt="{{item.name}}" data-action="editImage" data-edit="img"/>
+
+  <div class="sheet-header__left">
+    <img class="sheet-header__image" src="{{item.img}}" alt="{{item.name}}" data-action="editImage" data-edit="img"/>
   </div>
-  <div class="middle">
+
+  <div class="sheet-header__middle">
     <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
   </div>
+
+  {{#if isPhysical}}
+    <div class="sheet-header__right field-set field-set--center field-set--narrow">
+
+      <div class="form-group form-group--row">
+        <label class="form-group__label" title="{{localize 'ACKS.items.Cost'}}"><i class="fas fa-circle"></i></label>
+        <div class="form-group__fields">
+          <input type="text" name="system.cost" value="{{system.cost}}" data-dtype="Number"/>
+        </div>
+      </div>
+
+      <div class="form-group form-group--row">
+        <label class="form-group__label" title="{{localize 'ACKS.items.Weight'}}"><i class="fas fa-weight-hanging"></i></label>
+        <div class="form-group__fields">
+          <input type="text" name="system.weight6" value="{{system.weight6}}" data-dtype="Number"/>
+        </div>
+      </div>
+
+    </div>
+  {{/if}}
+
 </section>

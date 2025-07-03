@@ -31,6 +31,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       toggleEffect: AcksItemSheetV2.#toggleEffect,
       editEffect: AcksItemSheetV2.#editEffect,
       deleteEffect: AcksItemSheetV2.#deleteEffect,
+      toggleMelee: AcksItemSheetV2.#toggleMelee,
+      toggleMissile: AcksItemSheetV2.#toggleMissile,
+      deleteTag: AcksItemSheetV2.#deleteTag,
     },
   };
 
@@ -82,9 +85,36 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     super._configureRenderOptions(options);
 
     // change initial height of window to accommodate for more details (left "stats" block with configuration)
-    if (["spell", "ability"].includes(this.item.type)) {
-      Object.assign(options.position, { height: 525 });
+    if (options.isFirstRender && ["spell", "ability", "weapon"].includes(this.item.type)) {
+      Object.assign(options.position, { height: 530 });
     }
+  }
+
+  /**
+   * Actions performed after a first render of the Application.
+   * @param {ApplicationRenderContext} context      Prepared context data
+   * @param {RenderOptions} options                 Provided render options
+   * @returns {Promise<void>}
+   * @protected
+   */
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    const tagInput = this.element.querySelector(':scope input[data-action="add-tag"]');
+    tagInput?.addEventListener("keydown", this.#tagInputKeydownHandler.bind(this));
+  }
+
+  /**
+   * Actions performed before closing the Application.
+   * Pre-close steps are awaited by the close process.
+   * @param {RenderOptions} options                 Provided render options
+   * @returns {Promise<void>}
+   * @protected
+   */
+  async _preClose(options) {
+    //TODO: not sure we need this, seems foundry is removing them
+    const tagInput = this.element.querySelector(':scope input[data-action="add-tag"]');
+    tagInput?.removeEventListener("keydown", this.#tagInputKeydownHandler.bind(this));
+    await super._preClose(options);
   }
 
   /**
@@ -139,6 +169,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       config: CONFIG.ACKS,
       system: this.item.system,
       isGM: game.user.isGM,
+      isPhysical: "cost" in this.item.system && "weight6" in this.item.system,
+      hasTags: "tags" in this.item.system && this.item.system.tags.length > 0,
     };
 
     return context;
@@ -260,31 +292,51 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
-   * Activate event listeners using the prepared sheet HTML
-   * @param html {HTML}   The prepared HTML object ready to be rendered into the DOM
+   * Handle melee flag toggling for weapon.
+   * @this {AcksItemSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
    */
-  activateListeners(html) {
-    /*html.find('input[data-action="add-tag"]').keypress((ev) => {
-      if (ev.which == 13) {
-        let value = $(ev.currentTarget).val();
-        let values = value.split(",");
-        this.object.pushTag(values);
+  static async #toggleMelee(event, target) {
+    this.item.update({ "system.melee": !this.item.system.melee });
+  }
+
+  /**
+   * Handle missile flag toggling for weapon.
+   * @this {AcksItemSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #toggleMissile(event, target) {
+    this.item.update({ "system.missile": !this.item.system.missile });
+  }
+
+  /**
+   * Remove tag from item
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #deleteTag(event, target) {
+    if (this.isEditable) {
+      const tag = target.dataset.tag;
+      this.item.popTag(tag);
+    }
+  }
+
+  /**
+   * Handle Enter key press in TAG input of weapon sheet
+   * @param {KeyboardEvent} event
+   */
+  #tagInputKeydownHandler(event) {
+    if (event.code === "Enter" || event.code === "NumpadEnter") {
+      const val = event.target?.value ?? "";
+      if (val.length > 0) {
+        const values = val.split(",");
+        this.item.pushTag(values);
       }
-    });*/
-
-    /*html.find(".tag-delete").click((ev) => {
-      let value = ev.currentTarget.parentElement.dataset.tag;
-      this.object.popTag(value);
-    });*/
-
-    /*html.find("a.melee-toggle").click(() => {
-      this.object.update({ "system.melee": !this.object.system.melee });
-    });*/
-
-    /*html.find("a.missile-toggle").click(() => {
-      this.object.update({ "system.missile": !this.object.system.missile });
-    });*/
-
-    super.activateListeners(html);
+    }
   }
 }

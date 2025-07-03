@@ -287,7 +287,7 @@
   max-height: 2.2rem;
   line-height: 1.6rem;
   /*line-height: 16px;
-  width: 80px;*/
+      width: 80px;*/
 }
 
 .acks.sheet.actor .sheet-body .attribute-group .attributes .attribute.saving-throw .attribute-value {
@@ -1053,7 +1053,7 @@
 }
 .acks.sheet.actor.character .sheet-body .saving-throw .attribute-value.flat {
   /*line-height: 1.0rem;
-  max-height: 2.0rem;*/
+      max-height: 2.0rem;*/
 }
 .acks.sheet.actor.character .sheet-body .exploration .attribute {
   margin: 4px;
@@ -1638,12 +1638,16 @@
   color: darkgreen;
 }
 
-/* V13 fixes */
+/*------------------------------------*\
+  #TODO: Temporary v13 style fixes
+\*------------------------------------*/
 .combat-tracker .combatant-controls {
   flex-wrap: wrap;
 }
 
-/** item sheet v2 **/
+/*------------------------------------*\
+  #Item Sheet v2
+\*------------------------------------*/
 .application.sheet.acks.item-v2 {
   min-width: 570px;
   min-height: 400px;
@@ -1655,6 +1659,7 @@
   border-radius: revert-layer;
   border-bottom: revert-layer;
 }
+
 .acks.item-v2 .window-content input:not([type="checkbox"]):hover:not(:disabled),
 .acks.item-v2 .window-content input:not([type="checkbox"]):focus:not(:disabled) {
   box-shadow: revert-layer;
@@ -1671,7 +1676,7 @@
   gap: 0.5rem;
 }
 
-.sheet.acks.item-v2 .sheet-header .profile-img {
+.sheet.acks.item-v2 .sheet-header__image {
   width: 84px;
   height: 84px;
   min-width: 84px;
@@ -1679,13 +1684,13 @@
   cursor: var(--cursor-pointer);
 }
 
-.sheet.acks.item-v2 .sheet-header .middle {
+.sheet.acks.item-v2 .sheet-header__middle {
   flex: 1;
   display: flex;
   align-items: center;
 }
 
-.sheet.acks.item-v2 .sheet-header .middle input[type="text"] {
+.sheet.acks.item-v2 .sheet-header__middle input[type="text"] {
   font-size: var(--font-size-28);
   line-height: var(--font-size-28);
 }
@@ -1701,48 +1706,62 @@
   flex: 1;
 }
 
-.sheet.acks.item-v2 .description .stats {
+.sheet.acks.item-v2 .field-set {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 0.5rem;
-  flex: 0 0 84px;
   font-size: var(--font-size-13);
 }
 
-.sheet.acks.item-v2 .description .stats .form-group {
-  display: flex;
-  flex-direction: column;
+.sheet.acks.item-v2 .field-set--narrow {
+  flex: 0 0 84px;
 }
 
-.sheet.acks.item-v2 .description .stats .form-group.form-group-row {
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
+.sheet.acks.item-v2 .field-set--center {
+  justify-content: center;
 }
 
-.sheet.acks.item-v2 .description .stats .form-group label {
-  height: 20px;
-  line-height: 20px;
-  flex: 1;
-}
-
-.sheet.acks.item-v2 .description .stats .form-group .form-fields {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-
-.sheet.acks.item-v2 .description .stats select,
-.sheet.acks.item-v2 .description .stats input[type="text"] {
+.sheet.acks.item-v2 .field-set select,
+.sheet.acks.item-v2 .field-set input[type="text"] {
   height: 1.5rem;
   line-height: 1.5rem;
   padding: 0 0.2rem;
 }
 
+.sheet.acks.item-v2 .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sheet.acks.item-v2 .form-group--row {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sheet.acks.item-v2 .form-group__label {
+  height: 20px;
+  line-height: 20px;
+  flex: 1;
+}
+
+.sheet.acks.item-v2 .form-group__fields {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sheet.acks.item-v2 .form-group__fields--column {
+  flex-direction: column;
+}
+
 .sheet.acks.item-v2 .description .item-description {
   display: flex;
+  flex-direction: column;
   flex: 1;
+  gap: 0.5rem;
 }
 
 .sheet.acks.item-v2 .description .item-description prose-mirror {
@@ -1800,4 +1819,43 @@
 .sheet.acks.item-v2 a.button:hover,
 .sheet.acks.item-v2 button:hover {
   background: var(--acks-purple);
+}
+
+.sheet.acks.item-v2 a.button.active,
+.sheet.acks.item-v2 button.active {
+  outline: 1px solid var(--acks-purple);
+  box-shadow: 0 0 4px var(--acks-purple);
+}
+
+.sheet.acks.item-v2 a.button.not-active,
+.sheet.acks.item-v2 button.not-active {
+  opacity: 70%;
+  filter: grayscale(1);
+}
+
+.sheet.acks.item-v2 a.button:focus,
+.sheet.acks.item-v2 button:focus {
+  outline: 1px solid var(--acks-purple);
+  box-shadow: 0 0 4px var(--acks-purple);
+}
+
+.sheet.acks.item-v2 .tag-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sheet.acks.item-v2 .tag {
+  color: var(--color-text-selection);
+  background: var(--color-text-selection-bg);
+  border-radius: 5px;
+  padding: 0 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.sheet.acks.item-v2 .tag__delete {
+  display: flex;
+  align-items: center;
 }

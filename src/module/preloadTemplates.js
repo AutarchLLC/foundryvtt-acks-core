@@ -27,6 +27,7 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/acks/templates/items/v2/details/details-money.hbs",
     "systems/acks/templates/items/v2/details/details-ability.hbs",
     "systems/acks/templates/items/v2/details/details-spell.hbs",
+    "systems/acks/templates/items/v2/details/details-weapon.hbs",
     "systems/acks/templates/items/v2/common/item-description.hbs",
   ];
   return loadTemplates(templatePaths);
