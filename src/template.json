@@ -219,9 +219,7 @@
       "totalvalue": 0,
       "description": ""
     },
-    "language": {
-      "description": ""
-    },
+    "language": {},
     "item": {
       "subtype": "item",
       "description": "",

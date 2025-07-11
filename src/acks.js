@@ -4,7 +4,7 @@ import { AcksActorSheetCharacter } from "./module/actor/character-sheet.js";
 import { AcksActorSheetMonster } from "./module/actor/monster-sheet.js";
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { AcksActor } from "./module/actor/entity.js";
-import { AcksItem } from "./module/item/entity.js";
+import { AcksItem } from "./module/documents/item.js";
 import { ACKS } from "./module/config.js";
 import { registerMainSettings } from "./module/settings.js";
 import { registerHelpers } from "./module/helpers.js";
@@ -19,6 +19,7 @@ import { AcksPolyglot } from "./module/apps/polyglot-support.js";
 import { AcksTableManager } from "./module/apps/table-manager.js";
 import { AcksCommands } from "./module/apps/acks-commands.js";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
+import LanguageData from "./module/data/item/language.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -55,6 +56,9 @@ Hooks.once("init", async function () {
 
   CONFIG.Actor.documentClass = AcksActor;
   CONFIG.Item.documentClass = AcksItem;
+  CONFIG.Item.dataModels = {
+    language: LanguageData,
+  };
   CONFIG.Combat.documentClass = AcksCombatClass;
 
   // Register sheet application classes

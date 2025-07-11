@@ -6,31 +6,32 @@ import { AcksUtility } from "../utility.js";
  */
 export class AcksItem extends Item {
   constructor(data, context) {
-    if (!data.img) {
-      let img = "systems/acks/assets/default/item.png";
-      switch (data.type) {
-        case "spell":
-          img = "systems/acks/assets/default/spell.png";
-          break;
-        case "ability":
-          img = "systems/acks/assets/default/ability.png";
-          break;
-        case "armor":
-          img = "systems/acks/assets/default/armor.png";
-          break;
-        case "weapon":
-          img = "systems/acks/assets/default/weapon.png";
-          break;
-        case "money":
-          img = "systems/acks/assets/gold.png";
-          break;
-        case "language":
-          img = "systems/acks/assets/icons/language.png";
-          break;
-      }
-      data.img = img;
-    }
     super(data, context);
+  }
+
+  /**
+   * Determine default artwork based on the provided item data.
+   * @param {ItemData} itemData  The source item data.
+   * @returns {{img: string}}    Candidate item image.
+   */
+  static getDefaultArtwork(itemData) {
+    const { type } = itemData;
+    switch (type) {
+      case "spell":
+        return { img: "systems/acks/assets/default/spell.png" };
+      case "ability":
+        return { img: "systems/acks/assets/default/ability.png" };
+      case "armor":
+        return { img: "systems/acks/assets/default/armor.png" };
+      case "weapon":
+        return { img: "systems/acks/assets/default/weapon.png" };
+      case "money":
+        return { img: "systems/acks/assets/gold.png" };
+      case "language":
+        return { img: "systems/acks/assets/icons/language.png" };
+      default:
+        return { img: "systems/acks/assets/default/item.png" };
+    }
   }
 
   static chatListeners(html) {
