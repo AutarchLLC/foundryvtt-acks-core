@@ -21,6 +21,7 @@ import { AcksCommands } from "./module/apps/acks-commands.js";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
 import LanguageData from "./module/data/item/language.mjs";
 import MoneyData from "./module/data/item/money.mjs";
+import ItemData from "./module/data/item/item.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -60,6 +61,7 @@ Hooks.once("init", async function () {
   CONFIG.Item.dataModels = {
     language: LanguageData,
     money: MoneyData,
+    item: ItemData,
   };
   CONFIG.Combat.documentClass = AcksCombatClass;
 

@@ -213,20 +213,7 @@
     "types": ["item", "weapon", "armor", "spell", "ability", "language", "money"],
     "money": {},
     "language": {},
-    "item": {
-      "subtype": "item",
-      "description": "",
-      "quantity": {
-        "value": 1,
-        "max": 0
-      },
-      "treasure": false,
-      "cost": 0,
-      "weight": 166.6,
-      "weight6": -1,
-      "iconsource": "",
-      "iconlicense": ""
-    },
+    "item": {},
     "weapon": {
       "range": {
         "short": 0,

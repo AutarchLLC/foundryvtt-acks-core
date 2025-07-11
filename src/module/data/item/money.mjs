@@ -7,6 +7,10 @@ import itemDescriptionSchema from "../schema/item-description-schema.mjs";
  * @see https://foundryvtt.com/article/system-data-models/
  */
 export default class MoneyData extends foundry.abstract.TypeDataModel {
+  /**
+   * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
+   * @return {{description: HTMLField, coppervalue, quantity, quantitybank, unitweight, totalvalue}}
+   */
   static defineSchema() {
     const { NumberField } = foundry.data.fields;
 
