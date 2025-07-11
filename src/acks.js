@@ -20,6 +20,7 @@ import { AcksTableManager } from "./module/apps/table-manager.js";
 import { AcksCommands } from "./module/apps/acks-commands.js";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
 import LanguageData from "./module/data/item/language.mjs";
+import MoneyData from "./module/data/item/money.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -58,6 +59,7 @@ Hooks.once("init", async function () {
   CONFIG.Item.documentClass = AcksItem;
   CONFIG.Item.dataModels = {
     language: LanguageData,
+    money: MoneyData,
   };
   CONFIG.Combat.documentClass = AcksCombatClass;
 
