@@ -1,4 +1,5 @@
 import itemDescriptionSchema from "../schema/item-description-schema.mjs";
+import itemPhysicalSchema from "../schema/item-physical-schema.mjs";
 
 /**
  * Item Item Data Model :D:D:D
@@ -9,7 +10,7 @@ import itemDescriptionSchema from "../schema/item-description-schema.mjs";
 export default class ItemData extends foundry.abstract.TypeDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
-   * @return {{description: HTMLField, subtype, quantity, treasure, cost, weight, weight6, iconsource, iconlicense}}
+   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, subtype, quantity, treasure, iconsource, iconlicense}}
    */
   static defineSchema() {
     const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -17,6 +18,8 @@ export default class ItemData extends foundry.abstract.TypeDataModel {
     return {
       // common item description
       ...itemDescriptionSchema(),
+      // cost and weight
+      ...itemPhysicalSchema(),
       // Item subtype. For now it can be "item" or "clothing"
       subtype: new StringField({ choices: CONFIG.ACKS.item_subtypes, required: true, initial: "item" }),
       // item quantity
@@ -28,12 +31,6 @@ export default class ItemData extends foundry.abstract.TypeDataModel {
       }),
       //TODO: not used? remove?
       treasure: new BooleanField({ initial: false }),
-      // item cost (in GP?)
-      cost: new NumberField({ initial: 0, min: 0 }),
-      // TODO: old weight handling? seems like it is not used anymore? maybe write migration and delete?
-      weight: new NumberField({}),
-      // weight in 1/6 stone
-      weight6: new NumberField({}),
       // TODO: not used anywhere. Remove and add license information to license file?
       iconsource: new StringField({ blank: true, initial: "" }),
       // TODO: not used anywhere. Remove and add license information to license file?

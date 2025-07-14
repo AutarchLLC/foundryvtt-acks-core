@@ -22,6 +22,7 @@ import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
 import LanguageData from "./module/data/item/language.mjs";
 import MoneyData from "./module/data/item/money.mjs";
 import ItemData from "./module/data/item/item.mjs";
+import WeaponData from "./module/data/item/weapon.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -62,6 +63,7 @@ Hooks.once("init", async function () {
     language: LanguageData,
     money: MoneyData,
     item: ItemData,
+    weapon: WeaponData,
   };
   CONFIG.Combat.documentClass = AcksCombatClass;
 
