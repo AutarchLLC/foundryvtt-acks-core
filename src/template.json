@@ -217,17 +217,6 @@
     "weapon": {},
     "armor": {},
     "spell": {},
-    "ability": {
-      "proficiencytype": "general",
-      "favorite": false,
-      "pattern": "white",
-      "requirements": "",
-      "roll": "",
-      "rollType": "result",
-      "rollTarget": 0,
-      "blindroll": false,
-      "description": "",
-      "save": ""
-    }
+    "ability": {}
   }
 }

@@ -25,6 +25,7 @@ import ItemData from "./module/data/item/item.mjs";
 import WeaponData from "./module/data/item/weapon.mjs";
 import ArmorData from "./module/data/item/armor.mjs";
 import SpellData from "./module/data/item/spell.mjs";
+import AbilityData from "./module/data/item/ability.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -68,6 +69,7 @@ Hooks.once("init", async function () {
     weapon: WeaponData,
     armor: ArmorData,
     spell: SpellData,
+    ability: AbilityData,
   };
   CONFIG.Combat.documentClass = AcksCombatClass;
 
