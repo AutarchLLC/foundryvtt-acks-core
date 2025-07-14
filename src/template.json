@@ -215,16 +215,7 @@
     "language": {},
     "item": {},
     "weapon": {},
-    "armor": {
-      "description": "",
-      "ac": 9,
-      "aac": 0,
-      "type": "light",
-      "cost": 0,
-      "equipped": false,
-      "weight": 2000,
-      "weight6": -1
-    },
+    "armor": {},
     "spell": {
       "favorite": false,
       "lvl": 1,
