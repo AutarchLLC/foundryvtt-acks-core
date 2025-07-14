@@ -216,18 +216,7 @@
     "item": {},
     "weapon": {},
     "armor": {},
-    "spell": {
-      "favorite": false,
-      "lvl": 1,
-      "class": "Magic-User",
-      "duration": "",
-      "range": "",
-      "roll": "",
-      "description": "",
-      "memorized": 0,
-      "cast": 0,
-      "save": ""
-    },
+    "spell": {},
     "ability": {
       "proficiencytype": "general",
       "favorite": false,

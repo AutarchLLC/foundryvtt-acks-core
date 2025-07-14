@@ -13,7 +13,7 @@ export default class ArmorData extends foundry.abstract.TypeDataModel {
    * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, ac, aac, type, equipped}}
    */
   static defineSchema() {
-    const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
+    const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
       // common item description
