@@ -21,7 +21,9 @@ export default class ArmorData extends foundry.abstract.TypeDataModel {
       // cost and weight
       ...itemPhysicalSchema(),
       // Armor AC value. TODO: I think this is old one, remove? We are using aac
-      ac: new NumberField({ initial: 9 }),
+      ac: new SchemaField({
+        value: new NumberField({ initial: 9 }),
+      }),
       // Ascending AC value
       aac: new SchemaField({
         value: new NumberField({ initial: 0 }),
