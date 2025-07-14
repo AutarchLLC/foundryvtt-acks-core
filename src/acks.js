@@ -19,13 +19,13 @@ import { AcksPolyglot } from "./module/apps/polyglot-support.js";
 import { AcksTableManager } from "./module/apps/table-manager.js";
 import { AcksCommands } from "./module/apps/acks-commands.js";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
-import LanguageData from "./module/data/item/language.mjs";
-import MoneyData from "./module/data/item/money.mjs";
-import ItemData from "./module/data/item/item.mjs";
-import WeaponData from "./module/data/item/weapon.mjs";
-import ArmorData from "./module/data/item/armor.mjs";
-import SpellData from "./module/data/item/spell.mjs";
-import AbilityData from "./module/data/item/ability.mjs";
+import LanguageData from "./module/data/item/language-data.mjs";
+import MoneyData from "./module/data/item/money-data.mjs";
+import ItemData from "./module/data/item/item-data.mjs";
+import WeaponData from "./module/data/item/weapon-data.mjs";
+import ArmorData from "./module/data/item/armor-data.mjs";
+import SpellData from "./module/data/item/spell-data.mjs";
+import AbilityData from "./module/data/item/ability-data.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
