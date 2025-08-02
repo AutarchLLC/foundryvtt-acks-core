@@ -9,7 +9,6 @@ export class AcksActorSheet extends ActorSheet {
 
     data.config = CONFIG.ACKS;
     // Settings
-    data.config.ascendingAC = game.settings.get("acks", "ascendingAC");
     data.config.encumbrance = game.settings.get("acks", "encumbranceOption");
     data.effects = await AcksUtility.prepareActiveEffectCategories(this.actor.allApplicableEffects());
     data.system = this.actor.system;

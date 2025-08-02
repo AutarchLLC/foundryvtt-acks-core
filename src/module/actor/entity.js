@@ -930,10 +930,7 @@ export class AcksActor extends Actor {
       dmgParts.push(attData.item.system.damage);
     }
 
-    let ascending = game.settings.get("acks", "ascendingAC");
-    if (ascending) {
-      rollParts.push(data.thac0.bba.toString());
-    }
+    rollParts.push(data.thac0.bba.toString());
     if (options.type == "missile") {
       rollParts.push(data.scores.dex.mod.toString(), data.thac0.mod.missile.toString());
     } else if (options.type == "melee") {
@@ -1119,26 +1116,19 @@ export class AcksActor extends Actor {
       return;
     }
     // Compute AC
-    let baseAc = 9;
     let baseAac = 0;
-    let AcShield = 0;
     let AacShield = 0;
     const data = this.system;
     data.aac.naked = baseAac + data.scores.dex.mod;
-    data.ac.naked = baseAc - data.scores.dex.mod;
     const armors = this.items.filter((i) => i.type == "armor");
     armors.forEach((a) => {
       if (a.system.equipped && a.system.type != "shield") {
-        baseAc = a.system.ac;
         baseAac = a.system.aac.value;
       } else if (a.system.equipped && a.system.type == "shield") {
-        AcShield = a.system.ac;
         AacShield = a.system.aac.value;
       }
     });
     data.aac.value = baseAac + data.scores.dex.mod + AacShield + data.aac.mod;
-    data.ac.value = baseAc - data.scores.dex.mod - AcShield - data.ac.mod;
-    data.ac.shield = AcShield;
     data.aac.shield = AacShield;
   }
 

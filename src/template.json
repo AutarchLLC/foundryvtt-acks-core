@@ -18,10 +18,6 @@
           "max": 4,
           "bhr": "1d3"
         },
-        "ac": {
-          "value": 0,
-          "mod": 0
-        },
         "aac": {
           "value": 0,
           "mod": 0

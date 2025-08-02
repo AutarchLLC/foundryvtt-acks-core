@@ -50,7 +50,6 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
   async getData() {
     const data = await super.getData();
 
-    data.config.ascendingAC = game.settings.get("acks", "ascendingAC");
     data.config.initiative = true; // game.settings.get("acks", "initiative") != "group";
     data.config.BHR = game.settings.get("acks", "bhr");
     data.config.removeMagicBonus = game.settings.get("acks", "removeMagicBonus");

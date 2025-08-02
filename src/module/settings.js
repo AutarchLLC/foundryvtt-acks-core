@@ -51,7 +51,7 @@ export const registerMainSettings = async () => {
     name: game.i18n.localize("ACKS.Setting.colorHostiles"), // The name of the setting in the settings menu
     hint: game.i18n.localize("ACKS.Setting.colorHostiles"), // A description of the registered setting and its behavior
     scope: "world", // "world" = sync to db, "client" = local storage
-    config: true, // false if you dont want it to show in module config
+    config: true, // false if you don't want it to show in module config
     type: new foundry.data.fields.ColorField(), // Foundry will render corresponding controls itself
     requiresReload: true,
     default: "#eb7272",
@@ -85,16 +85,6 @@ export const registerMainSettings = async () => {
       reset: "ACKS.Setting.InitiativeReset",
       reroll: "ACKS.Setting.InitiativeReroll",
     },
-  });
-
-  game.settings.register("acks", "ascendingAC", {
-    name: game.i18n.localize("ACKS.Setting.AscendingAC"),
-    hint: game.i18n.localize("ACKS.Setting.AscendingACHint"),
-    default: true,
-    scope: "world",
-    type: Boolean,
-    config: false,
-    onChange: (_) => window.location.reload(),
   });
 
   game.settings.register("acks", "encumbranceOption", {

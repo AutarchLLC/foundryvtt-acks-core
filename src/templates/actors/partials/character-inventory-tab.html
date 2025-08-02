@@ -83,11 +83,7 @@
     <li class="item-titles flexrow">
       <div class="item-caret"><i class="fas fa-caret-down"></i></div>
       <div class="item-name">{{localize "ACKS.items.Armors"}}</div>
-      {{#if @root.config.ascendingAC}}
       <div class="field-short">{{localize "ACKS.items.ArmorAAC"}}</div>
-      {{else}}
-      <div class="field-short">{{localize "ACKS.items.ArmorAC"}}</div>
-      {{/if}}
       <div class="field-short"><i class="fas fa-weight-hanging"></i></div>
       <div class="item-controls">
         <a class="item-control item-create" data-type="armor" title="{{localize 'ACKS.Add'}}"><i
@@ -107,11 +103,7 @@
             </a>
           </div>
           <div class="field-short">
-            {{#if @root.config.ascendingAC}}
             {{item.system.aac.value}}
-            {{else}}
-            {{item.system.ac.value}}
-            {{/if}}
           </div>
           <div class="field-short">
             {{#if (eq @root.config.encumbrance "detailed")}}{{item.system.weight6}}{{else}}_{{/if}}

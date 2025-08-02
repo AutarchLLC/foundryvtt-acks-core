@@ -10,7 +10,7 @@ import itemPhysicalSchema from "../schema/item-physical-schema.mjs";
 export default class ArmorData extends foundry.abstract.TypeDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
-   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, ac, aac, type, equipped}}
+   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, aac, type, equipped}}
    */
   static defineSchema() {
     const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -20,10 +20,6 @@ export default class ArmorData extends foundry.abstract.TypeDataModel {
       ...itemDescriptionSchema(),
       // cost and weight
       ...itemPhysicalSchema(),
-      // Armor AC value. TODO: I think this is old one, remove? We are using aac
-      ac: new SchemaField({
-        value: new NumberField({ initial: 9 }),
-      }),
       // Ascending AC value
       aac: new SchemaField({
         value: new NumberField({ initial: 0 }),

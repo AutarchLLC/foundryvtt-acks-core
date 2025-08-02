@@ -126,52 +126,35 @@ export class AcksDice {
     };
     result.target = data.roll.thac0;
 
-    const targetAc = data.roll.target ? data.roll.target.actor.system.ac.value : 9;
     const targetAac = data.roll.target ? data.roll.target.actor.system.aac.value : 0;
     result.victim = data.roll.target ? data.roll.target.name : null;
 
     const hfh = game.settings.get("acks", "exploding20s");
     const die = roll.dice[0].total;
 
-    if (game.settings.get("acks", "ascendingAC")) {
-      if (die == 1 && !hfh) {
-        result.details = game.i18n.format("ACKS.messages.Fumble", {
-          result: roll.total,
-          bonus: result.target,
-        });
-        return result;
-      } else if (roll.total < targetAac + 10 && (die < 20 || hfh)) {
-        result.details = game.i18n.format("ACKS.messages.AttackAscendingFailure", {
-          result: roll.total - 10,
-          bonus: result.target,
-        });
-        return result;
-      }
-      if (!hfh && die == 20) {
-        result.details = game.i18n.format("ACKS.messages.Critical", {
-          result: roll.total,
-        });
-      } else {
-        result.details = game.i18n.format("ACKS.messages.AttackAscendingSuccess", {
-          result: roll.total - 10,
-        });
-      }
-      result.isSuccess = true;
-    } else {
-      // B/X Historic THAC0 Calculation
-      if (result.target - roll.total > targetAc) {
-        result.details = game.i18n.format("ACKS.messages.AttackFailure", {
-          bonus: result.target,
-        });
-        return result;
-      }
-      result.isSuccess = true;
-      let value = Math.clamp(result.target - roll.total, -3, 9);
-      result.details = game.i18n.format("ACKS.messages.AttackSuccess", {
-        result: value,
+    if (die == 1 && !hfh) {
+      result.details = game.i18n.format("ACKS.messages.Fumble", {
+        result: roll.total,
         bonus: result.target,
       });
+      return result;
+    } else if (roll.total < targetAac + 10 && (die < 20 || hfh)) {
+      result.details = game.i18n.format("ACKS.messages.AttackAscendingFailure", {
+        result: roll.total - 10,
+        bonus: result.target,
+      });
+      return result;
     }
+    if (!hfh && die == 20) {
+      result.details = game.i18n.format("ACKS.messages.Critical", {
+        result: roll.total,
+      });
+    } else {
+      result.details = game.i18n.format("ACKS.messages.AttackAscendingSuccess", {
+        result: roll.total - 10,
+      });
+    }
+    result.isSuccess = true;
     return result;
   }
 
