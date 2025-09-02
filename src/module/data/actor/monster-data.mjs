@@ -49,4 +49,11 @@ export default class MonsterData extends foundry.abstract.TypeDataModel {
       attacks: new StringField({ blank: true, initial: "" }),
     };
   }
+
+  static migrateData(source) {
+    source.details.xp = Number(source?.details?.xp) || 0;
+    source.details.morale = Number(source?.details?.morale) || 0;
+
+    return super.migrateData(source);
+  }
 }
