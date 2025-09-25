@@ -104,6 +104,8 @@ export default function actorCommonSchema() {
       base: new NumberField({ initial: 120 }),
       // movement modifier, configured via Actor Tweaks
       mod: new NumberField({ initial: 0 }),
+      // used only in monster sheet now
+      value: new StringField({}),
     }),
     // Initiative
     initiative: new SchemaField({
