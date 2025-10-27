@@ -1773,13 +1773,15 @@
   flex: 1;
 }
 
-.sheet.acks.item-v2 .tab[data-tab].active {
+.sheet.acks.item-v2 .tab[data-tab].active,
+.sheet.acks.actor-v2 .tab[data-tab].active {
   display: flex;
   flex: 1;
   overflow: hidden auto;
 }
 
-.sheet.acks.item-v2 .tab[data-tab]:not(.active) {
+.sheet.acks.item-v2 .tab[data-tab]:not(.active),
+.sheet.acks.actor-v2 .tab[data-tab]:not(.active) {
   display: none;
 }
 
