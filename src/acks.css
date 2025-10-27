@@ -1653,7 +1653,8 @@
   min-height: 400px;
 }
 
-.acks.item-v2 .window-content input:not([type="checkbox"]) {
+.acks.item-v2 .window-content input:not([type="checkbox"]),
+.acks.actor-v2 .window-content input:not([type="checkbox"]) {
   background: revert-layer;
   border: revert-layer;
   border-radius: revert-layer;
@@ -1661,17 +1662,21 @@
 }
 
 .acks.item-v2 .window-content input:not([type="checkbox"]):hover:not(:disabled),
-.acks.item-v2 .window-content input:not([type="checkbox"]):focus:not(:disabled) {
+.acks.actor-v2 .window-content input:not([type="checkbox"]):hover:not(:disabled),
+.acks.item-v2 .window-content input:not([type="checkbox"]):focus:not(:disabled),
+.acks.actor-v2 .window-content input:not([type="checkbox"]):focus:not(:disabled) {
   box-shadow: revert-layer;
   background: revert-layer;
 }
 
-.sheet.acks.item-v2 .window-content {
+.sheet.acks.item-v2 .window-content,
+.sheet.acks.actor-v2 .window-content {
   padding: 0.5rem;
   gap: 0.5rem;
 }
 
-.sheet.acks.item-v2 .sheet-header {
+.sheet.acks.item-v2 .sheet-header,
+.sheet.acks.actor-v2 .sheet-header {
   display: flex;
   gap: 0.5rem;
 }
@@ -1858,4 +1863,16 @@
 .sheet.acks.item-v2 .tag__delete {
   display: flex;
   align-items: center;
+}
+
+.sheet.acks.actor-v2 .actor-portrait {
+  flex: 0 0 145px;
+  cursor: var(--cursor-pointer);
+}
+
+.sheet.acks.actor-v2 .actor-portrait > img{
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 4px;
 }

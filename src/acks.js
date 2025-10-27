@@ -28,6 +28,7 @@ import SpellData from "./module/data/item/spell-data.mjs";
 import AbilityData from "./module/data/item/ability-data.mjs";
 import CharacterData from "./module/data/actor/character-data.mjs";
 import MonsterData from "./module/data/actor/monster-data.mjs";
+import ACKSCharacterSheetV2 from "./module/actor/character-sheet-v2.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -80,30 +81,43 @@ Hooks.once("init", async function () {
   };
   CONFIG.Combat.documentClass = AcksCombatClass;
 
-  // Register sheet application classes
+  // Unregister default sheets
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("acks", AcksActorSheetCharacter, {
-    types: ["character"],
-    makeDefault: true,
-  });
-  Actors.registerSheet("acks", AcksActorSheetMonster, {
-    types: ["monster"],
-    makeDefault: true,
-  });
-  // Unregister default item sheet
   Items.unregisterSheet("core", ItemSheet);
+
   if (AcksUtility.isMinVersion(13)) {
-    // If Foundry is v13 or more - register both old and new Item sheets for now.
+    // If Foundry is v13 or more - register both old and new sheets for now.
     Items.registerSheet("acks", AcksItemSheet, {
       makeDefault: false,
     });
     Items.registerSheet("acks", AcksItemSheetV2, {
       makeDefault: true,
     });
+
+    Actors.registerSheet("acks", AcksActorSheetCharacter, {
+      types: ["character"],
+      makeDefault: false,
+    });
+    Actors.registerSheet("acks", AcksActorSheetMonster, {
+      types: ["monster"],
+      makeDefault: true,
+    });
+    Actors.registerSheet("acks", ACKSCharacterSheetV2, {
+      types: ["character"],
+      makeDefault: true,
+    });
   } else {
-    // Use old item sheet for Foundry v12
+    // Use old sheets for Foundry v12
     Items.registerSheet("acks", AcksItemSheet, {
       makeDefault: false,
+    });
+    Actors.registerSheet("acks", AcksActorSheetCharacter, {
+      types: ["character"],
+      makeDefault: true,
+    });
+    Actors.registerSheet("acks", AcksActorSheetMonster, {
+      types: ["monster"],
+      makeDefault: true,
     });
   }
 
