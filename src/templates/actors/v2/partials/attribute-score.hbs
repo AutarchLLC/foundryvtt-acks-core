@@ -1,0 +1,16 @@
+<!-- Attribute Score -->
+<div class="flexrow">
+  <!-- Attribute Name -->
+  <div>
+    <a data-tooltip="{{ localize (concat 'ACKS.scores.' abbr '.long') }}">
+      <span class="fa-solid fa-dice-d20"></span>
+      <span>{{ localize (concat "ACKS.scores." abbr ".short") }}</span>
+    </a>
+  </div>
+  <!-- Attribute Value -->
+  <div>
+    <input name="system.scores.{{abbr}}.value" type="text"
+           value="{{lookup (lookup (lookup system "scores") abbr) "value"}}" placeholder="0" data-dtype="Number"/>
+    <div data-tooltip="Modifier">{{mod (lookup (lookup (lookup system "scores") abbr) "mod")}}</div>
+  </div>
+</div>

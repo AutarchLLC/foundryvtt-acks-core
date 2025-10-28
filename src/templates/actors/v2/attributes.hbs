@@ -1,3 +1,14 @@
 <section class="tab {{ tab.cssClass }} sheet-attributes" data-group="primary" data-tab="attributes">
-  attributes
+  <div class="flexrow">
+    <div class="flexcol">
+      {{> attributeScore abbr="str"}}
+      {{> attributeScore abbr="int"}}
+      {{> attributeScore abbr="wis"}}
+      {{> attributeScore abbr="dex"}}
+      {{> attributeScore abbr="con"}}
+      {{> attributeScore abbr="cha"}}
+    </div>
+    <div></div>
+    <div></div>
+  </div>
 </section>

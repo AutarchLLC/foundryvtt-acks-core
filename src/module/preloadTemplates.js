@@ -30,5 +30,12 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/acks/templates/items/v2/details/details-weapon.hbs",
     "systems/acks/templates/items/v2/common/item-description.hbs",
   ];
-  return loadTemplates(templatePaths);
+  await foundry.applications.handlebars.loadTemplates(templatePaths);
+
+  // register and load named partials
+  // you can use them like so:
+  // {{>attributeScore}}
+  await foundry.applications.handlebars.loadTemplates({
+    attributeScore: "systems/acks/templates/actors/v2/partials/attribute-score.hbs",
+  });
 };
