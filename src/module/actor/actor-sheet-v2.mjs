@@ -18,7 +18,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     position: {
       // initial size of the window
       width: 800,
-      height: 600,
+      height: 650,
     },
     form: {
       submitOnChange: true,

@@ -2,15 +2,17 @@
 <div class="flexrow">
   <!-- Attribute Name -->
   <div>
-    <a data-tooltip="{{ localize (concat 'ACKS.scores.' abbr '.long') }}">
-      <span class="fa-solid fa-dice-d20"></span>
-      <span>{{ localize (concat "ACKS.scores." abbr ".short") }}</span>
-    </a>
+    <button type="button" class="plain" data-tooltip="{{ localize (concat 'ACKS.scores.' abbr '.long') }}">
+      <i class="fa-solid fa-dice-d20"></i>
+      <label for="{{@root.partId}}-score-{{abbr}}">{{ localize (concat "ACKS.scores." abbr ".short") }}</label>
+    </button>
   </div>
   <!-- Attribute Value -->
-  <div>
-    <input name="system.scores.{{abbr}}.value" type="text"
+  <div class="attribute-value">
+    <input name="system.scores.{{abbr}}.value" type="text" id="{{@root.partId}}-score-{{abbr}}"
            value="{{lookup (lookup (lookup system "scores") abbr) "value"}}" placeholder="0" data-dtype="Number"/>
-    <div data-tooltip="Modifier">{{mod (lookup (lookup (lookup system "scores") abbr) "mod")}}</div>
+    <div data-tooltip="Modifier" class="attribute-value__mod">
+      {{mod (lookup (lookup (lookup system "scores") abbr) "mod")}}
+    </div>
   </div>
 </div>

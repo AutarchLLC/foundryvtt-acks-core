@@ -1872,9 +1872,60 @@
   cursor: var(--cursor-pointer);
 }
 
-.sheet.acks.actor-v2 .actor-portrait > img{
-    display: block;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 4px;
+.sheet.acks.actor-v2 .actor-portrait > img {
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+}
+
+.sheet.acks.actor-v2 .flexcol,
+.sheet.acks.actor-v2 .flexrow {
+  gap: 0.5rem;
+}
+
+.sheet.acks.actor-v2 .flex-1 {
+  flex: 1;
+}
+
+.sheet.acks.actor-v2 .flex-2 {
+  flex: 2;
+}
+
+.sheet.acks.actor-v2 .flex-4 {
+  flex: 4;
+}
+.sheet.acks.actor-v2 .flex-8 {
+  flex: 8;
+}
+
+.sheet.acks.actor-v2 label {
+  font-size: var(--font-size-12);
+}
+
+.sheet.acks.actor-v2 .xp-value {
+  position: relative;
+}
+
+.sheet.acks.actor-v2 .xp-value__bonus {
+  position: absolute;
+  right: 2px;
+  top: -12px;
+  font-size: var(--font-size-10);
+}
+
+.sheet.acks.actor-v2 .attribute-value {
+  position: relative;
+}
+
+.sheet.acks.actor-v2 .attribute-value__mod {
+  position: absolute;
+  right: 0;
+  top: -12px;
+  width: 24px;
+  height: 24px;
+  line-height: 20px;
+  border: 2px solid var(--color-text-primary);
+  border-radius: 50%;
+  text-align: center;
 }

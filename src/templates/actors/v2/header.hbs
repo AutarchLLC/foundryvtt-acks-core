@@ -1,9 +1,8 @@
 <section class="sheet-header">
-  {{log this}} <!--TODO: remove log-->
   <div class="actor-portrait">
     <img src="{{actor.img}}" alt="{{actor.name}}" data-action="editImage" data-edit="img"/>
   </div>
-  <div class="flexcol">
+  <div class="flexcol flex-1">
     <div class="flexrow">
       {{formInput fields.name value=actor.name placeholder=(localize "DOCUMENT.FIELDS.name.label")
                   aria=(object label=(localize "DOCUMENT.FIELDS.name.label"))}}
@@ -11,21 +10,21 @@
 
     <div class="flexrow">
       {{formGroup actorFields.details.fields.alignment label="ACKS.details.alignment" value=system.details.alignment
-                  rootId=@root.partId localize=true}}
+                  rootId=@root.partId localize=true classes="flex-2"}}
       {{formGroup actorFields.details.fields.age label="ACKS.details.age" value=system.details.age
-                  rootId=@root.partId localize=true}}
+                  rootId=@root.partId localize=true classes="flex-1"}}
       {{formGroup actorFields.details.fields.fatepoints label="ACKS.details.fate" value=system.details.fatepoints
-                  rootId=@root.partId localize=true}}
+                  rootId=@root.partId localize=true classes="flex-1"}}
 
       {{#if system.retainer.enabled}}
         {{formGroup actorFields.retainer.fields.wage label="ACKS.RetainerWage" value=system.retainer.wage
-                    rootId=@root.partId localize=true}}
+                    rootId=@root.partId localize=true classes="flex-1"}}
         {{formGroup actorFields.details.fields.morale label="ACKS.details.morale" value=system.details.morale
-                    rootId=@root.partId localize=true type="number"}}
+                    rootId=@root.partId localize=true type="number" classes="flex-1"}}
         {{formGroup actorFields.retainer.fields.loyalty label="ACKS.Loyalty" value=system.retainer.loyalty
-                    rootId=@root.partId localize=true type="number"}}
+                    rootId=@root.partId localize=true type="number" classes="flex-1"}}
 
-        <div class="form-group">
+        <div class="form-group flex-2">
           <label for="{{@root.partId}}-employerName">{{localize 'ACKS.employer'}}</label>
           <div class="form-fields">
             <input type="text" value="{{managerName}}" disabled id="{{@root.partId}}-employerName" data-dtype="String"/>
@@ -33,33 +32,33 @@
         </div>
 
         {{formGroup actorFields.retainer.fields.category label="ACKS.hireling.category" value=system.retainer.category
-                    rootId=@root.partId localize=true}}
+                    rootId=@root.partId localize=true classes="flex-2"}}
 
       {{else}}
         {{formGroup actorFields.details.fields.title label="ACKS.details.title" value=system.details.title
-                    rootId=@root.partId localize=true}}
+                    rootId=@root.partId localize=true classes="flex-4"}}
       {{/if}}
     </div>
 
     <div class="flexrow">
       {{formGroup actorFields.details.fields.class label="ACKS.details.class" value=system.details.class
-                  rootId=@root.partId localize=true}}
+                  rootId=@root.partId localize=true classes="flex-4"}}
       {{formGroup actorFields.details.fields.level label="ACKS.details.level" value=system.details.level
-                  rootId=@root.partId localize=true}}
+                  rootId=@root.partId localize=true classes="flex-1"}}
 
-      <div class="form-group">
+      <div class="form-group flex-2">
         <label for="{{@root.partId}}-xpValue">{{localize 'ACKS.details.experience.base'}}</label>
-        <div class="form-fields">
+        <div class="form-fields xp-value">
           <input type="text" name="system.details.xp.value" value="{{system.details.xp.value}}"
                  id="{{@root.partId}}-xpValue" data-dtype="Number"/>
           {{#if system.details.xp.bonus}}
-            <span class="xp-bonus">+{{system.details.xp.bonus}}%</span>
+            <i class="xp-value__bonus">+{{system.details.xp.bonus}}%</i>
           {{/if}}
         </div>
       </div>
 
       {{formGroup actorFields.details.fields.xp.fields.next label="ACKS.details.experience.next"
-                  value=system.details.xp.next rootId=@root.partId localize=true}}
+                  value=system.details.xp.next rootId=@root.partId localize=true classes="flex-2"}}
 
     </div>
   </div>
