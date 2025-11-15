@@ -1914,18 +1914,39 @@
   font-size: var(--font-size-10);
 }
 
+.sheet.acks.actor-v2 .attribute-header {
+  flex: unset;
+}
+
 .sheet.acks.actor-v2 .attribute-value {
-  position: relative;
+  display: flex;
+}
+
+.sheet.acks.actor-v2 .attribute-value__value {
+  padding: 0 0.25rem;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 .sheet.acks.actor-v2 .attribute-value__mod {
-  position: absolute;
-  right: 0;
-  top: -12px;
-  width: 24px;
-  height: 24px;
-  line-height: 20px;
-  border: 2px solid var(--color-text-primary);
-  border-radius: 50%;
-  text-align: center;
+  padding: 0 0.25rem;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.sheet.acks.actor-v2 .rollable-header {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  cursor: var(--cursor-pointer);
+  align-items: center;
+}
+
+.sheet.acks.actor-v2 .rollable-header__icon {
+  font-size: var(--font-size-12);
+}
+
+.sheet.acks.actor-v2 .rollable-header__label {
+  cursor: var(--cursor-pointer);
+  pointer-events: none;
 }

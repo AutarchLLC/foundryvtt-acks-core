@@ -1,14 +1,6 @@
 <section class="tab {{ tab.cssClass }} sheet-attributes" data-group="primary" data-tab="attributes">
   <div class="content flexrow">
-    <!-- Attribute scores -->
-    <div class="flexcol flex-1">
-      {{> attributeScore abbr="str"}}
-      {{> attributeScore abbr="int"}}
-      {{> attributeScore abbr="wis"}}
-      {{> attributeScore abbr="dex"}}
-      {{> attributeScore abbr="con"}}
-      {{> attributeScore abbr="cha"}}
-    </div>
+
     <!-- Bonuses, Throws, Skills, etc -->
     <div class="flexcol flex-8">
 
@@ -38,13 +30,16 @@
           <div class="flexrow">
             <!-- Hit Dice -->
             <div class="form-group">
-              <button type="button" class="plain" data-tooltip="{{localize 'ACKS.HitDice'}}">
-                <i class="fa-solid fa-dice-d20"></i>
-                <label for="{{@root.partId}}-hitDice">{{ localize "ACKS.HitDiceShort" }}</label>
-              </button>
+              <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}">
+                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+                <label class="rollable-header__label" for="{{@root.partId}}-hitDice">
+                  {{ localize "ACKS.HitDiceShort" }}
+                </label>
+              </a>
               {{#if (lte system.hp.value 0)}}
                 <button type="button" class="plain icon fa-regular fa-skull" data-tooltip="Roll Mortal Wound"></button>
-                <button class="plain icon fa-regular fa-scythe" data-tooltip="Roll Tampering With Mortality"></button>
+                <button type="button" class="plain icon fa-regular fa-scythe"
+                        data-tooltip="Roll Tampering With Mortality"></button>
               {{/if}}
               <div class="form-fields">
                 <input type="text" name="system.hp.hd" value="{{system.hp.hd}}" id="{{@root.partId}}-hitDice"
@@ -53,10 +48,12 @@
             </div>
             <!-- Healing rate -->
             <div class="form-group">
-              <button type="button" class="plain" data-tooltip="{{localize 'ACKS.HealingRate'}}">
-                <i class="fa-solid fa-dice-d20"></i>
-                <label for="{{@root.partId}}-bhr">{{ localize "ACKS.HealingRate" }}</label>
-              </button>
+              <a class="rollable-header" data-tooltip="{{localize 'ACKS.HealingRate'}}">
+                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+                <label class="rollable-header__label" for="{{@root.partId}}-bhr">
+                  {{ localize "ACKS.HealingRate" }}
+                </label>
+              </a>
               <div class="form-fields">
                 <input type="text" name="system.fight.healingrate" value="{{system.fight.healingrate}}"
                        id="{{@root.partId}}-bhr" data-dtype="String" placeholder="1d8"/>
@@ -112,10 +109,10 @@
                         rootId=@root.partId localize=true}}
             <!-- Melee -->
             <div class="form-group">
-              <button type="button" class="plain" data-tooltip="{{localize 'ACKS.Melee'}}">
-                <i class="fa-solid fa-dice-d20"></i>
-                <label>{{ localize "ACKS.MeleeShort" }}</label>
-              </button>
+              <a class="rollable-header" data-tooltip="{{localize 'ACKS.Melee'}}">
+                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+                <label class="rollable-header__label">{{ localize "ACKS.MeleeShort" }}</label>
+              </a>
               <div class="form-fields">
                 <input type="text"
                        data-tooltip="{{localize 'ACKS.scores.str.long'}}({{system.scores.str.mod}}) + {{localize
@@ -128,10 +125,10 @@
                         rootId=@root.partId localize=true}}
             <!-- Ranged -->
             <div class="form-group">
-              <button type="button" class="plain" data-tooltip="{{localize 'ACKS.Missile'}}">
-                <i class="fa-solid fa-dice-d20"></i>
-                <label>{{ localize "ACKS.MissileShort" }}</label>
-              </button>
+              <a class="rollable-header" data-tooltip="{{localize 'ACKS.Missile'}}">
+                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+                <label class="rollable-header__label">{{ localize "ACKS.MissileShort" }}</label>
+              </a>
               <div class="form-fields">
                 <input type="text"
                        data-tooltip="{{localize 'ACKS.scores.dex.long'}}({{system.scores.dex.mod}}) + {{localize
@@ -175,10 +172,12 @@
       <div class="flexrow">
         <!-- Dungeon Bashing -->
         <div class="form-group">
-          <button type="button" class="plain" data-tooltip="{{localize 'ACKS.adventuring.dungeonbashing'}}">
-            <i class="fa-solid fa-dice-d20"></i>
-            <label for="{{@root.partId}}-dungeonbashing">{{ localize "ACKS.adventuring.dungeonbashing" }}</label>
-          </button>
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.dungeonbashing'}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-dungeonbashing">
+              {{ localize "ACKS.adventuring.dungeonbashing" }}
+            </label>
+          </a>
           <div class="form-fields">
             <input type="text" name="system.adventuring.dungeonbashing" value="{{system.adventuring.dungeonbashing}}"
                    id="{{@root.partId}}-dungeonbashing" data-dtype="Number" placeholder="18"/>
@@ -186,10 +185,12 @@
         </div>
         <!-- Climb -->
         <div class="form-group">
-          <button type="button" class="plain" data-tooltip="{{localize 'ACKS.adventuring.climb'}}">
-            <i class="fa-solid fa-dice-d20"></i>
-            <label for="{{@root.partId}}-climb">{{ localize "ACKS.adventuring.climb" }}</label>
-          </button>
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.climb'}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-climb">
+              {{ localize "ACKS.adventuring.climb" }}
+            </label>
+          </a>
           <div class="form-fields">
             <input type="text" name="system.adventuring.climb" value="{{system.adventuring.climb}}"
                    id="{{@root.partId}}-climb" data-dtype="Number" placeholder="8"/>
@@ -197,10 +198,12 @@
         </div>
         <!-- Listening -->
         <div class="form-group">
-          <button type="button" class="plain" data-tooltip="{{localize 'ACKS.adventuring.listening'}}">
-            <i class="fa-solid fa-dice-d20"></i>
-            <label for="{{@root.partId}}-listening">{{ localize "ACKS.adventuring.listening" }}</label>
-          </button>
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.listening'}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-listening">
+              {{ localize "ACKS.adventuring.listening" }}
+            </label>
+          </a>
           <div class="form-fields">
             <input type="text" name="system.adventuring.listening" value="{{system.adventuring.listening}}"
                    id="{{@root.partId}}-listening" data-dtype="Number" placeholder="18"/>
@@ -208,10 +211,12 @@
         </div>
         <!-- Searching -->
         <div class="form-group">
-          <button type="button" class="plain" data-tooltip="{{localize 'ACKS.adventuring.searching'}}">
-            <i class="fa-solid fa-dice-d20"></i>
-            <label for="{{@root.partId}}-searching">{{ localize "ACKS.adventuring.searching" }}</label>
-          </button>
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.searching'}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-searching">
+              {{ localize "ACKS.adventuring.searching" }}
+            </label>
+          </a>
           <div class="form-fields">
             <input type="text" name="system.adventuring.searching" value="{{system.adventuring.searching}}"
                    id="{{@root.partId}}-searching" data-dtype="Number" placeholder="18"/>
@@ -219,10 +224,12 @@
         </div>
         <!-- Trap Breaking -->
         <div class="form-group">
-          <button type="button" class="plain" data-tooltip="{{localize 'ACKS.adventuring.trapbreaking'}}">
-            <i class="fa-solid fa-dice-d20"></i>
-            <label for="{{@root.partId}}-trapbreaking">{{ localize "ACKS.adventuring.trapbreaking" }}</label>
-          </button>
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.trapbreaking'}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-trapbreaking">
+              {{ localize "ACKS.adventuring.trapbreaking" }}
+            </label>
+          </a>
           <div class="form-fields">
             <input type="text" name="system.adventuring.trapbreaking" value="{{system.adventuring.trapbreaking}}"
                    id="{{@root.partId}}-trapbreaking" data-dtype="Number" placeholder="18"/>
@@ -235,10 +242,12 @@
     <div class="flexcol flex-1">
       <!-- Paralysis -->
       <div class="form-group">
-        <button type="button" class="plain" data-tooltip="{{localize 'ACKS.saves.paralysis.long'}}">
-          <i class="fa-solid fa-dice-d20"></i>
-          <label for="{{@root.partId}}-paralysis">{{ localize "ACKS.saves.paralysis.long" }}</label>
-        </button>
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.paralysis.long'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-paralysis">
+            {{ localize "ACKS.saves.paralysis.long" }}
+          </label>
+        </a>
         <div class="form-fields">
           <input type="text" name="system.saves.paralysis.value" value="{{system.saves.paralysis.value}}"
                  id="{{@root.partId}}-paralysis" data-dtype="Number" placeholder="18"/>
@@ -246,10 +255,12 @@
       </div>
       <!-- Death -->
       <div class="form-group">
-        <button type="button" class="plain" data-tooltip="{{localize 'ACKS.saves.death.long'}}">
-          <i class="fa-solid fa-dice-d20"></i>
-          <label for="{{@root.partId}}-death">{{ localize "ACKS.saves.death.long" }}</label>
-        </button>
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.death.long'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-death">
+            {{ localize "ACKS.saves.death.long" }}
+          </label>
+        </a>
         <div class="form-fields">
           <input type="text" name="system.saves.death.value" value="{{system.saves.death.value}}"
                  id="{{@root.partId}}-death" data-dtype="Number" placeholder="18"/>
@@ -257,10 +268,12 @@
       </div>
       <!-- Breath -->
       <div class="form-group">
-        <button type="button" class="plain" data-tooltip="{{localize 'ACKS.saves.breath.long'}}">
-          <i class="fa-solid fa-dice-d20"></i>
-          <label for="{{@root.partId}}-breath">{{ localize "ACKS.saves.breath.long" }}</label>
-        </button>
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.breath.long'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-breath">
+            {{ localize "ACKS.saves.breath.long" }}
+          </label>
+        </a>
         <div class="form-fields">
           <input type="text" name="system.saves.breath.value" value="{{system.saves.breath.value}}"
                  id="{{@root.partId}}-breath" data-dtype="Number" placeholder="18"/>
@@ -268,10 +281,12 @@
       </div>
       <!-- Implements -->
       <div class="form-group">
-        <button type="button" class="plain" data-tooltip="{{localize 'ACKS.saves.implements.long'}}">
-          <i class="fa-solid fa-dice-d20"></i>
-          <label for="{{@root.partId}}-implements">{{ localize "ACKS.saves.implements.long" }}</label>
-        </button>
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.implements.long'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-implements">
+            {{ localize "ACKS.saves.implements.long" }}
+          </label>
+        </a>
         <div class="form-fields">
           <input type="text" name="system.saves.implements.value" value="{{system.saves.implements.value}}"
                  id="{{@root.partId}}-implements" data-dtype="Number" placeholder="18"/>
@@ -279,10 +294,12 @@
       </div>
       <!-- Spell -->
       <div class="form-group">
-        <button type="button" class="plain" data-tooltip="{{localize 'ACKS.saves.spell.long'}}">
-          <i class="fa-solid fa-dice-d20"></i>
-          <label for="{{@root.partId}}-spell">{{ localize "ACKS.saves.spell.long" }}</label>
-        </button>
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.spell.long'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-spell">
+            {{ localize "ACKS.saves.spell.long" }}
+          </label>
+        </a>
         <div class="form-fields">
           <input type="text" name="system.saves.spell.value" value="{{system.saves.spell.value}}"
                  id="{{@root.partId}}-spell" data-dtype="Number" placeholder="18"/>

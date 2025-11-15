@@ -1,18 +1,18 @@
 <!-- Attribute Score -->
 <div class="flexrow">
   <!-- Attribute Name -->
-  <div>
-    <button type="button" class="plain" data-tooltip="{{ localize (concat 'ACKS.scores.' abbr '.long') }}">
-      <i class="fa-solid fa-dice-d20"></i>
-      <label for="{{@root.partId}}-score-{{abbr}}">{{ localize (concat "ACKS.scores." abbr ".short") }}</label>
-    </button>
-  </div>
+  <a class="attribute-header rollable-header" data-tooltip="{{ localize (concat 'ACKS.scores.' abbr '.long') }}">
+    <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+    <label class="rollable-header__label" for="{{@root.partId}}-score-{{abbr}}">
+      {{ localize (concat "ACKS.scores." abbr ".short") }}
+    </label>
+  </a>
   <!-- Attribute Value -->
   <div class="attribute-value">
     <input name="system.scores.{{abbr}}.value" type="text" id="{{@root.partId}}-score-{{abbr}}"
-           value="{{lookup (lookup (lookup system "scores") abbr) "value"}}" placeholder="0" data-dtype="Number"/>
-    <div data-tooltip="Modifier" class="attribute-value__mod">
-      {{mod (lookup (lookup (lookup system "scores") abbr) "mod")}}
-    </div>
+           value="{{lookup (lookup (lookup system "scores") abbr) "value"}}" class="attribute-value__value"
+           placeholder="0" data-dtype="Number"/>
+    <input type="text" value="{{mod (lookup (lookup (lookup system "scores") abbr) "mod")}}" data-tooltip="Modifier"
+           class="attribute-value__mod" data-dtype="Number" disabled/>
   </div>
 </div>
