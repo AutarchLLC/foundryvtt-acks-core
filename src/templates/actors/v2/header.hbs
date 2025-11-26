@@ -62,14 +62,83 @@
 
     </div>
 
-    <!-- Attribute scores -->
     <div class="flexrow">
-      {{> attributeScore abbr="str"}}
-      {{> attributeScore abbr="int"}}
-      {{> attributeScore abbr="wis"}}
-      {{> attributeScore abbr="dex"}}
-      {{> attributeScore abbr="con"}}
-      {{> attributeScore abbr="cha"}}
+
+      <!-- HP -->
+      <div class="form-group health-box">
+        <label>HP</label>
+        <div class="form-fields health">
+          <input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number" placeholder="0"
+                 data-tooltip="{{localize 'ACKS.Health'}}" class="health__current"/>
+          <span>/</span>
+          <input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number" placeholder="0"
+                 data-tooltip="{{localize 'ACKS.HealthMax'}}" class="health__max"/>
+        </div>
+
+      </div>
+
+      <!-- Hit Dice -->
+      <div class="form-group">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-hitDice">
+            {{ localize "ACKS.HitDiceShort" }}
+          </label>
+        </a>
+        {{#if (lte system.hp.value 0)}}
+          <button type="button" class="plain icon fa-regular fa-skull" data-tooltip="Roll Mortal Wound"></button>
+          <button type="button" class="plain icon fa-regular fa-scythe"
+                  data-tooltip="Roll Tampering With Mortality"></button>
+        {{/if}}
+        <div class="form-fields">
+          <input type="text" name="system.hp.hd" value="{{system.hp.hd}}" id="{{@root.partId}}-hitDice"
+                 data-dtype="String" placeholder="1d8"/>
+        </div>
+      </div>
+
+      <!-- Healing rate -->
+      <div class="form-group">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HealingRate'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-bhr">
+            {{ localize "ACKS.HealingRate" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.fight.healingrate" value="{{system.fight.healingrate}}"
+                 id="{{@root.partId}}-bhr" data-dtype="String" placeholder="1d8"/>
+        </div>
+      </div>
+
+      <!-- Mortal Wounds -->
+      {{formGroup actorFields.fight.fields.mortalwounds label="ACKS.MortalWounds" value=system.fight.mortalwounds
+                  rootId=@root.partId localize=true}}
+
+      <!-- AC -->
+      <div class="form-group">
+        <label>AC</label>
+        <div class="form-fields">
+          <input type="text" value="{{system.aac.value}}" data-tooltip="{{localize 'ACKS.ArmorClass'}}"
+                 data-dtype="Number" disabled/>
+          <input type="text" value="{{system.aac.naked}}" data-tooltip="{{localize 'ACKS.ArmorClassNaked'}}"
+                 data-dtype="Number" disabled/>
+          {{#if system.aac.shield}}
+            <div class="shield" data-tooltip="{{localize 'ACKS.items.hasShield'}} ({{system.aac.shield}})">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+
+      <!-- Encumbrance -->
+      <div class="form-group">
+        <label data-tooltip="{{localize 'ACKS.Encumbrance'}}">{{localize 'ACKS.Encumbrance'}}</label>
+        <div class="form-fields">
+          <input type="text" value="{{system.encumbrance.value}} / {{system.encumbrance.max}}" data-dtype="Number"
+                 disabled/>
+        </div>
+      </div>
+
     </div>
 
   </div>

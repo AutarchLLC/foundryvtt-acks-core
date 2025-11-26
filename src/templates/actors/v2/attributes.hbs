@@ -1,247 +1,19 @@
 <section class="tab {{ tab.cssClass }} sheet-attributes" data-group="primary" data-tab="attributes">
   <div class="content flexrow">
-
-    <!-- Bonuses, Throws, Skills, etc -->
-    <div class="flexcol flex-8">
-
-      <div class="flexrow">
-        <!-- HP and AC -->
-        <div class="flexcol flex-1">
-          <div class="health flexcol">
-            <input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number" placeholder="0"
-                   data-tooltip="{{localize 'ACKS.Health'}}"/>
-            <input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number" placeholder="0"
-                   data-tooltip="{{localize 'ACKS.HealthMax'}}"/>
-          </div>
-          <div class="ac flexcol">
-            <input type="text" value="{{system.aac.value}}" data-tooltip="{{localize 'ACKS.ArmorClass'}}"
-                   data-dtype="Number" disabled/>
-            <input type="text" value="{{system.aac.naked}}" data-tooltip="{{localize 'ACKS.ArmorClassNaked'}}"
-                   data-dtype="Number" disabled/>
-            {{#if system.aac.shield}}
-              <div class="shield" data-tooltip="{{localize 'ACKS.items.hasShield'}} ({{system.aac.shield}})">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-            {{/if}}
-          </div>
-        </div>
-        <!-- Other stuff -->
-        <div class="flexcol flex-8">
-          <div class="flexrow">
-            <!-- Hit Dice -->
-            <div class="form-group">
-              <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}">
-                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-                <label class="rollable-header__label" for="{{@root.partId}}-hitDice">
-                  {{ localize "ACKS.HitDiceShort" }}
-                </label>
-              </a>
-              {{#if (lte system.hp.value 0)}}
-                <button type="button" class="plain icon fa-regular fa-skull" data-tooltip="Roll Mortal Wound"></button>
-                <button type="button" class="plain icon fa-regular fa-scythe"
-                        data-tooltip="Roll Tampering With Mortality"></button>
-              {{/if}}
-              <div class="form-fields">
-                <input type="text" name="system.hp.hd" value="{{system.hp.hd}}" id="{{@root.partId}}-hitDice"
-                       data-dtype="String" placeholder="1d8"/>
-              </div>
-            </div>
-            <!-- Healing rate -->
-            <div class="form-group">
-              <a class="rollable-header" data-tooltip="{{localize 'ACKS.HealingRate'}}">
-                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-                <label class="rollable-header__label" for="{{@root.partId}}-bhr">
-                  {{ localize "ACKS.HealingRate" }}
-                </label>
-              </a>
-              <div class="form-fields">
-                <input type="text" name="system.fight.healingrate" value="{{system.fight.healingrate}}"
-                       id="{{@root.partId}}-bhr" data-dtype="String" placeholder="1d8"/>
-              </div>
-            </div>
-
-            <!-- Initiative -->
-            <div class="form-group">
-              <label data-tooltip="{{ localize 'ACKS.Initiative' }}">{{localize 'ACKS.InitiativeShort'}}</label>
-              <div class="form-fields"
-                   data-tooltip="{{localize 'ACKS.scores.dex.long'}}({{system.scores.dex.init}}) + {{localize
-                     'ACKS.Modifier'}}({{system.initiative.mod}})">
-                <input type="text" value="{{add system.scores.dex.init system.initiative.mod}}" data-dtype="Number"
-                       disabled/>
-              </div>
-            </div>
-
-            <!-- Surprise Others -->
-            <div class="form-group">
-              <label for="{{@root.partId}}-surpriseOthers" data-tooltip="{{ localize 'ACKS.SurpriseOthers' }}">
-                {{localize 'ACKS.SurpriseOthers'}}
-              </label>
-              <div class="form-fields">
-                <input type="text" name="system.surprise.surpriseothers" value="{{system.surprise.surpriseothers}}"
-                       placeholder="" data-dtype="Number"/>
-              </div>
-            </div>
-            <!-- Avoid Surprise -->
-            <div class="form-group">
-              <label for="{{@root.partId}}-avoidSurprise" data-tooltip="{{ localize 'ACKS.AvoidSurprise' }}">
-                {{localize 'ACKS.AvoidSurprise'}}
-              </label>
-              <div class="form-fields">
-                <input type="text" name="system.surprise.avoidsurprise" value="{{system.surprise.avoidsurprise}}"
-                       placeholder="" data-dtype="Number"/>
-              </div>
-            </div>
-          </div>
-          <div class="flexrow">
-            <!-- Encumbrance -->
-            <div class="form-group">
-              <label data-tooltip="{{localize 'ACKS.Encumbrance'}}">{{localize 'ACKS.Encumbrance'}}</label>
-              <div class="form-fields">
-                <input type="text" value="{{system.encumbrance.value}} / {{system.encumbrance.max}}" data-dtype="Number"
-                       disabled/>
-              </div>
-            </div>
-            <!-- Mortal Wounds -->
-            {{formGroup actorFields.fight.fields.mortalwounds label="ACKS.MortalWounds" value=system.fight.mortalwounds
-                        rootId=@root.partId localize=true}}
-            <!-- Cleaves -->
-            {{formGroup actorFields.fight.fields.cleaves label="ACKS.Cleaves" value=system.fight.cleaves
-                        rootId=@root.partId localize=true}}
-            <!-- Melee -->
-            <div class="form-group">
-              <a class="rollable-header" data-tooltip="{{localize 'ACKS.Melee'}}">
-                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-                <label class="rollable-header__label">{{ localize "ACKS.MeleeShort" }}</label>
-              </a>
-              <div class="form-fields">
-                <input type="text"
-                       data-tooltip="{{localize 'ACKS.scores.str.long'}}({{system.scores.str.mod}}) + {{localize
-                         'ACKS.Modifier'}}({{system.thac0.mod.melee}})"
-                       value="{{add system.scores.str.mod system.thac0.mod.melee}}" disabled data-dtype="Number"/>
-              </div>
-            </div>
-            <!-- Attack Throw -->
-            {{formGroup actorFields.thac0.fields.throw label="ACKS.ABShort" value=system.thac0.throw
-                        rootId=@root.partId localize=true}}
-            <!-- Ranged -->
-            <div class="form-group">
-              <a class="rollable-header" data-tooltip="{{localize 'ACKS.Missile'}}">
-                <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-                <label class="rollable-header__label">{{ localize "ACKS.MissileShort" }}</label>
-              </a>
-              <div class="form-fields">
-                <input type="text"
-                       data-tooltip="{{localize 'ACKS.scores.dex.long'}}({{system.scores.dex.mod}}) + {{localize
-                         'ACKS.Modifier'}}({{system.thac0.mod.missile}})"
-                       value="{{add system.scores.dex.mod system.thac0.mod.missile}}" disabled data-dtype="Number"/>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Movement -->
-      <div class="flexrow">
-        <!-- Exploration speed -->
-        {{formGroup actorFields.movementacks.fields.exploration label="ACKS.movement.exploration" units="ft./turn"
-                    value=system.movementacks.exploration rootId=@root.partId localize=true type="number"
-                    disabled=system.config.movementAuto classes="flex-1"}}
-        <!-- Combat speed -->
-        {{formGroup actorFields.movementacks.fields.combat label="ACKS.movement.combat" units="ft./round"
-                    value=system.movementacks.combat rootId=@root.partId localize=true type="number"
-                    disabled=system.config.movementAuto classes="flex-1"}}
-        <!-- Charge / Run speed -->
-        {{formGroup actorFields.movementacks.fields.chargerun label="ACKS.movement.chargerun" units="ft./round"
-                    value=system.movementacks.chargerun rootId=@root.partId localize=true type="number"
-                    disabled=system.config.movementAuto classes="flex-1"}}
-        <!-- Expedition speed -->
-        {{formGroup actorFields.movementacks.fields.expedition label="ACKS.movement.expedition" units="mi/day"
-                    value=system.movementacks.expedition rootId=@root.partId localize=true type="number"
-                    disabled=system.config.movementAuto classes="flex-1"}}
-        <!-- Sneaking speed -->
-        {{formGroup actorFields.movementacks.fields.stealth label="ACKS.movement.stealth" units="ft./round"
-                    value=system.movementacks.stealth rootId=@root.partId localize=true type="number"
-                    disabled=system.config.movementAuto classes="flex-1"}}
-        <!-- Climbing speed -->
-        {{formGroup actorFields.movementacks.fields.climb label="ACKS.movement.climb" units="ft./round"
-                    value=system.movementacks.climb rootId=@root.partId localize=true type="number"
-                    disabled=system.config.movementAuto classes="flex-1"}}
-      </div>
-      <!-- Adventuring Throws -->
-      <div class="flexrow">
-        <!-- Dungeon Bashing -->
-        <div class="form-group">
-          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.dungeonbashing'}}">
-            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-            <label class="rollable-header__label" for="{{@root.partId}}-dungeonbashing">
-              {{ localize "ACKS.adventuring.dungeonbashing" }}
-            </label>
-          </a>
-          <div class="form-fields">
-            <input type="text" name="system.adventuring.dungeonbashing" value="{{system.adventuring.dungeonbashing}}"
-                   id="{{@root.partId}}-dungeonbashing" data-dtype="Number" placeholder="18"/>
-          </div>
-        </div>
-        <!-- Climb -->
-        <div class="form-group">
-          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.climb'}}">
-            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-            <label class="rollable-header__label" for="{{@root.partId}}-climb">
-              {{ localize "ACKS.adventuring.climb" }}
-            </label>
-          </a>
-          <div class="form-fields">
-            <input type="text" name="system.adventuring.climb" value="{{system.adventuring.climb}}"
-                   id="{{@root.partId}}-climb" data-dtype="Number" placeholder="8"/>
-          </div>
-        </div>
-        <!-- Listening -->
-        <div class="form-group">
-          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.listening'}}">
-            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-            <label class="rollable-header__label" for="{{@root.partId}}-listening">
-              {{ localize "ACKS.adventuring.listening" }}
-            </label>
-          </a>
-          <div class="form-fields">
-            <input type="text" name="system.adventuring.listening" value="{{system.adventuring.listening}}"
-                   id="{{@root.partId}}-listening" data-dtype="Number" placeholder="18"/>
-          </div>
-        </div>
-        <!-- Searching -->
-        <div class="form-group">
-          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.searching'}}">
-            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-            <label class="rollable-header__label" for="{{@root.partId}}-searching">
-              {{ localize "ACKS.adventuring.searching" }}
-            </label>
-          </a>
-          <div class="form-fields">
-            <input type="text" name="system.adventuring.searching" value="{{system.adventuring.searching}}"
-                   id="{{@root.partId}}-searching" data-dtype="Number" placeholder="18"/>
-          </div>
-        </div>
-        <!-- Trap Breaking -->
-        <div class="form-group">
-          <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.trapbreaking'}}">
-            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-            <label class="rollable-header__label" for="{{@root.partId}}-trapbreaking">
-              {{ localize "ACKS.adventuring.trapbreaking" }}
-            </label>
-          </a>
-          <div class="form-fields">
-            <input type="text" name="system.adventuring.trapbreaking" value="{{system.adventuring.trapbreaking}}"
-                   id="{{@root.partId}}-trapbreaking" data-dtype="Number" placeholder="18"/>
-          </div>
-        </div>
-      </div>
+    <!-- Attribute scores -->
+    <div class="panel flexcol">
+      {{> attributeScore abbr="str"}}
+      {{> attributeScore abbr="int"}}
+      {{> attributeScore abbr="wis"}}
+      {{> attributeScore abbr="dex"}}
+      {{> attributeScore abbr="con"}}
+      {{> attributeScore abbr="cha"}}
     </div>
 
     <!-- Saving Throws, Favourites -->
-    <div class="flexcol flex-1">
+    <div class="panel flexcol">
       <!-- Paralysis -->
-      <div class="form-group">
+      <div class="form-group-h">
         <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.paralysis.long'}}">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-paralysis">
@@ -250,11 +22,12 @@
         </a>
         <div class="form-fields">
           <input type="text" name="system.saves.paralysis.value" value="{{system.saves.paralysis.value}}"
-                 id="{{@root.partId}}-paralysis" data-dtype="Number" placeholder="18"/>
+                 id="{{@root.partId}}-paralysis" data-dtype="Number" placeholder="18"
+                 class="form-group-h__narrow-input"/>
         </div>
       </div>
       <!-- Death -->
-      <div class="form-group">
+      <div class="form-group-h">
         <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.death.long'}}">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-death">
@@ -263,11 +36,11 @@
         </a>
         <div class="form-fields">
           <input type="text" name="system.saves.death.value" value="{{system.saves.death.value}}"
-                 id="{{@root.partId}}-death" data-dtype="Number" placeholder="18"/>
+                 id="{{@root.partId}}-death" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
         </div>
       </div>
       <!-- Breath -->
-      <div class="form-group">
+      <div class="form-group-h">
         <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.breath.long'}}">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-breath">
@@ -276,11 +49,11 @@
         </a>
         <div class="form-fields">
           <input type="text" name="system.saves.breath.value" value="{{system.saves.breath.value}}"
-                 id="{{@root.partId}}-breath" data-dtype="Number" placeholder="18"/>
+                 id="{{@root.partId}}-breath" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
         </div>
       </div>
       <!-- Implements -->
-      <div class="form-group">
+      <div class="form-group-h">
         <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.implements.long'}}">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-implements">
@@ -289,11 +62,12 @@
         </a>
         <div class="form-fields">
           <input type="text" name="system.saves.implements.value" value="{{system.saves.implements.value}}"
-                 id="{{@root.partId}}-implements" data-dtype="Number" placeholder="18"/>
+                 id="{{@root.partId}}-implements" data-dtype="Number" placeholder="18"
+                 class="form-group-h__narrow-input"/>
         </div>
       </div>
       <!-- Spell -->
-      <div class="form-group">
+      <div class="form-group-h">
         <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.spell.long'}}">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-spell">
@@ -302,9 +76,228 @@
         </a>
         <div class="form-fields">
           <input type="text" name="system.saves.spell.value" value="{{system.saves.spell.value}}"
-                 id="{{@root.partId}}-spell" data-dtype="Number" placeholder="18"/>
+                 id="{{@root.partId}}-spell" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
         </div>
       </div>
     </div>
+
+    <!-- Adventuring Throws -->
+    <div class="panel flexcol">
+      <!-- Dungeon Bashing -->
+      <div class="form-group-h">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.dungeonbashing'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-dungeonbashing">
+            {{ localize "ACKS.adventuring.dungeonbashing" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.adventuring.dungeonbashing" value="{{system.adventuring.dungeonbashing}}"
+                 id="{{@root.partId}}-dungeonbashing" data-dtype="Number" placeholder="18"
+                 class="form-group-h__narrow-input"/>
+        </div>
+      </div>
+      <!-- Climb -->
+      <div class="form-group-h">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.climb'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-climb">
+            {{ localize "ACKS.adventuring.climb" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.adventuring.climb" value="{{system.adventuring.climb}}"
+                 id="{{@root.partId}}-climb" data-dtype="Number" placeholder="8" class="form-group-h__narrow-input"/>
+        </div>
+      </div>
+      <!-- Listening -->
+      <div class="form-group-h">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.listening'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-listening">
+            {{ localize "ACKS.adventuring.listening" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.adventuring.listening" value="{{system.adventuring.listening}}"
+                 id="{{@root.partId}}-listening" data-dtype="Number" placeholder="18"
+                 class="form-group-h__narrow-input"/>
+        </div>
+      </div>
+      <!-- Searching -->
+      <div class="form-group-h">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.searching'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-searching">
+            {{ localize "ACKS.adventuring.searching" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.adventuring.searching" value="{{system.adventuring.searching}}"
+                 id="{{@root.partId}}-searching" data-dtype="Number" placeholder="18"
+                 class="form-group-h__narrow-input"/>
+        </div>
+      </div>
+      <!-- Trap Breaking -->
+      <div class="form-group-h">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.trapbreaking'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-trapbreaking">
+            {{ localize "ACKS.adventuring.trapbreaking" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.adventuring.trapbreaking" value="{{system.adventuring.trapbreaking}}"
+                 id="{{@root.partId}}-trapbreaking" data-dtype="Number" placeholder="18"
+                 class="form-group-h__narrow-input"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movement -->
+    <div class="panel flexcol">
+      <!-- Exploration speed -->
+      <div class="form-group-h">
+        <label for="{{@root.partId}}-exploration">{{ localize "ACKS.movement.exploration" }}</label>
+        <div class="form-fields">
+          <input type="text" name="system.movementacks.exploration" value="{{system.movementacks.exploration}}"
+                 id="{{@root.partId}}-exploration" data-dtype="Number" placeholder="0"
+                 class="form-group-h__narrow-input" data-tooltip="ft./turn" {{disabled system.config.movementAuto}}/>
+        </div>
+      </div>
+
+      <!-- Combat speed -->
+      <div class="form-group-h">
+        <label for="{{@root.partId}}-combat">{{ localize "ACKS.movement.combat" }}</label>
+        <div class="form-fields">
+          <input type="text" name="system.movementacks.combat" value="{{system.movementacks.combat}}"
+                 id="{{@root.partId}}-combat" data-dtype="Number" placeholder="0"
+                 class="form-group-h__narrow-input" data-tooltip="ft./round" {{disabled system.config.movementAuto}}/>
+        </div>
+      </div>
+
+      <!-- Charge / Run speed -->
+      <div class="form-group-h">
+        <label for="{{@root.partId}}-chargerun">{{ localize "ACKS.movement.chargerun" }}</label>
+        <div class="form-fields">
+          <input type="text" name="system.movementacks.chargerun" value="{{system.movementacks.chargerun}}"
+                 id="{{@root.partId}}-chargerun" data-dtype="Number" placeholder="0"
+                 class="form-group-h__narrow-input" data-tooltip="ft./round" {{disabled system.config.movementAuto}}/>
+        </div>
+      </div>
+
+      <!-- Expedition speed -->
+      <div class="form-group-h">
+        <label for="{{@root.partId}}-expedition">{{ localize "ACKS.movement.expedition" }}</label>
+        <div class="form-fields">
+          <input type="text" name="system.movementacks.expedition" value="{{system.movementacks.expedition}}"
+                 id="{{@root.partId}}-expedition" data-dtype="Number" placeholder="0"
+                 class="form-group-h__narrow-input" data-tooltip="mi/day" {{disabled system.config.movementAuto}}/>
+        </div>
+      </div>
+
+      <!-- Sneaking speed -->
+      <div class="form-group-h">
+        <label for="{{@root.partId}}-stealth">{{ localize "ACKS.movement.stealth" }}</label>
+        <div class="form-fields">
+          <input type="text" name="system.movementacks.stealth" value="{{system.movementacks.stealth}}"
+                 id="{{@root.partId}}-stealth" data-dtype="Number" placeholder="0"
+                 class="form-group-h__narrow-input" data-tooltip="ft./round" {{disabled system.config.movementAuto}}/>
+        </div>
+      </div>
+
+      <!-- Climbing speed -->
+      <div class="form-group-h">
+        <label for="{{@root.partId}}-climb">{{ localize "ACKS.movement.climb" }}</label>
+        <div class="form-fields">
+          <input type="text" name="system.movementacks.climb" value="{{system.movementacks.climb}}"
+                 id="{{@root.partId}}-climb" data-dtype="Number" placeholder="0"
+                 class="form-group-h__narrow-input" data-tooltip="ft./round" {{disabled system.config.movementAuto}}/>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Other stuff -->
+    <div class="flexcol">
+      <div class="panel flexrow">
+        <!-- Initiative -->
+        <div class="form-group">
+          <label data-tooltip="{{ localize 'ACKS.Initiative' }}">
+            {{localize 'ACKS.Initiative'}}
+          </label>
+          <div class="form-fields"
+               data-tooltip="{{localize 'ACKS.scores.dex.long'}}({{system.scores.dex.init}}) + {{localize
+                 'ACKS.Modifier'}}({{system.initiative.mod}})">
+            <input type="text" value="{{add system.scores.dex.init system.initiative.mod}}" data-dtype="Number"
+                   disabled/>
+          </div>
+        </div>
+
+        <!-- Surprise Others -->
+        <div class="form-group">
+          <label for="{{@root.partId}}-surpriseOthers" data-tooltip="{{ localize 'ACKS.SurpriseOthers' }}">
+            {{localize 'ACKS.SurpriseOthers'}}
+          </label>
+          <div class="form-fields">
+            <input type="text" name="system.surprise.surpriseothers" value="{{system.surprise.surpriseothers}}"
+                   placeholder="" data-dtype="Number"/>
+          </div>
+        </div>
+        <!-- Avoid Surprise -->
+        <div class="form-group">
+          <label for="{{@root.partId}}-avoidSurprise" data-tooltip="{{ localize 'ACKS.AvoidSurprise' }}">
+            {{localize 'ACKS.AvoidSurprise'}}
+          </label>
+          <div class="form-fields">
+            <input type="text" name="system.surprise.avoidsurprise" value="{{system.surprise.avoidsurprise}}"
+                   placeholder="" data-dtype="Number"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel flexrow">
+        <!-- Attack Throw -->
+        {{formGroup actorFields.thac0.fields.throw label="ACKS.ABShort" value=system.thac0.throw
+                    rootId=@root.partId localize=true}}
+        <!-- Cleaves -->
+        {{formGroup actorFields.fight.fields.cleaves label="ACKS.Cleaves" value=system.fight.cleaves
+                    rootId=@root.partId localize=true}}
+        <!-- Melee -->
+        <div class="form-group">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.Melee'}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label">{{ localize "ACKS.MeleeShort" }}</label>
+          </a>
+          <div class="form-fields">
+            <input type="text"
+                   data-tooltip="{{localize 'ACKS.scores.str.long'}}({{system.scores.str.mod}}) + {{localize
+                     'ACKS.Modifier'}}({{system.thac0.mod.melee}})"
+                   value="{{add system.scores.str.mod system.thac0.mod.melee}}" disabled data-dtype="Number"/>
+          </div>
+        </div>
+
+        <!-- Ranged -->
+        <div class="form-group">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.Missile'}}">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label">{{ localize "ACKS.MissileShort" }}</label>
+          </a>
+          <div class="form-fields">
+            <input type="text"
+                   data-tooltip="{{localize 'ACKS.scores.dex.long'}}({{system.scores.dex.mod}}) + {{localize
+                     'ACKS.Modifier'}}({{system.thac0.mod.missile}})"
+                   value="{{add system.scores.dex.mod system.thac0.mod.missile}}" disabled data-dtype="Number"/>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="panel flexcol favorites">
+        <div class="favorites__header">Favorites</div>
+      </div>
+
+    </div>
+
   </div>
 </section>

@@ -1879,9 +1879,33 @@
   border-radius: 4px;
 }
 
+.sheet.acks.actor-v2 .panel {
+  border: 1px solid var(--color-fieldset-border);
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+.sheet.acks.actor-v2 .form-group-h {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sheet.acks.actor-v2 .form-group-h__narrow-input {
+  padding: 0 0.25rem;
+  min-width: 2rem;
+  width: 2rem;
+}
+
 .sheet.acks.actor-v2 .flexcol,
 .sheet.acks.actor-v2 .flexrow {
   gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.sheet.acks.actor-v2 .content {
+  align-items: flex-start;
 }
 
 .sheet.acks.actor-v2 .flex-1 {
@@ -1901,6 +1925,7 @@
 
 .sheet.acks.actor-v2 label {
   font-size: var(--font-size-12);
+  text-wrap: nowrap;
 }
 
 .sheet.acks.actor-v2 .xp-value {
@@ -1924,12 +1949,16 @@
 
 .sheet.acks.actor-v2 .attribute-value__value {
   padding: 0 0.25rem;
+  min-width: 2rem;
+  width: 2rem;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
 
 .sheet.acks.actor-v2 .attribute-value__mod {
   padding: 0 0.25rem;
+  min-width: 2rem;
+  width: 2rem;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
@@ -1944,9 +1973,47 @@
 
 .sheet.acks.actor-v2 .rollable-header__icon {
   font-size: var(--font-size-12);
+  line-height: 1.25;
 }
 
 .sheet.acks.actor-v2 .rollable-header__label {
   cursor: var(--cursor-pointer);
   pointer-events: none;
+}
+
+.sheet.acks.actor-v2 .health-box {
+  flex: unset;
+}
+
+.sheet.acks.actor-v2 .health {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  border-radius: 4px;
+}
+
+.sheet.acks.actor-v2 .health__current {
+  width: 3rem;
+}
+
+.sheet.acks.actor-v2 .health__max {
+  width: 3rem;
+}
+
+.sheet.acks.actor-v2 .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet.acks.actor-v2 .form-fields {
+  display: flex;
+}
+
+.sheet.acks.actor-v2 .favorites {
+  min-height: 112px;
+}
+
+.sheet.acks.actor-v2 .favorites__header {
+  background: linear-gradient(90deg, rgb(from var(--acks-purple) r g b / 0.8), transparent);
+  font-size: var(--font-size-12);
 }
