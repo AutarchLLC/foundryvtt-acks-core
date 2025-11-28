@@ -14,7 +14,8 @@
     <div class="panel flexcol">
       <!-- Paralysis -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.paralysis.long'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.paralysis.long'}}" data-action="rollSave"
+           data-save="paralysis">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-paralysis">
             {{ localize "ACKS.saves.paralysis.long" }}
@@ -28,7 +29,8 @@
       </div>
       <!-- Death -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.death.long'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.death.long'}}" data-action="rollSave"
+           data-save="death">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-death">
             {{ localize "ACKS.saves.death.long" }}
@@ -41,7 +43,8 @@
       </div>
       <!-- Breath -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.breath.long'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.breath.long'}}" data-action="rollSave"
+           data-save="breath">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-breath">
             {{ localize "ACKS.saves.breath.long" }}
@@ -54,7 +57,8 @@
       </div>
       <!-- Implements -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.implements.long'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.implements.long'}}" data-action="rollSave"
+           data-save="implements">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-implements">
             {{ localize "ACKS.saves.implements.long" }}
@@ -68,7 +72,8 @@
       </div>
       <!-- Spell -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.spell.long'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.spell.long'}}" data-action="rollSave"
+           data-save="spell">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-spell">
             {{ localize "ACKS.saves.spell.long" }}
@@ -85,7 +90,8 @@
     <div class="panel flexcol">
       <!-- Dungeon Bashing -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.dungeonbashing'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.dungeonbashing'}}"
+           data-action="rollAdventuring" data-skill="dungeonbashing">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-dungeonbashing">
             {{ localize "ACKS.adventuring.dungeonbashing" }}
@@ -99,7 +105,8 @@
       </div>
       <!-- Climb -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.climb'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.climb'}}" data-action="rollAdventuring"
+           data-skill="climb">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-climb">
             {{ localize "ACKS.adventuring.climb" }}
@@ -112,7 +119,8 @@
       </div>
       <!-- Listening -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.listening'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.listening'}}"
+           data-action="rollAdventuring" data-skill="listening">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-listening">
             {{ localize "ACKS.adventuring.listening" }}
@@ -126,7 +134,8 @@
       </div>
       <!-- Searching -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.searching'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.searching'}}"
+           data-action="rollAdventuring" data-skill="searching">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-searching">
             {{ localize "ACKS.adventuring.searching" }}
@@ -140,7 +149,8 @@
       </div>
       <!-- Trap Breaking -->
       <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.trapbreaking'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.adventuring.trapbreaking'}}"
+           data-action="rollAdventuring" data-skill="trapbreaking">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-trapbreaking">
             {{ localize "ACKS.adventuring.trapbreaking" }}
@@ -265,9 +275,10 @@
                     rootId=@root.partId localize=true}}
         <!-- Melee -->
         <div class="form-group">
-          <a class="rollable-header" data-tooltip="{{localize 'ACKS.Melee'}}">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.Melee'}}" data-action="rollAttack"
+             data-attack="melee">
             <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-            <label class="rollable-header__label">{{ localize "ACKS.MeleeShort" }}</label>
+            <label class="rollable-header__label">Melee</label>
           </a>
           <div class="form-fields">
             <input type="text"
@@ -279,9 +290,10 @@
 
         <!-- Ranged -->
         <div class="form-group">
-          <a class="rollable-header" data-tooltip="{{localize 'ACKS.Missile'}}">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.Missile'}}" data-action="rollAttack"
+             data-attack="missile">
             <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-            <label class="rollable-header__label">{{ localize "ACKS.MissileShort" }}</label>
+            <label class="rollable-header__label">Ranged</label>
           </a>
           <div class="form-fields">
             <input type="text"

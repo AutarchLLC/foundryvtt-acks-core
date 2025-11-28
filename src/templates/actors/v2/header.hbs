@@ -19,10 +19,33 @@
       {{#if system.retainer.enabled}}
         {{formGroup actorFields.retainer.fields.wage label="ACKS.RetainerWage" value=system.retainer.wage
                     rootId=@root.partId localize=true classes="flex-1"}}
-        {{formGroup actorFields.details.fields.morale label="ACKS.details.morale" value=system.details.morale
-                    rootId=@root.partId localize=true type="number" classes="flex-1"}}
-        {{formGroup actorFields.retainer.fields.loyalty label="ACKS.Loyalty" value=system.retainer.loyalty
-                    rootId=@root.partId localize=true type="number" classes="flex-1"}}
+        <!-- Morale -->
+        <div class="form-group flex-1">
+          <a class="rollable-header" data-action="rollMorale">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-morale">
+              {{ localize "ACKS.details.morale" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.details.morale" value="{{system.details.morale}}"
+                   id="{{@root.partId}}-morale" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <!-- Loyalty -->
+        <div class="form-group flex-1">
+          <a class="rollable-header" data-action="rollLoyalty">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-loyalty">
+              {{ localize "ACKS.Loyalty" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.retainer.loyalty" value="{{system.retainer.loyalty}}"
+                   id="{{@root.partId}}-loyalty" data-dtype="Number"/>
+          </div>
+        </div>
 
         <div class="form-group flex-2">
           <label for="{{@root.partId}}-employerName">{{localize 'ACKS.employer'}}</label>
@@ -79,7 +102,7 @@
 
       <!-- Hit Dice -->
       <div class="form-group">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}" data-action="rollHitDice">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-hitDice">
             {{ localize "ACKS.HitDiceShort" }}
@@ -98,7 +121,7 @@
 
       <!-- Healing rate -->
       <div class="form-group">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HealingRate'}}">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HealingRate'}}" data-action="rollBaseHealingRate">
           <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
           <label class="rollable-header__label" for="{{@root.partId}}-bhr">
             {{ localize "ACKS.HealingRate" }}

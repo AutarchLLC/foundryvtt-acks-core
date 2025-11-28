@@ -39,6 +39,11 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     },
     actions: {
       showTweaksDialog: ACKSActorSheetV2.#showTweaksDialog,
+      rollHitDice: ACKSActorSheetV2.#rollHitDice,
+      rollMorale: ACKSActorSheetV2.#rollMorale,
+      rollLoyalty: ACKSActorSheetV2.#rollLoyalty,
+      rollSave: ACKSActorSheetV2.#rollSave,
+      rollAttack: ACKSActorSheetV2.#rollAttack,
     },
   };
 
@@ -56,6 +61,69 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       top: this.position.top + 40,
       left: this.position.left + (this.position.width - 400) / 2,
     }).render(true);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollHitDice(event, target) {
+    this.actor.rollHitDice({ event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollMorale(event, target) {
+    this.actor.rollMorale({ event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollLoyalty(event, target) {
+    this.actor.rollLoyalty({ event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollSave(event, target) {
+    const save = target.dataset.save;
+    this.actor.rollSave(save, { event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollAttack(event, target) {
+    const attack = target.dataset.attack;
+
+    // TODO: why do we create rollData here?
+    const rollData = {
+      actor: this.actor,
+      roll: {},
+    };
+
+    let skip = false;
+    const skipKey = game.settings.get("acks", "skip-dialog-key");
+    if (event[skipKey]) {
+      skip = true;
+    }
+
+    this.actor.targetAttack(rollData, attack, {
+      type: attack,
+      skipDialog: skip,
+    });
   }
 
   // Prepare application rendering context data for a given render request.

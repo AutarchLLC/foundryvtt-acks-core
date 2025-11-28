@@ -4,6 +4,11 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["character-v2"],
+    actions: {
+      rollBaseHealingRate: ACKSCharacterSheetV2.#rollBaseHealingRate,
+      rollAttribute: ACKSCharacterSheetV2.#rollAttribute,
+      rollAdventuring: ACKSCharacterSheetV2.#rollAdventuring,
+    },
   };
 
   /** @override */
@@ -77,5 +82,33 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     context.tab = context.tabs[partId];
 
     return context;
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollBaseHealingRate(event, target) {
+    this.actor.rollBHR({ event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollAttribute(event, target) {
+    const attribute = target.dataset.attribute;
+    this.actor.rollCheck(attribute, { event });
+  }
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollAdventuring(event, target) {
+    const skill = target.dataset.skill;
+    this.actor.rollAdventuring(skill, { event });
   }
 }

@@ -1,7 +1,8 @@
 <!-- Attribute Score -->
 <div class="form-group-h">
   <!-- Attribute Name -->
-  <a class="rollable-header" data-tooltip="{{ localize (concat 'ACKS.scores.' abbr '.long') }}">
+  <a class="rollable-header" data-tooltip="{{ localize (concat 'ACKS.scores.' abbr '.long') }}"
+     data-action="rollAttribute" data-attribute="{{abbr}}">
     <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
     <label class="rollable-header__label" for="{{@root.partId}}-score-{{abbr}}">
       {{ localize (concat "ACKS.scores." abbr ".short") }}

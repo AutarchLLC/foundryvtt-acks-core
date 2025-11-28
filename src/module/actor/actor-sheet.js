@@ -268,10 +268,10 @@ export class AcksActorSheet extends ActorSheet {
         type: attack,
         skipDialog: skip,
       });
+    });
 
-      html.find(".spells .item-reset").click((ev) => {
-        this._resetSpells(ev);
-      });
+    html.find(".spells .item-reset").click((ev) => {
+      this._resetSpells(ev);
     });
 
     html.find(".hit-dice ").click((ev) => {
