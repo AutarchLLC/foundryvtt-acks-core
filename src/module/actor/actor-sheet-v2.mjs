@@ -2,6 +2,7 @@ import { AcksEntityTweaks } from "../dialog/entity-tweaks.js";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
+const TextEditorRef = foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor;
 
 /**
  * @see https://foundryvtt.wiki/en/development/api/applicationv2
@@ -44,6 +45,12 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       rollLoyalty: ACKSActorSheetV2.#rollLoyalty,
       rollSave: ACKSActorSheetV2.#rollSave,
       rollAttack: ACKSActorSheetV2.#rollAttack,
+      toggleSummary: ACKSActorSheetV2.#toggleSummary,
+      itemShow: ACKSActorSheetV2.#itemShow,
+      itemEdit: ACKSActorSheetV2.#itemEdit,
+      itemDelete: ACKSActorSheetV2.#itemDelete,
+      itemCreate: ACKSActorSheetV2.#itemCreate,
+      itemUse: ACKSActorSheetV2.#itemUse,
     },
   };
 
@@ -126,6 +133,115 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     });
   }
 
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static async #toggleSummary(event, target) {
+    const item = this._getItemFromDOM(target);
+    const itemEl = target.closest(".item");
+
+    const summaryEl = itemEl.querySelector(".item-summary");
+    if (summaryEl.classList.contains("expanded")) {
+      // Collapse
+      summaryEl.classList.remove("expanded");
+      summaryEl.addEventListener(
+        "transitionend",
+        () => {
+          if (!summaryEl.classList.contains("expanded")) {
+            summaryEl.innerHTML = "";
+          }
+        },
+        { once: true },
+      );
+    } else {
+      // Expand
+      const enrichmentOptions = {
+        secrets: item.isOwner,
+        relativeTo: item,
+      };
+      const enriched = await TextEditorRef.enrichHTML(item.system.description, enrichmentOptions);
+      const tagsHtmlString = item.getTags();
+      const tags = tagsHtmlString.length > 0 ? `<ol class="tag-list unlist">${tagsHtmlString}</ol>` : "";
+      summaryEl.innerHTML = `<div>${tags}${enriched}</div>`;
+      summaryEl.classList.add("expanded");
+    }
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #itemShow(event, target) {
+    const item = this._getItemFromDOM(target);
+    void item.show();
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #itemEdit(event, target) {
+    const item = this._getItemFromDOM(target);
+    void item.sheet.render(true);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static async #itemDelete(event, target) {
+    const itemId = this._getItemIdFromDOM(target);
+    await this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static async #itemCreate(event, target) {
+    const itemType = target.dataset.type;
+    const itemSource = {
+      name: `New ${itemType}`,
+      type: itemType,
+    };
+
+    await this.actor.createEmbeddedDocuments("Item", [itemSource]);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #itemUse(event, target) {
+    const item = this._getItemFromDOM(target);
+    const skipKey = game.settings.get("acks", "skip-dialog-key");
+    const skipDialog = event[skipKey] || false;
+
+    switch (item.type) {
+      case "weapon":
+        if (this.actor.type === "monster") {
+          void item.update({ "system.counter.value": item.system.counter.value - 1 });
+        }
+        item.rollWeapon({ skipDialog });
+        break;
+
+      case "spell":
+        item.spendSpell({ skipDialog });
+        break;
+
+      default:
+        void item.rollFormula({ skipDialog });
+        break;
+    }
+  }
+
   // Prepare application rendering context data for a given render request.
   // @see https://foundryvtt.wiki/en/development/api/applicationv2#_preparecontext
   async _prepareContext(options) {
@@ -136,8 +252,115 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       system: this.actor.system,
       isGM: game.user.isGM,
       managerName: this.actor.getManagerName(),
+      owner: this.document.isOwner,
     };
 
+    await this._prepareItems(context);
+
     return context;
+  }
+
+  /**
+   * Prepare items display across the sheet.
+   * @param {ApplicationRenderContext} context  Context being prepared.
+   * @protected
+   */
+  async _prepareItems(context) {
+    const items = [];
+    const weapons = [];
+    const armors = [];
+    const abilities = [];
+    const spells = [];
+    const languages = [];
+    const money = [];
+
+    for (const item of this.actor.items) {
+      switch (item.type) {
+        case "item":
+          items.push(item);
+          break;
+        case "weapon":
+          weapons.push(item);
+          break;
+        case "armor":
+          armors.push(item);
+          break;
+        case "ability":
+          abilities.push(item);
+          break;
+        case "spell":
+          spells.push(item);
+          break;
+        case "language":
+          languages.push(item);
+          break;
+        case "money":
+          money.push(item);
+          break;
+      }
+    }
+
+    // Sort spells by level
+    const sortedSpells = {};
+    const slots = {};
+    for (const spell of spells) {
+      const lvl = spell.system.lvl;
+
+      sortedSpells[lvl] ??= [];
+
+      slots[lvl] ??= 0;
+
+      slots[lvl] += spell.system.cast;
+      sortedSpells[lvl].push(spell);
+    }
+
+    // Sort money according to the 'coppervalue' field
+    money.sort((a, b) => b.system.coppervalue - a.system.coppervalue);
+    // Compute total money value
+    for (const m of money) {
+      m.system.totalvalue = (m.system.coppervalue * (m.system.quantity + m.system.quantitybank)) / 100;
+    }
+
+    context.slots = {
+      used: slots,
+    };
+    context.owned = {
+      items,
+      weapons,
+      armors,
+      money,
+    };
+    context.abilities = abilities;
+    context.spells = sortedSpells;
+    context.languages = languages;
+
+    context.favorites = this.actor.getFavorites();
+  }
+
+  /**
+   * Will return the item corresponding to the clicked element, or null if not found.
+   * @param {HTMLElement} target
+   * @return {AcksItem|null}
+   * @private
+   */
+  _getItemFromDOM(target) {
+    const itemId = this._getItemIdFromDOM(target);
+    const item = this.actor.items.get(itemId);
+    if (!item) {
+      ui.notifications.error("Can't find item on actor to show summary for.");
+      return null;
+    }
+    return item;
+  }
+
+  /**
+   *
+   * @param {HTMLElement} target
+   * @return {string}
+   * @private
+   */
+  _getItemIdFromDOM(target) {
+    const itemEl = target.closest(".item");
+    return itemEl.dataset.itemId;
   }
 }

@@ -1,3 +1,27 @@
 <section class="tab {{ tab.cssClass }} sheet-abilities" data-group="primary" data-tab="abilities">
-  abilities
+  <div class="content flexrow">
+
+    <div class="item-list-section">
+
+      <div class="list-header">
+        <div class="list-header__name">{{localize 'ACKS.category.abilities'}}</div>
+        {{#if owner}}
+          <div class="list-header__controls">
+            <a class="item-control item-create" data-tooltip='{{localize "ACKS.Add"}}' data-action="itemCreate"
+               data-type="ability">
+              <i class="fas fa-plus"></i>
+            </a>
+          </div>
+        {{/if}}
+      </div>
+
+      <ul class="item-list unlist">
+        {{#each abilities}}
+          {{> proficiencyItem item=this owner=../owner }}
+        {{/each}}
+      </ul>
+
+    </div>
+
+  </div>
 </section>

@@ -8,6 +8,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       rollBaseHealingRate: ACKSCharacterSheetV2.#rollBaseHealingRate,
       rollAttribute: ACKSCharacterSheetV2.#rollAttribute,
       rollAdventuring: ACKSCharacterSheetV2.#rollAdventuring,
+      itemToggleFavorite: ACKSCharacterSheetV2.#itemToggleFavorite,
     },
   };
 
@@ -102,6 +103,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     const attribute = target.dataset.attribute;
     this.actor.rollCheck(attribute, { event });
   }
+
   /**
    *
    * @param {PointerEvent} event
@@ -110,5 +112,16 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   static #rollAdventuring(event, target) {
     const skill = target.dataset.skill;
     this.actor.rollAdventuring(skill, { event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #itemToggleFavorite(event, target) {
+    const item = this._getItemFromDOM(target);
+
+    item.update({ "system.favorite": !item.system.favorite });
   }
 }

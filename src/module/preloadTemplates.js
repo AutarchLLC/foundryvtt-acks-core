@@ -37,5 +37,6 @@ export const preloadHandlebarsTemplates = async function () {
   // {{>attributeScore}}
   await foundry.applications.handlebars.loadTemplates({
     attributeScore: "systems/acks/templates/actors/v2/partials/attribute-score.hbs",
+    proficiencyItem: "systems/acks/templates/actors/v2/partials/proficiency-item.hbs",
   });
 };

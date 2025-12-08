@@ -1,5 +1,7 @@
 import { AcksDice } from "../dice.js";
 import { AcksUtility } from "../utility.js";
+import { createTagHtmlString } from "../util/html-util.mjs";
+import { ACKS } from "../config.js";
 
 /**
  * Override and extend the basic :class:`Item` implementation
@@ -148,48 +150,41 @@ export class AcksItem extends Item {
   }
 
   getTags() {
-    let formatTag = (tag, icon) => {
-      if (!tag) return "";
-      let fa = "";
-      if (icon) {
-        fa = `<i class="fas ${icon}"></i> `;
-      }
-      return `<li class='tag'>${fa}${tag}</li>`;
-    };
-
-    let wTags, sTags, roll;
     switch (this.type) {
-      case "weapon":
-        wTags = formatTag(this.system.damage, "fa-tint");
+      case "weapon": {
+        let tagHtmlString = createTagHtmlString(this.system.damage, "fa-tint");
         this.system.tags.forEach((t) => {
-          wTags += formatTag(t.value);
+          tagHtmlString += createTagHtmlString(t.value);
         });
-        wTags += formatTag(CONFIG.ACKS.saves_long[this.system.save], "fa-skull");
+        tagHtmlString += createTagHtmlString(ACKS.saves_long[this.system.save], "fa-skull");
         if (this.system.missile) {
-          wTags += formatTag(
+          tagHtmlString += createTagHtmlString(
             this.system.range.short + "/" + this.system.range.medium + "/" + this.system.range.long,
             "fa-bullseye",
           );
         }
-        return wTags;
+        return tagHtmlString;
+      }
       case "armor":
-        return `${formatTag(CONFIG.ACKS.armor[this.system.type], "fa-tshirt")}`;
+        return `${createTagHtmlString(ACKS.armor[this.system.type], "fa-tshirt")}`;
       case "item":
         return "";
-      case "spell":
-        sTags = `${formatTag(this.system.class)}${formatTag(
+      case "spell": {
+        let tagHtmlString = `${createTagHtmlString(this.system.class)}${createTagHtmlString(
           this.system.range,
-        )}${formatTag(this.system.duration)}${formatTag(this.system.roll)}`;
+        )}${createTagHtmlString(this.system.duration)}${createTagHtmlString(this.system.roll)}`;
         if (this.system.save) {
-          sTags += formatTag(CONFIG.ACKS.saves_long[this.system.save], "fa-skull");
+          tagHtmlString += createTagHtmlString(ACKS.saves_long[this.system.save], "fa-skull");
         }
-        return sTags;
-      case "ability":
-        roll = "";
+        return tagHtmlString;
+      }
+      case "ability": {
+        let roll = "";
         roll += this.system.roll ? this.system.roll : "";
-        roll += this.system.rollTarget ? CONFIG.ACKS.roll_type[this.system.rollType] : "";
+        roll += this.system.rollTarget ? ACKS.roll_type[this.system.rollType] : "";
         roll += this.system.rollTarget ? this.system.rollTarget : "";
-        return `${formatTag(this.system.requirements)}${formatTag(roll)}`;
+        return `${createTagHtmlString(this.system.requirements)}${createTagHtmlString(roll)}`;
+      }
     }
     return "";
   }
