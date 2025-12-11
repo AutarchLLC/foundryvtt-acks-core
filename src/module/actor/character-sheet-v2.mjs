@@ -9,6 +9,8 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       rollAttribute: ACKSCharacterSheetV2.#rollAttribute,
       rollAdventuring: ACKSCharacterSheetV2.#rollAdventuring,
       itemToggleFavorite: ACKSCharacterSheetV2.#itemToggleFavorite,
+      resetSpellSlots: ACKSCharacterSheetV2.#resetSpellSlots,
+      toggleListSection: ACKSCharacterSheetV2.#toggleListSection,
     },
   };
 
@@ -123,5 +125,42 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     const item = this._getItemFromDOM(target);
 
     item.update({ "system.favorite": !item.system.favorite });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #resetSpellSlots(event, target) {
+    const spells = target.closest(".item-list-section.spells").querySelectorAll(".item");
+    for (const spell of spells) {
+      const item = this._getItemFromDOM(spell);
+      void item.update({
+        "system.cast": 0,
+        "system.memorized": 0,
+      });
+    }
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #toggleListSection(event, target) {
+    const spellListSection = target.closest("section.item-list-section");
+    const itemListWrapper = spellListSection.querySelector(".item-list-wrapper");
+    const icon = target.children.item(0);
+
+    itemListWrapper.classList.toggle("expanded");
+
+    if (icon.classList.contains("fa-caret-down")) {
+      icon.classList.remove("fa-caret-down");
+      icon.classList.add("fa-caret-right");
+    } else {
+      icon.classList.remove("fa-caret-right");
+      icon.classList.add("fa-caret-down");
+    }
   }
 }

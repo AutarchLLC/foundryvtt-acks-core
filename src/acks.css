@@ -2021,14 +2021,41 @@
 .sheet.acks.actor-v2 .item-list-section {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sheet.acks.actor-v2 .item-list-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.sheet.acks.actor-v2 .item-list-wrapper.expanded {
+  grid-template-rows: 1fr; /* expanded */
+  opacity: 1;
+}
+
+.sheet.acks.actor-v2 .item-list-wrapper > .item-list {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .sheet.acks.actor-v2 .list-header {
-  background: linear-gradient(90deg, rgb(from var(--acks-purple) r g b / 0.8), transparent);
-  /*font-size: var(--font-size-12);*/
+  background: linear-gradient(
+    90deg,
+    rgb(from var(--acks-purple) r g b / 0.8),
+    rgb(from var(--acks-purple) r g b / 0.4)
+  );
   display: flex;
   gap: 0.5rem;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
+  line-height: 2rem;
+  /* border: 1px solid var(--color-border); */
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .sheet.acks.actor-v2 .list-header__name {
@@ -2056,6 +2083,10 @@
   padding: 0.25rem;
 }
 
+.sheet.acks.actor-v2 .item:last-child {
+  border-bottom: none;
+}
+
 .sheet.acks.actor-v2 .item-row {
   display: flex;
   align-items: center;
@@ -2081,6 +2112,20 @@
 
 .sheet.acks.actor-v2 .item__text {
   flex: 1;
+}
+
+.sheet.acks.actor-v2 .item__inputs {
+  flex: unset;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sheet.acks.actor-v2 input.small {
+  width: 3rem;
+  min-width: 3rem;
+  padding: 0 0.25rem;
+  height: 1.5rem;
 }
 
 .sheet.acks.actor-v2 .item__image {

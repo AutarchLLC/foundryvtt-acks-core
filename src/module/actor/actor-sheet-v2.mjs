@@ -242,6 +242,37 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     }
   }
 
+  /**
+   * Actions performed after a first render of the Application.
+   * @param {ApplicationRenderContext} context      Prepared context data
+   * @param {RenderOptions} options                 Provided render options
+   * @returns {Promise<void>}
+   * @protected
+   */
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+
+    const itemInputs = this.element.querySelectorAll("input.item-input");
+    for (const input of itemInputs) {
+      input.addEventListener("change", this._onInputChange.bind(this));
+    }
+  }
+
+  _onInputChange(event) {
+    event.stopImmediatePropagation();
+
+    const item = this._getItemFromDOM(event.target);
+    const value = event.target.valueAsNumber;
+    const field = event.target.dataset.name;
+    if (!item || !field || Number.isNaN(value)) {
+      return;
+    }
+
+    const upd = { [field]: value };
+
+    void item.update(upd);
+  }
+
   // Prepare application rendering context data for a given render request.
   // @see https://foundryvtt.wiki/en/development/api/applicationv2#_preparecontext
   async _prepareContext(options) {
