@@ -171,7 +171,7 @@ Hooks.once("setup", function () {
   // Localize CONFIG objects once up-front
   const toLocalize = ["saves_short", "saves_long", "scores", "armor", "colors", "tags"];
   for (let o of toLocalize) {
-    CONFIG.ACKS[o] = Object.entries(CONFIG.ACKS[o]).reduce((obj, e) => {
+    ACKS[o] = Object.entries(ACKS[o]).reduce((obj, e) => {
       obj[e[0]] = game.i18n.localize(e[1]);
       return obj;
     }, {});

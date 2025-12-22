@@ -87,6 +87,7 @@ export const registerMainSettings = async () => {
     },
   });
 
+  // TODO: remove this?
   game.settings.register("acks", "encumbranceOption", {
     name: game.i18n.localize("ACKS.Setting.Encumbrance"),
     hint: game.i18n.localize("ACKS.Setting.EncumbranceHint"),

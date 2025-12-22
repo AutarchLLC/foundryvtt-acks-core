@@ -114,6 +114,7 @@ export const ACKS = {
     general: "ACKS.proficiencyType.general",
     class: "ACKS.proficiencyType.class",
   },
+  // will be auto localized during setup hook
   tags: {
     melee: "ACKS.items.Melee",
     missile: "ACKS.items.Missile",
@@ -124,6 +125,17 @@ export const ACKS = {
     splash: "ACKS.items.Splash",
     reload: "ACKS.items.Reload",
     charge: "ACKS.items.Charge",
+  },
+  tag_icons: {
+    melee: "fa-solid fa-swords",
+    missile: "fa-solid fa-bow-arrow",
+    slow: "fa-solid fa-hourglass",
+    twohanded: "fa-solid fa-hand-holding-hand",
+    blunt: "fa-solid fa-hammer-war",
+    brace: "fa-solid fa-slash",
+    splash: "fa-solid fa-burst",
+    reload: "fa-solid fa-repeat",
+    charge: "fa-solid fa-person-running-fast",
   },
   tag_images: {
     melee: "systems/acks/assets/melee.png",

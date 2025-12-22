@@ -11,6 +11,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       itemToggleFavorite: ACKSCharacterSheetV2.#itemToggleFavorite,
       resetSpellSlots: ACKSCharacterSheetV2.#resetSpellSlots,
       toggleListSection: ACKSCharacterSheetV2.#toggleListSection,
+      itemToggleEquipped: ACKSCharacterSheetV2.#itemToggleEquipped,
     },
   };
 
@@ -125,6 +126,17 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     const item = this._getItemFromDOM(target);
 
     item.update({ "system.favorite": !item.system.favorite });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #itemToggleEquipped(event, target) {
+    const item = this._getItemFromDOM(target);
+
+    item.update({ "system.equipped": !item.system.equipped });
   }
 
   /**

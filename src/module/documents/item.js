@@ -210,13 +210,13 @@ export class AcksItem extends Item {
         }
         // Auto fill checkboxes
         switch (val) {
-          case CONFIG.ACKS.tags.melee:
+          case ACKS.tags.melee:
             newData.melee = true;
             break;
-          case CONFIG.ACKS.tags.slow:
+          case ACKS.tags.slow:
             newData.slow = true;
             break;
-          case CONFIG.ACKS.tags.missile:
+          case ACKS.tags.missile:
             newData.missile = true;
             break;
         }
@@ -278,7 +278,7 @@ export class AcksItem extends Item {
       hasDamage: this.hasDamage,
       isSpell: this.type === "spell",
       hasSave: this.hasSave,
-      config: CONFIG.ACKS,
+      config: ACKS,
     };
     //console.log("Template data", templateData);
     // Render the chat card template

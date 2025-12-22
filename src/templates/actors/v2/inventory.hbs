@@ -1,3 +1,388 @@
 <section class="tab {{ tab.cssClass }} sheet-inventory" data-group="primary" data-tab="inventory">
-  inventory
+  <div class="content flexrow">
+    <div class="flexcol">
+
+      <!-- Encumbrance Bar -->
+      <section class="encumbrance-panel">
+        <div class="encumbrance-bar">
+          <div class="encumbrance-fill" style="--enc-percent: {{system.encumbrance.pct}}%"></div>
+          <div class="encumbrance-label">
+            {{getWeight6Tooltip system.encumbrance.value6 system.encumbrance.max6}}
+          </div>
+          <div class="encumbrance-breakpoint" style="--left-offset:{{system.encumbrance.breakpoints.low}}%"></div>
+          <div class="encumbrance-breakpoint" style="--left-offset:{{system.encumbrance.breakpoints.mid}}%"></div>
+          <div class="encumbrance-breakpoint" style="--left-offset:{{system.encumbrance.breakpoints.high}}%"></div>
+        </div>
+      </section>
+
+      <!-- Weapons -->
+      <section class="item-list-section">
+
+        <div class="list-header">
+
+          <div class="list-header__controls left-side">
+            <a class="item-control toggle" data-action="toggleListSection">
+              <i class="fas fa-caret-down"></i>
+            </a>
+          </div>
+
+          <div class="item__name">{{localize "ACKS.items.Weapons"}}</div>
+
+          <div class="item__damage">{{localize "ACKS.items.Damage"}}</div>
+
+          <div class="item__range">{{localize "ACKS.items.Range"}}</div>
+
+          <div class="item__special">Special</div>
+
+          <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
+
+          {{#if owner}}
+            <div class="list-header__controls controls__weapon">
+              <a class="item-control" data-tooltip='{{localize "ACKS.Add"}}' data-action="itemCreate"
+                 data-type="weapon">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          {{/if}}
+
+        </div>
+
+        <div class="item-list-wrapper expanded">
+          <ul class="item-list unlist">
+            {{#each owned.weapons as |item|}}
+              <li class="item" data-item-id="{{item._id}}">
+
+                <div class="item-row">
+
+                  <!-- Weapon Icon -->
+                  <div class="item__icon item-usable" data-action="itemUse">
+                    <img src="{{item.img}}" alt="{{item.name}}" class="item__image"/>
+                  </div>
+
+                  <!-- Weapon Name -->
+                  <div class="item__name">
+                    <a data-action="toggleSummary">{{item.name}}</a>
+                  </div>
+
+                  <!-- Weapon Damage -->
+                  <div class="item__damage">{{system.damage}}</div>
+
+                  <!-- Weapon Range -->
+                  <div class="item__range">
+                    {{#if system.missile}}
+                      {{system.range.short}}/{{system.range.medium}}/{{system.range.long}}
+                    {{/if}}
+                  </div>
+
+                  <!-- Weapon Special Tags -->
+                  <div class="item__tags item__special">
+                    {{generateTags item.system.tags}}
+                  </div>
+
+                  <!-- Item Weight in 1/6th stones -->
+                  <div class="item__weight">{{stoneWeight item.system.weight6}}</div>
+
+                  <!-- Weapon Controls -->
+                  {{#if ../owner}}
+                    <div class="list-header__controls controls__weapon">
+
+                      {{#if item.system.equipped}}
+                        <a class="item-control" data-tooltip='Unequip' data-action="itemToggleEquipped">
+                          <i class="fa-solid fa-tshirt"></i>
+                        </a>
+                      {{else}}
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Equip"}}'
+                           data-action="itemToggleEquipped">
+                          <i class="fa-regular fa-tshirt"></i>
+                        </a>
+                      {{/if}}
+
+                      {{#if item.system.favorite}}
+                        <a class="item-control" data-tooltip='Remove from favorites'
+                           data-action="itemToggleFavorite">
+                          <i class="fa-solid fa-star"></i>
+                        </a>
+                      {{else}}
+                        <a class="item-control" data-tooltip='Add to favorites' data-action="itemToggleFavorite">
+                          <i class="fa-regular fa-star"></i>
+                        </a>
+                      {{/if}}
+
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Edit"}}' data-action="itemEdit">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="itemDelete">
+                        <i class="fas fa-trash"></i>
+                      </a>
+
+                    </div>
+                  {{/if}}
+
+                </div>
+
+                <div class="item-summary"></div>
+
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Armor -->
+      <section class="item-list-section">
+
+        <div class="list-header">
+
+          <div class="list-header__controls left-side">
+            <a class="item-control toggle" data-action="toggleListSection">
+              <i class="fas fa-caret-down"></i>
+            </a>
+          </div>
+
+          <div class="item__name">{{localize "ACKS.items.Armors"}}</div>
+
+          <div class="item__ac">{{localize "ACKS.items.ArmorAAC"}}</div>
+
+          <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
+
+          {{#if owner}}
+            <div class="list-header__controls controls__armor">
+              <a class="item-control" data-tooltip='{{localize "ACKS.Add"}}' data-action="itemCreate"
+                 data-type="armor">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          {{/if}}
+
+        </div>
+
+        <div class="item-list-wrapper expanded">
+          <ul class="item-list unlist">
+            {{#each owned.armors as |item|}}
+              <li class="item" data-item-id="{{item._id}}">
+
+                <div class="item-row">
+
+                  <!-- Armor Icon -->
+                  <div class="item__icon">
+                    <img src="{{item.img}}" alt="{{item.name}}" class="item__image"/>
+                  </div>
+
+                  <!-- Armor Name -->
+                  <div class="item__name">
+                    <a data-action="toggleSummary">{{item.name}}</a>
+                  </div>
+
+                  <!-- Armor Class -->
+                  <div class="item__ac">{{item.system.aac.value}}</div>
+
+                  <!-- Armor Weight in 1/6th stones -->
+                  <div class="item__weight">{{stoneWeight item.system.weight6}}</div>
+
+                  <!-- Armor Controls -->
+                  {{#if ../owner}}
+                    <div class="list-header__controls controls__armor">
+
+                      {{#if item.system.equipped}}
+                        <a class="item-control" data-tooltip='Unequip' data-action="itemToggleEquipped">
+                          <i class="fa-solid fa-tshirt"></i>
+                        </a>
+                      {{else}}
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Equip"}}'
+                           data-action="itemToggleEquipped">
+                          <i class="fa-regular fa-tshirt"></i>
+                        </a>
+                      {{/if}}
+
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Edit"}}' data-action="itemEdit">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="itemDelete">
+                        <i class="fas fa-trash"></i>
+                      </a>
+
+                    </div>
+                  {{/if}}
+
+                </div>
+
+                <div class="item-summary"></div>
+
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Items -->
+      <section class="item-list-section">
+
+        <div class="list-header">
+
+          <div class="list-header__controls left-side">
+            <a class="item-control toggle" data-action="toggleListSection">
+              <i class="fas fa-caret-down"></i>
+            </a>
+          </div>
+
+          <div class="item__name">{{localize "ACKS.items.Misc"}}</div>
+
+          <div class="item__count"><i class="fas fa-hashtag"></i></div>
+
+          <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
+
+          {{#if owner}}
+            <div class="list-header__controls controls__item">
+              <a class="item-control" data-tooltip='{{localize "ACKS.Add"}}' data-action="itemCreate" data-type="item">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          {{/if}}
+
+        </div>
+
+        <div class="item-list-wrapper expanded">
+          <ul class="item-list unlist">
+            {{#each owned.items as |item|}}
+              <li class="item" data-item-id="{{item._id}}">
+
+                <div class="item-row">
+
+                  <!-- Item Icon -->
+                  <div class="item__icon">
+                    <img src="{{item.img}}" alt="{{item.name}}" class="item__image"/>
+                  </div>
+
+                  <!-- Item Name -->
+                  <div class="item__name">
+                    <a data-action="toggleSummary">{{item.name}}</a>
+                  </div>
+
+                  <!-- Item Count -->
+                  <div class="item__count">
+                    <input class="item-input small" type="number" data-name="system.quantity.value"
+                           value="{{item.system.quantity.value}}" data-dtype="Number"/>
+                    {{#if item.system.quantity.max}}
+                      <span>/</span>
+                      <span>{{item.system.quantity.max}}</span>
+                    {{/if}}
+                  </div>
+
+                  <!-- Item Weight in 1/6th stones -->
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity.value)}}</div>
+
+                  <!-- Item Controls -->
+                  {{#if ../owner}}
+                    <div class="list-header__controls controls__item">
+
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Edit"}}' data-action="itemEdit">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="itemDelete">
+                        <i class="fas fa-trash"></i>
+                      </a>
+
+                    </div>
+                  {{/if}}
+
+                </div>
+
+                <div class="item-summary"></div>
+
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Coins -->
+      <section class="item-list-section">
+
+        <div class="list-header">
+
+          <div class="list-header__controls left-side">
+            <a class="item-control toggle" data-action="toggleListSection">
+              <i class="fas fa-caret-down"></i>
+            </a>
+          </div>
+
+          <div class="item__name">{{localize "ACKS.moneytitle"}}</div>
+
+          <div>Total: {{totalMoneyGC}} gp ({{moneyEncumbrance.stone}} stones)</div>
+
+          <div class="money__count">{{localize "ACKS.money.quantity"}}</div>
+
+          <div class="money__count-bank">{{localize "ACKS.money.quantitybank"}}</div>
+
+          <div class="money__value">{{localize "ACKS.money.valuegold"}}</div>
+
+          {{#if owner}}
+            <div class="list-header__controls controls__money">
+              <a class="item-control" data-tooltip='{{localize "ACKS.Add"}}' data-action="itemCreate" data-type="money">
+                <i class="fas fa-plus"></i>
+              </a>
+            </div>
+          {{/if}}
+
+        </div>
+
+        <div class="item-list-wrapper expanded">
+          <ul class="item-list unlist">
+            {{#each owned.money as |item|}}
+              <li class="item" data-item-id="{{item._id}}">
+
+                <div class="item-row">
+
+                  <!-- Item Icon -->
+                  <div class="item__icon">
+                    <img src="{{item.img}}" alt="{{item.name}}" class="item__image"/>
+                  </div>
+
+                  <!-- Item Name -->
+                  <div class="item__name">
+                    <a data-action="toggleSummary">{{item.name}}</a>
+                  </div>
+
+                  <!-- Item Count -->
+                  <div class="money__count">
+                    <input class="item-input small" type="number" data-name="system.quantity"
+                           value="{{item.system.quantity}}" data-dtype="Number"/>
+                  </div>
+                  <div class="money__count-bank">
+                    <input class="item-input small" type="number" data-name="system.quantitybank"
+                           value="{{item.system.quantitybank}}" data-dtype="Number"/>
+                  </div>
+
+                  <div class="money__value">{{item.system.totalvalue}}</div>
+
+                  <!-- Item Controls -->
+                  {{#if ../owner}}
+                    <div class="list-header__controls controls__money">
+
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Edit"}}' data-action="itemEdit">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="itemDelete">
+                        <i class="fas fa-trash"></i>
+                      </a>
+
+                    </div>
+                  {{/if}}
+
+                </div>
+
+                <div class="item-summary"></div>
+
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </section>
+
+    </div>
+  </div>
 </section>

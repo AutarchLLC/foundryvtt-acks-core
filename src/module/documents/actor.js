@@ -1,5 +1,6 @@
 import { AcksDice } from "../dice.js";
 import { AcksUtility } from "../utility.js";
+import { ACKS } from "../config.js";
 
 export class AcksActor extends Actor {
   static async create(data, options) {
@@ -360,7 +361,7 @@ export class AcksActor extends Actor {
   getTotalMoneyGC() {
     let total = 0;
     this.items.forEach((item) => {
-      if (item.type == "money") {
+      if (item.type === "money") {
         total += item.system.quantity * item.system.coppervalue;
       }
     });
@@ -370,7 +371,7 @@ export class AcksActor extends Actor {
   getTotalMoneyEncumbrance() {
     let total = 0;
     this.items.forEach((item) => {
-      if (item.type == "money") {
+      if (item.type === "money") {
         total += item.system.quantity;
       }
     });
@@ -460,7 +461,7 @@ export class AcksActor extends Actor {
   async generateSave(hd) {
     let saves = {};
     for (let i = 0; i <= hd; i++) {
-      let tmp = CONFIG.ACKS.monster_saves[i];
+      let tmp = ACKS.monster_saves[i];
       if (tmp) {
         saves = tmp;
       }
@@ -1044,30 +1045,45 @@ export class AcksActor extends Actor {
       return;
     }
 
-    let totalEncumbrance = 0;
+    let totalEncumbrance6 = 0;
 
     this.items.forEach((item) => {
       if (item.type === "item" && item.system.subtype != "clothing") {
-        totalEncumbrance += item.system.weight6 * item.system.quantity.value;
+        totalEncumbrance6 += item.system.weight6 * item.system.quantity.value;
       } else if (["weapon", "armor"].includes(item.type)) {
-        totalEncumbrance += item.system.weight6;
+        totalEncumbrance6 += item.system.weight6;
       }
     });
-    totalEncumbrance /= 6; // Get the weight in stones
-    totalEncumbrance += this.getTotalMoneyEncumbrance().stone;
+
+    const moneyEncumbrance = this.getTotalMoneyEncumbrance();
+    // encumbrance in 1/6 stones
+    const value6 = totalEncumbrance6 + moneyEncumbrance.stone * 6;
+
+    totalEncumbrance6 /= 6; // Get the weight in stones
+    totalEncumbrance6 += moneyEncumbrance.stone;
 
     // Select the max encumbrance value
-    let maxEncumbrance =
+    const maxEncumbrance =
       this.system.encumbrance.forcemax > 0 ? this.system.encumbrance.forcemax : 20 + this.system.scores.str.mod;
-    if (this.system.encumbrance.max != maxEncumbrance && this._id) {
+    if (this.system.encumbrance.max !== maxEncumbrance && this._id) {
       this.update({ "system.encumbrance.max": maxEncumbrance });
     }
 
+    // max encumbrance in 1/6 stones
+    const max6 = maxEncumbrance * 6;
+
     this.system.encumbrance = {
-      pct: Math.clamp((totalEncumbrance / maxEncumbrance) * 100, 0, 100),
+      pct: Math.clamp((totalEncumbrance6 / maxEncumbrance) * 100, 0, 100),
       max: maxEncumbrance,
-      encumbered: totalEncumbrance > maxEncumbrance,
-      value: Math.round(totalEncumbrance),
+      encumbered: totalEncumbrance6 > maxEncumbrance,
+      value: Math.round(totalEncumbrance6),
+      max6,
+      value6,
+      breakpoints: {
+        low: Math.clamp((5 / maxEncumbrance) * 100, 0, 100),
+        mid: Math.clamp((7 / maxEncumbrance) * 100, 0, 100),
+        high: Math.clamp((10 / maxEncumbrance) * 100, 0, 100),
+      },
     };
 
     if (this.system.config.movementAuto) {
@@ -1079,15 +1095,15 @@ export class AcksActor extends Actor {
   _calculateMovement() {
     let baseSpeed;
     if (this.system.encumbrance.value > this.system.encumbrance.max) {
-      baseSpeed = CONFIG.ACKS.base_speed.overburdened; // 0
+      baseSpeed = ACKS.base_speed.overburdened; // 0
     } else if (this.system.encumbrance.value > 10) {
-      baseSpeed = CONFIG.ACKS.base_speed.high_encumbrance; // 30
+      baseSpeed = ACKS.base_speed.high_encumbrance; // 30
     } else if (this.system.encumbrance.value > 7) {
-      baseSpeed = CONFIG.ACKS.base_speed.mid_encumbrance; // 60
+      baseSpeed = ACKS.base_speed.mid_encumbrance; // 60
     } else if (this.system.encumbrance.value > 5) {
-      baseSpeed = CONFIG.ACKS.base_speed.low_encumbrance; // 90
+      baseSpeed = ACKS.base_speed.low_encumbrance; // 90
     } else {
-      baseSpeed = CONFIG.ACKS.base_speed.unencumbered; // 120
+      baseSpeed = ACKS.base_speed.unencumbered; // 120
     }
 
     // apply movement mod but make sure speed can't be less than 0

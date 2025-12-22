@@ -1848,7 +1848,7 @@
   box-shadow: 0 0 4px var(--acks-purple);
 }
 
-.sheet.acks.item-v2 .tag-lis,
+.sheet.acks.item-v2 .tag-list,
 .sheet.acks.actor-v2 .tag-list {
   display: flex;
   flex-direction: row;
@@ -1864,6 +1864,7 @@
   padding: 0 4px;
   display: flex;
   gap: 4px;
+  align-items: center;
 }
 
 .sheet.acks.item-v2 .tag__delete,
@@ -2051,7 +2052,7 @@
   );
   display: flex;
   gap: 0.5rem;
-  padding: 0 0.5rem;
+  padding: 0 0.25rem;
   line-height: 2rem;
   /* border: 1px solid var(--color-border); */
   border-radius: 4px;
@@ -2066,6 +2067,11 @@
 .sheet.acks.actor-v2 .item__controls {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
+}
+
+.sheet.acks.actor-v2 .list-header__controls.left-side {
+  width: 32px;
 }
 
 .sheet.acks.actor-v2 .unlist {
@@ -2093,6 +2099,17 @@
   gap: 0.5rem;
 }
 
+.sheet.acks.actor-v2 .item__tags {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sheet.acks.actor-v2 .item__tags .tag-icon {
+  font-size: 20px;
+}
+
 .sheet.acks.actor-v2 .item__icon {
   flex: 0 0 var(--icon-size);
 }
@@ -2108,10 +2125,71 @@
 .sheet.acks.actor-v2 .item__icon.item-usable:hover .item__image {
   transform: scale(1.2);
   border-color: var(--acks-purple);
+  border-width: 3px;
 }
 
 .sheet.acks.actor-v2 .item__text {
   flex: 1;
+}
+
+.sheet.acks.actor-v2 .item__name,
+.sheet.acks.actor-v2 .item__special {
+  flex: 1;
+}
+
+.sheet.acks.actor-v2 .item__damage {
+  width: 50px;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__range {
+  width: 110px;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__weight {
+  width: 50px;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__ac {
+  width: 20px;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__count {
+  width: 5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.25rem;
+}
+
+.sheet.acks.actor-v2 .money__value {
+  width: 4rem;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .money__count,
+.sheet.acks.actor-v2 .money__count input.small,
+.sheet.acks.actor-v2 .money__count-bank,
+.sheet.acks.actor-v2 .money__count-bank input.small {
+  width: 6rem;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .controls__weapon {
+  width: 84px;
+}
+
+.sheet.acks.actor-v2 .controls__armor {
+  width: 60px;
+}
+
+.sheet.acks.actor-v2 .controls__money,
+.sheet.acks.actor-v2 .controls__item {
+  width: 35px;
 }
 
 .sheet.acks.actor-v2 .item__inputs {
@@ -2164,4 +2242,48 @@
 .sheet.acks.actor-v2 .item-summary > div {
   min-height: 0;
   overflow: hidden;
+}
+
+.sheet.acks.actor-v2 .encumbrance-panel {
+  width: 100%;
+}
+
+.sheet.acks.actor-v2 .encumbrance-bar {
+  height: 18px;
+  background-color: var(--color-cool-4);
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid var(--color-tabs-border);
+}
+
+.sheet.acks.actor-v2 .encumbrance-fill {
+  --enc-percent: 0;
+  height: 16px;
+  background-color: #26b231;
+  width: var(--enc-percent);
+  border-radius: 4px;
+  border: 1px solid var(--color-cool-4);
+}
+
+.sheet.acks.actor-v2 .encumbrance-label {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  text-shadow: 1px 1px 2px var(--color-cool-5);
+}
+
+.sheet.acks.actor-v2 .encumbrance-breakpoint {
+  --left-offset: 0;
+  position: absolute;
+  top: -1px;
+  left: var(--left-offset);
+  height: 18px;
+  width: 1px;
+  background-color: var(--color-tabs-border);
+}
+
+.sheet.acks.actor-v2 .item-control.toggle {
+  min-width: 9px;
 }

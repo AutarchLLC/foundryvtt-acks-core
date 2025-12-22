@@ -157,8 +157,9 @@
       <div class="form-group">
         <label data-tooltip="{{localize 'ACKS.Encumbrance'}}">{{localize 'ACKS.Encumbrance'}}</label>
         <div class="form-fields">
-          <input type="text" value="{{system.encumbrance.value}} / {{system.encumbrance.max}}" data-dtype="Number"
-                 disabled/>
+          <span data-tooltip="{{getWeight6Tooltip system.encumbrance.value6 system.encumbrance.max6}}">
+            {{stoneWeight system.encumbrance.value6}} / {{stoneWeight system.encumbrance.max6}}
+          </span>
         </div>
       </div>
 
