@@ -1912,6 +1912,7 @@
 
 .sheet.acks.actor-v2 .content {
   align-items: flex-start;
+  height: 100%;
 }
 
 .sheet.acks.actor-v2 .flex-1 {
@@ -2286,4 +2287,36 @@
 
 .sheet.acks.actor-v2 .item-control.toggle {
   min-width: 9px;
+}
+
+.sheet.acks.actor-v2 .section__languages {
+  flex: 1;
+}
+
+.sheet.acks.actor-v2 .section__languages .item-list {
+  overflow: hidden auto;
+}
+
+.sheet.acks.actor-v2 .section__description {
+  flex: 4;
+}
+
+.sheet.acks.actor-v2 .height-100 {
+  height: 100%;
+}
+
+.sheet.acks.actor-v2 .col-stretch {
+  flex: 1;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.sheet.acks.actor-v2 .editor__biography,
+.sheet.acks.actor-v2 .editor__notes {
+  flex: 1;
+}
+
+.sheet.acks.actor-v2 .editor__biography prose-mirror,
+.sheet.acks.actor-v2 .editor__notes prose-mirror {
+  height: 100%;
 }

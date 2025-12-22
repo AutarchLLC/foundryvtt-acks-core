@@ -19,7 +19,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     position: {
       // initial size of the window
       width: 800,
-      height: 650,
+      height: 700,
     },
     form: {
       submitOnChange: true,
@@ -290,6 +290,11 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
     context.totalMoneyGC = this.actor.getTotalMoneyGC();
     context.moneyEncumbrance = this.actor.getTotalMoneyEncumbrance();
+
+    context.enriched = {
+      biography: await TextEditorRef.enrichHTML(this.actor.system.details.biography),
+      notes: await TextEditorRef.enrichHTML(this.actor.system.details.notes),
+    };
 
     return context;
   }
