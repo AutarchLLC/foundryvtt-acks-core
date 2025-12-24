@@ -193,4 +193,20 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       icon.classList.add("fa-caret-down");
     }
   }
+
+  /**
+   * Handle a dropped Actor on the Actor Sheet.
+   * @param {DragEvent} event     The initiating drop event
+   * @param {Actor} actor         The dropped Actor document
+   * @returns {Promise<Actor|null|undefined>} A Promise resolving to an Actor identical or related to the dropped Actor
+   *                                          to indicate success, or a nullish value to indicate failure or no action
+   *                                          being taken
+   * @protected
+   */
+  async _onDropActor(event, actor) {
+    const actorId = actor.id;
+    await this.actor.addHenchman(actorId);
+    // TODO: make sure this returns Actor after Hireling handling rework
+    return null;
+  }
 }
