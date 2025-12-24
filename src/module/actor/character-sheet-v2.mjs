@@ -38,16 +38,31 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     primary: "attributes",
   };
 
+  /**
+   * Prepare application tab data for a single tab group.
+   * @param {string} group The ID of the tab group to prepare
+   * @returns {Record<string, ApplicationTab>}
+   * @protected
+   */
+  _prepareTabs(group) {
+    const tabs = super._prepareTabs(group);
+    // if item can't have Active Effects remove corresponding tab
+    if (!this.actor.system.spells.enabled) {
+      delete tabs.spells;
+    }
+    return tabs;
+  }
+
   /** @override */
   static PARTS = {
     header: {
-      template: "systems/acks/templates/actors/v2/header.hbs",
+      template: "systems/acks/templates/actors/v2/header-character.hbs",
     },
     tabs: {
       template: "templates/generic/tab-navigation.hbs",
     },
     attributes: {
-      template: "systems/acks/templates/actors/v2/attributes.hbs",
+      template: "systems/acks/templates/actors/v2/attributes-character.hbs",
     },
     abilities: {
       template: "systems/acks/templates/actors/v2/abilities.hbs",
@@ -59,7 +74,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       template: "systems/acks/templates/actors/v2/inventory.hbs",
     },
     notes: {
-      template: "systems/acks/templates/actors/v2/notes.hbs",
+      template: "systems/acks/templates/actors/v2/notes-character.hbs",
     },
     hirelings: {
       template: "systems/acks/templates/actors/v2/hirelings.hbs",

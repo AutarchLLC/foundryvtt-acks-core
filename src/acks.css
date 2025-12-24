@@ -1654,6 +1654,11 @@
   min-height: 400px;
 }
 
+.application.sheet.acks.character-v2 {
+  min-width: 800px;
+  min-height: 700px;
+}
+
 .acks.item-v2 .window-content input:not([type="checkbox"]),
 .acks.actor-v2 .window-content input:not([type="checkbox"]) {
   background: revert-layer;

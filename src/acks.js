@@ -1,4 +1,3 @@
-// Import Modules
 import { AcksItemSheet } from "./module/item/item-sheet.js";
 import { AcksActorSheetCharacter } from "./module/actor/character-sheet.js";
 import { AcksActorSheetMonster } from "./module/actor/monster-sheet.js";
@@ -29,6 +28,7 @@ import AbilityData from "./module/data/item/ability-data.mjs";
 import CharacterData from "./module/data/actor/character-data.mjs";
 import MonsterData from "./module/data/actor/monster-data.mjs";
 import ACKSCharacterSheetV2 from "./module/actor/character-sheet-v2.mjs";
+import ACKSMonsterSheetV2 from "./module/actor/monster-sheet-v2.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -105,6 +105,10 @@ Hooks.once("init", async function () {
     Actors.registerSheet("acks", ACKSCharacterSheetV2, {
       types: ["character"],
       makeDefault: true,
+    });
+    Actors.registerSheet("acks", ACKSMonsterSheetV2, {
+      types: ["monster"],
+      makeDefault: false,
     });
   } else {
     // Use old sheets for Foundry v12
