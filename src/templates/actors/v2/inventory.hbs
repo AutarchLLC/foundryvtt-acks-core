@@ -262,7 +262,7 @@
 
                   <!-- Item Count -->
                   <div class="item__count">
-                    <input class="item-input small" type="number" data-name="system.quantity.value"
+                    <input class="item-input small" type="number" data-name="system.quantity.value" data-kind="item"
                            value="{{item.system.quantity.value}}" data-dtype="Number"/>
                     {{#if item.system.quantity.max}}
                       <span>/</span>
@@ -348,11 +348,11 @@
 
                   <!-- Item Count -->
                   <div class="money__count">
-                    <input class="item-input small" type="number" data-name="system.quantity"
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
                            value="{{item.system.quantity}}" data-dtype="Number"/>
                   </div>
                   <div class="money__count-bank">
-                    <input class="item-input small" type="number" data-name="system.quantitybank"
+                    <input class="item-input small" type="number" data-name="system.quantitybank" data-kind="item"
                            value="{{item.system.quantitybank}}" data-dtype="Number"/>
                   </div>
 

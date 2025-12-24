@@ -1,5 +1,6 @@
 import { AcksSurprise } from "./surprise-manager.js";
 import { AcksUtility } from "./utility.js";
+import { ACKS } from "./config.js";
 
 export class AcksCombatClass extends Combat {
   /*******************************************************/
@@ -785,7 +786,7 @@ export class AcksCombat {
       }
 
       const currentColor = event.currentTarget.style.color;
-      const colors = Object.keys(CONFIG.ACKS.colors);
+      const colors = Object.keys(ACKS.colors);
       let index = colors.indexOf(currentColor);
       if (index + 1 == colors.length) {
         index = 0;

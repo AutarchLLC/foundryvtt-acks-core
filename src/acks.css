@@ -1883,6 +1883,7 @@
   object-fit: cover;
   object-position: top center;
   border-radius: 4px;
+  height: 100%;
 }
 
 .sheet.acks.actor-v2 .panel {
@@ -2167,6 +2168,33 @@
   gap: 0.25rem;
 }
 
+.sheet.acks.actor-v2 .item__class {
+  flex: 1;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__loyalty,
+.sheet.acks.actor-v2 .item__morale {
+  width: 44px;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__exp-current,
+.sheet.acks.actor-v2 .item__exp-next {
+  width: 60px;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__wage {
+  width: 48px;
+  text-align: center;
+}
+
+.sheet.acks.actor-v2 .item__level {
+  width: 32px;
+  text-align: center;
+}
+
 .sheet.acks.actor-v2 .money__value {
   width: 4rem;
   text-align: center;
@@ -2191,6 +2219,10 @@
 .sheet.acks.actor-v2 .controls__money,
 .sheet.acks.actor-v2 .controls__item {
   width: 35px;
+}
+
+.sheet.acks.actor-v2 .controls__hireling {
+  width: 15px;
 }
 
 .sheet.acks.actor-v2 .item__inputs {
@@ -2319,4 +2351,11 @@
 .sheet.acks.actor-v2 .editor__biography prose-mirror,
 .sheet.acks.actor-v2 .editor__notes prose-mirror {
   height: 100%;
+}
+
+.sheet.acks.actor-v2 .wages-panel {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-evenly;
 }

@@ -1,3 +1,5 @@
+import { ACKS } from "../../../config.js";
+
 /**
  * Common data schema for actors
  * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise}}
@@ -21,7 +23,7 @@ export default function actorCommonSchema() {
       // TODO: maybe change to DocumentUUIDField?
       managerid: new StringField({ blank: true, initial: "" }),
       // hireling category (henchman / mercenary / specialist)
-      category: new StringField({ choices: CONFIG.ACKS.hireling_categories, required: true, initial: "henchman" }),
+      category: new StringField({ choices: ACKS.hireling_categories, required: true, initial: "henchman" }),
       // number of hirelings of this type?
       quantity: new NumberField({ initial: 1 }),
     }),

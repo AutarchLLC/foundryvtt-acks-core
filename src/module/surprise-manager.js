@@ -1,6 +1,5 @@
-/*******************************************************/
 import { AcksUtility } from "./utility.js";
-import { AcksCombat } from "./combat.js";
+import { ACKS } from "./config.js";
 
 /*******************************************************/
 export class AcksSurprise extends FormApplication {
@@ -25,7 +24,7 @@ export class AcksSurprise extends FormApplication {
     this.modifiers = {}; // Reset per actor modifier
     const data = {
       data: this.object,
-      config: foundry.utils.duplicate(CONFIG.ACKS),
+      config: foundry.utils.duplicate(ACKS),
       user: game.user,
     };
     for (let key in data.config.surpriseTableAdventurers) {
@@ -165,7 +164,7 @@ export class AcksSurprise extends FormApplication {
     html.find(".roll-surprise-button").click(async (ev) => {
       let keyA = $(ev.currentTarget).data("key-adventurer");
       let keyM = $(ev.currentTarget).data("key-monster");
-      let surpriseDef = CONFIG.ACKS.surpriseTableAdventurers[keyA][keyM];
+      let surpriseDef = ACKS.surpriseTableAdventurers[keyA][keyM];
       let friendlyModifier = $("#surprise-friendly-modifier").val();
       let hostileModifier = $("#surprise-hostile-modifier").val();
       await myself.rollSurprise(surpriseDef, friendlyModifier, hostileModifier);
@@ -194,7 +193,7 @@ export class AcksActorSurprise extends FormApplication {
   getData() {
     const data = {
       data: this.object,
-      config: foundry.utils.duplicate(CONFIG.ACKS),
+      config: foundry.utils.duplicate(ACKS),
       user: game.user,
       hostiles: this.object.surpriseDialog.getHostiles(),
       friendlies: this.object.surpriseDialog.getFriendly(),

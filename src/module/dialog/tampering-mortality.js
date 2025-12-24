@@ -1,5 +1,6 @@
 import { AcksTableManager } from "../apps/table-manager.js";
 import { AcksUtility } from "../utility.js";
+import { ACKS } from "../config.js";
 
 export class AcksTamperingDialog extends FormApplication {
   /* -------------------------------------------- */
@@ -70,10 +71,10 @@ export class AcksTamperingDialog extends FormApplication {
         willModifier: actor?.getWillModifier() || 0,
         tamperingChoices: this.buildTamperingTablesChoices(),
         tamperingChoice: this.chooseAlignment(actor),
-        spanChoices: CONFIG.ACKS.tampering_span,
-        classLevelChoices: CONFIG.ACKS.mortal_class_levels,
-        spineChoices: CONFIG.ACKS.tampering_spine,
-        limbsChoices: CONFIG.ACKS.tampering_limbs,
+        spanChoices: ACKS.tampering_span,
+        classLevelChoices: ACKS.mortal_class_levels,
+        spineChoices: ACKS.tampering_spine,
+        limbsChoices: ACKS.tampering_limbs,
         creatureLife: 2,
         spellcasterLevel: 1,
         castTemple: false,

@@ -1,5 +1,6 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
+import { ACKS } from "../../config.js";
 
 /**
  * Item Item Data Model :D:D:D
@@ -21,7 +22,7 @@ export default class ItemData extends foundry.abstract.TypeDataModel {
       // cost and weight
       ...itemPhysicalSchema(),
       // Item subtype. For now it can be "item" or "clothing"
-      subtype: new StringField({ choices: CONFIG.ACKS.item_subtypes, required: true, initial: "item" }),
+      subtype: new StringField({ choices: ACKS.item_subtypes, required: true, initial: "item" }),
       // item quantity
       quantity: new SchemaField({
         // current value

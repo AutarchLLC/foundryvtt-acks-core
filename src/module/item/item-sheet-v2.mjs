@@ -1,5 +1,6 @@
 import { AcksUtility } from "../utility.js";
 import AcksEffectUtil from "../effect/acks-effect-util.mjs";
+import { ACKS } from "../config.js";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -166,7 +167,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     const context = {
       ...(await super._prepareContext(options)),
       item: this.item,
-      config: CONFIG.ACKS,
+      config: ACKS,
       system: this.item.system,
       isGM: game.user.isGM,
       isPhysical: "cost" in this.item.system && "weight6" in this.item.system,

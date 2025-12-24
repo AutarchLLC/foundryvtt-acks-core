@@ -27,7 +27,7 @@ export default class CharacterData extends foundry.abstract.TypeDataModel {
         movementAuto: new BooleanField({ initial: true }),
       }),
       // array of hireling actor ids that belong to this character
-      // TODO: maybe change to array of DocumentUUIDField?
+      // TODO: change to array of DocumentUUIDField
       henchmenList: new ArrayField(new StringField(), { required: true, initial: [] }),
       // character details
       details: new SchemaField({

@@ -1,3 +1,5 @@
+import { ACKS } from "../config.js";
+
 export class AcksPartySheet extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -28,7 +30,7 @@ export class AcksPartySheet extends FormApplication {
   getData() {
     return {
       data: game.actors.contents,
-      config: CONFIG.ACKS,
+      config: ACKS,
       user: game.user,
     };
   }

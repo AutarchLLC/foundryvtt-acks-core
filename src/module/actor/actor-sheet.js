@@ -2,12 +2,14 @@ import { AcksEntityTweaks } from "../dialog/entity-tweaks.js";
 import { AcksUtility } from "../utility.js";
 import { AcksMortalWoundsDialog } from "../dialog/mortal-wounds.js";
 import { AcksTamperingDialog } from "../dialog/tampering-mortality.js";
+import { ACKS } from "../config.js";
+
 export class AcksActorSheet extends ActorSheet {
   /* -------------------------------------------- */
   async getData() {
     const data = super.getData();
 
-    data.config = CONFIG.ACKS;
+    data.config = ACKS;
     // Settings
     data.config.encumbrance = game.settings.get("acks", "encumbranceOption");
     data.effects = await AcksUtility.prepareActiveEffectCategories(this.actor.allApplicableEffects());

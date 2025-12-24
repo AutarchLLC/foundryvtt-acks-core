@@ -1,5 +1,6 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
+import { ACKS } from "../../config.js";
 
 /**
  * Armor Item Data Model
@@ -25,7 +26,7 @@ export default class ArmorData extends foundry.abstract.TypeDataModel {
         value: new NumberField({ initial: 0 }),
       }),
       // Armor type
-      type: new StringField({ choices: CONFIG.ACKS.armor, required: true, initial: "light" }),
+      type: new StringField({ choices: ACKS.armor, required: true, initial: "light" }),
       // Is armor equipped
       equipped: new BooleanField({ initial: false }),
     };

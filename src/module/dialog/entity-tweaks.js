@@ -1,4 +1,6 @@
 // eslint-disable-next-line no-unused-vars
+import { ACKS } from "../config.js";
+
 export class AcksEntityTweaks extends FormApplication {
   static get defaultOptions() {
     const options = super.defaultOptions;
@@ -32,7 +34,7 @@ export class AcksEntityTweaks extends FormApplication {
     }
 
     data.user = game.user;
-    data.config = CONFIG.ACKS;
+    data.config = ACKS;
     data.system = this.object.system;
 
     return data;

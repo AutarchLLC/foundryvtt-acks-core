@@ -189,6 +189,7 @@ export class AcksActor extends Actor {
 
   /* -------------------------------------------- */
   getHenchmen() {
+    //TODO: remake so we are working with DocumentUUIDField
     if (this.type != "character") {
       return;
     }
@@ -198,6 +199,34 @@ export class AcksActor extends Actor {
       subActors.push(foundry.utils.duplicate(game.actors.get(id)));
     }
     return subActors;
+  }
+
+  /**
+   *
+   * @return {{henchman: string[], mercenary: string[], specialist: string[]}}
+   */
+  getHirelings() {
+    const hirelings = this.getHenchmen() ?? [];
+
+    const henchman = [];
+    const mercenary = [];
+    const specialist = [];
+
+    for (const hireling of hirelings) {
+      switch (hireling.system.retainer.category) {
+        case "mercenary":
+          mercenary.push(hireling);
+          break;
+        case "specialist":
+          specialist.push(hireling);
+          break;
+        default:
+          henchman.push(hireling);
+          break;
+      }
+    }
+
+    return { henchman, mercenary, specialist };
   }
 
   /* -------------------------------------------- */

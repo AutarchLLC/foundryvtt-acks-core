@@ -1,5 +1,6 @@
 import { AcksTableManager } from "../apps/table-manager.js";
 import { AcksUtility } from "../utility.js";
+import { ACKS } from "../config.js";
 
 export class AcksMortalWoundsDialog extends FormApplication {
   /* -------------------------------------------- */
@@ -80,11 +81,11 @@ export class AcksMortalWoundsDialog extends FormApplication {
         conModifier: actor?.getConModifier() || 0,
         mortalTablesChoices: this.buildMortalTablesChoices(),
         mortalTablesChoice: "acid",
-        hitDiceChoices: CONFIG.ACKS.hitDiceModifiers,
-        treatmentTimingChoices: CONFIG.ACKS.mortal_treatment_timing,
-        spellLevelChoices: CONFIG.ACKS.mortal_spell_levels,
-        classLevelChoices: CONFIG.ACKS.mortal_class_levels,
-        healingProficiencyChoices: CONFIG.ACKS.mortal_healer_proficiency,
+        hitDiceChoices: ACKS.hitDiceModifiers,
+        treatmentTimingChoices: ACKS.mortal_treatment_timing,
+        spellLevelChoices: ACKS.mortal_spell_levels,
+        classLevelChoices: ACKS.mortal_class_levels,
+        healingProficiencyChoices: ACKS.mortal_healer_proficiency,
         actor: actor,
         horsetailApplied: false,
         healingMagicLevel: 0,
@@ -96,7 +97,7 @@ export class AcksMortalWoundsDialog extends FormApplication {
         freeModifier: 0,
       };
       mortalWoundsData.hitDiceModifier = Number(
-        CONFIG.ACKS.hitDiceModifiers[mortalWoundsData.hitDice.toLowerCase()]?.value || 0,
+        ACKS.hitDiceModifiers[mortalWoundsData.hitDice.toLowerCase()]?.value || 0,
       );
       mortalWoundsData.hitPointsModifier = this.computeHitPointsModifier(
         mortalWoundsData.currentHitPoints,

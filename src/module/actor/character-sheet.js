@@ -1,6 +1,7 @@
 import { AcksActorSheet } from "./actor-sheet.js";
 import { AcksCharacterModifiers } from "../dialog/character-modifiers.js";
 import { AcksCharacterCreator } from "../dialog/character-creation.js";
+import { ACKS } from "../config.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -60,7 +61,8 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
 
   /* -------------------------------------------- */
   async _chooseLang() {
-    let choices = CONFIG.ACKS.languages;
+    // TODO: investigate why there is no languages in ACKS
+    let choices = ACKS.languages;
 
     let templateData = { choices: choices },
       dlg = await renderTemplate("systems/acks/templates/actors/dialogs/lang-create.html", templateData);
@@ -94,7 +96,7 @@ export class AcksActorSheetCharacter extends AcksActorSheet {
     const data = this.actor.system;
     let update = foundry.utils.duplicate(data[table]);
     this._chooseLang().then((dialogInput) => {
-      const name = CONFIG.ACKS.languages[dialogInput.choice];
+      const name = ACKS.languages[dialogInput.choice];
       if (update.value) {
         update.value.push(name);
       } else {

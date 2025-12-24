@@ -12,6 +12,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       resetSpellSlots: ACKSCharacterSheetV2.#resetSpellSlots,
       toggleListSection: ACKSCharacterSheetV2.#toggleListSection,
       itemToggleEquipped: ACKSCharacterSheetV2.#itemToggleEquipped,
+      payWages: ACKSCharacterSheetV2.#payWages,
     },
   };
 
@@ -88,6 +89,14 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     return context;
   }
 
+  async _prepareContext(options) {
+    const context = {
+      ...(await super._prepareContext(options)),
+      totalWages: this.actor.getTotalWages(),
+    };
+    return context;
+  }
+
   /**
    *
    * @param {PointerEvent} event
@@ -137,6 +146,15 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     const item = this._getItemFromDOM(target);
 
     item.update({ "system.equipped": !item.system.equipped });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #payWages(event, target) {
+    this.actor.payWages();
   }
 
   /**

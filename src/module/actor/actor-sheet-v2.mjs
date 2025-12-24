@@ -51,6 +51,10 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       itemDelete: ACKSActorSheetV2.#itemDelete,
       itemCreate: ACKSActorSheetV2.#itemCreate,
       itemUse: ACKSActorSheetV2.#itemUse,
+      hirelingShow: ACKSActorSheetV2.#hirelingShow,
+      hirelingLoyalty: ACKSActorSheetV2.#hirelingLoyalty,
+      hirelingMorale: ACKSActorSheetV2.#hirelingMorale,
+      hirelingDelete: ACKSActorSheetV2.#hirelingDelete,
     },
   };
 
@@ -243,6 +247,46 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #hirelingShow(event, target) {
+    const hirelingId = this._getItemIdFromDOM(target);
+    this.actor.showHenchman(hirelingId);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #hirelingLoyalty(event, target) {
+    const hireling = this._getActorFromDOM(target);
+    void hireling.rollLoyalty({ event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #hirelingMorale(event, target) {
+    const hireling = this._getActorFromDOM(target);
+    void hireling.rollMorale({ event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #hirelingDelete(event, target) {
+    const hirelingId = this._getItemIdFromDOM(target);
+    void this.actor.delHenchman(hirelingId);
+  }
+
+  /**
    * Actions performed after a first render of the Application.
    * @param {ApplicationRenderContext} context      Prepared context data
    * @param {RenderOptions} options                 Provided render options
@@ -261,16 +305,17 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   _onInputChange(event) {
     event.stopImmediatePropagation();
 
-    const item = this._getItemFromDOM(event.target);
+    const kind = event.target.dataset.kind ?? "item";
+    const doc = this._getDocumentFromDOM(event.target, kind);
     const value = event.target.valueAsNumber;
     const field = event.target.dataset.name;
-    if (!item || !field || Number.isNaN(value)) {
+    if (!doc || !field || Number.isNaN(value)) {
       return;
     }
 
     const upd = { [field]: value };
 
-    void item.update(upd);
+    void doc.update(upd);
   }
 
   // Prepare application rendering context data for a given render request.
@@ -284,6 +329,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       isGM: game.user.isGM,
       managerName: this.actor.getManagerName(),
       owner: this.document.isOwner,
+      hirelings: this.actor.getHirelings(),
     };
 
     await this._prepareItems(context);
@@ -390,6 +436,40 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       return null;
     }
     return item;
+  }
+
+  /**
+   * Will return the actor corresponding to the clicked element, or null if not found.
+   * @param {HTMLElement} target
+   * @return {AcksActor|null}
+   * @private
+   */
+  _getActorFromDOM(target) {
+    const actorId = this._getItemIdFromDOM(target);
+    const actor = game.actors.get(actorId);
+    if (!actor) {
+      ui.notifications.error("Can't find actor.");
+      return null;
+    }
+    return actor;
+  }
+
+  /**
+   * Will return document corresponding to the clicked element, or null if not found.
+   * @param {HTMLElement} target
+   * @param {"item"|"actor"} kind
+   * @return {AcksItem|AcksActor|null}
+   * @private
+   */
+  _getDocumentFromDOM(target, kind = "item") {
+    switch (kind) {
+      case "item":
+        return this._getItemFromDOM(target);
+      case "actor":
+        return this._getActorFromDOM(target);
+      default:
+        return null;
+    }
   }
 
   /**

@@ -1,5 +1,6 @@
 import { AcksMortalWoundsDialog } from "./dialog/mortal-wounds.js";
 import { AcksTamperingDialog } from "./dialog/tampering-mortality.js";
+import { ACKS } from "./config.js";
 
 export class AcksUtility {
   /**
@@ -110,7 +111,7 @@ export class AcksUtility {
 
   /* -------------------------------------------- */
   static prepareActiveEffect(effectId) {
-    let status = CONFIG.ACKS.statusEffects.find((it) => it.id.includes(effectId));
+    let status = ACKS.statusEffects.find((it) => it.id.includes(effectId));
     if (status) {
       status = foundry.utils.duplicate(status);
       status.statuses = [effectId];

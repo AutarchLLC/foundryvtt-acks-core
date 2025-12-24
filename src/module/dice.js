@@ -1,3 +1,5 @@
+import { ACKS } from "./config.js";
+
 export class AcksDice {
   static digestResult(data, roll) {
     let result = {
@@ -177,7 +179,7 @@ export class AcksDice {
       title: title,
       flavor: flavor,
       data: data,
-      config: CONFIG.ACKS,
+      config: ACKS,
     };
 
     // Optionally include a situational bonus

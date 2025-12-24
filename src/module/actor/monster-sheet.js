@@ -1,4 +1,5 @@
 import { AcksActorSheet } from "./actor-sheet.js";
+import { ACKS } from "../config.js";
 
 // Define the Item sheet default options
 const __DEFAULT_ITEM_TYPES = [
@@ -44,7 +45,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
    * Monster creation helpers
    */
   async generateSave() {
-    let choices = CONFIG.ACKS.monster_saves;
+    let choices = ACKS.monster_saves;
 
     let templateData = { choices: choices },
       dlg = await renderTemplate("systems/acks/templates/actors/dialogs/monster-saves.html", templateData);
@@ -259,7 +260,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       let currentColor = item.system.pattern;
-      let colors = Object.keys(CONFIG.ACKS.colors);
+      let colors = Object.keys(ACKS.colors);
       let index = colors.indexOf(currentColor);
       if (index + 1 == colors.length) {
         index = 0;

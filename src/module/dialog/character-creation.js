@@ -1,4 +1,5 @@
 import { AcksDice } from "../dice.js";
+import { ACKS } from "../config.js";
 
 export class AcksCharacterCreator extends FormApplication {
   static get defaultOptions() {
@@ -29,7 +30,7 @@ export class AcksCharacterCreator extends FormApplication {
   getData() {
     let data = this.object.system;
     data.user = game.user;
-    data.config = CONFIG.ACKS;
+    data.config = ACKS;
     data.counters = {
       str: 0,
       wis: 0,
@@ -119,7 +120,7 @@ export class AcksCharacterCreator extends FormApplication {
     const gold = $(this.form.children).find(".gold-value").val();
     const speaker = ChatMessage.getSpeaker({ actor: this });
     const templateData = {
-      config: CONFIG.ACKS,
+      config: ACKS,
       scores: scores,
       title: game.i18n.localize("ACKS.dialog.generator"),
       stats: this.object.system.stats,
