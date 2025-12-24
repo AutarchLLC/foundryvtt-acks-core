@@ -1787,14 +1787,16 @@
   display: none;
 }
 
-.sheet.acks.item-v2 .active-effects .effects-list-content {
+.sheet.acks.item-v2 .active-effects .effects-list-content,
+.sheet.acks.actor-v2 .active-effects .effects-list-content {
   gap: 0.5rem;
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
-.sheet.acks.item-v2 .active-effects ol.effect-list {
+.sheet.acks.item-v2 .active-effects ol.effect-list,
+.sheet.acks.actor-v2 .active-effects ol.effect-list {
   margin: 0;
   padding: 0;
   gap: 0.5rem;
@@ -1802,25 +1804,29 @@
   flex-direction: column;
 }
 
-.sheet.acks.item-v2 .active-effects ol.effect-list li {
+.sheet.acks.item-v2 .active-effects ol.effect-list li,
+.sheet.acks.actor-v2 .active-effects ol.effect-list li {
   margin: 0;
   min-height: 2rem;
   line-height: 1;
 }
 
-.sheet.acks.item-v2 .active-effects .effect-name {
+.sheet.acks.item-v2 .active-effects .effect-name,
+.sheet.acks.actor-v2 .active-effects .effect-name {
   flex: 2;
   padding: 0 0.5rem;
   gap: 0.25rem;
 }
 
-.sheet.acks.item-v2 .active-effects .effect-controls {
+.sheet.acks.item-v2 .active-effects .effect-controls,
+.sheet.acks.actor-v2 .active-effects .effect-controls {
   display: flex;
   justify-content: space-evenly;
   flex: 0 0 110px;
 }
 
-.sheet.acks.item-v2 .active-effects .effect-header {
+.sheet.acks.item-v2 .active-effects .effect-header,
+.sheet.acks.actor-v2 .active-effects .effect-header {
   background-color: var(--table-header-bg-color);
   border-radius: 4px;
 }

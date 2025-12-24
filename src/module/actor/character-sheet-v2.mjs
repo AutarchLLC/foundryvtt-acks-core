@@ -1,4 +1,5 @@
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
+import { AcksUtility } from "../utility.js";
 
 export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -65,6 +66,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     },
     effects: {
       template: "systems/acks/templates/actors/v2/effects.hbs",
+      templates: ["systems/acks/templates/items/v2/common/item-active-effects.hbs"],
     },
   };
 
@@ -86,6 +88,14 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
 
     context.tab = context.tabs[partId];
 
+    switch (partId) {
+      case "effects":
+        context = await this._prepareEffectsContext(context);
+        break;
+      default:
+        break;
+    }
+
     return context;
   }
 
@@ -94,6 +104,18 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       ...(await super._prepareContext(options)),
       totalWages: this.actor.getTotalWages(),
     };
+    return context;
+  }
+
+  /**
+   * Prepare context for Effects Tab
+   * @param {ApplicationRenderContext} context
+   * @return {Promise<ApplicationRenderContext>}
+   * @private
+   */
+  async _prepareEffectsContext(context) {
+    context.effects = await AcksUtility.prepareActiveEffectCategories(this.actor.allApplicableEffects());
+
     return context;
   }
 
