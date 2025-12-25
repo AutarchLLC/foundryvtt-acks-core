@@ -102,6 +102,7 @@ export const registerMainSettings = async () => {
     onChange: (_) => window.location.reload(),
   });
 
+  //TODO: remove this setting. We always show morale for monsters.
   game.settings.register("acks", "morale", {
     name: game.i18n.localize("ACKS.Setting.Morale"),
     hint: game.i18n.localize("ACKS.Setting.MoraleHint"),

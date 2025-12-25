@@ -253,7 +253,7 @@ export class AcksActorSheetMonster extends AcksActorSheet {
 
     html.find(".hp-roll").click((ev) => {
       let actorObject = this.actor;
-      actorObject.rollHP({ event: ev });
+      actorObject.rollHP();
     });
 
     html.find(".item-pattern").click((ev) => {

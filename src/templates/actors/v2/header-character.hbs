@@ -91,13 +91,12 @@
       <div class="form-group health-box">
         <label>HP</label>
         <div class="form-fields health">
-          <input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number" placeholder="0"
+          <input name="system.hp.value" type="number" value="{{system.hp.value}}" data-dtype="Number" placeholder="0"
                  data-tooltip="{{localize 'ACKS.Health'}}" class="health__current"/>
           <span>/</span>
-          <input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number" placeholder="0"
+          <input name="system.hp.max" type="number" value="{{system.hp.max}}" data-dtype="Number" placeholder="0"
                  data-tooltip="{{localize 'ACKS.HealthMax'}}" class="health__max"/>
         </div>
-
       </div>
 
       <!-- Hit Dice -->

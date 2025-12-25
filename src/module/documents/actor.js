@@ -524,7 +524,7 @@ export class AcksActor extends Actor {
   /*  Rolls                                       */
   /* -------------------------------------------- */
 
-  async rollHP(options = {}) {
+  async rollHP() {
     let roll = new Roll(this.system.hp.hd);
     await roll.evaluate();
     await this.update({
@@ -829,12 +829,12 @@ export class AcksActor extends Actor {
   rollAppearing(options = {}) {
     const rollParts = [];
     let label = "";
-    if (options.check == "wilderness") {
+    if (options.check === "wilderness") {
       rollParts.push(this.system.details.appearing.w);
-      label = "(2)";
+      label = "Wilderness";
     } else {
       rollParts.push(this.system.details.appearing.d);
-      label = "(1)";
+      label = "Dungeon";
     }
     const data = {
       actor: this,

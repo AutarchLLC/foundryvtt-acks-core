@@ -5,7 +5,11 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["monster-v2"],
-    actions: {},
+    actions: {
+      rollDungeonEncounter: ACKSMonsterSheetV2.#rollDungeonEncounter,
+      rollWildernessEncounter: ACKSMonsterSheetV2.#rollWildernessEncounter,
+      rollHP: ACKSMonsterSheetV2.#rollHP,
+    },
   };
 
   /** @override */
@@ -103,5 +107,32 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
     context.effects = await AcksUtility.prepareActiveEffectCategories(this.actor.allApplicableEffects());
 
     return context;
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollDungeonEncounter(event, target) {
+    void this.actor.rollAppearing({ event, check: "dungeon" });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollWildernessEncounter(event, target) {
+    void this.actor.rollAppearing({ event, check: "wilderness" });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollHP(event, target) {
+    this.actor.rollHP();
   }
 }
