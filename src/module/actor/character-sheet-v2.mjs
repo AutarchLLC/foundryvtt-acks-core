@@ -1,5 +1,6 @@
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../utility.js";
+import { AcksHtmlUtil } from "../util/html-util.mjs";
 
 export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -11,7 +12,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       rollAdventuring: ACKSCharacterSheetV2.#rollAdventuring,
       itemToggleFavorite: ACKSCharacterSheetV2.#itemToggleFavorite,
       resetSpellSlots: ACKSCharacterSheetV2.#resetSpellSlots,
-      toggleListSection: ACKSCharacterSheetV2.#toggleListSection,
+      toggleListSection: AcksHtmlUtil.toggleListSection,
       itemToggleEquipped: ACKSCharacterSheetV2.#itemToggleEquipped,
       payWages: ACKSCharacterSheetV2.#payWages,
     },
@@ -207,27 +208,6 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
         "system.cast": 0,
         "system.memorized": 0,
       });
-    }
-  }
-
-  /**
-   *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
-   */
-  static #toggleListSection(event, target) {
-    const spellListSection = target.closest("section.item-list-section");
-    const itemListWrapper = spellListSection.querySelector(".item-list-wrapper");
-    const icon = target.children.item(0);
-
-    itemListWrapper.classList.toggle("expanded");
-
-    if (icon.classList.contains("fa-caret-down")) {
-      icon.classList.remove("fa-caret-down");
-      icon.classList.add("fa-caret-right");
-    } else {
-      icon.classList.remove("fa-caret-right");
-      icon.classList.add("fa-caret-down");
     }
   }
 

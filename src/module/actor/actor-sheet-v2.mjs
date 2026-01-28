@@ -1,4 +1,6 @@
 import { AcksEntityTweaks } from "../dialog/entity-tweaks.js";
+import { ITEM_TYPE } from "../constants.mjs";
+import { AcksHtmlUtil } from "../util/html-util.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -199,7 +201,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static async #itemDelete(event, target) {
-    const itemId = this._getItemIdFromDOM(target);
+    const itemId = AcksHtmlUtil.getItemIdFromDOM(target);
     await this.actor.deleteEmbeddedDocuments("Item", [itemId]);
   }
 
@@ -252,7 +254,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static #hirelingShow(event, target) {
-    const hirelingId = this._getItemIdFromDOM(target);
+    const hirelingId = AcksHtmlUtil.getItemIdFromDOM(target);
     this.actor.showHenchman(hirelingId);
   }
 
@@ -282,7 +284,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static #hirelingDelete(event, target) {
-    const hirelingId = this._getItemIdFromDOM(target);
+    const hirelingId = AcksHtmlUtil.getItemIdFromDOM(target);
     void this.actor.delHenchman(hirelingId);
   }
 
@@ -354,32 +356,32 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     const items = [];
     const weapons = [];
     const armors = [];
-    const abilities = [];
+    const proficiencies = [];
     const spells = [];
     const languages = [];
     const money = [];
 
     for (const item of this.actor.items) {
       switch (item.type) {
-        case "item":
+        case ITEM_TYPE.ITEM:
           items.push(item);
           break;
-        case "weapon":
+        case ITEM_TYPE.WEAPON:
           weapons.push(item);
           break;
-        case "armor":
+        case ITEM_TYPE.ARMOR:
           armors.push(item);
           break;
-        case "ability":
-          abilities.push(item);
+        case ITEM_TYPE.PROFICIENCY:
+          proficiencies.push(item);
           break;
-        case "spell":
+        case ITEM_TYPE.SPELL:
           spells.push(item);
           break;
-        case "language":
+        case ITEM_TYPE.LANGUAGE:
           languages.push(item);
           break;
-        case "money":
+        case ITEM_TYPE.MONEY:
           money.push(item);
           break;
       }
@@ -415,7 +417,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       armors,
       money,
     };
-    context.abilities = abilities;
+    context.abilities = proficiencies;
     context.spells = sortedSpells;
     context.languages = languages;
 
@@ -429,7 +431,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @private
    */
   _getItemFromDOM(target) {
-    const itemId = this._getItemIdFromDOM(target);
+    const itemId = AcksHtmlUtil.getItemIdFromDOM(target);
     const item = this.actor.items.get(itemId);
     if (!item) {
       ui.notifications.error("Can't find item on actor to show summary for.");
@@ -445,7 +447,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @private
    */
   _getActorFromDOM(target) {
-    const actorId = this._getItemIdFromDOM(target);
+    const actorId = AcksHtmlUtil.getItemIdFromDOM(target);
     const actor = game.actors.get(actorId);
     if (!actor) {
       ui.notifications.error("Can't find actor.");
@@ -473,13 +475,27 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   *
-   * @param {HTMLElement} target
-   * @return {string}
-   * @private
+   * Handle a dropped Item on the Actor Sheet.
+   * @param {DragEvent} event     The initiating drop event
+   * @param {Item} item           The dropped Item document
+   * @returns {Promise<Item|null|undefined>} A Promise resolving to the dropped Item (if sorting), a newly created Item,
+   *                                         or a nullish value in case of failure or no action being taken
+   * @protected
+   * @override
    */
-  _getItemIdFromDOM(target) {
-    const itemEl = target.closest(".item");
-    return itemEl.dataset.itemId;
+  async _onDropItem(event, item) {
+    if (!this.actor.isOwner) {
+      return null;
+    }
+    if (item.type === ITEM_TYPE.BUNDLE) {
+      const result = [];
+      for (const bundleItemData of item.system.itemList) {
+        const bundleItem = await foundry.utils.fromUuid(bundleItemData.uuid);
+        result.push(await super._onDropItem(event, bundleItem));
+      }
+      return result;
+    } else {
+      return super._onDropItem(event, item);
+    }
   }
 }

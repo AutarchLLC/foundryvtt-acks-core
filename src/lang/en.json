@@ -13,7 +13,8 @@
       "item": "Item",
       "misc": "Misc",
       "language": "Language",
-      "money": "Money"
+      "money": "Money",
+      "bundle": "Item Bundle"
     }
   },
   "COMBAT.TurnPrev": "Prev. Combatant",
@@ -246,6 +247,7 @@
   "ACKS.category.equipment": "Equipment",
   "ACKS.category.bonuses": "Bonuses",
   "ACKS.category.effects": "Effects",
+  "ACKS.category.contents": "Contents",
   "ACKS.category.henchmen": "Henchmen",
   "ACKS.category.hirelings": "Hirelings",
 

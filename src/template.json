@@ -5,13 +5,14 @@
     "monster": {}
   },
   "Item": {
-    "types": ["item", "weapon", "armor", "spell", "ability", "language", "money"],
+    "types": ["item", "weapon", "armor", "spell", "ability", "language", "money", "bundle"],
     "money": {},
     "language": {},
     "item": {},
     "weapon": {},
     "armor": {},
     "spell": {},
-    "ability": {}
+    "ability": {},
+    "bundle": {}
   }
 }

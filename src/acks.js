@@ -29,6 +29,7 @@ import CharacterData from "./module/data/actor/character-data.mjs";
 import MonsterData from "./module/data/actor/monster-data.mjs";
 import ACKSCharacterSheetV2 from "./module/actor/character-sheet-v2.mjs";
 import ACKSMonsterSheetV2 from "./module/actor/monster-sheet-v2.mjs";
+import ItemBundleData from "./module/data/item/item-bundle-data.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -78,6 +79,7 @@ Hooks.once("init", async function () {
     armor: ArmorData,
     spell: SpellData,
     ability: AbilityData,
+    bundle: ItemBundleData,
   };
   CONFIG.Combat.documentClass = AcksCombatClass;
 
