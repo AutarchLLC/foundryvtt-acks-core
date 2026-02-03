@@ -2156,6 +2156,16 @@
   border-width: 3px;
 }
 
+.sheet.acks.actor-v2 .item__pattern {
+  --pattern-color: white;
+  flex: 0 0 15px;
+  background: linear-gradient(0.25turn, var(--pattern-color), transparent);
+  block-size: 15px;
+  inline-size: 15px;
+  cursor: var(--cursor-pointer);
+  border-radius: 4px;
+}
+
 .sheet.acks.actor-v2 .item__text {
   flex: 1;
 }
@@ -2196,9 +2206,28 @@
   gap: 0.25rem;
 }
 
+.sheet.acks.actor-v2 .item__attack-count {
+  width: 7rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.25rem;
+}
+
 .sheet.acks.actor-v2 .item__class {
   flex: 1;
   text-align: center;
+}
+
+.sheet.acks.actor-v2 .form-icon-btn{
+  flex: 0 0 2rem;
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  font-size: 1.5rem;
+  line-height: 1;
+  justify-content: center;
 }
 
 .sheet.acks.actor-v2 .item__loyalty,

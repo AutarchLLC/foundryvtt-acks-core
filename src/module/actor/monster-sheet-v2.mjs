@@ -1,5 +1,7 @@
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../utility.js";
+import { ACKS } from "../config.js";
+import { AcksHtmlUtil } from "../util/html-util.mjs";
 
 export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -9,6 +11,9 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       rollDungeonEncounter: ACKSMonsterSheetV2.#rollDungeonEncounter,
       rollWildernessEncounter: ACKSMonsterSheetV2.#rollWildernessEncounter,
       rollHP: ACKSMonsterSheetV2.#rollHP,
+      resetAttacks: ACKSMonsterSheetV2.#resetAttacks,
+      changePattern: ACKSMonsterSheetV2.#changePattern,
+      rollReaction: ACKSMonsterSheetV2.#rollReaction,
     },
   };
 
@@ -134,5 +139,45 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
    */
   static #rollHP(event, target) {
     this.actor.rollHP();
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #resetAttacks(event, target) {
+    const weapons = this.actor.items.filter((i) => i.type === "weapon");
+    for (const weapon of weapons) {
+      weapon.update({
+        "system.counter.value": weapon.system.counter.max,
+      });
+    }
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #changePattern(event, target) {
+    const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
+    const currentColor = item.system.pattern;
+    const colors = Object.keys(ACKS.colors);
+    let index = colors.indexOf(currentColor);
+    index = (index + 1) % colors.length;
+
+    item.update({
+      "system.pattern": colors[index],
+    });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollReaction(event, target) {
+    void this.actor.rollReaction({ event });
   }
 }

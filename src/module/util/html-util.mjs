@@ -41,11 +41,27 @@ export class AcksHtmlUtil {
 
   /**
    * Finds closest DOM element with class 'item' and returns its data-item-id attribute.
-   * @param {HTMLElement} target
+   * @param {HTMLElement} htmlElement
    * @return {string}
    */
-  static getItemIdFromDOM(target) {
-    const itemEl = target.closest(".item");
+  static getItemIdFromDOM(htmlElement) {
+    const itemEl = htmlElement.closest(".item");
     return itemEl.dataset.itemId;
+  }
+
+  /**
+   * Will return the item corresponding to the clicked element, or null if not found.
+   * @param {HTMLElement} htmlElement
+   * @param {Actor} actor
+   * @return {AcksItem|null}
+   */
+  static getActorItemFromDOM(htmlElement, actor) {
+    const itemId = AcksHtmlUtil.getItemIdFromDOM(htmlElement);
+    const item = actor.items.get(itemId);
+    if (!item) {
+      ui.notifications.error("Can't find item on actor to show summary for.");
+      return null;
+    }
+    return item;
   }
 }

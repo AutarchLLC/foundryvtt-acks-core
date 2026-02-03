@@ -1,6 +1,7 @@
 import { AcksEntityTweaks } from "../dialog/entity-tweaks.js";
 import { ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
+import ACKSDialog from "../dialog/dialog.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -57,6 +58,8 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       hirelingLoyalty: ACKSActorSheetV2.#hirelingLoyalty,
       hirelingMorale: ACKSActorSheetV2.#hirelingMorale,
       hirelingDelete: ACKSActorSheetV2.#hirelingDelete,
+      toggleListSection: AcksHtmlUtil.toggleListSection,
+      resetSpellSlots: ACKSActorSheetV2.#resetSpellSlots,
     },
   };
 
@@ -74,6 +77,22 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       top: this.position.top + 40,
       left: this.position.left + (this.position.width - 400) / 2,
     }).render(true);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #resetSpellSlots(event, target) {
+    const spells = target.closest(".item-list-section.spells").querySelectorAll(".item");
+    for (const spell of spells) {
+      const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
+      void item.update({
+        "system.cast": 0,
+        "system.memorized": 0,
+      });
+    }
   }
 
   /**
@@ -145,7 +164,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static async #toggleSummary(event, target) {
-    const item = this._getItemFromDOM(target);
+    const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
     const itemEl = target.closest(".item");
 
     const summaryEl = itemEl.querySelector(".item-summary");
@@ -181,7 +200,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static #itemShow(event, target) {
-    const item = this._getItemFromDOM(target);
+    const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
     void item.show();
   }
 
@@ -191,7 +210,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static #itemEdit(event, target) {
-    const item = this._getItemFromDOM(target);
+    const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
     void item.sheet.render(true);
   }
 
@@ -212,10 +231,26 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    */
   static async #itemCreate(event, target) {
     const itemType = target.dataset.type;
+
     const itemSource = {
       name: `New ${itemType}`,
       type: itemType,
     };
+
+    if (itemType === "choice") {
+      const result = await ACKSDialog.chooseItemNameAndType();
+      if (result === null) {
+        return;
+      } else {
+        if (result.itemName === null || result.itemName === "") {
+          ui.notifications.error("Item creation cancelled: no name provided."); //TODO: localization
+          return;
+        }
+
+        itemSource.name = result.itemName;
+        itemSource.type = result.itemType;
+      }
+    }
 
     await this.actor.createEmbeddedDocuments("Item", [itemSource]);
   }
@@ -226,7 +261,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static #itemUse(event, target) {
-    const item = this._getItemFromDOM(target);
+    const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
     const skipKey = game.settings.get("acks", "skip-dialog-key");
     const skipDialog = event[skipKey] || false;
 
@@ -425,22 +460,6 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   * Will return the item corresponding to the clicked element, or null if not found.
-   * @param {HTMLElement} target
-   * @return {AcksItem|null}
-   * @private
-   */
-  _getItemFromDOM(target) {
-    const itemId = AcksHtmlUtil.getItemIdFromDOM(target);
-    const item = this.actor.items.get(itemId);
-    if (!item) {
-      ui.notifications.error("Can't find item on actor to show summary for.");
-      return null;
-    }
-    return item;
-  }
-
-  /**
    * Will return the actor corresponding to the clicked element, or null if not found.
    * @param {HTMLElement} target
    * @return {AcksActor|null}
@@ -466,7 +485,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   _getDocumentFromDOM(target, kind = "item") {
     switch (kind) {
       case "item":
-        return this._getItemFromDOM(target);
+        return AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
       case "actor":
         return this._getActorFromDOM(target);
       default:

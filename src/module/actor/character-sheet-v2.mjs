@@ -11,8 +11,6 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       rollAttribute: ACKSCharacterSheetV2.#rollAttribute,
       rollAdventuring: ACKSCharacterSheetV2.#rollAdventuring,
       itemToggleFavorite: ACKSCharacterSheetV2.#itemToggleFavorite,
-      resetSpellSlots: ACKSCharacterSheetV2.#resetSpellSlots,
-      toggleListSection: AcksHtmlUtil.toggleListSection,
       itemToggleEquipped: ACKSCharacterSheetV2.#itemToggleEquipped,
       payWages: ACKSCharacterSheetV2.#payWages,
     },
@@ -170,7 +168,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @param {HTMLElement} target
    */
   static #itemToggleFavorite(event, target) {
-    const item = this._getItemFromDOM(target);
+    const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
 
     item.update({ "system.favorite": !item.system.favorite });
   }
@@ -181,7 +179,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @param {HTMLElement} target
    */
   static #itemToggleEquipped(event, target) {
-    const item = this._getItemFromDOM(target);
+    const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
 
     item.update({ "system.equipped": !item.system.equipped });
   }
@@ -193,22 +191,6 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    */
   static #payWages(event, target) {
     this.actor.payWages();
-  }
-
-  /**
-   *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
-   */
-  static #resetSpellSlots(event, target) {
-    const spells = target.closest(".item-list-section.spells").querySelectorAll(".item");
-    for (const spell of spells) {
-      const item = this._getItemFromDOM(spell);
-      void item.update({
-        "system.cast": 0,
-        "system.memorized": 0,
-      });
-    }
   }
 
   /**

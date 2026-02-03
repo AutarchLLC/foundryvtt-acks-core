@@ -17,6 +17,13 @@
       {{formGroup actorFields.details.fields.alignment label="ACKS.details.alignment" value=system.details.alignment
                   rootId=@root.partId localize=true classes="flex-2"}}
 
+      <!-- Reaction Roll Button -->
+      <div class="form-icon-btn">
+        <a data-action="rollReaction" data-tooltip="{{localize 'ACKS.roll.reaction'}}">
+          <i class="fa-solid fa-masks-theater"></i>
+        </a>
+      </div>
+
       <!-- Number appearing in dungeon? -->
       <div class="form-group flex-1">
         <a class="rollable-header" data-tooltip="Dungeon Encounter" data-action="rollDungeonEncounter">
