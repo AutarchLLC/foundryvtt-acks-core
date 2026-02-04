@@ -520,6 +520,20 @@ export class AcksActor extends Actor {
     });
   }
 
+  async updateSavingThrows(savingThrows) {
+    await this.update({
+      "system.saves": {
+        paralysis: { value: savingThrows.p },
+        death: { value: savingThrows.d },
+        breath: { value: savingThrows.b },
+        implements: { value: savingThrows.i },
+        spell: { value: savingThrows.s },
+
+        wand: { value: savingThrows.i },
+      },
+    });
+  }
+
   /* -------------------------------------------- */
   /*  Rolls                                       */
   /* -------------------------------------------- */

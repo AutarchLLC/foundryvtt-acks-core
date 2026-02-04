@@ -87,7 +87,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   static #resetSpellSlots(event, target) {
     const spells = target.closest(".item-list-section.spells").querySelectorAll(".item");
     for (const spell of spells) {
-      const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
+      const item = AcksHtmlUtil.getActorItemFromDOM(spell, this.actor);
       void item.update({
         "system.cast": 0,
         "system.memorized": 0,
@@ -373,6 +373,8 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
     context.totalMoneyGC = this.actor.getTotalMoneyGC();
     context.moneyEncumbrance = this.actor.getTotalMoneyEncumbrance();
+
+    context.isNew = this.actor.isNew();
 
     context.enriched = {
       biography: await TextEditorRef.enrichHTML(this.actor.system.details.biography),

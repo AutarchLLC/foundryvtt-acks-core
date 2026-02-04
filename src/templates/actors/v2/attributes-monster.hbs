@@ -1,7 +1,7 @@
 <section class="tab {{ tab.cssClass }} sheet-attributes" data-group="primary" data-tab="attributes">
   <div class="content flexrow">
 
-    <div class="panel flex-4">
+    <div class="panel stretch flex-4">
 
       <section class="item-list-section">
 
@@ -125,79 +125,93 @@
 
     </div>
 
-    <div class="panel flexcol">
+    <div class="flexcol">
 
-      <!-- Paralysis -->
-      <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.paralysis.long'}}" data-action="rollSave"
-           data-save="paralysis">
-          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-          <label class="rollable-header__label" for="{{@root.partId}}-paralysis">
-            {{ localize "ACKS.saves.paralysis.long" }}
-          </label>
-        </a>
-        <div class="form-fields">
-          <input type="text" name="system.saves.paralysis.value" value="{{system.saves.paralysis.value}}"
-                 id="{{@root.partId}}-paralysis" data-dtype="Number" placeholder="18"
-                 class="form-group-h__narrow-input"/>
-        </div>
+      <div class="panel">
+        {{formGroup actorFields.movement.fields.value label="ACKS.movement.details" value=system.movement.value
+                    rootId=@root.partId localize=true}}
       </div>
-      <!-- Death -->
-      <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.death.long'}}" data-action="rollSave"
-           data-save="death">
-          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-          <label class="rollable-header__label" for="{{@root.partId}}-death">
-            {{ localize "ACKS.saves.death.long" }}
-          </label>
-        </a>
-        <div class="form-fields">
-          <input type="text" name="system.saves.death.value" value="{{system.saves.death.value}}"
-                 id="{{@root.partId}}-death" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
+
+      <div class="panel flexcol">
+
+        {{#if isNew}}
+          <button type="button" data-action="generateSaves">{{localize "ACKS.dialog.generateSaves"}}</button>
+        {{/if}}
+
+        <!-- Paralysis -->
+        <div class="form-group-h">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.paralysis.long'}}" data-action="rollSave"
+             data-save="paralysis">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-paralysis">
+              {{ localize "ACKS.saves.paralysis.long" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.saves.paralysis.value" value="{{system.saves.paralysis.value}}"
+                   id="{{@root.partId}}-paralysis" data-dtype="Number" placeholder="18"
+                   class="form-group-h__narrow-input"/>
+          </div>
         </div>
-      </div>
-      <!-- Breath -->
-      <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.breath.long'}}" data-action="rollSave"
-           data-save="breath">
-          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-          <label class="rollable-header__label" for="{{@root.partId}}-breath">
-            {{ localize "ACKS.saves.breath.long" }}
-          </label>
-        </a>
-        <div class="form-fields">
-          <input type="text" name="system.saves.breath.value" value="{{system.saves.breath.value}}"
-                 id="{{@root.partId}}-breath" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
+        <!-- Death -->
+        <div class="form-group-h">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.death.long'}}" data-action="rollSave"
+             data-save="death">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-death">
+              {{ localize "ACKS.saves.death.long" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.saves.death.value" value="{{system.saves.death.value}}"
+                   id="{{@root.partId}}-death" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
+          </div>
         </div>
-      </div>
-      <!-- Implements -->
-      <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.implements.long'}}" data-action="rollSave"
-           data-save="implements">
-          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-          <label class="rollable-header__label" for="{{@root.partId}}-implements">
-            {{ localize "ACKS.saves.implements.long" }}
-          </label>
-        </a>
-        <div class="form-fields">
-          <input type="text" name="system.saves.implements.value" value="{{system.saves.implements.value}}"
-                 id="{{@root.partId}}-implements" data-dtype="Number" placeholder="18"
-                 class="form-group-h__narrow-input"/>
+        <!-- Breath -->
+        <div class="form-group-h">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.breath.long'}}" data-action="rollSave"
+             data-save="breath">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-breath">
+              {{ localize "ACKS.saves.breath.long" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.saves.breath.value" value="{{system.saves.breath.value}}"
+                   id="{{@root.partId}}-breath" data-dtype="Number" placeholder="18"
+                   class="form-group-h__narrow-input"/>
+          </div>
         </div>
-      </div>
-      <!-- Spell -->
-      <div class="form-group-h">
-        <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.spell.long'}}" data-action="rollSave"
-           data-save="spell">
-          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
-          <label class="rollable-header__label" for="{{@root.partId}}-spell">
-            {{ localize "ACKS.saves.spell.long" }}
-          </label>
-        </a>
-        <div class="form-fields">
-          <input type="text" name="system.saves.spell.value" value="{{system.saves.spell.value}}"
-                 id="{{@root.partId}}-spell" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
+        <!-- Implements -->
+        <div class="form-group-h">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.implements.long'}}" data-action="rollSave"
+             data-save="implements">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-implements">
+              {{ localize "ACKS.saves.implements.long" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.saves.implements.value" value="{{system.saves.implements.value}}"
+                   id="{{@root.partId}}-implements" data-dtype="Number" placeholder="18"
+                   class="form-group-h__narrow-input"/>
+          </div>
         </div>
+        <!-- Spell -->
+        <div class="form-group-h">
+          <a class="rollable-header" data-tooltip="{{localize 'ACKS.saves.spell.long'}}" data-action="rollSave"
+             data-save="spell">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-spell">
+              {{ localize "ACKS.saves.spell.long" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.saves.spell.value" value="{{system.saves.spell.value}}"
+                   id="{{@root.partId}}-spell" data-dtype="Number" placeholder="18" class="form-group-h__narrow-input"/>
+          </div>
+        </div>
+
       </div>
 
     </div>

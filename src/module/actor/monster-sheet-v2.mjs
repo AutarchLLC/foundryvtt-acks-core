@@ -2,6 +2,8 @@ import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../utility.js";
 import { ACKS } from "../config.js";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
+import ACKSDialog from "../dialog/dialog.mjs";
+import { MONSTER_SAVING_THROW_LUT } from "../constants.mjs";
 
 export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -14,6 +16,7 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       resetAttacks: ACKSMonsterSheetV2.#resetAttacks,
       changePattern: ACKSMonsterSheetV2.#changePattern,
       rollReaction: ACKSMonsterSheetV2.#rollReaction,
+      generateSaves: ACKSMonsterSheetV2.#generateSaves,
     },
   };
 
@@ -179,5 +182,19 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
    */
   static #rollReaction(event, target) {
     void this.actor.rollReaction({ event });
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static async #generateSaves(event, target) {
+    const result = await ACKSDialog.chooseMonsterHitDice();
+    if (result) {
+      const monsterHD = result.monsterHD;
+      const savingThrows = MONSTER_SAVING_THROW_LUT[monsterHD];
+      await this.actor.updateSavingThrows(savingThrows);
+    }
   }
 }

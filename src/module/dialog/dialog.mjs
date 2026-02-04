@@ -1,7 +1,7 @@
-import { DEFAULT__MONSTER_ITEM_OPTIONS } from "../constants.mjs";
+import { DEFAULT_MONSTER_ITEM_OPTIONS, MONSTER_SAVES_OPTIONS } from "../constants.mjs";
 
 export default class ACKSDialog {
-  static async chooseItemNameAndType(typeOptions = DEFAULT__MONSTER_ITEM_OPTIONS) {
+  static async chooseItemNameAndType(typeOptions = DEFAULT_MONSTER_ITEM_OPTIONS) {
     const nameTextInput = foundry.applications.fields.createTextInput({
       name: "itemName",
       placeholder: "New Item",
@@ -30,6 +30,27 @@ export default class ACKSDialog {
 
     return foundry.applications.api.DialogV2.input({
       window: { title: "ACKS.dialog.createItem" },
+      content,
+    });
+  }
+
+  static async chooseMonsterHitDice() {
+    const monsterHDSelectInput = foundry.applications.fields.createSelectInput({
+      name: "monsterHD",
+      options: MONSTER_SAVES_OPTIONS,
+      required: true,
+      localize: false,
+    });
+    const monsterHDSelectGroup = foundry.applications.fields.createFormGroup({
+      input: monsterHDSelectInput,
+      label: "ACKS.HitDice",
+      localize: true,
+    });
+
+    const content = `${monsterHDSelectGroup.outerHTML}`;
+
+    return foundry.applications.api.DialogV2.input({
+      window: { title: "ACKS.dialog.generateSaves" },
       content,
     });
   }
