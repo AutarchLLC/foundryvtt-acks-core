@@ -1,3 +1,10 @@
 <section class="tab {{ tab.cssClass }} sheet-notes" data-group="primary" data-tab="notes">
-  notes
+  <div class="content flexrow col-stretch">
+    <section class="editor__biography">
+      <prose-mirror name="system.details.biography" value="{{ system.details.biography }}" compact toggled
+                    document-uuid="{{ actor.uuid }}">
+        {{{ enriched.biography }}}
+      </prose-mirror>
+    </section>
+  </div>
 </section>
