@@ -12,7 +12,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:check": "prettier . --check",
-    "format:fix": "prettier . --write"
+    "format:fix": "prettier . --write",
+    "packToJSON": "node ./scripts/unpack.mjs"
   },
   "repository": {
     "type": "git",
