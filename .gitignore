@@ -1,3 +1,6 @@
+src/packs/*
+!src/packs/_source/
+
 .history/
 .vscode/settings.json
 .idea
