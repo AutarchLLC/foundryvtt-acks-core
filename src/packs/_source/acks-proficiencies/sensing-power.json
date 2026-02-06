@@ -1,0 +1,36 @@
+{
+  "_id": "GrOdRObErdfym28N",
+  "name": "Sensing Power",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/sensing-power.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can detect spellcasters within 60' and estimate their level of power relative to his own. He can tell when arcane magic has been used within the last 24 hours within the same vicinity. (The character cannot necessarily sense whether an item is magic, unless it has been used in the last 24 hours.) Each use takes a turn.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!GrOdRObErdfym28N"
+}

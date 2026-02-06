@@ -1,0 +1,42 @@
+{
+  "_id": "u6oR3jEBlXFV5fMu",
+  "name": "Protection from Normal Missiles",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/arrows-shield2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310247,
+    "modifiedTime": 1730058310247,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 3,
+    "class": "Arcane",
+    "duration": "12 Turns",
+    "range": "30'",
+    "roll": "",
+    "description": "<p>The subject of this spell is <strong>completely protected from small sized, non-magical missile attacks</strong>. Therefore, <strong>magic arrows</strong>, <strong>hurled boulders</strong>, or other such <strong>are not blocked</strong>, but any number of normal arrows, sling bullets, crossbow bolts, thrown daggers, and the like will be fended off.</p>\n<p>Note that normal missiles&nbsp;projected by magic bows count as magical missiles for the purposes of this spell.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "R5pYVHvoF9GtMtIa",
+  "sort": 0,
+  "_key": "!items!u6oR3jEBlXFV5fMu"
+}

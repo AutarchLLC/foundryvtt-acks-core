@@ -1,0 +1,58 @@
+{
+  "_id": "E0Z0AQniSGz7kgkB",
+  "name": "Lance (mounted)",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/mounted-knight.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "transparent",
+    "description": "<p>Lances are long spears, 12' to 16' in length, designed for mounted warriors. Despite their length, they are used onehanded. Historical examples include the Greek xyston, Persian and Byzantine kontos, and medieval lance. Lances do double damage when used to charge, but impose a -1 penalty on initiative rolls.</p>",
+    "damage": "1d10",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Charge",
+        "value": "Charge"
+      }
+    ],
+    "slow": true,
+    "missile": false,
+    "melee": true,
+    "cost": 1,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!E0Z0AQniSGz7kgkB"
+}

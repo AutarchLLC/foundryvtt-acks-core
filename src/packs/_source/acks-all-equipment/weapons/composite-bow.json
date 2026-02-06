@@ -1,0 +1,58 @@
+{
+  "_id": "OKIkawWJve0VG5vX",
+  "name": "Composite Bow",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/composite-bow.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 70,
+      "medium": 1400,
+      "long": 2100
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>A composite bow is a recurved bow made&nbsp;of laminated wood, horn, and sinew. Composite bows are time consuming and expensive to craft but offer a better combination of mobility and power than longbows or shortbows. Historical examples include the Scythian horn bow, Chinese laminated bamboo bow, Greek and Roman composite bow, Mongolian composite bow, and Japanese yumi.</p>\n<p>Limited to 4 cleave attacks. (Core Rules p. 105)</p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Missile",
+        "value": "Missile"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": false,
+    "cost": 40,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!OKIkawWJve0VG5vX"
+}

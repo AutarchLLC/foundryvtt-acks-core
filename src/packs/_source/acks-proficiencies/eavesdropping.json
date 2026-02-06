@@ -1,0 +1,36 @@
+{
+  "_id": "k5rQYn4DIvsdaNCP",
+  "name": "Eavesdropping",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hear-noise.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 16,
+    "blindroll": true,
+    "description": "<p>The character can hear noises as a thief of his class level.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!k5rQYn4DIvsdaNCP"
+}

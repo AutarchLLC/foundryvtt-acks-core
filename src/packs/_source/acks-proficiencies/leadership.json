@@ -1,0 +1,36 @@
+{
+  "_id": "0uDmKlWuiQ66IW8X",
+  "name": "Leadership",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/conqueror.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is an inspirational authority figure who earns great loyalty. The character may hire one more henchman than his Charisma would otherwise permit, and the base morale score of any domain he rules is increased by 1. Domain morale is explained in the Campaign chapter.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!0uDmKlWuiQ66IW8X"
+}

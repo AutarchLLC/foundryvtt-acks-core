@@ -1,0 +1,42 @@
+{
+  "_id": "u94yklYzlHKQbo9D",
+  "name": "Dismember",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/amputation.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310247,
+    "modifiedTime": 1730058310247,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 3,
+    "class": "Arcane",
+    "duration": "Instant",
+    "range": "30'",
+    "roll": "3d6",
+    "description": "<p>With this horrific spell, the caster can maim and dismember a creature within range. The target may make a saving throw versus Death to avoid the effect. If the saving throw fails, the target suffers 3d6 points of damage and must immediately roll on the Mortal Wounds table and suffer the result listed under Permanent Wounds Suffered. (The target does not suffer from the results listed in the Condition &amp; Recovery column.) When rolling on the Mortal Wound table due to dismember, the only modifier that applies is the target's CON modifier.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "death"
+  },
+  "folder": "R5pYVHvoF9GtMtIa",
+  "sort": 0,
+  "_key": "!items!u94yklYzlHKQbo9D"
+}

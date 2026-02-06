@@ -1,0 +1,36 @@
+{
+  "_id": "t3uroZdXBgz8UV10",
+  "name": "Profession: Scribe",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/scribe.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!t3uroZdXBgz8UV10"
+}

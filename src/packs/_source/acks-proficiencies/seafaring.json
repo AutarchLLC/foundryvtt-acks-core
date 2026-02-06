@@ -1,0 +1,36 @@
+{
+  "_id": "REA4prJ2oVeLUtMV",
+  "name": "Seafaring",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/seafaring.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can crew large sailing ships or galleys. If a character selects this proficiency twice, he can serve as a captain on a seagoing vessel, as described in Specialists. If he selects this proficiency three times, he is a master mariner. When tacking, a master mariner's ship has its movement rate reduced by only one category rather than by two (as described in the Wilderness Adventures section), and his ship's chance to evade is increased by +5.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!REA4prJ2oVeLUtMV"
+}

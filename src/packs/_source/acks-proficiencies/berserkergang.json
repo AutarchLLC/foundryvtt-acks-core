@@ -1,0 +1,36 @@
+{
+  "_id": "sIWRnHKxGI1GI6Gv",
+  "name": "Berserkergang",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/berserkergang.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character may enter a berserker rage. While enraged, he gains a +2 bonus to attack throws and becomes immune to fear. However, the character has a -2 penalty to AC and cannot retreat from combat. Once it has begun, a berserker rage cannot be ended until combat ends.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!sIWRnHKxGI1GI6Gv"
+}

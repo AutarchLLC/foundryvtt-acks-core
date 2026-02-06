@@ -1,0 +1,38 @@
+{
+  "_id": "Ie4XHRC1xRSR0HI7",
+  "name": "Torches (6)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/primitive-torch.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Torches are 1 to 2 long pieces of wood tipped with pitch. A torch sheds bright light out to a 15 radius and dim light to a 30 radius, burning for 6 turns (1 hour). If a torch is used as a weapon, it deals 1d4 {F} damage. A single torch weighs 1/6 st. while a bundle of 6 torches weighs 1 st.",
+    "quantity": {
+      "value": 6,
+      "max": 6
+    },
+    "treasure": false,
+    "cost": 0.1,
+    "weight": -1,
+    "weight6": 6,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!Ie4XHRC1xRSR0HI7"
+}

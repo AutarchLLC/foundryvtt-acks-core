@@ -1,0 +1,36 @@
+{
+  "_id": "PsJDhDY40I600jyU",
+  "name": "Cause Moderate Wounds",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/heart-minus2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058359991,
+    "modifiedTime": 1730058359991,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Divine",
+    "duration": "Instant",
+    "range": "Touch",
+    "roll": "2d6 Damage Inflicted",
+    "description": "<p>With this spell the caster&nbsp;<strong>causes 2d6 points of damage</strong>&nbsp;by touching his hand upon the target creature. A successful attack throw is required.</p>\n<p>Undead are healed by&nbsp;<em>Cause Moderate Wounds</em>.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "6SjuYRK6RIpAEqyE",
+  "sort": 0,
+  "_key": "!items!PsJDhDY40I600jyU"
+}

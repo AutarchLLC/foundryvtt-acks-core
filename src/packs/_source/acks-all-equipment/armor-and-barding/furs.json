@@ -1,0 +1,38 @@
+{
+  "_id": "RRJGMU3Y6fKWyvua",
+  "name": "Furs",
+  "type": "armor",
+  "flags": {},
+  "img": "systems/acks/assets/icons/fur-shirt.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058483071,
+    "modifiedTime": 1730058483071,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": "<p>This crude armor consists of thick furs.</p>",
+    "ac": {
+      "value": 8
+    },
+    "aac": {
+      "value": 1
+    },
+    "type": "light",
+    "cost": 10,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6
+  },
+  "folder": "8qVpUlESUQsGqpcL",
+  "sort": 0,
+  "_key": "!items!RRJGMU3Y6fKWyvua"
+}

@@ -1,0 +1,263 @@
+{
+  "_id": "fnFtAtFvP7PU9Rik",
+  "name": "Treasure Type E",
+  "flags": {
+    "ose": {
+      "treasure": true
+    },
+    "better-rolltables": {
+      "table-type": "better",
+      "loot-amount-key": ""
+    },
+    "acks": {
+      "treasure": true
+    }
+  },
+  "description": "<p>Raider, 1,250gp average value</p>",
+  "results": [
+    {
+      "_id": "VATbju1Q7hehTcS9",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 80,
+      "range": [
+        null,
+        null
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[2d20*1000]]cp",
+      "name": "",
+      "_key": "!tables.results!fnFtAtFvP7PU9Rik.VATbju1Q7hehTcS9"
+    },
+    {
+      "_id": "JQNgaTCsiq8FmmGn",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 70,
+      "range": [
+        null,
+        null
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[3d6*1000]]sp",
+      "name": "",
+      "_key": "!tables.results!fnFtAtFvP7PU9Rik.JQNgaTCsiq8FmmGn"
+    },
+    {
+      "_id": "I3lFuGpv6nEiy73Q",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 60,
+      "range": [
+        null,
+        null
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] ornamentals",
+      "name": "",
+      "_key": "!tables.results!fnFtAtFvP7PU9Rik.I3lFuGpv6nEiy73Q"
+    },
+    {
+      "_id": "ydKOg950Cz8jqD3s",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        null,
+        null
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] trinkets",
+      "name": "",
+      "_key": "!tables.results!fnFtAtFvP7PU9Rik.ydKOg950Cz8jqD3s"
+    },
+    {
+      "_id": "QLFPAvL8vVsAh4xX",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 15,
+      "range": [
+        null,
+        null
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "1 Sword, Weapon, or Armor Magic Item",
+      "name": "",
+      "_key": "!tables.results!fnFtAtFvP7PU9Rik.QLFPAvL8vVsAh4xX"
+    },
+    {
+      "_id": "C63Y28yTclN6rg9u",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 15,
+      "range": [
+        null,
+        null
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "1 Potion",
+      "name": "",
+      "_key": "!tables.results!fnFtAtFvP7PU9Rik.C63Y28yTclN6rg9u"
+    },
+    {
+      "_id": "0g58kRUbJ2o6lcf2",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        null,
+        null
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 1 Magic Item",
+      "name": "",
+      "_key": "!tables.results!fnFtAtFvP7PU9Rik.0g58kRUbJ2o6lcf2"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": 1734591260748,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!fnFtAtFvP7PU9Rik"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "620GVg2tiaLxlTdc",
+  "name": "Army Emblem, Silver (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/condor-emblem.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A silver or gold figurine mounted on a pole above the armys standard. The emblem is treasured by the army as the symbol of its strength, honor, and glory. If an armys standard is not provided with an emblem, its morale score is reduced by 1. Loss of an armys standard and/or emblem reduces its morale score by 1 and counts as a calamity (p. XX). In the Auran Empire, the emblem of its armies is the winged sun.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "https://game-icons.net/1x1/lorc/condor-emblem.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!620GVg2tiaLxlTdc"
+}

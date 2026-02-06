@@ -1,0 +1,36 @@
+{
+  "name": "Deceptively Stealthy",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hooded-figure2.webp",
+  "_id": "Wtxw2uKTpEtzoVDZ",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Despite their bulk, they are deceptively stealthy, so characters encountering bugbears suffer a -1 penalty to surprise rolls.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Wtxw2uKTpEtzoVDZ"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "OFGeWvEVGB08UdSm",
+  "name": "Black Lore",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/black-lore.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has studied the terrible necromancies of the Termaxian Empire and ancient Eldritch Empire. He can control undead as a Chaotic cleric of one half his class level. If the character casts spells that require a saving throw versus Death, his targets suffer a -2 penalty on the save. When the character casts necromantic spells (such as <em>Animate Dead</em>), the spell effects are calculated as if he were two class levels higher than his actual level of experience. He may also conduct necromantic research (see Necromancy in Chapter 7) as if he were two class levels higher than actual.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!OFGeWvEVGB08UdSm"
+}

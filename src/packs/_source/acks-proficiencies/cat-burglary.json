@@ -1,0 +1,36 @@
+{
+  "_id": "UcSEsxLg0hGOyxIi",
+  "name": "Cat Burglary",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/cat-burglary.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character knows how to deftly move across narrow and precarious surfaces. He may balance on thin ledges or tight ropes by making a proficiency throw to climb walls. If the character falls while climbing, the player may make a second proficiency throw with a -4 penalty in order to catch himself and prevent any damage.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!UcSEsxLg0hGOyxIi"
+}

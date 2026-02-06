@@ -1,0 +1,38 @@
+{
+  "_id": "dlpkPXBioKxnbo0A",
+  "name": "Herb, Comfrey (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Comfrey, also known as bruisewort and knitbone, is a powerful healing herb. An adventurer with Healing proficiency can use a poultice made from 1 lb of comfrey to treat a wounded character immediately after a battle. This heals 1d3 damage. A character cannot be treated with comfrey more than once per day.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!dlpkPXBioKxnbo0A"
+}

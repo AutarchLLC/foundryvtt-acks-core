@@ -1,0 +1,38 @@
+{
+  "_id": "uSOmCzrQfzOL2H3z",
+  "type": "item",
+  "name": "Gloves, Leather or Wool, Short",
+  "img": "systems/acks/assets/icons/gloves.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "Gloves are garments covering the hands, worn for comfort, fashion, or protection. However, wearing gloves does not protect against curses or oozes. Thief abilities such as pickpocketing, lockpicking, or trapbreaking cannot be performed while wearing gloves.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.4,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/delapouite/gloves.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!uSOmCzrQfzOL2H3z"
+}

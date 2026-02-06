@@ -1,0 +1,36 @@
+{
+  "_id": "rnjB8CZ6WG54MgQR",
+  "name": "Bless",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/embraced-energy.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058359991,
+    "modifiedTime": 1730058359991,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Divine",
+    "duration": "6 Turns",
+    "range": "0'",
+    "roll": "",
+    "description": "<p>When cast before battle, <em>Bless</em> gives the caster and his allies (within a 50' radius of the caster) a bonus of <strong>+1 to attack throws, damage rolls, morale rolls</strong> (for monsters or NPCs allied with the caster), and <strong>saving throws against magical fear</strong>.</p>\n<p>It may not be cast on creatures who are already engaged in melee.</p>\n<p>Divine spellcasters of 7th level or higher may also use <em>Bless</em> to create @Item[592n34iY9HdFC6Pr]{Holy Water}. One casting of&nbsp;<em>Bless</em> &nbsp;will transform 1 pint of ordinary water into @Item[592n34iY9HdFC6Pr]{Holy Water}. Casting <em>Bless</em> in this manner demands a sacrifice to the caster's deity worth at least 10gp. Once created, @Item[592n34iY9HdFC6Pr]{Holy Water} will retain its potency indefinitely so long as it is kept in the vial it was blessed in.&nbsp;</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "6SjuYRK6RIpAEqyE",
+  "sort": 0,
+  "_key": "!items!rnjB8CZ6WG54MgQR"
+}

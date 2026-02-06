@@ -1,0 +1,36 @@
+{
+  "_id": "onIRw1MHPJ3pf7eK",
+  "name": "Apostasy",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/apostasy.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has learned knowledge forbidden to his order. He may select 4 divine spells not normally available to worshippers of his god and add them to his repertoire.</p>\n<ol>\n<li>&nbsp;</li>\n<li>&nbsp;</li>\n<li>&nbsp;</li>\n<li>&nbsp;</li>\n</ol>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!onIRw1MHPJ3pf7eK"
+}

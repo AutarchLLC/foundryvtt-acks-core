@@ -1,0 +1,42 @@
+{
+  "_id": "OOLT8QjM2dhfMRp6",
+  "name": "Darkness",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/darkness.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358012,
+    "modifiedTime": 1730058358012,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Divine",
+    "duration": "6 Turns + 1/lvl",
+    "range": "120'",
+    "roll": "",
+    "description": "<p>Darkness creates an area of darkness in a <strong>30' radius area</strong> (and provides <strong>dimming for an additional 20'</strong>) around the target location or object. The effect is <strong>immobile if cast into an area</strong>, but it <strong>can be cast on a movable object</strong>. This darkness <strong>blocks out infravision</strong> and <strong>negates mundane light sources</strong>. Darkness taken into an area of magical light does not function.</p>\n<p>A darkness spell may be cast to counter and dispel the light spell of an equal or lower level caster (and vice versa). Doing so causes both spells to instantly cease, restoring the existing ambient light level.</p>\n<p>Either version of this spell <strong>may be used to blind an opponent by means of casting it on the target's ocular organs</strong>. The target is allowed a <strong>saving throw versus Spells to avoid</strong> the effect, and <strong>if the save is made, the spell does not take effect</strong> <strong>at all</strong>. A <em>Light </em>or <em>Darkness</em> spell cast to blind does not have the given area of effect (that is, no light or darkness is shed around the victim).</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "NYA8pw0gLlA5SnQ1",
+  "sort": 0,
+  "_key": "!items!OOLT8QjM2dhfMRp6"
+}

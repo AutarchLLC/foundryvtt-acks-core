@@ -1,0 +1,27 @@
+{
+  "_id": "sgvOHBAlSufnbjhs",
+  "name": "Ancient Dappakosean",
+  "type": "language",
+  "folder": null,
+  "img": "systems/acks/assets/icons/language.png",
+  "system": {
+    "description": "For more information on the Auran Empire setting, including its Customs, People, and Languages, refer to <em>Appendix A: Setting</em> and the <em>Languages</em> taxonomy on page 505 of the <em>ACKS II Revised Rulebook.</em>"
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!sgvOHBAlSufnbjhs"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "Ka2MX1dxt6pgcQfz",
+  "name": "Rations, Iron (one week)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/bread.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This food is dried, pickled, salted, smoked, or otherwise preserved from spoilage. Iron rations will remain digestible for two months in the wilderness and a week in the foul conditions of a dungeon. The cost for iron rations will vary depending on quality. The cheapest iron rations consist of hard, dried salted biscuits. Better rations include salted or pickled meat and dried, pickled, or preserved fruit and vegetables. A days iron rations counts as 1/6 stone (one item) for encumbrance purposes, while a weeks iron rations count as one stone.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 6,
+    "weight": -1,
+    "weight6": 6,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!Ka2MX1dxt6pgcQfz"
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Swaming Bites",
+  "type": "weapon",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "owner": {
+          "actorId": "1UgIu8NWvLf1qUVH"
+        },
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "name": "Bite",
+            "type": "weapon",
+            "data": {
+              "choices": "weapon,ability,armor,item"
+            },
+            "flags": {}
+          }
+        },
+        "itemType": "Item",
+        "isLocked": false
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/bestial-fangs.webp",
+  "_id": "WgopgtnKkwiGM1IK",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "paralysis",
+    "pattern": "transparent",
+    "description": "<p>Sapient rats are too small to harm man-sized&nbsp;creatures individually. Instead, they may fight as packs, getting <strong>1 attack per 5 individuals</strong> in the pack.</p>\n<p>If a character is attacked by 10 or more sapient rats at once, he must also succeed in a saving throw versus Paralysis or fall to the ground under the writhing rodent horde. He may stand up the following round, but must make a new saving throw each time he is attacked by 10 or more rats. The character can take no other actions until he gets back on his feet.</p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      }
+    ],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight": 0,
+    "weight6": -1,
+    "counter": {
+      "value": 1,
+      "max": 1
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!WgopgtnKkwiGM1IK"
+}

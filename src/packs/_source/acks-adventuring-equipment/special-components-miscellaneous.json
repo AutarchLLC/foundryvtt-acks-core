@@ -1,0 +1,38 @@
+{
+  "_id": "i4Qnquu7u6i0z4af",
+  "name": "Special Components, Miscellaneous",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/pestle-mortar.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "When a living thing dies, a residue of its soul will linger in some its component parts, such as organs and cellular fluids. These parts are known as special components and can be tapped by casters and ceremonialists to power their magic items. While the best results are gained from rare components that are unique to the spells imbued into the item, an equal value of miscellaneous special components such as spider webs, plant roots, crushed bones, and so on can be used instead if desired. The caster suffers a -1 penalty on his throw per level of the spell when using miscellaneous special components in magical research.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "https://game-icons.net/1x1/skoll/pestle-mortar.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!i4Qnquu7u6i0z4af"
+}

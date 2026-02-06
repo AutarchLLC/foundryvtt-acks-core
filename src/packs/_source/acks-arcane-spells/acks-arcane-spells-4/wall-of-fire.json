@@ -1,0 +1,36 @@
+{
+  "_id": "jXNxzAhFG105bhlS",
+  "name": "Wall of Fire",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/wall-of-fire.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058312369,
+    "modifiedTime": 1730058312369,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 4,
+    "class": "Arcane",
+    "duration": "2 Turns",
+    "range": "60'",
+    "roll": "1d6 Damage",
+    "description": "<p>An immobile, opaque, blazing curtain of shimmering violet fire springs into existence. The wall can be as large as 1,200 square feet, and may be shaped in any manner and to any dimensions the caster desires, so that it can be a straight wall or curved into a protective circle. This wall of flames is impenetrable to monsters with fewer than 4 HD. Monsters with more than 4 HD suffer 1d6 points of damage when they pass through the wall. The wall deals double damage to undead creatures or creatures who use cold or are accustomed to cold. The wall may not be evoked so that it appears where objects or creatures already are.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "FZdMTwbtjbvsh63O",
+  "sort": 0,
+  "_key": "!items!jXNxzAhFG105bhlS"
+}

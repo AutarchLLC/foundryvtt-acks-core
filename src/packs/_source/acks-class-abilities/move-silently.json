@@ -1,0 +1,36 @@
+{
+  "name": "Move Silently",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hooded-figure2.webp",
+  "_id": "S2ijqHLnP8plOhRx",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "Thief",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 17,
+    "blindroll": true,
+    "description": "<p>The character may move with total silence. When successful, even keen eared guards will not hear the movements of the character. However, the character always thinks he is successful in this skill, and will not know otherwise unless and until others react to his presence. Characters may move silently at ½ their standard combat movement rate without penalty. If they move greater than ½ speed, they take a -5 penalty to the proficiency throw. If they run, they take a -10 penalty.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!S2ijqHLnP8plOhRx"
+}

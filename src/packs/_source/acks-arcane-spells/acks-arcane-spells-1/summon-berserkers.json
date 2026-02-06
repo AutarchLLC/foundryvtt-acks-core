@@ -1,0 +1,36 @@
+{
+  "_id": "JDOVF4pLHbYuK6is",
+  "name": "Summon Berserkers",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/summon-berserkers.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "10'",
+    "roll": "",
+    "description": "<p>The caster summons 4 berserkers to fight for the caster (see the Monsters chapter of Adventurer Conqueror King System for details). The berserkers appear anywhere within range and are completely loyal to the caster, seeking only to die gloriously in the caster's service and return to the warrior's afterlife. The berserkers will persist until slain, until dispelled, or until 3 turns have elapsed.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!JDOVF4pLHbYuK6is"
+}

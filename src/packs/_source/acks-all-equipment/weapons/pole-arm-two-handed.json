@@ -1,0 +1,58 @@
+{
+  "_id": "taI2Lp75RzDEN2iJ",
+  "name": "Pole-Arm (two handed)",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/bardiche.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>Pole arms are two-handed slashing and piercing&nbsp;weapons with a metal head and a long wooden shaft. Pole arms range in length from 6' to 21'. Historical examples include the Thracian rhomphaia, Dacian falx, and Macedonian sarissa; the medieval bill, fauchard, glaive, guisarme, halberd, partisan, pike, ranseur, spetum, and voulge; the Chinese gun dao; and the Japanese bisento, nagamaki, and naginata. Pole arms can be used to attack from the second rank in melee, and inflict double damage when used in or against a charge, but impose a -1 penalty on initiative rolls.</p>",
+    "damage": "1d10",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": true,
+    "missile": false,
+    "melee": true,
+    "cost": 7,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!taI2Lp75RzDEN2iJ"
+}

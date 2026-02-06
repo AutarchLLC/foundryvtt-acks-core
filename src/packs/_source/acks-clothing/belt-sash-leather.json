@@ -1,0 +1,38 @@
+{
+  "_id": "4pKgehyWM6UimKq4",
+  "type": "item",
+  "name": "Belt/Sash, Leather",
+  "img": "systems/acks/assets/icons/game-icons/belt.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "Embossed leather or silk belts are worn as a sign of wealth and status.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.1,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/lucasms/belt.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!4pKgehyWM6UimKq4"
+}

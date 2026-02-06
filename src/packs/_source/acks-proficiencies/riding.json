@@ -1,0 +1,36 @@
+{
+  "_id": "qBpmQlehMy7vDU9o",
+  "name": "Riding",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/riding.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character knows not only the care and feeding of a riding animal, but also how to handle it under difficult circumstances, such as using a weapon from its back. For each type of animal, this proficiency must be selected separately. This proficiency is not required to simply ride a domesticated animal under non-combat conditions.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!qBpmQlehMy7vDU9o"
+}

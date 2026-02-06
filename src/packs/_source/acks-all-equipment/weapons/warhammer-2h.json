@@ -1,0 +1,58 @@
+{
+  "_id": "o6CzVPtia6APRtHP",
+  "name": "Warhammer, 2H",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/claw-hammer.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>A warhammer is a bludgeoning weapon with a 2' to 3' wooden or metal shaft and a broad metal head shaped like a hammer. It is designed for crushing armor, and useable with one or two hands. The chief historical example is the late medieval warhammer.</p>",
+    "damage": "1d8",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 5,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!o6CzVPtia6APRtHP"
+}

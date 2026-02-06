@@ -1,0 +1,36 @@
+{
+  "_id": "7FIHlQJhZHDNq62g",
+  "name": "Chameleon",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/chameleon.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "1 Turn/lvl",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>This spell allows the character touched to blend into his surroundings to the point of becoming nearly invisible. The character gains a <strong>+8 bonus to any proficiency throws to hide in shadows</strong>. Characters affected by a chameleon spell can <strong>always hide in shadows</strong> with a throw of <strong>at least 12+</strong>.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!7FIHlQJhZHDNq62g"
+}

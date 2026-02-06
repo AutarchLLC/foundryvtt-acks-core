@@ -1,0 +1,36 @@
+{
+  "_id": "zkiaw9qniY4Wd84V",
+  "name": "Animal Training",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/animal-training.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character knows how to breed, groom, and train a particular type of animal. The animal can be taught simple tricks or orders. A character who wants to train two or more different animal types must choose this proficiency more than once. A character with proficiency in training an animal may choose a fantastic creature of a similar type with this proficiency. For example, a bear trainer could learn to train owlbears, or a horse trainer learn to train pegasi. Regardless of the type, animals must begin their training while still young. It take a minimum of one month to tame a wild animal. It takes a minimum of one month to teach a tame animal one trick. Thereafter additional tricks can be taught at half the time per trick. An animal can be taught a maximum of 2d4 different tasks or tricks. The animal trainer will only learn the animal's limit when he reaches it.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!zkiaw9qniY4Wd84V"
+}

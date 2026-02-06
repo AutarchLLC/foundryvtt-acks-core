@@ -1,0 +1,36 @@
+{
+  "_id": "4ynGzgcbfAKlMkO1",
+  "name": "Signaling",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/flying-flag.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character knows how to transmit messages to other signaling specialists of the same military force, culture, trade guild, or other organization. This is similar to learning an additional language. The character must specify the style and culture of signals that he has learned when he takes this proficiency. Examples of signals include naval flags, cavalry trumpets, or smoke signals.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!4ynGzgcbfAKlMkO1"
+}

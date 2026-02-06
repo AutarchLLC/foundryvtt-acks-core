@@ -1,0 +1,36 @@
+{
+  "name": "Friend to Birds & Beasts",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/beast-friendship.webp",
+  "_id": "UHZn9iJ2XJWlo1al",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character is well-schooled in the natural world. He can identify plants and fauna with a proficiency throw of 11+, and understands the subtle body language and moods of birds and beasts (though they may not understand the character). He gains +2 to all reaction rolls when encountering normal animals, and can take animals as henchmen.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!UHZn9iJ2XJWlo1al"
+}

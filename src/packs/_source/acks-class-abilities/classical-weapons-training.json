@@ -1,0 +1,36 @@
+{
+  "name": "Classical Weapons Training",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/spiral-thrust.webp",
+  "_id": "PjQZTvrv8ujG7Cm5",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<h3 style=\"text-align: center;\"><strong>Melee</strong></h3>\n<p>All courtiers receive classical weapons training giving them a bonus of +1 to attack throws with their choice of melee or missile attacks. The courtier must choose which type of attack will receive the bonus at 1st level, and may not change the choice as he advances.</p>\n<p>&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!PjQZTvrv8ujG7Cm5"
+}

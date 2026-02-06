@@ -1,0 +1,36 @@
+{
+  "_id": "RkXuFlT2UQIawoMd",
+  "name": "Command Word",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/command-word.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358012,
+    "modifiedTime": 1730058358012,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Divine",
+    "duration": "1 Round",
+    "range": "10'",
+    "roll": "",
+    "description": "<p>When a cleric casts this spell, he may give the target a one word command, which it obeys to the best of its ability. The single word must make sense as a single command, such as approach, drop, fall, flee, halt, surrender, sleep, etc. Although a target could be instructed to \"die,\" this will only make the target faint for a single round. Note that the caster must be able to speak the language of the target. Any intended target with more than 5 HD or an INT of over 12 is entitled to a saving throw versus Spells. This spell is ineffective against undead.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "NYA8pw0gLlA5SnQ1",
+  "sort": 0,
+  "_key": "!items!RkXuFlT2UQIawoMd"
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Web",
+  "type": "ability",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    },
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "owner": {
+          "actorId": "ZEVNVHwsaKDea4hA"
+        },
+        "initialState": {
+          "id": "AH6GetiY8UWmb7ZV",
+          "count": 1,
+          "itemData": {
+            "_id": "AH6GetiY8UWmb7ZV",
+            "flags": {},
+            "name": "Web",
+            "type": "ability",
+            "img": "systems/acks/assets/icons/spiders-web.webp",
+            "data": {
+              "pattern": "green",
+              "requirements": "",
+              "roll": "",
+              "rollType": "result",
+              "rollTarget": 0,
+              "blindroll": false,
+              "description": "<p>Giant Black Widows create a many-layered mass of strong, sticky strands covering an area. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p>Entangled creatures can’t move, but can break loose depending on their strength. Creatures of normal human strength or less will take&nbsp;<a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\">&nbsp;2d4</a>&nbsp;turns to break through the web. Strong humans (with ability scores 13-17) can break through the web in 1 turn. Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in 4 rounds. Giants or creatures of similar great strength can break through the web in 2 rounds.</p>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take&nbsp;<a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\">1d6</a>&nbsp;points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
+              "save": ""
+            },
+            "sort": 1000001
+          }
+        },
+        "itemType": "Item",
+        "isLocked": false
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/spiders-web.webp",
+  "_id": "Z7oUgyBzLViZlCPX",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "green",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Phase Spiders create a many-layered mass of strong, sticky strands covering an area. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p>Entangled creatures can't move, but can break loose depending on their strength:</p>\n<ul>\n<li>Creatures of normal human strength or less will take <a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\">&nbsp;2d4</a>&nbsp;<strong>turns </strong>to break through the web.</li>\n<li>Strong humans (with ability scores 13-17) can break through the web in <strong>1 turn</strong>.</li>\n<li>Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in <strong>4 rounds</strong>.</li>\n<li>Giants or creatures of similar great strength can break through the web in <strong>2 rounds</strong>.</li>\n</ul>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take&nbsp;<a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\">1d6</a>&nbsp;points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Z7oUgyBzLViZlCPX"
+}

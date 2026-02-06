@@ -1,0 +1,58 @@
+{
+  "_id": "0fKEy35e0pf4mWxg",
+  "name": "Hand Axe",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hand-axe.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 10,
+      "medium": 20,
+      "long": 30
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>This is a single-bitted axe, with a 12\" to 24\" haft, balanced for throwing. Historical examples include the Frankish francisca, American tomahawk, and African mambele and kasuyu.</p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Missile",
+        "value": "Missile"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": true,
+    "cost": 4,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!0fKEy35e0pf4mWxg"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "Wr9Vh57AILfSvntw",
+  "name": "Necromantic Potence",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/necromantic-potence2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "1 Hour/lvl",
+    "range": "Self",
+    "roll": "1d10+3 Temporary Hit Points",
+    "description": "<p>This spell imbues the caster with powerful necromantic energies, granting him <strong>1d10 temporary hit points + 1hp per caster level</strong>. These temporary hit points will be the first lost if any damage is suffered, but cannot be regained through rest or healing magic, and will disappear at the expiration of the spell&rsquo;s duration.</p>\n<p>While necromantic potence is in effect, the spellcaster is treated as an inherently evil summoned creature for purposes of detect evil and protection from evil effects. A dispel evil or dispel magic spell will strip the caster of his temporary hit points unless he makes a successful saving throw versus Spells.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!Wr9Vh57AILfSvntw"
+}

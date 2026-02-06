@@ -1,0 +1,73 @@
+{
+  "name": "Shadow",
+  "type": "ability",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "owner": {
+          "actorId": "s8COhI8lA7aQezwc"
+        },
+        "initialState": {
+          "id": "XcsJeghTThsnVEuL",
+          "count": 1,
+          "itemData": {
+            "_id": "XcsJeghTThsnVEuL",
+            "name": "Undead",
+            "permission": {
+              "default": 0,
+              "ssuDiZtGIm56KS7h": 3
+            },
+            "type": "ability",
+            "data": {
+              "pattern": "white",
+              "requirements": "",
+              "roll": "",
+              "rollType": "result",
+              "rollTarget": 0,
+              "blindroll": false,
+              "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from&nbsp;<em>cure </em>spells.</p>",
+              "save": ""
+            },
+            "folder": "RAUqUVBGOMERIu3j",
+            "sort": 675001,
+            "flags": {},
+            "img": "systems/acks/assets/icons/death-skul.webp.webp"
+          }
+        },
+        "itemType": "Item",
+        "isLocked": false
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/death-skull.webp",
+  "_id": "5HNDDK7ThEdqYJFy",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Shadows are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. Unlike undead, Shadows <em>cannot </em>be Turned by Clerics and Priests.</p>\n<p>Shadows can only be struck by magical weapons.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!5HNDDK7ThEdqYJFy"
+}

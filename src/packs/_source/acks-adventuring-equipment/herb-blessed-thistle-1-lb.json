@@ -1,0 +1,38 @@
+{
+  "_id": "6G8DxXYefwkTjVfZ",
+  "name": "Herb, Blessed Thistle (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Blessed thistle, also known as spotted thistle, is a healing herb that helps wounds heal more quickly. A character with the Healing proficiency can use a poultice made from 1 lb of blessed thistle to treat a wounded patient at any time. If the patient rests, the number of hp he recovers from resting that day is doubled. If the patient does not rest, he recovers one-half the hit points he would have recovered if he had rested. Applying the poultice takes 1 round.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!6G8DxXYefwkTjVfZ"
+}

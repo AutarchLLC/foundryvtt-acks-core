@@ -1,0 +1,36 @@
+{
+  "_id": "AZAc7QASasTFqbh5",
+  "name": "Swashbuckling",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/swashbuckling2.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character gains a +1 bonus to Armor Class if wearing leather armor or less and able to move freely. At level 7, this bonus increases to +2, and at level 13 the bonus increases to +3.</p>\n<h2>+1 bonus to Armor Class</h2>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!AZAc7QASasTFqbh5"
+}

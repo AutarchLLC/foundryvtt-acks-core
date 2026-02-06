@@ -1,0 +1,36 @@
+{
+  "_id": "9k37Jom0bu3hvvSa",
+  "name": "ESP",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/ESP.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "12 Turns",
+    "range": "60'",
+    "roll": "",
+    "description": "<p>This spell permits the caster to detect the surface thoughts of one or more targets within range. The caster must designate a direction, and then concentrate for a turn in order to \"hear\" the thoughts. Each turn the caster may choose to \"listen\" in a different direction. The caster may stop listening, then resume again later, so long as the duration has not expired. A creature's thoughts are understood regardless of the language. The target creature is not normally aware of being spied upon in this way. If it is aware, it may make a saving throw versus Spells to clear its thoughts and avoid detection.</p>\n<p>Rock more than 2 inches thick or a thin coating of lead or gold will block the spell. All undead creatures are immune to this effect, as are mindless creatures such as golems.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!9k37Jom0bu3hvvSa"
+}

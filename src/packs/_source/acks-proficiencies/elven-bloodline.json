@@ -1,0 +1,36 @@
+{
+  "_id": "MJ9K7GDF6gfLmZy7",
+  "name": "Elven Bloodline",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/elven-bloodline.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has the blood of the ageless elves in his ancestry. His lifespan is three times longer than normal for his race, and he shows no signs of aging. He also enjoys the elf's immunity to paralysis. The character's ancestry must manifest somehow in his appearance (pointed ears, golden eyes, a strange birthmark, or other unusual trait.)</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!MJ9K7GDF6gfLmZy7"
+}

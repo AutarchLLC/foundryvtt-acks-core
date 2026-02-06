@@ -1,0 +1,36 @@
+{
+  "name": "Demon",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/imp.webp",
+  "_id": "kvfsrp7GztrPCzD3",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Demons are creatures summoned from the Great&nbsp;Void. Demons take 1/2 damage from attacks based on cold, electricity, fire, and gas. All demons possess infravision (90 feet) and telepathy, which allows them to communicate with any creatures they encounter. Demons are unholy beings that can be held at bay by <em>Protection from Evil</em>, dispelled with <em>Dispel Evil </em>and Turned by clerics as Infernal.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!kvfsrp7GztrPCzD3"
+}

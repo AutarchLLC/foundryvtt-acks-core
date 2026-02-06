@@ -1,6 +1,7 @@
 import { readdir } from "node:fs/promises";
 import path from "path";
 
+export const PACK_BASE_DIR = "src/";
 export const PACK_DEST = "src/packs";
 export const PACK_SRC = "src/packs/_source";
 export const MODULE_PATH = "src/system.json";

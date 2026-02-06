@@ -1,0 +1,42 @@
+{
+  "_id": "H1huEAFA5qBn7m5p",
+  "name": "Growth",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/growth.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310247,
+    "modifiedTime": 1730058310247,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 3,
+    "class": "Arcane",
+    "duration": "12 Turns",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>The recipient of this spell <strong>doubles in size</strong>. Strength increases proportionately, such that the recipient<strong> deals double normal damage</strong> with his attacks and gains a <strong>+16 bonus to force open doors</strong>. (The character's <strong>attack throws do not improve</strong> because his increased strength is offset by unfamiliarity with his giant size.)</p>\n<p>The strength bonus of this spell may not be combined with any other magical effects that influence strength, but it does stack with the character's normal bonus or penalty from Strength.&nbsp;</p>\n<p>If a creature under the effect of a&nbsp;<em>Diminution </em>spell is subject to a&nbsp;<em>Growth</em> spell, both spells are cancelled.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "R5pYVHvoF9GtMtIa",
+  "sort": 0,
+  "_key": "!items!H1huEAFA5qBn7m5p"
+}

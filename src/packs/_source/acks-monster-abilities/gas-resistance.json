@@ -1,0 +1,36 @@
+{
+  "name": "Gas Resistance",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/skull-bolt.webp",
+  "_id": "5FKsxlMqcpYRWrwc",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p><span style=\"color: #191813;\">This monster only takes 1/2 damage, rounded down, from attacks that inflict gas damage, including spells.</span></p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!5FKsxlMqcpYRWrwc"
+}

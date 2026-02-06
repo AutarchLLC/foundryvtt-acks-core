@@ -1,0 +1,36 @@
+{
+  "_id": "Y9z0bRfz2BjMLEob",
+  "name": "Slipperiness",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/slipperiness.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "Touch",
+    "roll": "1d20ms>20",
+    "description": "<p>This spell can be cast on characters, objects, or floors. When cast on a character, the recipient cannot be restrained or grabbed, wrapped in the grip of constrictor snakes, or otherwise be subject to any other grasping attacks, including binding ropes, chains, or cuffs, magical or otherwise. Simply put, nothing can get a grip on a character affected by slipperiness. The spell can also be cast on objects. A single casting is sufficient to affect 20 arrows, 2 one-handed weapons, 1 two-handed weapon, or one 10' x 10' patch of floor. Any object subject to the spell is virtually impossible to grasp, and characters must make an attack throw versus Armor Class 10 each round to grab or maintain their grip on such objects. Any individual moving or even standing on an affected area of floor must make a proficiency throw of 20+ each round or fall down.&nbsp;</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!Y9z0bRfz2BjMLEob"
+}

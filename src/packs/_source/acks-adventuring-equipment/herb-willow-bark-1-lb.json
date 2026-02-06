@@ -1,0 +1,38 @@
+{
+  "_id": "4wAgBWDzo8KmaUbc",
+  "name": "Herb, Willow-bark (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Willow-bark is a healing herb that relieves aches, pain, and rheumatism. A character with Healing proficiency can brew a tincture from 1 lb of willow-bark to relieve a patient of the initiative penalty from permanent wounds (e.g. stiff and scarred wounds and lasting wounds that ache in bad weather), from inability to force march due to permanent wounds (damage to hips and lower back damage to knee, lungs and heart damaged), or from the attack throw and damage roll penalty from force marching. Brewing the tincture takes 1 turn (10 minutes) and the relief lasts for 4 hours.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 5,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!4wAgBWDzo8KmaUbc"
+}

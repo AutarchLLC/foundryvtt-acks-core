@@ -1,0 +1,36 @@
+{
+  "_id": "7KjP7imcJ92zXXhM",
+  "name": "Read Languages",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/read-languages.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "2 Turns",
+    "range": "Self",
+    "roll": "",
+    "description": "<p>This spell grants the caster the ability to read almost any written language, including treasure maps, secret symbols, and other codes. For this spell to function, there must be at least one living creature that can naturally read the given language or code somewhere on the same plane. Truly unknown or dead languages or codes cannot be comprehended.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!7KjP7imcJ92zXXhM"
+}

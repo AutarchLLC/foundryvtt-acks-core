@@ -1,0 +1,38 @@
+{
+  "_id": "74OSUd8vd77ko6C6",
+  "name": "Crowbar",
+  "type": "item",
+  "img": "systems/acks/assets/icons/crowbar.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A crowbar is a long, slender bar of solid iron with a curved hook on one end, used to lever against objects to apply force. 2 to 3 long and made of solid iron. A crowbar grants a +2 bonus to Dungeonbashing proficiency throws to open doors, smash crates, and so on. If used in melee, a crowbar counts as a club.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!74OSUd8vd77ko6C6"
+}

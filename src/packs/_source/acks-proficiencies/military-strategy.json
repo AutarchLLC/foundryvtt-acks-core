@@ -1,0 +1,36 @@
+{
+  "_id": "6yugiPVraRf2kTzz",
+  "name": "Military Strategy",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/rally-the-troops.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character has studied the art of war and the methods of the great captains. He can recognize famous historical battles, generals, and weapons with a proficiency throw of 11+. Forces under his command receive a +1 bonus to initiative rolls in mass combat. This proficiency may be selected multiple times, each time adding an additional +1 bonus to mass combat initiative, to a maximum of +3.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!6yugiPVraRf2kTzz"
+}

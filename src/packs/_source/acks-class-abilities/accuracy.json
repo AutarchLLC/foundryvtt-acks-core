@@ -1,0 +1,36 @@
+{
+  "name": "Accuracy",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/william-tell.webp",
+  "_id": "ZkEq8crbLbSFdirb",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Their accuracy gives elven rangers a +1 bonus on all attack throws with missile weapons.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!ZkEq8crbLbSFdirb"
+}

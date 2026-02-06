@@ -1,0 +1,38 @@
+{
+  "_id": "VOyLfO1yuF1CCxLS",
+  "name": "Pavilion (20 men)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/medieval-pavilion.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A large round tent with an interior frame, measuring 24 in diameter and 12 in height. Pavilions are used by army leaders and division commanders as command posts and sleeping quarters. A pavilion weighs 72 stone (720 lbs).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 100,
+    "weight": -1,
+    "weight6": 432,
+    "iconsource": "https://game-icons.net/1x1/delapouite/medieval-pavilion.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!VOyLfO1yuF1CCxLS"
+}

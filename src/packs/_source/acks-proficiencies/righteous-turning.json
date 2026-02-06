@@ -1,0 +1,36 @@
+{
+  "_id": "9QrO45k1ER5saR7m",
+  "name": "Righteous Turning",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/righteous_turning.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>When turning undead, the character adds his Wisdom bonus to both the turning throw and to the number of HD turned on a successful throw.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!9QrO45k1ER5saR7m"
+}

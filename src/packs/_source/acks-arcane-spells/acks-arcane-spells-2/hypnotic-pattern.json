@@ -1,0 +1,36 @@
+{
+  "_id": "ooGSn2oQMc9XmRVe",
+  "name": "Hypnotic Pattern",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hypnotic-pattern.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "Concentration",
+    "range": "30'",
+    "roll": "",
+    "description": "<p>By means of this spell, the caster creates a mesmerizing pattern of color and light in the air. The hypnotic pattern causes any creatures within range that see it to become mesmerized unless they succeed on a saving throw versus Spells. Affected creatures will stand motionless and take no action, even to defend themselves. The spell can mesmerize a maximum of 24 Hit Dice or levels of characters or monsters. Creatures with the fewest HD are affected first. The hypnotic pattern lasts as long as the spellcaster remains stationary and concentrates on it.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!ooGSn2oQMc9XmRVe"
+}

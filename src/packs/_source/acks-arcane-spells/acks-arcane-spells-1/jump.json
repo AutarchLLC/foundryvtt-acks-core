@@ -1,0 +1,42 @@
+{
+  "_id": "zjwr1XtasXW7EPMq",
+  "name": "Jump",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/jump.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>The recipient of this spell gains the ability to leap in great bounds. The recipient may l<strong>eap 10' vertically and 30' horizontally from a standing start</strong>. This prodigious jumping ability grants the recipient a <strong>+10 bonus on Acrobatics throws</strong>. Because of his light step, the recipient needs no rest if engaged in ordinary movement.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!zjwr1XtasXW7EPMq"
+}

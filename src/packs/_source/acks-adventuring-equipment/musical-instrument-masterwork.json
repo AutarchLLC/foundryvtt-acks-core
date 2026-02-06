@@ -1,0 +1,38 @@
+{
+  "_id": "npzEuqIkDifvUiPw",
+  "name": "Musical Instrument, Masterwork",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/violin.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A wide variety of instruments are available to bards and performers, including stringed instruments, percussion instruments, brass instruments, and woodwind instruments. Historical examples of stringed instruments are the cithara, harp, lyre, lute, psaltery, and zither. Historical percussion instruments include the castanet, chimes, drum, gong, sistrum, tambourine, and tympani. Historical brass instruments include the buccina, carnyx, cornu, and salpinx. Historical woodwind instruments include the aulos, flute, horn, pan pipe, and shawm. A common instrument costs 25gp. A superior instrument costs 105gp and adds +1 to Performance proficiency throws made with it. A masterpiece instrument costs 675gp and adds +2 to Performance proficiency throws made with it. Most instruments weighs 1 stone.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 750,
+    "weight": -1,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/zajkonur/violin.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!npzEuqIkDifvUiPw"
+}

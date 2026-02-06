@@ -1,0 +1,36 @@
+{
+  "_id": "xDwept9wjFOOMGhY",
+  "name": "Sanctuary",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/sanctuary.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358012,
+    "modifiedTime": 1730058358012,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Divine",
+    "duration": "2 Rounds+1/lvl",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>Any opponent attempting to strike or otherwise directly attack the warded creature must attempt a saving throw versus Spells. If the save succeeds, the opponent can attack normally and is unaffected by that casting of the spell. If the save fails, the opponent will not attack the warded creature and will attack another creature instead. However, area effects (e.g. fireball) may still affect the warded creature.</p>\n<p>The warded creature may not make offensive actions while this spell is in effect, but he may cast non-offensive spells to help companions.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "NYA8pw0gLlA5SnQ1",
+  "sort": 0,
+  "_key": "!items!xDwept9wjFOOMGhY"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "H93kpFQ6RqoQsdla",
+  "name": "Profession: Judge",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/injustice.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character is highly skilled at a civil profession, such as actuary, banker, chamberlain, judge, lawyer, librarian, merchant, restaurateur, scribe, or seneschal. The character is considered an apprentice in his profession. He can earn 25gp per month for his services, and can make expert commentary on subjects pertaining to his profession with a proficiency throw of 11+. The character must choose the profession at the time he chooses the proficiency. He can spend more proficiency selections to have several types of profession proficiencies. If a character selects the same profession twice, he is considered a licensed practitioner of his profession. He can earn 50gp per month for his services, and supervise up to 3 apprentices, increasing their productivity by 50%. If he selects the same profession three times, he is considered a master of his profession. He can earn 100gp per month, and supervise up to 2 practitioners and 4 apprentices, increasing their productivity by 50%.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!H93kpFQ6RqoQsdla"
+}

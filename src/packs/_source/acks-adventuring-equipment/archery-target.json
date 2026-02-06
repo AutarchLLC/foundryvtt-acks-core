@@ -1,0 +1,38 @@
+{
+  "_id": "8GPVWQVuW01M9r5P",
+  "name": "Archery Target",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/archery-target.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A device for training troops in marksmanship. An archery target is a 2 diameter board of soft wood, usually covered by thick cloth or cork. Trainees practice shooting at the target at various ranges, aiming to land the highest possible number of arrows into the target within a given time. The cost of archery targets is already included in the training costs for missile troops. An archery target weighs 2 stone (20 lbs).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.3,
+    "weight": -1,
+    "weight6": 12,
+    "iconsource": "https://game-icons.net/1x1/lorc/archery-target.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!8GPVWQVuW01M9r5P"
+}

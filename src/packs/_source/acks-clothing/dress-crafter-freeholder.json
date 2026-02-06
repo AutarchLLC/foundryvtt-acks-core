@@ -1,0 +1,38 @@
+{
+  "_id": "mKtnx6nfFZ2NMdbH",
+  "type": "item",
+  "name": "Dress, Crafter/Freeholder",
+  "img": "systems/acks/assets/icons/game-icons/travel-dress.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A dress is a one-piece garment containing a top piece that contains a top piece covering the torso and drapes down over the legs. Depending on their quality, dresses can be simple and plain or dyed, decorated, and embroidered. They are available in sleeveless, short-sleeved, or long-sleeved variants. ",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 2,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/delapouite/travel-dress.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!mKtnx6nfFZ2NMdbH"
+}

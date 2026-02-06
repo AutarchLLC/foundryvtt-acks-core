@@ -1,0 +1,42 @@
+{
+  "_id": "3HHH6E0rFev3NQcm",
+  "name": "Lightning Bolt",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/Focused-lightning3.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310247,
+    "modifiedTime": 1730058310247,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 3,
+    "class": "Arcane",
+    "duration": "Instant",
+    "range": "180'",
+    "roll": "5d6 Electricity Damage",
+    "description": "<p>The caster releases a powerful stroke of electrical energy that is <strong>60' long</strong>. The lightning bolt passes through an area <strong>5' wide</strong>, arcing and jumping, so that, while it is not actually 5' wide, for game purposes treat it as if it is so. It deals <strong>1d6 points of electricity damage per caster level</strong> to each creature within its area. Any creature caught in the area of effect receives a saving throw versus Blast. A successful save reduces damage by half.</p>\n<p>The lightning bolt sets fire to combustibles and damages objects in its path. It can melt metals with a low melting point, such as lead, gold, copper, silver, or bronze. If the damage caused to an interposing barrier shatters or breaks through it, the bolt may continue beyond the barrier if the spell&rsquo;s range permits; otherwise, it may reflect from the barrier back toward the caster, or in a random direction at the Judge&rsquo;s option. Creatures already affected by the lightning bolt do not take additional damage if struck by the reflection of the same bolt.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "breath"
+  },
+  "folder": "R5pYVHvoF9GtMtIa",
+  "sort": 0,
+  "_key": "!items!3HHH6E0rFev3NQcm"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "DuM6o5oMFIuNMfSH",
+  "name": "Fireball",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/fireball.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310247,
+    "modifiedTime": 1730058310247,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 3,
+    "class": "Arcane",
+    "duration": "Instant",
+    "range": "240'",
+    "roll": "5d6 Fire Damage",
+    "description": "<p>This spell creates an explosion of flame that detonates with a low roar and deals <strong>1d6 points of fire damage per caster level</strong> to every creature within a spherical volume having a <strong>20' diameter</strong>. A saving throw versus Blast for half damage is allowed. The explosion creates almost no pressure.</p>\n<p>The caster points a finger and determines the range (distance and height) at which the fireball is to burst. A glowing, peasized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball at that point. An early impact results in an early detonation. If the caster attempts to send the bead through a narrow passage, such as through an arrow slit, he or she must roll a missile attack throw (without range adjustments) to hit the opening, or else the bead strikes the barrier and detonates prematurely.</p>\n<p>The fireball sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the fireball may continue beyond the barrier in order to attain its full volume.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "breath"
+  },
+  "folder": "R5pYVHvoF9GtMtIa",
+  "sort": 0,
+  "_key": "!items!DuM6o5oMFIuNMfSH"
+}

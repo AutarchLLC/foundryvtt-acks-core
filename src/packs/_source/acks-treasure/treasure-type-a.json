@@ -1,0 +1,143 @@
+{
+  "_id": "NJXaEn87H1JyGsZS",
+  "name": "Treasure Type A",
+  "flags": {
+    "ose": {
+      "treasure": true
+    },
+    "better-rolltables": {
+      "table-type": "none"
+    },
+    "acks": {
+      "treasure": true
+    }
+  },
+  "description": "Incidental, average 275gp value",
+  "results": [
+    {
+      "_id": "3uLjm0ckIagWKpcD",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4*1000]]sp",
+      "name": "",
+      "_key": "!tables.results!NJXaEn87H1JyGsZS.3uLjm0ckIagWKpcD"
+    },
+    {
+      "_id": "DmBJ6pU5Tuu5jcYT",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] ornamentals",
+      "name": "",
+      "_key": "!tables.results!NJXaEn87H1JyGsZS.DmBJ6pU5Tuu5jcYT"
+    },
+    {
+      "_id": "htqXQBkeQNnU9ect",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] trinkets",
+      "name": "",
+      "_key": "!tables.results!NJXaEn87H1JyGsZS.htqXQBkeQNnU9ect"
+    },
+    {
+      "_id": "9A463Tdp1aVfLsC8",
+      "flags": {},
+      "type": "document",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Magic Item Type",
+      "documentUuid": "RollTable.MdB2CS1KrsSCzTU8",
+      "description": "",
+      "_key": "!tables.results!NJXaEn87H1JyGsZS.9A463Tdp1aVfLsC8"
+    }
+  ],
+  "formula": "",
+  "replacement": false,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!NJXaEn87H1JyGsZS"
+}

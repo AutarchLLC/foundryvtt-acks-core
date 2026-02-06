@@ -1,0 +1,123 @@
+{
+  "_id": "0H57pHt3dghKedDy",
+  "name": "Auran Empire",
+  "flags": {
+    "core": {
+      "legacyHex": true
+    }
+  },
+  "navigation": false,
+  "navOrder": 0,
+  "navName": "Map of the Auran Empire",
+  "active": false,
+  "initial": {
+    "x": 2699,
+    "y": 1948,
+    "scale": 0.36
+  },
+  "thumb": "systems/acks/assets/scenes/0H57pHt3dghKedDy-thumb.png",
+  "width": 3300,
+  "height": 2550,
+  "backgroundColor": "#000000",
+  "tiles": [],
+  "grid": {
+    "size": 50,
+    "type": 4,
+    "color": "#000000",
+    "alpha": 0.75,
+    "distance": 24,
+    "units": "miles",
+    "style": "solidLines",
+    "thickness": 1
+  },
+  "tokens": [],
+  "walls": [],
+  "tokenVision": false,
+  "lights": [],
+  "playlist": null,
+  "sounds": [],
+  "templates": [],
+  "journal": null,
+  "notes": [],
+  "weather": "",
+  "drawings": [],
+  "regions": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "background": {
+    "src": "systems/acks/assets/Auran_Empire_Map.webp",
+    "offsetX": 0,
+    "offsetY": 0,
+    "anchorX": 0,
+    "anchorY": 0,
+    "fit": "fill",
+    "scaleX": 1,
+    "scaleY": 1,
+    "rotation": 0,
+    "tint": "#ffffff",
+    "alphaThreshold": 0
+  },
+  "environment": {
+    "globalLight": {
+      "luminosity": 0,
+      "enabled": true,
+      "alpha": 0.5,
+      "bright": false,
+      "color": null,
+      "coloration": 1,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "darknessLevel": 0,
+    "darknessLock": false,
+    "cycle": true,
+    "base": {
+      "hue": 0,
+      "intensity": 0,
+      "luminosity": 0,
+      "saturation": 0,
+      "shadows": 0
+    },
+    "dark": {
+      "hue": 0.7138888888888889,
+      "intensity": 0,
+      "luminosity": -0.25,
+      "saturation": 0,
+      "shadows": 0
+    }
+  },
+  "fog": {
+    "exploration": false,
+    "reset": null,
+    "overlay": null,
+    "colors": {
+      "explored": null,
+      "unexplored": null
+    }
+  },
+  "foreground": null,
+  "foregroundElevation": null,
+  "padding": 0.25,
+  "playlistSound": null,
+  "journalEntryPage": null,
+  "folder": null,
+  "sort": 0,
+  "levels": [],
+  "_key": "!scenes!0H57pHt3dghKedDy"
+}

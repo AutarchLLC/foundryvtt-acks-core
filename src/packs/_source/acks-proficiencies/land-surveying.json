@@ -1,0 +1,36 @@
+{
+  "_id": "YsmVBLuDzG3mjhwU",
+  "name": "Land Surveying",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/land-surveying.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character is an expert at surveying the land around him. With a proficiency throw of 11+, the character can predict dangerous sinkholes, deadfalls, collapses, or rock slides when the character enters the area. In dungeons, a character with Land Surveying gains a +4 bonus to his throws to escape detection due to his ability to find the best cover.&nbsp;</p>\n<p>Characters with Land Surveying may also conduct a survey of a Hex in advance of securing it for the purposes of establishing a Domain. Doing so provides them with knowledge of the Hex's potential Land Revenue (see p. 125, ACKS Core). A 6-mile Hex represents a significant area (31 square miles, or 24,000 acres!), and surveying it properly requires time. To determine how long such a survey takes, divide 24 miles by the surveyor's Wilderness Movement rate; this is the number of days required to complete the survey (Movement is adjusted for the type of Terrain in the Hex in usual manner). Wandering around a Hex in this fashion also incurs Wandering Monster Throws far more frequently, so any such survey will require either protection, or an ability to Evade encounters.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!YsmVBLuDzG3mjhwU"
+}

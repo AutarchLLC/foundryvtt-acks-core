@@ -1,0 +1,42 @@
+{
+  "_id": "JXoaaoGOy2PNcZ9n",
+  "name": "Web",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/spider-web.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "48 Turns",
+    "range": "10'",
+    "roll": "",
+    "description": "<p>This spell creates a many-layered mass of strong, sticky strands covering <strong>an area 10' x 10' x 10'</strong>. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p><strong>Entangled creatures can't move</strong>, but can break loose depending on their strength:</p>\n<ul>\n<li>Creatures of normal human strength or less will take <a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\"> 2d4</a> turns to break through the web.</li>\n<li>Strong humans (with ability scores 13-17) can break through the web in 1 turn.</li>\n<li>Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in 4 rounds.</li>\n<li>Giants or creatures of similar great strength can break through the web in 2 rounds.</li>\n</ul>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take <a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\"> 1d6</a> points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!JXoaaoGOy2PNcZ9n"
+}

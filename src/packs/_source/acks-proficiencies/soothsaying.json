@@ -1,0 +1,36 @@
+{
+  "_id": "5J28kwKjTIaJlSeW",
+  "name": "Soothsaying",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/meditation.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is subject to premonitions and dreams of the past and future. The Judge will make these visions both cryptic and useful.</p>\n<p>Once per week, the character can Contact Higher Plane (as the spell).</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!5J28kwKjTIaJlSeW"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "uRPymzGHnYo3PCu7",
+  "name": "Blindfighting",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/blindfighting.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can fight a target without being able to see it. Blind Fighting is typically used when the character is in darkness or when the target is outside the range of his sight. A character with this proficiency suffers only a -2 penalty on attack throws when blinded or fighting invisible enemies instead of the base -4 penalty. They may also use a shield, maintain their Dexterity bonus to AC, and may not be automatically Backstabbed.</p>\n<p>A character with Blindfighting may also Backstab if they were otherwise eligible, and may use Precise Shooting (both of which of otherwise impossible while unable to see one's opponenet).</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!uRPymzGHnYo3PCu7"
+}

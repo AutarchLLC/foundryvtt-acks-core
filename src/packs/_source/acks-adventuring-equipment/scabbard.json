@@ -1,0 +1,38 @@
+{
+  "_id": "NB5MhcKxOsc8Qj5n",
+  "name": "Scabbard",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/scabbard.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A scabbard is a hard sheath for a dagger, short sword, sword, or two-handed sword made of wood, leather, and/or metal. The purchase price of daggers and swords includes a basic scabbard. Scabbards can be purchased separately at 10% weapon cost (excluding masterwork value). Decorative scabbards can cost much more depending on ornamentation and material!",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.5,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/delapouite/scabbard.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!NB5MhcKxOsc8Qj5n"
+}

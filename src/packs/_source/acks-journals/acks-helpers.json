@@ -1,0 +1,61 @@
+{
+  "name": "ACKS Helpers",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "Combat",
+      "type": "text",
+      "_id": "RgBNyQ1EXObDyosG",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p><strong>1</strong> - Create a new Combat by selecting and/or adding Tokens to the combat tracker (as usual).</p><p></p><p><strong>2</strong> - After adding combatants, you get an interface like this :</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-pM4URALvdmKhsqVf.png\" /><ul><li><p>1 : Enemies are indicated in the color chosen in the Settings tab (if you enabled it)</p></li><li><p>2 : Friends are indicated in the color chosen in the Settings tab (if you enabled it)</p></li><li><p>3 - Once rolled, the \"dice\" section will display the initiative order of the Combatant.</p></li><li><p>4 - Note that \"Neutral\" actors are not counted in Friend or Enemy pools. You must setup their Token Disposition (2) thru the Token settings (1) of the actor :</p><p></p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-aOfwMsQsBy3LZAz4.png\" /></li></ul><p></p><p><strong>3</strong> - Start the combat by clicking on \"Begin Combat\" (1). The Surprise Selector dialog is then displayed (2)</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-S2wDIvlwc9UqWbfZ.png\" /><p></p><p>4 - The Surprise Selector is used to configure the surprise status of each combatant at the beginning of the Combat. You can apply conditions modifiers for the whole groups (1) or apply specific per-combatant modifiers (2). Once specific modifiers selected (it can be none of course), click on the appropriate button in the surprise matrix (3) to automatically roll the surprise status and start the first Round.</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-KzLRdCBt1QuKbAya.png\" /><p></p><p>5 - The system performs automatically the surprise rolls (1) and the initiative order of the the first round (2) :</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-lKE6LoAOmC7js4Qa.png\" /><p></p><p>6 - Statuses (2) and Initiative values (1) are updated in the Combat Tracker. The icon displayed in (2) indicates the group which is overnumbered.</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-mtufYVNIhSpzD3ER.png\" /><p></p><p>7 - If the Combatant is Surprised, the following icon (1) will be displayed :</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-cr9cwsUwYHPSB5x1.png\" /><p></p><p>8 - Icons details :</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-D8I5CyPCRZQGLr3N.png\" /><ol><li><p>Hide/Unhide the Combatant from the Combat Tracker</p></li><li><p>Mark the Combatant as Defeated</p></li><li><p>Indicates the Combatant is Casting a spell</p></li><li><p>Set the Combatant as Slumbering</p></li><li><p>Set the Combatant as Delayed</p></li><li><p>Set the Combatant as Readied</p></li><li><p>Set the Combatant as Done</p></li><li><p>Ping the Combatant</p></li></ol><p></p><p>9 - You can then loop thru Combatants with (1)</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-JtVihi9ZVzYACYKX.png\" /><p></p><p>10 - Once all combatants have performed their actions, go to the next round (1)</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-v2Uwurc9gdavPasv.png\" /><p></p><p>11 - The initiative is reset (1) in the Combat tracker, to allow players and GM to declare their actions. Once done, the GM can roll Initiative for all players/NPCs, by clicking on (2)</p><img src=\"systems/acks/assets/pages/jvlbyKeWKyweCijE-pages-RgBNyQ1EXObDyosG-image-SCD6idiSFvY7FgyQ.png\" /><p></p><p>12 - Loop thru Combatant and Rounds, starting at step 9 above.</p><p></p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "acks",
+        "systemVersion": "#{VERSION}#",
+        "createdTime": null,
+        "modifiedTime": 1723412949528,
+        "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+        "exportSource": null
+      },
+      "category": null,
+      "_key": "!journal.pages!qABtdArsoEoVTQjA.RgBNyQ1EXObDyosG"
+    }
+  ],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1723410889076,
+    "modifiedTime": 1723410889076,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "_id": "qABtdArsoEoVTQjA",
+  "sort": 0,
+  "categories": [],
+  "_key": "!journal!qABtdArsoEoVTQjA"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "187iudt92qqCeUDv",
+  "name": "Flag, Banner (6' x 2')",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/flying-flag.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Symbols and signaling devices used by armies. Pennants are 2 square and are carried as insignia by company- sized units or individual heroes. A pennant with pole weighs 1/4 stone. Banners are 6 long by 2 wide, and are carried as insignia by batta lion- or regiment-sized units. A banner with pole weighs 1 stone. Standards are 12 long by 4 tall or more, and are carried as insignia for brigade-sized units, divisions and armies. A standard with pole weighs 4 stone. Standards may be topped by emblems (see above). If a unit or division is not provided with a flag of the appropriate size, its morale score is reduced by 1. Loss of a units flag reduces its morale score by 1 and counts as a calamity.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 12,
+    "weight": -1,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/lorc/flying-flag.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!187iudt92qqCeUDv"
+}

@@ -1,0 +1,710 @@
+{
+  "_id": "UlAp4ZI2zXXGuhHX",
+  "name": "Dretch",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "acks": {
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/generic/daemon-skull.webp",
+  "items": [
+    {
+      "_id": "QTkl3dVJ8UxCtTPx",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "936rYjvyYLM68idC"
+            },
+            "initialState": {
+              "id": "OYPqFsNzFTW3yx7A",
+              "count": 1,
+              "itemData": {
+                "name": "Demon",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Demons are creatures summoned from the Great&nbsp;Void. Demons take 1/2 damage from attacks based on cold, electricity, fire, and gas. All demons possess infravision (90 feet) and telepathy, which allows them to communicate with any creatures they encounter. Demons are unholy beings that can be held at bay by <em>Protection from Evil</em>, dispelled with <em>Dispel Evil </em>and Turned by clerics as Infernal.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 600000,
+                "flags": {},
+                "_id": "OYPqFsNzFTW3yx7A",
+                "img": "systems/acks/assets/icons/imp.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Demon",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/imp.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Demons are creatures summoned from the Great&nbsp;Void. Demons take 1/2 damage from attacks based on cold, electricity, fire, and gas. All demons possess infravision (90 feet) and telepathy, which allows them to communicate with any creatures they encounter. Demons are unholy beings that can be held at bay by <em>Protection from Evil</em>, dispelled with <em>Dispel Evil </em>and Turned by clerics as Infernal.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!UlAp4ZI2zXXGuhHX.QTkl3dVJ8UxCtTPx"
+    },
+    {
+      "_id": "YNZqUNmbK6h6xPJc",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "936rYjvyYLM68idC"
+            },
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "name": "Demonic Claws",
+                "type": "weapon",
+                "data": {
+                  "choices": "weapon,ability,armor,item"
+                },
+                "flags": {}
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        },
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Demonic Claws",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/grasping-claws.webp",
+      "sort": 200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "red",
+        "description": "",
+        "damage": "1d4",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 2,
+          "max": 2
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!UlAp4ZI2zXXGuhHX.YNZqUNmbK6h6xPJc"
+    },
+    {
+      "_id": "iUkjIBrHRobdb8xY",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "936rYjvyYLM68idC"
+            },
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "name": "Demonic Bite",
+                "type": "weapon",
+                "data": {
+                  "choices": "weapon,ability,armor,item"
+                },
+                "flags": {}
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        },
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Demonic Bite",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/carnivore-mouth.webp",
+      "sort": 300000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "red",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!UlAp4ZI2zXXGuhHX.iUkjIBrHRobdb8xY"
+    },
+    {
+      "_id": "vL0Q1dLn2eAvCVIA",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "936rYjvyYLM68idC"
+            },
+            "initialState": {
+              "id": "m8wM41WPokto4XCC",
+              "count": 1,
+              "itemData": {
+                "_id": "m8wM41WPokto4XCC",
+                "name": "Stinking Cloud",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "spell",
+                "data": {
+                  "lvl": 2,
+                  "class": "Arcane",
+                  "duration": "1 Round/lvl",
+                  "range": "30'",
+                  "roll": "1d4+1 Rounds of Nausea",
+                  "description": "<p>This spell creates a <strong>billowing mass of foul-smelling vapors</strong> to arise within 30'. The stinking cloud will be <strong>20' x 20' x 20' in size</strong>. Any creature caught within the cloud must make a successful <strong>saving throw versus Poison or be helpless due to nausea</strong>. This condition lasts <strong>as long as the creature is in the cloud</strong> and for <strong>1d4+1 rounds after it leaves</strong>.</p>\n<p>Any creature that succeeds on its save but remains in the cloud must continue to save each round.</p>",
+                  "memorized": 0,
+                  "cast": 0,
+                  "save": "death"
+                },
+                "folder": "3uDGr9sfk5ywsNGu",
+                "sort": 1700001,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/stink.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Stinking Cloud",
+      "type": "spell",
+      "img": "/systems/acks/assets/icons/stink.webp",
+      "sort": 1700001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "favorite": false,
+        "lvl": 2,
+        "class": "Arcane",
+        "duration": "1 Round/lvl",
+        "range": "30'",
+        "roll": "1d4+1 Rounds of Nausea",
+        "description": "<p>This spell creates a <strong>billowing mass of foul-smelling vapors</strong> to arise within 30'. The stinking cloud will be <strong>20' x 20' x 20' in size</strong>. Any creature caught within the cloud must make a successful <strong>saving throw versus Poison or be helpless due to nausea</strong>. This condition lasts <strong>as long as the creature is in the cloud</strong> and for <strong>1d4+1 rounds after it leaves</strong>.</p>\n<p>Any creature that succeeds on its save but remains in the cloud must continue to save each round.</p>",
+        "memorized": 0,
+        "cast": 0,
+        "save": "death"
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!UlAp4ZI2zXXGuhHX.vL0Q1dLn2eAvCVIA"
+    },
+    {
+      "_id": "zfOQEDbFHSWDZbqv",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "936rYjvyYLM68idC"
+            },
+            "initialState": {
+              "id": "l0CeLrbqKR8KDNOG",
+              "count": 1,
+              "itemData": {
+                "_id": "l0CeLrbqKR8KDNOG",
+                "name": "Darkness",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "spell",
+                "data": {
+                  "lvl": 1,
+                  "class": "Arcane",
+                  "duration": "6 Turns + 1/lvl",
+                  "range": "120'",
+                  "roll": "",
+                  "description": "<p>Darkness creates an area of darkness in a <strong>30' radius area</strong> (and provides <strong>dimming for an additional 20'</strong>) around the target location or object. The effect is <strong>immobile if cast into an area</strong>, but it <strong>can be cast on a movable object</strong>. This darkness <strong>blocks out infravision</strong> and <strong>negates mundane light sources</strong>. Darkness taken into an area of magical light does not function.</p>\n<p>A darkness spell may be cast to counter and dispel the light spell of an equal or lower level caster (and vice versa). Doing so causes both spells to instantly cease, restoring the existing ambient light level.</p>\n<p>Either version of this spell <strong>may be used to blind an opponent by means of casting it on the target’s ocular organs</strong>. The target is allowed a <strong>saving throw versus Spells to avoid</strong> the effect, and <strong>if the save is made, the spell does not take effect</strong> <strong>at all</strong>. A <em>Light </em>or <em>Darkness</em> spell cast to blind does not have the given area of effect (that is, no light or darkness is shed around the victim).</p>",
+                  "memorized": 0,
+                  "cast": 0,
+                  "save": "spell"
+                },
+                "folder": "MJLaT6eAxqcpiEFu",
+                "sort": 400000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/darkness.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Darkness",
+      "type": "spell",
+      "img": "/systems/acks/assets/icons/darkness.webp",
+      "sort": 400000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "favorite": false,
+        "lvl": 1,
+        "class": "Arcane",
+        "duration": "6 Turns + 1/lvl",
+        "range": "120'",
+        "roll": "",
+        "description": "<p>Darkness creates an area of darkness in a <strong>30' radius area</strong> (and provides <strong>dimming for an additional 20'</strong>) around the target location or object. The effect is <strong>immobile if cast into an area</strong>, but it <strong>can be cast on a movable object</strong>. This darkness <strong>blocks out infravision</strong> and <strong>negates mundane light sources</strong>. Darkness taken into an area of magical light does not function.</p>\n<p>A darkness spell may be cast to counter and dispel the light spell of an equal or lower level caster (and vice versa). Doing so causes both spells to instantly cease, restoring the existing ambient light level.</p>\n<p>Either version of this spell <strong>may be used to blind an opponent by means of casting it on the target's ocular organs</strong>. The target is allowed a <strong>saving throw versus Spells to avoid</strong> the effect, and <strong>if the save is made, the spell does not take effect</strong> <strong>at all</strong>. A <em>Light </em>or <em>Darkness</em> spell cast to blind does not have the given area of effect (that is, no light or darkness is shed around the victim).</p>",
+        "memorized": 0,
+        "cast": 0,
+        "save": "spell"
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!UlAp4ZI2zXXGuhHX.zfOQEDbFHSWDZbqv"
+    },
+    {
+      "_id": "g4hU5Ac1UBrfJGnl",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "936rYjvyYLM68idC"
+            },
+            "initialState": {
+              "id": "ckYSn7OuZUJM0jMX",
+              "count": 1,
+              "itemData": {
+                "name": "Summon Rats",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Once per day, a Dretch can summon [[/r 1d4 #The Dretch summons this many Giant Rats]] @Actor[pkYwhwgwDD5eiS6z]{Giant Rat}s.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 2100000,
+                "flags": {},
+                "_id": "ckYSn7OuZUJM0jMX",
+                "img": "systems/acks/assets/icons/rat.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Summon Rats",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/rat.webp",
+      "sort": 200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Once per day, a Dretch can summon [[/r 1d4 #The Dretch summons this many Giant Rats]] @Actor[pkYwhwgwDD5eiS6z]{Giant Rat}s.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!UlAp4ZI2zXXGuhHX.g4hU5Ac1UBrfJGnl"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "4d8",
+      "value": 18,
+      "max": 18,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 7,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 3,
+      "throw": 7,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 12
+      },
+      "wand": {
+        "value": 14
+      },
+      "paralysis": {
+        "value": 13
+      },
+      "breath": {
+        "value": 14
+      },
+      "spell": {
+        "value": "15"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 90,
+      "mod": 0,
+      "value": "",
+      "encounter": 30
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 1
+      },
+      "2": {
+        "max": 1
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": true
+    },
+    "details": {
+      "biography": "",
+      "alignment": "C",
+      "xp": "190",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d4",
+        "w": "5d4"
+      },
+      "morale": "2"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {},
+    "name": "Dretch",
+    "displayName": 0,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/generic/daemon-skull.webp",
+      "tint": "#ffffff",
+      "scaleX": 1,
+      "scaleY": 1,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!UlAp4ZI2zXXGuhHX"
+}

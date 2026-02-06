@@ -1,0 +1,42 @@
+{
+  "_id": "oSwmgvk9B5hnKgWs",
+  "name": "Diminution",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/diminution.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310247,
+    "modifiedTime": 1730058310247,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 3,
+    "class": "Arcane",
+    "duration": "12 Turns",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p><em>Diminution </em>shrinks the target and everything he carries to <strong>6 inches tall</strong>. An unwilling target may make a saving throw versus Spells to resist the effect.</p>\n<p>If a diminished character remains <strong>motionless</strong>, he can <strong>avoid being spotted</strong> with a proficiency throw of <strong>3+ on 1d20</strong>. The character can only deal normal damage to opponents smaller than 1'; <strong>larger opponents take only 1 point of damage</strong> from any successful hit.&nbsp;</p>\n<p>If a creature under the effect of a <em>Growth </em>spell is subject to <em>Diminution</em>, both spells are cancelled.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "R5pYVHvoF9GtMtIa",
+  "sort": 0,
+  "_key": "!items!oSwmgvk9B5hnKgWs"
+}

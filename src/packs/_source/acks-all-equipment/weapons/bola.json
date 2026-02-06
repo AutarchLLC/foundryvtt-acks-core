@@ -1,0 +1,54 @@
+{
+  "_id": "DpSdzJu1KHEeK2E7",
+  "name": "Bola",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hunting-bolas.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 15,
+      "medium": 30,
+      "long": 45
+    },
+    "favorite": false,
+    "save": "paralysis",
+    "pattern": "white",
+    "description": "<p>These are throwing weapons made of weights on the ends of interconnected cords, designed to capture animals by entangling their legs. A character can use a bola to make a knock down or wrestling maneuver (as described in special maneuvers in Chapter 6) with a thrown attack.</p>",
+    "damage": "1d2",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Missile",
+        "value": "Missile"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": false,
+    "cost": 5,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!DpSdzJu1KHEeK2E7"
+}

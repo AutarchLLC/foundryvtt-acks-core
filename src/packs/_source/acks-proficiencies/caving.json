@@ -1,0 +1,36 @@
+{
+  "_id": "9MBIkRUIbuZOHKPM",
+  "name": "Caving",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/stalagtite.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character has learned to keep a map in his head of where he is when exploring underground caves, cavern complexes, and rivers. On a proficiency throw of 11+, the character with this proficiency will be able to automatically know the route he has taken to get where he is, if he was conscious at the time.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!9MBIkRUIbuZOHKPM"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "eNCagG6sUJPKy2re",
+  "name": "Detect Evil",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/detect-evil-minion.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "6 Turns",
+    "range": "60'",
+    "roll": "",
+    "description": "<p>This spell allows the caster to detect evil; specifically, the caster can detect creatures with evil intentions, magic items with evil enchantments, undead, sinkholes of evil, and summoned creatures of Chaotic alignment. Note that normal characters, even if Chaotic, are not detected by this spell unless they have actively evil intentions against the caster. Poisons, physical traps, and natural animals are neither good nor evil, so they are not detected by this spell. The caster sees the evil creatures or objects with a definite red glow around them, but the glow cannot be seen by anyone else.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!eNCagG6sUJPKy2re"
+}

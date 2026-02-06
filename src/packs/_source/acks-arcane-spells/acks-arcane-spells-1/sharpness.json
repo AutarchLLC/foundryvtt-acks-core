@@ -1,0 +1,36 @@
+{
+  "_id": "CSPMlcUl6op1qi5t",
+  "name": "Sharpness",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/sparkling-sabre.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>When cast on the blade of an edged or pointed weapon, this spell temporarily enhances it to the equivalent of a <strong>magic weapon +1</strong>. Weapons that are already enchanted gain an additional <strong>+1</strong> while the spell is in effect. A single casting will affect 20 arrows, 2 one-handed weapons, or 1 two-handed weapon.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!CSPMlcUl6op1qi5t"
+}

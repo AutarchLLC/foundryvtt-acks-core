@@ -1,0 +1,38 @@
+{
+  "_id": "SZ7d3JhMQo4s9Tvu",
+  "name": "Scale Armor",
+  "type": "armor",
+  "flags": {},
+  "img": "systems/acks/assets/icons/scale-mail.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058483071,
+    "modifiedTime": 1730058483071,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": "<p>Scale armor consists of many small leather, cuir bouilli, or horn scales attached to a backing material of cloth or leather. Scale armor usually consists of a corselet or hauberk worn with leather or padded cloth. It is lighter than lamellar armor, which uses metal scales or lames over leather, and comparable to ring mail. Historical examples include Scythian scale armor, Egyptian scale armor, and early medieval scale armor.</p>",
+    "ac": {
+      "value": 6
+    },
+    "aac": {
+      "value": 3
+    },
+    "type": "light",
+    "cost": 30,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 18
+  },
+  "folder": "8qVpUlESUQsGqpcL",
+  "sort": 0,
+  "_key": "!items!SZ7d3JhMQo4s9Tvu"
+}

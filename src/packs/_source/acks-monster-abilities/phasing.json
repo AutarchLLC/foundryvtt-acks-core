@@ -1,0 +1,36 @@
+{
+  "name": "Phasing",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/portal.webp",
+  "_id": "WF4kC5yILFRLBmvi",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Phase Spiders possess the uncanny ability to shift in and out of phase with the material plane at will.</p>\n<p>When out of phase, Phase Spiders are <strong>invulnerable to attack by any means</strong>. When in phase, they can be harmed by ordinary means.</p>\n<p>In combat, phase spiders are in phase only when they attack. In order to attack a phase spider, its opponent must <strong>equal or exceed its initiative roll and then act simultaneously with the phase spider</strong>.</p>\n<p>If the spell phase door is cast on a phase spider while it is in phase, it cannot phase out again for 7 rounds.&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!WF4kC5yILFRLBmvi"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "6fkJAHGvzjAIXtGF",
+  "name": "Unarmed Fighting",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/unarmed-fighting.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is an expert in striking with fist and feet. When brawling (see ACKS p.109), he may deal lethal damage. He can punch or kick characters in metal armor without himself taking damage.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!6fkJAHGvzjAIXtGF"
+}

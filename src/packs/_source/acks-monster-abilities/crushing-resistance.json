@@ -1,0 +1,36 @@
+{
+  "name": "Crushing Resistance",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hammer-break.webp",
+  "_id": "NOPVuI4MuuYmtcU5",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>This monster only takes 1/2 damage, rounded down, from weapons that inflict crushing damage (bolas, clubs, flails, maces, morning stars, saps, staves, and hammers).</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!NOPVuI4MuuYmtcU5"
+}

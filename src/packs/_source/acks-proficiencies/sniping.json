@@ -1,0 +1,36 @@
+{
+  "_id": "VNHzGx07Lm25rH2N",
+  "name": "Sniping",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/sniping.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>If otherwise eligible to ambush or backstab his opponent, the character may do so using ranged weapons at up to short range.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!VNHzGx07Lm25rH2N"
+}

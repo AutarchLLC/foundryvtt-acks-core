@@ -1,0 +1,36 @@
+{
+  "_id": "dnnPrnyRT3zW2Z5V",
+  "name": "Spider Climb",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/spider-climbing.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>The recipient of this spell gains the ability to climb unimpeded across vertical surfaces and hang upside from ceilings. The recipient climbs at a combat movement rate of 20'. The affected creature must have at least three limbs (hands and feet) free to spider climb, but needs no climbing gear or handholds. The recipient can attack with a one-handed weapon, cast spells, and defend itself normally, but cannot charge or run while climbing.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!dnnPrnyRT3zW2Z5V"
+}

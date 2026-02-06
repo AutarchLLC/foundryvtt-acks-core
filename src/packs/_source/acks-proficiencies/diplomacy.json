@@ -1,0 +1,36 @@
+{
+  "_id": "oVxzZLzhJLY0WkQh",
+  "name": "Diplomacy",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/diplomacy.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is smooth tongued and familiar with protocol. He receives a +2 bonus on all reaction rolls when he attempts to parley.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!oVxzZLzhJLY0WkQh"
+}

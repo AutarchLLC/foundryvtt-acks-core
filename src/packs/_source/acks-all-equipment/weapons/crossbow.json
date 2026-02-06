@@ -1,0 +1,58 @@
+{
+  "_id": "ejToy83Z1pQxnvzm",
+  "name": "Crossbow",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/crossbow2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 80,
+      "medium": 1600,
+      "long": 240
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>A crossbow is a bow mounted cross-wise on a stock&nbsp;with a trigger. It fires squat projectiles called bolts. Crossbows are light enough to pull by hand or with a quick drawing lever and are much easier to use than bows. Historical examples are the Greek gastraphetes, Roman arcuballista, Chinese handheld crossbow, and medieval crossbow and cavalry cranequin.</p>\n<p>Limited to 2 cleave attacks. (Core rules p. 105)</p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Missile",
+        "value": "Missile"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": false,
+    "cost": 30,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!ejToy83Z1pQxnvzm"
+}

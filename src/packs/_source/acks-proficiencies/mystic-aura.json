@@ -1,0 +1,36 @@
+{
+  "_id": "Z2nqOSp8O1VYyQs3",
+  "name": "Mystic Aura",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/mystic-aura2.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has learned to project his magical powers in a way that causes awe in those that share the character's presence. He gains a +2 bonus to reaction rolls to impress and intimidate people he encounters. If this bonus results in a total of 12 or more, the subjects act as if charmed while in his presence.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Z2nqOSp8O1VYyQs3"
+}

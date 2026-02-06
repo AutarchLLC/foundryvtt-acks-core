@@ -1,0 +1,36 @@
+{
+  "_id": "vfnCSrLBJawIEeEi",
+  "name": "Bribery",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/bribery.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is exceptionally skilled at bribing officials with gifts of money or merchandise. Offering a bribe permits an additional reaction roll during encounters, with the throw modified by the size of the bribe. As a general rule, a bribe equal to one day's pay for the target provides a +1 bonus, a week's pay provides a +2 bonus, and a month's pay provides a +3 bonus. Only one bribe can be attempted per target in any given situation.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!vfnCSrLBJawIEeEi"
+}

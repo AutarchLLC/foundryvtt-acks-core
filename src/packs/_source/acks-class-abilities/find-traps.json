@@ -1,0 +1,36 @@
+{
+  "name": "Find Traps",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/wolf-trap.webp",
+  "_id": "Vf26H7uIjYT6pYZU",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "Thief",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 18,
+    "blindroll": true,
+    "description": "",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Vf26H7uIjYT6pYZU"
+}

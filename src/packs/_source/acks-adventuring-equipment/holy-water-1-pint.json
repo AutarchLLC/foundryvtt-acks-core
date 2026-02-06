@@ -1,0 +1,38 @@
+{
+  "_id": "syJ80I9TuJ97bprG",
+  "name": "Holy Water (1 pint)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/holy-water.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Holy water is water that has been sanctified by a divine caster of 7th caster level or higher. It is used in certain religious rites. Crusaders often carry vials of holy water to use as weapons against the undead. A chaotic enchanted creature splashed with holy water suffers 1d8 {L!} damage for 2 rounds. Holy water cannot retain its holy power if it is stored in any other container than the special vials it is placed in when blessed.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 25,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!syJ80I9TuJ97bprG"
+}

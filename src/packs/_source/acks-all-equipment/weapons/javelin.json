@@ -1,0 +1,58 @@
+{
+  "_id": "s6DFa5xNqVqENWDt",
+  "name": "Javelin",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/javelin2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 20,
+      "medium": 40,
+      "long": 60
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>Javelins are short spears, 3' to 6' long, designed for&nbsp;throwing. Historical examples include the Greek javelin, Roman pilum and verutum, early medieval angon, and Zulu assegai.</p>\n<p>Up to 4 javelins may be thrown when cleaving. (Core rules p. 105)</p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Missile",
+        "value": "Missile"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": true,
+    "cost": 1,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!s6DFa5xNqVqENWDt"
+}

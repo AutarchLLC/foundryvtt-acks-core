@@ -1,0 +1,54 @@
+{
+  "name": "Draining Touch",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/shadow-grasp.webp",
+  "_id": "AzCjG90xQZJBqtDx",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>When a shadow successfully attacks an opponent, the victim suffers 1d4 points of damage, and [[1d1 #Lose STR]] point of STR is drained for 8 turns. Should a being be drained to STR 2, it collapses and becomes unable to move. At 0, it permanently transforms into a shadow.</p>",
+    "damage": "1d4",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      }
+    ],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight": 0,
+    "weight6": -1,
+    "counter": {
+      "value": 1,
+      "max": 1
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!AzCjG90xQZJBqtDx"
+}

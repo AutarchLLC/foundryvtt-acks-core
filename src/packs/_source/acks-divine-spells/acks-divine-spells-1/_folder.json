@@ -1,0 +1,21 @@
+{
+  "name": "ACKS Divine Spells 1",
+  "type": "Item",
+  "color": null,
+  "_id": "NYA8pw0gLlA5SnQ1",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358004,
+    "modifiedTime": 1730058358025,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I"
+  },
+  "_key": "!folders!NYA8pw0gLlA5SnQ1"
+}

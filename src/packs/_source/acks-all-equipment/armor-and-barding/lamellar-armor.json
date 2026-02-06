@@ -1,0 +1,38 @@
+{
+  "_id": "PmNQgLHRUUE79FK4",
+  "name": "Lamellar Armor",
+  "type": "armor",
+  "flags": {},
+  "img": "systems/acks/assets/icons/lamellar.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058483071,
+    "modifiedTime": 1730058483071,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": "<p>Banded plate armor is made of overlapping horizontal strips of laminated metal sewn over leather. It is comparable in protection to lamellar armor, and superior to chain mail. Banded plate is commonly worn as a cuirass with shoulder protection, with reinforced leather protecting the arms and legs. The chief historical examples are Sumerian overlapping plate armor and Roman lorica segmenta.</p>",
+    "ac": {
+      "value": 4
+    },
+    "aac": {
+      "value": 5
+    },
+    "type": "heavy",
+    "cost": 50,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 30
+  },
+  "folder": "8qVpUlESUQsGqpcL",
+  "sort": 0,
+  "_key": "!items!PmNQgLHRUUE79FK4"
+}

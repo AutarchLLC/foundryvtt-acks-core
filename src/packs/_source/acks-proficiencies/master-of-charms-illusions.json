@@ -1,0 +1,36 @@
+{
+  "_id": "l71T4GQTpVLXxtPX",
+  "name": "Master of Charms & Illusions",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/illusion.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Mastery of charms and illusions gives an arcane caster several advantages. When the character casts&nbsp;<em>charm&nbsp;</em>spells (such as&nbsp;<em>charm person</em>) or illusion spells (such as&nbsp;<em>phantasmal force</em>), the spell effects are calculated as if he were two class levels higher than his actual level of experience. Targets of his charm spells suffer a -2 penalty to their saving throw, as do those who attempt to disbelieve his illusions.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!l71T4GQTpVLXxtPX"
+}

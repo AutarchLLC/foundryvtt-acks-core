@@ -1,0 +1,41 @@
+{
+  "_id": "Y56KMQDo5X9Btt4R",
+  "name": "Charm Person",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false
+    }
+  },
+  "img": "systems/acks/assets/icons/smitten2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "Special",
+    "range": "60'",
+    "roll": "",
+    "description": "<p>This spell makes a humanoid creature regard the caster as its trusted friend and ally. Humanoid creatures include bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthal, naiads, ogres, pixies, sprites, and troglodytes, and other manlike creatures no larger than an ogre and possessing 4 or fewer Hit Dice. Humans and demi-humans may be affected regardless of character level. A save versus Spells will negate the effect.</p>\n<p>If the target of the spell is currently being threatened or attacked by the caster or his or her allies, it receives a +5 bonus on its saving throw.</p>\n<p>The spell does not enable the caster to control the charmed creature as if it were an automaton; rather, it perceives his words and actions in the most favorable way. The caster can try to give the subject orders, but it will not do anything it wouldn't ordinarily do, and further may receive an additional saving throw to overcome the magic (at the Judge's discretion). The caster must speak the charmed creature's language to communicate any commands, or else be good at pantomiming; of course, if the caster is attacked, the charmed creature will act to protect its \"friend\" (though that could mean attacking the caster's enemies, or attempting to carry off the caster to a \"safe\" place). The charmed creature receives a new saving throw each day if it is has an Intelligence of 13 or greater, every week if its Intelligence is 9-12, or every month it its Intelligence is 8 or less. A charm may be removed by a dispel magic spell.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!Y56KMQDo5X9Btt4R"
+}

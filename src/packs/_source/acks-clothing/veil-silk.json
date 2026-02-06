@@ -1,0 +1,38 @@
+{
+  "_id": "slciXJJnX2ysFthz",
+  "type": "item",
+  "name": "Veil, Silk",
+  "img": "systems/acks/assets/icons/flaticon/muslimah.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "Something hung up or read out to hide or protect the face, or hide an object from view; usually of translucent material.  ",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 5,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://www.flaticon.com/free-icon/muslimah_10002744",
+    "iconlicense": "<a href=\\\"https://www.flaticon.com/free-icons/veil\\\" title=\\\"veil icons\\\">Veil icons created by iconfield - Flaticon</a>"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!slciXJJnX2ysFthz"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "EA6SPETXBRSbir7b",
+  "name": "Collegiate Wizardry",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/collegiate-wizardry.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character has received formal magical education from a wizard&rsquo;s guild. He can automatically identify arcane symbols, spell signatures, trappings, and grimoires of his own order, and can recognize those of other orders or traditions with a proficiency throw of 11+. Rare or esoteric traditions may be harder to recognize (Judge&rsquo;s discretion). A character may select this proficiency additional times.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!EA6SPETXBRSbir7b"
+}

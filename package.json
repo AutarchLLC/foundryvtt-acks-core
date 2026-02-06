@@ -13,7 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:check": "prettier . --check",
     "format:fix": "prettier . --write",
-    "packToJSON": "node ./scripts/unpack.mjs"
+    "packs:databaseToSource": "node ./scripts/unpack.mjs",
+    "packs:sourceToDatabase": "node ./scripts/pack.mjs",
+    "packs:cleanupSource": "node ./scripts/clean.mjs"
   },
   "repository": {
     "type": "git",

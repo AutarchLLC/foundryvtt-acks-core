@@ -1,0 +1,36 @@
+{
+  "_id": "Am6ehnGZE9f1tJWJ",
+  "name": "Seduction",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/seduction.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is either naturally alluring or a practiced seducer. He always receives a +2 bonus on reaction rolls with others who are potentially attracted to the character.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Am6ehnGZE9f1tJWJ"
+}
