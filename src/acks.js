@@ -1,4 +1,3 @@
-import { AcksItemSheet } from "./module/item/item-sheet.js";
 import { AcksActorSheetCharacter } from "./module/actor/character-sheet.js";
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { AcksActor } from "./module/documents/actor.js";
@@ -88,9 +87,6 @@ Hooks.once("init", async function () {
 
   if (AcksUtility.isMinVersion(13)) {
     // If Foundry is v13 or more - register both old and new sheets for now.
-    Items.registerSheet("acks", AcksItemSheet, {
-      makeDefault: false,
-    });
     Items.registerSheet("acks", AcksItemSheetV2, {
       makeDefault: true,
     });
@@ -109,9 +105,6 @@ Hooks.once("init", async function () {
     });
   } else {
     // Use old sheets for Foundry v12
-    Items.registerSheet("acks", AcksItemSheet, {
-      makeDefault: false,
-    });
     Actors.registerSheet("acks", AcksActorSheetCharacter, {
       types: ["character"],
       makeDefault: true,
