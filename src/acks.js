@@ -1,6 +1,5 @@
 import { AcksItemSheet } from "./module/item/item-sheet.js";
 import { AcksActorSheetCharacter } from "./module/actor/character-sheet.js";
-import { AcksActorSheetMonster } from "./module/actor/monster-sheet.js";
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { AcksActor } from "./module/documents/actor.js";
 import { AcksItem } from "./module/documents/item.js";
@@ -100,17 +99,13 @@ Hooks.once("init", async function () {
       types: ["character"],
       makeDefault: false,
     });
-    Actors.registerSheet("acks", AcksActorSheetMonster, {
-      types: ["monster"],
-      makeDefault: true,
-    });
     Actors.registerSheet("acks", ACKSCharacterSheetV2, {
       types: ["character"],
       makeDefault: true,
     });
     Actors.registerSheet("acks", ACKSMonsterSheetV2, {
       types: ["monster"],
-      makeDefault: false,
+      makeDefault: true,
     });
   } else {
     // Use old sheets for Foundry v12
@@ -119,10 +114,6 @@ Hooks.once("init", async function () {
     });
     Actors.registerSheet("acks", AcksActorSheetCharacter, {
       types: ["character"],
-      makeDefault: true,
-    });
-    Actors.registerSheet("acks", AcksActorSheetMonster, {
-      types: ["monster"],
       makeDefault: true,
     });
   }
