@@ -17,6 +17,7 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       changePattern: ACKSMonsterSheetV2.#changePattern,
       rollReaction: ACKSMonsterSheetV2.#rollReaction,
       generateSaves: ACKSMonsterSheetV2.#generateSaves,
+      treasureLinkDelete: ACKSMonsterSheetV2.#treasureLinkDelete,
     },
   };
 
@@ -75,6 +76,16 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       templates: ["systems/acks/templates/items/v2/common/item-active-effects.hbs"],
     },
   };
+
+  async _prepareContext(options) {
+    const context = await super._prepareContext(options);
+
+    context.treasureLink = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+      this.actor.system.details.treasure.table,
+    );
+
+    return context;
+  }
 
   /**
    * Prepare context that is specific to only a single rendered part.
@@ -196,5 +207,35 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       const savingThrows = MONSTER_SAVING_THROW_LUT[monsterHD];
       await this.actor.updateSavingThrows(savingThrows);
     }
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static async #treasureLinkDelete(event, target) {
+    await this.actor.update({
+      "system.details.treasure.table": "",
+      "system.details.treasure.type": "",
+    });
+  }
+
+  /**
+   * Handle a dropped RollTable on the Actor Sheet. By default, dropping a RollTable does nothing,
+   * but this can be overridden in subclasses.
+   * @param {DragEvent} event The initiating drop event
+   * @param {RollTable} rollTable The dropped RollTable document
+   * @return {Promise<RollTable|null|undefined>} A Promise resolving to an RollTable identical or related to the dropped RollTable
+   * to indicate success, or a nullish value to indicate failure or no action being taken
+   * @protected
+   * @override
+   */
+  async _onDropRollTable(event, rollTable) {
+    if (!this.actor.isOwner) {
+      return null;
+    }
+
+    await this.actor.update({ "system.details.treasure.table": rollTable.link });
   }
 }

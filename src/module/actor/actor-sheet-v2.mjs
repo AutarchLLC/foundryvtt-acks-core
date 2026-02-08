@@ -496,11 +496,42 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
+   * Handle a dropped document on the ActorSheet
+   * @template {Document} TDocument
+   * @param {DragEvent} event The initiating drop event
+   * @param {TDocument} document The resolved Document class
+   * @returns {Promise<TDocument|null>} A Document of the same type as the dropped one in case of a successful result,
+   * or null in case of failure or no action being taken
+   * @protected
+   * @override
+   */
+  async _onDropDocument(event, document) {
+    if (document.documentName === "RollTable") {
+      return (await this._onDropRollTable(event, document)) ?? null;
+    } else {
+      return super._onDropDocument(event, document);
+    }
+  }
+
+  /**
+   * Handle a dropped RollTable on the Actor Sheet. By default, dropping a RollTable does nothing,
+   * but this can be overridden in subclasses.
+   * @param {DragEvent} event The initiating drop event
+   * @param {RollTable} rollTable The dropped RollTable document
+   * @return {Promise<RollTable|null|undefined>} A Promise resolving to an RollTable identical or related to the dropped RollTable
+   * to indicate success, or a nullish value to indicate failure or no action being taken
+   * @protected
+   */
+  async _onDropRollTable(event, rollTable) {
+    return null;
+  }
+
+  /**
    * Handle a dropped Item on the Actor Sheet.
-   * @param {DragEvent} event     The initiating drop event
-   * @param {Item} item           The dropped Item document
+   * @param {DragEvent} event The initiating drop event
+   * @param {Item} item The dropped Item document
    * @returns {Promise<Item|null|undefined>} A Promise resolving to the dropped Item (if sorting), a newly created Item,
-   *                                         or a nullish value in case of failure or no action being taken
+   * or a nullish value in case of failure or no action being taken
    * @protected
    * @override
    */

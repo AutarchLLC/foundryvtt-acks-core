@@ -30,10 +30,9 @@ export default class MonsterData extends foundry.abstract.TypeDataModel {
         alignment: new StringField({ blank: true, initial: "Neutral" }),
         // monster xp value
         xp: new NumberField({ initial: 0 }),
-        // TODO: seems like not used anymore? remove?
         treasure: new SchemaField({
           table: new StringField({ blank: true, initial: "" }),
-          type: new StringField({ blank: true, initial: "" }),
+          type: new StringField({ blank: true, initial: "" }), // TODO: remove treasure.type?
         }),
         // monster appearing formula?
         appearing: new SchemaField({

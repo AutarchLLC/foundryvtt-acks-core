@@ -203,6 +203,9 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @protected
    */
   async _onDropActor(event, actor) {
+    if (!this.actor.isOwner) {
+      return null;
+    }
     const actorId = actor.id;
     await this.actor.addHenchman(actorId);
     // TODO: make sure this returns Actor after Hireling handling rework

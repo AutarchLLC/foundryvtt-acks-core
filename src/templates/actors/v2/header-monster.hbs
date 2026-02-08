@@ -96,6 +96,21 @@
       {{formGroup actorFields.details.fields.xp label="ACKS.details.experience.award" value=system.details.xp
                   rootId=@root.partId localize=true classes="flex-1"}}
 
+      <div class="form-group flex-unset">
+        <label>{{localize 'ACKS.details.treasure'}}</label>
+        <div class="form-fields treasure-link-panel">
+          {{#if treasureLink}}
+            {{{treasureLink}}}
+            <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="treasureLinkDelete">
+              <i class="fas fa-trash"></i>
+            </a>
+          {{else}}
+            <div  class="treasure-link__dropspot" data-tooltip="{{localize 'ACKS.details.treasureTableHint'}}"></div>
+          {{/if}}
+        </div>
+      </div>
+
+
     </div>
 
     <div class="flexrow">

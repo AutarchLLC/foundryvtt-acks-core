@@ -1927,6 +1927,10 @@
   height: 100%;
 }
 
+.sheet.acks.actor-v2 .flex-unset {
+  flex: unset;
+}
+
 .sheet.acks.actor-v2 .flex-1 {
   flex: 1;
 }
@@ -1938,6 +1942,7 @@
 .sheet.acks.actor-v2 .flex-4 {
   flex: 4;
 }
+
 .sheet.acks.actor-v2 .flex-8 {
   flex: 8;
 }
@@ -2401,6 +2406,21 @@
   flex: 1;
   align-items: stretch;
   overflow: hidden;
+}
+
+.sheet.acks.actor-v2 .treasure-link-panel {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.2;
+}
+
+.sheet.acks.actor-v2 .treasure-link__dropspot {
+  height: 2rem;
+  width: 8rem;
+  border: 1px dashed var(--color-tabs-border);
+  border-radius: 4px;
 }
 
 .sheet.acks.actor-v2 .panel.stretch {
