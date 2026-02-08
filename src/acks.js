@@ -1,3 +1,4 @@
+/* global CONFIG, game, Hooks, foundry */
 import { AcksActorSheetCharacter } from "./module/actor/character-sheet.js";
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { AcksActor } from "./module/documents/actor.js";
@@ -43,10 +44,7 @@ Hooks.once("init", async function () {
     };
   }
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
+  // Set an initiative formula for the system
   CONFIG.Combat.initiative = {
     formula: "1d6 + @initiative.value",
     decimals: 1,
@@ -59,8 +57,8 @@ Hooks.once("init", async function () {
   };
 
   // Custom Handlebars helpers
-  registerHelpers();
-  registerMainSettings();
+  void registerHelpers();
+  void registerMainSettings();
 
   CONFIG.Actor.documentClass = AcksActor;
   CONFIG.Actor.dataModels = {
@@ -82,14 +80,23 @@ Hooks.once("init", async function () {
   CONFIG.Combat.documentClass = AcksCombatClass;
 
   // Unregister default sheets
-  Actors.unregisterSheet("core", ActorSheet);
-  Items.unregisterSheet("core", ItemSheet);
+  foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
+  foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
 
-  Items.registerSheet("acks", AcksItemSheetV2, { makeDefault: true });
+  foundry.documents.collections.Items.registerSheet("acks", AcksItemSheetV2, { makeDefault: true });
 
-  Actors.registerSheet("acks", AcksActorSheetCharacter, { types: ["character"], makeDefault: false });
-  Actors.registerSheet("acks", ACKSCharacterSheetV2, { types: ["character"], makeDefault: true });
-  Actors.registerSheet("acks", ACKSMonsterSheetV2, { types: ["monster"], makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("acks", AcksActorSheetCharacter, {
+    types: ["character"],
+    makeDefault: false,
+  });
+  foundry.documents.collections.Actors.registerSheet("acks", ACKSCharacterSheetV2, {
+    types: ["character"],
+    makeDefault: true,
+  });
+  foundry.documents.collections.Actors.registerSheet("acks", ACKSMonsterSheetV2, {
+    types: ["monster"],
+    makeDefault: true,
+  });
 
   await preloadHandlebarsTemplates();
 
@@ -143,7 +150,7 @@ Hooks.once("setup", function () {
 });
 
 Hooks.on("chatMessage", (html, content, msg) => {
-  if (content[0] == "/") {
+  if (content[0] === "/") {
     let regExp = /(\S+)/g;
     let commands = content.match(regExp);
     if (game.acks.commands.processChatCommand(commands, content, msg)) {
@@ -170,7 +177,7 @@ Hooks.on("getCombatTrackerEntryContext", AcksCombat.addContextEntry);
 Hooks.on("combatTurn", AcksCombat.combatTurn);
 Hooks.on("combatRound", AcksCombat.combatRound);
 
-Hooks.on("renderChatLog", (app, html, data) => AcksItem.chatListeners(html));
+Hooks.on("renderChatLog", (_app, html, _data) => AcksItem.chatListeners(html));
 Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
 Hooks.on("renderChatMessage", chat.addChatMessageButtons);
 Hooks.on("renderRollTableConfig", treasure.augmentTable);

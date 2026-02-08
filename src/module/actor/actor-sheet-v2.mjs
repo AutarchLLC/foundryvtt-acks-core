@@ -5,7 +5,7 @@ import ACKSDialog from "../dialog/dialog.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
-const TextEditorRef = foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor;
+const TextEditorRef = foundry.applications.ux.TextEditor.implementation;
 
 /**
  * @see https://foundryvtt.wiki/en/development/api/applicationv2

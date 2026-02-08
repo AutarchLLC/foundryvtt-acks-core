@@ -6,7 +6,7 @@ import { ITEM_TYPE } from "../constants.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
-const TextEditorRef = foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor;
+const TextEditorRef = foundry.applications.ux.TextEditor.implementation;
 
 export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemSheetV2) {
   constructor(...args) {
