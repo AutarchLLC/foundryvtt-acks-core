@@ -1,5 +1,4 @@
 /* -------------------------------------------- */
-import { AcksUtility } from "./utility.js";
 
 /* -------------------------------------------- */
 export class AcksTokenHud {
@@ -61,7 +60,7 @@ export class AcksTokenHud {
 
   /* -------------------------------------------- */
   static async addTokenHudExtensions(app, html, tokenId) {
-    const $html = AcksUtility.isMinVersion(13) ? $(html) : html;
+    const $html = $(html);
     const controlIconCombat = $html.find(".control-icon[data-action=combat]");
     if (controlIconCombat.length > 0) {
       AcksTokenHud.addExtensionHud(app, $html, tokenId);

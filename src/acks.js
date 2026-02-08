@@ -85,31 +85,11 @@ Hooks.once("init", async function () {
   Actors.unregisterSheet("core", ActorSheet);
   Items.unregisterSheet("core", ItemSheet);
 
-  if (AcksUtility.isMinVersion(13)) {
-    // If Foundry is v13 or more - register both old and new sheets for now.
-    Items.registerSheet("acks", AcksItemSheetV2, {
-      makeDefault: true,
-    });
+  Items.registerSheet("acks", AcksItemSheetV2, { makeDefault: true });
 
-    Actors.registerSheet("acks", AcksActorSheetCharacter, {
-      types: ["character"],
-      makeDefault: false,
-    });
-    Actors.registerSheet("acks", ACKSCharacterSheetV2, {
-      types: ["character"],
-      makeDefault: true,
-    });
-    Actors.registerSheet("acks", ACKSMonsterSheetV2, {
-      types: ["monster"],
-      makeDefault: true,
-    });
-  } else {
-    // Use old sheets for Foundry v12
-    Actors.registerSheet("acks", AcksActorSheetCharacter, {
-      types: ["character"],
-      makeDefault: true,
-    });
-  }
+  Actors.registerSheet("acks", AcksActorSheetCharacter, { types: ["character"], makeDefault: false });
+  Actors.registerSheet("acks", ACKSCharacterSheetV2, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("acks", ACKSMonsterSheetV2, { types: ["monster"], makeDefault: true });
 
   await preloadHandlebarsTemplates();
 
@@ -120,8 +100,7 @@ Hooks.once("init", async function () {
   CONFIG.ActiveEffect.legacyTransferral = false;
 
   Hooks.on("getSceneControlButtons", (controls) => {
-    const V13 = AcksUtility.isMinVersion(13);
-    const targetControl = V13 ? controls?.tokens : controls.find((control) => control.name === "token");
+    const targetControl = controls?.tokens;
     if (!targetControl) {
       return;
     }
@@ -140,14 +119,9 @@ Hooks.once("init", async function () {
       button: true,
       visible: true,
     };
-    if (V13) {
-      partyButtonTool.onChange = () => partyBtnAction();
-      targetControl.tools.acksPartyButton = partyButtonTool;
-    } else {
-      // onClick is deprecated in v13
-      partyButtonTool.onClick = () => partyBtnAction();
-      targetControl.tools.push(partyButtonTool);
-    }
+
+    partyButtonTool.onChange = () => partyBtnAction();
+    targetControl.tools.acksPartyButton = partyButtonTool;
   });
 });
 

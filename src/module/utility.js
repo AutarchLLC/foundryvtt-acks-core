@@ -56,7 +56,7 @@ export class AcksUtility {
       let cr = new AcksTamperingDialog();
       cr.init();
     });
-    const $html = AcksUtility.isMinVersion(13) ? $(html) : html;
+    const $html = $(html);
     $html.find(".header-actions").after(buttonTampering);
     $html.find(".header-actions").after(button);
   }

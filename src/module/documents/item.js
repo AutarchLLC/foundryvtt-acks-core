@@ -1,5 +1,4 @@
 import { AcksDice } from "../dice.js";
-import { AcksUtility } from "../utility.js";
 import { createTagHtmlString } from "../util/html-util.mjs";
 import { ACKS } from "../config.js";
 
@@ -37,7 +36,7 @@ export class AcksItem extends Item {
   }
 
   static chatListeners(html) {
-    const $html = AcksUtility.isMinVersion(13) ? $(html) : html;
+    const $html = $(html);
     $html.on("click", ".card-buttons button", this._onChatCardAction.bind(this));
     $html.on("click", ".item-name", this._onChatCardToggleContent.bind(this));
   }

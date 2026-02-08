@@ -539,64 +539,51 @@ export class AcksCombat {
       console.log("Color settings not found", e);
     }
 
-    const V13 = AcksUtility.isMinVersion(13);
-    // in Application v2 html is NOT jQuery by default
-    const $html = V13 ? $(html) : html;
+    // in Application v2 HTML is NOT jQuery by default
+    const $html = $(html);
     $html.find(".initiative").each((_, span) => {
       span.innerHTML = span.innerHTML == "-789.00" ? '<i class="fas fa-weight-hanging"></i>' : span.innerHTML;
       span.innerHTML = span.innerHTML == "-790.00" ? '<i class="fas fa-dizzy"></i>' : span.innerHTML;
     });
 
     if (object.viewed) {
-      let rollNPC = V13 ? $html.find(`[data-action='rollNPC']`) : $html.find(`[data-control='rollNPC']`);
+      let rollNPC = $html.find(`[data-action='rollNPC']`);
       rollNPC.after(` <a class="combat-button combat-control create-group" aria-label="{{localize 'COMBAT.createGroup'}}" role="button"
         data-tooltip="COMBAT.createGroup" data-control="create-group">
         <i class="fa-duotone fa-solid fa-people-group"></i>
       </a>`);
     }
-    //console.log("Roll NPC", rollNPC);
 
     $html.find(".combatant").each((_, ct) => {
       // Append spellcast and retreat
       const controls = $(ct).find(".combatant-controls .combatant-control");
-      //console.log("Combat controls", ct.dataset);
+
       if (ct?.dataset?.combatantId) {
         const cmbtant = game.combat.combatants.get(ct.dataset.combatantId);
+
         if (cmbtant?.actor) {
           const actionDone = cmbtant.actor.hasEffect("done") ? "active" : "";
-          const actionDoneHtml = V13
-            ? `<button type="button" class="inline-control combatant-control action-done ${actionDone} icon fa-solid fa-check" data-tooltip aria-label="Done"></button>`
-            : `<a class='combatant-control action-done ${actionDone}' data-tooltip="Done"><i class='fas fa-check'></i></a>`;
+          const actionDoneHtml = `<button type="button" class="inline-control combatant-control action-done ${actionDone} icon fa-solid fa-check" data-tooltip aria-label="Done"></button>`;
           controls.eq(1).after(actionDoneHtml);
 
           const readied = cmbtant.actor.hasEffect("readied") ? "active" : "";
-          const readiedHtml = V13
-            ? `<button type="button" class="inline-control combatant-control click-readied ${readied} icon fa-solid fa-thumbs-up" data-tooltip aria-label="Readied"></button>`
-            : `<a class='combatant-control click-readied ${readied}' data-tooltip="Readied"><i class='fas fa-thumbs-up'></i></a>`;
+          const readiedHtml = `<button type="button" class="inline-control combatant-control click-readied ${readied} icon fa-solid fa-thumbs-up" data-tooltip aria-label="Readied"></button>`;
           controls.eq(1).after(readiedHtml);
 
           const delayed = cmbtant.actor.hasEffect("delayed") ? "active" : "";
-          const delayedHtml = V13
-            ? `<button type="button" class="inline-control combatant-control click-delayed ${delayed} icon fa-solid fa-clock" data-tooltip aria-label="Delayed"></button>`
-            : `<a class='combatant-control click-delayed ${delayed}' data-tooltip="Delayed"><i class='fas fa-clock'></i></a>`;
+          const delayedHtml = `<button type="button" class="inline-control combatant-control click-delayed ${delayed} icon fa-solid fa-clock" data-tooltip aria-label="Delayed"></button>`;
           controls.eq(1).after(delayedHtml);
 
           const slumbering = cmbtant.actor.hasEffect("slumbering") ? "active" : "";
-          const slumberingHtml = V13
-            ? `<button type="button" class="inline-control combatant-control click-slumbering ${slumbering} icon fa-solid fa-person-falling-burst" data-tooltip aria-label="Slumbering"></button>`
-            : `<a class='combatant-control click-slumbering ${slumbering}' data-tooltip="Slumbering"><i class='fas fa-person-falling-burst'></i></a>`;
+          const slumberingHtml = `<button type="button" class="inline-control combatant-control click-slumbering ${slumbering} icon fa-solid fa-person-falling-burst" data-tooltip aria-label="Slumbering"></button>`;
           controls.eq(1).after(slumberingHtml);
 
           const spellActive = cmbtant.flags.acks?.prepareSpell ? "active" : "";
-          const spellActiveHtml = V13
-            ? `<button type="button" class="inline-control combatant-control prepare-spell ${spellActive} icon fa-solid fa-magic" data-tooltip aria-label="Casting"></button>`
-            : `<a class='combatant-control prepare-spell ${spellActive}' data-tooltip="Casting"><i class='fas fa-magic'></i></a>`;
+          const spellActiveHtml = `<button type="button" class="inline-control combatant-control prepare-spell ${spellActive} icon fa-solid fa-magic" data-tooltip aria-label="Casting"></button>`;
           controls.eq(1).after(spellActiveHtml);
 
           const outNumbering = cmbtant.flags.acks?.outnumbering ? "active" : "";
-          const outNumberingHtml = V13
-            ? `<button type="button" class="inline-control combatant-control outnumbering ${outNumbering} icon fa-solid fa-people-group" data-tooltip aria-label="Outnumbering"></button>`
-            : `<span class='combatant-control outnumbering ${outNumbering}' data-tooltip="Outnumbering"><i class='fas fa-people-group'></i></span>`;
+          const outNumberingHtml = `<button type="button" class="inline-control combatant-control outnumbering ${outNumbering} icon fa-solid fa-people-group" data-tooltip aria-label="Outnumbering"></button>`;
           controls.eq(1).after(outNumberingHtml);
         }
       }
@@ -612,7 +599,7 @@ export class AcksCombat {
       if (colorEnabled) {
         const combatant = object.viewed.combatants.get(ct.dataset.combatantId);
         // Search if the combatant token is inside a group
-        let tokenH4 = V13 ? $(ct).find("strong.name") : $(ct).find("h4");
+        let tokenH4 = $(ct).find("strong.name");
         groups.forEach((groupData, index) => {
           if (groupData.tokens?.includes(combatant.token.id)) {
             // Add the group ID to the H4 content text
