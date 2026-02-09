@@ -58,12 +58,26 @@
                     rootId=@root.partId localize=true classes="flex-2"}}
 
       {{else}}
+
         {{formGroup actorFields.details.fields.title label="ACKS.details.title" value=system.details.title
                     rootId=@root.partId localize=true classes="flex-4"}}
+
       {{/if}}
     </div>
 
     <div class="flexrow">
+      {{#if isNew }}
+        <div class="form-icon-btn">
+          <button data-action="generateScores" type="button" class="plain icon fa-regular fa-dice blink"
+                  data-tooltip="{{localize 'ACKS.dialog.generateScores'}}"></button>
+        </div>
+      {{else}}
+        <div class="form-icon-btn">
+          <button data-action="showModifiersSummary" type="button" class="plain icon fa-regular fa-book"
+                  data-tooltip="{{localize 'ACKS.Modifiers'}}"></button>
+        </div>
+      {{/if}}
+
       {{formGroup actorFields.details.fields.class label="ACKS.details.class" value=system.details.class
                   rootId=@root.partId localize=true classes="flex-4"}}
       {{formGroup actorFields.details.fields.level label="ACKS.details.level" value=system.details.level
@@ -99,6 +113,17 @@
         </div>
       </div>
 
+      {{#if (lte system.hp.value 0)}}
+        <div class="form-icon-btn">
+          <button data-action="rollMortalWounds" type="button" class="plain icon fa-regular fa-skull"
+                  data-tooltip="Roll Mortal Wounds"></button>
+        </div>
+        <div class="form-icon-btn">
+          <button data-action="rollTamperingWithMortality" type="button" class="plain icon fa-regular fa-scythe"
+                  data-tooltip="Roll Tampering With Mortality"></button>
+        </div>
+      {{/if}}
+
       <!-- Hit Dice -->
       <div class="form-group">
         <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}" data-action="rollHitDice">
@@ -107,11 +132,6 @@
             {{ localize "ACKS.HitDiceShort" }}
           </label>
         </a>
-        {{#if (lte system.hp.value 0)}}
-          <button type="button" class="plain icon fa-regular fa-skull" data-tooltip="Roll Mortal Wound"></button>
-          <button type="button" class="plain icon fa-regular fa-scythe"
-                  data-tooltip="Roll Tampering With Mortality"></button>
-        {{/if}}
         <div class="form-fields">
           <input type="text" name="system.hp.hd" value="{{system.hp.hd}}" id="{{@root.partId}}-hitDice"
                  data-dtype="String" placeholder="1d8"/>
@@ -138,17 +158,19 @@
 
       <!-- AC -->
       <div class="form-group">
-        <label>AC</label>
+        <label class="ac-label">
+          <span>AC</span>
+          {{#if system.aac.shield}}
+            <span class="shield" data-tooltip="{{localize 'ACKS.items.hasShield'}} ({{system.aac.shield}})">
+              <i class="fas fa-shield-alt"></i>
+            </span>
+          {{/if}}
+        </label>
         <div class="form-fields">
           <input type="text" value="{{system.aac.value}}" data-tooltip="{{localize 'ACKS.ArmorClass'}}"
                  data-dtype="Number" disabled/>
           <input type="text" value="{{system.aac.naked}}" data-tooltip="{{localize 'ACKS.ArmorClassNaked'}}"
                  data-dtype="Number" disabled/>
-          {{#if system.aac.shield}}
-            <div class="shield" data-tooltip="{{localize 'ACKS.items.hasShield'}} ({{system.aac.shield}})">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-          {{/if}}
         </div>
       </div>
 

@@ -2033,8 +2033,18 @@
   display: flex;
 }
 
+.sheet.acks.actor-v2 .ac-label {
+  display: flex;
+  gap: 0.25rem;
+}
+
 .sheet.acks.actor-v2 .favorites {
   min-height: 112px;
+}
+
+.sheet.acks.actor-v2 .favorites .item-list {
+  flex: 1;
+  overflow-y: auto;
 }
 
 .sheet.acks.actor-v2 .item-list-section,
@@ -2226,12 +2236,10 @@
 }
 
 .sheet.acks.actor-v2 .form-icon-btn {
-  flex: 0 0 2rem;
+  flex: unset;
   display: flex;
   height: 100%;
   align-items: flex-end;
-  font-size: 1.5rem;
-  line-height: 1;
   justify-content: center;
 }
 
@@ -2442,4 +2450,20 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: space-evenly;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.3;
+  }
+}
+
+.sheet.acks.actor-v2 button.blink {
+  animation: blink 1s ease-in-out infinite;
 }

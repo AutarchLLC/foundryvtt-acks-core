@@ -112,7 +112,8 @@ export class AcksItem extends Item {
 
   async rollFormula(options = {}) {
     if (!this.system.roll) {
-      throw new Error("This Item does not have a formula to roll!");
+      ui.notifications.warn("This Item does not have a formula to roll!");
+      return null;
     }
 
     const label = `${this.name}`;

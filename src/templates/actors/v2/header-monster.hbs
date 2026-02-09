@@ -19,9 +19,8 @@
 
       <!-- Reaction Roll Button -->
       <div class="form-icon-btn">
-        <a data-action="rollReaction" data-tooltip="{{localize 'ACKS.roll.reaction'}}">
-          <i class="fa-solid fa-masks-theater"></i>
-        </a>
+        <button data-action="rollReaction" type="button" class="plain icon fa-regular fa-masks-theater"
+                data-tooltip="{{localize 'ACKS.roll.reaction'}}"></button>
       </div>
 
       <!-- Number appearing in dungeon? -->
@@ -105,7 +104,7 @@
               <i class="fas fa-trash"></i>
             </a>
           {{else}}
-            <div  class="treasure-link__dropspot" data-tooltip="{{localize 'ACKS.details.treasureTableHint'}}"></div>
+            <div class="treasure-link__dropspot" data-tooltip="{{localize 'ACKS.details.treasureTableHint'}}"></div>
           {{/if}}
         </div>
       </div>

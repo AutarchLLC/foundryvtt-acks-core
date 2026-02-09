@@ -1,6 +1,10 @@
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../utility.js";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
+import { AcksMortalWoundsDialog } from "../dialog/mortal-wounds.js";
+import { AcksTamperingDialog } from "../dialog/tampering-mortality.js";
+import { AcksCharacterModifiers } from "../dialog/character-modifiers.js";
+import { AcksCharacterCreator } from "../dialog/character-creation.js";
 
 export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -13,6 +17,10 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       itemToggleFavorite: ACKSCharacterSheetV2.#itemToggleFavorite,
       itemToggleEquipped: ACKSCharacterSheetV2.#itemToggleEquipped,
       payWages: ACKSCharacterSheetV2.#payWages,
+      rollMortalWounds: ACKSCharacterSheetV2.#rollMortalWounds,
+      rollTamperingWithMortality: ACKSCharacterSheetV2.#rollTamperingWithMortality,
+      showModifiersSummary: ACKSCharacterSheetV2.#showModifiersSummary,
+      generateScores: ACKSCharacterSheetV2.#generateScores,
     },
   };
 
@@ -191,6 +199,54 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    */
   static #payWages(event, target) {
     this.actor.payWages();
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollMortalWounds(event, target) {
+    // TODO: migrate Mortal Wounds Dialog to app v2
+    const dialog = new AcksMortalWoundsDialog();
+    void dialog.init(this.actor);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #rollTamperingWithMortality(event, target) {
+    // TODO: migrate Tampering Dialog to app v2
+    const dialog = new AcksTamperingDialog();
+    void dialog.init(this.actor);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #showModifiersSummary(event, target) {
+    // TODO: migrate Modifiers Summary Dialog to app v2
+    new AcksCharacterModifiers(this.actor, {
+      top: this.position.top + 40,
+      left: this.position.left + (this.position.width - 400) / 2,
+    }).render(true);
+  }
+
+  /**
+   *
+   * @param {PointerEvent} event
+   * @param {HTMLElement} target
+   */
+  static #generateScores(event, target) {
+    // TODO: migrate Generate Scores Dialog to app v2
+    new AcksCharacterCreator(this.actor, {
+      top: this.position.top + 40,
+      left: this.position.left + (this.position.width - 400) / 2,
+    }).render(true);
   }
 
   /**

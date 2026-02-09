@@ -229,7 +229,7 @@
     </div>
 
     <!-- Other stuff -->
-    <div class="flexcol">
+    <div class="flexcol height-100">
       <div class="panel flexrow">
         <!-- Initiative -->
         <div class="form-group">
@@ -305,8 +305,24 @@
 
       </div>
 
-      <div class="panel flexcol favorites">
+      <div class="panel flexcol favorites flex-1">
         <div class="list-header">Favorites</div>
+        <ul class="item-list unlist">
+          {{#each favorites as |item|}}
+            <li class="item" data-item-id="{{item._id}}">
+              <div class="item-row">
+                <div class="item__dice">
+                  <a data-action="itemUse">
+                    <i class="fa-solid fa-dice-d20"></i>
+                  </a>
+                </div>
+                <div class="item__text">
+                  <a data-action="itemUse">{{item.name}}</a>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
       </div>
 
     </div>
