@@ -182,12 +182,6 @@ export class AcksActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  getLanguages() {
-    let lang = this.items.filter((i) => i.type == "language");
-    return lang;
-  }
-
-  /* -------------------------------------------- */
   getHenchmen() {
     //TODO: remake so we are working with DocumentUUIDField
     if (this.type != "character") {
@@ -322,15 +316,6 @@ export class AcksActor extends Actor {
     }
     let manager = game.actors.get(this.system.retainer.managerid);
     return manager.name;
-  }
-  /* -------------------------------------------- */
-  updateMoney(moneyId, value) {
-    let money = this.items.find((i) => i.id == moneyId);
-    let newValue = money.system.quantity + value;
-    if (newValue < 0) {
-      newValue = 0;
-    }
-    money.update({ "system.quantity": newValue });
   }
 
   /* -------------------------------------------- */
@@ -468,56 +453,7 @@ export class AcksActor extends Actor {
 
   /* -------------------------------------------- */
   isNew() {
-    const data = this.system;
-    return data.isNew;
-
-    /*if (this.type == "character") {
-      let ct = 0;
-      Object.values(data.scores).forEach((el) => {
-        ct += el.value;
-      });
-      return (ct == 0);
-    } else if (this.type == "monster") {
-      let ct = 0;
-      Object.values(data.saves).forEach((el) => {
-        ct += el.value;
-      });
-      return (ct == 0);
-    }*/
-  }
-
-  /* -------------------------------------------- */
-  async generateSave(hd) {
-    let saves = {};
-    for (let i = 0; i <= hd; i++) {
-      let tmp = ACKS.monster_saves[i];
-      if (tmp) {
-        saves = tmp;
-      }
-    }
-
-    await this.update({
-      "system.saves": {
-        death: {
-          value: saves.d,
-        },
-        wand: {
-          value: saves.w,
-        },
-        implements: {
-          value: saves.w,
-        },
-        paralysis: {
-          value: saves.p,
-        },
-        breath: {
-          value: saves.b,
-        },
-        spell: {
-          value: saves.s,
-        },
-      },
-    });
+    return this.system.isNew;
   }
 
   async updateSavingThrows(savingThrows) {
@@ -868,40 +804,6 @@ export class AcksActor extends Actor {
       speaker: ChatMessage.getSpeaker({ actor: this }),
       flavor: game.i18n.format("ACKS.roll.appearing", { type: label }),
       title: game.i18n.format("ACKS.roll.appearing", { type: label }),
-    });
-  }
-
-  /* -------------------------------------------- */
-  rollExploration(expl, options = {}) {
-    const label = game.i18n.localize(`ACKS.exploration.${expl}.long`);
-    const rollParts = ["1d20"];
-
-    const data = {
-      actor: this,
-      roll: {
-        type: "above",
-        target: this.system.exploration[expl],
-      },
-      details: game.i18n.format("ACKS.roll.details.exploration", {
-        expl: label,
-      }),
-    };
-
-    let skip = false;
-    let skipKey = game.settings.get("acks", "skip-dialog-key");
-    if (options.event && options.event[skipKey]) {
-      skip = true;
-    }
-
-    // Roll and return
-    return AcksDice.Roll({
-      event: options.event,
-      parts: rollParts,
-      data: data,
-      skipDialog: skip,
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      flavor: game.i18n.format("ACKS.roll.exploration", { exploration: label }),
-      title: game.i18n.format("ACKS.roll.exploration", { exploration: label }),
     });
   }
 

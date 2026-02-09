@@ -1,5 +1,4 @@
 /* global CONFIG, game, Hooks, foundry */
-import { AcksActorSheetCharacter } from "./module/actor/character-sheet.js";
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { AcksActor } from "./module/documents/actor.js";
 import { AcksItem } from "./module/documents/item.js";
@@ -85,10 +84,6 @@ Hooks.once("init", async function () {
 
   foundry.documents.collections.Items.registerSheet("acks", AcksItemSheetV2, { makeDefault: true });
 
-  foundry.documents.collections.Actors.registerSheet("acks", AcksActorSheetCharacter, {
-    types: ["character"],
-    makeDefault: false,
-  });
   foundry.documents.collections.Actors.registerSheet("acks", ACKSCharacterSheetV2, {
     types: ["character"],
     makeDefault: true,

@@ -9,7 +9,6 @@ export default function actorSpellcasterSchema() {
     spells: new SchemaField({
       // is actor a spellcaster? configured via Actor Tweaks
       enabled: new BooleanField({ initial: false }),
-      // TODO: somehow used in character-spells-tab.html? I guess keeps track of cast spells?
       1: new SchemaField({
         max: new NumberField({ initial: 0 }),
       }),
