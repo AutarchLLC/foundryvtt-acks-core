@@ -43,7 +43,7 @@
   "ACKS.details.alignment": "Alineamiento",
   "ACKS.details.level": "Nivel",
   "ACKS.details.experience.base": "Experiencia",
-  "ACKS.details.experience.bonus": "Bonus Experiencia",
+  "ACKS.details.experience.bonus": "Bonus Experiencia (%)",
   "ACKS.details.experience.next": "Siguiente nivel",
   "ACKS.details.experience.award": "Premio EXP",
   "ACKS.details.treasure": "Tipo de Tesoro",

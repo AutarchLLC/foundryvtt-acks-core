@@ -136,7 +136,7 @@ export class AcksItem extends Item {
       event: options.event,
       parts: rollParts,
       data: newData,
-      skipDialog: true,
+      skipDialog: true, // TODO: why we always are skipping dialog? Can't we have bonuses to proficiency rolls?
       speaker: ChatMessage.getSpeaker({ actor: this }),
       flavor: game.i18n.format("ACKS.roll.formula", { label: label }),
       title: game.i18n.format("ACKS.roll.formula", { label: label }),

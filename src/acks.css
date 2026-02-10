@@ -36,49 +36,14 @@
   src: url("./assets/fonts/EBGaramond-Regular.ttf");
 }
 
-/* Compendium specific */
-.compendium-sidebar .directory-item.compendium .compendium-name {
-  align-self: flex-start;
-}
-
-/**
- * Single Compendium Pack
- */
-.compendium.directory .directory-header {
-  border-bottom: none;
-}
-.compendium.directory .directory-header .header-banner {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  height: 84px;
-  flex: 0 0 84px;
-  border-radius: 2px;
-  background-size: cover;
-}
-
 /* ----------------------------------------- */
 /* Combat tracker specific overloads */
+/* TODO: change colors of icons so they look nice on both dark and light themes */
 .combat-sidebar li.combatant .roll {
   background: url(./assets/icons/perspective-dice-five.svg) no-repeat 50% 50%;
 }
 .combat-sidebar li.combatant .roll:hover {
   background: url(./assets/icons/perspective-dice-five-hover.svg) no-repeat 50% 50%;
-}
-
-#sidebar {
-  /*font-family: "ebgaramond-regular";*/
-  font-size: 1.1rem;
-}
-.window-content {
-  /*font-family: "ebgaramond-regular";*/
-}
-.chat-message {
-  font-size: 1.1rem;
-}
-.chat-message .message-header .flavor-text,
-.chat-message .message-header .whisper-to {
-  font-size: 0.9rem;
 }
 
 .acks.sheet.actor {
@@ -1392,9 +1357,6 @@
 .acks.actor.monster .panel.abilities .item-list .item-entry .item-pattern {
   flex: 0 0 15px;
   cursor: pointer;
-}
-.acks {
-  margin: 8px;
 }
 
 .acks .roll-actor-surprise,

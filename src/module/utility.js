@@ -42,6 +42,7 @@ export class AcksUtility {
 
   /* -------------------------------------------- */
   static addButtons(app, html, data) {
+    // TODO: move buttons to Toolbar. Maybe create separate category for ACKS tools?
     const button = document.createElement("button");
     button.style.width = "45%";
     button.innerHTML = "Mortal Wounds";

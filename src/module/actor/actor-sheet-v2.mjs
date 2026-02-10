@@ -1,7 +1,7 @@
-import { AcksEntityTweaks } from "../dialog/entity-tweaks.js";
 import { ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
+import ActorTweaksConfig from "../apps/actor-tweaks-config.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -12,11 +12,6 @@ const TextEditorRef = foundry.applications.ux.TextEditor.implementation;
  * @see https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ActorSheetV2.html
  */
 export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSheetV2) {
-  constructor(...args) {
-    super(...args);
-  }
-
-  /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["acks", "actor-v2"],
     position: {
@@ -33,7 +28,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       resizable: true,
       controls: [
         {
-          icon: "fas fa-code",
+          icon: "fas fa-screwdriver-wrench",
           label: "ACKS.dialog.tweaks",
           action: "showTweaksDialog",
           ownership: "OWNER",
@@ -73,10 +68,9 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   static #showTweaksDialog() {
-    new AcksEntityTweaks(this.actor, {
-      top: this.position.top + 40,
-      left: this.position.left + (this.position.width - 400) / 2,
-    }).render(true);
+    const config = { document: this.actor };
+
+    return new ActorTweaksConfig(config).render(true);
   }
 
   /**
