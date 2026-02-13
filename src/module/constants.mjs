@@ -187,3 +187,22 @@ export const MONSTER_SAVING_THROW_LUT = Object.freeze({
   [MSS_KEY.E8_9]: { p: 7, d: 9, b: 10, i: 11, s: 11 },
   [MSS_KEY.E10]: { p: 6, d: 8, b: 9, i: 10, s: 10 },
 });
+
+export const ATTRIBUTE_MODIFIERS_LUT = Object.freeze({
+  3: -3,
+  4: -2,
+  5: -2,
+  6: -1,
+  7: -1,
+  8: -1,
+  9: 0,
+  10: 0,
+  11: 0,
+  12: 0,
+  13: +1,
+  14: +1,
+  15: +1,
+  16: +2,
+  17: +2,
+  18: +3,
+});

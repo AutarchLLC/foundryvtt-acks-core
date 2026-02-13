@@ -25,8 +25,10 @@ export const registerHelpers = async function () {
       return `+${val}`;
     } else if (val < 0) {
       return `${val}`;
-    } else {
+    } else if (val === 0) {
       return "0";
+    } else {
+      return "N/A";
     }
   });
 

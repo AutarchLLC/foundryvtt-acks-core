@@ -1611,16 +1611,6 @@
 /*------------------------------------*\
   #Item Sheet v2
 \*------------------------------------*/
-.application.sheet.acks.item-v2 {
-  min-width: 570px;
-  min-height: 400px;
-}
-
-.application.sheet.acks.character-v2 {
-  min-width: 800px;
-  min-height: 700px;
-}
-
 .acks.item-v2 .window-content input:not([type="checkbox"]),
 .acks.actor-v2 .window-content input:not([type="checkbox"]) {
   background: revert-layer;
@@ -2428,4 +2418,8 @@
 
 .sheet.acks.actor-v2 button.blink {
   animation: blink 1s ease-in-out infinite;
+}
+
+.acks2.info-sheet .modifiers-info .panel {
+  min-height: 146px;
 }

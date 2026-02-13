@@ -1,0 +1,68 @@
+<section>
+
+  <div class="flexrow">
+
+    <div class="panel">
+      <h2>{{localize 'ACKS.scores.str.long'}}: {{attributes.str.value}} ({{mod attributes.str.modifier}})</h2>
+      <ul>
+        <li>Melee Attack Throw: {{mod attributes.str.modifier}}</li>
+        <li>Melee Damage Roll: {{mod attributes.str.modifier}}</li>
+        <li>Thrown Weapon Damage Roll: {{mod attributes.str.modifier}}</li>
+        <li>Dungeonbashing Throw: {{mod dungeonbashing}}</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>{{localize 'ACKS.scores.int.long'}}: {{attributes.int.value}} ({{mod attributes.int.modifier}})</h2>
+      <ul>
+        <li>Additional General Proficiencies: {{mod intBonus}}</li>
+        <li>Additional languages: {{mod intBonus}}</li>
+        <li>Literate: {{literate}}</li>
+        <li>Studious Spell Repertoire increase: {{mod intBonus}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="flexrow">
+
+    <div class="panel">
+      <h2>{{localize 'ACKS.scores.wis.long'}}: {{attributes.wis.value}} ({{mod attributes.wis.modifier}})</h2>
+      <ul>
+        <li>All Saving Throws: {{mod attributes.wis.modifier}}</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>{{localize 'ACKS.scores.dex.long'}}: {{attributes.dex.value}} ({{mod attributes.dex.modifier}})</h2>
+      <ul>
+        <li>Missile Attack Throw: {{mod attributes.dex.modifier}}</li>
+        <li>Armor Class: {{mod attributes.dex.modifier}}</li>
+        <li>Initiative Roll: {{mod attributes.dex.modifier}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="flexrow">
+
+    <div class="panel">
+      <h2>{{localize 'ACKS.scores.con.long'}}: {{attributes.con.value}} ({{mod attributes.con.modifier}})</h2>
+      <ul>
+        <li>Hit Die Roll: {{mod attributes.con.modifier}}</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>{{localize 'ACKS.scores.cha.long'}}: {{attributes.cha.value}} ({{mod attributes.cha.modifier}})</h2>
+      <ul>
+        <li>Reaction Roll: {{mod attributes.cha.modifier}}</li>
+        <li>Maximum number of Henchmen: {{henchmenMax}}</li>
+        <li>Henchmen Loyalty: {{mod attributes.cha.modifier}}</li>
+        <li>Henchmen Morale: {{mod attributes.cha.modifier}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
