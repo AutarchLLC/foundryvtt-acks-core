@@ -18,7 +18,7 @@
   "ACKS.dialog.generator": "Générateur de personnage",
   "ACKS.dialog.generateSaves": "Générer les Sauvegardes",
   "ACKS.dialog.generateScores": "Générer les Scores",
-  "ACKS.dialog.generateScore": "Création: {score} ({count})",
+  "ACKS.dialog.generateScore": "Création: {score}",
   "ACKS.dialog.createItem": "Créer un Objet",
   "ACKS.dialog.itemType": "Type de l'Objet",
   "ACKS.dialog.itemName": "Nom de l'Objet",

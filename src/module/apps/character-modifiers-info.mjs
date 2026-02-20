@@ -27,7 +27,7 @@ export default class CharacterModifiersInfo extends HandlebarsApplicationMixin(A
 
   static PARTS = {
     info: {
-      template: "systems/acks/templates/apps/info/character-modifiers-info.hbs",
+      template: "systems/acks/templates/apps/character-modifiers-info.hbs",
     },
   };
 

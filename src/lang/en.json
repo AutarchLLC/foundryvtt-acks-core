@@ -48,7 +48,7 @@
   "ACKS.dialog.generator": "Attributes",
   "ACKS.dialog.generateSaves": "Generate Saves",
   "ACKS.dialog.generateScores": "Generate Scores",
-  "ACKS.dialog.generateScore": "Rolling {score} ({count})",
+  "ACKS.dialog.generateScore": "Rolling {score}",
   "ACKS.dialog.createItem": "Create Item",
   "ACKS.dialog.itemType": "Item type",
   "ACKS.dialog.itemName": "Item name",

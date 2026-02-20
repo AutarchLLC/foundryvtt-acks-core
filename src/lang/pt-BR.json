@@ -18,7 +18,7 @@
   "ACKS.dialog.generator": "Gerar personagem",
   "ACKS.dialog.generateSaves": "Gerar salvaguardas",
   "ACKS.dialog.generateScores": "Gerar status",
-  "ACKS.dialog.generateScore": "Rolou {score} ({count})",
+  "ACKS.dialog.generateScore": "Rolou {score}",
 
   "ACKS.Formula": "Fórmula",
   "ACKS.SitMod": "Modificador situacional",

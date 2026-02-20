@@ -3,8 +3,8 @@ import { AcksUtility } from "../utility.js";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import { AcksMortalWoundsDialog } from "../dialog/mortal-wounds.js";
 import { AcksTamperingDialog } from "../dialog/tampering-mortality.js";
-import { AcksCharacterCreator } from "../dialog/character-creation.js";
 import CharacterModifiersInfo from "../apps/character-modifiers-info.mjs";
+import CharacterStatGenerator from "../apps/character-stat-generator.mjs";
 
 export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -243,11 +243,11 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @param {HTMLElement} target
    */
   static #generateScores(event, target) {
-    // TODO: migrate Generate Scores Dialog to app v2
-    new AcksCharacterCreator(this.actor, {
-      top: this.position.top + 40,
-      left: this.position.left + (this.position.width - 400) / 2,
-    }).render(true);
+    const options = {
+      actor: this.actor,
+    };
+
+    return new CharacterStatGenerator(options).render(true);
   }
 
   /**
