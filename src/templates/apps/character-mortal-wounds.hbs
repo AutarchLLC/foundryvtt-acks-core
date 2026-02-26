@@ -1,0 +1,197 @@
+<section class="standard-form scrollable">
+  <fieldset>
+    <legend>Basic Information</legend>
+
+    <div class="form-group">
+      <label class="flex-1" for="{{@root.partId}}-mortal-table-choice">Damage Type</label>
+      <div class="form-fields flex-1">
+        <select name="mortalTablesChoice" id="{{@root.partId}}-mortal-table-choice" data-dtype="String">
+          {{selectOptions mortalTablesChoices valueAttr="key" labelAttr="label" selected=system.mortalTablesChoice}}
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="flex-1" for="{{@root.partId}}-treatment">Treatment Timing</label>
+      <div class="form-fields flex-1">
+        <select name="treatmentTiming" id="{{@root.partId}}-treatment" data-dtype="Number">
+          {{selectOptions treatmentTimingChoices valueAttr="value" labelAttr="label" selected=system.treatmentTiming}}
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="flex-1" for="{{@root.partId}}-necromanticSpellLevel">Necromantic Magic</label>
+      <div class="form-fields flex-1">
+        <select name="necromanticSpellLevel" id="{{@root.partId}}-necromanticSpellLevel" data-dtype="Number">
+          {{selectOptions spellLevelChoices selected=system.necromanticSpellLevel}}
+        </select>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <div class="row">
+
+    <fieldset class="flex-1">
+      <legend>Combatant</legend>
+
+      <div class="form-group">
+        <label class="flex-2" for="{{@root.partId}}-hasHeavyHelm">Heavy Helm</label>
+        <div class="form-fields flex-1">
+          <input type="checkbox" name="hasHeavyHelm" id="{{@root.partId}}-hasHeavyHelm"
+            {{checked system.hasHeavyHelm}}/>
+          <input type="number" name="heavyHelmModifier" value="{{system.heavyHelmModifier}}" data-dtype="Number"
+                 readonly/>
+        </div>
+      </div>
+
+      {{#if isActor}}
+        <div class="form-group">
+          <label class="flex-2" for="{{@root.partId}}-hitDiceModifier">Hit Die ({{system.hitDie}})</label>
+          <div class="form-fields flex-1">
+            <input id="{{@root.partId}}-hitDiceModifier" type="number" name="hitDiceModifier"
+                   value="{{system.hitDiceModifier}}" data-dtype="Number" readonly/>
+          </div>
+        </div>
+      {{else}}
+        <div class="form-group">
+          <label class="flex-1" for="{{@root.partId}}-hitDiceModifier">Hit Die</label>
+          <div class="form-fields flex-1">
+            <select name="hitDiceModifier" id="{{@root.partId}}-hitDiceModifier" data-dtype="Number">
+              {{selectOptions hitDiceChoices selected=system.hitDiceModifier valueAttr="value" labelAttr="label"}}
+            </select>
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if isActor}}
+        <div class="form-group">
+          <label class="flex-2" for="{{@root.partId}}-hitPointsModifier">
+            Current Hit Points ({{system.currentHitPoints}} / {{system.maxHitPoints}})
+          </label>
+          <div class="form-fields flex-1">
+            <input id="{{@root.partId}}-hitPointsModifier" type="number" name="hitPointsModifier"
+                   value="{{system.hitPointsModifier}}" data-dtype="Number" readonly/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="flex-2" for="{{@root.partId}}-conModifier">Constitution Modifier</label>
+          <div class="form-fields flex-1">
+            <input id="{{@root.partId}}-conModifier" type="number" name="conModifier"
+                   value="{{system.conModifier}}" data-dtype="Number" readonly/>
+          </div>
+        </div>
+      {{else}}
+        <div class="form-group">
+          <label class="flex-2" for="{{@root.partId}}-maxHitPoints">Max Hit Points</label>
+          <div class="form-fields flex-1">
+            <input id="{{@root.partId}}-maxHitPoints" type="number" name="maxHitPoints"
+                   value="{{system.maxHitPoints}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="flex-2" for="{{@root.partId}}-currentHitPoints">Current Hit Points</label>
+          <div class="form-fields flex-1">
+            <input id="{{@root.partId}}-currentHitPoints" type="number" name="currentHitPoints"
+                   value="{{system.currentHitPoints}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="flex-2" for="{{@root.partId}}-hitPointsModifier">Hit Points modifier</label>
+          <div class="form-fields flex-1">
+            <input id="{{@root.partId}}-hitPointsModifier" type="number" name="hitPointsModifier"
+                   value="{{system.hitPointsModifier}}" data-dtype="Number" readonly/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="flex-2" for="{{@root.partId}}-conModifier">Constitution Modifier</label>
+          <div class="form-fields flex-1">
+            <input id="{{@root.partId}}-conModifier" type="number" name="conModifier"
+                   value="{{system.conModifier}}" data-dtype="Number"/>
+          </div>
+        </div>
+      {{/if}}
+
+      <div class="form-group">
+        <label class="flex-2" for="{{@root.partId}}-freeModifier">Additional Modifier</label>
+        <div class="form-fields flex-1">
+          <input id="{{@root.partId}}-freeModifier" type="number" name="freeModifier"
+                 value="{{system.freeModifier}}" data-dtype="Number"/>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <fieldset class="flex-1">
+      <legend>Healer</legend>
+
+      <div class="form-group">
+        <label class="flex-2" for="{{@root.partId}}-horsetailApplied">Healing Herbs</label>
+        <div class="form-fields flex-1">
+          <input type="checkbox" name="horsetailApplied" id="{{@root.partId}}-horsetailApplied"
+            {{checked system.horsetailApplied}}/>
+          <input type="number" name="horsetailModifier" value="{{system.horsetailModifier}}" data-dtype="Number"
+                 readonly/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-healingMagicLevel">Healing Magic Level</label>
+        <div class="form-fields flex-1">
+          <select name="healingMagicLevel" id="{{@root.partId}}-healingMagicLevel" data-dtype="Number">
+            {{selectOptions spellLevelChoices selected=system.healingMagicLevel}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-healingProficiency">Healing Proficiency</label>
+        <div class="form-fields flex-1">
+          <select name="healingProficiency" id="{{@root.partId}}-healingProficiency" data-dtype="Number">
+            {{selectOptions healingProficiencyChoices selected=system.healingProficiency}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-2" for="{{@root.partId}}-layingOnHands">Laying on Hands</label>
+        <div class="form-fields flex-1">
+          <input type="checkbox" name="layingOnHands" id="{{@root.partId}}-layingOnHands"
+            {{checked system.layingOnHands}}/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-healerClassLevel">Healer's Class Level</label>
+        <div class="form-fields flex-1">
+          <select name="healerClassLevel" id="{{@root.partId}}-healerClassLevel" {{disabled (not system.layingOnHands)}}
+                  data-dtype="Number">
+            {{selectOptions classLevelChoices selected=system.healerClassLevel}}
+          </select>
+        </div>
+      </div>
+
+    </fieldset>
+
+  </div>
+
+  <fieldset>
+    <div class="form-group">
+      <label class="flex-2" for="{{@root.partId}}-finalModifier">Final Modifier</label>
+      <div class="form-fields flex-1">
+        <input id="{{@root.partId}}-finalModifier" type="number" name="finalModifierValue"
+               value="{{finalModifier}}" data-dtype="Number" disabled/>
+      </div>
+    </div>
+  </fieldset>
+
+  <footer class="form-footer">
+    <button type="submit">Roll</button>
+  </footer>
+
+</section>

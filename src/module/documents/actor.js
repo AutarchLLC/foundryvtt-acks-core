@@ -155,6 +155,12 @@ export class AcksActor extends Actor {
     return this.system.hp.hd;
   }
 
+  getHitDie() {
+    const hdParts = this.system.hp.hd.toLowerCase().trim().split("d");
+    const hdValue = hdParts.length > 1 ? parseInt(hdParts[1]) : parseInt(hdParts[0]);
+    return `d${hdValue}`;
+  }
+
   /* -------------------------------------------- */
   getMaxHitPoints() {
     return this.system.hp.max;

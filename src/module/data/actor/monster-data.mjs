@@ -50,8 +50,13 @@ export default class MonsterData extends foundry.abstract.TypeDataModel {
   }
 
   static migrateData(source) {
-    source.details.xp = Number(source?.details?.xp) || 0;
-    source.details.morale = Number(source?.details?.morale) || 0;
+    if (source?.details?.xp && foundry.utils.getType(source.details.xp) === "string") {
+      source.details.xp = Number(source.details.xp) || 0;
+    }
+
+    if (source?.details?.morale && foundry.utils.getType(source.details.morale) === "string") {
+      source.details.morale = Number(source.details.morale) || 0;
+    }
 
     return super.migrateData(source);
   }

@@ -1,6 +1,5 @@
-/* -------------------------------------------- */
-import { AcksMortalWoundsDialog } from "../dialog/mortal-wounds.js";
 import { AcksTamperingDialog } from "../dialog/tampering-mortality.js";
+import CharacterMortalWoundsApp from "./character-mortal-wounds-app.mjs";
 
 /* -------------------------------------------- */
 export class AcksCommands {
@@ -108,8 +107,7 @@ export class AcksCommands {
 
   /* --------------------------------------------- */
   static async rollMortalWounds(msg, params) {
-    let dialog = new AcksMortalWoundsDialog();
-    dialog.init();
+    return new CharacterMortalWoundsApp().render(true);
   }
 
   /* --------------------------------------------- */

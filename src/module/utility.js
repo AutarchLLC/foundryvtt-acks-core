@@ -1,6 +1,6 @@
-import { AcksMortalWoundsDialog } from "./dialog/mortal-wounds.js";
 import { AcksTamperingDialog } from "./dialog/tampering-mortality.js";
 import { ACKS } from "./config.js";
+import CharacterMortalWoundsApp from "./apps/character-mortal-wounds-app.mjs";
 
 export class AcksUtility {
   /**
@@ -47,8 +47,7 @@ export class AcksUtility {
     button.style.width = "45%";
     button.innerHTML = "Mortal Wounds";
     button.addEventListener("click", () => {
-      let cr = new AcksMortalWoundsDialog();
-      cr.init();
+      return new CharacterMortalWoundsApp().render(true);
     });
     const buttonTampering = document.createElement("button");
     buttonTampering.style.width = "45%";

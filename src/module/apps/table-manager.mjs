@@ -1,9 +1,13 @@
-export class AcksTableManager {
+/* global game, ui */
+import { INTERNAL_TABLES_PATH } from "../constants.mjs";
+
+export default class ACKSTableManager {
+  static #tables = null;
+
   static init() {
     // Fetch the internal tables from the ruledata/internal_tables.json file
     // Fetch the files
-    const filePath = "systems/acks/module/ruledata/internal_tables.json";
-    const file = fetch(filePath)
+    fetch(INTERNAL_TABLES_PATH)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -12,26 +16,32 @@ export class AcksTableManager {
       })
       .then((data) => {
         // Process the data
-        console.log("Internal Tables Loaded", data);
-        game.acks.tables = data;
+        this.#tables = data;
       })
-      .catch((error) => {
-        console.error("Error loading internal tables:", error);
+      .catch((_error) => {
+        ui.notifications.error("Error loading internal tables");
       });
   }
 
   static getTable(category, tableKey) {
-    if (!game.acks?.tables?.[category]?.[tableKey]) {
-      console.error(`Table ${tableKey} not found`);
+    if (!this.#tables?.[category]?.[tableKey]) {
+      ui.notifications.error(`Table ${tableKey} not found`);
       return null;
     }
-    return game.acks.tables[category][tableKey];
+    return this.#tables[category][tableKey];
+  }
+
+  static getTablesByCategory(category) {
+    if (!this.#tables?.[category]) {
+      ui.notifications.error(`No tables found for category ${category}`);
+      return [];
+    }
+    return this.#tables[category];
   }
 
   static async rollD20Table(category, tableKey, modifier = 0) {
-    const table = AcksTableManager.getTable(category, tableKey);
+    const table = ACKSTableManager.getTable(category, tableKey);
     if (!table) {
-      console.error(`Table ${tableKey} not found`);
       ui.notifications.error(`Table ${tableKey} not found`);
       return null;
     }
@@ -44,19 +54,16 @@ export class AcksTableManager {
       return result >= entry.min && result <= entry.max;
     });
     if (entry) {
-      console.log(`Rolled ${result} on ${tableKey}:`, entry);
       // Now roll a D6 and select the proper effects from the entry
       const d6Roll = new Roll("1d6");
       await d6Roll.evaluate();
       const d6Result = d6Roll.total;
       const effect = entry.effects[String(d6Result)];
       if (!effect) {
-        console.error(`No effects found for roll ${d6Result} on table ${tableKey}`);
         ui.notifications.error(`No effects found for roll ${d6Result} on table ${tableKey}`);
         return null;
       }
-      console.log(`Rolled ${d6Result} on ${tableKey} effects:`, effect);
-      let finalResult = foundry.utils.deepClone(entry);
+      const finalResult = foundry.utils.deepClone(entry);
       finalResult.tableName = table?.name;
       finalResult.d20Result = result;
       finalResult.modifier = modifier;
@@ -64,7 +71,6 @@ export class AcksTableManager {
       finalResult.selectedEffect = foundry.utils.deepClone(effect);
       return finalResult;
     } else {
-      console.error(`No entry found for roll ${result} on table ${tableKey}`);
       ui.notifications.error(`No entry found for roll ${result} on table ${tableKey}`);
       return null;
     }

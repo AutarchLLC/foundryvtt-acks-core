@@ -206,3 +206,56 @@ export const ATTRIBUTE_MODIFIERS_LUT = Object.freeze({
   17: +2,
   18: +3,
 });
+
+export const INTERNAL_TABLES_PATH = "systems/acks/module/ruledata/internal_tables.json";
+
+export const MORTAL_WOUNDS_TREATMENT_TIMING = Object.freeze({
+  2: { label: "Treatment within 1 Round (+2)", value: 2 },
+  "-3": { label: "Treatment within 1 Turn of Injury (-3)", value: -3 },
+  "-5": { label: "Treatment within 1 Hour of Injury (-5)", value: -5 },
+  "-8": { label: "Treatment within 1 Day of Injury (-8)", value: -8 },
+  "-10": { label: "Treatment more than 1 day after Injury (-10)", value: -10 },
+});
+
+export const MORTAL_WOUNDS_SPELL_LEVELS = Object.freeze({
+  0: "None (0)",
+  1: "1",
+  2: "2",
+  3: "3",
+  4: "4",
+  5: "5",
+  6: "6",
+});
+
+export const HIT_DICE_MODIFIERS = Object.freeze({
+  d4: { value: 0, label: "d4 (0)" },
+  d6: { value: 2, label: "d6 (2)" },
+  d8: { value: 4, label: "d8 (4)" },
+  d10: { value: 6, label: "d10 (6)" },
+  d12: { value: 8, label: "d12 (8)" },
+});
+
+export const MORTAL_WOUNDS_CLASS_LEVELS = Object.freeze({
+  0: "Not applicable",
+  1: "1 (+0)",
+  2: "2 (+1)",
+  3: "3 (+2)",
+  4: "4 (+2)",
+  5: "5 (+2)",
+  6: "6 (+3)",
+  7: "7 (+4)",
+  8: "8 (+4)",
+  9: "9 (+4)",
+  10: "10 (+5)",
+  11: "11 (+6)",
+  12: "12 (+6)",
+  13: "13 (+6)",
+  14: "14 (+7)",
+});
+
+export const MORTAL_WOUNDS_HEALING_PROF = Object.freeze({
+  0: "None (0)",
+  1: "1",
+  2: "2",
+  3: "3",
+});

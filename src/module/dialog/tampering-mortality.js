@@ -1,6 +1,7 @@
-import { AcksTableManager } from "../apps/table-manager.js";
+import ACKSTableManager from "../apps/table-manager.mjs";
 import { AcksUtility } from "../utility.js";
 import { ACKS } from "../config.js";
+import { MORTAL_WOUNDS_CLASS_LEVELS } from "../constants.mjs";
 
 export class AcksTamperingDialog extends FormApplication {
   /* -------------------------------------------- */
@@ -32,7 +33,7 @@ export class AcksTamperingDialog extends FormApplication {
 
   /* -------------------------------------------- */
   buildTamperingTablesChoices() {
-    let tables = game.acks.tables?.tampering;
+    const tables = ACKSTableManager.getTablesByCategory("tampering");
     if (!tables) {
       console.error("No tampering tables found");
       return [];
@@ -72,7 +73,7 @@ export class AcksTamperingDialog extends FormApplication {
         tamperingChoices: this.buildTamperingTablesChoices(),
         tamperingChoice: this.chooseAlignment(actor),
         spanChoices: ACKS.tampering_span,
-        classLevelChoices: ACKS.mortal_class_levels,
+        classLevelChoices: MORTAL_WOUNDS_CLASS_LEVELS,
         spineChoices: ACKS.tampering_spine,
         limbsChoices: ACKS.tampering_limbs,
         creatureLife: 2,
@@ -183,7 +184,7 @@ export class AcksTamperingDialog extends FormApplication {
     // Get the final result from the dialog
     let modifier = this.updateDialogResult(tamperingData);
     let tableKey = dialogContext.tamperingChoice;
-    let rollResult = await AcksTableManager.rollD20Table("tampering", tableKey, modifier);
+    let rollResult = await ACKSTableManager.rollD20Table("tampering", tableKey, modifier);
     console.log("Roll Result", rollResult);
 
     let chatContent = await renderTemplate("systems/acks/templates/chat/tampering-result.html", rollResult);

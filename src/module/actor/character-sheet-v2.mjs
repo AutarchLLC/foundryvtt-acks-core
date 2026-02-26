@@ -1,10 +1,10 @@
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../utility.js";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
-import { AcksMortalWoundsDialog } from "../dialog/mortal-wounds.js";
 import { AcksTamperingDialog } from "../dialog/tampering-mortality.js";
 import CharacterModifiersInfo from "../apps/character-modifiers-info.mjs";
 import CharacterStatGenerator from "../apps/character-stat-generator.mjs";
+import CharacterMortalWoundsApp from "../apps/character-mortal-wounds-app.mjs";
 
 export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -207,9 +207,10 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @param {HTMLElement} target
    */
   static #rollMortalWounds(event, target) {
-    // TODO: migrate Mortal Wounds Dialog to app v2
-    const dialog = new AcksMortalWoundsDialog();
-    void dialog.init(this.actor);
+    const options = {
+      actor: this.actor,
+    };
+    return new CharacterMortalWoundsApp(options).render(true);
   }
 
   /**

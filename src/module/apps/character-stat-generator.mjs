@@ -14,7 +14,6 @@ export default class CharacterStatGenerator extends HandlebarsApplicationMixin(A
     classes: ["acks2", "stat-gen-app"],
     sheetConfig: false,
     window: {
-      //contentClasses: ["modifiers-info"],
       icon: "fa-solid fa-dice",
       resizable: false,
     },

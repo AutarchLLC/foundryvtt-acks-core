@@ -5,7 +5,7 @@ import { AcksItem } from "./module/documents/item.js";
 import { ACKS } from "./module/config.js";
 import { registerMainSettings } from "./module/settings.js";
 import { registerHelpers } from "./module/helpers.js";
-import * as chat from "./module/chat.js";
+import * as chat from "./module/chat.mjs";
 import * as treasure from "./module/treasure.js";
 import * as macros from "./module/macros.js";
 import * as party from "./module/party.js";
@@ -13,7 +13,7 @@ import { AcksCombat, AcksCombatClass } from "./module/combat.js";
 import { AcksTokenHud } from "./module/acks-token-hud.js";
 import { AcksUtility } from "./module/utility.js";
 import { AcksPolyglot } from "./module/apps/polyglot-support.js";
-import { AcksTableManager } from "./module/apps/table-manager.js";
+import ACKSTableManager from "./module/apps/table-manager.mjs";
 import { AcksCommands } from "./module/apps/acks-commands.js";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
 import LanguageData from "./module/data/item/language-data.mjs";
@@ -161,7 +161,7 @@ Hooks.once("ready", async () => {
   AcksUtility.updateWeightsLanguages();
   AcksUtility.displayWelcomeMessage();
   AcksUtility.setupSocket();
-  AcksTableManager.init();
+  ACKSTableManager.init();
 });
 
 // License and KOFI infos
@@ -173,8 +173,7 @@ Hooks.on("combatTurn", AcksCombat.combatTurn);
 Hooks.on("combatRound", AcksCombat.combatRound);
 
 Hooks.on("renderChatLog", (_app, html, _data) => AcksItem.chatListeners(html));
-Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
-Hooks.on("renderChatMessage", chat.addChatMessageButtons);
+Hooks.on("renderChatMessageHTML", chat.addChatMessageButtons);
 Hooks.on("renderRollTableConfig", treasure.augmentTable);
 Hooks.on("updateActor", party.update);
 
