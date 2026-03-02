@@ -10,6 +10,10 @@ export const registerHelpers = async function () {
     return a >= b;
   });
 
+  Handlebars.registerHelper("readonly", function (value) {
+    return value ? "readonly" : "";
+  });
+
   Handlebars.registerHelper("toFixed", function (number, digits) {
     if (!Number(number)) {
       number = 0;

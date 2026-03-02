@@ -14,7 +14,7 @@ import { AcksTokenHud } from "./module/acks-token-hud.js";
 import { AcksUtility } from "./module/utility.js";
 import { AcksPolyglot } from "./module/apps/polyglot-support.js";
 import ACKSTableManager from "./module/apps/table-manager.mjs";
-import { AcksCommands } from "./module/apps/acks-commands.js";
+import ACKSCommands from "./module/apps/acks-commands.mjs";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
 import LanguageData from "./module/data/item/language-data.mjs";
 import MoneyData from "./module/data/item/money-data.mjs";
@@ -96,7 +96,7 @@ Hooks.once("init", async function () {
   await preloadHandlebarsTemplates();
 
   AcksTokenHud.init();
-  AcksCommands.init();
+  ACKSCommands.init();
 
   // Ensure new effect transfer
   CONFIG.ActiveEffect.legacyTransferral = false;

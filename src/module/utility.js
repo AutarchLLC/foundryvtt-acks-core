@@ -1,6 +1,7 @@
-import { AcksTamperingDialog } from "./dialog/tampering-mortality.js";
+/* global game */
 import { ACKS } from "./config.js";
 import CharacterMortalWoundsApp from "./apps/character-mortal-wounds-app.mjs";
+import CharacterTamperingMortalityApp from "./apps/character-tampering-mortality-app.mjs";
 
 export class AcksUtility {
   /**
@@ -41,7 +42,7 @@ export class AcksUtility {
   }
 
   /* -------------------------------------------- */
-  static addButtons(app, html, data) {
+  static addButtons(app, html, _data) {
     // TODO: move buttons to Toolbar. Maybe create separate category for ACKS tools?
     const button = document.createElement("button");
     button.style.width = "45%";
@@ -53,8 +54,7 @@ export class AcksUtility {
     buttonTampering.style.width = "45%";
     buttonTampering.innerHTML = "Tampering";
     buttonTampering.addEventListener("click", () => {
-      let cr = new AcksTamperingDialog();
-      cr.init();
+      return new CharacterTamperingMortalityApp().render(true);
     });
     const $html = $(html);
     $html.find(".header-actions").after(buttonTampering);
@@ -104,7 +104,7 @@ export class AcksUtility {
   }
 
   /* -------------------------------------------- */
-  static async loadCompendium(compendium, filter = (item) => true) {
+  static async loadCompendium(compendium, filter = (_item) => true) {
     let compendiumData = await AcksUtility.loadCompendiumData(compendium);
     return compendiumData.filter(filter);
   }

@@ -247,27 +247,4 @@ export const ACKS = {
     high_encumbrance: 30,
     overburdened: 0,
   },
-  tampering_span: [
-    { label: "Youthful (+2)", value: 2 },
-    { label: "Adult (0)", value: 0 },
-    { label: "Middle Aged (-5)", value: -5 },
-    { label: "Old (-10)", value: -10 },
-    { label: "Ancient (-20)", value: -20 },
-  ],
-  tampering_spine: {
-    0: { label: "None (0)", value: 0 },
-    "-5": { label: "1 (-5)", value: -5 },
-    "-10": { label: "2 (-10)", value: -10 },
-  },
-  tampering_limbs: {
-    0: { label: "None (0)", value: 0 },
-    "-2": { label: "1 (-2)", value: -2 },
-    "-4": { label: "2 (-4)", value: -4 },
-    "-6": { label: "3 (-6)", value: -6 },
-    "-8": { label: "4 (-8)", value: -8 },
-    "-10": { label: "5 (-10)", value: -10 },
-    "-12": { label: "6 (-12)", value: -12 },
-    "-14": { label: "7 (-14)", value: -14 },
-    "-16": { label: "8 (-16)", value: -16 },
-  },
 };
