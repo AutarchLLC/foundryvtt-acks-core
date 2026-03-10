@@ -19,7 +19,8 @@
     "format:fix": "prettier . --write",
     "packs:databaseToSource": "node scripts/packs-unpack.mjs",
     "packs:sourceToDatabase": "node scripts/packs-pack.mjs",
-    "packs:cleanupSource": "node scripts/packs-clean.mjs"
+    "packs:cleanupSource": "node scripts/packs-clean.mjs",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -41,9 +42,12 @@
   },
   "homepage": "https://github.com/AutarchLLC/foundryvtt-acks-core#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@foundryvtt/foundryvtt-cli": "^3.0.3",
     "@rollup/plugin-terser": "^1.0.0",
     "autoprefixer": "^10.4.27",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
     "postcss": "^8.5.8",
     "prettier": "3.8.1",
     "rollup": "^4.59.0"

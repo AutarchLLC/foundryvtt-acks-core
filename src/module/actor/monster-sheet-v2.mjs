@@ -1,3 +1,4 @@
+/* global foundry */
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../utility.js";
 import { ACKS } from "../config.js";

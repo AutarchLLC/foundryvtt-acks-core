@@ -1,3 +1,4 @@
+/* global foundry */
 import actorCommonSchema from "./templates/actor-common-schema.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 

@@ -1,3 +1,4 @@
+/* global foundry */
 import { ACKS } from "../../../config.js";
 
 /**
