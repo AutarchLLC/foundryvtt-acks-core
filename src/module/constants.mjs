@@ -207,7 +207,7 @@ export const ATTRIBUTE_MODIFIERS_LUT = Object.freeze({
   18: +3,
 });
 
-export const INTERNAL_TABLES_PATH = "systems/acks/module/ruledata/internal_tables.json";
+export const INTERNAL_TABLES_PATH = "systems/acks/ruledata/internal_tables.json";
 
 export const MORTAL_WOUNDS_TREATMENT_TIMING = Object.freeze({
   2: { label: "Treatment within 1 Round (+2)", value: 2 },

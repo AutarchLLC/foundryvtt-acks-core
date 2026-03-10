@@ -5,6 +5,17 @@ export const PACK_BASE_DIR = "src/";
 export const PACK_DEST = "src/packs";
 export const PACK_SRC = "src/packs/_source";
 export const MODULE_PATH = "src/system.json";
+export const DIST_NAME = "dist";
+export const SRC_NAME = "src";
+export const CSS_MAIN_NAME = "acks.css";
+export const INCLUDES = [
+  path.join(process.cwd(), SRC_NAME, "assets"),
+  path.join(process.cwd(), SRC_NAME, "templates"),
+  path.join(process.cwd(), SRC_NAME, "ruledata"),
+  path.join(process.cwd(), SRC_NAME, "LICENSE.txt"),
+  path.join(process.cwd(), SRC_NAME, "system.json"),
+  path.join(process.cwd(), SRC_NAME, "template.json"),
+];
 
 /**
  * Standardize name format.

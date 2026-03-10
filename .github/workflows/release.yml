@@ -1,0 +1,55 @@
+name: Release Creation
+
+env:
+  NODE_VERSION: 24
+
+on:
+  push:
+    tags:
+      - 'release-*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: Extract version
+        run: |
+          echo "VERSION=${GITHUB_REF_NAME#release-}" >> $GITHUB_ENV
+          echo "ZIP_NAME=acks-$VERSION.zip" >> $GITHUB_ENV
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build Code and CSS
+        run: npm run build
+
+      - name: Build Compendium Packs
+        run: npm run packs:sourceToDatabase
+
+      - name: Copy Assets into Dist folder
+        run: npm run build:copy:all
+
+      - name: Create Zip File
+        run: (cd dist && zip -r ../${{ env.ZIP_NAME }} .)
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.20.0
+        with:
+          artifacts: './${{ env.ZIP_NAME }}, ./dist/system.json'
+          draft: true
+          omitDraftDuringUpdate: true
+          updateOnlyUnreleased: true
+          skipIfReleaseExists: true
+          replacesArtifacts: true

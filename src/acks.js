@@ -28,6 +28,7 @@ import MonsterData from "./module/data/actor/monster-data.mjs";
 import ACKSCharacterSheetV2 from "./module/actor/character-sheet-v2.mjs";
 import ACKSMonsterSheetV2 from "./module/actor/monster-sheet-v2.mjs";
 import ItemBundleData from "./module/data/item/item-bundle-data.mjs";
+import renderActorDirectory from "./module/hooks/render-actor-directory.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -177,4 +178,4 @@ Hooks.on("renderChatMessageHTML", chat.addChatMessageButtons);
 Hooks.on("renderRollTableConfig", treasure.augmentTable);
 Hooks.on("updateActor", party.update);
 
-Hooks.on("renderActorDirectory", (app, html, data) => AcksUtility.addButtons(app, html, data));
+Hooks.on("renderActorDirectory", (app, html, data) => renderActorDirectory(app, html, data));

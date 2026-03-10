@@ -2,17 +2,20 @@
   "id": "acks",
   "title": "Adventurer Conqueror King System",
   "description": "Play B/X or other OSR compatible content using the ACKS system",
-  "version": "#{VERSION}#",
+  "version": "13.0.0",
+  "url": "https://github.com/AutarchLLC/foundryvtt-acks-core",
+  "manifest": "https://github.com/thetwoface/foundryvtt-acks-core-dev/releases/latest/download/system.json",
+  "download": "https://github.com/thetwoface/foundryvtt-acks-core-dev/releases/download/13.0.0/acks-13.0.0.zip",
   "socket": true,
   "relationships": {},
   "compatibility": {
-    "minimum": "13",
+    "minimum": "13.351",
     "verified": "13"
   },
   "flags": {
     "hotReload": {
       "extensions": ["css", "html", "hbs", "json"],
-      "paths": ["acks.css", "./", "templates", "css", "lang/en.json"]
+      "paths": ["acks.css", "templates", "lang"]
     }
   },
   "authors": [
@@ -24,6 +27,11 @@
     },
     {
       "name": "ArcanistWill"
+    },
+    {
+      "name": "miketwoface",
+      "discord": "miketwoface",
+      "url": "https://github.com/thetwoface"
     }
   ],
   "manifestPlusVersion": "1.2.0",
@@ -267,8 +275,5 @@
   "grid": {
     "distance": 5,
     "units": "ft"
-  },
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#"
+  }
 }
