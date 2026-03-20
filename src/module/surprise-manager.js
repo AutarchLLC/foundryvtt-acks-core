@@ -1,5 +1,7 @@
+/* global foundry, game */
 import { AcksUtility } from "./utility.js";
 import { ACKS } from "./config.js";
+import { SURPRISE_MATRIX } from "./constants.mjs";
 
 /*******************************************************/
 export class AcksSurprise extends FormApplication {
@@ -24,16 +26,9 @@ export class AcksSurprise extends FormApplication {
     this.modifiers = {}; // Reset per actor modifier
     const data = {
       data: this.object,
-      config: foundry.utils.duplicate(ACKS),
       user: game.user,
+      surpriseTableAdventurers: SURPRISE_MATRIX,
     };
-    for (let key in data.config.surpriseTableAdventurers) {
-      let sData = data.config.surpriseTableAdventurers[key];
-      for (let key1 in sData) {
-        let sData1 = sData[key1];
-        sData1.localized = game.i18n.localize(sData1.description);
-      }
-    }
     return data;
   }
 
@@ -164,7 +159,7 @@ export class AcksSurprise extends FormApplication {
     html.find(".roll-surprise-button").click(async (ev) => {
       let keyA = $(ev.currentTarget).data("key-adventurer");
       let keyM = $(ev.currentTarget).data("key-monster");
-      let surpriseDef = ACKS.surpriseTableAdventurers[keyA][keyM];
+      let surpriseDef = SURPRISE_MATRIX[keyA][keyM];
       let friendlyModifier = $("#surprise-friendly-modifier").val();
       let hostileModifier = $("#surprise-hostile-modifier").val();
       await myself.rollSurprise(surpriseDef, friendlyModifier, hostileModifier);

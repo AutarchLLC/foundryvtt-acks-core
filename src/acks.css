@@ -2439,3 +2439,20 @@
 .acks2 .window-content input {
   text-align: center;
 }
+
+.acks2 .surprise-matrix {
+  display: grid;
+  grid-template-columns: 5rem repeat(4, 1fr);
+  grid-template-rows: 1rem 1rem repeat(4, 1fr);
+  gap: 0.5rem;
+  place-items: center;
+}
+
+.acks2 .surprise-matrix__btn{
+  --button-size: 5rem;
+  width: 100%;
+}
+
+.acks2 .surprise-matrix__monsters-header{
+  grid-column: 2 / span 4;
+}

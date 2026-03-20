@@ -25,7 +25,7 @@
       </select>
     </div>
   </div>
-  
+
   <div class="flexrow">
     <button class="roll-actor-surprise" id="surprise-actor-modifiers">{{localize "ACKS.surprise.actormodifier"}}</button>
   </div>
@@ -33,21 +33,21 @@
 </div>
 
 <table class="acks acks-surprised-table">
-  
+
   <tr>
     <td>Monsters<br>Adventurers</td>
-      {{#each config.surpriseTableAdventurers as |sightMonster keyAdventurer| }}
+      {{#each surpriseTableAdventurers as |sightMonster keyAdventurer| }}
         <td class="acks-label-center">{{localize (concat "ACKS.surprise.title." keyAdventurer)}}</td>
       {{/each}}
   </tr>
-  
-  {{#each config.surpriseTableAdventurers as |sightMonster keyAdventurer| }}
+
+  {{#each surpriseTableAdventurers as |sightMonster keyAdventurer| }}
   <tr>
     <td class="acks-label-center">{{localize (concat "ACKS.surprise.title." keyAdventurer)}}</td>
     {{#each sightMonster as |sightCell keyMonster| }}
     <td>
       <button class="roll-surprise-button" data-key-adventurer="{{keyAdventurer}}" data-key-monster="{{keyMonster}}">
-      {{{sightCell.localized}}}
+      {{{localize sightCell.description}}}
       </button>
     </td>
   {{/each}}

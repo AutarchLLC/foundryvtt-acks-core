@@ -1,6 +1,8 @@
+/* global Combat, game, Roll, foundry, canvas, CONFIG, ui, Hooks, CONST */
 import { AcksSurprise } from "./surprise-manager.js";
 import { AcksUtility } from "./utility.js";
 import { ACKS } from "./config.js";
+import SurpriseMatrix from "./apps/surprise/surprise-matrix.mjs";
 
 export class AcksCombatClass extends Combat {
   /*******************************************************/
@@ -115,7 +117,7 @@ export class AcksCombatClass extends Combat {
     }
 
     await CONFIG.ChatMessage.documentClass.create(messages);
-    this.pools = AcksCombat.getCombatantsPool();
+    this.pools = this.#getCombatantPools();
     await this.processOutNumbering();
 
     await this.setFlag("acks", "lock-turns", false);
@@ -191,16 +193,50 @@ export class AcksCombatClass extends Combat {
     }
   }
 
-  /*******************************************************/
+  /**
+   * @override
+   * @return {Promise<void>}
+   */
   async startCombat() {
-    console.log("Start Combat 1 !");
     await this.cleanupStatus("outnumbering");
-    let pools = AcksCombat.getCombatantsPool();
+    const pools = this.#getCombatantPools();
     this.pools = pools;
 
-    console.log("Start Combat 2 !", pools);
+    const surpriseMatrixOptions = {
+      pools,
+      combat: this,
+    };
+
+    // TODO: maybe somehow limit matrix app instance per combat? so we can't open 2 apps for same combat.
+    new SurpriseMatrix(surpriseMatrixOptions).render(true);
+
     let surpriseDialog = new AcksSurprise({ pools, combatData: this });
     await surpriseDialog.render(true);
+  }
+
+  #getCombatantPools() {
+    const pools = { secret: [], hostile: [], neutral: [], friendly: [] };
+
+    for (const cbt of this.combatants) {
+      if (cbt.isDefeated) {
+        continue;
+      }
+      switch (cbt.token.disposition) {
+        case CONST.TOKEN_DISPOSITIONS.FRIENDLY:
+          pools.friendly.push(cbt);
+          break;
+        case CONST.TOKEN_DISPOSITIONS.NEUTRAL:
+          pools.neutral.push(cbt);
+          break;
+        case CONST.TOKEN_DISPOSITIONS.HOSTILE:
+          pools.hostile.push(cbt);
+          break;
+        case CONST.TOKEN_DISPOSITIONS.SECRET:
+        default:
+          pools.secret.push(cbt);
+      }
+    }
+    return pools;
   }
 
   /*******************************************************/
@@ -825,27 +861,6 @@ export class AcksCombat {
       icon: '<i class="fas fa-star-of-life"></i>',
       callback: AcksCombat.activateCombatant,
     });
-  }
-
-  /*******************************************************/
-  /* Sort current combatants in pools */
-  static getCombatantsPool() {
-    let pools = { friendly: [], neutral: [], hostile: [] };
-    game.combat.combatants.forEach((cbt) => {
-      //console.log("Combatant", cbt);
-      if (!cbt.isDefeated) {
-        if (cbt.token.disposition == 1) {
-          pools.friendly.push(cbt);
-        }
-        if (cbt.token.disposition == -1) {
-          pools.hostile.push(cbt);
-        }
-        if (cbt.token.disposition == 0) {
-          pools.neutral.push(cbt);
-        }
-      }
-    });
-    return pools;
   }
 
   /*******************************************************/

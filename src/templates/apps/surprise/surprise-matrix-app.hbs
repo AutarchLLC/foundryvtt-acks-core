@@ -1,0 +1,50 @@
+<section class="standard-form">
+
+  <div class="surprise-matrix">
+    <div class="surprise-matrix__monsters-header">Monsters</div>
+
+    <div>Adventurers</div>
+
+    {{#each headerKeys}}
+      <div>{{this}}</div>
+    {{/each}}
+
+    {{#each gridCells}}
+      {{#if isHeader}}
+        <div>{{desc}}</div>
+      {{else}}
+        <button type="button" class="surprise-matrix__btn" data-action="rollSurprise"
+                data-adventurer-status="{{adventurerStatusKey}}" data-monster-status="{{monsterStatusKey}}">
+          {{{desc}}}
+        </button>
+      {{/if}}
+    {{/each}}
+
+  </div>
+
+  <div class="row">
+
+    <fieldset class="flex-1">
+      <legend>Global modifiers</legend>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-friendlyGlobalMod">Friendly</label>
+        <div class="form-fields flex-1">
+          <input type="number" name="friendlyGlobalMod" value="0"
+                 id="{{@root.partId}}-friendlyGlobalMod"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-hostileGlobalMod">Hostile</label>
+        <div class="form-fields flex-1">
+          <input type="number" name="hostileGlobalMod" value="0"
+                 id="{{@root.partId}}-hostileGlobalMod"/>
+        </div>
+      </div>
+
+    </fieldset>
+
+  </div>
+
+</section>

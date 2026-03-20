@@ -445,9 +445,9 @@
   "ACKS.surprise.surprised": "<strong>Surprised!</strong><br/>(result {result}, {formula})",
   "ACKS.surprise.actormodifier": "Per actor modifiers",
 
-  "ACKS.surprise.title.forelos": "Fore+LOS",
+  "ACKS.surprise.title.forelos": "Fore + LoS",
   "ACKS.surprise.title.fore": "Fore",
-  "ACKS.surprise.title.los": "LOS",
+  "ACKS.surprise.title.los": "LoS",
   "ACKS.surprise.title.none": "None",
 
   "ACKS.StatusOutNumbered": "OutNumbered",
