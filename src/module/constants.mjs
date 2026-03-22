@@ -286,49 +286,275 @@ export const TAMPERING_LIMBS = Object.freeze({
   "-16": { label: "8 (-16)", value: -16 },
 });
 
+/**
+ * Represents the detection state of one side in an encounter.
+ * - `forelos` - Both forewarned AND has line of sight
+ * - `fore`    - Forewarned only (heard/smelled, but no direct sight)
+ * - `los`     - Line of sight only (spotted, but not forewarned)
+ * - `none`    - Neither forewarned nor line of sight
+ * @typedef {'forelos' | 'fore' | 'los' | 'none'} SurpriseDetectionState
+ */
+
+/**
+ * Surprise state for the monster side of an encounter.
+ * @typedef {Object} SurpriseMonsterState
+ * @property {boolean} canBeSurprised - Whether the monster can be surprised in this scenario
+ * @property {number}  modifier       - Modifier applied to the monster's surprise roll
+ */
+
+/**
+ * Surprise state for the adventurer side of an encounter.
+ * @typedef {Object} SurpriseAdventurerState
+ * @property {boolean} canBeSurprised - Whether the adventurer can be surprised in this scenario
+ * @property {number}  modifier       - Modifier applied to the adventurer's surprise roll
+ * @property {boolean} canEvade       - Whether the adventurer can attempt to evade the encounter
+ */
+
+/**
+ * A single cell in the surprise matrix, describing the outcome for a specific
+ * combination of adventurer and monster detection states.
+ * @typedef {Object} SurpriseMatrixEntry
+ * @property {boolean}               isEncounter  - Whether this combination results in an encounter
+ * @property {SurpriseMonsterState}     monster      - Monster surprise data for this combination
+ * @property {SurpriseAdventurerState}  adventurer   - Adventurer surprise data for this combination
+ * @property {string}                description  - Localization key describing this scenario
+ */
+
+/**
+ * One row of the surprise matrix, keyed by the monster's {@link SurpriseDetectionState}.
+ * @typedef {Record<SurpriseDetectionState, SurpriseMatrixEntry>} SurpriseMatrixRow
+ */
+
+/**
+ * @typedef {Readonly<Record<SurpriseDetectionState, SurpriseMatrixRow>>} SurpriseMatrixLUT
+ */
+
+/**
+ * A two-dimensional lookup table for ACKS II surprise mechanics.
+ *
+ * Usage: `SURPRISE_MATRIX[adventurerDetection][monsterDetection]`
+ *
+ * The outer key is the **adventurer** party's detection state; the inner key
+ * is the **monster** party's detection state. Each cell describes whether an
+ * encounter occurs, whether each side can be surprised, applicable modifiers,
+ * and whether the adventurers may evade.
+ * @type {SurpriseMatrixLUT}
+ */
 export const SURPRISE_MATRIX = Object.freeze({
   forelos: {
     forelos: {
-      monsterModifier: +10,
-      adventurerModifier: +10,
-      canEvade: false,
+      isEncounter: true,
+      monster: {
+        canBeSurprised: false,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: false,
+        modifier: 0,
+        canEvade: false,
+      },
       description: "ACKS.surprise.forelos.forelos",
     },
-    fore: { monsterModifier: 1, adventurerModifier: +10, canEvade: true, description: "ACKS.surprise.forelos.fore" },
-    los: { monsterModifier: 0, adventurerModifier: +10, canEvade: true, description: "ACKS.surprise.forelos.los" },
-    none: { monsterModifier: -1, adventurerModifier: +10, canEvade: true, description: "ACKS.surprise.forelos.none" },
+    fore: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 1,
+      },
+      adventurer: {
+        canBeSurprised: false,
+        modifier: 0,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.forelos.fore",
+    },
+    los: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: false,
+        modifier: 0,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.forelos.los",
+    },
+    none: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: -1,
+      },
+      adventurer: {
+        canBeSurprised: false,
+        modifier: 0,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.forelos.none",
+    },
   },
   fore: {
     forelos: {
-      monsterModifier: 10,
-      adventurerModifier: +1,
-      canEvade: false,
+      isEncounter: true,
+      monster: {
+        canBeSurprised: false,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 1,
+        canEvade: false,
+      },
       description: "ACKS.surprise.fore.forelos",
     },
-    fore: { monsterModifier: 1, adventurerModifier: 1, canEvade: true, description: "ACKS.surprise.fore.fore" },
-    los: { monsterModifier: 0, adventurerModifier: 1, canEvade: true, description: "ACKS.surprise.fore.los" },
-    none: { monsterModifier: -1, adventurerModifier: 1, canEvade: true, description: "ACKS.surprise.fore.none" },
+    fore: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 1,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 1,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.fore.fore",
+    },
+    los: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 1,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.fore.los",
+    },
+    none: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: -1,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 1,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.fore.none",
+    },
   },
   los: {
     forelos: {
-      monsterModifier: 10,
-      adventurerModifier: 0,
-      canEvade: false,
+      isEncounter: true,
+      monster: {
+        canBeSurprised: false,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 0,
+        canEvade: false,
+      },
       description: "ACKS.surprise.los.forelos",
     },
-    fore: { monsterModifier: 1, adventurerModifier: 0, canEvade: true, description: "ACKS.surprise.los.fore" },
-    los: { monsterModifier: 0, adventurerModifier: 0, canEvade: true, description: "ACKS.surprise.los.los" },
-    none: { monsterModifier: -1, adventurerModifier: 0, canEvade: true, description: "ACKS.surprise.los.none" },
+    fore: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 1,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 0,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.los.fore",
+    },
+    los: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 0,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.los.los",
+    },
+    none: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: -1,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: 0,
+        canEvade: true,
+      },
+      description: "ACKS.surprise.los.none",
+    },
   },
   none: {
     forelos: {
-      monsterModifier: 10,
-      adventurerModifier: -1,
-      canEvade: false,
+      isEncounter: true,
+      monster: {
+        canBeSurprised: false,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: -1,
+        canEvade: false,
+      },
       description: "ACKS.surprise.none.forelos",
     },
-    fore: { monsterModifier: 1, adventurerModifier: -1, canEvade: false, description: "ACKS.surprise.none.fore" },
-    los: { monsterModifier: 0, adventurerModifier: -1, canEvade: false, description: "ACKS.surprise.none.los" },
-    none: { monsterModifier: -10, adventurerModifier: -10, canEvade: false, description: "ACKS.surprise.none.none" },
+    fore: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 1,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: -1,
+        canEvade: false,
+      },
+      description: "ACKS.surprise.none.fore",
+    },
+    los: {
+      isEncounter: true,
+      monster: {
+        canBeSurprised: true,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: true,
+        modifier: -1,
+        canEvade: false,
+      },
+      description: "ACKS.surprise.none.los",
+    },
+    none: {
+      isEncounter: false,
+      monster: {
+        canBeSurprised: false,
+        modifier: 0,
+      },
+      adventurer: {
+        canBeSurprised: false,
+        modifier: 0,
+        canEvade: false,
+      },
+      description: "ACKS.surprise.none.none",
+    },
   },
 });

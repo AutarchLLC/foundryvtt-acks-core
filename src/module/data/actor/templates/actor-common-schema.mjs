@@ -121,7 +121,7 @@ export default function actorCommonSchema() {
     // TODO: figure out and document this, it is very confusing
     surprise: new SchemaField({
       // mod can be set only for monsters.
-      mod: new NumberField({ initial: 0 }),
+      mod: new NumberField({ initial: 0 }), // TODO: not used, remove
       surpriseothers: new NumberField({ initial: 0 }),
       avoidsurprise: new NumberField({ initial: 0 }),
     }),

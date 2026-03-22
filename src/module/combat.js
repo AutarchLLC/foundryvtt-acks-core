@@ -1,5 +1,4 @@
 /* global Combat, game, Roll, foundry, canvas, CONFIG, ui, Hooks, CONST */
-import { AcksSurprise } from "./surprise-manager.js";
 import { AcksUtility } from "./utility.js";
 import { ACKS } from "./config.js";
 import SurpriseMatrix from "./apps/surprise/surprise-matrix.mjs";
@@ -210,8 +209,8 @@ export class AcksCombatClass extends Combat {
     // TODO: maybe somehow limit matrix app instance per combat? so we can't open 2 apps for same combat.
     new SurpriseMatrix(surpriseMatrixOptions).render(true);
 
-    let surpriseDialog = new AcksSurprise({ pools, combatData: this });
-    await surpriseDialog.render(true);
+    //let surpriseDialog = new AcksSurprise({ pools, combatData: this });
+    //await surpriseDialog.render(true);
   }
 
   #getCombatantPools() {

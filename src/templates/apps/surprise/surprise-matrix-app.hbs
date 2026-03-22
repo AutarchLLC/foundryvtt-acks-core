@@ -28,7 +28,7 @@
       <legend>Global modifiers</legend>
 
       <div class="form-group">
-        <label class="flex-1" for="{{@root.partId}}-friendlyGlobalMod">Friendly</label>
+        <label class="flex-1" for="{{@root.partId}}-friendlyGlobalMod">Adventurers</label>
         <div class="form-fields flex-1">
           <input type="number" name="friendlyGlobalMod" value="0"
                  id="{{@root.partId}}-friendlyGlobalMod"/>
@@ -36,7 +36,7 @@
       </div>
 
       <div class="form-group">
-        <label class="flex-1" for="{{@root.partId}}-hostileGlobalMod">Hostile</label>
+        <label class="flex-1" for="{{@root.partId}}-hostileGlobalMod">Monsters</label>
         <div class="form-fields flex-1">
           <input type="number" name="hostileGlobalMod" value="0"
                  id="{{@root.partId}}-hostileGlobalMod"/>
@@ -44,6 +44,13 @@
       </div>
 
     </fieldset>
+
+    <fieldset class="flex-1">
+      <legend>Individual Modifiers</legend>
+      <button type="button" data-action="setIndividualModifiers">Configure</button>
+    </fieldset>
+
+    <div class="flex-2"></div>
 
   </div>
 
