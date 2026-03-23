@@ -1,3 +1,4 @@
+/* global foundry */
 import { DEFAULT_MONSTER_ITEM_OPTIONS, MONSTER_SAVES_OPTIONS } from "../constants.mjs";
 
 export default class ACKSDialog {
@@ -52,6 +53,39 @@ export default class ACKSDialog {
     return foundry.applications.api.DialogV2.input({
       window: { title: "ACKS.dialog.generateSaves" },
       content,
+    });
+  }
+
+  static async inputIndividualSurpriseModifiers(combatants, individualMods = {}) {
+    const contentParts = [];
+    for (const combatant of combatants) {
+      const modifierInput = foundry.applications.fields.createNumberInput({
+        name: `${combatant.actor.uuid}`,
+        placeholder: "0",
+        dataset: {
+          dtype: "Number",
+        },
+        step: 1,
+        value: individualMods[combatant.actor.uuid] ?? 0,
+      });
+      const modifierFormGroup = foundry.applications.fields.createFormGroup({
+        input: modifierInput,
+        label: `${combatant.actor.name}`,
+      });
+
+      contentParts.push(modifierFormGroup.outerHTML);
+    }
+
+    return foundry.applications.api.DialogV2.input({
+      window: {
+        title: "ACKS.dialog.generateSaves",
+        resizable: true,
+      },
+      position: {
+        width: 600,
+        height: "auto",
+      },
+      content: contentParts.join(""),
     });
   }
 }

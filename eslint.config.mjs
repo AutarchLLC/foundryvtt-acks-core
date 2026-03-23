@@ -15,5 +15,15 @@ export default defineConfig([
     linterOptions: {
       reportUnusedInlineConfigs: "error",
     },
+    rules: {
+      "no-unused-vars": [
+        "error",
+        {
+          varsIgnorePattern: "^_",
+          argsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+    },
   },
 ]);

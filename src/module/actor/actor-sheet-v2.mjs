@@ -3,6 +3,7 @@ import { ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 import ActorTweaksConfig from "../apps/actor-tweaks-config.mjs";
+import AcksEffectUtil from "../effect/acks-effect-util.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -56,6 +57,10 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       hirelingDelete: ACKSActorSheetV2.#hirelingDelete,
       toggleListSection: AcksHtmlUtil.toggleListSection,
       resetSpellSlots: ACKSActorSheetV2.#resetSpellSlots,
+      createEffect: ACKSActorSheetV2.#addEffect,
+      toggleEffect: ACKSActorSheetV2.#toggleEffect,
+      editEffect: ACKSActorSheetV2.#editEffect,
+      deleteEffect: ACKSActorSheetV2.#deleteEffect,
     },
   };
 
@@ -316,6 +321,53 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   static #hirelingDelete(event, target) {
     const hirelingId = AcksHtmlUtil.getItemIdFromDOM(target);
     void this.actor.delHenchman(hirelingId);
+  }
+
+  /**
+   * Handle adding new active effect.
+   * @this {ACKSActorSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target - add effect button
+   */
+  static async #addEffect(event, target) {
+    const effectType = target.dataset.effectType;
+    await AcksEffectUtil.addEffect(effectType, this.actor);
+  }
+
+  /**
+   * Handle toggling of an active event.
+   * @this {ACKSActorSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #toggleEffect(event, target) {
+    const effectId = target.dataset.effectId;
+    await AcksEffectUtil.toggleEffect(effectId, this.actor);
+  }
+
+  /**
+   * Handle editing of an active event.
+   * @this {ACKSActorSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #editEffect(event, target) {
+    const effectId = target.dataset.effectId;
+    await AcksEffectUtil.editEffect(effectId, this.actor);
+  }
+
+  /**
+   * Handle deleting of an active event.
+   * @this {ACKSActorSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #deleteEffect(event, target) {
+    const effectId = target.dataset.effectId;
+    await AcksEffectUtil.deleteEffect(effectId, this.actor);
   }
 
   /**

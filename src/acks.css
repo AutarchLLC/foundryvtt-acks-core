@@ -2448,11 +2448,11 @@
   place-items: center;
 }
 
-.acks2 .surprise-matrix__btn{
+.acks2 .surprise-matrix__btn {
   --button-size: 5rem;
   width: 100%;
 }
 
-.acks2 .surprise-matrix__monsters-header{
+.acks2 .surprise-matrix__monsters-header {
   grid-column: 2 / span 4;
 }
