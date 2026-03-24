@@ -89,4 +89,37 @@ export default class ACKSDialog {
       content: contentParts.join(""),
     });
   }
+
+  /**
+   *
+   * @param {AcksActor} actor
+   * @param rollData
+   * @param options
+   */
+  static showAttackRangeSelector(actor, rollData, options = {}) {
+    new foundry.applications.api.DialogV2({
+      window: {
+        title: "Choose Attack Range", // TODO: localize
+      },
+      buttons: [
+        {
+          action: "melee",
+          default: true,
+          icon: "fas fa-fist-raised",
+          label: "Melee", // TODO: localize
+          callback: () => {
+            void actor.targetAttack(rollData, "melee", options);
+          },
+        },
+        {
+          action: "missile",
+          icon: "fas fa-bullseye",
+          label: "Missile", // TODO: localize
+          callback: () => {
+            void actor.targetAttack(rollData, "missile", options);
+          },
+        },
+      ],
+    }).render({ force: true });
+  }
 }

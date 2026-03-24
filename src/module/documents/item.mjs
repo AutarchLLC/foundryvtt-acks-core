@@ -2,6 +2,7 @@
 import { AcksDice } from "../dice.js";
 import { createTagHtmlString } from "../util/html-util.mjs";
 import { ACKS } from "../config.js";
+import ACKSDialog from "../dialog/dialog.mjs";
 
 /**
  * Override and extend the basic :class:`Item` implementation
@@ -84,28 +85,7 @@ export default class AcksItem extends Item {
     };
 
     if (this.system.missile && this.system.melee && !isNPC) {
-      // Dialog
-      new Dialog({
-        title: "Choose Attack Range",
-        content: "",
-        buttons: {
-          melee: {
-            icon: '<i class="fas fa-fist-raised"></i>',
-            label: "Melee",
-            callback: () => {
-              this.actor.targetAttack(rollData, "melee", options);
-            },
-          },
-          missile: {
-            icon: '<i class="fas fa-bullseye"></i>',
-            label: "Missile",
-            callback: () => {
-              this.actor.targetAttack(rollData, "missile", options);
-            },
-          },
-        },
-        default: "melee",
-      }).render(true);
+      ACKSDialog.showAttackRangeSelector(this.actor, rollData, options);
       return true;
     } else if (this.system.missile && !isNPC) {
       type = "missile";
