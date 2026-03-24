@@ -1,8 +1,11 @@
 <section class="acks chat-message">
 
   <div class="acks chat-block">
+
     <div class="flexrow chat-header">
-      <div class="chat-title"><h2>Mortal Wounds Roll</h2></div>
+      <div class="chat-title">
+        <h2>Tampering With Mortality Roll</h2>
+      </div>
     </div>
 
     <div>
@@ -13,16 +16,20 @@
       <span><strong>{{localize 'ACKS.messages.Roll'}}</strong> : </span>
       <span>{{d20Result}} (1d20 + ({{modifier}}))</span>
     </div>
+
     <div class="flexrow">
       <span><strong>{{localize 'ACKS.messages.ConditionRecovery'}}</strong> : {{condition_recovery}}</span>
     </div>
+
     <div class="">
       <span><strong>D6 result</strong> : </span>
       <span>{{d6Result}} </span>
     </div>
+
     <div class="flexrow">
       <span><strong>{{localize 'ACKS.messages.Effect'}}</strong> : {{selectedEffect}}</span>
     </div>
+    
   </div>
 
 </section>

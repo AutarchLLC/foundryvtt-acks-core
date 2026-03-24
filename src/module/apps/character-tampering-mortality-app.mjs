@@ -1,4 +1,4 @@
-/* global foundry, game, CONST */
+/* global foundry, game, CONST, ChatMessage */
 import ACKSTableManager from "./table-manager.mjs";
 import { MORTAL_WOUNDS_CLASS_LEVELS, TAMPERING_LIFE_SPAN, TAMPERING_LIMBS, TAMPERING_SPINE } from "../constants.mjs";
 import { AcksUtility } from "../utility.js";
@@ -174,7 +174,7 @@ export default class CharacterTamperingMortalityApp extends HandlebarsApplicatio
   async #rollTamperingMortality() {
     const result = await ACKSTableManager.rollD20Table("tampering", this.#system.tamperingChoice, this.#finalModifier);
     const chatContent = await foundry.applications.handlebars.renderTemplate(
-      "systems/acks/templates/chat/tampering-result.html",
+      "systems/acks/templates/chat/tampering-result.hbs",
       result,
     );
     const chatData = {

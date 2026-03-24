@@ -1,4 +1,4 @@
-/* global game, ui */
+/* global Roll, ui, foundry */
 import { INTERNAL_TABLES_PATH } from "../constants.mjs";
 
 export default class ACKSTableManager {

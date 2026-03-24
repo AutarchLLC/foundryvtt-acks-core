@@ -1,4 +1,4 @@
-/* global foundry, game */
+/* global foundry, game, ChatMessage, CONST */
 import ACKSTableManager from "./table-manager.mjs";
 import {
   HIT_DICE_MODIFIERS,
@@ -199,7 +199,7 @@ export default class CharacterMortalWoundsApp extends HandlebarsApplicationMixin
       this.#finalModifier,
     );
     const chatContent = await foundry.applications.handlebars.renderTemplate(
-      "systems/acks/templates/chat/mortal-wounds-result.html",
+      "systems/acks/templates/chat/mortal-wounds-result.hbs",
       result,
     );
     const chatData = {
