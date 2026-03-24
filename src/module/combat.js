@@ -1,7 +1,7 @@
 /* global Combat, game, Roll, foundry, canvas, CONFIG, ui, Hooks, CONST */
 import { AcksUtility } from "./utility.js";
 import { ACKS } from "./config.js";
-import SurpriseMatrix from "./apps/surprise/surprise-matrix.mjs";
+import SurpriseMatrix from "./apps/surprise-matrix.mjs";
 
 export class AcksCombatClass extends Combat {
   /*******************************************************/
