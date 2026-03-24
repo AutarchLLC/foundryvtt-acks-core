@@ -755,7 +755,24 @@
 }
 .acks.chat-card .card-content {
   margin: 5px 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.5s ease,
+    opacity 0.5s ease;
 }
+
+.acks.chat-card .card-content.expanded {
+  grid-template-rows: 1fr; /* expanded */
+  opacity: 1;
+}
+
+.acks.chat-card .card-content__description {
+  min-height: 0;
+  overflow: hidden;
+}
+
 .acks.chat-card .card-content .treasure-list {
   padding: 0;
   list-style: none;
@@ -2461,7 +2478,7 @@
   overflow: hidden;
 }
 
-.acks2.scrollable-dialog-form form > .dialog-content{
+.acks2.scrollable-dialog-form form > .dialog-content {
   --scroll-margin: 0.75rem;
   /*margin-right: calc(-1* var(--scroll-margin));*/
   padding-right: var(--scroll-margin);

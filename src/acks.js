@@ -4,7 +4,7 @@ import { AcksActor } from "./module/documents/actor.js";
 import AcksItem from "./module/documents/item.mjs";
 import { ACKS } from "./module/config.js";
 import { registerMainSettings } from "./module/settings.js";
-import { registerHelpers } from "./module/helpers.js";
+import { registerHelpers } from "./module/helpers.mjs";
 import * as chat from "./module/chat.mjs";
 import * as treasure from "./module/treasure.js";
 import * as macros from "./module/macros.js";

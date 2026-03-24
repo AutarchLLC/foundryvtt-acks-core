@@ -37,9 +37,13 @@ export default class AcksItem extends Item {
   }
 
   static chatListeners(html) {
-    const $html = $(html);
-    $html.on("click", ".card-buttons button", this._onChatCardAction.bind(this));
-    $html.on("click", ".item-name", this._onChatCardToggleContent.bind(this));
+    html.addEventListener("click", (event) => {
+      if (event.target.closest(".card-buttons button")) {
+        this.#onChatCardAction(event);
+      } else if (event.target.closest(".item-name")) {
+        this.#onChatCardToggleContent(event);
+      }
+    });
   }
 
   async getChatData(htmlOptions) {
@@ -260,7 +264,7 @@ export default class AcksItem extends Item {
   }
 
   /**
-   * Show the item to Chat, creating a chat card which contains follow up attack or damage roll options
+   * Show the item to Chat, creating a chat card which contains follow-up attack or damage roll options
    * @return {Promise}
    */
   async show() {
@@ -278,9 +282,8 @@ export default class AcksItem extends Item {
       hasSave: this.hasSave,
       config: ACKS,
     };
-    //console.log("Template data", templateData);
     // Render the chat card template
-    const template = `systems/acks/templates/chat/item-card.html`;
+    const template = `systems/acks/templates/chat/item-card.hbs`;
     const html = await foundry.applications.handlebars.renderTemplate(template, templateData);
 
     // Basic chat message data
@@ -316,15 +319,16 @@ export default class AcksItem extends Item {
    * @param {Event} event   The originating click event
    * @private
    */
-  static _onChatCardToggleContent(event) {
+  static #onChatCardToggleContent(event) {
     event.preventDefault();
-    const header = event.currentTarget;
+    const header = event.target;
     const card = header.closest(".chat-card");
     const content = card.querySelector(".card-content");
-    if (content.style.display === "none") {
-      $(content).slideDown(200);
+
+    if (content.classList.contains("expanded")) {
+      content.classList.remove("expanded");
     } else {
-      $(content).slideUp(200);
+      content.classList.add("expanded");
     }
   }
 
@@ -335,11 +339,11 @@ export default class AcksItem extends Item {
     }
   }
 
-  static async _onChatCardAction(event) {
+  static async #onChatCardAction(event) {
     event.preventDefault();
 
     // Extract card data
-    const button = event.currentTarget;
+    const button = event.target;
     button.disabled = true;
     const card = button.closest(".chat-card");
     const messageId = card.closest(".message").dataset.messageId;
