@@ -77,9 +77,10 @@ export default class ACKSDialog {
     }
 
     return foundry.applications.api.DialogV2.input({
+      classes: ["acks2", "scrollable-dialog-form"],
       window: {
-        title: "ACKS.dialog.generateSaves",
-        resizable: true,
+        title: "ACKS.surprise.actormodifier",
+        resizable: false,
       },
       position: {
         width: 600,

@@ -2456,3 +2456,15 @@
 .acks2 .surprise-matrix__monsters-header {
   grid-column: 2 / span 4;
 }
+
+.acks2.scrollable-dialog-form form {
+  overflow: hidden;
+}
+
+.acks2.scrollable-dialog-form form > .dialog-content{
+  --scroll-margin: 0.75rem;
+  /*margin-right: calc(-1* var(--scroll-margin));*/
+  padding-right: var(--scroll-margin);
+  overflow: hidden auto;
+  scrollbar-gutter: stable;
+}
