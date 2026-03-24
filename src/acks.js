@@ -1,4 +1,4 @@
-/* global CONFIG, game, Hooks, foundry */
+/* global CONFIG, game, Hooks, foundry, ui */
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { AcksActor } from "./module/documents/actor.js";
 import AcksItem from "./module/documents/item.mjs";
@@ -6,7 +6,6 @@ import { ACKS } from "./module/config.js";
 import { registerMainSettings } from "./module/settings.js";
 import { registerHelpers } from "./module/helpers.mjs";
 import * as chat from "./module/chat.mjs";
-import * as treasure from "./module/treasure.js";
 import * as macros from "./module/macros.js";
 import * as party from "./module/party.js";
 import { AcksCombat, AcksCombatClass } from "./module/combat.js";
@@ -175,7 +174,6 @@ Hooks.on("combatRound", AcksCombat.combatRound);
 
 Hooks.on("renderChatLog", (_app, html, _data) => AcksItem.chatListeners(html));
 Hooks.on("renderChatMessageHTML", chat.addChatMessageButtons);
-Hooks.on("renderRollTableConfig", treasure.augmentTable);
 Hooks.on("updateActor", party.update);
 
 Hooks.on("renderActorDirectory", (app, html, data) => renderActorDirectory(app, html, data));
