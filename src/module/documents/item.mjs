@@ -1,3 +1,4 @@
+/* global Item, foundry, TextEditor, ui, ChatMessage, game, CONST, canvas */
 import { AcksDice } from "../dice.js";
 import { createTagHtmlString } from "../util/html-util.mjs";
 import { ACKS } from "../config.js";
@@ -5,7 +6,7 @@ import { ACKS } from "../config.js";
 /**
  * Override and extend the basic :class:`Item` implementation
  */
-export class AcksItem extends Item {
+export default class AcksItem extends Item {
   constructor(data, context) {
     super(data, context);
   }
@@ -51,13 +52,13 @@ export class AcksItem extends Item {
     // Item properties
     const props = [];
 
-    if (this.type == "weapon") {
+    if (this.type === "weapon") {
       this.system.tags.forEach((t) => props.push(t.value));
     }
-    if (this.type == "spell") {
+    if (this.type === "spell") {
       props.push(`${this.system.class} ${this.system.lvl}`, this.system.range, this.system.duration);
     }
-    if (this.system.hasOwnProperty("equipped")) {
+    if (foundry.utils.hasProperty(this.system, "equipped")) {
       props.push(this.system.equipped ? "Equipped" : "Not Equipped");
     }
 
@@ -67,8 +68,7 @@ export class AcksItem extends Item {
   }
 
   rollWeapon(options = {}) {
-    let isNPC = this.actor.type != "character";
-    const targets = 5;
+    const isNPC = this.actor.type !== "character";
     let type = isNPC ? "attack" : "melee";
     const rollData = {
       item: this.toObject(),
@@ -118,8 +118,7 @@ export class AcksItem extends Item {
 
     const label = `${this.name}`;
     const rollParts = [this.system.roll];
-
-    let type = this.system.rollType;
+    const type = this.system.rollType;
 
     const newData = {
       actor: this.actor.toObject(),
@@ -145,7 +144,7 @@ export class AcksItem extends Item {
 
   spendSpell() {
     this.update({ "system.cast": this.system.cast + 1 }).then(() => {
-      this.show({ skipDialog: true });
+      void this.show();
     });
   }
 
@@ -194,13 +193,13 @@ export class AcksItem extends Item {
     if (this.system.tags) {
       update = foundry.utils.duplicate(this.system.tags);
     }
-    let newData = {};
-    let regExp = /\(([^)]+)\)/;
+    const newData = {};
+    const regExp = /\(([^)]+)\)/;
     if (update) {
       values.forEach((val) => {
         // Catch infos in brackets
-        let matches = regExp.exec(val);
-        let title = "";
+        const matches = regExp.exec(val);
+        let title;
         if (matches) {
           title = matches[1];
           val = val.substring(0, matches.index).trim();
@@ -230,8 +229,8 @@ export class AcksItem extends Item {
   }
 
   popTag(value) {
-    let update = this.system.tags.filter((el) => el.value != value);
-    let newData = {
+    const update = this.system.tags.filter((el) => el.value !== value);
+    const newData = {
       tags: update,
     };
     return this.update({ system: newData });
@@ -247,16 +246,16 @@ export class AcksItem extends Item {
         break;
       case "ability":
         if (this.system.roll) {
-          this.rollFormula();
+          void this.rollFormula();
         } else {
-          this.show();
+          void this.show();
         }
         break;
       case "item":
       case "armor":
       case "language":
       case "money":
-        this.show();
+        void this.show();
     }
   }
 
@@ -265,7 +264,6 @@ export class AcksItem extends Item {
    * @return {Promise}
    */
   async show() {
-    console.log("Showing item", this);
     // Basic template rendering data
     const token = this.actor.token;
     const templateData = {
@@ -283,7 +281,7 @@ export class AcksItem extends Item {
     //console.log("Template data", templateData);
     // Render the chat card template
     const template = `systems/acks/templates/chat/item-card.html`;
-    const html = await renderTemplate(template, templateData);
+    const html = await foundry.applications.handlebars.renderTemplate(template, templateData);
 
     // Basic chat message data
     const chatData = {
@@ -298,10 +296,16 @@ export class AcksItem extends Item {
     };
 
     // Toggle default roll mode
-    let rollMode = game.settings.get("core", "rollMode");
-    if (["gmroll", "blindroll"].includes(rollMode)) chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
-    if (rollMode === "selfroll") chatData["whisper"] = [game.user.id];
-    if (rollMode === "blindroll") chatData["blind"] = true;
+    const rollMode = game.settings.get("core", "rollMode");
+    if (["gmroll", "blindroll"].includes(rollMode)) {
+      chatData.whisper = ChatMessage.getWhisperRecipients("GM");
+    }
+    if (rollMode === "selfroll") {
+      chatData.whisper = [game.user.id];
+    }
+    if (rollMode === "blindroll") {
+      chatData.blind = true;
+    }
 
     // Create the chat message
     return ChatMessage.create(chatData);
@@ -317,7 +321,7 @@ export class AcksItem extends Item {
     const header = event.currentTarget;
     const card = header.closest(".chat-card");
     const content = card.querySelector(".card-content");
-    if (content.style.display == "none") {
+    if (content.style.display === "none") {
       $(content).slideDown(200);
     } else {
       $(content).slideUp(200);
@@ -325,7 +329,7 @@ export class AcksItem extends Item {
   }
 
   updateWeight() {
-    if (this.system?.weight != undefined && this.system?.weight6 == -1) {
+    if (this.system?.weight !== undefined && this.system?.weight6 === -1) {
       let nbStones6 = Math.ceil(this.system.weight / 166.66);
       this.update({ "system.weight6": nbStones6, "system.weight": -1 });
     }
@@ -342,10 +346,9 @@ export class AcksItem extends Item {
     const message = game.messages.get(messageId);
     const action = button.dataset.action;
 
-    console.log("Chat card action", action, event, message);
     // Validate permission to proceed with the roll
-    const isTargetted = action === "save";
-    if (!(isTargetted || game.user.isGM || message.isAuthor)) {
+    const isTargeted = action === "save";
+    if (!(isTargeted || game.user.isGM || message.isAuthor)) {
       ui.notifications.warn(`You do not have permission to use this feature for the selected chat card.`);
       return;
     }
@@ -365,7 +368,7 @@ export class AcksItem extends Item {
 
     // Get card targets
     let targets = [];
-    if (isTargetted) {
+    if (isTargeted) {
       targets = this._getChatCardTargets(card);
     }
 
@@ -376,12 +379,12 @@ export class AcksItem extends Item {
       await item.rollFormula({ event });
     }
     // Saving Throws for card targets
-    else if (action == "save") {
+    else if (action === "save") {
       if (!targets.length) {
         ui.notifications.warn(`You must have one or more controlled Tokens in order to use this option.`);
         return (button.disabled = false);
       }
-      for (let t of targets) {
+      for (const t of targets) {
         await t.rollSave(button.dataset.save, { event });
       }
     }
@@ -396,10 +399,14 @@ export class AcksItem extends Item {
     if (tokenKey) {
       const [sceneId, tokenId] = tokenKey.split(".");
       const scene = game.scenes.get(sceneId);
-      if (!scene) return null;
+      if (!scene) {
+        return null;
+      }
       const tokenData = scene.tokens.get(tokenId);
-      if (!tokenData) return null;
-      const token = new Token(tokenData);
+      if (!tokenData) {
+        return null;
+      }
+      const token = new foundry.canvas.placeables.Token(tokenData);
       return token.actor;
     }
 
@@ -408,11 +415,13 @@ export class AcksItem extends Item {
     return game.actors.get(actorId) || null;
   }
 
-  static _getChatCardTargets(card) {
+  static _getChatCardTargets(_card) {
     const character = game.user.character;
     const controlled = canvas.tokens.controlled;
     const targets = controlled.reduce((arr, t) => (t.actor ? arr.concat([t.actor]) : arr), []);
-    if (character && controlled.length === 0) targets.push(character);
+    if (character && controlled.length === 0) {
+      targets.push(character);
+    }
     return targets;
   }
 }
