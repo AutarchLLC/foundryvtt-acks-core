@@ -1,0 +1,50 @@
+<div class="acks chat-card item-card" data-actor-id="{{data.system.actor._id}}" data-item-id="{{data.system.item._id}}"
+  {{attrIfHasValue "data-token-id" tokenId}}>
+
+  <div class="acks chat-block">
+
+    <div class="flexrow chat-header">
+      <div class="chat-title">
+        <h2>{{title}}</h2>
+      </div>
+      {{#if data.system.item}}
+        <div class="chat-img" style="background-image:url('{{data.system.item.img}}')"></div>
+      {{else}}
+        <div class="chat-img" style="background-image:url('{{data.system.actor.img}}')"></div>
+      {{/if}}
+    </div>
+
+    {{#if result.victim}}
+      <div class="chat-target">
+        vs {{result.victim}}
+      </div>
+    {{/if}}
+
+    <div class="blindable" data-blind="{{data.system.roll.blindroll}}">
+
+      <div class="chat-details">
+        <div class="roll-result">{{{result.details}}}</div>
+      </div>
+
+      {{#if rollACKS}}
+        <div>{{{rollACKS}}}</div>
+      {{/if}}
+
+      {{#if result.isSuccess}}
+        <div class="chat-details">
+          <div class="roll-result"><b>{{localize 'ACKS.messages.InflictsDamage'}}</b></div>
+        </div>
+        <div class="damage-roll">{{{rollDamage}}}</div>
+        {{#if data.system.roll.save}}
+          <div class="card-buttons">
+            <button data-action="save" data-save="{{data.system.roll.save}}" disabled>
+              {{lookup config.saves_long data.system.roll.save}} - {{localize "ACKS.spells.Save"}}
+            </button>
+          </div>
+        {{/if}}
+      {{/if}}
+    </div>
+
+  </div>
+
+</div>

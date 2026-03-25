@@ -3,7 +3,7 @@ import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import { AcksActor } from "./module/documents/actor.js";
 import AcksItem from "./module/documents/item.mjs";
 import { ACKS } from "./module/config.js";
-import { registerMainSettings } from "./module/settings.js";
+import { registerMainSettings } from "./module/settings.mjs";
 import { registerHelpers } from "./module/helpers.mjs";
 import * as chat from "./module/chat.mjs";
 import * as macros from "./module/macros.js";

@@ -1,5 +1,5 @@
 /* global Item, foundry, TextEditor, ui, ChatMessage, game, CONST, canvas */
-import { AcksDice } from "../dice.js";
+import AcksDice from "../dice.mjs";
 import { createTagHtmlString } from "../util/html-util.mjs";
 import { ACKS } from "../config.js";
 import ACKSDialog from "../dialog/dialog.mjs";
@@ -115,7 +115,7 @@ export default class AcksItem extends Item {
     };
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: newData,

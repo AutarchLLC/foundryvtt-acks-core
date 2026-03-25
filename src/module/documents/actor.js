@@ -1,4 +1,4 @@
-import { AcksDice } from "../dice.js";
+import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../utility.js";
 import { ACKS } from "../config.js";
 
@@ -517,7 +517,7 @@ export class AcksActor extends Actor {
     }
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -532,8 +532,9 @@ export class AcksActor extends Actor {
   rollSave(save, options = {}) {
     const label = game.i18n.localize(`ACKS.saves.${save}.long`);
     const rollParts = ["1d20"];
-    if (this.type == "character") {
+    if (this.type === "character") {
       rollParts.push(this.system.save.mod);
+      rollParts.push(this.system.scores.wis.mod);
     }
 
     let data = {
@@ -541,7 +542,6 @@ export class AcksActor extends Actor {
       roll: {
         type: "above",
         target: this.system.saves[save].value,
-        magic: this.type == "character" ? this.system.scores.wis.mod : undefined,
       },
       details: game.i18n.format("ACKS.roll.details.save", { save: label }),
     };
@@ -552,7 +552,7 @@ export class AcksActor extends Actor {
       skip = true;
     }
 
-    const rollMethod = this.type == "character" ? AcksDice.RollSave : AcksDice.Roll;
+    const rollMethod = this.type == "character" ? AcksDice.rollSave : AcksDice.roll;
 
     // Roll and return
     return rollMethod({
@@ -583,7 +583,7 @@ export class AcksActor extends Actor {
     }
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -630,7 +630,7 @@ export class AcksActor extends Actor {
     }
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -676,7 +676,7 @@ export class AcksActor extends Actor {
     }
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -716,7 +716,7 @@ export class AcksActor extends Actor {
     }
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -743,7 +743,7 @@ export class AcksActor extends Actor {
     };
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -770,7 +770,7 @@ export class AcksActor extends Actor {
     };
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -802,7 +802,7 @@ export class AcksActor extends Actor {
     };
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
@@ -848,7 +848,7 @@ export class AcksActor extends Actor {
     }
 
     // Damage roll
-    AcksDice.Roll({
+    AcksDice.roll({
       event: options.event,
       parts: dmgParts,
       data: rollData,
@@ -934,7 +934,7 @@ export class AcksActor extends Actor {
     }
 
     // Roll and return
-    return AcksDice.Roll({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: rollData,

@@ -283,8 +283,6 @@
   "ACKS.Setting.Explode20Hint": "Heroic Fantasy Option: Attack throws explode on 20 - Critical if exceed target AC by 10",
   "ACKS.Setting.BHR": "HFH: Base Healing Rate",
   "ACKS.Setting.BHRHint": "Heroic Fantasy Option: Base Healing Rate per day varies by Max HP",
-  "ACKS.Setting.RemoveMagicBonus": "HFH: Wisdom Bonus to All Saves",
-  "ACKS.Setting.RemoveMagicBonusHint": "Heroic Fantasy Option: PCs will add their wisdom modifier to all saving throws, not just magic",
   "ACKS.Setting.enableCombatantColor": "Enable colored highlight for combatants",
   "ACKS.Setting.enableCombatantColorHint": "Change the color of combatants depending on their group",
   "ACKS.Setting.colorFriendlies": "Color for friendlies combatants",
