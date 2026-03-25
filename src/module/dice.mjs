@@ -254,62 +254,48 @@ export default class AcksDice {
     });
   }
 
-  static async rollSave({ parts = [], data = {}, skipDialog = false, speaker = null, flavor = null, title = "" } = {}) {
-    const rollData = {
-      parts,
-      data,
-      title,
-      flavor,
-      speaker,
+  /**
+   *
+   * @param [options={}] - roll options
+   * @param {string[]} [options.parts=[]] - The formula parts to be rolled (e.g. ["1d20", "3"])
+   * @param {object} [options.data={}] - The data context for the roll (e.g. {roll: {type: "check", target: 15}})
+   * @param {boolean} [options.skipDialog=false] - Whether to skip the roll dialog and roll immediately
+   * @param {string} [options.title=""] - The title to be displayed in the roll dialog
+   * @param {string} [options.flavor=null] - Optional flavor text to include in the chat message
+   * @param {object} [options.speaker=null] - Optional speaker data for the chat message (e.g. {actor: actor, token: token})
+   * @return {Promise<unknown>}
+   */
+  static async roll(options = {}) {
+    const DEFAULT_OPTIONS = {
+      parts: [],
+      data: {},
+      skipDialog: false,
+      speaker: null,
+      flavor: null,
+      title: "",
     };
+    const rollOptions = Object.assign(DEFAULT_OPTIONS, options);
 
-    if (skipDialog) {
-      return AcksDice.#sendRoll(rollData);
+    if (rollOptions.skipDialog) {
+      return ["melee", "missile", "attack"].includes(rollOptions.data.roll.type)
+        ? AcksDice.#sendAttackRoll(rollOptions)
+        : AcksDice.#sendRoll(rollOptions);
     }
 
     const dialogData = {
-      formula: parts.join(" "),
-      data,
+      formula: rollOptions.parts.join(" "),
+      data: rollOptions.data,
       rollMode: game.settings.get("core", "rollMode"),
       rollModes: CONFIG.Dice.rollModes,
     };
 
-    const rollDetails = await ACKSDialog.getRollDetails({ title, dialogData });
-    if (rollDetails) {
-      rollData.rollDetails = rollDetails;
-      return AcksDice.#sendRoll(rollData);
-    }
-  }
-
-  static async roll({ parts = [], data = {}, skipDialog = false, speaker = null, flavor = null, title = "" } = {}) {
-    const rollData = {
-      parts,
-      data,
-      title,
-      flavor,
-      speaker,
-    };
-
-    if (skipDialog) {
-      return ["melee", "missile", "attack"].includes(data.roll.type)
-        ? AcksDice.#sendAttackRoll(rollData)
-        : AcksDice.#sendRoll(rollData);
-    }
-
-    const dialogData = {
-      formula: parts.join(" "),
-      data,
-      rollMode: game.settings.get("core", "rollMode"),
-      rollModes: CONFIG.Dice.rollModes,
-    };
-
-    const rollDetails = await ACKSDialog.getRollDetails({ title, dialogData });
+    const rollDetails = await ACKSDialog.getRollDetails({ title: rollOptions.title, dialogData });
 
     if (rollDetails) {
-      rollData.rollDetails = rollDetails;
-      return ["melee", "missile", "attack"].includes(data.roll.type)
-        ? AcksDice.#sendAttackRoll(rollData)
-        : AcksDice.#sendRoll(rollData);
+      rollOptions.rollDetails = rollDetails;
+      return ["melee", "missile", "attack"].includes(rollOptions.data.roll.type)
+        ? AcksDice.#sendAttackRoll(rollOptions)
+        : AcksDice.#sendRoll(rollOptions);
     }
   }
 }

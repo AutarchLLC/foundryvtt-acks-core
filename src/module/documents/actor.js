@@ -552,10 +552,8 @@ export class AcksActor extends Actor {
       skip = true;
     }
 
-    const rollMethod = this.type == "character" ? AcksDice.rollSave : AcksDice.roll;
-
     // Roll and return
-    return rollMethod({
+    return AcksDice.roll({
       event: options.event,
       parts: rollParts,
       data: data,
