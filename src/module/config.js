@@ -1,3 +1,5 @@
+import { ROLL_TYPE } from "./constants.mjs";
+
 export const ACKS = {
   statusEffects: [
     {
@@ -22,9 +24,9 @@ export const ACKS = {
     cha: "ACKS.scores.cha.long",
   },
   roll_type: {
-    result: "=",
-    above: "≥",
-    below: "≤",
+    [ROLL_TYPE.RESULT]: "=",
+    [ROLL_TYPE.ABOVE]: "≥",
+    [ROLL_TYPE.BELOW]: "≤",
   },
   saves_short: {
     death: "ACKS.saves.death.short",

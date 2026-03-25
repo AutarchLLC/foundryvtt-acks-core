@@ -558,3 +558,18 @@ export const SURPRISE_MATRIX = Object.freeze({
     },
   },
 });
+
+export const ROLL_TYPE = Object.freeze({
+  // we just want the result of the roll
+  RESULT: "result",
+  // we try to roll equal or higher than target number
+  ABOVE: "above",
+  // try to roll less or equal to target number
+  BELOW: "below",
+  // we try to roll less or equal to target number and less than 20. why?
+  CHECK: "check",
+  // result of the roll will not be less than 1
+  HIT_DICE: "hitdice",
+  // result will not be less than 2 and contain details from provided table
+  TABLE: "table",
+});

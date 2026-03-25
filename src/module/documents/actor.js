@@ -1,6 +1,7 @@
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../utility.js";
 import { ACKS } from "../config.js";
+import { ROLL_TYPE } from "../constants.mjs";
 
 export class AcksActor extends Actor {
   static async create(data, options) {
@@ -502,7 +503,7 @@ export class AcksActor extends Actor {
     const data = {
       actor: this,
       roll: {
-        type: "above",
+        type: ROLL_TYPE.ABOVE,
         target: this.system.adventuring[advKey],
       },
       details: game.i18n.format("ACKS.roll.details.adventuring", {
@@ -540,7 +541,7 @@ export class AcksActor extends Actor {
     let data = {
       actor: this,
       roll: {
-        type: "above",
+        type: ROLL_TYPE.ABOVE,
         target: this.system.saves[save].value,
       },
       details: game.i18n.format("ACKS.roll.details.save", { save: label }),
@@ -600,7 +601,7 @@ export class AcksActor extends Actor {
     const data = {
       actor: this,
       roll: {
-        type: "table",
+        type: ROLL_TYPE.TABLE,
         table: {
           1: game.i18n.format("ACKS.loyalty.hostility", {
             name: this.name,
@@ -646,7 +647,7 @@ export class AcksActor extends Actor {
     const data = {
       actor: this,
       roll: {
-        type: "table",
+        type: ROLL_TYPE.TABLE,
         table: {
           2: game.i18n.format("ACKS.reaction.Hostile", {
             name: this.name,
@@ -698,7 +699,7 @@ export class AcksActor extends Actor {
     const data = {
       actor: this,
       roll: {
-        type: "check",
+        type: ROLL_TYPE.CHECK,
         target: this.system.scores[score].value,
       },
 
@@ -736,7 +737,7 @@ export class AcksActor extends Actor {
     const data = {
       actor: this,
       roll: {
-        type: "hitdice",
+        type: ROLL_TYPE.HIT_DICE,
       },
     };
 

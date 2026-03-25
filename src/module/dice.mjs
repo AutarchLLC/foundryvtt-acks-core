@@ -1,58 +1,113 @@
 /* global Roll, game, ChatMessage, foundry, CONFIG */
 import { ACKS } from "./config.js";
 import ACKSDialog from "./dialog/dialog.mjs";
+import { ROLL_TYPE } from "./constants.mjs";
 
 export default class AcksDice {
+  /**
+   * Digest the roll result based on the roll type and return a structured result object
+   * @param data
+   * @param {Roll} roll - Foundry Roll instance
+   * @return {TRollResult}
+   */
   static #digestResult(data, roll) {
+    /** @type {TRollResult} */
     const result = {
       isSuccess: false,
       isFailure: false,
       target: data.roll.target,
       total: roll.total,
     };
-
     const die = roll.terms[0].total;
-    if (data.roll.type === "above") {
-      // SAVING THROWS
-      if (roll.total >= result.target) {
-        result.isSuccess = true;
-      } else {
-        result.isFailure = true;
-      }
-    } else if (data.roll.type === "below") {
-      // ?
-      if (roll.total <= result.target) {
-        result.isSuccess = true;
-      } else {
-        result.isFailure = true;
-      }
-    } else if (data.roll.type === "check") {
-      // SCORE CHECKS (1s and 20s), EXPLORATION
-      if (die === 1 || (roll.total <= result.target && die < 20)) {
-        result.isSuccess = true;
-      } else {
-        result.isFailure = true;
-      }
-    } else if (data.roll.type === "hitdice") {
-      // RESULT CAN BE NO LOWER THAN 1
-      if (roll.total < 1) {
-        roll._total = 1;
-      }
-    } else if (data.roll.type === "table") {
-      // Reaction, MORALE
-      // Roll cannot be less than 2 on a 2d6 roll
-      if (roll.total < 2) {
-        roll._total = 2;
-      }
-      const table = data.roll.table;
-      let output = "";
-      for (let i = 0; i <= roll.total; i++) {
-        if (table[i]) {
-          output = table[i];
+
+    switch (data.roll.type) {
+      case ROLL_TYPE.ABOVE:
+        if (roll.total >= result.target) {
+          result.isSuccess = true;
+        } else {
+          result.isFailure = true;
         }
+        break;
+
+      case ROLL_TYPE.BELOW:
+        if (roll.total <= result.target) {
+          result.isSuccess = true;
+        } else {
+          result.isFailure = true;
+        }
+        break;
+
+      case ROLL_TYPE.CHECK:
+        if (die === 1 || (roll.total <= result.target && die < 20)) {
+          result.isSuccess = true;
+        } else {
+          result.isFailure = true;
+        }
+        break;
+
+      case ROLL_TYPE.HIT_DICE:
+        if (roll.total < 1) {
+          roll._total = 1;
+        }
+        break;
+
+      case ROLL_TYPE.TABLE: {
+        if (roll.total < 2) {
+          roll._total = 2;
+        }
+        const table = data.roll.table;
+        let output = "";
+        for (let i = 0; i <= roll.total; i++) {
+          if (table[i]) {
+            output = table[i];
+          }
+        }
+        result.details = output;
+        break;
       }
-      result.details = output;
     }
+
+    return result;
+  }
+
+  static #digestAttackResult(data, roll) {
+    const result = {
+      isSuccess: false,
+      isFailure: false,
+      target: "",
+      total: roll.total,
+    };
+    result.target = data.roll.thac0;
+
+    const targetAac = data.roll.target ? data.roll.target.actor.system.aac.value : 0;
+    result.victim = data.roll.target ? data.roll.target.name : null;
+
+    const hfh = game.settings.get("acks", "exploding20s");
+    const die = roll.dice[0].total;
+
+    if (die === 1 && !hfh) {
+      result.details = game.i18n.format("ACKS.messages.Fumble", {
+        result: roll.total,
+        bonus: result.target,
+      });
+      return result;
+    } else if (roll.total < targetAac + 10 && (die < 20 || hfh)) {
+      result.details = game.i18n.format("ACKS.messages.AttackAscendingFailure", {
+        result: roll.total - 10,
+        bonus: result.target,
+      });
+      return result;
+    }
+    if (!hfh && die === 20) {
+      result.details = game.i18n.format("ACKS.messages.Critical", {
+        result: roll.total,
+      });
+    } else {
+      result.details = game.i18n.format("ACKS.messages.AttackAscendingSuccess", {
+        result: roll.total - 10,
+      });
+    }
+    result.isSuccess = true;
     return result;
   }
 
@@ -126,47 +181,6 @@ export default class AcksDice {
         });
       });
     });
-  }
-
-  static #digestAttackResult(data, roll) {
-    const result = {
-      isSuccess: false,
-      isFailure: false,
-      target: "",
-      total: roll.total,
-    };
-    result.target = data.roll.thac0;
-
-    const targetAac = data.roll.target ? data.roll.target.actor.system.aac.value : 0;
-    result.victim = data.roll.target ? data.roll.target.name : null;
-
-    const hfh = game.settings.get("acks", "exploding20s");
-    const die = roll.dice[0].total;
-
-    if (die === 1 && !hfh) {
-      result.details = game.i18n.format("ACKS.messages.Fumble", {
-        result: roll.total,
-        bonus: result.target,
-      });
-      return result;
-    } else if (roll.total < targetAac + 10 && (die < 20 || hfh)) {
-      result.details = game.i18n.format("ACKS.messages.AttackAscendingFailure", {
-        result: roll.total - 10,
-        bonus: result.target,
-      });
-      return result;
-    }
-    if (!hfh && die === 20) {
-      result.details = game.i18n.format("ACKS.messages.Critical", {
-        result: roll.total,
-      });
-    } else {
-      result.details = game.i18n.format("ACKS.messages.AttackAscendingSuccess", {
-        result: roll.total - 10,
-      });
-    }
-    result.isSuccess = true;
-    return result;
   }
 
   static async #sendAttackRoll({ parts = [], data = {}, title = "", flavor = null, speaker = null, form = null } = {}) {

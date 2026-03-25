@@ -25,3 +25,12 @@
  *  (event: DragEvent) => void
  * >} [callbacks]                         Callback functions for each action
  */
+
+/**
+ * @typedef {Object} TRollResult
+ * @property {boolean} isSuccess - Whether the roll was a success
+ * @property {boolean} isFailure - Whether the roll was a failure
+ * @property {number} target - The target number for the roll
+ * @property {number} total - The total result of the roll
+ * @property {string} [details] - Optional additional details about the roll result
+ */
