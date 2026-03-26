@@ -34,3 +34,9 @@
  * @property {number} total - The total result of the roll
  * @property {string} [details] - Optional additional details about the roll result
  */
+
+/**
+ * @typedef {TRollResult} TAttackRollResult
+ * @augments TRollResult
+ * @property {string} [victim] - The name of the target of the attack
+ */

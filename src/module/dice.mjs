@@ -70,16 +70,25 @@ export default class AcksDice {
     return result;
   }
 
+  /**
+   * Digest the attack roll result based on the attack rules and return a structured result object
+   * @param data
+   * @param {Roll} roll - Foundry Roll instance
+   * @return {TAttackRollResult}
+   */
   static #digestAttackResult(data, roll) {
+    /** @type TAttackRollResult */
     const result = {
       isSuccess: false,
       isFailure: false,
-      target: "",
+      target: 20,
       total: roll.total,
     };
     result.target = data.roll.thac0;
 
-    const targetAac = data.roll.target ? data.roll.target.actor.system.aac.value : 0;
+    // TODO: rework this
+
+    const targetAC = data.roll.target ? data.roll.target.actor.system.aac.value : 0;
     result.victim = data.roll.target ? data.roll.target.name : null;
 
     const hfh = game.settings.get("acks", "exploding20s");
@@ -91,7 +100,7 @@ export default class AcksDice {
         bonus: result.target,
       });
       return result;
-    } else if (roll.total < targetAac + 10 && (die < 20 || hfh)) {
+    } else if (roll.total < targetAC + 10 && (die < 20 || hfh)) {
       result.details = game.i18n.format("ACKS.messages.AttackAscendingFailure", {
         result: roll.total - 10,
         bonus: result.target,
