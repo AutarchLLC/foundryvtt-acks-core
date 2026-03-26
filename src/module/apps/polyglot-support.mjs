@@ -1,8 +1,11 @@
+/* global Hooks, game */
 // Apps hooks
-export class AcksPolyglot {
+// https://github.com/mclemente/fvtt-module-polyglot/wiki/API
+// TODO: check if this still works
+export default class AcksPolyglot {
   static init() {
     Hooks.once("polyglot.init", (LanguageProvider) => {
-      class acksLanguageProvider extends LanguageProvider {
+      class AcksLanguageProvider extends LanguageProvider {
         requiresReady = true;
 
         getSystemDefaultLanguage() {
@@ -17,7 +20,7 @@ export class AcksPolyglot {
           const demonlordPack = game.packs.get("acks.acks-languages");
           const demonlordItemList = await demonlordPack.getIndex();
           const languagesSetting = game.settings.get("polyglot", "Languages");
-          for (let item of demonlordItemList) {
+          for (const item of demonlordItemList) {
             const originalName = item?.flags?.babele?.originalName || item.name;
             this.languages[originalName] = {
               label: item.name,
@@ -28,9 +31,9 @@ export class AcksPolyglot {
         }
 
         getUserLanguages(actor) {
-          let knownLanguages = new Set();
-          let literateLanguages = new Set();
-          for (let item of actor.items) {
+          const knownLanguages = new Set();
+          const literateLanguages = new Set();
+          for (const item of actor.items) {
             if (item.type === "language") {
               const name = item?.flags?.babele?.originalName || item.name;
               knownLanguages.add(name);
@@ -46,7 +49,8 @@ export class AcksPolyglot {
           return game.polyglot.literateLanguages.has(lang);
         }
       }
-      game.polyglot.api.registerSystem(acksLanguageProvider);
+
+      game.polyglot.api.registerSystem(AcksLanguageProvider);
     });
   }
 }

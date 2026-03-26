@@ -11,7 +11,7 @@ import * as party from "./module/party.js";
 import { AcksCombat, AcksCombatClass } from "./module/combat.js";
 import { AcksTokenHud } from "./module/acks-token-hud.js";
 import { AcksUtility } from "./module/utility.js";
-import { AcksPolyglot } from "./module/apps/polyglot-support.js";
+import AcksPolyglot from "./module/apps/polyglot-support.mjs";
 import ACKSTableManager from "./module/apps/table-manager.mjs";
 import ACKSCommands from "./module/apps/acks-commands.mjs";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
