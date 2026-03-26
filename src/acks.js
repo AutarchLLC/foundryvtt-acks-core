@@ -1,6 +1,6 @@
 /* global CONFIG, game, Hooks, foundry, ui */
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
-import { AcksActor } from "./module/documents/actor.js";
+import AcksActor from "./module/documents/actor.mjs";
 import AcksItem from "./module/documents/item.mjs";
 import { ACKS } from "./module/config.js";
 import { registerMainSettings } from "./module/settings.mjs";

@@ -2,6 +2,11 @@
 import { DEFAULT_MONSTER_ITEM_OPTIONS, MONSTER_SAVES_OPTIONS } from "../constants.mjs";
 
 export default class ACKSDialog {
+  /**
+   *
+   * @param typeOptions
+   * @return {Promise<any>}
+   */
   static async chooseItemNameAndType(typeOptions = DEFAULT_MONSTER_ITEM_OPTIONS) {
     const nameTextInput = foundry.applications.fields.createTextInput({
       name: "itemName",
@@ -35,6 +40,10 @@ export default class ACKSDialog {
     });
   }
 
+  /**
+   *
+   * @return {Promise<any>}
+   */
   static async chooseMonsterHitDice() {
     const monsterHDSelectInput = foundry.applications.fields.createSelectInput({
       name: "monsterHD",
@@ -56,6 +65,12 @@ export default class ACKSDialog {
     });
   }
 
+  /**
+   *
+   * @param combatants
+   * @param individualMods
+   * @return {Promise<any>}
+   */
   static async inputIndividualSurpriseModifiers(combatants, individualMods = {}) {
     const contentParts = [];
     for (const combatant of combatants) {
@@ -90,6 +105,13 @@ export default class ACKSDialog {
     });
   }
 
+  /**
+   *
+   * @param param0
+   * @param param0.title
+   * @param param0.dialogData
+   * @return {Promise<any>}
+   */
   static async getRollDetails({ title = "", dialogData }) {
     const contentParts = [];
 
@@ -186,5 +208,20 @@ export default class ACKSDialog {
         },
       ],
     }).render({ force: true });
+  }
+
+  /**
+   *
+   * @param title
+   * @param message
+   * @return {Promise<any>}
+   */
+  static async confirm(title, message) {
+    return foundry.applications.api.DialogV2.confirm({
+      window: {
+        title,
+      },
+      content: message,
+    });
   }
 }
