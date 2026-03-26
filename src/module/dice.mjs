@@ -120,41 +120,39 @@ export default class AcksDice {
     return result;
   }
 
-  static async #sendRoll({
-    parts = [],
-    data = {},
-    title = "",
-    flavor = null,
-    speaker = null,
-    rollDetails = null,
-  } = {}) {
+  /**
+   *
+   * @param {TRollOptions} options
+   * @return {Promise<unknown>}
+   */
+  static async #sendRoll(options) {
     const template = "systems/acks/templates/chat/roll-result.hbs";
 
     const chatData = {
       user: game.user.id,
-      speaker: speaker,
+      speaker: options.speaker,
     };
 
     const templateData = {
-      title: title,
-      flavor: flavor,
-      data: data,
+      title: options.title,
+      flavor: options.flavor,
+      data: options.data,
     };
 
     // Optionally include a situational bonus
-    if (rollDetails !== null && rollDetails.bonus) {
-      parts.push(rollDetails.bonus);
+    if (options.rollDetails !== null && options.rollDetails.bonus) {
+      options.parts.push(options.rollDetails.bonus);
     }
 
-    const roll = new Roll(parts.join("+"), data);
+    const roll = new Roll(options.parts.join("+"), options.data);
     await roll.evaluate();
 
     // Convert the roll to a chat message and return the roll
     let rollMode = game.settings.get("core", "rollMode");
-    rollMode = rollDetails ? rollDetails.rollMode : rollMode;
+    rollMode = options.rollDetails ? options.rollDetails.rollMode : rollMode;
 
     // Force blind roll (ability formulas)
-    if (data.roll.blindroll) {
+    if (options.data.roll.blindroll) {
       rollMode = game.user.isGM ? "selfroll" : "blindroll";
     }
 
@@ -166,10 +164,10 @@ export default class AcksDice {
       chatData["whisper"] = [game.user.id];
     } else if (rollMode === "blindroll") {
       chatData["blind"] = true;
-      data.roll.blindroll = true;
+      options.data.roll.blindroll = true;
     }
 
-    templateData.result = AcksDice.#digestResult(data, roll);
+    templateData.result = AcksDice.#digestResult(options.data, roll);
 
     return new Promise((resolve) => {
       roll.render().then((r) => {
@@ -192,30 +190,35 @@ export default class AcksDice {
     });
   }
 
-  static async #sendAttackRoll({ parts = [], data = {}, title = "", flavor = null, speaker = null, form = null } = {}) {
+  /**
+   *
+   * @param {TRollOptions} options
+   * @return {Promise<unknown>}
+   */
+  static async #sendAttackRoll(options) {
     const template = "systems/acks/templates/chat/roll-attack.hbs";
 
     const chatData = {
       user: game.user._id,
-      speaker: speaker,
+      speaker: options.speaker,
     };
 
     const templateData = {
-      title: title,
-      flavor: flavor,
-      data: data,
+      title: options.title,
+      flavor: options.flavor,
+      data: options.data,
       config: ACKS,
     };
 
     // Optionally include a situational bonus
-    if (form !== null && form.bonus.value) {
-      parts.push(form.bonus.value);
+    if (options.form !== null && options.form.bonus.value) {
+      options.parts.push(options.form.bonus.value);
     }
 
-    const roll = new Roll(parts.join("+"), data);
+    const roll = new Roll(options.parts.join("+"), options.data);
     await roll.evaluate();
 
-    const dmgRoll = new Roll(data.roll.dmg.join("+"), data);
+    const dmgRoll = new Roll(options.data.roll.dmg.join("+"), options.data);
     await dmgRoll.evaluate();
 
     // Add minimal damage of 1
@@ -225,10 +228,10 @@ export default class AcksDice {
 
     // Convert the roll to a chat message and return the roll
     let rollMode = game.settings.get("core", "rollMode");
-    rollMode = form ? form.rollMode.value : rollMode;
+    rollMode = options.form ? options.form.rollMode.value : rollMode;
 
     // Force blind roll (ability formulas)
-    if (data.roll.blindroll) {
+    if (options.data.roll.blindroll) {
       rollMode = game.user.isGM ? "selfroll" : "blindroll";
     }
 
@@ -240,10 +243,10 @@ export default class AcksDice {
     }
     if (rollMode === "blindroll") {
       chatData["blind"] = true;
-      data.roll.blindroll = true;
+      options.data.roll.blindroll = true;
     }
 
-    templateData.result = AcksDice.#digestAttackResult(data, roll);
+    templateData.result = AcksDice.#digestAttackResult(options.data, roll);
 
     return new Promise((resolve) => {
       roll.render().then((r) => {
@@ -279,16 +282,11 @@ export default class AcksDice {
 
   /**
    *
-   * @param [options={}] - roll options
-   * @param {string[]} [options.parts=[]] - The formula parts to be rolled (e.g. ["1d20", "3"])
-   * @param {object} [options.data={}] - The data context for the roll (e.g. {roll: {type: "check", target: 15}})
-   * @param {boolean} [options.skipDialog=false] - Whether to skip the roll dialog and roll immediately
-   * @param {string} [options.title=""] - The title to be displayed in the roll dialog
-   * @param {string} [options.flavor=null] - Optional flavor text to include in the chat message
-   * @param {object} [options.speaker=null] - Optional speaker data for the chat message (e.g. {actor: actor, token: token})
+   * @param {TRollOptions}[options={}] - roll options
    * @return {Promise<unknown>}
    */
   static async roll(options = {}) {
+    /** @type TRollOptions */
     const DEFAULT_OPTIONS = {
       parts: [],
       data: {},

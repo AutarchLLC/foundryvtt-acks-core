@@ -40,3 +40,13 @@
  * @augments TRollResult
  * @property {string} [victim] - The name of the target of the attack
  */
+
+/**
+ * @typedef {Object} TRollOptions
+ * @property {string[]} [parts=[]] - The formula parts to be rolled (e.g. ["1d20", "3"])
+ * @property {object} [data={}] - The data context for the roll (e.g. {roll: {type: "check", target: 15}})
+ * @property {boolean} [skipDialog=false] - Whether to skip the roll dialog and roll immediately
+ * @property {string} [title=""] - The title to be displayed in the roll dialog
+ * @property {string|null} [flavor=null] - Optional flavor text to include in the chat message
+ * @property {object} [speaker=null] - Optional speaker data for the chat message (e.g. {actor: actor, token: token})
+ */
