@@ -878,7 +878,7 @@ export class AcksActor extends Actor {
     let rollParts = ["1d20"];
 
     if (game.settings.get("acks", "exploding20s")) {
-      rollParts = ["1d20x="];
+      rollParts = ["1d20x"];
     }
 
     const dmgParts = [];

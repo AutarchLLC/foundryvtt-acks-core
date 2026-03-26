@@ -7,16 +7,9 @@ export const registerMainSettings = async () => {
     scope: "world",
     type: Boolean,
     config: true,
-    onChange: (_) => window.location.reload(),
+    requiresReload: true,
   });
 
-  game.settings.register("acks", "welcome-message-12-2", {
-    name: "welcome-message-12-2",
-    default: false,
-    scope: "world",
-    type: Boolean,
-    config: false,
-  });
   game.settings.register("acks", "welcome-message-13-0", {
     name: "welcome-message-13-0",
     default: false,
@@ -33,9 +26,10 @@ export const registerMainSettings = async () => {
     type: String,
     choices: { ctrlKey: "Ctrl", shiftKey: "Shift", altKey: "Alt" },
     config: true,
+    requiresReload: false,
   });
 
-  await game.settings.register("acks", "color-friendlies", {
+  game.settings.register("acks", "color-friendlies", {
     name: game.i18n.localize("ACKS.Setting.colorFriendlies"), // The name of the setting in the settings menu
     hint: game.i18n.localize("ACKS.Setting.colorFriendlies"), // A description of the registered setting and its behavior
     scope: "world", // "world" = sync to db, "client" = local storage
@@ -43,12 +37,9 @@ export const registerMainSettings = async () => {
     type: new foundry.data.fields.ColorField(), // Foundry will render corresponding controls itself
     requiresReload: true,
     default: "#afc2ee",
-    onChange: (value) => {
-      console.log(value);
-    },
   });
 
-  await game.settings.register("acks", "color-hostiles", {
+  game.settings.register("acks", "color-hostiles", {
     name: game.i18n.localize("ACKS.Setting.colorHostiles"), // The name of the setting in the settings menu
     hint: game.i18n.localize("ACKS.Setting.colorHostiles"), // A description of the registered setting and its behavior
     scope: "world", // "world" = sync to db, "client" = local storage
@@ -56,9 +47,6 @@ export const registerMainSettings = async () => {
     type: new foundry.data.fields.ColorField(), // Foundry will render corresponding controls itself
     requiresReload: true,
     default: "#eb7272",
-    onChange: (value) => {
-      console.log(value);
-    },
   });
 
   /*game.settings.register("acks", "initiative", {
@@ -86,41 +74,18 @@ export const registerMainSettings = async () => {
       reset: "ACKS.Setting.InitiativeReset",
       reroll: "ACKS.Setting.InitiativeReroll",
     },
+    requiresReload: false,
   });
 
-  // TODO: remove this?
-  game.settings.register("acks", "encumbranceOption", {
-    name: game.i18n.localize("ACKS.Setting.Encumbrance"),
-    hint: game.i18n.localize("ACKS.Setting.EncumbranceHint"),
-    default: "detailed",
-    scope: "world",
-    type: String,
-    config: true,
-    choices: {
-      detailed: "ACKS.Setting.EncumbranceDetailed",
-      complete: "ACKS.Setting.EncumbranceComplete",
-    },
-    onChange: (_) => window.location.reload(),
-  });
-
-  //TODO: remove this setting. We always show morale for monsters.
-  game.settings.register("acks", "morale", {
-    name: game.i18n.localize("ACKS.Setting.Morale"),
-    hint: game.i18n.localize("ACKS.Setting.MoraleHint"),
-    default: true,
-    scope: "world",
-    type: Boolean,
-    config: true,
-  });
-
+  // TODO: separate exploding 20s and Critical Hits Custom Rules
   game.settings.register("acks", "exploding20s", {
     name: game.i18n.localize("ACKS.Setting.Explode20"),
     hint: game.i18n.localize("ACKS.Setting.Explode20Hint"),
     default: false,
     scope: "world",
     type: Boolean,
+    requiresReload: false,
     config: true,
-    onChange: (_) => window.location.reload(),
   });
 
   game.settings.register("acks", "bhr", {
@@ -130,6 +95,6 @@ export const registerMainSettings = async () => {
     scope: "world",
     type: Boolean,
     config: true,
-    onChange: (_) => window.location.reload(),
+    requiresReload: true,
   });
 };
