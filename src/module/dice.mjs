@@ -123,7 +123,7 @@ export default class AcksDice {
   /**
    *
    * @param {TRollOptions} options
-   * @return {Promise<unknown>}
+   * @return {Promise<Roll>}
    */
   static async #sendRoll(options) {
     const template = "systems/acks/templates/chat/roll-result.hbs";
@@ -140,16 +140,15 @@ export default class AcksDice {
     };
 
     // Optionally include a situational bonus
-    if (options.rollDetails !== null && options.rollDetails.bonus) {
+    if (options.rollDetails?.bonus) {
       options.parts.push(options.rollDetails.bonus);
     }
 
     const roll = new Roll(options.parts.join("+"), options.data);
     await roll.evaluate();
 
-    // Convert the roll to a chat message and return the roll
-    let rollMode = game.settings.get("core", "rollMode");
-    rollMode = options.rollDetails ? options.rollDetails.rollMode : rollMode;
+    // Determine roll mode
+    let rollMode = options.rollDetails?.rollMode ?? game.settings.get("core", "rollMode");
 
     // Force blind roll (ability formulas)
     if (options.data.roll.blindroll) {
@@ -157,37 +156,29 @@ export default class AcksDice {
     }
 
     if (["gmroll", "blindroll"].includes(rollMode)) {
-      chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
+      chatData.whisper = ChatMessage.getWhisperRecipients("GM");
     }
-
     if (rollMode === "selfroll") {
-      chatData["whisper"] = [game.user.id];
+      chatData.whisper = [game.user.id];
     } else if (rollMode === "blindroll") {
-      chatData["blind"] = true;
+      chatData.blind = true;
       options.data.roll.blindroll = true;
     }
 
     templateData.result = AcksDice.#digestResult(options.data, roll);
+    templateData.rollACKS = await roll.render();
 
-    return new Promise((resolve) => {
-      roll.render().then((r) => {
-        templateData.rollACKS = r;
-        foundry.applications.handlebars.renderTemplate(template, templateData).then((content) => {
-          chatData.content = content;
-          // Dice So Nice
-          if (game.dice3d) {
-            game.dice3d.showForRoll(roll, game.user, true, chatData.whisper, chatData.blind).then(() => {
-              ChatMessage.create(chatData);
-              resolve(roll);
-            });
-          } else {
-            chatData.sound = CONFIG.sounds.dice;
-            ChatMessage.create(chatData);
-            resolve(roll);
-          }
-        });
-      });
-    });
+    chatData.content = await foundry.applications.handlebars.renderTemplate(template, templateData);
+
+    // Dice So Nice
+    if (game.dice3d) {
+      await game.dice3d.showForRoll(roll, game.user, true, chatData.whisper, chatData.blind);
+    } else {
+      chatData.sound = CONFIG.sounds.dice;
+    }
+
+    ChatMessage.create(chatData);
+    return roll;
   }
 
   /**
