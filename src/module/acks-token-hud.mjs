@@ -1,13 +1,21 @@
-/* global Hooks, canvas */
+/* global Hooks, canvas, foundry */
 export default class AcksTokenHud {
   static init() {
     // Integration du TokenHUD
     Hooks.on("renderTokenHUD", (app, html, data) => {
-      AcksTokenHud.addTokenHudExtensions(app, html, data._id);
+      AcksTokenHud.#addTokenHudExtensions(app, html, data._id);
     });
   }
 
-  static async addExtensionHud(app, $html, tokenId) {
+  static async #addTokenHudExtensions(app, html, tokenId) {
+    const $html = $(html);
+    const controlIconCombat = $html.find(".control-icon[data-action=combat]");
+    if (controlIconCombat.length > 0) {
+      AcksTokenHud.#addExtensionHud(app, $html, tokenId);
+    }
+  }
+
+  static async #addExtensionHud(app, $html, tokenId) {
     let token = canvas.tokens.get(tokenId);
     let actor = token.actor;
     app.hasExtension = true;
@@ -16,7 +24,7 @@ export default class AcksTokenHud {
 
     const controlIconActions = $html.find(".control-icon[data-action=combat]");
     // initiative
-    await AcksTokenHud._configureSubMenu(
+    await AcksTokenHud.#configureSubMenu(
       controlIconActions,
       "systems/acks/templates/token/hud-actor-actions.html",
       hudData,
@@ -37,7 +45,7 @@ export default class AcksTokenHud {
     const hudRolls = { token, actor, mode: "roll", rollsList: actor.buildRollList() };
     const controlIconTarget = $html.find(".control-icon[data-action=config]");
     // att+apt+career
-    await AcksTokenHud._configureSubMenu(
+    await AcksTokenHud.#configureSubMenu(
       controlIconTarget,
       "systems/acks/templates/token/hud-actor-rolls.html",
       hudRolls,
@@ -49,16 +57,8 @@ export default class AcksTokenHud {
     );
   }
 
-  static async addTokenHudExtensions(app, html, tokenId) {
-    const $html = $(html);
-    const controlIconCombat = $html.find(".control-icon[data-action=combat]");
-    if (controlIconCombat.length > 0) {
-      AcksTokenHud.addExtensionHud(app, $html, tokenId);
-    }
-  }
-
-  static async _configureSubMenu(insertionPoint, template, hudData, onMenuItem) {
-    const hud = $(await renderTemplate(template, hudData));
+  static async #configureSubMenu(insertionPoint, template, hudData, onMenuItem) {
+    const hud = $(await foundry.applications.handlebars.renderTemplate(template, hudData));
     const list = hud.find("div.acks-hud-list");
 
     if (hudData.token.document.getFlag("acks", "hud-" + hudData.mode)) {
@@ -69,13 +69,13 @@ export default class AcksTokenHud {
       list.hide();
     }
 
-    hud.find("img.acks-hud-togglebutton").click(() => AcksTokenHud._toggleHudListActive(hud, list, hudData));
+    hud.find("img.acks-hud-togglebutton").click(() => AcksTokenHud.#toggleHudListActive(hud, list, hudData));
     list.find(".acks-hud-menu").click(onMenuItem);
 
     insertionPoint.after(hud);
   }
 
-  static _showControlWhen(control, condition, hudData) {
+  static #showControlWhen(control, condition, hudData) {
     if (condition) {
       control.show();
       hudData.token.document.setFlag("acks", "hud-" + hudData.mode, true);
@@ -85,8 +85,8 @@ export default class AcksTokenHud {
     }
   }
 
-  static _toggleHudListActive(hud, list, hudData) {
+  static #toggleHudListActive(hud, list, hudData) {
     hud.toggleClass("active");
-    AcksTokenHud._showControlWhen(list, hud.hasClass("active"), hudData);
+    AcksTokenHud.#showControlWhen(list, hud.hasClass("active"), hudData);
   }
 }
