@@ -42,7 +42,7 @@
       "caption": "Adventurer Conqueror King System Imperial Imprint (ACKS II)"
     }
   ],
-  "esmodules": ["acks.js"],
+  "esmodules": ["acks.mjs"],
   "styles": ["acks.css"],
   "packs": [
     {
