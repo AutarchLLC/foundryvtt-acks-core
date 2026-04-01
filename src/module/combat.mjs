@@ -2,6 +2,7 @@
 import { AcksUtility } from "./util/acks-utility.mjs";
 import SurpriseMatrix from "./apps/surprise-matrix.mjs";
 import AcksCombatHelper from "./combat-helper.mjs";
+import ACKSDialog from "./dialog/dialog.mjs";
 
 export default class AcksCombat extends Combat {
   /*******************************************************/
@@ -143,46 +144,32 @@ export default class AcksCombat extends Combat {
     return super.rollNPC(options);
   }
 
-  /*******************************************************/
   async internalStartCombat() {
     await this.setFlag("acks", "initDone", true);
     this._playCombatSound("startEncounter");
-    let updateData = { round: 1, turn: 0, initDone: true };
+    const updateData = { round: 1, turn: 0, initDone: true };
 
-    let d = new Dialog({
-      title: "Actions declaration",
-      content:
-        "<p>Start of Round 1. About to roll Initiative.</p><p>Ask players to declare any actions for this round.</p>",
-      buttons: {
-        init: {
-          icon: '<i class="fas fa-check"></i>',
-          label: "Action declared, start rolling Initiative",
-          callback: async () => {
-            await this.rollAll();
-            Hooks.callAll("combatStart", this, updateData);
-            return this.update(updateData);
-          },
-        },
-        cancel: {
-          icon: '<i class="fas fa-times"></i>',
-          label: "Cancel",
-          callback: () => {},
-        },
-      },
-      default: "init",
-    });
-    d.render(true);
+    const isReady = await ACKSDialog.confirmCombatActionDeclaration();
+
+    if (isReady) {
+      await this.rollAll();
+      Hooks.callAll("combatStart", this, updateData);
+      return this.update(updateData);
+    }
   }
 
-  /*******************************************************/
   async cleanupStatus(status) {
-    for (let cbt of this.combatants) {
-      if (status == "outnumbering" || status == "prepareSpell") {
-        await cbt?.setFlag("acks", status, false); // Flags management
-      } else {
-        if (cbt?.actor?.hasEffect(status)) {
-          AcksUtility.removeEffect(cbt.actor, status);
-        }
+    for (const cbt of this.combatants) {
+      await this.#cleanStatusForCombatant(status, cbt);
+    }
+  }
+
+  async #cleanStatusForCombatant(status, combatant) {
+    if (status === "outnumbering" || status === "prepareSpell") {
+      await combatant?.setFlag("acks", status, false); // Flags management
+    } else {
+      if (combatant?.actor?.hasEffect(status)) {
+        await AcksUtility.removeEffect(combatant.actor, status);
       }
     }
   }
@@ -342,22 +329,22 @@ export default class AcksCombat extends Combat {
     return b.initiative - a.initiative;
   }
 
-  /*******************************************************/
-  async endCombat() {
-    return Dialog.confirm({
-      title: game.i18n.localize("COMBAT.EndTitle"),
-      content: `<p>${game.i18n.localize("COMBAT.EndConfirmation")}</p>`,
-      yes: async () => {
-        await this.cleanupStatus("surprised");
-        await this.cleanupStatus("outnumbering");
-        await this.cleanupStatus("overnumbering");
-        await this.cleanupStatus("prepareSpell");
-        await this.cleanupStatus("done");
-        await this.cleanupStatus("readied");
-        await this.cleanupStatus("delayed");
-        await this.delete();
-      },
-    });
+  /**
+   * This workflow occurs after a Combatant is removed from the Combat.
+   * This can be overridden to implement system-specific combat tracking behaviors.
+   * The default implementation of this function does nothing.
+   * This method only executes for one designated GM user. If no GM users are present this method will not be called.
+   * @param {Combatant} combatant    The Combatant that exited the Combat
+   * @returns {Promise<void>}
+   * @protected
+   * @override
+   */
+  async _onExit(combatant) {
+    this.#cleanStatusForCombatant("surprised", combatant);
+    this.#cleanStatusForCombatant("overnumbering", combatant);
+    this.#cleanStatusForCombatant("done", combatant);
+    this.#cleanStatusForCombatant("readied", combatant);
+    this.#cleanStatusForCombatant("delayed", combatant);
   }
 
   /*******************************************************/
