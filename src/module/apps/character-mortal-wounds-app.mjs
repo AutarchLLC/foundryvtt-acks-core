@@ -206,7 +206,7 @@ export default class CharacterMortalWoundsApp extends HandlebarsApplicationMixin
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor: this.options.actor }),
       content: chatContent,
-      type: CONST.CHAT_MESSAGE_STYLES.OTHER,
+      style: CONST.CHAT_MESSAGE_STYLES.OTHER,
       flags: {
         acks: {
           mortalWounds: true,
