@@ -1,5 +1,5 @@
 /* global Combat, game, Roll, foundry, canvas, CONFIG, ui, Hooks, CONST */
-import { AcksUtility } from "./utility.js";
+import { AcksUtility } from "./util/acks-utility.mjs";
 import SurpriseMatrix from "./apps/surprise-matrix.mjs";
 import AcksCombatHelper from "./combat-helper.mjs";
 
@@ -15,7 +15,6 @@ export default class AcksCombat extends Combat {
       return;
     }
 
-    console?.log("Setup Turns....");
     this.turns ||= [];
 
     // Determine the turn order and the current turn
@@ -35,11 +34,9 @@ export default class AcksCombat extends Combat {
   /*******************************************************/
   async rollInitiative(ids, options) {
     if (!game.user.isGM) {
-      console.log("Emit Roll Initiative", ids, options);
       game.socket.emit("system.acks", { type: "rollInitiative", combatId: this.id, ids: ids, options: options });
       return;
     }
-    console.log("%%%%%%%%% Roll Initiative", ids, options);
     await this.setFlag("acks", "lock-turns", true);
 
     ids = typeof ids === "string" ? [ids] : ids;
@@ -52,7 +49,6 @@ export default class AcksCombat extends Combat {
     let updates = [];
     for (let cId of ids) {
       const c = this.combatants.get(cId);
-      //console.log("Init for combattant", cId, c, ids)
       let id = c._id || c.id;
       // get the associated token
       let tokenId = c.token.id;
@@ -164,7 +160,6 @@ export default class AcksCombat extends Combat {
           callback: async () => {
             await this.rollAll();
             Hooks.callAll("combatStart", this, updateData);
-            console.log(">>>>>>>>>> Start Combat", this, updateData);
             return this.update(updateData);
           },
         },
@@ -237,15 +232,12 @@ export default class AcksCombat extends Combat {
 
   /*******************************************************/
   async nextTurn() {
-    console.log("NEXT TURN");
-
     let turn = this.turn ?? -1;
     let skipDefeated = this.settings.skipDefeated;
 
     // Determine the next turn number
     let next = null;
     for (let [i, t] of this.turns.entries()) {
-      console.log("Turn", t);
       if (i <= turn) continue;
       if (skipDefeated && t.isDefeated) continue;
       if (t.actor?.hasEffect("surprised")) {
@@ -275,7 +267,6 @@ export default class AcksCombat extends Combat {
 
   /*******************************************************/
   async nextRound() {
-    console.log("NEXT ROUND");
     this.turnsDone = false;
 
     let turn = this.turn === null ? null : 0; // Preserve the fact that it's no-one's turn currently.
@@ -287,7 +278,6 @@ export default class AcksCombat extends Combat {
     }
     this.turns.forEach((t) => (t.actor.hasEffect("delayed") ? AcksUtility.removeEffect(t.actor, "delayed") : null));
     this.turns.forEach((t) => (t.actor.hasEffect("done") ? AcksUtility.removeEffect(t.actor, "done") : null));
-    console.log("ROUND", this.round, this.turns);
 
     AcksCombatHelper.resetInitiative(this);
 
@@ -319,7 +309,6 @@ export default class AcksCombat extends Combat {
     let pools = this.pools;
     let hostileMore = pools.hostile.length > pools.friendly.length;
     let friendlyMore = pools.friendly.length > pools.hostile.length;
-    // DEBUG : console.log("Pools", pools, hostileMore, friendlyMore);
     for (let cbt of this.combatants) {
       await cbt.setFlag("acks", "outnumbering", false);
       if (cbt.token.disposition == -1 && hostileMore) {
@@ -416,7 +405,5 @@ export default class AcksCombat extends Combat {
     // Save the groups
     this.setFlag("acks", "groups", groups);
     ui.notifications.info("Groups created/updated");
-    // Log the current group state
-    console.log("Groups", groups);
   }
 }

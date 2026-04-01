@@ -1,5 +1,5 @@
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
-import { AcksUtility } from "../utility.js";
+import { AcksUtility } from "../util/acks-utility.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import CharacterModifiersInfo from "../apps/character-modifiers-info.mjs";
 import CharacterStatGenerator from "../apps/character-stat-generator.mjs";

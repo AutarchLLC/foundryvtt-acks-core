@@ -1,4 +1,4 @@
-import { AcksUtility } from "../utility.js";
+import { AcksUtility } from "../util/acks-utility.mjs";
 import AcksEffectUtil from "../effect/acks-effect-util.mjs";
 import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";

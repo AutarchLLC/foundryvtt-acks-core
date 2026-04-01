@@ -1,7 +1,7 @@
 /* global foundry, game, CONST, ChatMessage */
 import ACKSTableManager from "./table-manager.mjs";
 import { MORTAL_WOUNDS_CLASS_LEVELS, TAMPERING_LIFE_SPAN, TAMPERING_LIMBS, TAMPERING_SPINE } from "../constants.mjs";
-import { AcksUtility } from "../utility.js";
+import { AcksUtility } from "../util/acks-utility.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 

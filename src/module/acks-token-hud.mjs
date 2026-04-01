@@ -1,7 +1,5 @@
-/* -------------------------------------------- */
-
-/* -------------------------------------------- */
-export class AcksTokenHud {
+/* global Hooks, canvas */
+export default class AcksTokenHud {
   static init() {
     // Integration du TokenHUD
     Hooks.on("renderTokenHUD", (app, html, data) => {
@@ -9,19 +7,12 @@ export class AcksTokenHud {
     });
   }
 
-  /* -------------------------------------------- */
-  static async removeExtensionHud(app, html, tokenId) {
-    html.find(".control-icon.acks-roll").remove();
-    html.find(".control-icon.acks-action").remove();
-  }
-
-  /* -------------------------------------------- */
   static async addExtensionHud(app, $html, tokenId) {
     let token = canvas.tokens.get(tokenId);
     let actor = token.actor;
     app.hasExtension = true;
 
-    const hudData = { token: token, actor: actor, mode: "action", actionsList: actor.buildFavoriteActions() };
+    const hudData = { token, actor, mode: "action", actionsList: actor.buildFavoriteActions() };
 
     const controlIconActions = $html.find(".control-icon[data-action=combat]");
     // initiative
@@ -30,12 +21,12 @@ export class AcksTokenHud {
       "systems/acks/templates/token/hud-actor-actions.html",
       hudData,
       (event) => {
-        let actionIndex = Number(event.currentTarget.attributes["data-action-index"].value);
-        let action = hudData.actionsList[actionIndex];
+        const actionIndex = Number(event.currentTarget.attributes["data-action-index"].value);
+        const action = hudData.actionsList[actionIndex];
         const actionItem = actor.items.get(action._id);
-        if (actionItem.type == "weapon") {
+        if (actionItem.type === "weapon") {
           actionItem.rollWeapon();
-        } else if (actionItem.type == "spell") {
+        } else if (actionItem.type === "spell") {
           actionItem.spendSpell();
         } else {
           actionItem.rollFormula();
@@ -43,7 +34,7 @@ export class AcksTokenHud {
       },
     );
 
-    const hudRolls = { token: token, actor: actor, mode: "roll", rollsList: actor.buildRollList() };
+    const hudRolls = { token, actor, mode: "roll", rollsList: actor.buildRollList() };
     const controlIconTarget = $html.find(".control-icon[data-action=config]");
     // att+apt+career
     await AcksTokenHud._configureSubMenu(
@@ -51,14 +42,13 @@ export class AcksTokenHud {
       "systems/acks/templates/token/hud-actor-rolls.html",
       hudRolls,
       (event) => {
-        let rollIndex = Number(event.currentTarget.attributes["data-roll-index"].value);
-        let roll = hudRolls.rollsList[rollIndex];
+        const rollIndex = Number(event.currentTarget.attributes["data-roll-index"].value);
+        const roll = hudRolls.rollsList[rollIndex];
         actor.rollCheck(roll.key);
       },
     );
   }
 
-  /* -------------------------------------------- */
   static async addTokenHudExtensions(app, html, tokenId) {
     const $html = $(html);
     const controlIconCombat = $html.find(".control-icon[data-action=combat]");
@@ -67,7 +57,6 @@ export class AcksTokenHud {
     }
   }
 
-  /* -------------------------------------------- */
   static async _configureSubMenu(insertionPoint, template, hudData, onMenuItem) {
     const hud = $(await renderTemplate(template, hudData));
     const list = hud.find("div.acks-hud-list");
@@ -79,15 +68,13 @@ export class AcksTokenHud {
       hud.removeClass("active");
       list.hide();
     }
-    //AcksTokenHud._toggleHudListActive(hud, list, hudData);
 
-    hud.find("img.acks-hud-togglebutton").click((event) => AcksTokenHud._toggleHudListActive(hud, list, hudData));
+    hud.find("img.acks-hud-togglebutton").click(() => AcksTokenHud._toggleHudListActive(hud, list, hudData));
     list.find(".acks-hud-menu").click(onMenuItem);
 
     insertionPoint.after(hud);
   }
 
-  /* -------------------------------------------- */
   static _showControlWhen(control, condition, hudData) {
     if (condition) {
       control.show();
@@ -98,7 +85,6 @@ export class AcksTokenHud {
     }
   }
 
-  /* -------------------------------------------- */
   static _toggleHudListActive(hud, list, hudData) {
     hud.toggleClass("active");
     AcksTokenHud._showControlWhen(list, hud.hasClass("active"), hudData);

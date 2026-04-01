@@ -1,3 +1,4 @@
+/* global game, ui, Macro, ChatMessage */
 /* -------------------------------------------- */
 /*  Hotbar Macros                               */
 /* -------------------------------------------- */
@@ -10,8 +11,12 @@
  * @returns {Promise}
  */
 export async function createAcksMacro(data, slot) {
-  if (data.type !== "Item") return;
-  if (!("data" in data)) return ui.notifications.warn("You can only create macro buttons for owned Items");
+  if (data.type !== "Item") {
+    return;
+  }
+  if (!("data" in data)) {
+    return ui.notifications.warn("You can only create macro buttons for owned Items");
+  }
   const item = data.data;
 
   // Create the macro command
@@ -41,8 +46,12 @@ export async function createAcksMacro(data, slot) {
 export function rollItemMacro(itemName) {
   const speaker = ChatMessage.getSpeaker();
   let actor;
-  if (speaker.token) actor = game.actors.tokens[speaker.token];
-  if (!actor) actor = game.actors.get(speaker.actor);
+  if (speaker.token) {
+    actor = game.actors.tokens[speaker.token];
+  }
+  if (!actor) {
+    actor = game.actors.get(speaker.actor);
+  }
 
   // Get matching items
   const items = actor ? actor.items.filter((i) => i.name === itemName) : [];

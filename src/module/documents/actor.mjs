@@ -1,6 +1,6 @@
 /* global Actor, game, ChatMessage, foundry, ui, Roll */
 import AcksDice from "../dice.mjs";
-import { AcksUtility } from "../utility.js";
+import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
 import { ROLL_TYPE } from "../constants.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";

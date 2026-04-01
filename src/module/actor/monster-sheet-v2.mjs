@@ -1,6 +1,6 @@
 /* global foundry */
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
-import { AcksUtility } from "../utility.js";
+import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";

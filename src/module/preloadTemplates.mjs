@@ -1,3 +1,4 @@
+/* global foundry */
 export const preloadHandlebarsTemplates = async function () {
   const templatePaths = [
     "systems/acks/templates/items/v2/details/details-item.hbs",

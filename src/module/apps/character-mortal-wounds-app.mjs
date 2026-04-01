@@ -7,7 +7,7 @@ import {
   MORTAL_WOUNDS_SPELL_LEVELS,
   MORTAL_WOUNDS_TREATMENT_TIMING,
 } from "../constants.mjs";
-import { AcksUtility } from "../utility.js";
+import { AcksUtility } from "../util/acks-utility.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 

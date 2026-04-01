@@ -1,11 +1,10 @@
 /* global Roll, game, foundry, canvas, CONFIG, ui */
 import { ACKS } from "./config.mjs";
-import { AcksUtility } from "./utility.js";
+import { AcksUtility } from "./util/acks-utility.mjs";
 
 export default class AcksCombatHelper {
   /*******************************************************/
   static async rollInitiative(combat, data) {
-    console.log(">>>>Roll Initiative", combat, data);
     // Initialize groups.
     data.combatants = [];
     let groups = {};
@@ -147,7 +146,7 @@ export default class AcksCombatHelper {
       colorFriendlies = game.settings.get("acks", "color-friendlies");
       colorHostiles = game.settings.get("acks", "color-hostiles");
     } catch (e) {
-      console.log("Color settings not found", e);
+      console.error("Color settings not found", e);
     }
 
     // in Application v2 HTML is NOT jQuery by default
@@ -200,7 +199,6 @@ export default class AcksCombatHelper {
       }
     });
 
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!! Round 0");
     AcksCombatHelper.announceListener($html);
 
     $html.find(".combatant").each((_, ct) => {
@@ -219,7 +217,6 @@ export default class AcksCombatHelper {
         });
         // Append colored flag
         let color = combatant?.token?.disposition === 1 ? colorFriendlies : colorHostiles;
-        //console.log("Token H4", tokenH4, color);
         tokenH4.css("color", color);
       }
     });
