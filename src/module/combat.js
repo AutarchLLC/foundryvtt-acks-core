@@ -208,9 +208,6 @@ export class AcksCombatClass extends Combat {
 
     // TODO: maybe somehow limit matrix app instance per combat? so we can't open 2 apps for same combat.
     new SurpriseMatrix(surpriseMatrixOptions).render(true);
-
-    //let surpriseDialog = new AcksSurprise({ pools, combatData: this });
-    //await surpriseDialog.render(true);
   }
 
   #getCombatantPools() {

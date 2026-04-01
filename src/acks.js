@@ -1,4 +1,4 @@
-/* global CONFIG, game, Hooks, foundry, ui */
+/* global CONFIG, game, Hooks, foundry */
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import AcksActor from "./module/documents/actor.mjs";
 import AcksItem from "./module/documents/item.mjs";
@@ -7,7 +7,6 @@ import { registerMainSettings } from "./module/settings.mjs";
 import { registerHelpers } from "./module/helpers.mjs";
 import * as chat from "./module/chat.mjs";
 import * as macros from "./module/macros.js";
-import * as party from "./module/party.js";
 import { AcksCombat, AcksCombatClass } from "./module/combat.js";
 import { AcksTokenHud } from "./module/acks-token-hud.js";
 import { AcksUtility } from "./module/utility.js";
@@ -28,6 +27,7 @@ import ACKSCharacterSheetV2 from "./module/actor/character-sheet-v2.mjs";
 import ACKSMonsterSheetV2 from "./module/actor/monster-sheet-v2.mjs";
 import ItemBundleData from "./module/data/item/item-bundle-data.mjs";
 import renderActorDirectory from "./module/hooks/render-actor-directory.mjs";
+import { showPartySheet } from "./module/party.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -106,14 +106,6 @@ Hooks.once("init", async function () {
     if (!targetControl) {
       return;
     }
-    const partyBtnAction = () => {
-      const actorDirectory = game.actors.apps.find((app) => app instanceof ActorDirectory);
-      if (actorDirectory) {
-        party.showPartySheet(actorDirectory);
-      } else {
-        ui.notifications.error("Something went wrong. Can't find ActorDirectory.");
-      }
-    };
     const partyButtonTool = {
       name: "acksPartyButton",
       title: "ACKS.dialog.partysheet",
@@ -122,7 +114,7 @@ Hooks.once("init", async function () {
       visible: true,
     };
 
-    partyButtonTool.onChange = () => partyBtnAction();
+    partyButtonTool.onChange = () => showPartySheet();
     targetControl.tools.acksPartyButton = partyButtonTool;
   });
 });
@@ -174,6 +166,5 @@ Hooks.on("combatRound", AcksCombat.combatRound);
 
 Hooks.on("renderChatLog", (_app, html, _data) => AcksItem.chatListeners(html));
 Hooks.on("renderChatMessageHTML", chat.addChatMessageButtons);
-Hooks.on("updateActor", party.update);
 
 Hooks.on("renderActorDirectory", (app, html, data) => renderActorDirectory(app, html, data));

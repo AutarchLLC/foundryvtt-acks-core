@@ -1,3 +1,4 @@
+/* global ui */
 /**
  * Create HTML string for the item tag.
  * @param {string} tagText  The text to display inside the tag.
@@ -63,5 +64,9 @@ export class AcksHtmlUtil {
       return null;
     }
     return item;
+  }
+
+  static getActorIdFromDOM(htmlElement) {
+    return htmlElement.closest("[data-actor-id]").dataset.actorId;
   }
 }

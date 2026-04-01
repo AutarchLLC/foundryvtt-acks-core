@@ -1,0 +1,99 @@
+<section>
+
+  <section class="party-toolbar flexrow">
+
+    <button type="button" data-action="resync" class="plain icon fas fa-sync" data-tooltip="Refresh"></button>
+
+    {{#if isGM}}
+      <button type="button" data-action="dealXP" class="plain icon fas fa-hand-holding"
+              data-tooltip="{{localize 'ACKS.dialog.dealXP'}}"></button>
+    {{/if}}
+
+  </section>
+
+  <section class="party-list-container">
+    <ul class="party-list unlist">
+      {{#each party}}
+        <li class="party-list-actor flexrow" data-actor-id="{{id}}">
+
+          <div class="actor-portrait">
+            <img src="{{img}}" alt="{{name}}" data-action="openSheet"/>
+          </div>
+
+          <div class="flexcol">
+
+            <div class="flexrow row_separator">
+
+              <div class="party-list__name">{{name}}</div>
+
+              <div data-tooltip="{{localize 'ACKS.Health'}}">
+                <i class="fas fa-heart"></i>
+                {{system.hp.value}}/{{system.hp.max}}
+              </div>
+
+              <div>
+                <i class="fas fa-shield-alt"></i>
+                <span data-tooltip="{{localize 'ACKS.ArmorClass'}}">{{system.aac.value}}</span>
+                <span data-tooltip="{{localize 'ACKS.ArmorClassNaked'}}">({{system.aac.naked}})</span>
+              </div>
+
+            </div>
+
+            <div class="flexrow row_separator">
+
+              <div data-tooltip="Attack Throw">
+                <i class="fas fa-crosshairs"></i>
+                {{system.thac0.throw}}
+              </div>
+
+              {{#if (eq type "character")}}
+                <div data-tooltip="{{localize 'ACKS.Melee'}}">
+                  <i class="fas fa-fist-raised"></i>
+                  {{add system.scores.str.mod system.thac0.mod.melee}}
+                </div>
+
+                <div data-tooltip="{{localize 'ACKS.Missile'}}">
+                  <i class="fas fa-bullseye"></i>
+                  {{add system.scores.dex.mod system.thac0.mod.missile}}
+                </div>
+              {{/if}}
+
+              <div>
+                <i class="fas fa-shoe-prints" data-tooltip="{{localize 'ACKS.movement.base'}}"></i>
+                <span data-tooltip="{{localize 'ACKS.movement.combat'}}">{{system.movement.encounter}}</span>
+                /
+                <span data-tooltip="{{localize 'ACKS.movement.exploration'}}">{{system.movement.base}}</span>
+              </div>
+
+              {{#if (eq type "character")}}
+                <div>
+                  <i class="fas fa-weight-hanging" data-tooltip="{{localize 'ACKS.Encumbrance'}}"></i>
+                  <span data-tooltip="{{getWeightTooltip system.encumbrance.value system.encumbrance.max}}">
+                    {{system.encumbrance.value}}
+                    /
+                    {{system.encumbrance.max}}
+                  </span>
+                </div>
+              {{/if}}
+
+            </div>
+
+            <div class="flexrow">
+
+              {{#each system.saves as |s i|}}
+                <span title="{{lookup @root.saves_long i}}">{{lookup @root.saves_short i}}
+                  {{s.value}}</span>
+              {{/each}}
+
+            </div>
+
+          </div>
+
+          <button type="button" data-action="deleteFromParty" class="plain icon fas fa-trash-alt"></button>
+
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+
+</section>
