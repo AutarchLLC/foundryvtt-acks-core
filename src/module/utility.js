@@ -1,5 +1,5 @@
 /* global game */
-import { ACKS } from "./config.js";
+import { ACKS } from "./config.mjs";
 
 export class AcksUtility {
   /**

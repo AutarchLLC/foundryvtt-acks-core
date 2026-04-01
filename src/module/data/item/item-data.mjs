@@ -1,6 +1,6 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
-import { ACKS } from "../../config.js";
+import { ACKS } from "../../config.mjs";
 
 /**
  * Item Item Data Model :D:D:D

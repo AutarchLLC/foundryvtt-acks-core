@@ -2,12 +2,12 @@
 import { preloadHandlebarsTemplates } from "./module/preloadTemplates.js";
 import AcksActor from "./module/documents/actor.mjs";
 import AcksItem from "./module/documents/item.mjs";
-import { ACKS } from "./module/config.js";
+import { ACKS } from "./module/config.mjs";
 import { registerMainSettings } from "./module/settings.mjs";
 import { registerHelpers } from "./module/helpers.mjs";
 import * as chat from "./module/chat.mjs";
 import * as macros from "./module/macros.js";
-import { AcksCombat, AcksCombatClass } from "./module/combat.js";
+import AcksCombat from "./module/combat.mjs";
 import { AcksTokenHud } from "./module/acks-token-hud.js";
 import { AcksUtility } from "./module/utility.js";
 import AcksPolyglot from "./module/apps/polyglot-support.mjs";
@@ -28,6 +28,7 @@ import ACKSMonsterSheetV2 from "./module/actor/monster-sheet-v2.mjs";
 import ItemBundleData from "./module/data/item/item-bundle-data.mjs";
 import renderActorDirectory from "./module/hooks/render-actor-directory.mjs";
 import { showPartySheet } from "./module/party.mjs";
+import AcksCombatHelper from "./module/combat-helper.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -76,7 +77,7 @@ Hooks.once("init", async function () {
     ability: AbilityData,
     bundle: ItemBundleData,
   };
-  CONFIG.Combat.documentClass = AcksCombatClass;
+  CONFIG.Combat.documentClass = AcksCombat;
 
   // Unregister default sheets
   foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
@@ -157,12 +158,12 @@ Hooks.once("ready", async () => {
 });
 
 // License and KOFI infos
-Hooks.on("preUpdateCombatant", AcksCombat.updateCombatant);
-Hooks.on("renderCombatTracker", AcksCombat.format);
-Hooks.on("preUpdateCombat", AcksCombat.preUpdateCombat);
-Hooks.on("getCombatTrackerEntryContext", AcksCombat.addContextEntry);
-Hooks.on("combatTurn", AcksCombat.combatTurn);
-Hooks.on("combatRound", AcksCombat.combatRound);
+Hooks.on("preUpdateCombatant", AcksCombatHelper.updateCombatant);
+Hooks.on("renderCombatTracker", AcksCombatHelper.format);
+Hooks.on("preUpdateCombat", AcksCombatHelper.preUpdateCombat);
+Hooks.on("getCombatTrackerEntryContext", AcksCombatHelper.addContextEntry);
+Hooks.on("combatTurn", AcksCombatHelper.combatTurn);
+Hooks.on("combatRound", AcksCombatHelper.combatRound);
 
 Hooks.on("renderChatLog", (_app, html, _data) => AcksItem.chatListeners(html));
 Hooks.on("renderChatMessageHTML", chat.addChatMessageButtons);

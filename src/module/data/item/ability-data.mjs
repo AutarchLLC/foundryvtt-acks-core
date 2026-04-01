@@ -1,6 +1,6 @@
 /* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import { ACKS } from "../../config.js";
+import { ACKS } from "../../config.mjs";
 import { ROLL_TYPE } from "../../constants.mjs";
 
 /**

@@ -1,7 +1,7 @@
 /* global foundry */
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../utility.js";
-import { ACKS } from "../config.js";
+import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 import { MONSTER_SAVING_THROW_LUT } from "../constants.mjs";
@@ -132,36 +132,36 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
   /**
    *
    * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {HTMLElement} _target
    */
-  static #rollDungeonEncounter(event, target) {
+  static #rollDungeonEncounter(event, _target) {
     void this.actor.rollAppearing({ event, check: "dungeon" });
   }
 
   /**
    *
    * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {HTMLElement} _target
    */
-  static #rollWildernessEncounter(event, target) {
+  static #rollWildernessEncounter(event, _target) {
     void this.actor.rollAppearing({ event, check: "wilderness" });
   }
 
   /**
    *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
    */
-  static #rollHP(event, target) {
+  static #rollHP(_event, _target) {
     this.actor.rollHP();
   }
 
   /**
    *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
    */
-  static #resetAttacks(event, target) {
+  static #resetAttacks(_event, _target) {
     const weapons = this.actor.items.filter((i) => i.type === "weapon");
     for (const weapon of weapons) {
       weapon.update({
@@ -190,18 +190,18 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
   /**
    *
    * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {HTMLElement} _target
    */
-  static #rollReaction(event, target) {
+  static #rollReaction(event, _target) {
     void this.actor.rollReaction({ event });
   }
 
   /**
    *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
    */
-  static async #generateSaves(event, target) {
+  static async #generateSaves(_event, _target) {
     const result = await ACKSDialog.chooseMonsterHitDice();
     if (result) {
       const monsterHD = result.monsterHD;
@@ -212,10 +212,10 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
 
   /**
    *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
    */
-  static async #treasureLinkDelete(event, target) {
+  static async #treasureLinkDelete(_event, _target) {
     await this.actor.update({
       "system.details.treasure.table": "",
       "system.details.treasure.type": "",

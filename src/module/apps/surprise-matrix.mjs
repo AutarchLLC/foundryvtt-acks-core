@@ -33,7 +33,7 @@ export default class SurpriseMatrix extends HandlebarsApplicationMixin(Applicati
       neutral: [],
       friendly: [],
     },
-    /** @type {AcksCombatClass | null} */
+    /** @type {AcksCombat | null} */
     combat: null,
   };
 

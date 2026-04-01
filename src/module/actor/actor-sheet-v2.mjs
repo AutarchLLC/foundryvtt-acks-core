@@ -98,27 +98,27 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   /**
    *
    * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {HTMLElement} _target
    */
-  static #rollHitDice(event, target) {
+  static #rollHitDice(event, _target) {
     this.actor.rollHitDice({ event });
   }
 
   /**
    *
    * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {HTMLElement} _target
    */
-  static #rollMorale(event, target) {
+  static #rollMorale(event, _target) {
     this.actor.rollMorale({ event });
   }
 
   /**
    *
    * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {HTMLElement} _target
    */
-  static #rollLoyalty(event, target) {
+  static #rollLoyalty(event, _target) {
     this.actor.rollLoyalty({ event });
   }
 
@@ -563,13 +563,13 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   /**
    * Handle a dropped RollTable on the Actor Sheet. By default, dropping a RollTable does nothing,
    * but this can be overridden in subclasses.
-   * @param {DragEvent} event The initiating drop event
-   * @param {RollTable} rollTable The dropped RollTable document
+   * @param {DragEvent} _event The initiating drop event
+   * @param {RollTable} _rollTable The dropped RollTable document
    * @return {Promise<RollTable|null|undefined>} A Promise resolving to an RollTable identical or related to the dropped RollTable
    * to indicate success, or a nullish value to indicate failure or no action being taken
    * @protected
    */
-  async _onDropRollTable(event, rollTable) {
+  async _onDropRollTable(_event, _rollTable) {
     return null;
   }
 

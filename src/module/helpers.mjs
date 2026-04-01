@@ -1,5 +1,5 @@
 /* global Handlebars, game */
-import { ACKS } from "./config.js";
+import { ACKS } from "./config.mjs";
 
 export const registerHelpers = async function () {
   Handlebars.registerHelper("readonly", function (value) {

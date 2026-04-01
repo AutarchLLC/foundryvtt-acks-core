@@ -1,6 +1,6 @@
 /* global foundry */
 import { ATTRIBUTE_MODIFIERS_LUT } from "../constants.mjs";
-import { ACKS } from "../config.js";
+import { ACKS } from "../config.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 

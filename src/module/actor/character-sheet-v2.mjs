@@ -144,9 +144,9 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
   /**
    *
    * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {HTMLElement} _target
    */
-  static #rollBaseHealingRate(event, target) {
+  static #rollBaseHealingRate(event, _target) {
     this.actor.rollBHR({ event });
   }
 
@@ -194,19 +194,19 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
 
   /**
    *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
    */
-  static #payWages(event, target) {
+  static #payWages(_event, _target) {
     this.actor.payWages();
   }
 
   /**
    *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
    */
-  static #rollMortalWounds(event, target) {
+  static #rollMortalWounds(_event, _target) {
     const options = {
       actor: this.actor,
     };
@@ -215,10 +215,10 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
 
   /**
    *
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
    */
-  static #rollTamperingWithMortality(event, target) {
+  static #rollTamperingWithMortality(_event, _target) {
     const options = {
       actor: this.actor,
     };
@@ -230,7 +230,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @param {PointerEvent} event
    * @param {HTMLElement} target
    */
-  static #showModifiersSummary(event, target) {
+  static #showModifiersSummary(_event, _target) {
     const options = {
       attributes: this.actor.toObject().system.scores,
       actorName: this.actor.name,
@@ -244,7 +244,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @param {PointerEvent} event
    * @param {HTMLElement} target
    */
-  static #generateScores(event, target) {
+  static #generateScores(_event, _target) {
     const options = {
       actor: this.actor,
     };

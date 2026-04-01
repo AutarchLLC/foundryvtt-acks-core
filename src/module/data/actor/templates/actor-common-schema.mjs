@@ -1,5 +1,5 @@
 /* global foundry */
-import { ACKS } from "../../../config.js";
+import { ACKS } from "../../../config.mjs";
 
 /**
  * Common data schema for actors

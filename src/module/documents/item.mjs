@@ -1,7 +1,7 @@
 /* global Item, foundry, TextEditor, ui, ChatMessage, game, CONST, canvas */
 import AcksDice from "../dice.mjs";
 import { createTagHtmlString } from "../util/html-util.mjs";
-import { ACKS } from "../config.js";
+import { ACKS } from "../config.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 
 /**

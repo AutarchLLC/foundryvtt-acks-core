@@ -1,5 +1,5 @@
 /* global foundry, game, ui */
-import { ACKS } from "../config.js";
+import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 

@@ -1,5 +1,5 @@
 /* global foundry, game, ChatMessage */
-import { ACKS } from "../config.js";
+import { ACKS } from "../config.mjs";
 import AcksDice from "../dice.mjs";
 import { ATTRIBUTE_MODIFIERS_LUT, ROLL_TYPE } from "../constants.mjs";
 

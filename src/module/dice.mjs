@@ -1,5 +1,5 @@
 /* global Roll, game, ChatMessage, foundry, CONFIG */
-import { ACKS } from "./config.js";
+import { ACKS } from "./config.mjs";
 import ACKSDialog from "./dialog/dialog.mjs";
 import { ROLL_TYPE } from "./constants.mjs";
 

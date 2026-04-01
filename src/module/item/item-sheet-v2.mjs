@@ -1,6 +1,6 @@
 import { AcksUtility } from "../utility.js";
 import AcksEffectUtil from "../effect/acks-effect-util.mjs";
-import { ACKS } from "../config.js";
+import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import { ITEM_TYPE } from "../constants.mjs";
 
