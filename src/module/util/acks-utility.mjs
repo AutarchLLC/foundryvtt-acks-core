@@ -1,5 +1,6 @@
 /* global game, foundry */
 import { ACKS } from "../config.mjs";
+import ACKSDialog from "../dialog/dialog.mjs";
 
 export class AcksUtility {
   /**
@@ -51,22 +52,7 @@ export class AcksUtility {
     const welcomeMessage = game.settings.get("acks", "welcome-message-13-0");
     if (!welcomeMessage) {
       game.settings.set("acks", "welcome-message-13-0", true);
-      // New dialog with full message
-      let d = new Dialog(
-        {
-          title: game.i18n.localize("ACKS.Welcome.Title"),
-          content: `<p>${game.i18n.localize("ACKS.Welcome.Message-13-0")}</p>`,
-          buttons: {
-            ok: {
-              icon: '<i class="fas fa-check"></i>',
-              label: game.i18n.localize("ACKS.Welcome.Button"),
-            },
-          },
-          default: "ok",
-        },
-        { width: 720 },
-      );
-      d.render(true);
+      void ACKSDialog.showWelcomeMessage(game.i18n.localize("ACKS.Welcome.Message-13-0"));
     }
   }
 

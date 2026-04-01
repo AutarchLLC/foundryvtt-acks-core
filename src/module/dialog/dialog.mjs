@@ -248,4 +248,11 @@ export default class ACKSDialog {
       },
     });
   }
+
+  static async showWelcomeMessage(message) {
+    return foundry.applications.api.DialogV2.prompt({
+      window: { title: "ACKS.Welcome.Title" },
+      content: `<p>${message}</p>`,
+    });
+  }
 }
