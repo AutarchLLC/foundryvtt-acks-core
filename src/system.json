@@ -44,6 +44,42 @@
   ],
   "esmodules": ["acks.mjs"],
   "styles": ["acks.css"],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": ["details.biography", "details.notes"]
+      },
+      "monster": {
+        "htmlFields": ["details.biography"]
+      }
+    },
+    "Item": {
+      "item": {
+        "htmlFields": ["description"]
+      },
+      "weapon": {
+        "htmlFields": ["description"]
+      },
+      "armor": {
+        "htmlFields": ["description"]
+      },
+      "spell": {
+        "htmlFields": ["description"]
+      },
+      "ability": {
+        "htmlFields": ["description"]
+      },
+      "language": {
+        "htmlFields": ["description"]
+      },
+      "money": {
+        "htmlFields": ["description"]
+      },
+      "bundle": {
+        "htmlFields": ["description"]
+      }
+    }
+  },
   "packs": [
     {
       "name": "acks-class-abilities",

@@ -14,7 +14,6 @@ export const INCLUDES = [
   path.join(process.cwd(), SRC_NAME, "ruledata"),
   path.join(process.cwd(), SRC_NAME, "LICENSE.txt"),
   path.join(process.cwd(), SRC_NAME, "system.json"),
-  path.join(process.cwd(), SRC_NAME, "template.json"),
 ];
 
 /**

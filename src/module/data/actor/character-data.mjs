@@ -34,7 +34,6 @@ export default class CharacterData extends foundry.abstract.TypeDataModel {
       details: new SchemaField({
         // biography rich text
         // TODO: maybe use HTMLField?
-        // TODO: Not used for character. Do we need this?
         biography: new StringField({ blank: true, initial: "" }),
         // Morale score. Can range from -4 to +4.
         // TODO: why is it here and not in retainer section?
