@@ -20,7 +20,8 @@ jobs:
 
       - name: Extract version
         run: |
-          echo "VERSION=${GITHUB_REF_NAME#release-}" >> $GITHUB_ENV
+          VERSION=${GITHUB_REF_NAME#release-}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "ZIP_NAME=acks-$VERSION.zip" >> $GITHUB_ENV
 
       - name: Set up Node.js

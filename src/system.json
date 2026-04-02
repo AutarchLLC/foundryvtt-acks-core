@@ -4,13 +4,13 @@
   "description": "Play B/X or other OSR compatible content using the ACKS system",
   "version": "13.0.0",
   "url": "https://github.com/AutarchLLC/foundryvtt-acks-core",
-  "manifest": "https://github.com/thetwoface/foundryvtt-acks-core-dev/releases/latest/download/system.json",
-  "download": "https://github.com/thetwoface/foundryvtt-acks-core-dev/releases/download/13.0.0/acks-13.0.0.zip",
+  "manifest": "https://github.com/AutarchLLC/foundryvtt-acks-core/releases/latest/download/system.json",
+  "download": "https://github.com/AutarchLLC/foundryvtt-acks-core/releases/download/release-13.0.0/acks-13.0.0.zip",
   "socket": true,
   "relationships": {},
   "compatibility": {
     "minimum": "13.351",
-    "verified": "14.358"
+    "verified": "14.359"
   },
   "flags": {
     "hotReload": {
