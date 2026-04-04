@@ -8,7 +8,6 @@ import { registerHelpers } from "./module/helpers.mjs";
 import * as chat from "./module/chat.mjs";
 import * as macros from "./module/macros.mjs";
 import AcksCombat from "./module/combat.mjs";
-import AcksTokenHud from "./module/acks-token-hud.mjs";
 import { AcksUtility } from "./module/util/acks-utility.mjs";
 import AcksPolyglot from "./module/apps/polyglot-support.mjs";
 import ACKSTableManager from "./module/apps/table-manager.mjs";
@@ -96,7 +95,6 @@ Hooks.once("init", async function () {
 
   await preloadHandlebarsTemplates();
 
-  AcksTokenHud.init();
   ACKSCommands.init();
 
   // Ensure new effect transfer
