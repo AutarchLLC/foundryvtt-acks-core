@@ -49,10 +49,12 @@ export class AcksUtility {
   }
 
   static displayWelcomeMessage() {
-    const welcomeMessage = game.settings.get("acks", "welcome-message-13-0");
-    if (!welcomeMessage) {
-      game.settings.set("acks", "welcome-message-13-0", true);
-      void ACKSDialog.showWelcomeMessage(game.i18n.localize("ACKS.Welcome.Message-13-0"));
+    /** @type {string} */
+    const lastWelcomeVersion = game.settings.get("acks", "welcomeMessageVersion") ?? "";
+
+    if (!lastWelcomeVersion || foundry.utils.isNewerVersion(game.system.version, lastWelcomeVersion)) {
+      game.settings.set("acks", "welcomeMessageVersion", game.system.version);
+      void ACKSDialog.showWelcomeMessage(game.i18n.localize("ACKS.Welcome.Message"));
     }
   }
 

@@ -10,12 +10,12 @@ export const registerMainSettings = async () => {
     requiresReload: true,
   });
 
-  game.settings.register("acks", "welcome-message-13-0", {
-    name: "welcome-message-13-0",
-    default: false,
+  game.settings.register("acks", "welcomeMessageVersion", {
+    name: "Last system version welcome message was shown for",
     scope: "world",
-    type: Boolean,
+    type: String,
     config: false,
+    default: "",
   });
 
   game.settings.register("acks", "skip-dialog-key", {

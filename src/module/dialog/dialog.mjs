@@ -251,7 +251,7 @@ export default class ACKSDialog {
 
   static async showWelcomeMessage(message) {
     return foundry.applications.api.DialogV2.prompt({
-      window: { title: "ACKS.Welcome.Title" },
+      window: { title: game.i18n.format("ACKS.Welcome.Title", { version: game.system.version }) },
       content: `<p>${message}</p>`,
     });
   }
