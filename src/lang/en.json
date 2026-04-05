@@ -473,6 +473,5 @@
   "ACKS.hireling.specialist": "Specialist",
   "ACKS.hireling.category": "Category",
 
-  "ACKS.Welcome.Title": "Welcome to ACKS II version {version}",
-  "ACKS.Welcome.Message": "TODO: Write what's new"
+  "ACKS.Welcome.Title": "Welcome!"
 }

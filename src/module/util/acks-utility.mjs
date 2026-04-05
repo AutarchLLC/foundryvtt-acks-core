@@ -54,7 +54,7 @@ export class AcksUtility {
 
     if (!lastWelcomeVersion || foundry.utils.isNewerVersion(game.system.version, lastWelcomeVersion)) {
       game.settings.set("acks", "welcomeMessageVersion", game.system.version);
-      void ACKSDialog.showWelcomeMessage(game.i18n.localize("ACKS.Welcome.Message"));
+      void ACKSDialog.showWelcomeMessage();
     }
   }
 

@@ -249,10 +249,17 @@ export default class ACKSDialog {
     });
   }
 
-  static async showWelcomeMessage(message) {
+  static async showWelcomeMessage() {
+    const content = await foundry.applications.handlebars.renderTemplate(
+      "systems/acks/templates/dialog/welcome-message.hbs",
+      {
+        version: game.system.version,
+      },
+    );
     return foundry.applications.api.DialogV2.prompt({
-      window: { title: game.i18n.format("ACKS.Welcome.Title", { version: game.system.version }) },
-      content: `<p>${message}</p>`,
+      window: { title: "ACKS.Welcome.Title" },
+      position: { width: 600 },
+      content,
     });
   }
 
