@@ -1,3 +1,4 @@
+/* global foundry, CONST */
 import actorCommonSchema from "./templates/actor-common-schema.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 
@@ -59,5 +60,36 @@ export default class MonsterData extends foundry.abstract.TypeDataModel {
     }
 
     return super.migrateData(source);
+  }
+
+  /**
+   * Pre-process a creation operation for a single Document instance. Pre-operation events only occur for the client
+   * which requested the operation.
+   *
+   * Modifications to the pending Document instance must be performed using <b>updateSource</b>.
+   *
+   * @param {object} data The initial data object provided to the document creation request
+   * @param {object} options Additional options which modify the creation request
+   * @param {BaseUser} user The User requesting the document creation
+   * @return {Promise<boolean|void>} Return false to exclude this Document from the creation operation
+   * @protected
+   * @override
+   */
+  async _preCreate(data, options, user) {
+    const allowed = await super._preCreate(data, options, user);
+    if (allowed === false) {
+      return false;
+    }
+
+    // Default token prototype settings
+    this.parent.updateSource({
+      prototypeToken: {
+        actorLink: false,
+        disposition: CONST.TOKEN_DISPOSITIONS.HOSTILE,
+        sight: { enabled: true },
+        displayBars: CONST.TOKEN_DISPLAY_MODES.OWNER,
+        displayName: CONST.TOKEN_DISPLAY_MODES.OWNER,
+      },
+    });
   }
 }
