@@ -1,4 +1,4 @@
-/* global foundry */
+/* global foundry, game */
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
@@ -216,6 +216,9 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
    * @param {HTMLElement} _target
    */
   static async #treasureLinkDelete(_event, _target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
     await this.actor.update({
       "system.details.treasure.table": "",
       "system.details.treasure.type": "",

@@ -107,4 +107,14 @@ export const registerMainSettings = async () => {
     config: true,
     requiresReload: false,
   });
+
+  game.settings.register("acks", "confirmDeletion", {
+    name: "ACKS.Setting.ConfirmDeletion.Name",
+    hint: "ACKS.Setting.ConfirmDeletion.Hint",
+    type: Boolean,
+    default: false,
+    scope: "world",
+    config: true,
+    requiresReload: false,
+  });
 };

@@ -289,6 +289,8 @@
   "ACKS.Setting.colorHostiles": "Color for hostiles combatants",
   "ACKS.Setting.AutoRollMonsterHP.Name": "Roll Monster HP",
   "ACKS.Setting.AutoRollMonsterHP.Hint": "Automatically rolls HP for unlinked monsters when they are created",
+  "ACKS.Setting.ConfirmDeletion.Name": "Confirm Item Deletion",
+  "ACKS.Setting.ConfirmDeletion.Hint": "Ask for confirmation before deleting an item from actor sheet",
 
   "ACKS.items.Equip": "Equip",
   "ACKS.items.Unequip": "Unequip",

@@ -1,8 +1,10 @@
+/* global foundry, ui, game */
 import { AcksUtility } from "../util/acks-utility.mjs";
 import AcksEffectUtil from "../effect/acks-effect-util.mjs";
 import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import { ITEM_TYPE } from "../constants.mjs";
+import ACKSDialog from "../dialog/dialog.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -400,6 +402,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @return {Promise<void>}
    */
   static async #deleteEffect(event, target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
     const effectId = target.dataset.effectId;
     await AcksEffectUtil.deleteEffect(effectId, this.item);
   }
@@ -407,22 +412,22 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   /**
    * Handle melee flag toggling for weapon.
    * @this {AcksItemSheetV2}
-   * @param {Event} event
-   * @param {HTMLElement} target
+   * @param {Event} _event
+   * @param {HTMLElement} _target
    * @return {Promise<void>}
    */
-  static async #toggleMelee(event, target) {
+  static async #toggleMelee(_event, _target) {
     this.item.update({ "system.melee": !this.item.system.melee });
   }
 
   /**
    * Handle missile flag toggling for weapon.
    * @this {AcksItemSheetV2}
-   * @param {Event} event
-   * @param {HTMLElement} target
+   * @param {Event} _event
+   * @param {HTMLElement} _target
    * @return {Promise<void>}
    */
-  static async #toggleMissile(event, target) {
+  static async #toggleMissile(_event, _target) {
     this.item.update({ "system.missile": !this.item.system.missile });
   }
 
@@ -434,6 +439,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    */
   static async #deleteTag(event, target) {
     if (this.isEditable) {
+      if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+        return;
+      }
       const tag = target.dataset.tag;
       this.item.popTag(tag);
     }
@@ -460,6 +468,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @return {Promise<void>}
    */
   static async #deleteItemFromBundle(event, target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
     const itemUUID = AcksHtmlUtil.getItemIdFromDOM(target);
     const itemList = foundry.utils.deepClone(this.item.system.itemList);
     const updatedItemList = itemList.filter((bundleItem) => bundleItem.uuid !== itemUUID);

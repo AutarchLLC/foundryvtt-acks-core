@@ -225,6 +225,17 @@ export default class ACKSDialog {
     });
   }
 
+  /**
+   *
+   * @return {Promise<boolean|null>}
+   */
+  static async confirmDeletion() {
+    return ACKSDialog.confirm(
+      "Confirm deletion", // TODO: localize
+      "Are you sure you want to delete this item? This action cannot be undone.", // TODO: localize
+    );
+  }
+
   static async inputXPAmount() {
     const xpInput = foundry.applications.fields.createNumberInput({
       name: `total`,

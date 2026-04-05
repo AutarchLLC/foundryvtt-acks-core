@@ -220,6 +220,9 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {HTMLElement} target
    */
   static async #itemDelete(event, target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
     const itemId = AcksHtmlUtil.getItemIdFromDOM(target);
     await this.actor.deleteEmbeddedDocuments("Item", [itemId]);
   }
@@ -318,7 +321,10 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {PointerEvent} event
    * @param {HTMLElement} target
    */
-  static #hirelingDelete(event, target) {
+  static async #hirelingDelete(event, target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
     const hirelingId = AcksHtmlUtil.getItemIdFromDOM(target);
     void this.actor.delHenchman(hirelingId);
   }
@@ -366,6 +372,9 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @return {Promise<void>}
    */
   static async #deleteEffect(event, target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
     const effectId = target.dataset.effectId;
     await AcksEffectUtil.deleteEffect(effectId, this.actor);
   }
