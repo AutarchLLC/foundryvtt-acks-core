@@ -439,17 +439,26 @@ export default class AcksActor extends Actor {
     });
   }
 
-  async rollHP() {
+  /**
+   *
+   * @param autoUpdate
+   * @return {Promise<Roll>}
+   */
+  async rollHP(autoUpdate = true) {
     const roll = new Roll(this.system.hp.hd);
     await roll.evaluate();
-    await this.update({
-      system: {
-        hp: {
-          max: roll.total,
-          value: roll.total,
+
+    if (autoUpdate) {
+      await this.update({
+        system: {
+          hp: {
+            max: roll.total,
+            value: roll.total,
+          },
         },
-      },
-    });
+      });
+    }
+    return roll;
   }
 
   rollAdventuring(advKey, options = {}) {

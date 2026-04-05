@@ -28,6 +28,7 @@ import ItemBundleData from "./module/data/item/item-bundle-data.mjs";
 import renderActorDirectory from "./module/hooks/render-actor-directory.mjs";
 import { showPartySheet } from "./module/party.mjs";
 import AcksCombatHelper from "./module/combat-helper.mjs";
+import ACKSToken from "./module/documents/token.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -77,6 +78,7 @@ Hooks.once("init", async function () {
     bundle: ItemBundleData,
   };
   CONFIG.Combat.documentClass = AcksCombat;
+  CONFIG.Token.documentClass = ACKSToken;
 
   // Unregister default sheets
   foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);

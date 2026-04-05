@@ -97,4 +97,14 @@ export const registerMainSettings = async () => {
     config: true,
     requiresReload: true,
   });
+
+  game.settings.register("acks", "autoRollMonsterHP", {
+    name: "ACKS.Setting.AutoRollMonsterHP.Name",
+    hint: "ACKS.Setting.AutoRollMonsterHP.Hint",
+    type: Boolean,
+    default: true,
+    scope: "world",
+    config: true,
+    requiresReload: false,
+  });
 };

@@ -287,6 +287,8 @@
   "ACKS.Setting.enableCombatantColorHint": "Change the color of combatants depending on their group",
   "ACKS.Setting.colorFriendlies": "Color for friendlies combatants",
   "ACKS.Setting.colorHostiles": "Color for hostiles combatants",
+  "ACKS.Setting.AutoRollMonsterHP.Name": "Roll Monster HP",
+  "ACKS.Setting.AutoRollMonsterHP.Hint": "Automatically rolls HP for unlinked monsters when they are created",
 
   "ACKS.items.Equip": "Equip",
   "ACKS.items.Unequip": "Unequip",
