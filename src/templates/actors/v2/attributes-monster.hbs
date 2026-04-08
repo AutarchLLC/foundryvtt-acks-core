@@ -29,7 +29,7 @@
         <ul class="item-list unlist">
 
           {{#each abilities as |item|}}
-            <li class="item" data-item-id="{{item._id}}">
+            <li class="item draggable" data-item-id="{{item._id}}">
 
               <div class="item-row">
 
@@ -69,7 +69,7 @@
 
           {{#each owned as |section| }}
             {{#each section as |item|}}
-              <li class="item" data-item-id="{{item._id}}">
+              <li class="item draggable" data-item-id="{{item._id}}">
                 <div class="item-row">
 
                   {{#if (eq item.type 'weapon')}}

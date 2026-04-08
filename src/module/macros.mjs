@@ -1,69 +1,42 @@
-/* global game, ui, Macro, ChatMessage */
-/* -------------------------------------------- */
-/*  Hotbar Macros                               */
-/* -------------------------------------------- */
+/* global game, ui, foundry, Macro, Item, CONST */
 
-/**
- * Create a Macro from an Item drop.
- * Get an existing item macro if one exists, otherwise create a new one.
- * @param {Object} data     The dropped data
- * @param {number} slot     The hotbar slot to use
- * @returns {Promise}
- */
-export async function createAcksMacro(data, slot) {
-  if (data.type !== "Item") {
-    return;
+export async function rollItem(itemUuid, { _event } = {}) {
+  const item = await foundry.utils.fromUuid(itemUuid);
+  if (!item) {
+    ui.notifications.error("Can't find Item.");
+    return null;
   }
-  if (!("data" in data)) {
-    return ui.notifications.warn("You can only create macro buttons for owned Items");
-  }
-  const item = data.data;
-
-  // Create the macro command
-  const command = `game.acks.rollItemMacro("${item.name}");`;
-  let macro = game.macros.find((m) => m.name === item.name && m.command === command);
-  if (!macro) {
-    macro = await Macro.create({
-      name: item.name,
-      type: "script",
-      img: item.img,
-      command: command,
-      flags: { "acks.itemMacro": true },
-    });
-  }
-  game.user.assignHotbarMacro(macro, slot);
-  return false;
+  item.use();
 }
 
-/* -------------------------------------------- */
-
-/**
- * Create a Macro from an Item drop.
- * Get an existing item macro if one exists, otherwise create a new one.
- * @param {string} itemName
- * @return {Promise}
- */
-export function rollItemMacro(itemName) {
-  const speaker = ChatMessage.getSpeaker();
-  let actor;
-  if (speaker.token) {
-    actor = game.actors.tokens[speaker.token];
+export async function createACKSMacro(data, slot) {
+  const item = await Item.implementation.fromDropData(data);
+  if (!item) {
+    ui.notifications.error("Can't find Item.");
+    return null;
   }
-  if (!actor) {
-    actor = game.actors.get(speaker.actor);
+  if (!item.actor) {
+    ui.notifications.error("Can only create Macro buttons for Items owned by an Actor.");
+    return null;
+  }
+  if (item.inCompendium) {
+    ui.notifications.error("Can't create Macro buttons for Items in Compendium.");
+    return null;
   }
 
-  // Get matching items
-  const items = actor ? actor.items.filter((i) => i.name === itemName) : [];
-  if (items.length > 1) {
-    ui.notifications.warn(
-      `Your controlled Actor ${actor.name} has more than one Item with name ${itemName}. The first matched item will be chosen.`,
-    );
-  } else if (items.length === 0) {
-    return ui.notifications.warn(`Your controlled Actor does not have an item named ${itemName}`);
-  }
-  const item = items[0];
+  const macroData = { type: CONST.MACRO_TYPES.SCRIPT, scope: "actor" };
+  foundry.utils.mergeObject(macroData, {
+    name: item.name,
+    img: item.img,
+    command: `game.acks.macro.rollItem("${item.uuid}", { event })`,
+    flags: { "acks.itemMacro": true },
+  });
 
-  // Trigger the item roll
-  return item.roll();
+  let macro = game.macros.find((m) => {
+    return m.name === macroData.name && m.command === macroData.command && m.isAuthor;
+  });
+  if (!macro) {
+    macro = await Macro.create(macroData);
+  }
+  game.user.assignHotbarMacro(macro, slot);
 }

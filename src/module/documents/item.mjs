@@ -3,6 +3,7 @@ import AcksDice from "../dice.mjs";
 import { createTagHtmlString } from "../util/html-util.mjs";
 import { ACKS } from "../config.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
+import { ITEM_TYPE } from "../constants.mjs";
 
 /**
  * Override and extend the basic :class:`Item` implementation
@@ -220,26 +221,31 @@ export default class AcksItem extends Item {
     return this.update({ system: newData });
   }
 
-  roll() {
+  use() {
     switch (this.type) {
-      case "weapon":
+      case ITEM_TYPE.WEAPON:
         this.rollWeapon();
         break;
-      case "spell":
+      case ITEM_TYPE.SPELL:
         this.spendSpell();
         break;
-      case "ability":
+      case ITEM_TYPE.PROFICIENCY:
         if (this.system.roll) {
           void this.rollFormula();
         } else {
           void this.show();
         }
         break;
-      case "item":
-      case "armor":
-      case "language":
-      case "money":
+      case ITEM_TYPE.ITEM:
+      case ITEM_TYPE.ARMOR:
+      case ITEM_TYPE.LANGUAGE:
+      case ITEM_TYPE.MONEY:
         void this.show();
+        break;
+      case ITEM_TYPE.BUNDLE:
+      default:
+        // do nothing
+        break;
     }
   }
 

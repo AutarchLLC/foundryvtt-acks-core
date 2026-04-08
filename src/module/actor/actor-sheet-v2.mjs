@@ -263,7 +263,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @param {PointerEvent} event
    * @param {HTMLElement} target
    */
-  static #itemUse(event, target) {
+  static async #itemUse(event, target) {
     const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
     const skipKey = game.settings.get("acks", "skip-dialog-key");
     const skipDialog = event[skipKey] || false;

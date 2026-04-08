@@ -6,7 +6,7 @@ import { ACKS } from "./module/config.mjs";
 import { registerMainSettings } from "./module/settings.mjs";
 import { registerHelpers } from "./module/helpers.mjs";
 import * as chat from "./module/chat.mjs";
-import * as macros from "./module/macros.mjs";
+import { rollItem } from "./module/macros.mjs";
 import AcksCombat from "./module/combat.mjs";
 import { AcksUtility } from "./module/util/acks-utility.mjs";
 import AcksPolyglot from "./module/apps/polyglot-support.mjs";
@@ -29,6 +29,7 @@ import renderActorDirectory from "./module/hooks/render-actor-directory.mjs";
 import { showPartySheet } from "./module/party.mjs";
 import AcksCombatHelper from "./module/combat-helper.mjs";
 import ACKSToken from "./module/documents/token.mjs";
+import hotbarDrop from "./module/hooks/hotbar-drop.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -53,7 +54,9 @@ Hooks.once("init", async function () {
   CONFIG.ACKS = ACKS;
 
   game.acks = {
-    rollItemMacro: macros.rollItemMacro,
+    macro: {
+      rollItem: rollItem,
+    },
   };
 
   // Custom Handlebars helpers
@@ -149,7 +152,7 @@ Hooks.on("chatMessage", (html, content, msg) => {
 });
 
 Hooks.once("ready", async () => {
-  Hooks.on("hotbarDrop", (bar, data, slot) => macros.createAcksMacro(data, slot));
+  Hooks.on("hotbarDrop", hotbarDrop);
 
   AcksUtility.updateWeightsLanguages();
   AcksUtility.displayWelcomeMessage();
