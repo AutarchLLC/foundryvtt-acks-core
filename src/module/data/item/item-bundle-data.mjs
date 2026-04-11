@@ -1,3 +1,4 @@
+/* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 
 export default class ItemBundleData extends foundry.abstract.TypeDataModel {

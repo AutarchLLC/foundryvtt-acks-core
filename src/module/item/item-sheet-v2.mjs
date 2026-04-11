@@ -17,7 +17,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
 
   /** @override */
   static DEFAULT_OPTIONS = {
-    classes: ["acks", "item-v2"],
+    classes: ["acks", "acks2", "item-v2"],
     position: {
       // initial size of the window
       width: 570,
@@ -41,6 +41,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       deleteTag: AcksItemSheetV2.#deleteTag,
       viewItemFromBundle: AcksItemSheetV2.#viewItemFromBundle,
       deleteItemFromBundle: AcksItemSheetV2.#deleteItemFromBundle,
+      changeQuantityInBundle: AcksItemSheetV2.#changeQuantityInBundle,
       toggleListSection: AcksHtmlUtil.toggleListSection,
     },
   };
@@ -475,6 +476,26 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     const itemList = foundry.utils.deepClone(this.item.system.itemList);
     const updatedItemList = itemList.filter((bundleItem) => bundleItem.uuid !== itemUUID);
     this.item.update({ "system.itemList": updatedItemList });
+  }
+
+  /**
+   * Change quantity of item in bundle
+   * @this {AcksItemSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #changeQuantityInBundle(event, target) {
+    const itemUUID = AcksHtmlUtil.getItemIdFromDOM(target);
+    const itemRecord = this.item.system.itemList.find((bundleItem) => bundleItem.uuid === itemUUID);
+    if (itemRecord) {
+      const { quantity } = await ACKSDialog.inputNewQuantity(itemRecord.quantity);
+      if (quantity && quantity >= 1 && quantity !== itemRecord.quantity) {
+        itemRecord.quantity = quantity;
+        const updatedItemList = foundry.utils.deepClone(this.item.system.itemList);
+        await this.item.update({ "system.itemList": updatedItemList });
+      }
+    }
   }
 
   /**

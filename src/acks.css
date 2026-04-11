@@ -2538,3 +2538,8 @@
   display: flex;
   justify-content: center;
 }
+
+.acks2 .item__quantity {
+  width: 6rem;
+  text-align: left;
+}

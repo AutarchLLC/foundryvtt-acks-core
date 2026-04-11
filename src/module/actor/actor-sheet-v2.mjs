@@ -1,4 +1,4 @@
-/* global foundry, game, ui */
+/* global foundry, game, ui, Item */
 import { ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
@@ -586,7 +586,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * Handle a dropped Item on the Actor Sheet.
    * @param {DragEvent} event The initiating drop event
    * @param {Item} item The dropped Item document
-   * @returns {Promise<Item|null|undefined>} A Promise resolving to the dropped Item (if sorting), a newly created Item,
+   * @returns A Promise resolving to the dropped Item (if sorting), a newly created Item,
    * or a nullish value in case of failure or no action being taken
    * @protected
    * @override
@@ -595,15 +595,58 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     if (!this.actor.isOwner) {
       return null;
     }
-    if (item.type === ITEM_TYPE.BUNDLE) {
-      const result = [];
-      for (const bundleItemData of item.system.itemList) {
-        const bundleItem = await foundry.utils.fromUuid(bundleItemData.uuid);
-        result.push(await super._onDropItem(event, bundleItem));
+    switch (item.type) {
+      case ITEM_TYPE.BUNDLE:
+        return await this._onDropItemBundle(event, item);
+      case ITEM_TYPE.MONEY:
+        return await this._onDropItemMoney(event, item, 1);
+      default:
+        return super._onDropItem(event, item);
+    }
+  }
+
+  /**
+   * Handle a dropped Item Bundle on the Actor Sheet.
+   * @param {DragEvent} event The initiating drop event
+   * @param {Item} item The dropped Item document
+   * @protected
+   */
+  async _onDropItemBundle(event, item) {
+    const result = [];
+    for (const bundleItemData of item.system.itemList) {
+      /** @type Item */
+      const bundleItem = await foundry.utils.fromUuid(bundleItemData.uuid);
+      if (bundleItem.type === ITEM_TYPE.MONEY) {
+        await this._onDropItemMoney(event, bundleItem, bundleItemData.quantity ?? 1);
+      } else {
+        const count = bundleItemData.quantity ?? 1;
+        for (let i = 0; i < count; i++) {
+          result.push(await this._onDropItem(event, bundleItem));
+        }
       }
-      return result;
+    }
+    return result;
+  }
+
+  /**
+   * Handle a dropped Money Item on the Actor Sheet. It can be from Item bundle - in that case quantity might be more than 1.
+   * @param {DragEvent} event The initiating drop event
+   * @param {Item} item The dropped Item document
+   * @param {number} quantity Quantity of money items to add (default: 1)
+   * @protected
+   */
+  async _onDropItemMoney(event, item, quantity = 1) {
+    // let's check if actor already has this money item.
+    const existingMoneyItem = this.actor.items.get(item.id);
+    if (existingMoneyItem) {
+      // update the amount of existing money item
+      await existingMoneyItem.update({ "system.quantity": existingMoneyItem.system.quantity + quantity });
+      return existingMoneyItem;
     } else {
-      return super._onDropItem(event, item);
+      const itemObject = item.toObject();
+      itemObject.system.quantity += quantity;
+      const result = await Item.implementation.create(itemObject, { parent: this.actor, keepId: true });
+      return result ?? null;
     }
   }
 }
