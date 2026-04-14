@@ -447,6 +447,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    */
   async _prepareItems(context) {
     const items = [];
+    const clothes = [];
     const weapons = [];
     const armors = [];
     const proficiencies = [];
@@ -457,7 +458,11 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     for (const item of this.actor.items) {
       switch (item.type) {
         case ITEM_TYPE.ITEM:
-          items.push(item);
+          if (item.system.subtype === "clothing") {
+            clothes.push(item);
+          } else {
+            items.push(item);
+          }
           break;
         case ITEM_TYPE.WEAPON:
           weapons.push(item);
@@ -506,6 +511,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     };
     context.owned = {
       items,
+      clothes,
       weapons,
       armors,
       money,
