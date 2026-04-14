@@ -11,6 +11,6 @@ export default function itemPhysicalSchema() {
     // TODO: old weight handling? seems like it is not used anymore? maybe write migration and delete?
     weight: new NumberField({}),
     // weight in 1/6 stone
-    weight6: new NumberField({}),
+    weight6: new NumberField({ initial: 0 }),
   };
 }

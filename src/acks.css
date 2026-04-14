@@ -1856,6 +1856,7 @@
 .sheet.acks.actor-v2 .actor-portrait {
   flex: 0 0 145px;
   cursor: var(--cursor-pointer);
+  height: 197px;
 }
 
 .acks2 .actor-portrait > img,
@@ -1865,6 +1866,7 @@
   object-position: top center;
   border-radius: 4px;
   height: 100%;
+  width: 100%;
 }
 
 .sheet.acks.actor-v2 .panel,
