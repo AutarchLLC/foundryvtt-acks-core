@@ -41,6 +41,8 @@
   "ACKS.name": "Name",
   "ACKS.Hireling": "Hireling",
 
+  "ACKS.party.noMembers": "No party members yet. Drop a character here to add it to the party.",
+
   "ACKS.dialog.tweaks": "Tweaks",
   "ACKS.dialog.partysheet": "Party Overview",
   "ACKS.dialog.selectActors": "Select PCs",

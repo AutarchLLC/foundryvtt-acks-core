@@ -92,6 +92,8 @@
           <button type="button" data-action="deleteFromParty" class="plain icon fas fa-trash-alt"></button>
 
         </li>
+      {{else}}
+        <li class="no-actors">{{localize 'ACKS.party.noMembers'}}</li>
       {{/each}}
     </ul>
   </section>

@@ -2541,6 +2541,16 @@
   justify-content: center;
 }
 
+.party-overview-app .no-actors{
+  font-size: 20px;
+  height: 4rem;
+  align-content: space-around;
+}
+
+.acks2.party-overview-app{
+  min-height: 160px;
+}
+
 .acks2 .item__quantity {
   width: 6rem;
   text-align: left;
