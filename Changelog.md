@@ -2,6 +2,20 @@
 
 This is the change history for the FoundryVTT ACKS II core system module (search for *acks* in the Foundry installer).
 
+## Release 14.0.0
+
+1. Added support for Foundry v13 and v14. Dropped support for Foundry v12 and below.
+2. Updated look and feel for Character, Monster and Item Sheets.
+3. Updated look and feel for various dialogs and applications.
+4. New Item type - **Item Bundle**. Add other items into a bundle and then drop the bundle on Character Sheet to
+   quickly fill it.
+5. New setting which allows automatic HP roll for unlinked monster actors when you drop them on scene.
+6. New setting which allows you to enable deletion confirmation of items from Actor Sheets.
+7. FIX: Fixed Active Effect tabs for Actors and Items.
+8. FIX: Now you can drop Roll Table on Monster Sheet to create a Treasure Link Button for quick access to the Table.
+9. FIX: Dragging Items from Actor Sheet to create a Macro now works again.
+10. Various other internal changes, fixes and improvements.
+
 ## Release 12.3.6
 commit eb1c5d34bf525af40b462334fa8f32310acce091
 
