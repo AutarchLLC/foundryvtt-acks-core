@@ -175,12 +175,16 @@ export default class AcksActor extends Actor {
   getHenchmen() {
     //TODO: remake so we are working with DocumentUUIDField
     if (this.type !== "character") {
-      return;
+      return [];
     }
 
-    let subActors = [];
+    const subActors = [];
     for (const id of this.system.henchmenList) {
-      subActors.push(foundry.utils.duplicate(game.actors.get(id)));
+      const hireling = game.actors.get(id);
+      if (hireling) {
+        const hirelingCopy = foundry.utils.duplicate(hireling);
+        subActors.push(hirelingCopy);
+      }
     }
     return subActors;
   }
@@ -215,6 +219,9 @@ export default class AcksActor extends Actor {
 
   async requestHenchman(subActorId) {
     const henchman = game.actors.get(subActorId);
+    if (!henchman) {
+      return;
+    }
     const title = `Assign ${henchman.name} as a Hireling of ${this.name} ?`; // TODO: localize
     const message = "It will enable the Hireling flag in the actor, as well as a linked token actor."; // TODO: localize
 
@@ -274,12 +281,16 @@ export default class AcksActor extends Actor {
     await this.update({ "system.henchmenList": newArray });
     // Cleanup the manager id
     const npc = game.actors.get(subActorId);
-    await npc.update({ "system.retainer.managerid": "" });
+    if (npc) {
+      await npc.update({ "system.retainer.managerid": "" });
+    }
   }
 
   showHenchman(henchmanId) {
     const henchman = game.actors.get(henchmanId);
-    henchman.sheet.render(true);
+    if (henchman) {
+      henchman.sheet.render(true);
+    }
   }
 
   /**
@@ -291,7 +302,7 @@ export default class AcksActor extends Actor {
       return "";
     }
     let manager = game.actors.get(this.system.retainer.managerid);
-    return manager.name;
+    return manager?.name ?? "";
   }
 
   getTotalWages() {
