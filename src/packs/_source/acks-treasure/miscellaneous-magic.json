@@ -1,0 +1,1276 @@
+{
+  "_id": "tTR9e8WPtLNrEFKz",
+  "name": "Miscellaneous Magic",
+  "flags": {},
+  "description": "Miscellaneous Magic Items",
+  "results": [
+    {
+      "_id": "hNI1ajeL7oA36IfH",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        1,
+        2
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Amulet versus Crystal Balls and ESP",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.hNI1ajeL7oA36IfH"
+    },
+    {
+      "_id": "dMRW3OB8bn4jDC7a",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Apparatus of the Crab",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.dMRW3OB8bn4jDC7a"
+    },
+    {
+      "_id": "mbYtvhS4UXfrsd8x",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        4,
+        5
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Bag of Devouring",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.mbYtvhS4UXfrsd8x"
+    },
+    {
+      "_id": "12HbyWiW6Hl4IBRj",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        6,
+        10
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Bag of Holding",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.12HbyWiW6Hl4IBRj"
+    },
+    {
+      "_id": "hkCtChKKe3WqhQEc",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Boat, Folding",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.hkCtChKKe3WqhQEc"
+    },
+    {
+      "_id": "SvXl5PQTZQj66yda",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        12,
+        14
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Boots of Levitation",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.SvXl5PQTZQj66yda"
+    },
+    {
+      "_id": "kTNtBlERWGTZlXSI",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        15,
+        17
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Boots of Speed",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.kTNtBlERWGTZlXSI"
+    },
+    {
+      "_id": "EmPz6YREgSiVv3E7",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        18,
+        20
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Boots of Traveling and Springing",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.EmPz6YREgSiVv3E7"
+    },
+    {
+      "_id": "nKH1ZQHJZfu19jo2",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        21,
+        21
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Bowl of Commanding Water Elementals",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.nKH1ZQHJZfu19jo2"
+    },
+    {
+      "_id": "Ot3uj1dHZUnnAZJ4",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        22,
+        23
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Bracers of Armor",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.Ot3uj1dHZUnnAZJ4"
+    },
+    {
+      "_id": "HNkYuDrNUAK6phDb",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        24,
+        24
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Brazier of Commanding Fire Elementals",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.HNkYuDrNUAK6phDb"
+    },
+    {
+      "_id": "e8RYSLmWo0LM9vMd",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        25,
+        26
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Brooch of Shielding",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.e8RYSLmWo0LM9vMd"
+    },
+    {
+      "_id": "4Huims5wqldpzYb3",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        27,
+        29
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Broom of Flying",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.4Huims5wqldpzYb3"
+    },
+    {
+      "_id": "JBmFGCn6qJvXqHS5",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        30,
+        30
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Censer of Controlling Air Elementals",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.JBmFGCn6qJvXqHS5"
+    },
+    {
+      "_id": "j6AbVWjjQUAISvC1",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        31,
+        31
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Chime of Opening",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.j6AbVWjjQUAISvC1"
+    },
+    {
+      "_id": "g63KEFulClL9YYPt",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        32,
+        33
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Cloak of Protection",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.g63KEFulClL9YYPt"
+    },
+    {
+      "_id": "XLlIlRHIFLULXg3p",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        34,
+        36
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Crystal Ball",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.XLlIlRHIFLULXg3p"
+    },
+    {
+      "_id": "fHNemOmSCKNCmUkk",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        37,
+        38
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Crystal Ball with Clairaudience",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.fHNemOmSCKNCmUkk"
+    },
+    {
+      "_id": "H73OIeYf6DwX81FB",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        39,
+        39
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Crystal Ball with ESP",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.H73OIeYf6DwX81FB"
+    },
+    {
+      "_id": "ZNJbpQXkwDxlBLNU",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        40,
+        40
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Cube of Force",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.ZNJbpQXkwDxlBLNU"
+    },
+    {
+      "_id": "6ZzHUGt9VSAgJhQC",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        41,
+        41
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Cube of Frost Resistance",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.6ZzHUGt9VSAgJhQC"
+    },
+    {
+      "_id": "H8ykWvOg1SFDWCu0",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        42,
+        43
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Decanter of Endless Water",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.H8ykWvOg1SFDWCu0"
+    },
+    {
+      "_id": "cT0ihtgJdEoZIZmy",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        44,
+        45
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Displacer Cloak",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.cT0ihtgJdEoZIZmy"
+    },
+    {
+      "_id": "j8ucYchcFenw28Wt",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        46,
+        46
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Drums of Panic",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.j8ucYchcFenw28Wt"
+    },
+    {
+      "_id": "z0gz2kVVAlwINdNo",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        47,
+        49
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Dust of Appearance",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.z0gz2kVVAlwINdNo"
+    },
+    {
+      "_id": "Wg9tJwesk1IvCKjo",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        50,
+        52
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Dust of Disappearance",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.Wg9tJwesk1IvCKjo"
+    },
+    {
+      "_id": "YU0M4SxkS2DxJVol",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        53,
+        53
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Efreeti Bottle",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.YU0M4SxkS2DxJVol"
+    },
+    {
+      "_id": "flBA8ybDnLx68mvU",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 4,
+      "range": [
+        54,
+        57
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Elven Cloak",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.flBA8ybDnLx68mvU"
+    },
+    {
+      "_id": "dowuHLPFh9VlpStY",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 4,
+      "range": [
+        58,
+        61
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Elven Boots",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.dowuHLPFh9VlpStY"
+    },
+    {
+      "_id": "wKaaWe8PXeCRHMC7",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        62,
+        62
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Eyes of Charming",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.wKaaWe8PXeCRHMC7"
+    },
+    {
+      "_id": "iiqNH6jENk0kRxS9",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        63,
+        64
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Eyes of the Eagle",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.iiqNH6jENk0kRxS9"
+    },
+    {
+      "_id": "YyIf8LZvbiuH4l0d",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        65,
+        67
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Eyes of Petrification",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.YyIf8LZvbiuH4l0d"
+    },
+    {
+      "_id": "OCuGGXfhnJT4O0Il",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 4,
+      "range": [
+        68,
+        71
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Flying Carpet",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.OCuGGXfhnJT4O0Il"
+    },
+    {
+      "_id": "3hvJDAICi6mQY7J2",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        72,
+        74
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Gauntlets of Ogre Power",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.3hvJDAICi6mQY7J2"
+    },
+    {
+      "_id": "MS9oq3likbQICKDP",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        75,
+        77
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Girdle of Giant Strength",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.MS9oq3likbQICKDP"
+    },
+    {
+      "_id": "hofYow5KKV3hwodA",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        78,
+        80
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Helm of Alignment Changing",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.hofYow5KKV3hwodA"
+    },
+    {
+      "_id": "2jAFYWGqmkB5ciIH",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 4,
+      "range": [
+        81,
+        84
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Helm of Comprehending Languages",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.2jAFYWGqmkB5ciIH"
+    },
+    {
+      "_id": "t6ZCkd5G9FRa4YbV",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        85,
+        85
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Helm of Telepathy",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.t6ZCkd5G9FRa4YbV"
+    },
+    {
+      "_id": "YHPR13jHERovMmxj",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        86,
+        86
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Helm of Teleportation",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.YHPR13jHERovMmxj"
+    },
+    {
+      "_id": "Oug0ycXE77b7jBdC",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        87,
+        87
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Horn of Blasting",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.Oug0ycXE77b7jBdC"
+    },
+    {
+      "_id": "onGfGBsUKCjq6G7V",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        88,
+        90
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Medallion of ESP",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.onGfGBsUKCjq6G7V"
+    },
+    {
+      "_id": "AoazYC5NdaQcKVnh",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        91,
+        92
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Medallion of ESP (90')",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.AoazYC5NdaQcKVnh"
+    },
+    {
+      "_id": "DT6pct0YXjVVbKyQ",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        93,
+        93
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Mirror of Life Trapping",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.DT6pct0YXjVVbKyQ"
+    },
+    {
+      "_id": "gJ6XtRIo81SFFsl6",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        94,
+        94
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Mirror of Opposition",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.gJ6XtRIo81SFFsl6"
+    },
+    {
+      "_id": "SNZMvcsGsrNlST93",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        95,
+        95
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Necklace of Adaptation",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.SNZMvcsGsrNlST93"
+    },
+    {
+      "_id": "Yb5ldUuiCrwnqbLG",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        96,
+        97
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Rope of Climbing",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.Yb5ldUuiCrwnqbLG"
+    },
+    {
+      "_id": "SqpTIhHfyzOucQef",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        98,
+        99
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Scarab of Protection",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.SqpTIhHfyzOucQef"
+    },
+    {
+      "_id": "F3UgP9VaE0CfPcNQ",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Stone of Controlling Earth Elementals",
+      "name": "",
+      "_key": "!tables.results!tTR9e8WPtLNrEFKz.F3UgP9VaE0CfPcNQ"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!tTR9e8WPtLNrEFKz"
+}

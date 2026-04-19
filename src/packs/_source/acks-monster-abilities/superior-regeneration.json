@@ -1,0 +1,36 @@
+{
+  "name": "Superior Regeneration",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/open-wound.webp",
+  "_id": "ULquJMUfdtCXHB5v",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "3",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Trolls are very hard to kill, for they regenerate [[/r 3 #The Troll's wounds close, healing this many hp...]] points of damage each round, unless the damage is from fire or acid. If a troll loses a limb or body part, these parts will attempt to crawl or squirm back toward the main portion of the body to reattach. A troll can reattach a severed member instantly by holding it to the stump. Due to this powerful ability to regenerate, trolls cannot be permanently destroyed except by fire or acid. If a troll is damaged enough to be killed (reaches 0 or fewer hit points) the troll will continue to regenerate and stand again to fight when it regenerates to 1 or more hp. When confronted by fire or acid, a troll's morale drops to 0.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!ULquJMUfdtCXHB5v"
+}

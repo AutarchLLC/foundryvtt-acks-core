@@ -1,0 +1,38 @@
+{
+  "_id": "uRQMtQi77iLk22hc",
+  "type": "item",
+  "name": "Cloak, Fur-lined",
+  "img": "systems/acks/assets/icons/cloak.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A cloak is a cloth, fur, or leather garment of knee to ankle length, worn outdoors like an overcoat. Cloaks usually include a hood. Adventurers often favor military cloaks, generally worn pinned on one shoulder for ease of movement and access to a sword.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 25,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/lucasms/cloak.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!uRQMtQi77iLk22hc"
+}

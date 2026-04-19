@@ -1,0 +1,38 @@
+{
+  "_id": "qlWlqitXPYvxxJdg",
+  "name": "Shield (Metal)",
+  "type": "armor",
+  "flags": {},
+  "img": "systems/acks/assets/icons/shield.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058483071,
+    "modifiedTime": 1730058483071,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": "<p>A character with a shield equipped has his Armor Class&nbsp;increased by 1 point. A shield does not protect a character that is&nbsp;surprised, retreating, or attacked from behind, however.</p>",
+    "ac": {
+      "value": 1
+    },
+    "aac": {
+      "value": 1
+    },
+    "type": "shield",
+    "cost": 10,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6
+  },
+  "folder": "8qVpUlESUQsGqpcL",
+  "sort": 0,
+  "_key": "!items!qlWlqitXPYvxxJdg"
+}

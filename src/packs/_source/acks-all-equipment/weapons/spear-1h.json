@@ -1,0 +1,62 @@
+{
+  "_id": "ACgrVSDLyGpPNqxq",
+  "name": "Spear, 1H",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/spear.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 20,
+      "medium": 40,
+      "long": 60
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>Wooden shafts, 6' to 8' in length, with metal heads designed for thrusting, spears are the main weapon of the common soldier. Spears can be used one- or two-handed. Historical examples include the Hoplite doru, the medieval winged spear, and the Japanese yari. Characters armed with spears can attack from the second rank in melee and inflict double damage when used in or against a charge.</p>\n<p>Up to 4 spears may be thrown while cleaving.&nbsp;<span style=\"color: #191813;\">(Core rules p. 105)</span></p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Missile",
+        "value": "Missile"
+      },
+      {
+        "title": "Charge",
+        "value": "Charge"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": true,
+    "cost": 3,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!ACgrVSDLyGpPNqxq"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "wBliDIlEh6B2tXG8",
+  "name": "Battle Magic",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/battle-magic.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "above",
+    "rollTarget": null,
+    "blindroll": false,
+    "description": "<p>The character gains a +1 initiative bonus when casting spells. He is considered 2 class levels higher than his actual level of experience for the purposes of dispelling magic or penetrating a target's magic resistance.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!wBliDIlEh6B2tXG8"
+}

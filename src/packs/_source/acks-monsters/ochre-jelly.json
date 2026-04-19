@@ -1,0 +1,417 @@
+{
+  "_id": "xTGRsj3YSonJ5nRH",
+  "name": "Ochre Jelly",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "acks": {
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/dm_essentials1/DME_Green_Slime.webp",
+  "items": [
+    {
+      "_id": "zEnanNEpSJaUHv77",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "ALheggdkiThmGhjS"
+            },
+            "initialState": {
+              "id": "wBRXTw888xsN9Pev",
+              "count": 1,
+              "itemData": {
+                "_id": "wBRXTw888xsN9Pev",
+                "name": "Ooze",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Oozes are a type of mindless monster that includes black puddings, gelatinous cubes, gray oozes, green slimes, ochre jellies, and yellow molds.</p>\n<p>Oozes have a variety of different immunities and vulnerabilities, but all are immune to <em>charm</em>, <em>hold</em>, and <em>sleep </em>spells. They are also immune to all mind-affecting spells such as <em>ESP</em>.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 1500000,
+                "flags": {},
+                "img": "systems/acks/assets/icons/acid-blob.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Ooze",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/acid-blob.webp",
+      "sort": 1500000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Oozes are a type of mindless monster that includes black puddings, gelatinous cubes, gray oozes, green slimes, ochre jellies, and yellow molds.</p>\n<p>Oozes have a variety of different immunities and vulnerabilities, but all are immune to <em>charm</em>, <em>hold</em>, and <em>sleep </em>spells. They are also immune to all mind-affecting spells such as <em>ESP</em>.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!xTGRsj3YSonJ5nRH.zEnanNEpSJaUHv77"
+    },
+    {
+      "_id": "Wl2xDwev0ay2VO1W",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "ALheggdkiThmGhjS"
+            },
+            "initialState": {
+              "id": "QZhWgIEMMwRNF37A",
+              "count": 1,
+              "itemData": {
+                "_id": "QZhWgIEMMwRNF37A",
+                "flags": {},
+                "name": "Envelop",
+                "type": "weapon",
+                "img": "systems/acks/assets/icons/transparent-slime.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "death",
+                  "pattern": "red",
+                  "description": "<p>Any non-magical armor or clothing is destroyed immediately after a successful hit from the ooze, as the acid eats through it viciously. A non-magical metal or wooden weapon that strikes gray ooze also dissolves immediately after dealing damage. Magical weapons, armor, and clothing are allowed a saving throw using the wearer’s save versus Death, adding any magical bonus to the roll if applicable. Once it has hit, the ooze clings to an opponent and deals [[/r 2d8 #Acid damage from the clinging ooze!]] points of damage every round until it can be neutralized.</p>",
+                  "damage": "2d8",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 0,
+                  "equipped": false,
+                  "weight": 0,
+                  "counter": {
+                    "value": 1,
+                    "max": 1
+                  }
+                },
+                "sort": 100000
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        },
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Body Slam",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/transparent-slime.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "red",
+        "description": "<p>An ochre jelly constantly oozes an <strong>acidic slime that can eat through cloth, wood, and leather after 1 round</strong>, but cannot affect stone or metal. The acid inflicts 2d6 points of damage to bare flesh.</p>",
+        "damage": "2d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!xTGRsj3YSonJ5nRH.Wl2xDwev0ay2VO1W"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "5d8",
+      "value": 22,
+      "max": 22,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 1,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 4,
+      "throw": 6,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 13
+      },
+      "wand": {
+        "value": 15
+      },
+      "paralysis": {
+        "value": 14
+      },
+      "breath": {
+        "value": 15
+      },
+      "spell": {
+        "value": "16"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 30,
+      "mod": 0,
+      "value": "",
+      "encounter": 10
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "Neutral",
+      "xp": "350",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1",
+        "w": "1"
+      },
+      "morale": "NA"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {},
+    "name": "Ochre Jelly",
+    "displayName": 0,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/dm_essentials1/DME_Green_Slime.webp",
+      "tint": "#ff8000",
+      "scaleX": 2,
+      "scaleY": 2,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": false,
+      "range": 0,
+      "brightness": 1,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!xTGRsj3YSonJ5nRH"
+}

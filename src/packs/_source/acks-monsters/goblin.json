@@ -1,0 +1,711 @@
+{
+  "_id": "mb7QvULwlSnekdsC",
+  "name": "Goblin",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "acks": {
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/goblins_kobolds/goblin_daggers.webp",
+  "items": [
+    {
+      "_id": "dnONVNFPgJdcrGQD",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "2QmqD7U24HewiUjK"
+            },
+            "initialState": {
+              "id": "plUlQlRHeUEAEp1B",
+              "count": 1,
+              "itemData": {
+                "_id": "plUlQlRHeUEAEp1B",
+                "name": "Short Sword",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "weapon",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "white",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [
+                    {
+                      "title": "Melee",
+                      "value": "Melee"
+                    }
+                  ],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 7,
+                  "equipped": false,
+                  "weight": 166.6,
+                  "counter": {
+                    "value": 0,
+                    "max": 0
+                  }
+                },
+                "folder": "a56Mr9t5ePSlDxM2",
+                "sort": 2500000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/short-sword.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Short Sword",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/short-sword.webp",
+      "sort": 2500000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 7,
+        "equipped": false,
+        "weight": 166.6,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mb7QvULwlSnekdsC.dnONVNFPgJdcrGQD"
+    },
+    {
+      "_id": "S1zSraXWUp0aj3ZK",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "2QmqD7U24HewiUjK"
+            },
+            "initialState": {
+              "id": "Bj1MVoQEcoy91A0Y",
+              "count": 1,
+              "itemData": {
+                "_id": "Bj1MVoQEcoy91A0Y",
+                "name": "Shortbow",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "weapon",
+                "data": {
+                  "range": {
+                    "short": 50,
+                    "medium": 100,
+                    "long": 150
+                  },
+                  "save": "",
+                  "pattern": "white",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [
+                    {
+                      "title": "Missile",
+                      "value": "Missile"
+                    },
+                    {
+                      "title": "Two-handed",
+                      "value": "Two-handed"
+                    }
+                  ],
+                  "slow": false,
+                  "missile": true,
+                  "melee": false,
+                  "cost": 3,
+                  "equipped": false,
+                  "weight": 166.6,
+                  "counter": {
+                    "value": 0,
+                    "max": 0
+                  }
+                },
+                "folder": "a56Mr9t5ePSlDxM2",
+                "sort": 2600000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/pocket-bow.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Shortbow",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/pocket-bow.webp",
+      "sort": 2600000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 50,
+          "medium": 100,
+          "long": 150
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Missile",
+            "value": "Missile"
+          },
+          {
+            "title": "Two-handed",
+            "value": "Two-handed"
+          }
+        ],
+        "slow": false,
+        "missile": true,
+        "melee": false,
+        "cost": 3,
+        "equipped": false,
+        "weight": 166.6,
+        "weight6": -1,
+        "counter": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mb7QvULwlSnekdsC.S1zSraXWUp0aj3ZK"
+    },
+    {
+      "_id": "nwaUNVpO35t2cdHJ",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "2QmqD7U24HewiUjK"
+            },
+            "initialState": {
+              "id": "V7j9ccOSXVtPVXwj",
+              "count": 1,
+              "itemData": {
+                "_id": "V7j9ccOSXVtPVXwj",
+                "name": "Shield",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "armor",
+                "data": {
+                  "description": "",
+                  "ac": {
+                    "value": 1
+                  },
+                  "aac": {
+                    "value": 1
+                  },
+                  "type": "shield",
+                  "cost": 10,
+                  "equipped": false,
+                  "weight": 1000
+                },
+                "folder": "TX25teNCvtR46Qsx",
+                "sort": 1200000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/round-shield.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Shield",
+      "type": "armor",
+      "img": "/systems/acks/assets/icons/round-shield.webp",
+      "sort": 1200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "description": "",
+        "ac": {
+          "value": 1
+        },
+        "aac": {
+          "value": 1
+        },
+        "type": "shield",
+        "cost": 10,
+        "equipped": false,
+        "weight": 1000,
+        "weight6": -1
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mb7QvULwlSnekdsC.nwaUNVpO35t2cdHJ"
+    },
+    {
+      "_id": "fta7LDv4mnDPKeyM",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "2QmqD7U24HewiUjK"
+            },
+            "initialState": {
+              "id": "au0HPOvOeyeCmxKs",
+              "count": 1,
+              "itemData": {
+                "_id": "au0HPOvOeyeCmxKs",
+                "name": "Leather Armor",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "armor",
+                "data": {
+                  "description": "",
+                  "ac": {
+                    "value": 7
+                  },
+                  "aac": {
+                    "value": 2
+                  },
+                  "type": "light",
+                  "cost": 20,
+                  "equipped": false,
+                  "weight": 2000
+                },
+                "folder": "TX25teNCvtR46Qsx",
+                "sort": 800000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/leather-armor.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Leather Armor",
+      "type": "armor",
+      "img": "/systems/acks/assets/icons/leather-armor.webp",
+      "sort": 800000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "description": "",
+        "ac": {
+          "value": 7
+        },
+        "aac": {
+          "value": 2
+        },
+        "type": "light",
+        "cost": 20,
+        "equipped": false,
+        "weight": 2000,
+        "weight6": -1
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mb7QvULwlSnekdsC.fta7LDv4mnDPKeyM"
+    },
+    {
+      "_id": "XfgixYZZgJRORSWf",
+      "flags": {},
+      "name": "Nocturnal",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/eclipse2.webp",
+      "sort": 1500000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>They spend most of their days underground, and as such suffer a <strong>-1 penalty to all attack throws</strong> when in full sunlight.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mb7QvULwlSnekdsC.XfgixYZZgJRORSWf"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "1d8-1",
+      "value": 3,
+      "max": 3,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 3,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 0,
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 15
+      },
+      "wand": {
+        "value": 17
+      },
+      "paralysis": {
+        "value": 16
+      },
+      "breath": {
+        "value": 17
+      },
+      "spell": {
+        "value": "18"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 60,
+      "mod": 0,
+      "value": "20",
+      "encounter": 20
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "Chaotic",
+      "xp": "5",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "2d4",
+        "w": "2d6"
+      },
+      "morale": "-1"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "hidden": false,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Goblin",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/goblins_kobolds/goblin_daggers.webp",
+      "tint": "#ffffff",
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 90,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!mb7QvULwlSnekdsC"
+}

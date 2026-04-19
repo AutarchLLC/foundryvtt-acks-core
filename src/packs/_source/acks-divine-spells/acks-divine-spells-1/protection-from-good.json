@@ -1,0 +1,36 @@
+{
+  "_id": "LG8wH0t4Kphghkho",
+  "name": "Protection from Good",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/protection-good.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358012,
+    "modifiedTime": 1730058358012,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Divine",
+    "duration": "Concentration",
+    "range": "Self",
+    "roll": "",
+    "description": "<p>This spell creates a magical barrier of protection around the caster with a 10' radius. The barrier surrounds the caster for the duration of the spell and provides some protection from attacks by \"good\" creatures. For purposes of this spell, good creatures include hostile creatures of an alignment other than the caster's alignment, and inherently good creatures such as Devas and summoned creatures of Lawful alignment. All within the radius gain a +1 bonus to AC and a +1 bonus on saving throws against attacks made or effects created by good creatures. Those who leave and then re-enter, or who enter after the spell is cast, receive the protection as well.</p>\n<p>In addition, the spell prevents bodily contact by enchanted (constructed, summoned, or created) creatures, regardless of whether they are \"good\" or not. This causes the natural weapon attacks of such creatures to fail and the creatures to recoil if such attacks require touching the warded creature. The spell's protection against contact by enchanted creatures ends if the caster or any protected creature makes an attack against, casts a spell on, or tries to force the barrier against a blocked creature.</p>\n<p>The protection lasts as long as the caster remains stationary and concentrates on it.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "NYA8pw0gLlA5SnQ1",
+  "sort": 0,
+  "_key": "!items!LG8wH0t4Kphghkho"
+}

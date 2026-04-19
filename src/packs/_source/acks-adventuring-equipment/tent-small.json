@@ -1,0 +1,38 @@
+{
+  "_id": "bqQRUzN6oB3Oy14A",
+  "name": "Tent, Small",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/camping-tent.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Tents are made of animal skin, stitched together over a frame and staked with ropes. A small tent is 6 x 4 and can sleep two men. A small tent weighs 1 stone (10 lbs). A large tent sleeps eight men. It may be round (12 in diameter) or square (10 on a side), and weighs 4 stone (40 lbs). Characters inside tents can ignore the effects of drizzly, flurry, rainy, or snowy precipitation (p. XX). However, tents are automatically blown down in stormy winds. Historical examples include the Roman legionary tent and the Mongol yurt.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 3,
+    "weight": -1,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/delapouite/camping-tent.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!bqQRUzN6oB3Oy14A"
+}

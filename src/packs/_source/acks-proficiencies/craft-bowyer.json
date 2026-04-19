@@ -1,0 +1,36 @@
+{
+  "_id": "2rOO8h1n89NTcCJu",
+  "name": "Craft: Bowyer",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/bow-arrow.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character has studied under a guild craftsman, such as an armorer, bowyer, jeweler, leatherworker, smith, shipwright, or weaponsmith. The character is considered an apprentice in his trade. He can manufacture 10gp per month of goods, and can identify masterwork items, rare materials, and famous artisans with a proficiency throw of 11+.</p>\n<p>The character must choose the craft at the time he chooses the proficiency. He can spend more proficiency selections to have several types of craft proficiencies. If a character selects the same craft twice, he is considered a journeyman in his trade. He can manufacture 20gp per month of goods, and supervise up to 3 apprentices, increasing their productivity by 50%. If he selects the same craft three times, he is considered a master craftsman. He can manufacture 40gp per month, and supervise up to 2 journeymen and 4 apprentices, increasing their productivity by 50%. He could work as a specialist in this craft (as described in the Hiring Specialists section).</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!2rOO8h1n89NTcCJu"
+}

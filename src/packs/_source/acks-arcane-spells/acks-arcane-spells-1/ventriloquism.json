@@ -1,0 +1,36 @@
+{
+  "_id": "2ab1AzFirHFJc59v",
+  "name": "Ventriloquism",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/shouting.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "2 Turns",
+    "range": "60'",
+    "roll": "",
+    "description": "<p>This spell allows the caster to cause his voice to sound from someplace else within range, such as from a dark alcove or statue.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!2ab1AzFirHFJc59v"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "wgZt6x7VgbKqnbKN",
+  "name": "Quiet Magic",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/quiet-magic.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can cast spells with minimal words and gestures. A successful proficiency throw to hear noise is required to hear the character cast spells. Full gagging is necessary to prevent the character from working magic.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!wgZt6x7VgbKqnbKN"
+}

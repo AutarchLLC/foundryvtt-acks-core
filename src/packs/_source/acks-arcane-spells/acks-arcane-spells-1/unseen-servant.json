@@ -1,0 +1,36 @@
+{
+  "_id": "5H6p68woJAScN6X7",
+  "name": "Unseen Servant",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/whirlwind.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "6 Turns + 1/lvl",
+    "range": "30'",
+    "roll": "",
+    "description": "<p>An unseen servant is an invisible, mindless, shapeless force used as a valet or assistant by mages. It can fetch items, open doors, hold chairs, clean, and perform other simple tasks. The servant can perform only one activity at a time but will perform this task unceasingly until ordered otherwise or the spell expires. The servant has a combat movement rate of 20' per round. It can carry a maximum of 2 stone (20lb) or pull 4 stone (40lb) across a smooth surface. The servant can be used to trigger traps, but since it can only exert 20 pounds of force it cannot active certain pressure plates. The unseen servant cannot fight, nor can it be harmed by normal attacks. It can be dispelled or it can be dissipated by receiving 6 points of damage from area attacks. If the caster attempts to send it outside the spell's range, the servant dissipates instantly.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!5H6p68woJAScN6X7"
+}

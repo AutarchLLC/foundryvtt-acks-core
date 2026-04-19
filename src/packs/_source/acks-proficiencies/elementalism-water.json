@@ -1,0 +1,36 @@
+{
+  "_id": "Mh6Dg7gIZDrpfWKz",
+  "name": "Elementalism: Water",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/Elementalism2.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has mastered the magic of Water. Spells using the element of Water do +1 damage per die and impose a -2 saving throw penalty on the target. Elementals summoned from this element gain +1 hp per Hit Die. The character's magic missiles can be considered to be of this element, if he desires.&nbsp;</p>\n<p>The character may also use his Spell Signature to define other spells as being of this element where it makes sense to do so&nbsp;with the Judge's approval. The character must abide by any relevant limitations the new element for of the spell might impose.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Mh6Dg7gIZDrpfWKz"
+}

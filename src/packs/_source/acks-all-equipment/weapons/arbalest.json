@@ -1,0 +1,58 @@
+{
+  "_id": "JHQAMl3BRG3UWzam",
+  "name": "Arbalest",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/crossbow.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 90,
+      "medium": 1800,
+      "long": 3600
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>An arbalest is a heavy crossbow, pulled with the mechanical assistance of a rack and pinion or windlass. Historical examples include the late medieval arbalest and the Three Kingdoms era Chinese heavy crossbow.</p>\n<p>Limited to 2 cleave attacks. (Core rules p. 105)</p>",
+    "damage": "1d8",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Missile",
+        "value": "Missile"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": false,
+    "cost": 50,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!JHQAMl3BRG3UWzam"
+}

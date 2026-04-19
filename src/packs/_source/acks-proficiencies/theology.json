@@ -1,0 +1,36 @@
+{
+  "_id": "JAvNKSxRoBmFVBND",
+  "name": "Theology",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/theology.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character has received formal religious instruction at a seminary or monastery, and is a member of the church hierarchy. He can automatically identify religious symbols, spell signatures, trappings, and holy days of his own faith, and can recognize those of other faiths with a proficiency throw of 11+. Rare or occult cults may be harder to recognize (Judge's discretion). Note that dwarven craftpriests automatically begin play with this ability as part of their class. This proficiency can be selected multiple times.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!JAvNKSxRoBmFVBND"
+}

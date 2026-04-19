@@ -1,0 +1,36 @@
+{
+  "_id": "1QiCh730yToioVB9",
+  "name": "Uncanny Gyration",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/uncanny-gyration.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "6 Rounds",
+    "range": "60'",
+    "roll": "2d6",
+    "description": "<p>Uncanny gyration allows the caster to violently whirl a target creature through the air. The target creature must not weigh more (in stones) than the caster could lift physically, and it may make a saving throw versus Spells to avoid the effect. If the saving throw fails, the caster can thereafter mentally fling the target creature in any direction by up to 20' per round. If flung into a hard surface (such as a wall or ceiling), the creature will take 2d6 points of damage from the impact.</p>\n<p>While affected by uncanny gyration, targets unable to fly are left highly unstable. If the target is on the ground, or up against a surface it can push against, it can move at half speed. Otherwise it merely gyrates helplessly. Should the target attempt to attack, it will gyrate even more violently. Its first attack throw will suffer a -1 penalty, its second a -2 penalty, and so on, to a maximum penalty of -5. A full round spent stabilizing allows the target creature to begin again at -1. Targets able to fly may move normally while under the effects of uncanny gyration, and do not suffer attack penalties since they can stabilize themselves in the air.</p>\n<p>The caster must concentrate to sustain the target's uncanny gyration. Any cessation or interruption in concentration causes the spell to end immediately. This usually results in the target creature plummeting to the earth violently and taking additional damage, of course.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!1QiCh730yToioVB9"
+}

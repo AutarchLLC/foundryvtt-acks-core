@@ -1,0 +1,912 @@
+{
+  "_id": "mtg8xRo4RVvD0cYu",
+  "name": "Potions",
+  "flags": {},
+  "description": "",
+  "results": [
+    {
+      "_id": "XwzxN3DwaAaiqgkr",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        3
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Animal Control",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.XwzxN3DwaAaiqgkr"
+    },
+    {
+      "_id": "fVlij1je3nk7Fyac",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        4,
+        6
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Clairaudience",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.fVlij1je3nk7Fyac"
+    },
+    {
+      "_id": "SEbDSVWmJtJ8bSQ6",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        7,
+        9
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Clairvoyance",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.SEbDSVWmJtJ8bSQ6"
+    },
+    {
+      "_id": "QvBMJpLbnGevPWnX",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        10,
+        12
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Climbing",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.QvBMJpLbnGevPWnX"
+    },
+    {
+      "_id": "OD2fOfxMHH8B5Of3",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        13,
+        17
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Delusion",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.OD2fOfxMHH8B5Of3"
+    },
+    {
+      "_id": "7ZZyMF06dE8wR7m3",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        18,
+        20
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Diminution",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.7ZZyMF06dE8wR7m3"
+    },
+    {
+      "_id": "lSvNC0cBiWNYNlzV",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        21,
+        23
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Dragon Control",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.lSvNC0cBiWNYNlzV"
+    },
+    {
+      "_id": "zRZBeoPyJ5UQp9Nk",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        24,
+        26
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of ESP",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.zRZBeoPyJ5UQp9Nk"
+    },
+    {
+      "_id": "kOQKk0QLcC6AuvLR",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        27,
+        28
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Extra-Healing",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.kOQKk0QLcC6AuvLR"
+    },
+    {
+      "_id": "1nhzu8Lr3iWdjmZ9",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        29,
+        31
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Fire Resistance",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.1nhzu8Lr3iWdjmZ9"
+    },
+    {
+      "_id": "U0ENVtDqpzWZO8kr",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        32,
+        36
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Flying",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.U0ENVtDqpzWZO8kr"
+    },
+    {
+      "_id": "UPUd3EuXuG1olFtL",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        37,
+        40
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Gaseous Form",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.UPUd3EuXuG1olFtL"
+    },
+    {
+      "_id": "k2JaQR374KmhYMLz",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        41,
+        43
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Giant Control",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.k2JaQR374KmhYMLz"
+    },
+    {
+      "_id": "UDa1fo7FOxX2YyNg",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        44,
+        47
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Giant Strength",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.UDa1fo7FOxX2YyNg"
+    },
+    {
+      "_id": "nwfZLOQc72cNW8GA",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        48,
+        50
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Growth",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.nwfZLOQc72cNW8GA"
+    },
+    {
+      "_id": "g7VyPIEOKcfCvle4",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        51,
+        54
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Healing",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.g7VyPIEOKcfCvle4"
+    },
+    {
+      "_id": "4RI2H3gyTrWqaoAo",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        55,
+        58
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Heroism",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.4RI2H3gyTrWqaoAo"
+    },
+    {
+      "_id": "C67jThdiXZSI83Xb",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        59,
+        61
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Human Control",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.C67jThdiXZSI83Xb"
+    },
+    {
+      "_id": "LuQxaTS7yqKFE74A",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        62,
+        64
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Invisibility",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.LuQxaTS7yqKFE74A"
+    },
+    {
+      "_id": "c9AlTy7djhFl3JTD",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        65,
+        66
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Invulnerability",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.c9AlTy7djhFl3JTD"
+    },
+    {
+      "_id": "R3Enq4STaIo22WAD",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        67,
+        69
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Levitation",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.R3Enq4STaIo22WAD"
+    },
+    {
+      "_id": "AL9SceV4rJPmAp22",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        70,
+        71
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Longevity",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.AL9SceV4rJPmAp22"
+    },
+    {
+      "_id": "iINFfUlmwxcROFsD",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        72,
+        73
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Oil of Sharpness",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.iINFfUlmwxcROFsD"
+    },
+    {
+      "_id": "EuXkZnm9mktiI6fc",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        74,
+        75
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Oil of Slipperiness",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.EuXkZnm9mktiI6fc"
+    },
+    {
+      "_id": "LyWjnm2GTT3RoDvQ",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        76,
+        78
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Philter of Love",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.LyWjnm2GTT3RoDvQ"
+    },
+    {
+      "_id": "3Be7B2JTXwF41C9O",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        79,
+        81
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Plant Control",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.3Be7B2JTXwF41C9O"
+    },
+    {
+      "_id": "GFiM2YISAKHC2Foc",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        82,
+        83
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Poison",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.GFiM2YISAKHC2Foc"
+    },
+    {
+      "_id": "6R6fLJ38pFgnyIpn",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        84,
+        85
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Polymorph Potion",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.6R6fLJ38pFgnyIpn"
+    },
+    {
+      "_id": "QoC9qsiVT3d2fRxE",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        86,
+        88
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Speed",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.QoC9qsiVT3d2fRxE"
+    },
+    {
+      "_id": "UbLUNOHYyOYJNdde",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        89,
+        90
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Super-Heroism",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.UbLUNOHYyOYJNdde"
+    },
+    {
+      "_id": "txVMgpQ2urLSfKJV",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        91,
+        93
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Sweet Water",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.txVMgpQ2urLSfKJV"
+    },
+    {
+      "_id": "kPFgcs1JKngoaFAW",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        94,
+        95
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Treasure Finding",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.kPFgcs1JKngoaFAW"
+    },
+    {
+      "_id": "0dIG5ioS6ZOcye1g",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        96,
+        97
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Undead Control",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.0dIG5ioS6ZOcye1g"
+    },
+    {
+      "_id": "ma6RNre3wc3XkUe3",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        98,
+        100
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Potion of Water Breathing",
+      "name": "",
+      "_key": "!tables.results!mtg8xRo4RVvD0cYu.ma6RNre3wc3XkUe3"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!mtg8xRo4RVvD0cYu"
+}

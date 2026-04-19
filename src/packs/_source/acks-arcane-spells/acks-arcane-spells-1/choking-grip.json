@@ -1,0 +1,42 @@
+{
+  "_id": "Nrcvv7vX8u6ffEMG",
+  "name": "Choking Grip",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/choking-grip.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "Special",
+    "range": "30'",
+    "roll": "1d6 Damage",
+    "description": "<p>This spell creates an invisible grip around the throat of the target creature. <strong>Unless the target makes a successful saving throw versus Death, it begins choking</strong>. A choking creature suffers <strong>1d6 points of damage per round, and cannot take any action</strong> (although it can still defend itself). The target of the spell receives a <strong>new saving throw each round</strong>.</p>\n<p>The choking grip lasts so long as the caster concentrates upon it, or until the target makes a successful saving throw.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "death"
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!Nrcvv7vX8u6ffEMG"
+}

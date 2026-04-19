@@ -1,0 +1,81 @@
+<section class="tab {{ tab.cssClass }} sheet-notes" data-group="primary" data-tab="notes">
+  <div class="content flexrow">
+
+    <div class="flexcol height-100">
+
+      <!-- Languages and description -->
+      <section class="flexrow col-stretch">
+
+        <section class="item-list-section section__languages">
+
+          <div class="list-header">
+            <div class="list-header__name">{{localize 'ACKS.category.languages'}}</div>
+          </div>
+
+          <ul class="item-list unlist">
+            {{#each languages as |item|}}
+              <li class="item" data-item-id="{{item._id}}">
+                <div class="item-row">
+
+                  <div class="item__name">
+                    {{item.name}}
+                  </div>
+
+                  {{#if ../owner}}
+                    <div class="list-header__controls">
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Edit"}}' data-action="itemEdit">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="itemDelete">
+                        <i class="fas fa-trash"></i>
+                      </a>
+                    </div>
+                  {{/if}}
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+
+        </section>
+
+        <section class="item-list-section section__description">
+
+          <div class="list-header">
+            <div class="list-header__name">{{localize 'ACKS.category.description'}}</div>
+          </div>
+
+          <div class="editor__biography">
+            <prose-mirror name="system.details.biography" value="{{ system.details.biography }}" compact toggled
+                          document-uuid="{{ actor.uuid }}">
+              {{{ enriched.biography }}}
+            </prose-mirror>
+          </div>
+
+        </section>
+
+      </section>
+
+      <!-- Notes -->
+      <section class="flexrow col-stretch">
+
+        <div class="item-list-section section__notes">
+
+          <div class="list-header">
+            <div class="list-header__name">{{localize 'ACKS.category.notes'}}</div>
+          </div>
+
+          <div class="editor__notes">
+            <prose-mirror name="system.details.notes" value="{{ system.details.notes }}" compact toggled
+                          document-uuid="{{ actor.uuid }}">
+              {{{ enriched.notes }}}
+            </prose-mirror>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,685 @@
+{
+  "_id": "5NgKVLQ4lX2b5TI3",
+  "name": "Kobold",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "ose": {
+      "party": false
+    },
+    "acks": {
+      "party": false,
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/goblins_kobolds/kobold_fighter.webp",
+  "items": [
+    {
+      "_id": "EsoKeY1M7aBdwz8y",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "EsoKeY1M7aBdwz8y",
+                "flags": {
+                  "importid": "MEdm8ZUg6Z1nz3dN"
+                },
+                "name": "Short Sword",
+                "type": "weapon",
+                "img": "/systems/acks/assets/icons/short-sword.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "white",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 7,
+                  "equipped": false,
+                  "weight": 0.166,
+                  "counter": {
+                    "value": 1,
+                    "max": 1
+                  }
+                },
+                "sort": 100000
+              }
+            }
+          }
+        }
+      },
+      "name": "Short Sword",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/short-sword.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 7,
+        "equipped": false,
+        "weight": 0.166,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!5NgKVLQ4lX2b5TI3.EsoKeY1M7aBdwz8y"
+    },
+    {
+      "_id": "o06KcC5hYqyNJ02V",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "o06KcC5hYqyNJ02V",
+                "flags": {
+                  "importid": "eLXxMDK1JsZnbNwK"
+                },
+                "name": "Shortbow",
+                "type": "weapon",
+                "img": "/systems/acks/assets/icons/pocket-bow.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "white",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": false,
+                  "missile": true,
+                  "melee": false,
+                  "cost": 3,
+                  "equipped": false,
+                  "weight": 0.5,
+                  "counter": {
+                    "value": 1,
+                    "max": 1
+                  }
+                },
+                "sort": 2700000
+              }
+            }
+          }
+        }
+      },
+      "name": "Shortbow",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/pocket-bow.webp",
+      "sort": 2700000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": true,
+        "melee": false,
+        "cost": 3,
+        "equipped": false,
+        "weight": 0.5,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!5NgKVLQ4lX2b5TI3.o06KcC5hYqyNJ02V"
+    },
+    {
+      "_id": "5KFKhWbRevXVQlzO",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "5KFKhWbRevXVQlzO",
+                "flags": {
+                  "importid": "K5jmS3aiMG8zxoOG"
+                },
+                "name": "Oil, Military",
+                "type": "item",
+                "img": "/systems/acks/assets/icons/oil-military.webp",
+                "data": {
+                  "description": "<p>Military oil is a weapon made of naphtha, and cannot be easily doused with water. Military oil may be thrown at monsters, dealing <a class=\"inline-roll roll\" data-mode=\"roll\" data-flavor=\"Flaming oil!\" data-formula=\"1d8\" title=\"Flaming oil!\"><i class=\"fas fa-dice-d20\"></i> 1d8</a> points of damage for 2 rounds to the creature struck, or poured on the floor and ignited to delay pursuit.</p>",
+                  "quantity": {
+                    "value": 1,
+                    "max": 1
+                  },
+                  "treasure": false,
+                  "cost": 2,
+                  "weight": 0.166
+                },
+                "sort": 3300001
+              }
+            }
+          }
+        }
+      },
+      "name": "Oil, Military",
+      "type": "item",
+      "img": "/systems/acks/assets/icons/oil-military.webp",
+      "sort": 3300001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "subtype": "item",
+        "description": "<p>Military oil is a weapon made of naphtha, and cannot be easily doused with water. Military oil may be thrown at monsters, dealing <a class=\"inline-roll roll\" data-mode=\"roll\" data-flavor=\"Flaming oil!\" data-formula=\"1d8\" title=\"Flaming oil!\"><i class=\"fas fa-dice-d20\"></i> 1d8</a> points of damage for 2 rounds to the creature struck, or poured on the floor and ignited to delay pursuit.</p>",
+        "quantity": {
+          "value": 1,
+          "max": 1
+        },
+        "treasure": false,
+        "cost": 2,
+        "weight": 0.166,
+        "weight6": -1,
+        "iconsource": "",
+        "iconlicense": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!5NgKVLQ4lX2b5TI3.5KFKhWbRevXVQlzO"
+    },
+    {
+      "_id": "yQwlUORXQ8saCaox",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "yQwlUORXQ8saCaox",
+                "flags": {
+                  "dynamiceffects": {
+                    "equipActive": false,
+                    "alwaysActive": false,
+                    "effects": []
+                  }
+                },
+                "name": "Humanoid",
+                "type": "ability",
+                "img": "systems/acks/assets/icons/person.webp",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th&nbsp;level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
+                  "save": ""
+                },
+                "sort": 1100001
+              }
+            }
+          }
+        }
+      },
+      "name": "Humanoid",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/person.webp",
+      "sort": 1100001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th&nbsp;level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!5NgKVLQ4lX2b5TI3.yQwlUORXQ8saCaox"
+    },
+    {
+      "_id": "DZeLOXwn9BPbkGS2",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "EZN1MNfeIilDRlYE"
+            },
+            "initialState": {
+              "id": "FtGRSEqrHPRLOKiQ",
+              "count": 1,
+              "itemData": {
+                "_id": "FtGRSEqrHPRLOKiQ",
+                "name": "Beastman",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Beastmen are a special type of monster that were created through ancient magic by blending a humanoid with an animal or fantastic creature. Beastmen include bugbears, centaurs, gnolls, goblins, hobgoblins, kobolds, lizardmen, lycanthropes, mermen, minotaurs, ogres, orcs, trolls, and troglodytes.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 100000,
+                "flags": {},
+                "img": "systems/acks/assets/icons/minotaur.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Beastman",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/minotaur.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Beastmen are a special type of monster that were created through ancient magic by blending a humanoid with an animal or fantastic creature. Beastmen include bugbears, centaurs, gnolls, goblins, hobgoblins, kobolds, lizardmen, lycanthropes, mermen, minotaurs, ogres, orcs, trolls, and troglodytes.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!5NgKVLQ4lX2b5TI3.DZeLOXwn9BPbkGS2"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "1d4",
+      "value": 2,
+      "max": 2,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 7,
+      "mod": 0
+    },
+    "aac": {
+      "value": 2,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 0,
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 15
+      },
+      "wand": {
+        "value": 17
+      },
+      "paralysis": {
+        "value": 16
+      },
+      "breath": {
+        "value": 17
+      },
+      "spell": {
+        "value": "18"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 60,
+      "mod": 0,
+      "value": "",
+      "encounter": 20
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "C",
+      "xp": "5",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "0",
+        "w": "4d4"
+      },
+      "morale": "-2"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false,
+          "hidden": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Kobold",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": 0,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": true,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/goblins_kobolds/kobold_fighter.webp",
+      "tint": "#ffffff",
+      "scaleX": 0.7,
+      "scaleY": 0.7,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 90,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!5NgKVLQ4lX2b5TI3"
+}

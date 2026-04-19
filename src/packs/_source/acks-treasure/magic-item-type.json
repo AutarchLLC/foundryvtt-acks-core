@@ -1,0 +1,249 @@
+{
+  "_id": "eVY6oJGHJCp3W3sU",
+  "name": "Magic Item Type",
+  "flags": {
+    "better-rolltables": {
+      "table-type": "better",
+      "loot-amount-key": "1"
+    },
+    "acks": {
+      "treasure": false
+    }
+  },
+  "description": "",
+  "results": [
+    {
+      "_id": "nzFRfrVjASv2a2kG",
+      "flags": {},
+      "type": "document",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        1,
+        20
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Potions",
+      "documentUuid": "RollTable.O1jOs4BNt5A5Y3rz",
+      "description": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.nzFRfrVjASv2a2kG"
+    },
+    {
+      "_id": "IU4kJ7jRjwbL0b78",
+      "flags": {},
+      "type": "document",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        21,
+        25
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Rings",
+      "documentUuid": "RollTable.sUi5g2foDElTYAcY",
+      "description": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.IU4kJ7jRjwbL0b78"
+    },
+    {
+      "_id": "uf0qBpBDPeXLQ5H7",
+      "flags": {},
+      "type": "document",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        26,
+        56
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Scrolls",
+      "documentUuid": "RollTable.Bn5X5TjxWgy5L7YG",
+      "description": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.uf0qBpBDPeXLQ5H7"
+    },
+    {
+      "_id": "y6n5hXJv3fihktYq",
+      "flags": {},
+      "type": "document",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        57,
+        61
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Rods, Staffs, &amp; Wands",
+      "documentUuid": "RollTable.s64CGu9qFNucDFfC",
+      "description": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.y6n5hXJv3fihktYq"
+    },
+    {
+      "_id": "F7RymVGi3ZgbQC44",
+      "flags": {},
+      "type": "document",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        62,
+        66
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Miscellaneous Magic",
+      "documentUuid": "RollTable.eHtEyEqt3pcON2Ul",
+      "description": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.F7RymVGi3ZgbQC44"
+    },
+    {
+      "_id": "BXUy7JHLg3nY3GIY",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        67,
+        87
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Swords",
+      "name": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.BXUy7JHLg3nY3GIY"
+    },
+    {
+      "_id": "py267PW25jal2MaL",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        88,
+        92
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Miscellaneous Weapons",
+      "name": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.py267PW25jal2MaL"
+    },
+    {
+      "_id": "2WMuYoO9Piin8xMN",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        93,
+        100
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Armor",
+      "name": "",
+      "_key": "!tables.results!eVY6oJGHJCp3W3sU.2WMuYoO9Piin8xMN"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!eVY6oJGHJCp3W3sU"
+}

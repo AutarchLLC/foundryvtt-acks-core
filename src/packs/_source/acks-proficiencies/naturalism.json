@@ -1,0 +1,36 @@
+{
+  "_id": "2NqMpLCMLOpbmpPt",
+  "name": "Naturalism",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/naturalism.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character is knowledgeable of common plant and animal life forms in terrain typical to his background. The character is familiar with edible and poison foods, healing herbs, and signs of unnatural danger (such as unusual quiet, atypical animal behavior, etc.) in his known terrain with a proficiency throw of 11+. This proficiency can be selected multiple times.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!2NqMpLCMLOpbmpPt"
+}

@@ -1,0 +1,184 @@
+<section class="sheet-header">
+
+  <div class="actor-portrait">
+    <img src="{{actor.img}}" alt="{{actor.name}}" data-action="editImage" data-edit="img"/>
+  </div>
+
+  <div class="flexcol flex-1">
+
+    <div class="flexrow">
+      <!-- Name -->
+      {{formInput fields.name value=actor.name placeholder=(localize "DOCUMENT.FIELDS.name.label")
+                  aria=(object label=(localize "DOCUMENT.FIELDS.name.label"))}}
+    </div>
+
+    <div class="flexrow">
+      <!-- Alignment -->
+      {{formGroup actorFields.details.fields.alignment label="ACKS.details.alignment" value=system.details.alignment
+                  rootId=@root.partId localize=true classes="flex-2"}}
+
+      <!-- Reaction Roll Button -->
+      <div class="form-icon-btn">
+        <button data-action="rollReaction" type="button" class="plain icon fa-regular fa-masks-theater"
+                data-tooltip="{{localize 'ACKS.roll.reaction'}}"></button>
+      </div>
+
+      <!-- Number appearing in dungeon? -->
+      <div class="form-group flex-1">
+        <a class="rollable-header" data-tooltip="Dungeon Encounter" data-action="rollDungeonEncounter">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-denc">
+            D.E.
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.details.appearing.d" value="{{system.details.appearing.d}}"
+                 id="{{@root.partId}}-denc" data-dtype="String" placeholder="1d8"/>
+        </div>
+      </div>
+
+      <!-- Number appearing in wilderness? -->
+      <div class="form-group flex-1">
+        <a class="rollable-header" data-tooltip="Wilderness Encounter" data-action="rollWildernessEncounter">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-wenc">
+            W.E.
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.details.appearing.w" value="{{system.details.appearing.w}}"
+                 id="{{@root.partId}}-wenc" data-dtype="String" placeholder="1d8"/>
+        </div>
+      </div>
+
+      <!-- Morale -->
+      <div class="form-group flex-1">
+        <a class="rollable-header" data-action="rollMorale">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-morale">
+            {{localize 'ACKS.details.morale'}}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="number" name="system.details.morale" value="{{system.details.morale}}"
+                 id="{{@root.partId}}-morale" data-dtype="Number" placeholder="0"/>
+        </div>
+      </div>
+
+      {{#if system.retainer.enabled}}
+
+        <!-- Loyalty -->
+        <div class="form-group flex-1">
+          <a class="rollable-header" data-action="rollLoyalty">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-loyalty">
+              {{ localize "ACKS.Loyalty" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="number" name="system.retainer.loyalty" value="{{system.retainer.loyalty}}"
+                   id="{{@root.partId}}-loyalty" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <!-- Wage -->
+        {{formGroup actorFields.retainer.fields.wage label="ACKS.RetainerWage" value=system.retainer.wage
+                    rootId=@root.partId localize=true classes="flex-1"}}
+
+      {{/if}}
+
+    </div>
+
+    <div class="flexrow">
+
+      <!-- XP value -->
+      {{formGroup actorFields.details.fields.xp label="ACKS.details.experience.award" value=system.details.xp
+                  rootId=@root.partId localize=true classes="flex-1"}}
+
+      <div class="form-group flex-unset">
+        <label>{{localize 'ACKS.details.treasure'}}</label>
+        <div class="form-fields treasure-link-panel">
+          {{#if treasureLink}}
+            {{{treasureLink}}}
+            <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="treasureLinkDelete">
+              <i class="fas fa-trash"></i>
+            </a>
+          {{else}}
+            <div class="treasure-link__dropspot" data-tooltip="{{localize 'ACKS.details.treasureTableHint'}}"></div>
+          {{/if}}
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="flexrow">
+
+      <!-- HP -->
+      <div class="form-group health-box">
+        <a class="rollable-header" data-action="rollHP">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label">HP</label>
+        </a>
+        <div class="form-fields health">
+          <input name="system.hp.value" type="number" value="{{system.hp.value}}" data-dtype="Number" placeholder="0"
+                 data-tooltip="{{localize 'ACKS.Health'}}" class="health__current"/>
+          <span>/</span>
+          <input name="system.hp.max" type="number" value="{{system.hp.max}}" data-dtype="Number" placeholder="0"
+                 data-tooltip="{{localize 'ACKS.HealthMax'}}" class="health__max"/>
+        </div>
+      </div>
+
+      <!-- Hit Dice -->
+      <div class="form-group">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}" data-action="rollHitDice">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-hitDice">
+            {{ localize "ACKS.HitDiceShort" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.hp.hd" value="{{system.hp.hd}}" id="{{@root.partId}}-hitDice"
+                 data-dtype="String" placeholder="1d8"/>
+        </div>
+      </div>
+
+      <!-- AC -->
+      {{formGroup actorFields.aac.fields.value label="ACKS.AscArmorClassShort" value=system.aac.value
+                  rootId=@root.partId localize=true}}
+
+      <!-- Attack Throw -->
+      <div class="form-group flex-1">
+        <a class="rollable-header" data-action="rollAttack" data-tooltip="{{localize 'ACKS.AB'}}">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-attackThrow">
+            {{ localize "ACKS.ABShort" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="number" name="system.thac0.throw" value="{{system.thac0.throw}}"
+                 id="{{@root.partId}}--attackThrow" data-dtype="Number"/>
+        </div>
+      </div>
+
+      <!-- Movement -->
+      {{formGroup actorFields.movement.fields.base label="ACKS.movement.short" value=system.movement.base
+                  rootId=@root.partId localize=true dataset=(object tooltip=(localize "ACKS.movement.base"))}}
+
+      <!-- Initiative Bonus -->
+      {{formGroup actorFields.initiative.fields.mod label="I.B." value=system.initiative.mod
+                  rootId=@root.partId localize=true dataset=(object tooltip=(localize "ACKS.bonuses.initiativebonus"))}}
+
+      <!-- Surprise Others -->
+      {{formGroup actorFields.surprise.fields.surpriseothers label="S.O." value=system.surprise.surpriseothers
+                  rootId=@root.partId localize=true dataset=(object tooltip=(localize "ACKS.SurpriseOthers"))}}
+
+      <!-- Avoid Surprise -->
+      {{formGroup actorFields.surprise.fields.avoidsurprise label="A.S." value=system.surprise.avoidsurprise
+                  rootId=@root.partId localize=true dataset=(object tooltip=(localize "ACKS.AvoidSurprise"))}}
+
+    </div>
+
+  </div>
+
+</section>

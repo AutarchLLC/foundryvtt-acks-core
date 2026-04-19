@@ -1,0 +1,42 @@
+{
+  "_id": "bmF7gA5Vw5I7ByeA",
+  "name": "Command Person",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/Command2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310247,
+    "modifiedTime": 1730058310247,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 3,
+    "class": "Arcane",
+    "duration": "Concentrate",
+    "range": "60'",
+    "roll": "",
+    "description": "<p>This spells grants the caster the ability to command <strong>humans, demi-humans, and/or humanoids</strong> up to 60' away. Humans totaling <strong>6 Hit Dice</strong> can be commanded (0th&nbsp;level humans are&nbsp;treated as half of a Hit Die for this calculation).</p>\n<p>The targets may resist the effect with a saving throw versus Spells. The commanded creatures will respond to the caster's will and do whatever is commanded of them. The effect lasts so long as concentration is maintained, and the caster can take no other actions while concentrating.</p>\n<p>Once control ends, commanded creatures will not be well disposed to the spellcaster, and any reaction rolls suffer a penalty of -1.&nbsp;</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "R5pYVHvoF9GtMtIa",
+  "sort": 0,
+  "_key": "!items!bmF7gA5Vw5I7ByeA"
+}

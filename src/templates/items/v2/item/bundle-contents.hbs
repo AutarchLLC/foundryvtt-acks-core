@@ -1,0 +1,23 @@
+<section class="tab {{ tab.cssClass }} bundle-contents" data-group="primary" data-tab="contents">
+  {{#if bundleItems.ability }}
+    {{> bundleItemList items=bundleItems.ability title=(localize "ACKS.category.abilities") }}
+  {{/if}}
+  {{#if bundleItems.weapon }}
+    {{> bundleItemList items=bundleItems.weapon title=(localize "ACKS.items.Weapons") }}
+  {{/if}}
+  {{#if bundleItems.armor }}
+    {{> bundleItemList items=bundleItems.armor title=(localize "ACKS.items.Armors") }}
+  {{/if}}
+  {{#if bundleItems.item }}
+    {{> bundleItemList items=bundleItems.item title=(localize "ACKS.items.Misc") }}
+  {{/if}}
+  {{#if bundleItems.spell }}
+    {{> bundleItemList items=bundleItems.spell title=(localize "ACKS.category.spells") }}
+  {{/if}}
+  {{#if bundleItems.language }}
+    {{> bundleItemList items=bundleItems.language title=(localize "ACKS.category.languages") }}
+  {{/if}}
+  {{#if bundleItems.money }}
+    {{> bundleItemList items=bundleItems.money title=(localize "ACKS.moneytitle") }}
+  {{/if}}
+</section>

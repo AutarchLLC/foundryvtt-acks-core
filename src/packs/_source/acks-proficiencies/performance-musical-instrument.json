@@ -1,0 +1,36 @@
+{
+  "_id": "i25qRGo85ubbQOuu",
+  "name": "Performance: Musical Instrument",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/lyre2.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character can play musical instruments in a skilled manner. The character chooses the type of performance that his character knows. The character is considered an apprentice in his style. He can earn 10gp per month from his performances, and can identify famous performers, masterpieces, and rare instruments with a proficiency throw of 11+.&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!i25qRGo85ubbQOuu"
+}

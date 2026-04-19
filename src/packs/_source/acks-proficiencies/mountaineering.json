@@ -1,0 +1,36 @@
+{
+  "_id": "jlzSwlLqY3QqD8si",
+  "name": "Mountaineering",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/mountaineering.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can use mountaineering gear to climb difficult mountains and cliff faces, and to rig lines to enable non-climbers to tackle those faces as well, as a thief of their class level. This proficiency does not allow the character to climb sheer surfaces during combat or without extensive gear.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!jlzSwlLqY3QqD8si"
+}

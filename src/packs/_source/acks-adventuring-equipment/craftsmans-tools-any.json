@@ -1,0 +1,38 @@
+{
+  "_id": "H6VgmzmpUjNdJlis",
+  "name": "Craftsman's Tools (any)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/froe-and-mallet.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Craftsmans tools include the various implements used by tradesman in their craft. Craftsmans tools are required to make Craft proficiency throws. Each craft has its own specific type of craftsmans tools. Craftsmans tools weigh 1 stone.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 25,
+    "weight": -1,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/caro-asercion/froe-and-mallet.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!H6VgmzmpUjNdJlis"
+}

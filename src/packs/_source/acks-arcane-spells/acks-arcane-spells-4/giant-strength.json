@@ -1,0 +1,36 @@
+{
+  "_id": "rDFFQIknJBBQON5M",
+  "name": "Giant Strength",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/giant-strength.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058312369,
+    "modifiedTime": 1730058312369,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 4,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>The recipient of this spell temporarily becomes as strong as a hill giant. The recipient attacks<strong> either </strong>as an 8 HD monster ([[/r 1d20ms&gt;3 #Hits AC...]]) <strong>or </strong>as his own class and level, whichever is better, and <strong>inflicts double normal damage</strong> with his attacks.</p>\n<p>The character also can <strong>throw rocks</strong> at opponents to a <strong>distance of 200' </strong>for [[/r 3d6 #Thrown rock damage]] points of damage and gains a <strong>+16 bonus to force open doors</strong>.</p>\n<p>The strength bonus of this spell may not be combined with any other magical effects that influence strength, but it does stack with the character's normal bonus or penalty from Strength – a weak character who is enchanted with this spell has the strength of a weak giant, while a very strong character would gain the strength of a very strong giant!&nbsp;</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "FZdMTwbtjbvsh63O",
+  "sort": 0,
+  "_key": "!items!rDFFQIknJBBQON5M"
+}

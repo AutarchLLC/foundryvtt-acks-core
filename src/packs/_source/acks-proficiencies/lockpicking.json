@@ -1,0 +1,36 @@
+{
+  "_id": "Ml9oNd5w3rYxKiX2",
+  "name": "Lockpicking",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/lockpicking.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is an expert with locks and receives a +2 bonus on proficiency throws to open locks. He may open a lock in one round (rather than one turn) by making a successful proficiency throw to open locks with a -4 penalty.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Ml9oNd5w3rYxKiX2"
+}

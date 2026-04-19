@@ -1,0 +1,88 @@
+{
+  "name": "Nauseating Bite",
+  "type": "weapon",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "_id": "cPlYtO9r3grWdB00",
+            "flags": {},
+            "name": "Bite",
+            "type": "weapon",
+            "img": "systems/acks/assets/icons/insect-jaws.webp",
+            "data": {
+              "range": {
+                "short": 0,
+                "medium": 0,
+                "long": 0
+              },
+              "save": "death",
+              "pattern": "red",
+              "description": "<p>Giant centipedes attack with a poisonous bite. No damage is inflicted by the bite, but anyone bitten must make a saving throw versus Poison. Failure indicates that the victim is horribly sick for a period of 10 days. While sick, poisoned characters can only move at ½ speed, and no other physical activity is possible.</p>",
+              "damage": "0",
+              "bonus": 0,
+              "tags": [],
+              "slow": false,
+              "missile": false,
+              "melee": true,
+              "cost": 0,
+              "equipped": false,
+              "weight": 0,
+              "counter": {
+                "value": 1,
+                "max": 1
+              }
+            },
+            "sort": 600001
+          }
+        }
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/insect-jaws.webp",
+  "_id": "1N28AJ516dONBNvj",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "death",
+    "pattern": "red",
+    "description": "<p>Giant centipedes attack with a poisonous bite. No damage is inflicted by the bite, but anyone bitten must make a saving throw versus Poison. Failure indicates that the victim is horribly sick for a period of 10 days. While sick, poisoned characters can only move at ½ speed, and no other physical activity is possible.</p>",
+    "damage": "0",
+    "bonus": 0,
+    "tags": [],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight": 0,
+    "weight6": -1,
+    "counter": {
+      "value": 1,
+      "max": 1
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!1N28AJ516dONBNvj"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "juXpzZTJUt21svme",
+  "name": "Contemplation",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/contemplation.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "6 Turns",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character may enter a meditative trance and re-gain the ability to cast a spell of a level he had previously expended. Contemplation requires one hour (6 turns) of undisturbed meditation. A character may not regain the same level of spell more than once per day through contemplation.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!juXpzZTJUt21svme"
+}

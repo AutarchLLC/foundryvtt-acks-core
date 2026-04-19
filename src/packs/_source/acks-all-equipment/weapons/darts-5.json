@@ -1,0 +1,54 @@
+{
+  "_id": "t8OPWDQ6NsMN73Yo",
+  "name": "Darts (5)",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/spear-feather.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 15,
+      "medium": 30,
+      "long": 45
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>A dart is any small projectile designed to be thrown. Most darts are fletched wooden shafts, ranging in length from 6\" to 2' long, but they may also be metal spikes or stars. Historical examples include the Roman plumbata, Macedonian kestros, and Japanese shuriken.</p>\n<p><span style=\"color: #191813;\">Up to 4 darts may be thrown when cleaving.&nbsp;</span>(Core rules p. 105)</p>",
+    "damage": "1d4",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Missile",
+        "value": "Missile"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": false,
+    "cost": 2,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!t8OPWDQ6NsMN73Yo"
+}

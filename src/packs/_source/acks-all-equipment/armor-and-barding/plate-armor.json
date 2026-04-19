@@ -1,0 +1,38 @@
+{
+  "_id": "FOjY0rvpVYRFiHOy",
+  "name": "Plate Armor",
+  "type": "armor",
+  "flags": {},
+  "img": "systems/acks/assets/icons/plate-armor.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058483071,
+    "modifiedTime": 1730058483071,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": "<p>Plate armor is made from large metal plates worn over the chest and vital areas. Chain mail or other protective covering may cover exposed joints. Plate armor provides superior protection over banded plate and lamellar, having larger plates sewn onto a stronger backing. Historical examples include classical panoply (if worn with arm and leg armor), medieval plate and mail armor, Middle Eastern mirror armor, Eastern European plated mail, and Japanese tatami-do.</p>",
+    "ac": {
+      "value": 3
+    },
+    "aac": {
+      "value": 6
+    },
+    "type": "heavy",
+    "cost": 60,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 36
+  },
+  "folder": "8qVpUlESUQsGqpcL",
+  "sort": 0,
+  "_key": "!items!FOjY0rvpVYRFiHOy"
+}

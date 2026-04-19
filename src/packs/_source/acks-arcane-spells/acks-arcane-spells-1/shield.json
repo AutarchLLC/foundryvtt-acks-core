@@ -1,0 +1,36 @@
+{
+  "_id": "n8AMmf1Hlfs2MA9g",
+  "name": "Shield",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/shield-reflect.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "Self",
+    "roll": "",
+    "description": "<p>Shield creates an invisible, shield-like mobile disk of force that hovers in front of the caster. It negates magic missile attacks directed at the caster, and grants the caster an <strong>Armor Class of 7 against missile attacks</strong> and <strong>AC 5 against melee attacks</strong>. The Armor Class benefits <strong>do not apply to attacks originating from behind</strong> the caster, but <strong>magic missiles are warded off from all directions</strong>.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!n8AMmf1Hlfs2MA9g"
+}

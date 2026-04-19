@@ -2,17 +2,20 @@
   "id": "acks",
   "title": "Adventurer Conqueror King System",
   "description": "Play B/X or other OSR compatible content using the ACKS system",
-  "version": "#{VERSION}#",
+  "version": "13.0.0",
+  "url": "https://github.com/AutarchLLC/foundryvtt-acks-core",
+  "manifest": "https://github.com/AutarchLLC/foundryvtt-acks-core/releases/latest/download/system.json",
+  "download": "https://github.com/AutarchLLC/foundryvtt-acks-core/releases/download/release-13.0.0/acks-13.0.0.zip",
   "socket": true,
   "relationships": {},
   "compatibility": {
-    "minimum": "12",
-    "verified": "13"
+    "minimum": "13.351",
+    "verified": "14.359"
   },
   "flags": {
     "hotReload": {
       "extensions": ["css", "html", "hbs", "json"],
-      "paths": ["acks.css", "./", "templates", "css", "lang/en.json"]
+      "paths": ["acks.css", "templates", "lang"]
     }
   },
   "authors": [
@@ -24,6 +27,11 @@
     },
     {
       "name": "ArcanistWill"
+    },
+    {
+      "name": "miketwoface",
+      "discord": "miketwoface",
+      "url": "https://github.com/thetwoface"
     }
   ],
   "manifestPlusVersion": "1.2.0",
@@ -34,8 +42,44 @@
       "caption": "Adventurer Conqueror King System Imperial Imprint (ACKS II)"
     }
   ],
-  "esmodules": ["acks.js"],
+  "esmodules": ["acks.mjs"],
   "styles": ["acks.css"],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": ["details.biography", "details.notes"]
+      },
+      "monster": {
+        "htmlFields": ["details.biography"]
+      }
+    },
+    "Item": {
+      "item": {
+        "htmlFields": ["description"]
+      },
+      "weapon": {
+        "htmlFields": ["description"]
+      },
+      "armor": {
+        "htmlFields": ["description"]
+      },
+      "spell": {
+        "htmlFields": ["description"]
+      },
+      "ability": {
+        "htmlFields": ["description"]
+      },
+      "language": {
+        "htmlFields": ["description"]
+      },
+      "money": {
+        "htmlFields": ["description"]
+      },
+      "bundle": {
+        "htmlFields": ["description"]
+      }
+    }
+  },
   "packs": [
     {
       "name": "acks-class-abilities",
@@ -242,33 +286,11 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
-    },
-    {
-      "lang": "fr",
-      "name": "French (FRANCE)",
-      "path": "lang/fr.json"
-    },
-    {
-      "lang": "pt-BR",
-      "name": "Português (Brasil)",
-      "path": "lang/pt-BR.json"
-    },
-    {
-      "lang": "fr",
-      "name": "French (FRANCE)",
-      "path": "lang/fr.json"
-    },
-    {
-      "lang": "es",
-      "name": "Spanish",
-      "path": "lang/es.json"
     }
   ],
   "grid": {
     "distance": 5,
     "units": "ft"
   },
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#"
+  "primaryTokenAttribute": "hp"
 }

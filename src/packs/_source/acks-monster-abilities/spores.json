@@ -1,0 +1,83 @@
+{
+  "name": "Spores",
+  "type": "ability",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    },
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "owner": {
+          "actorId": "EQAhIKYRWel0XvDM"
+        },
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "_id": "QfBVfKFwoVaY3DTq",
+            "flags": {
+              "dynamiceffects": {
+                "equipActive": false,
+                "alwaysActive": false,
+                "effects": []
+              },
+              "pick-up-stix": {
+                "pick-up-stix": {
+                  "owner": {
+                    "actorId": "EQAhIKYRWel0XvDM"
+                  }
+                }
+              }
+            },
+            "name": "Spores",
+            "type": "ability",
+            "img": "systems/acks/assets/icons/chemical-bolt.webp",
+            "data": {
+              "pattern": "green",
+              "requirements": "",
+              "roll": "1d100",
+              "rollType": "below",
+              "rollTarget": 50,
+              "blindroll": false,
+              "description": "<p>If it is touched, Yellow Mold is acidic and destroys leather and wood. It deals [[/r 1d6 #Acidic mold!]] points of damage to bare flesh. There is a 50% probability that any time yellow mold is contacted, it ejects spores into a 10' cube area. Any creature inside the area is required to roll a saving throw versus Poison, and failure indicates suffocation and death in [[/r 6 #Death from choking in this many rounds!]] rounds from the inhaled spores.&nbsp;</p>",
+              "save": "death"
+            },
+            "sort": 1400001
+          }
+        }
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/chemical-bolt.webp",
+  "_id": "Liw0CFFz01VSuVVt",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "green",
+    "requirements": "",
+    "roll": "1d100",
+    "rollType": "below",
+    "rollTarget": 50,
+    "blindroll": false,
+    "description": "<p>If it is touched, Yellow Mold is acidic and destroys leather and wood. It deals [[/r 1d6 #Acidic mold!]] points of damage to bare flesh. There is a 50% probability that any time yellow mold is contacted, it ejects spores into a 10' cube area. Any creature inside the area is required to roll a saving throw versus Poison, and failure indicates suffocation and death in [[/r 6 #Death from choking in this many rounds!]] rounds from the inhaled spores.&nbsp;</p>",
+    "save": "death"
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Liw0CFFz01VSuVVt"
+}

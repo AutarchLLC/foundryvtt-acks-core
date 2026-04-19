@@ -1,0 +1,413 @@
+{
+  "_id": "s7p1qJvSGTLgB2AA",
+  "name": "Test Monster",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {},
+  "img": "systems/acks/assets/tokens/characters/Fighter_Female_35.webp",
+  "items": [
+    {
+      "_id": "uLXYDXgEJpj7Vmp0",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "ALheggdkiThmGhjS"
+            },
+            "initialState": {
+              "id": "QZhWgIEMMwRNF37A",
+              "count": 1,
+              "itemData": {
+                "_id": "QZhWgIEMMwRNF37A",
+                "flags": {},
+                "name": "Envelop",
+                "type": "weapon",
+                "img": "systems/acks/assets/icons/transparent-slime.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "death",
+                  "pattern": "red",
+                  "description": "<p>Any non-magical armor or clothing is destroyed immediately after a successful hit from the ooze, as the acid eats through it viciously. A non-magical metal or wooden weapon that strikes gray ooze also dissolves immediately after dealing damage. Magical weapons, armor, and clothing are allowed a saving throw using the wearer’s save versus Death, adding any magical bonus to the roll if applicable. Once it has hit, the ooze clings to an opponent and deals [[/r 2d8 #Acid damage from the clinging ooze!]] points of damage every round until it can be neutralized.</p>",
+                  "damage": "2d8",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 0,
+                  "equipped": false,
+                  "weight": 0,
+                  "counter": {
+                    "value": 1,
+                    "max": 1
+                  }
+                },
+                "sort": 100000
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        },
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Body Slam",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/transparent-slime.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "red",
+        "description": "<p>An ochre jelly constantly oozes an <strong>acidic slime that can eat through cloth, wood, and leather after 1 round</strong>, but cannot affect stone or metal. The acid inflicts 2d6 points of damage to bare flesh.</p>",
+        "damage": "2d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!s7p1qJvSGTLgB2AA.uLXYDXgEJpj7Vmp0"
+    },
+    {
+      "_id": "1vSXCPWltIR3ZjDC",
+      "flags": {},
+      "name": "Construct",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/gargoyle.webp",
+      "sort": 200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Constructs are a type of mindless, unliving monster that includes animated statues, gargoyles, golems, skeletons, and zombies. (Note that skeletons and zombies are undead constructs.)</p>\n<p>Because they are not truly alive, all constructs are immune to gas and poison. Further, they are unaffected by <em>charm</em>, <em>sleep</em>, or <em>hold </em>spells. All constructs are enchanted creatures for the purposes of spells such as <em>dispel evil</em> and <em>protection from evil</em>.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!s7p1qJvSGTLgB2AA.1vSXCPWltIR3ZjDC"
+    },
+    {
+      "_id": "jWEZSxiicj3C4EA6",
+      "flags": {},
+      "name": "Deceptively Stealthy",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/hooded-figure2.webp",
+      "sort": 300000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Despite their bulk, they are deceptively stealthy, so characters encountering bugbears suffer a -1 penalty to surprise rolls.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!s7p1qJvSGTLgB2AA.jWEZSxiicj3C4EA6"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "1d8",
+      "value": 8,
+      "max": 8,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 1,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 3,
+      "throw": 7,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 13
+      },
+      "wand": {
+        "value": 15
+      },
+      "paralysis": {
+        "value": 14
+      },
+      "breath": {
+        "value": 15
+      },
+      "spell": {
+        "value": "16"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 120,
+      "mod": 0,
+      "encounter": 40,
+      "value": ""
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "Neutral",
+      "xp": "25",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d2",
+        "w": "1d3"
+      },
+      "morale": "1"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {},
+    "name": "Test Monster",
+    "displayName": 0,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "color": null,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/characters/Fighter_Female_35.webp",
+      "tint": "#ffffff",
+      "scaleX": 1,
+      "scaleY": 1,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": false,
+      "range": 0,
+      "brightness": 1,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!s7p1qJvSGTLgB2AA"
+}

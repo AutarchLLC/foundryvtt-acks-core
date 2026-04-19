@@ -1,0 +1,38 @@
+{
+  "_id": "5TajBcbvhqIpwbi8",
+  "type": "item",
+  "name": "Cloak, Linen or Wool, Hooded",
+  "img": "systems/acks/assets/icons/cloak-hooded.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A cloak is a cloth, fur, or leather garment of knee to ankle length, worn outdoors like an overcoat. Cloaks usually include a hood. Adventurers often favor military cloaks, generally worn pinned on one shoulder for ease of movement and access to a sword.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "unknown",
+    "iconlicense": "unknown"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!5TajBcbvhqIpwbi8"
+}

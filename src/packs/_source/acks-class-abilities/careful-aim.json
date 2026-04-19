@@ -1,0 +1,36 @@
+{
+  "name": "Careful Aim",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/archer.webp",
+  "_id": "eeVZZnqrxVdF12G6",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Elven rangers are renowned as the best archers in the world. Due to their careful aim, they increase their base damage roll from successful missile attacks by +1 at 1st level, and by an additional +1&nbsp;at 3rd , 6th , 9th , and 12th level.&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!eeVZZnqrxVdF12G6"
+}

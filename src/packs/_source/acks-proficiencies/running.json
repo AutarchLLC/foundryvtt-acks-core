@@ -1,0 +1,36 @@
+{
+  "_id": "S29ZrQWE9MzxZzDd",
+  "name": "Running",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/running.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character's base movement speed is increased by 30' when wearing chainmail or lighter armor.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!S29ZrQWE9MzxZzDd"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "srOniVQ83oh2Wfbx",
+  "name": "Mirror Image",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/backup.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "6 Turns",
+    "range": "Self",
+    "roll": "1d4 Mirror Images",
+    "description": "<p>This spell creates several illusory duplicates of the caster. The images move through each other as well as the real caster more or less constantly, making it impossible for most creatures to determine which is real. A total of 1d4 images are created. These figments separate from the caster and remain in a cluster around him. The figments mimic the caster's actions, pretending to cast spells, drink potions, levitate, and so on, just as the caster does. Figments always look exactly like the caster.</p>\n<p>Enemies attempting to attack or cast spells upon the caster will always hit a figment instead. Any attack against an image destroys it, whether the attack throw is successful or not; likewise, attack spells cast directly upon a figment will destroy it, with no saving throw allowed. Area-effect spells are not cast directly on the caster, and thus appear to affect all figments exactly as they affect the caster; for instance, if the caster is subjected to a fireball, all figments will appear to be injured just as the caster was.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!srOniVQ83oh2Wfbx"
+}

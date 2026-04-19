@@ -1,0 +1,652 @@
+{
+  "_id": "VYW1NlValFpOMrZw",
+  "name": "Scrolls",
+  "flags": {},
+  "description": "Scroll Magic Items",
+  "results": [
+    {
+      "_id": "YVEmwubZwPzxzO02",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        1,
+        5
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Cursed",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.YVEmwubZwPzxzO02"
+    },
+    {
+      "_id": "UP22RfKITIcm1u8o",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 10,
+      "range": [
+        6,
+        15
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ward against Elementals",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.UP22RfKITIcm1u8o"
+    },
+    {
+      "_id": "jlfwEDPzO5jDDNG6",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 10,
+      "range": [
+        16,
+        25
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ward against Lycanthropes",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.jlfwEDPzO5jDDNG6"
+    },
+    {
+      "_id": "zDs8wqoTUESy3cmS",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        26,
+        30
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ward against Magic",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.zDs8wqoTUESy3cmS"
+    },
+    {
+      "_id": "dCrPgRq0MfJzTmCz",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 10,
+      "range": [
+        31,
+        40
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ward against Undead",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.dCrPgRq0MfJzTmCz"
+    },
+    {
+      "_id": "Lm39WAYQIloZrjEI",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 15,
+      "range": [
+        41,
+        55
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Spells (1)*",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.Lm39WAYQIloZrjEI"
+    },
+    {
+      "_id": "fnnYxYRPWpyLWNOB",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 11,
+      "range": [
+        56,
+        66
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Spells (2)*",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.fnnYxYRPWpyLWNOB"
+    },
+    {
+      "_id": "b1ICywMoWIsHnOyL",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        67,
+        69
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Spells (3)*",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.b1ICywMoWIsHnOyL"
+    },
+    {
+      "_id": "VM9pmBmNwRbIhbuQ",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        70,
+        72
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Spells (4)*",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.VM9pmBmNwRbIhbuQ"
+    },
+    {
+      "_id": "DrMBKSj2k8zvoe0O",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        73,
+        74
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Spells (5)*",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.DrMBKSj2k8zvoe0O"
+    },
+    {
+      "_id": "DCheqHHm4ereIc84",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        75,
+        75
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Spells (6)*",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.DCheqHHm4ereIc84"
+    },
+    {
+      "_id": "QSWa5pChi6fHnsMW",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        76,
+        76
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Spells (7)*",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.QSWa5pChi6fHnsMW"
+    },
+    {
+      "_id": "eft9ruqkmyNUcUXN",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 4,
+      "range": [
+        77,
+        80
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to [[1d4*1000]]gp)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.eft9ruqkmyNUcUXN"
+    },
+    {
+      "_id": "EQHF7btHmGeSUKwM",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        81,
+        85
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to [[5d6*1000]]gp)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.EQHF7btHmGeSUKwM"
+    },
+    {
+      "_id": "cnoPdRSlH7mjUvBb",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        86,
+        87
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to [[6d6*1000]]gp)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.cnoPdRSlH7mjUvBb"
+    },
+    {
+      "_id": "8hQYDR2bT68uxVHW",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        88,
+        89
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to [[5d6*1000]]gp, [[5d6]] gems)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.8hQYDR2bT68uxVHW"
+    },
+    {
+      "_id": "3jNMvj9xWh8w2LQp",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        90,
+        91
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to [[1d6]] gems, [[2d10]] jewelry)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.3jNMvj9xWh8w2LQp"
+    },
+    {
+      "_id": "VhUV1iPkJRCvphfI",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        92,
+        93
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to 1 magic item)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.VhUV1iPkJRCvphfI"
+    },
+    {
+      "_id": "ChLf3MXTUsjj2gz7",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        94,
+        95
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to 2 magic items)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.ChLf3MXTUsjj2gz7"
+    },
+    {
+      "_id": "iTDiZ56vk0PvPqbk",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        96,
+        96
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to 3 magic items, no weapons)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.iTDiZ56vk0PvPqbk"
+    },
+    {
+      "_id": "w0czFbtgpMShKUdz",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        97,
+        97
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to 3 magic items, 1 potion)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.w0czFbtgpMShKUdz"
+    },
+    {
+      "_id": "gI07UVk9B7bvhKdA",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        98,
+        98
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to 3 mag. it., 1 potion, 1 scroll)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.gI07UVk9B7bvhKdA"
+    },
+    {
+      "_id": "SjwEYNMQ8ZBPQszQ",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        99,
+        99
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to [[5d6*1000]]gp, 1 magic item)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.SjwEYNMQ8ZBPQszQ"
+    },
+    {
+      "_id": "xs2FHxYj3w8qS2Uu",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Treasure Map (to [[5d6]] gems, 2 magic items)",
+      "name": "",
+      "_key": "!tables.results!VYW1NlValFpOMrZw.xs2FHxYj3w8qS2Uu"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!VYW1NlValFpOMrZw"
+}

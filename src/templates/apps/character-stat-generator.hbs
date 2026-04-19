@@ -1,0 +1,103 @@
+<section class="standard-form">
+  <div class="row">
+    <div class="standard-form panel">
+      {{#each scores }}
+        <div class="form-group">
+
+          <label for="{{@root.partId}}-score-{{@key}}">{{this}}</label>
+
+          <div class="form-fields">
+
+            <input name="scores.{{@key}}" type="number" id="{{@root.partId}}-score-{{@key}}" data-dtype="Number"
+                   readonly data-kind="score"/>
+
+            <input name="scores.{{@key}}.mod" type="number" data-dtype="Number" readonly disabled/>
+
+            <button type="button" class="plain" data-tooltip="Roll 3d6" data-action="rollScore"
+                    data-score="{{@key}}" data-formula="3d6">
+              <i class="fa-regular fa-dice-d6"></i>
+              <span>3d6</span>
+            </button>
+            <button type="button" class="plain" data-tooltip="Roll 4d6 and keep 3 highest" data-action="rollScore"
+                    data-score="{{@key}}" data-formula="4d6kh3">
+              <i class="fa-regular fa-dice-d6"></i>
+              <span>4d6</span>
+            </button>
+            <button type="button" class="plain" data-tooltip="Roll 5d6 and keep 3 highest" data-action="rollScore"
+                    data-score="{{@key}}" data-formula="5d6kh3">
+              <i class="fa-regular fa-dice-d6"></i>
+              <span>5d6</span>
+            </button>
+
+          </div>
+
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="standard-form">
+
+      <div class="standard-form panel">
+
+        <div class="form-group">
+          <label for="{{@root.partId}}-stats-sum">Sum</label>
+          <div class="form-fields">
+            <input name="stats.sum" type="number" id="{{@root.partId}}-stats-sum" data-dtype="Number" readonly disabled
+                   data-tooltip="The total sum of all values"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="{{@root.partId}}-stats-mean">Avg</label>
+          <div class="form-fields">
+            <input name="stats.mean" type="text" id="{{@root.partId}}-stats-mean" data-dtype="Number" readonly disabled
+                   data-tooltip="The average value"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="{{@root.partId}}-stats-std">σ</label>
+          <div class="form-fields">
+            <input name="stats.std" type="text" id="{{@root.partId}}-stats-std" data-dtype="Number" readonly disabled
+                   data-tooltip="The standard deviation, measuring how spread out the values are from the average"/>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="standard-form panel">
+
+        <div class="form-group">
+          <label for="{{@root.partId}}-score-template">Template</label>
+          <div class="form-fields">
+            <input name="scores.template" type="number" id="{{@root.partId}}-score-template" data-dtype="Number"
+                   readonly/>
+            <button type="button" class="plain" data-tooltip="Roll 3d6" data-action="rollTemplate" data-formula="3d6">
+              <i class="fa-regular fa-dice-d6"></i>
+              <span>3d6</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="{{@root.partId}}-score-gold">Gold</label>
+          <div class="form-fields">
+            <input name="scores.gold" type="number" id="{{@root.partId}}-score-gold" data-dtype="Number" readonly/>
+            <button type="button" class="plain" data-tooltip="Roll 3d6 * 10" data-action="rollGold"
+                    data-formula="3d6*10">
+              <i class="fa-regular fa-dice-d6"></i>
+              <span>3d6</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <footer class="form-footer">
+    <button type="submit">Save</button>
+  </footer>
+</section>
+

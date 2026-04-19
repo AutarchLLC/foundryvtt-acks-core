@@ -1,0 +1,36 @@
+{
+  "_id": "4MmnRHehYjUsBVRN",
+  "name": "Remove Fear",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/remove-fear.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358012,
+    "modifiedTime": 1730058358012,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Divine",
+    "duration": "Instant",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>This spell will calm the creature touched and remove all fear. If the subject is currently running away due to magical fear, it is allowed a new saving throw to resist that fear, at a bonus of +1 per level of the caster.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "NYA8pw0gLlA5SnQ1",
+  "sort": 0,
+  "_key": "!items!4MmnRHehYjUsBVRN"
+}

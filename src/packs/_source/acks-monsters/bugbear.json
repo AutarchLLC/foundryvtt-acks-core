@@ -1,0 +1,762 @@
+{
+  "_id": "JwTchtG37xcPgulD",
+  "name": "Bugbear",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "acks": {
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/hairy_orcs_goblins/Goblin_Warrior_Spear-Shield_Fur-2.webp",
+  "items": [
+    {
+      "_id": "Q9xUw3IS8GFSewv9",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "kQLTLFkExzHS5T8b"
+            },
+            "initialState": {
+              "id": "RVrxltbYJSSaJahf",
+              "count": 1,
+              "itemData": {
+                "name": "Deceptively Stealthy",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Despite their bulk, they are deceptively stealthy, so characters encountering bugbears suffer a -1 penalty to surprise rolls.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 500000,
+                "flags": {},
+                "_id": "RVrxltbYJSSaJahf",
+                "img": "systems/acks/assets/icons/hooded-figure2.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Deceptively Stealthy",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/hooded-figure2.webp",
+      "sort": 500000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Despite their bulk, they are deceptively stealthy, so characters encountering bugbears suffer a -1 penalty to surprise rolls.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!JwTchtG37xcPgulD.Q9xUw3IS8GFSewv9"
+    },
+    {
+      "_id": "AAxUVw7hjmU6XVc8",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "kQLTLFkExzHS5T8b"
+            },
+            "initialState": {
+              "id": "dOz6JVdmtLWKMlyS",
+              "count": 1,
+              "itemData": {
+                "_id": "dOz6JVdmtLWKMlyS",
+                "name": "Spear, 1H",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "weapon",
+                "data": {
+                  "range": {
+                    "short": 20,
+                    "medium": 40,
+                    "long": 60
+                  },
+                  "save": "",
+                  "pattern": "white",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [
+                    {
+                      "title": "Melee",
+                      "value": "Melee"
+                    },
+                    {
+                      "title": "Missile",
+                      "value": "Missile"
+                    }
+                  ],
+                  "slow": false,
+                  "missile": true,
+                  "melee": true,
+                  "cost": 3,
+                  "equipped": false,
+                  "weight": 1000,
+                  "counter": {
+                    "value": 0,
+                    "max": 0
+                  }
+                },
+                "folder": "a56Mr9t5ePSlDxM2",
+                "sort": 2800000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/spear.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        },
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Spear, 1H",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/spear.webp",
+      "sort": 2800000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 20,
+          "medium": 40,
+          "long": 60
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6+1",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          },
+          {
+            "title": "Missile",
+            "value": "Missile"
+          }
+        ],
+        "slow": false,
+        "missile": true,
+        "melee": true,
+        "cost": 3,
+        "equipped": false,
+        "weight": 1000,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!JwTchtG37xcPgulD.AAxUVw7hjmU6XVc8"
+    },
+    {
+      "_id": "ACB00YfZW1tHK9pL",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "kQLTLFkExzHS5T8b"
+            },
+            "initialState": {
+              "id": "RPuLnrmgb7RJ3KZg",
+              "count": 1,
+              "itemData": {
+                "_id": "RPuLnrmgb7RJ3KZg",
+                "name": "Sword, 1H",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "weapon",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "white",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [
+                    {
+                      "title": "Melee",
+                      "value": "Melee"
+                    }
+                  ],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 10,
+                  "equipped": false,
+                  "weight": 166.6,
+                  "counter": {
+                    "value": 0,
+                    "max": 0
+                  }
+                },
+                "folder": "a56Mr9t5ePSlDxM2",
+                "sort": 3100000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/sword.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        },
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Sword, 1H",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/sword.webp",
+      "sort": 3100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6+1",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 10,
+        "equipped": false,
+        "weight": 166.6,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!JwTchtG37xcPgulD.ACB00YfZW1tHK9pL"
+    },
+    {
+      "_id": "xdQGR72BYjHLLZll",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "kQLTLFkExzHS5T8b"
+            },
+            "initialState": {
+              "id": "V7j9ccOSXVtPVXwj",
+              "count": 1,
+              "itemData": {
+                "_id": "V7j9ccOSXVtPVXwj",
+                "name": "Shield",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "armor",
+                "data": {
+                  "description": "",
+                  "ac": {
+                    "value": 1
+                  },
+                  "aac": {
+                    "value": 1
+                  },
+                  "type": "shield",
+                  "cost": 10,
+                  "equipped": false,
+                  "weight": 1000
+                },
+                "folder": "TX25teNCvtR46Qsx",
+                "sort": 1200000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/round-shield.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Shield",
+      "type": "armor",
+      "img": "/systems/acks/assets/icons/round-shield.webp",
+      "sort": 1200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "description": "",
+        "ac": {
+          "value": 1
+        },
+        "aac": {
+          "value": 1
+        },
+        "type": "shield",
+        "cost": 10,
+        "equipped": false,
+        "weight": 1000,
+        "weight6": -1
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!JwTchtG37xcPgulD.xdQGR72BYjHLLZll"
+    },
+    {
+      "_id": "Vh3ZEYVnKyxRTEzC",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "kQLTLFkExzHS5T8b"
+            },
+            "initialState": {
+              "id": "4qIJg9UplpRnZF9e",
+              "count": 1,
+              "itemData": {
+                "name": "Great Strength",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>They are quite strong, and receive a +1 to damage when they employ weapons.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 700000,
+                "flags": {},
+                "_id": "4qIJg9UplpRnZF9e",
+                "img": "systems/acks/assets/icons/muscle-fat.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Great Strength",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/muscle-fat.webp",
+      "sort": 700000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>They are quite strong, and receive a +1 to damage when they employ weapons.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!JwTchtG37xcPgulD.Vh3ZEYVnKyxRTEzC"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "3d8+1",
+      "value": 14,
+      "max": 14,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 4,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 3,
+      "throw": 7,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 13
+      },
+      "wand": {
+        "value": 15
+      },
+      "paralysis": {
+        "value": 14
+      },
+      "breath": {
+        "value": 15
+      },
+      "spell": {
+        "value": "16"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 90,
+      "mod": 0,
+      "value": "",
+      "encounter": 30
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "C",
+      "xp": "65",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "2d4",
+        "w": "1d4"
+      },
+      "morale": "2"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "hidden": false,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Bugbear",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/hairy_orcs_goblins/Goblin_Warrior_Spear-Shield_Fur-2.webp",
+      "tint": "#ffffff",
+      "scaleX": 1.4,
+      "scaleY": 1.4,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!JwTchtG37xcPgulD"
+}

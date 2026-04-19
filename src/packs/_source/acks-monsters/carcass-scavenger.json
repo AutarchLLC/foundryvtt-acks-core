@@ -1,0 +1,450 @@
+{
+  "_id": "uAf1frlms7fmVuje",
+  "name": "Carcass Scavenger",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "ose": {
+      "party": false
+    },
+    "acks": {
+      "party": false,
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/dm_essentials1/DME_Carrion_Crawler_2.webp",
+  "items": [
+    {
+      "_id": "sloQDItuAIiiaTea",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "sloQDItuAIiiaTea",
+                "flags": {},
+                "name": "Stingers",
+                "type": "weapon",
+                "img": "systems/acks/assets/icons/tentacle-strike.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "paralysis",
+                  "pattern": "red",
+                  "description": "<p>When the stingers strike an opponent, he must succeed in a saving throw versus Paralysis or become paralyzed for [[/r 2d4 #Paralysis lasts for this many Turns]] turns. If not faced with more opponents, the carcass scavenger will swallow the paralyzed character on the subsequent round, killing him. Paralysis may be cured with cure light wounds, but when used in this way it does not heal damage.</p>",
+                  "damage": "0",
+                  "bonus": 0,
+                  "tags": [
+                    {
+                      "title": "Paralysis",
+                      "value": "Paralysis"
+                    }
+                  ],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 0,
+                  "equipped": false,
+                  "weight": 0,
+                  "counter": {
+                    "value": 8,
+                    "max": 8
+                  }
+                },
+                "sort": 100000
+              }
+            }
+          }
+        }
+      },
+      "name": "Stingers",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/tentacle-strike.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "paralysis",
+        "pattern": "red",
+        "description": "<p>When the stingers strike an opponent, he must succeed in a saving throw versus Paralysis or become paralyzed for [[/r 2d4 #Paralysis lasts for this many Turns]] turns. If not faced with more opponents, the carcass scavenger will swallow the paralyzed character on the subsequent round, killing him. Paralysis may be cured with cure light wounds, but when used in this way it does not heal damage.</p>",
+        "damage": "0",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Paralysis",
+            "value": "Paralysis"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 8,
+          "max": 8
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!uAf1frlms7fmVuje.sloQDItuAIiiaTea"
+    },
+    {
+      "_id": "p7aJ5BnZveDOBEWB",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "p7aJ5BnZveDOBEWB",
+                "flags": {},
+                "name": "Vermin",
+                "type": "ability",
+                "img": "systems/acks/assets/icons/maggot.webp",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
+                  "save": ""
+                },
+                "sort": 1100001
+              }
+            }
+          }
+        }
+      },
+      "name": "Vermin",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/maggot.webp",
+      "sort": 1100001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!uAf1frlms7fmVuje.p7aJ5BnZveDOBEWB"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "3d8+1",
+      "value": 15,
+      "max": 15,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 7,
+      "mod": 0
+    },
+    "aac": {
+      "value": 2,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 16,
+      "bba": 3,
+      "throw": 7,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 13
+      },
+      "wand": {
+        "value": 15
+      },
+      "paralysis": {
+        "value": 14
+      },
+      "breath": {
+        "value": 15
+      },
+      "spell": {
+        "value": "16"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 120,
+      "mod": 0,
+      "value": "",
+      "encounter": 40
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "N",
+      "xp": "135",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d3",
+        "w": "1d3"
+      },
+      "morale": "2"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false,
+          "hidden": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Carcass Scavenger",
+    "displayName": 10,
+    "width": 1.5,
+    "height": 1.5,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": 0,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/dm_essentials1/DME_Carrion_Crawler_2.webp",
+      "tint": "#ffffff",
+      "scaleX": 1.2,
+      "scaleY": 1.2,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!uAf1frlms7fmVuje"
+}

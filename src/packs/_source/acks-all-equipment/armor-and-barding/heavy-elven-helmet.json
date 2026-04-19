@@ -1,0 +1,38 @@
+{
+  "_id": "deE9ktDiH2NAuzbX",
+  "name": "Heavy Elven Helmet",
+  "type": "armor",
+  "flags": {},
+  "img": "systems/acks/assets/icons/elf-helmet.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058483071,
+    "modifiedTime": 1730058483071,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": "<p>This is a metal close-faced or visored helmet that completely covers the face, head, and neck. A heavy helmet must be purchased separately from a suit of armor. Wearing a heavy helm imposes a -1 penalty to surprise rolls and -4 penalty to proficiency throws to hear noise, but offers a +2 bonus on d20 rolls made on the Mortal Wounds table. Historical examples of heavy helmets include the classical Corinthian helmet, Roman gladiatorial helmets, and the medieval armet, barbute, close helm, great helm, and hounskull.</p>",
+    "ac": {
+      "value": 0
+    },
+    "aac": {
+      "value": null
+    },
+    "type": "light",
+    "cost": 20,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1
+  },
+  "folder": "8qVpUlESUQsGqpcL",
+  "sort": 0,
+  "_key": "!items!deE9ktDiH2NAuzbX"
+}

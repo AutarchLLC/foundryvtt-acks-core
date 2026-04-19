@@ -1,0 +1,38 @@
+{
+  "_id": "cslDLkPxmTh7CLVX",
+  "name": "Leather Armor",
+  "type": "armor",
+  "flags": {},
+  "img": "systems/acks/assets/icons/leather-armor.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058483071,
+    "modifiedTime": 1730058483071,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": "<p>Leather armor is made of hardened leather or laminated linen. Leather armor usually consists of spaulders (shoulder armor), cuirass, and tassets (flaps covering the groin and thighs). It is lighter but less protective then more reinforced leather armors such as ring mail. A historical example is&nbsp;Macedonian linothorax armor.</p>",
+    "ac": {
+      "value": 7
+    },
+    "aac": {
+      "value": 2
+    },
+    "type": "light",
+    "cost": 20,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 12
+  },
+  "folder": "8qVpUlESUQsGqpcL",
+  "sort": 0,
+  "_key": "!items!cslDLkPxmTh7CLVX"
+}

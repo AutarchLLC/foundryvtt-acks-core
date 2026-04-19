@@ -1,0 +1,36 @@
+{
+  "_id": "keHmhamyLxGOyOLM",
+  "name": "Ambushing",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/ambushing.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>When the character attacks in melee with surprise, he gets a +4 bonus on his attack throws and deals double damage on the attack. This proficiency does not stack with the ability of thieves (or related classes) to backstab.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!keHmhamyLxGOyOLM"
+}

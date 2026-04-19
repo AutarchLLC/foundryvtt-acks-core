@@ -1,0 +1,38 @@
+{
+  "_id": "Sz3tcHnYAX0VsCjh",
+  "name": "Sack, Small (holds 2 stone)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/swap-bag3.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This is a 1 x 2 burlap, cloth, or leather bag that can contain 2 stone (20 lbs). It is often tied to a belt or spearhead.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.3,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!Sz3tcHnYAX0VsCjh"
+}

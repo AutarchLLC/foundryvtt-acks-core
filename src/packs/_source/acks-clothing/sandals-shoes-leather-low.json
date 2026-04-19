@@ -1,0 +1,38 @@
+{
+  "_id": "cAeePOAsyXFH2YUq",
+  "type": "item",
+  "name": "Sandals/Shoes, Leather, Low",
+  "img": "systems/acks/assets/icons/flaticon/sandals-low.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "Simple leather shoes or sandals are suitable for walking long distances.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.1,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://www.flaticon.com/free-icon/sandals_7398026",
+    "iconlicense": "<a href=\\\"https://www.flaticon.com/free-icons/footwear\\\" title=\\\"footwear icons\\\">Footwear icons created by Freepik - Flaticon</a>"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!cAeePOAsyXFH2YUq"
+}

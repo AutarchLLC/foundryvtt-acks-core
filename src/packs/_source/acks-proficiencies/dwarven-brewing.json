@@ -1,0 +1,36 @@
+{
+  "_id": "dBawCil0FyjejRv1",
+  "name": "Dwarven Brewing",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/dwarven-brewing.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character knows the secrets of the famed beer and ale of the dwarves. Because of his familiarity with mixology, he may make a proficiency throw of 11+ to determine the magical properties of a potion or oil on taste. He gains a +4 bonus to proficiency throws to craft alcoholic beverages.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!dBawCil0FyjejRv1"
+}

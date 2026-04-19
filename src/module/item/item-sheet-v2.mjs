@@ -1,9 +1,14 @@
-import { AcksUtility } from "../utility.js";
+/* global foundry, ui, game */
+import { AcksUtility } from "../util/acks-utility.mjs";
 import AcksEffectUtil from "../effect/acks-effect-util.mjs";
+import { ACKS } from "../config.mjs";
+import { AcksHtmlUtil } from "../util/html-util.mjs";
+import { ITEM_TYPE } from "../constants.mjs";
+import ACKSDialog from "../dialog/dialog.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
-const TextEditorRef = foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor;
+const TextEditorRef = foundry.applications.ux.TextEditor.implementation;
 
 export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemSheetV2) {
   constructor(...args) {
@@ -12,7 +17,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
 
   /** @override */
   static DEFAULT_OPTIONS = {
-    classes: ["acks", "item-v2"],
+    classes: ["acks", "acks2", "item-v2"],
     position: {
       // initial size of the window
       width: 570,
@@ -34,6 +39,10 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       toggleMelee: AcksItemSheetV2.#toggleMelee,
       toggleMissile: AcksItemSheetV2.#toggleMissile,
       deleteTag: AcksItemSheetV2.#deleteTag,
+      viewItemFromBundle: AcksItemSheetV2.#viewItemFromBundle,
+      deleteItemFromBundle: AcksItemSheetV2.#deleteItemFromBundle,
+      changeQuantityInBundle: AcksItemSheetV2.#changeQuantityInBundle,
+      toggleListSection: AcksHtmlUtil.toggleListSection,
     },
   };
 
@@ -43,6 +52,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       tabs: [
         { id: "description", label: "ACKS.category.description" },
         { id: "effects", label: "ACKS.category.effects" },
+        { id: "contents", label: "ACKS.category.contents" },
       ],
       initial: "description",
     },
@@ -70,6 +80,10 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       templates: ["systems/acks/templates/items/v2/common/item-active-effects.hbs"],
       scrollable: [""],
     },
+    contents: {
+      template: "systems/acks/templates/items/v2/item/bundle-contents.hbs",
+      scrollable: [""],
+    },
   };
 
   get item() {
@@ -85,7 +99,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     super._configureRenderOptions(options);
 
     // change initial height of window to accommodate for more details (left "stats" block with configuration)
-    if (options.isFirstRender && ["spell", "ability", "weapon"].includes(this.item.type)) {
+    if (options.isFirstRender && [ITEM_TYPE.SPELL, ITEM_TYPE.PROFICIENCY, ITEM_TYPE.WEAPON].includes(this.item.type)) {
       Object.assign(options.position, { height: 530 });
     }
   }
@@ -101,20 +115,82 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     await super._onRender(context, options);
     const tagInput = this.element.querySelector(':scope input[data-action="add-tag"]');
     tagInput?.addEventListener("keydown", this.#tagInputKeydownHandler.bind(this));
+
+    if (this._isItemBundle()) {
+      /** @type {DragDropConfiguration} */
+      const dragDropConfig = {
+        permissions: {
+          drop: () => this.isEditable,
+        },
+        callbacks: {
+          drop: this._onDrop.bind(this),
+        },
+      };
+      new foundry.applications.ux.DragDrop.implementation(dragDropConfig).bind(this.element);
+    }
   }
 
   /**
-   * Actions performed before closing the Application.
-   * Pre-close steps are awaited by the close process.
-   * @param {RenderOptions} options                 Provided render options
+   * An event that occurs when data is dropped into a drop target.
+   * @param {DragEvent} event
    * @returns {Promise<void>}
    * @protected
    */
-  async _preClose(options) {
-    //TODO: not sure we need this, seems foundry is removing them
-    const tagInput = this.element.querySelector(':scope input[data-action="add-tag"]');
-    tagInput?.removeEventListener("keydown", this.#tagInputKeydownHandler.bind(this));
-    await super._preClose(options);
+  async _onDrop(event) {
+    const data = TextEditorRef.getDragEventData(event);
+    const documentClass = foundry.utils.getDocumentClass(data.type);
+    if (documentClass) {
+      const doc = await documentClass.fromDropData(data);
+      await this._onDropDocument(event, doc);
+    }
+  }
+
+  /**
+   * Handle a dropped document on the ActorSheet
+   * @template {Document} TDocument
+   * @param {DragEvent} event         The initiating drop event
+   * @param {TDocument} doc       The resolved Document class
+   * @returns {Promise<TDocument|null>} A Document of the same type as the dropped one in case of a successful result,
+   *                                    or null in case of failure or no action being taken
+   * @protected
+   */
+  async _onDropDocument(event, doc) {
+    switch (doc.documentName) {
+      case "Item":
+        return (await this._onDropItem(event, doc)) ?? null;
+      default:
+        return null;
+    }
+  }
+
+  /**
+   * Handle a dropped Item on the Actor Sheet.
+   * @param {DragEvent} event     The initiating drop event
+   * @param {Item} item           The dropped Item document
+   * @returns {Promise<Item|null|undefined>} A Promise resolving to the dropped Item (if sorting), a newly created Item,
+   *                                         or a nullish value in case of failure or no action being taken
+   * @protected
+   */
+  async _onDropItem(event, item) {
+    if (item.type === ITEM_TYPE.BUNDLE) {
+      ui.notifications.warn(`Cannot add a bundle to another bundle - ${item.name}`);
+      return;
+    }
+    if (this.item.system.itemList.some((bundleItem) => bundleItem.id === item.id)) {
+      ui.notifications.warn(`Bundle already contains this item - ${item.name}`);
+    } else {
+      const itemList = foundry.utils.deepClone(this.item.system.itemList);
+      itemList.push({
+        id: item.id,
+        uuid: item.uuid,
+        quantity: 1,
+        name: item.name,
+        img: item.img,
+        type: item.type,
+        inCompendium: item.inCompendium,
+      });
+      this.item.update({ "system.itemList": itemList });
+    }
   }
 
   /**
@@ -128,6 +204,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     // if item can't have Active Effects remove corresponding part
     if (!this._hasActiveEffects()) {
       delete parts.effects;
+    }
+    if (!this._isItemBundle()) {
+      delete parts.contents;
     }
     return parts;
   }
@@ -144,6 +223,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     if (!this._hasActiveEffects()) {
       delete tabs.effects;
     }
+    if (!this._isItemBundle()) {
+      delete tabs.contents;
+    }
     return tabs;
   }
 
@@ -153,7 +235,17 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @protected
    */
   _hasActiveEffects() {
-    return ["item", "weapon", "armor", "spell", "ability"].includes(this.item.type);
+    return [ITEM_TYPE.ITEM, ITEM_TYPE.WEAPON, ITEM_TYPE.ARMOR, ITEM_TYPE.SPELL, ITEM_TYPE.PROFICIENCY].includes(
+      this.item.type,
+    );
+  }
+
+  /**
+   * @return {boolean} True if the item is a bundle
+   * @private
+   */
+  _isItemBundle() {
+    return this.item.type === ITEM_TYPE.BUNDLE;
   }
 
   /**
@@ -166,7 +258,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     const context = {
       ...(await super._prepareContext(options)),
       item: this.item,
-      config: CONFIG.ACKS,
+      config: ACKS,
       system: this.item.system,
       isGM: game.user.isGM,
       isPhysical: "cost" in this.item.system && "weight6" in this.item.system,
@@ -202,6 +294,12 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
         context.tab = context.tabs[partId];
         context = await this._prepareEffectsContext(context);
         break;
+
+      case "contents":
+        context.tab = context.tabs[partId];
+        context = await this._prepareItemBundleContext(context);
+        break;
+
       default:
         break;
     }
@@ -217,6 +315,24 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    */
   async _prepareEffectsContext(context) {
     context.effects = await AcksUtility.prepareActiveEffectCategories(this.item.effects);
+
+    return context;
+  }
+
+  /**
+   * Prepare context for Bundle Contents Tab
+   * @param {ApplicationRenderContext} context
+   * @return {Promise<ApplicationRenderContext>}
+   * @private
+   */
+  async _prepareItemBundleContext(context) {
+    context.bundleItems = this.item.system.itemList.reduce((acc, bundleItem) => {
+      if (!acc[bundleItem.type]) {
+        acc[bundleItem.type] = [];
+      }
+      acc[bundleItem.type].push(bundleItem);
+      return acc;
+    }, {});
 
     return context;
   }
@@ -287,6 +403,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @return {Promise<void>}
    */
   static async #deleteEffect(event, target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
     const effectId = target.dataset.effectId;
     await AcksEffectUtil.deleteEffect(effectId, this.item);
   }
@@ -294,22 +413,22 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   /**
    * Handle melee flag toggling for weapon.
    * @this {AcksItemSheetV2}
-   * @param {Event} event
-   * @param {HTMLElement} target
+   * @param {Event} _event
+   * @param {HTMLElement} _target
    * @return {Promise<void>}
    */
-  static async #toggleMelee(event, target) {
+  static async #toggleMelee(_event, _target) {
     this.item.update({ "system.melee": !this.item.system.melee });
   }
 
   /**
    * Handle missile flag toggling for weapon.
    * @this {AcksItemSheetV2}
-   * @param {Event} event
-   * @param {HTMLElement} target
+   * @param {Event} _event
+   * @param {HTMLElement} _target
    * @return {Promise<void>}
    */
-  static async #toggleMissile(event, target) {
+  static async #toggleMissile(_event, _target) {
     this.item.update({ "system.missile": !this.item.system.missile });
   }
 
@@ -321,8 +440,61 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    */
   static async #deleteTag(event, target) {
     if (this.isEditable) {
+      if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+        return;
+      }
       const tag = target.dataset.tag;
       this.item.popTag(tag);
+    }
+  }
+
+  /**
+   * Remove tag from item
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #viewItemFromBundle(event, target) {
+    const itemUUID = AcksHtmlUtil.getItemIdFromDOM(target);
+    const item = await foundry.utils.fromUuid(itemUUID);
+    if (item) {
+      item.sheet.render(true);
+    }
+  }
+
+  /**
+   * Remove tag from item
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #deleteItemFromBundle(event, target) {
+    if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
+      return;
+    }
+    const itemUUID = AcksHtmlUtil.getItemIdFromDOM(target);
+    const itemList = foundry.utils.deepClone(this.item.system.itemList);
+    const updatedItemList = itemList.filter((bundleItem) => bundleItem.uuid !== itemUUID);
+    this.item.update({ "system.itemList": updatedItemList });
+  }
+
+  /**
+   * Change quantity of item in bundle
+   * @this {AcksItemSheetV2}
+   * @param {Event} event
+   * @param {HTMLElement} target
+   * @return {Promise<void>}
+   */
+  static async #changeQuantityInBundle(event, target) {
+    const itemUUID = AcksHtmlUtil.getItemIdFromDOM(target);
+    const itemRecord = this.item.system.itemList.find((bundleItem) => bundleItem.uuid === itemUUID);
+    if (itemRecord) {
+      const { quantity } = await ACKSDialog.inputNewQuantity(itemRecord.quantity);
+      if (quantity && quantity >= 1 && quantity !== itemRecord.quantity) {
+        itemRecord.quantity = quantity;
+        const updatedItemList = foundry.utils.deepClone(this.item.system.itemList);
+        await this.item.update({ "system.itemList": updatedItemList });
+      }
     }
   }
 

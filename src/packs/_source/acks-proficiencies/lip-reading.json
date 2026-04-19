@@ -1,0 +1,36 @@
+{
+  "_id": "k0ds2tnM4pZ5XuZY",
+  "name": "Lip Reading",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/lip-reading.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can \"overhear\" conversations spoken in a language he understands. If the subject of his lip reading is not speaking clearly in bright light, the character may need to make a successful proficiency throw to hear noise in order to determine if he gleans the appropriate information. Characters with Lip Reading proficiency receive a +1 bonus to carousing and spying hijinks. See Hideouts and Hijinks in Chapter 7 for more information on carousing and spying.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!k0ds2tnM4pZ5XuZY"
+}

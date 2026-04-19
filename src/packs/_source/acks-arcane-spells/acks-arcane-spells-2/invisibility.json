@@ -1,0 +1,42 @@
+{
+  "_id": "2mCPzqW6jUvC2IAz",
+  "name": "Invisibility",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/invisible.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "Special",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>The creature or object touched becomes invisible, vanishing from sight, including Infravision. If the recipient is a creature carrying gear, that vanishes as well. If the spell is cast on someone else, neither the caster nor his allies can see the subject, unless they can normally see invisible things or employ magic to do so.</p>\n<p>Items dropped or put down by an invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. Light, however, never becomes invisible, although a source of light can become so (thus, the effect is that of a light with no visible source). Any part of an item that the subject carries but that extends more than 10' from it becomes visible. Of course, the subject is not magically silenced, and certain other conditions can render the recipient detectable (such as stepping in a puddle).</p>\n<p>The spell ends if the subject attacks any creature or casts any spell. Actions (other than spellcasting) directed at unattended objects do not break the spell. Causing harm indirectly is not an attack. The spell lasts at most 24 hours.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!2mCPzqW6jUvC2IAz"
+}

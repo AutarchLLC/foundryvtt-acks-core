@@ -1,5 +1,5 @@
-import itemDescriptionSchema from "../schema/item-description-schema.mjs";
-import itemPhysicalSchema from "../schema/item-physical-schema.mjs";
+import itemDescriptionSchema from "./templates/item-description-schema.mjs";
+import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
 
 /**
  * Weapon Item Data Model

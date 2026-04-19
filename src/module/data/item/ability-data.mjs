@@ -1,4 +1,7 @@
-import itemDescriptionSchema from "../schema/item-description-schema.mjs";
+/* global foundry */
+import itemDescriptionSchema from "./templates/item-description-schema.mjs";
+import { ACKS } from "../../config.mjs";
+import { ROLL_TYPE } from "../../constants.mjs";
 
 /**
  * Ability / Proficiency Item Data Model
@@ -18,7 +21,7 @@ export default class AbilityData extends foundry.abstract.TypeDataModel {
       // common item description
       ...itemDescriptionSchema(),
       // proficiency type (general / class)
-      proficiencytype: new StringField({ choices: CONFIG.ACKS.proficiencyType, required: true, initial: "general" }),
+      proficiencytype: new StringField({ choices: ACKS.proficiencyType, required: true, initial: "general" }),
       // is added to favorites
       favorite: new BooleanField({ initial: false }),
       // ability pattern marker (currently used for monsters only)
@@ -28,7 +31,7 @@ export default class AbilityData extends foundry.abstract.TypeDataModel {
       // Ability roll. Usually 1d20
       roll: new StringField({ blank: true, initial: "1d20" }),
       // Type of roll (=, ≥, ≤), used to check roll against roll target
-      rollType: new StringField({ choices: CONFIG.ACKS.roll_type, required: false, initial: "result" }),
+      rollType: new StringField({ choices: ACKS.roll_type, required: false, initial: ROLL_TYPE.RESULT }),
       // Target for roll
       rollTarget: new NumberField({ initial: 0 }),
       // is this a blind GM roll?

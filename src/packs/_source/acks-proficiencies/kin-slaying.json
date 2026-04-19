@@ -1,0 +1,36 @@
+{
+  "_id": "K8vZgIqnEl6NR508",
+  "name": "Kin-Slaying",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/kin-slaying.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has been trained to ruthlessly cut down his chthonic master's foes. He receives +1 on attack throws against humans, elves, dwarves, halflings, and gnomes. At level 7, this bonus increases to +2, and at level 13 it increases to +3.</p>\n<h2>+1 to attack throws</h2>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!K8vZgIqnEl6NR508"
+}

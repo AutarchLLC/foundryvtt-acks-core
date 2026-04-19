@@ -1,0 +1,78 @@
+{
+  "name": "Immunity to Fire",
+  "type": "ability",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    },
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "owner": {
+          "actorId": "sGHvpyiAvJ93SoDA"
+        },
+        "initialState": {
+          "id": "8QqjetAg8Ff4EQVq",
+          "count": 1,
+          "itemData": {
+            "name": "Immunity to Fire",
+            "permission": {
+              "default": 0,
+              "ssuDiZtGIm56KS7h": 3
+            },
+            "type": "ability",
+            "data": {
+              "pattern": "white",
+              "requirements": "",
+              "roll": "",
+              "rollType": "result",
+              "rollTarget": 0,
+              "blindroll": false,
+              "description": "<p>This monster is immune to the effects of all non-magical&nbsp;fire.&nbsp;</p>",
+              "save": ""
+            },
+            "folder": "RAUqUVBGOMERIu3j",
+            "sort": 1600000,
+            "flags": {},
+            "_id": "8QqjetAg8Ff4EQVq",
+            "img": "systems/acks/assets/icons/burning-skull.webp"
+          }
+        },
+        "itemType": "Item",
+        "isLocked": false
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/burning-skull.webp",
+  "_id": "BnT85bL4aCGmMvYD",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "green",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>This monster is immune to the effects of all non-magical&nbsp;fire.&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!BnT85bL4aCGmMvYD"
+}

@@ -1,0 +1,58 @@
+{
+  "_id": "PzMfBjMsIOrKuYqL",
+  "name": "Sword, Two-Handed",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/two-handed-sword.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>The two-handed sword includes straight and curved slashing and thrusting blades, 40\" or more in length, requiring two hands to use effectively. Historical examples include the medieval longsword, the Renaissance zweihänder, Scottish claymore, Japanese no-dachi, and Chinese zhanmadao. Two-handed swords impose a -1 penalty on initiative rolls.</p>",
+    "damage": "1d10",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": true,
+    "missile": false,
+    "melee": true,
+    "cost": 15,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 6,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!PzMfBjMsIOrKuYqL"
+}

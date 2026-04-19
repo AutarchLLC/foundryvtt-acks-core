@@ -1,0 +1,38 @@
+{
+  "_id": "tXulTgEqnAmUFBQO",
+  "name": "Herb, Garlic (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Garlic causes a vampire to cower for one round when presented by Lawful character with a WIL of 13 or higher. A vampire will not cower more than once per turn from garlic.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.1,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!tXulTgEqnAmUFBQO"
+}

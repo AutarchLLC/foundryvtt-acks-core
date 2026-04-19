@@ -1,0 +1,62 @@
+{
+  "_id": "qcViwDfsJ4Eny7us",
+  "name": "Breathe Fire",
+  "type": "ability",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "_id": "8cuOVq8fm7jfov42",
+            "flags": {},
+            "name": "Breathe Fire",
+            "type": "ability",
+            "img": "systems/acks/assets/icons/fire-breath2.webp",
+            "data": {
+              "pattern": "yellow",
+              "requirements": "",
+              "roll": "3d6",
+              "rollType": "result",
+              "rollTarget": 0,
+              "blindroll": false,
+              "description": "<p>Hellhounds fiery breath affects one target within 15' and deals 1d6 points of damage per Hit Die the attacking hell hound possesses. A successful saving throw versus Breath reduces the damage by half.&nbsp;</p>",
+              "save": "breath"
+            },
+            "sort": 200000
+          }
+        }
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/fire-breath2.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "yellow",
+    "requirements": "",
+    "roll": "3d6",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Hellhounds fiery breath affects one target within 15' and deals 1d6 points of damage per Hit Die the attacking hell hound possesses. A successful saving throw versus Breath reduces the damage by half.&nbsp;</p>",
+    "save": "breath"
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!qcViwDfsJ4Eny7us"
+}

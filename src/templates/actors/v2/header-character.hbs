@@ -1,0 +1,190 @@
+<section class="sheet-header">
+  <div class="actor-portrait">
+    <img src="{{actor.img}}" alt="{{actor.name}}" data-action="editImage" data-edit="img"/>
+  </div>
+  <div class="flexcol flex-1">
+    <div class="flexrow">
+      {{formInput fields.name value=actor.name placeholder=(localize "DOCUMENT.FIELDS.name.label")
+                  aria=(object label=(localize "DOCUMENT.FIELDS.name.label"))}}
+    </div>
+
+    <div class="flexrow">
+      {{formGroup actorFields.details.fields.alignment label="ACKS.details.alignment" value=system.details.alignment
+                  rootId=@root.partId localize=true classes="flex-2"}}
+      {{formGroup actorFields.details.fields.age label="ACKS.details.age" value=system.details.age
+                  rootId=@root.partId localize=true classes="flex-1"}}
+      {{formGroup actorFields.details.fields.fatepoints label="ACKS.details.fate" value=system.details.fatepoints
+                  rootId=@root.partId localize=true classes="flex-1"}}
+
+      {{#if system.retainer.enabled}}
+        {{formGroup actorFields.retainer.fields.wage label="ACKS.RetainerWage" value=system.retainer.wage
+                    rootId=@root.partId localize=true classes="flex-1"}}
+        <!-- Morale -->
+        <div class="form-group flex-1">
+          <a class="rollable-header" data-action="rollMorale">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-morale">
+              {{ localize "ACKS.details.morale" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.details.morale" value="{{system.details.morale}}"
+                   id="{{@root.partId}}-morale" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <!-- Loyalty -->
+        <div class="form-group flex-1">
+          <a class="rollable-header" data-action="rollLoyalty">
+            <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+            <label class="rollable-header__label" for="{{@root.partId}}-loyalty">
+              {{ localize "ACKS.Loyalty" }}
+            </label>
+          </a>
+          <div class="form-fields">
+            <input type="text" name="system.retainer.loyalty" value="{{system.retainer.loyalty}}"
+                   id="{{@root.partId}}-loyalty" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="form-group flex-2">
+          <label for="{{@root.partId}}-employerName">{{localize 'ACKS.employer'}}</label>
+          <div class="form-fields">
+            <input type="text" value="{{managerName}}" disabled id="{{@root.partId}}-employerName" data-dtype="String"/>
+          </div>
+        </div>
+
+        {{formGroup actorFields.retainer.fields.category label="ACKS.hireling.category" value=system.retainer.category
+                    rootId=@root.partId localize=true classes="flex-2"}}
+
+      {{else}}
+
+        {{formGroup actorFields.details.fields.title label="ACKS.details.title" value=system.details.title
+                    rootId=@root.partId localize=true classes="flex-4"}}
+
+      {{/if}}
+    </div>
+
+    <div class="flexrow">
+      {{#if isNew }}
+        <div class="form-icon-btn">
+          <button data-action="generateScores" type="button" class="plain icon fa-regular fa-dice blink"
+                  data-tooltip="{{localize 'ACKS.dialog.generateScores'}}"></button>
+        </div>
+      {{else}}
+        <div class="form-icon-btn">
+          <button data-action="showModifiersSummary" type="button" class="plain icon fa-regular fa-book"
+                  data-tooltip="{{localize 'ACKS.Modifiers'}}"></button>
+        </div>
+      {{/if}}
+
+      {{formGroup actorFields.details.fields.class label="ACKS.details.class" value=system.details.class
+                  rootId=@root.partId localize=true classes="flex-4"}}
+      {{formGroup actorFields.details.fields.level label="ACKS.details.level" value=system.details.level
+                  rootId=@root.partId localize=true classes="flex-1"}}
+
+      <div class="form-group flex-2">
+        <label for="{{@root.partId}}-xpValue">{{localize 'ACKS.details.experience.base'}}</label>
+        <div class="form-fields xp-value">
+          <input type="text" name="system.details.xp.value" value="{{system.details.xp.value}}"
+                 id="{{@root.partId}}-xpValue" data-dtype="Number"/>
+          {{#if system.details.xp.bonus}}
+            <i class="xp-value__bonus">+{{system.details.xp.bonus}}%</i>
+          {{/if}}
+        </div>
+      </div>
+
+      {{formGroup actorFields.details.fields.xp.fields.next label="ACKS.details.experience.next"
+                  value=system.details.xp.next rootId=@root.partId localize=true classes="flex-2"}}
+
+    </div>
+
+    <div class="flexrow">
+
+      <!-- HP -->
+      <div class="form-group health-box">
+        <label>HP</label>
+        <div class="form-fields health">
+          <input name="system.hp.value" type="number" value="{{system.hp.value}}" data-dtype="Number" placeholder="0"
+                 data-tooltip="{{localize 'ACKS.Health'}}" class="health__current"/>
+          <span>/</span>
+          <input name="system.hp.max" type="number" value="{{system.hp.max}}" data-dtype="Number" placeholder="0"
+                 data-tooltip="{{localize 'ACKS.HealthMax'}}" class="health__max"/>
+        </div>
+      </div>
+
+      {{#if (lte system.hp.value 0)}}
+        <div class="form-icon-btn">
+          <button data-action="rollMortalWounds" type="button" class="plain icon fa-regular fa-skull"
+                  data-tooltip="Roll Mortal Wounds"></button>
+        </div>
+        <div class="form-icon-btn">
+          <button data-action="rollTamperingWithMortality" type="button" class="plain icon fa-regular fa-scythe"
+                  data-tooltip="Roll Tampering With Mortality"></button>
+        </div>
+      {{/if}}
+
+      <!-- Hit Dice -->
+      <div class="form-group">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HitDice'}}" data-action="rollHitDice">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-hitDice">
+            {{ localize "ACKS.HitDiceShort" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.hp.hd" value="{{system.hp.hd}}" id="{{@root.partId}}-hitDice"
+                 data-dtype="String" placeholder="1d8"/>
+        </div>
+      </div>
+
+      <!-- Healing rate -->
+      <div class="form-group">
+        <a class="rollable-header" data-tooltip="{{localize 'ACKS.HealingRate'}}" data-action="rollBaseHealingRate">
+          <i class="fa-solid fa-dice-d20 rollable-header__icon"></i>
+          <label class="rollable-header__label" for="{{@root.partId}}-bhr">
+            {{ localize "ACKS.HealingRate" }}
+          </label>
+        </a>
+        <div class="form-fields">
+          <input type="text" name="system.fight.healingrate" value="{{system.fight.healingrate}}"
+                 id="{{@root.partId}}-bhr" data-dtype="String" placeholder="1d8"/>
+        </div>
+      </div>
+
+      <!-- Mortal Wounds -->
+      {{formGroup actorFields.fight.fields.mortalwounds label="ACKS.MortalWounds" value=system.fight.mortalwounds
+                  rootId=@root.partId localize=true}}
+
+      <!-- AC -->
+      <div class="form-group">
+        <label class="ac-label">
+          <span>AC</span>
+          {{#if system.aac.shield}}
+            <span class="shield" data-tooltip="{{localize 'ACKS.items.hasShield'}} ({{system.aac.shield}})">
+              <i class="fas fa-shield-alt"></i>
+            </span>
+          {{/if}}
+        </label>
+        <div class="form-fields">
+          <input type="text" value="{{system.aac.value}}" data-tooltip="{{localize 'ACKS.ArmorClass'}}"
+                 data-dtype="Number" disabled/>
+          <input type="text" value="{{system.aac.naked}}" data-tooltip="{{localize 'ACKS.ArmorClassNaked'}}"
+                 data-dtype="Number" disabled/>
+        </div>
+      </div>
+
+      <!-- Encumbrance -->
+      <div class="form-group">
+        <label data-tooltip="{{localize 'ACKS.Encumbrance'}}">{{localize 'ACKS.Encumbrance'}}</label>
+        <div class="form-fields">
+          <span data-tooltip="{{getWeight6Tooltip system.encumbrance.value6 system.encumbrance.max6}}">
+            {{stoneWeight system.encumbrance.value6}} / {{stoneWeight system.encumbrance.max6}}
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

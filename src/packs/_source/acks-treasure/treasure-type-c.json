@@ -1,0 +1,145 @@
+{
+  "name": "Treasure Type C",
+  "flags": {
+    "better-rolltables": {
+      "table-type": "better",
+      "table-currency-string": "",
+      "loot-actor-name": "",
+      "loot-amount-key": ""
+    },
+    "ose": {
+      "treasure": true
+    },
+    "acks": {
+      "treasure": true
+    }
+  },
+  "description": "Incidental, 700gp average value",
+  "results": [
+    {
+      "_id": "2MDgj2neRVTrEOeG",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 15,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4*1000]]ep",
+      "name": "",
+      "_key": "!tables.results!qhPZ9FMoXfDkSreI.2MDgj2neRVTrEOeG"
+    },
+    {
+      "_id": "quSSs4gypBAqEpzI",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d6]] gems",
+      "name": "",
+      "_key": "!tables.results!qhPZ9FMoXfDkSreI.quSSs4gypBAqEpzI"
+    },
+    {
+      "_id": "FenQUvuZSHHd0B97",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d6]] trinkets",
+      "name": "",
+      "_key": "!tables.results!qhPZ9FMoXfDkSreI.FenQUvuZSHHd0B97"
+    },
+    {
+      "_id": "iceyopJrRL0WflqN",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 1 Magic Item",
+      "name": "",
+      "_key": "!tables.results!qhPZ9FMoXfDkSreI.iceyopJrRL0WflqN"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_id": "qhPZ9FMoXfDkSreI",
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!qhPZ9FMoXfDkSreI"
+}

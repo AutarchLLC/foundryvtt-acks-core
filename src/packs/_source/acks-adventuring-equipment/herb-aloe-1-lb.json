@@ -1,0 +1,38 @@
+{
+  "_id": "IkJ1vu7CpgsfCckS",
+  "name": "Herb, Aloe (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Aloe, also known as burn plant, is a healing herb used to treat burns. A character with Healing proficiency can use 1 lb of aloe in a liniment to treat a patient with acid, cold, electric, or fire damage. The patient is healed 1d3 damage, or up to the amount of acid, cold, electric, or fire damage suffered, whichever is less. A patient cannot be treated with a liniment of aloe more than once per day. Applying the liniment takes 1 turn (10 minutes).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!IkJ1vu7CpgsfCckS"
+}

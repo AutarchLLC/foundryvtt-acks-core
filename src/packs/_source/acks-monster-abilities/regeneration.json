@@ -1,0 +1,36 @@
+{
+  "name": "Regeneration",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/scar-wound-small.webp",
+  "_id": "ovjKh2QRTQ7o2eWb",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d1",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Thouls can regenerate as a troll for [[/r 1 #The Thoul's wounds close, healing this many hp...]] hp per round. Hit points are gained at the start of each combat round, unless the damage is from fire or acid.&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!ovjKh2QRTQ7o2eWb"
+}

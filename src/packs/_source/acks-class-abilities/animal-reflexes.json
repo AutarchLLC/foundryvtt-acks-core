@@ -1,0 +1,36 @@
+{
+  "name": "Animal Reflexes",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/snake.webp",
+  "_id": "vM2rpl9MwaFFH8bb",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>True warriors never hesitate in combat. The character gains a +1 bonus on surprise rolls and initiative rolls. This bonus does not apply when casting spells.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!vM2rpl9MwaFFH8bb"
+}

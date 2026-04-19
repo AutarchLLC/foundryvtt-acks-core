@@ -1,0 +1,36 @@
+{
+  "name": "Vermin",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/maggot.webp",
+  "_id": "Zv5SvMtNvXH93G9n",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Zv5SvMtNvXH93G9n"
+}

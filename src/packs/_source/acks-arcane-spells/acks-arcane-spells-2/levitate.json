@@ -1,0 +1,36 @@
+{
+  "_id": "KGpmnV1cbmmlmGyZ",
+  "name": "Levitate",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/levitate2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "6 Turns+1/lvl",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>Levitate allows the caster to move himself, another creature, or an object up and down as desired. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. The caster can mentally direct the subject to move up or down as much as 20' each round, by concentration. The caster cannot move the subject horizontally, but the subject could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its normal land speed). A creature can carry its normal amount of weight when levitating (possibly including another creature).</p>\n<p>A levitating creature that attacks with a weapon finds itself increasingly unstable; the first attack throw has a -1 attack penalty, the second -2, and so on, to a maximum penalty of -5. A full round spent stabilizing allows the creature to begin again at -1.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!KGpmnV1cbmmlmGyZ"
+}

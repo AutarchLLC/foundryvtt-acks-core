@@ -1,0 +1,38 @@
+{
+  "_id": "rQKFhquX3JoEs9WK",
+  "name": "Bowquiver",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This all-in-one leather case is designed to carry both a bow and its arrows. The bow can be placed in the bowquiver already strung, and will rest securely with about half of its length extending out of the case. A special pocket on the front of the bowquiver can hold up to 20 arrows. The bowquiver can be hung from a belt hook at the waist or from a strap over the shoulder. An empty bowquiver counts as 1 item for encumbrance purposes, while a bowquiver with composite bow and 20 arrows counts as 2 items. In the Auran Empire setting, bowquivers are only available in Skysostan.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": null,
+    "iconlicense": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!rQKFhquX3JoEs9WK"
+}

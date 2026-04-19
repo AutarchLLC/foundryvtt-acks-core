@@ -1,0 +1,629 @@
+{
+  "_id": "wEn0ghP4RfiUXeFS",
+  "name": "Gargoyle",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "ose": {
+      "party": false
+    },
+    "acks": {
+      "party": false,
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/generic/gargoyle.webp",
+  "items": [
+    {
+      "_id": "4ComH3jaqixTiraj",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "4ComH3jaqixTiraj",
+                "flags": {},
+                "name": "Claws",
+                "type": "weapon",
+                "img": "systems/acks/assets/icons/grasping-claws.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "green",
+                  "description": "",
+                  "damage": "1d3",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 0,
+                  "equipped": false,
+                  "weight": 0,
+                  "counter": {
+                    "value": 2,
+                    "max": 2
+                  }
+                },
+                "sort": 100000
+              }
+            }
+          }
+        }
+      },
+      "name": "Claws",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/grasping-claws.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "green",
+        "description": "",
+        "damage": "1d3",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 2,
+          "max": 2
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!wEn0ghP4RfiUXeFS.4ComH3jaqixTiraj"
+    },
+    {
+      "_id": "LmxDEDoPbC182W9z",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "LmxDEDoPbC182W9z",
+                "flags": {},
+                "name": "Bite",
+                "type": "weapon",
+                "img": "systems/acks/assets/icons/fangs.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "green",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 0,
+                  "equipped": false,
+                  "weight": 0,
+                  "counter": {
+                    "value": 1,
+                    "max": 1
+                  }
+                },
+                "sort": 200000
+              }
+            }
+          }
+        }
+      },
+      "name": "Bite",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/fangs.webp",
+      "sort": 200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "green",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!wEn0ghP4RfiUXeFS.LmxDEDoPbC182W9z"
+    },
+    {
+      "_id": "rMl2zuk2Bdz9QC1d",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "rMl2zuk2Bdz9QC1d",
+                "flags": {},
+                "name": "Horns",
+                "type": "weapon",
+                "img": "systems/acks/assets/icons/horns.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "green",
+                  "description": "",
+                  "damage": "1d4",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 0,
+                  "equipped": false,
+                  "weight": 0,
+                  "counter": {
+                    "value": 1,
+                    "max": 1
+                  }
+                },
+                "sort": 300000
+              }
+            }
+          }
+        }
+      },
+      "name": "Horns",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/horns.webp",
+      "sort": 300000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "green",
+        "description": "",
+        "damage": "1d4",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!wEn0ghP4RfiUXeFS.rMl2zuk2Bdz9QC1d"
+    },
+    {
+      "_id": "AzAtJNpT5LLkApoJ",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "AzAtJNpT5LLkApoJ",
+                "flags": {
+                  "dynamiceffects": {
+                    "equipActive": false,
+                    "alwaysActive": false,
+                    "effects": []
+                  }
+                },
+                "name": "Construct",
+                "type": "ability",
+                "img": "systems/acks/assets/icons/gargoyle.webp",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Constructs are unaffected by <em>sleep</em>,&nbsp;<em>hold</em>, or&nbsp;<em>charm&nbsp;</em>spells, and are immune to poison.</p>",
+                  "save": ""
+                },
+                "sort": 700001
+              }
+            }
+          }
+        }
+      },
+      "name": "Construct",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/gargoyle.webp",
+      "sort": 700001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Constructs are unaffected by <em>sleep</em>,&nbsp;<em>hold</em>, or&nbsp;<em>charm&nbsp;</em>spells, and are immune to poison.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!wEn0ghP4RfiUXeFS.AzAtJNpT5LLkApoJ"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "4d8",
+      "value": 18,
+      "max": 18,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 5,
+      "mod": 0
+    },
+    "aac": {
+      "value": 4,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 16,
+      "bba": 3,
+      "throw": 7,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 9
+      },
+      "wand": {
+        "value": 11
+      },
+      "paralysis": {
+        "value": 10
+      },
+      "breath": {
+        "value": 11
+      },
+      "spell": {
+        "value": "12"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 90,
+      "mod": 0,
+      "value": "Fly 150' (50')",
+      "encounter": 30
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "C",
+      "xp": "135",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d6",
+        "w": "2d4"
+      },
+      "morale": "3"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "hidden": false,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Gargoyle",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/generic/gargoyle.webp",
+      "tint": "#ffffff",
+      "scaleX": 1,
+      "scaleY": 1,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!wEn0ghP4RfiUXeFS"
+}

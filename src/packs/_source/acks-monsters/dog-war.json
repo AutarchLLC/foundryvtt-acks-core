@@ -1,0 +1,820 @@
+{
+  "_id": "ocnYgqc4yFKjr0Ae",
+  "name": "Dog, War",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "ose": {
+      "party": false
+    },
+    "acks": {
+      "party": false,
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/generic/hound.webp",
+  "items": [
+    {
+      "_id": "nCT5uLUp0X5VRSI7",
+      "flags": {},
+      "name": "Maul",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/jawbone.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "transparent",
+        "description": "",
+        "damage": "1d6+1",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!ocnYgqc4yFKjr0Ae.nCT5uLUp0X5VRSI7"
+    },
+    {
+      "_id": "8AWsmGLTPgX7ILfv",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "MevRcnCzo2m1ELDm"
+            },
+            "initialState": {
+              "id": "E5b1cP0bzFe8ajjw",
+              "count": 1,
+              "itemData": {
+                "_id": "E5b1cP0bzFe8ajjw",
+                "name": "Animal",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Animals are a type of monster that includes apes, rock baboons, bats, bears, boars, camels, cats, crocodiles, dogs, elephants, ferrets, fish, hawks, herd animals, horses, lizards, mules, octopuses, rats, rhinoceroses, shark, shrews, snakes, squids, toads, weasels, whales, wolves, and any other creatures of subhuman intelligence that occur in the real world. Giant animals are merely larger version of normal animals, and therefore part of this type. Prehistoric animals, such as cave bears, dinosaurs, mastodons, saber-toothed tigers, and titanothere are also animals.</p>\n<p><em>Charm animal</em>, <em>speak with animal</em>, and related magic items only work on animals. They are also vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 425001,
+                "flags": {},
+                "img": "systems/acks/assets/icons/stag-head.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Animal",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/stag-head.webp",
+      "sort": 425001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Animals are a type of monster that includes apes, rock baboons, bats, bears, boars, camels, cats, crocodiles, dogs, elephants, ferrets, fish, hawks, herd animals, horses, lizards, mules, octopuses, rats, rhinoceroses, shark, shrews, snakes, squids, toads, weasels, whales, wolves, and any other creatures of subhuman intelligence that occur in the real world. Giant animals are merely larger version of normal animals, and therefore part of this type. Prehistoric animals, such as cave bears, dinosaurs, mastodons, saber-toothed tigers, and titanothere are also animals.</p>\n<p><em>Charm animal</em>, <em>speak with animal</em>, and related magic items only work on animals. They are also vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!ocnYgqc4yFKjr0Ae.8AWsmGLTPgX7ILfv"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "2d8+2",
+      "value": 11,
+      "max": 11,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 4,
+      "mod": 0
+    },
+    "aac": {
+      "value": 5,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 17,
+      "bba": 2,
+      "throw": 8,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 14
+      },
+      "wand": {
+        "value": 16
+      },
+      "paralysis": {
+        "value": 15
+      },
+      "breath": {
+        "value": 16
+      },
+      "spell": {
+        "value": "17"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 90,
+      "mod": 0,
+      "value": "",
+      "encounter": 30
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "Neutral",
+      "xp": "35",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d4",
+        "w": "2d4"
+      },
+      "morale": "2"
+    },
+    "attacks": "",
+    "actor": {
+      "name": "Hunting Dog",
+      "permission": {
+        "default": 0,
+        "ssuDiZtGIm56KS7h": 3
+      },
+      "type": "monster",
+      "data": {
+        "retainer": {
+          "enabled": false,
+          "loyalty": 0,
+          "wage": ""
+        },
+        "hp": {
+          "hd": "1d8+1",
+          "value": 5,
+          "max": 5
+        },
+        "ac": {
+          "value": 0,
+          "mod": 0
+        },
+        "aac": {
+          "value": 0,
+          "mod": 0
+        },
+        "thac0": {
+          "value": 19,
+          "bba": 0,
+          "mod": {
+            "missile": 0,
+            "melee": 0
+          }
+        },
+        "saves": {
+          "death": {
+            "value": 0
+          },
+          "wand": {
+            "value": 0
+          },
+          "paralysis": {
+            "value": 0
+          },
+          "breath": {
+            "value": 0
+          },
+          "spell": {
+            "value": "0"
+          }
+        },
+        "movement": {
+          "base": 120,
+          "encounter": 40
+        },
+        "initiative": {
+          "value": 0,
+          "mod": 0
+        },
+        "spells": {
+          "1": {
+            "max": 0
+          },
+          "2": {
+            "max": 0
+          },
+          "3": {
+            "max": 0
+          },
+          "4": {
+            "max": 0
+          },
+          "5": {
+            "max": 0
+          },
+          "6": {
+            "max": 0
+          },
+          "enabled": false
+        },
+        "details": {
+          "biography": "",
+          "alignment": "",
+          "xp": "0",
+          "treasure": {
+            "table": "",
+            "type": ""
+          },
+          "appearing": {
+            "d": "0",
+            "w": "0"
+          },
+          "morale": "0"
+        },
+        "attacks": "",
+        "isSlow": false,
+        "actor": {
+          "name": "Hunting Dog",
+          "permission": {
+            "default": 0,
+            "ssuDiZtGIm56KS7h": 3
+          },
+          "type": "monster",
+          "data": {
+            "retainer": {
+              "enabled": false,
+              "loyalty": 0,
+              "wage": ""
+            },
+            "hp": {
+              "hd": "1d8+1",
+              "value": 8,
+              "max": 8
+            },
+            "ac": {
+              "value": 0,
+              "mod": 0
+            },
+            "aac": {
+              "value": 0,
+              "mod": 0
+            },
+            "thac0": {
+              "value": 19,
+              "bba": 0,
+              "mod": {
+                "missile": 0,
+                "melee": 0
+              }
+            },
+            "saves": {
+              "death": {
+                "value": 0
+              },
+              "wand": {
+                "value": 0
+              },
+              "paralysis": {
+                "value": 0
+              },
+              "breath": {
+                "value": 0
+              },
+              "spell": {
+                "value": "0"
+              }
+            },
+            "movement": {
+              "base": 120,
+              "encounter": 40
+            },
+            "initiative": {
+              "value": 0,
+              "mod": 0
+            },
+            "spells": {
+              "1": {
+                "max": 0
+              },
+              "2": {
+                "max": 0
+              },
+              "3": {
+                "max": 0
+              },
+              "4": {
+                "max": 0
+              },
+              "5": {
+                "max": 0
+              },
+              "6": {
+                "max": 0
+              },
+              "enabled": false
+            },
+            "details": {
+              "biography": "",
+              "alignment": "",
+              "xp": "0",
+              "treasure": {
+                "table": "",
+                "type": ""
+              },
+              "appearing": {
+                "d": "0",
+                "w": "0"
+              },
+              "morale": "0"
+            },
+            "attacks": "",
+            "isSlow": false,
+            "actor": {
+              "name": "Hunting Dog",
+              "permission": {
+                "default": 0,
+                "ssuDiZtGIm56KS7h": 3
+              },
+              "type": "monster",
+              "data": {
+                "retainer": {
+                  "enabled": false,
+                  "loyalty": 0,
+                  "wage": ""
+                },
+                "hp": {
+                  "hd": "1d8",
+                  "value": 20,
+                  "max": 20
+                },
+                "ac": {
+                  "value": 0,
+                  "mod": 0
+                },
+                "aac": {
+                  "value": 0,
+                  "mod": 0
+                },
+                "thac0": {
+                  "value": 19,
+                  "bba": 0,
+                  "mod": {
+                    "missile": 0,
+                    "melee": 0
+                  }
+                },
+                "saves": {
+                  "death": {
+                    "value": 0
+                  },
+                  "wand": {
+                    "value": 0
+                  },
+                  "paralysis": {
+                    "value": 0
+                  },
+                  "breath": {
+                    "value": 0
+                  },
+                  "spell": {
+                    "value": 0
+                  }
+                },
+                "movement": {
+                  "base": 120,
+                  "encounter": 40
+                },
+                "initiative": {
+                  "value": 0,
+                  "mod": 0
+                },
+                "spells": {
+                  "1": {
+                    "max": 0
+                  },
+                  "2": {
+                    "max": 0
+                  },
+                  "3": {
+                    "max": 0
+                  },
+                  "4": {
+                    "max": 0
+                  },
+                  "5": {
+                    "max": 0
+                  },
+                  "6": {
+                    "max": 0
+                  },
+                  "enabled": false
+                },
+                "details": {
+                  "biography": "",
+                  "alignment": "",
+                  "xp": 0,
+                  "treasure": {
+                    "table": "",
+                    "type": ""
+                  },
+                  "appearing": {
+                    "d": 0,
+                    "w": 0
+                  },
+                  "morale": 0
+                },
+                "attacks": "",
+                "isSlow": false
+              },
+              "folder": "YyScYSVw2BtYMe8b",
+              "sort": 900000,
+              "flags": {
+                "ose": {
+                  "conditions": []
+                }
+              },
+              "token": {
+                "flags": {},
+                "name": "Hunting Dog",
+                "displayName": 0,
+                "img": "icons/svg/mystery-man.svg",
+                "tint": null,
+                "width": 1,
+                "height": 1,
+                "scale": 1,
+                "lockRotation": false,
+                "rotation": 0,
+                "vision": false,
+                "dimSight": 0,
+                "brightSight": 0,
+                "dimLight": 0,
+                "brightLight": 0,
+                "sightAngle": 360,
+                "lightAngle": 360,
+                "lightAlpha": 1,
+                "actorId": "MevRcnCzo2m1ELDm",
+                "actorLink": false,
+                "actorData": {},
+                "disposition": -1,
+                "displayBars": 0,
+                "bar1": {},
+                "bar2": {},
+                "randomImg": false
+              },
+              "items": [],
+              "_id": "MevRcnCzo2m1ELDm",
+              "img": "icons/svg/mystery-man.svg"
+            }
+          },
+          "folder": "YyScYSVw2BtYMe8b",
+          "sort": 900000,
+          "flags": {
+            "ose": {
+              "conditions": []
+            }
+          },
+          "token": {
+            "flags": {},
+            "name": "Hunting Dog",
+            "displayName": 0,
+            "img": "icons/svg/mystery-man.svg",
+            "tint": null,
+            "width": 1,
+            "height": 1,
+            "scale": 1,
+            "lockRotation": false,
+            "rotation": 0,
+            "vision": false,
+            "dimSight": 0,
+            "brightSight": 0,
+            "dimLight": 0,
+            "brightLight": 0,
+            "sightAngle": 360,
+            "lightAngle": 360,
+            "lightAlpha": 1,
+            "actorId": "MevRcnCzo2m1ELDm",
+            "actorLink": false,
+            "actorData": {},
+            "disposition": -1,
+            "displayBars": 0,
+            "bar1": {},
+            "bar2": {},
+            "randomImg": false
+          },
+          "items": [],
+          "_id": "MevRcnCzo2m1ELDm",
+          "img": "icons/svg/mystery-man.svg"
+        }
+      },
+      "folder": "YyScYSVw2BtYMe8b",
+      "sort": 900000,
+      "flags": {
+        "ose": {
+          "conditions": []
+        }
+      },
+      "token": {
+        "flags": {},
+        "name": "Hunting Dog",
+        "displayName": 0,
+        "img": "icons/svg/mystery-man.svg",
+        "tint": null,
+        "width": 1,
+        "height": 1,
+        "scale": 1,
+        "lockRotation": false,
+        "rotation": 0,
+        "vision": false,
+        "dimSight": 0,
+        "brightSight": 0,
+        "dimLight": 0,
+        "brightLight": 0,
+        "sightAngle": 360,
+        "lightAngle": 360,
+        "lightAlpha": 1,
+        "actorId": "MevRcnCzo2m1ELDm",
+        "actorLink": false,
+        "actorData": {},
+        "disposition": -1,
+        "displayBars": 0,
+        "bar1": {},
+        "bar2": {},
+        "randomImg": false
+      },
+      "items": [],
+      "_id": "MevRcnCzo2m1ELDm",
+      "img": "icons/svg/mystery-man.svg"
+    }
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "hidden": false,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "War Dog",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": 1,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "actor.data.actor.data.actor.data.movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/generic/hound.webp",
+      "tint": "#ffffff",
+      "scaleX": 0.9,
+      "scaleY": 0.9,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!ocnYgqc4yFKjr0Ae"
+}

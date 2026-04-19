@@ -1,0 +1,54 @@
+{
+  "_id": "OBvxd0pGGfpT75ke",
+  "name": "Sling with Bullets",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/sling.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 45,
+      "medium": 90,
+      "long": 180
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>A sling is a projectile weapon, made of braided flax, hemp or wool cord, used to hurl small stones or lead bullets. Slings were used by all armies of the ancient world. Historical examples include the Hebrew shepherd's sling and Greek peltast's sling.</p>\n<p>Limited to 4 cleaves. (Core Rules p. 105)</p>",
+    "damage": "1d4",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Missile",
+        "value": "Missile"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": false,
+    "cost": 2,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!OBvxd0pGGfpT75ke"
+}

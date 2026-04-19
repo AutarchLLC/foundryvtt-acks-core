@@ -1,0 +1,88 @@
+{
+  "name": "Pseudopod",
+  "type": "weapon",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "_id": "GIlrD9pp7aQK2r9x",
+            "flags": {},
+            "name": "Pseudopod",
+            "type": "weapon",
+            "img": "systems/acks/assets/icons/splurt.webp",
+            "data": {
+              "range": {
+                "short": 0,
+                "medium": 0,
+                "long": 0
+              },
+              "save": "paralysis",
+              "pattern": "red",
+              "description": "<p>Save versus Paralysis or be paralyzed for [[/gmr 2d4 #Paralyzed for this many Turns]] Turns. This paralysis may be cured with <em>cure light wounds</em>. Those paralyzed are hit automatically on subsequent rounds.</p>",
+              "damage": "2d4",
+              "bonus": 0,
+              "tags": [],
+              "slow": false,
+              "missile": false,
+              "melee": true,
+              "cost": 0,
+              "equipped": false,
+              "weight": 0,
+              "counter": {
+                "value": 1,
+                "max": 1
+              }
+            },
+            "sort": 100000
+          }
+        }
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/splurt.webp",
+  "_id": "Eefa4XxAPDglY1af",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "paralysis",
+    "pattern": "red",
+    "description": "<p>Save versus Paralysis or be paralyzed for [[/gmr 2d4 #Paralyzed for this many Turns]] Turns. This paralysis may be cured with <em>cure light wounds</em>. Those paralyzed are hit automatically on subsequent rounds.</p>",
+    "damage": "2d4",
+    "bonus": 0,
+    "tags": [],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight": 0,
+    "weight6": -1,
+    "counter": {
+      "value": 1,
+      "max": 1
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Eefa4XxAPDglY1af"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "QYLgAimIALRlbYmH",
+  "name": "Cause Light Wounds",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/heart-minus.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358012,
+    "modifiedTime": 1730058358012,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Divine",
+    "duration": "Instant",
+    "range": "Touch",
+    "roll": "1d6+1 Damage Inflicted",
+    "description": "<p>With this spell the caster <strong>causes 1d6+1 points of damage</strong> by touching his hand upon the target creature. A successful attack throw is required.</p>\n<p>Undead are healed by <em>Cause Light Wounds</em>.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "NYA8pw0gLlA5SnQ1",
+  "sort": 0,
+  "_key": "!items!QYLgAimIALRlbYmH"
+}

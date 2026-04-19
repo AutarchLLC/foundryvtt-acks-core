@@ -1,0 +1,36 @@
+{
+  "_id": "V19YWxYORuX7Mn47",
+  "name": "Command",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/command.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has mastered the art of command. His authority inspires men to follow him into danger. The character's henchmen and mercenaries receive a +2 bonus to morale. Morale is explained in Hirelings, Henchmen, Mercenaries, and Specialists.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!V19YWxYORuX7Mn47"
+}

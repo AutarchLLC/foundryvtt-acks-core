@@ -1,0 +1,455 @@
+{
+  "_id": "mwhJLdVb1Bg4lVsq",
+  "name": "Troll",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {},
+  "img": "systems/acks/assets/tokens/orcs_and_trolls/Troll_fighter3.webp",
+  "items": [
+    {
+      "_id": "gNdY6CMZIqQJoo4O",
+      "flags": {},
+      "name": "Fear of Fire",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/flame.webp",
+      "sort": 800000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "yellow",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Rats fear fire, and must make a morale roll if burned with torches or oil.&nbsp;</p>\n<p>Trolls' morale drops to 0 when confronted by fire or acid.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mwhJLdVb1Bg4lVsq.gNdY6CMZIqQJoo4O"
+    },
+    {
+      "_id": "cKm9zG4r2gFcqWI8",
+      "flags": {},
+      "name": "Humanoid",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/person.webp",
+      "sort": 700000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th&nbsp;level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mwhJLdVb1Bg4lVsq.cKm9zG4r2gFcqWI8"
+    },
+    {
+      "_id": "WFqWUbCw5mmAIwhs",
+      "flags": {},
+      "name": "Superior Regeneration",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/open-wound.webp",
+      "sort": 2200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "green",
+        "requirements": "",
+        "roll": "3",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Trolls are very hard to kill, for they regenerate [[/r 3 #The Troll's wounds close, healing this many hp...]] points of damage each round, unless the damage is from fire or acid. If a troll loses a limb or body part, these parts will attempt to crawl or squirm back toward the main portion of the body to reattach. A troll can reattach a severed member instantly by holding it to the stump. Due to this powerful ability to regenerate, trolls cannot be permanently destroyed except by fire or acid. If a troll is damaged enough to be killed (reaches 0 or fewer hit points) the troll will continue to regenerate and stand again to fight when it regenerates to 1 or more hp. When confronted by fire or acid, a troll's morale drops to 0.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mwhJLdVb1Bg4lVsq.WFqWUbCw5mmAIwhs"
+    },
+    {
+      "_id": "zKV1ySV8UnsvoqYM",
+      "flags": {},
+      "name": "Troll Claws",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/grasping-claws.webp",
+      "sort": 2300000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "red",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 2,
+          "max": 2
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mwhJLdVb1Bg4lVsq.zKV1ySV8UnsvoqYM"
+    },
+    {
+      "_id": "sRqKwPrmAe9nPLor",
+      "flags": {},
+      "name": "Troll Bite",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/carnivore-mouth.webp",
+      "sort": 2400000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "red",
+        "description": "",
+        "damage": "1d10",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!mwhJLdVb1Bg4lVsq.sRqKwPrmAe9nPLor"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "6d8+3",
+      "value": 30,
+      "max": 30,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 5,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 7,
+      "throw": 3,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 11
+      },
+      "wand": {
+        "value": 13
+      },
+      "paralysis": {
+        "value": 12
+      },
+      "breath": {
+        "value": 13
+      },
+      "spell": {
+        "value": "14"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 120,
+      "mod": 0,
+      "value": "",
+      "encounter": 40
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "C",
+      "xp": "680",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d8",
+        "w": "1d8"
+      },
+      "morale": "2"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {},
+    "name": "Troll",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/orcs_and_trolls/Troll_fighter3.webp",
+      "tint": "#ffffff",
+      "scaleX": 1.4,
+      "scaleY": 1.4,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": false,
+      "range": 0,
+      "brightness": 1,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!mwhJLdVb1Bg4lVsq"
+}

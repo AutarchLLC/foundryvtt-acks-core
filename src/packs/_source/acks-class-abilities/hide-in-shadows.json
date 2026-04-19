@@ -1,0 +1,36 @@
+{
+  "name": "Hide in Shadows",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hide-in-shadows2.webp",
+  "_id": "5w5kgRVtmEaldgy0",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "Thief",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 19,
+    "blindroll": true,
+    "description": "<p>A character may attempt to skulk unseen in the cover of darkness. A character will always think he is successful in this skill, and will not know otherwise until others react to his presence. A character will remain hidden so long as he stays motionless. If he moves, he must make a new proficiency throw to hide.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!5w5kgRVtmEaldgy0"
+}

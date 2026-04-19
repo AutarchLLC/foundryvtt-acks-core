@@ -1,0 +1,98 @@
+{{! PARAMS:  }}
+{{!   hirelings - array of duplicates of AcksActor }}
+{{!   title - string title for the section }}
+{{!   owner - boolean }}
+<section class="item-list-section">
+
+  <div class="list-header">
+
+    <div class="list-header__controls left-side">
+      <a class="item-control toggle" data-action="toggleListSection">
+        <i class="fas fa-caret-down"></i>
+      </a>
+    </div>
+
+    <div class="item__name">{{title}}</div>
+    <div class="item__class">{{localize "ACKS.details.class"}}</div>
+    <div class="item__count">{{localize "ACKS.QuantityShort"}}</div>
+    <div class="item__loyalty">{{localize "ACKS.Loyalty"}}</div>
+    <div class="item__morale">{{localize "ACKS.details.morale"}}</div>
+    <div class="item__wage">{{localize "ACKS.RetainerWage"}}</div>
+    <div class="item__level">{{localize "ACKS.details.level"}}</div>
+    <div class="item__exp-current">{{localize "ACKS.details.experience.baseshort"}}</div>
+    <div class="item__exp-next">{{localize "ACKS.details.experience.nextshort"}}</div>
+    {{#if owner}}
+      <div class="list-header__controls controls__hireling"></div>
+    {{/if}}
+
+  </div>
+
+  <div class="item-list-wrapper expanded">
+    <ul class="item-list unlist">
+      {{#each hirelings as |hireling|}}
+        <li class="item" data-item-id="{{hireling._id}}">
+          <div class="item-row">
+
+            <!-- Hireling Icon -->
+            <div class="item__icon">
+              <img src="{{hireling.img}}" alt="{{hireling.name}}" class="item__image"/>
+            </div>
+
+            <!-- Hireling Name -->
+            <div class="item__name">
+              <a data-action="hirelingShow">{{hireling.name}}</a>
+            </div>
+
+            <!-- Hireling class -->
+            <div class="item__class">{{hireling.system.details.class}}</div>
+
+            <!-- Hireling Count -->
+            <div class="item__count">
+              <input class="item-input small" type="number" data-name="system.retainer.quantity" data-kind="actor"
+                     value="{{hireling.system.retainer.quantity}}" data-dtype="Number"/>
+            </div>
+
+            <!-- Hireling loyalty -->
+            <div class="item__loyalty">
+              <a data-action="hirelingLoyalty">
+                <i class="fas fa-dice-d20"></i>&nbsp;{{hireling.system.retainer.loyalty}}
+              </a>
+            </div>
+
+            <!-- Hireling morale -->
+            <div class="item__morale">
+              <a data-action="hirelingMorale">
+                <i class="fas fa-dice-d20"></i>&nbsp;{{hireling.system.details.morale}}
+              </a>
+            </div>
+
+            <!-- Hireling wage -->
+            <div class="item__wage">{{hireling.system.retainer.wage}}</div>
+
+            <!-- Hireling level -->
+            <div class="item__level">{{hireling.system.details.level}}</div>
+
+            <!-- Hireling current xp -->
+            <div class="item__exp-current">{{hireling.system.details.xp.value}}</div>
+
+            <!-- Hireling xp to next level -->
+            <div class="item__exp-next">{{hireling.system.details.xp.next}}</div>
+
+            <!-- Hireling Controls -->
+            {{#if ../owner}}
+              <div class="list-header__controls controls__hireling">
+
+                <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}' data-action="hirelingDelete">
+                  <i class="fas fa-trash"></i>
+                </a>
+
+              </div>
+            {{/if}}
+
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+</section>

@@ -1,0 +1,36 @@
+{
+  "_id": "CXib7lksEkdrQQyX",
+  "name": "Intimidate",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/intimidate.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character knows how to bully others to get what he wants. He receives a +2 bonus on all reaction rolls when implicitly or explicitly threatening violence or dire consequences. The targets must be 5 HD or less, or the character and his allies must outnumber or grossly outrank the targets.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!CXib7lksEkdrQQyX"
+}

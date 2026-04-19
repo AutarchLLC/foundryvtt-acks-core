@@ -1,0 +1,36 @@
+{
+  "_id": "JN2N0JmNMDi7j6f0",
+  "name": "Fighting Style: Weapon+Shield",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/adventuring.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character chooses to become proficient in a particular fighting style, such as two weapon fighting or weapon and shield. Because of his familiarity with the fighting style, a proficient character may draw his weapon(s) and/or ready his shield without having to give up an opportunity to move or attack. In addition, each fighting style provides a special bonus when the character is fighting in that style.&nbsp;</p>\n<h2>+1 to armor class</h2>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!JN2N0JmNMDi7j6f0"
+}

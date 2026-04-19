@@ -1,0 +1,36 @@
+{
+  "_id": "FzS0BNzOjQEYnMVm",
+  "name": "Deathless Minion",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/shambling-zombie2.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "1 Turn",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>This spell raises the bones or body of a single dead creature as an undead skeleton or zombie that follows the caster's spoken commands. An animated skeleton can be created only from a mostly intact skeleton; a zombie can be created only from a mostly intact corpse. The caster must touch the remains to be animated.</p>\n<p>Skeletons will have Hit Dice equal to the number the monster had in life; for skeletons of humans or demi-humans, this means one Hit Die, regardless of the character level of the deceased. Zombies will have one more Hit Die than the monster had in life. Unlike animate dead, the HD of the skeleton or zombie created are not limited by the caster's level. However, a deathless minion lasts for just one turn, after which it crumbles to dust.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!FzS0BNzOjQEYnMVm"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Backstab",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/backstab.webp",
+  "_id": "JJWzWVJARYPABEGX",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "Thief",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>This character also has the ability to backstab. He must catch an opponent unaware of his presence, either by surprise or by moving silently and/or hiding in shadows to sneak up on his opponent. When backstabbing, this cgaracter will receive an attack bonus of +4 and, if successful, deal additional damage for every four levels he has attained. A character at 1st through 4th levels does double the normal damage, at 5th-8th levels does triple the normal damage, at 9th-11th levels does quadruple the normal damage.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!JJWzWVJARYPABEGX"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Copper",
+  "type": "money",
+  "img": "/systems/acks/assets/gold.png",
+  "system": {
+    "coppervalue": 1,
+    "quantity": 0,
+    "quantitybank": 0,
+    "unitweight": 0,
+    "totalvalue": 0,
+    "description": "<p>Money in the Auran Empire takes the form of coins of precious metal. The <em>copper piece</em> is the most widely-used coin. A <em>copper piece</em> (cp) purchases a loaf of bread or three pints of cheap ale. 10cp make a <em>silver piece</em> (sp). 10sp or 100cp make a <em>gold piece</em> (gp). These three coins are the most widely used in the civilized world. Less commonly seen are <em>electrum pieces</em> (ep), each worth 5sp, and <em>platinum pieces</em> (pp), each worth 5gp.</p><p>Coins <em>carried</em> on your person affect your encumbrance.<br>Coins <em>banked</em> have no effect.<br>When calculating encumbrance, 1000 coins equal 1 stone.</p>"
+  },
+  "effects": [],
+  "folder": "kBejdvHxltITNofW",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058601198,
+    "modifiedTime": 1732404427217,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "_id": "P8jD8nEISOJLHFTg",
+  "sort": 500000,
+  "_key": "!items!P8jD8nEISOJLHFTg"
+}

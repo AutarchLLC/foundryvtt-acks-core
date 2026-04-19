@@ -1,0 +1,21 @@
+{
+  "name": "ACKS Arcane Spells 3",
+  "type": "Item",
+  "color": null,
+  "_id": "R5pYVHvoF9GtMtIa",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 100000,
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058310238,
+    "modifiedTime": 1730058310257,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I"
+  },
+  "_key": "!folders!R5pYVHvoF9GtMtIa"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "yBwP7xjcnDfHk01N",
+  "name": "Dungeon Bashing",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/dungeon-bashing.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is hardened to the heavy lifting and physical labor involved in dungeon exploration. The character receives a +4 bonus on throws to open doors and similar acts of brute strength.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!yBwP7xjcnDfHk01N"
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "A6MrSWGbhhGWXKYa",
+  "name": "Glitterdust",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/sparkles.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "1 Round/lvl",
+    "range": "120'",
+    "roll": "",
+    "description": "<p>A cloud of golden particles covers everything and everyone within a <strong>10' radius area</strong>. Creatures within the area of effect must make a <strong>saving throw versus Spells or be blinded</strong> (from dust in their eyes) for the duration of the spell. Any <strong>invisible or hidden creatures</strong> within the area of effect <strong>are visibly outlined by the glowing particles</strong>, and creatures so outlined cannot thereafter benefit from invisibility or hiding in shadows while the glitterdust remains. The glitterdust cannot be removed, but vanishes when the spell's duration expires, or if dispelled.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!A6MrSWGbhhGWXKYa"
+}

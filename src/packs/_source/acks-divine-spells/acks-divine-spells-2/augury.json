@@ -1,0 +1,36 @@
+{
+  "_id": "tAdToCfp4lDP7nw2",
+  "name": "Augury",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/augury.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058359991,
+    "modifiedTime": 1730058359991,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Divine",
+    "duration": "See below",
+    "range": "self",
+    "roll": "1d100ms<70+4",
+    "description": "<p>An augury can tell the caster whether a particular action will bring good or bad results in the immediate future. The base chance for receiving a true reply is 70% + 1% per caster level; this roll is made secretly by the Judge.</p>\n<p>The augury can see into the future only <strong>3 turns</strong>, so anything that might happen after that does not affect the result. Thus, the result will not take into account the long-term consequences of a contemplated action.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "6SjuYRK6RIpAEqyE",
+  "sort": 0,
+  "_key": "!items!tAdToCfp4lDP7nw2"
+}

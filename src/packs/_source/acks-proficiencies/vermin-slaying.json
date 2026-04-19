@@ -1,0 +1,36 @@
+{
+  "_id": "undc0SZRFVxmAcfz",
+  "name": "Vermin-Slaying",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/vermin-slaying.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character specializes in exterminating the insects, slimes, and swarms that plague the underdark. With a proficiency throw of 11+, he can identify the abilities and vulnerabilities of various vermin based on their physical appearance. He receives a +1 bonus when making saving throws against special attacks by vermin (e.g. a carcass scavenger's paralyzing stinger or yellow mold's spores).</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!undc0SZRFVxmAcfz"
+}

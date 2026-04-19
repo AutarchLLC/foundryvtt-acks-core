@@ -1,0 +1,36 @@
+{
+  "_id": "38w4pUbnz0l2QH4b",
+  "name": "Martial Training",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/crossed-swords.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>As a crusader of the faith, the character has had training that supersedes the normal religious strictures of his order. Select one of the following types of weapons and add these to the list of weapons permitted to the character:</p>\n<ol>\n<li>axes;</li>\n<li>bows/crossbows;</li>\n<li>flails/hammers/maces;</li>\n<li>swords/ daggers;</li>\n<li>spears/pole arms;</li>\n<li>bolas/nets/slings/saps/staffs.</li>\n</ol>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!38w4pUbnz0l2QH4b"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Nocturnal",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/eclipse2.webp",
+  "_id": "5IDmqSsHRNqhguWS",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>They spend most of their days underground, and as such suffer a <strong>-1 penalty to all attack throws</strong> when in full sunlight.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!5IDmqSsHRNqhguWS"
+}

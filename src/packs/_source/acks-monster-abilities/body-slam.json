@@ -1,0 +1,104 @@
+{
+  "name": "Body Slam",
+  "type": "weapon",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "owner": {
+          "actorId": "ALheggdkiThmGhjS"
+        },
+        "initialState": {
+          "id": "QZhWgIEMMwRNF37A",
+          "count": 1,
+          "itemData": {
+            "_id": "QZhWgIEMMwRNF37A",
+            "flags": {},
+            "name": "Envelop",
+            "type": "weapon",
+            "img": "systems/acks/assets/icons/transparent-slime.webp",
+            "data": {
+              "range": {
+                "short": 0,
+                "medium": 0,
+                "long": 0
+              },
+              "save": "death",
+              "pattern": "red",
+              "description": "<p>Any non-magical armor or clothing is destroyed immediately after a successful hit from the ooze, as the acid eats through it viciously. A non-magical metal or wooden weapon that strikes gray ooze also dissolves immediately after dealing damage. Magical weapons, armor, and clothing are allowed a saving throw using the wearer’s save versus Death, adding any magical bonus to the roll if applicable. Once it has hit, the ooze clings to an opponent and deals [[/r 2d8 #Acid damage from the clinging ooze!]] points of damage every round until it can be neutralized.</p>",
+              "damage": "2d8",
+              "bonus": 0,
+              "tags": [],
+              "slow": false,
+              "missile": false,
+              "melee": true,
+              "cost": 0,
+              "equipped": false,
+              "weight": 0,
+              "counter": {
+                "value": 1,
+                "max": 1
+              }
+            },
+            "sort": 100000
+          }
+        },
+        "itemType": "Item",
+        "isLocked": false
+      }
+    },
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/transparent-slime.webp",
+  "_id": "06YZS71eSQZQKaPW",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "red",
+    "description": "<p>An ochre jelly constantly oozes an <strong>acidic slime that can eat through cloth, wood, and leather after 1 round</strong>, but cannot affect stone or metal. The acid inflicts 2d6 points of damage to bare flesh.</p>",
+    "damage": "2d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      }
+    ],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight": 0,
+    "weight6": -1,
+    "counter": {
+      "value": 1,
+      "max": 1
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!06YZS71eSQZQKaPW"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "moM2p3ksJDr9zwef",
+  "name": "Treatise, Apprentice",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Treatises are encyclopedic works on a specific general proficiency such as Animal Husbandry, Healing, Knowledge (astrology), or Profession (lawyer). A typical treatise is a 12.5 high x 10 wide codex with 1,000 parchment or papyrus pages stitched into a leather- wrapped wood case. Treatises come in four tiers equivalent to proficiency ranks. An adventurer can only comprehend and benefit from a treatise of one rank higher than his own in the proficiency. It takes 6 days of dedicated activity for an adventurer to read a treatise. After reading the treatise, the adventurer can thereafter reference it to re-roll a proficiency throw for a particular activity or query. The re-roll is made at the rank of the adventurer or the treatise, whichever is worse. Referencing a treatise is an ancillary activity requiring 6 turns (one hour). The adventurer can also use the treatise to train or re-train that proficiency (p. XX) or to add its value to his research library (p. XX). See Axioms 14: Codex & Scroll for more rules on books.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 400,
+    "weight": -1,
+    "weight6": 30,
+    "iconsource": null,
+    "iconlicense": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!moM2p3ksJDr9zwef"
+}

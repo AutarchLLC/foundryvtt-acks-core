@@ -1,0 +1,36 @@
+{
+  "name": "Connection to Nature",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/holy-oak.webp",
+  "_id": "GX2pCMiYLQQlblYl",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "Elf",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Elves gain a +1 bonus to Surprise rolls when in the wilderness due to their attunement to nature. Because of this connection to nature, elves are completely unaffected by the paralysis ghouls can inflict</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!GX2pCMiYLQQlblYl"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "KDPmgkX7ajFr7nj2",
+  "name": "Floating Disc",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/floating-disc.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "6 Turns",
+    "range": "10'",
+    "roll": "",
+    "description": "<p>This spell creates an invisible, slightly concave circular plane of force for carrying loads. It is about the size of a shield, being 3' in diameter and 1\" deep at its center. It can hold a maximum of 50 stone (500lb) of weight. (Note that water weighs about 1 stone or 8lb per gallon.) The disc must be loaded so that the items placed upon it are properly supported, or they will (of course) fall off. For example, the disc can support just over 62 gallons of water, but the water must be in a barrel or other reasonable container that can be placed upon the disc. Similarly, a pile of loose coins will tend to slip and slide about, and some will fall off with every step the caster takes; but a large sack full of coins, properly tied, will remain stable.</p>\n<p>The disc floats level to the ground, at about the height of the caster's waist. It remains still when within 10' of the caster, and follows at the caster's movement rate if he moves away from it. The floating disc can be pushed as needed to position it but will be dispelled if somehow moved more than 10' from the caster. When the spell duration expires, the disc disappears from existence and drops whatever was supported to the surface beneath.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!KDPmgkX7ajFr7nj2"
+}

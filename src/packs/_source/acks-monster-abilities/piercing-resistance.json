@@ -1,0 +1,36 @@
+{
+  "name": "Piercing Resistance",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/william-tell-skull.webp",
+  "_id": "qIGVRmlHiJr4gMQp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>This monster only takes 1/2 damage, rounded down, from weapons that inflict piercing damage (arrows, bolts, daggers, darts, javelins, picks, tridents, and spears).</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!qIGVRmlHiJr4gMQp"
+}

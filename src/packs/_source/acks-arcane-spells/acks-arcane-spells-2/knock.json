@@ -1,0 +1,42 @@
+{
+  "_id": "9rSmxeRHhMZ2tCdD",
+  "name": "Knock",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/knock.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "Special",
+    "range": "60'",
+    "roll": "",
+    "description": "<p>The knock spell<strong> opens stuck, barred, locked, held, or wizard locked doors</strong>. It opens known secret doors, <strong>as well as locked or trick-opening boxes or chests</strong>. It also <strong>loosens welds, shackles, or chains, provided they serve to hold shut something which can be opened</strong>.</p>\n<p>If used to open a wizard locked door, the spell does not remove the wizard lock but simply suspends its functioning for one turn. In all other cases, the door does not relock itself or become stuck again on its own. Knock <strong>will not</strong> raise a portcullis or operate any other similar mechanism, nor will it affect ropes, vines, and the like. Each spell can undo a single means of preventing access.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!9rSmxeRHhMZ2tCdD"
+}

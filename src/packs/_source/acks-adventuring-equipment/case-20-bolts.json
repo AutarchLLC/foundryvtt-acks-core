@@ -1,0 +1,38 @@
+{
+  "_id": "KdxfxMptHnlSnWDI",
+  "name": "Case, 20 Bolts",
+  "type": "item",
+  "img": "systems/acks/assets/icons/bolts.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A case containing 20 crossbow bolts.",
+    "quantity": {
+      "value": 20,
+      "max": 20
+    },
+    "treasure": false,
+    "cost": 2,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!KdxfxMptHnlSnWDI"
+}

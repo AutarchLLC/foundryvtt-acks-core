@@ -1,0 +1,38 @@
+{
+  "_id": "DecWz9ZExPtNDqpl",
+  "type": "item",
+  "name": "Gloves, Leather or Wool, Long",
+  "img": "systems/acks/assets/icons/flaticon/hand-gloves.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "Gloves are garments covering the hands, worn for comfort, fashion, or protection. However, wearing gloves does not protect against curses or oozes. Thief abilities such as pickpocketing, lockpicking, or trapbreaking cannot be performed while wearing gloves.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://www.flaticon.com/free-icon/hand-gloves_4221643",
+    "iconlicense": "<a href=\\\"https://www.flaticon.com/free-icons/gloves\\\" title=\\\"gloves icons\\\">Gloves icons created by iconixar - Flaticon</a>"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!DecWz9ZExPtNDqpl"
+}

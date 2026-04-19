@@ -1,0 +1,36 @@
+{
+  "_id": "8PWvkz1MtbMPKLe2",
+  "name": "Detect Magic",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/detect-magic.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "2 Turns",
+    "range": "60'",
+    "roll": "",
+    "description": "<p>The caster of this spell is able to detect enchanted or enspelled objects or creatures within the given range by sight, seeing them surrounded by a pale glowing yellow light. Only the caster sees the glow. Invisible creatures or objects are not detected by this spell, but the emanations of the invisibility magic will be seen as an amorphous glowing fog, possibly allowing the caster (only) to attack the invisible creature at an attack penalty of only -2.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!8PWvkz1MtbMPKLe2"
+}

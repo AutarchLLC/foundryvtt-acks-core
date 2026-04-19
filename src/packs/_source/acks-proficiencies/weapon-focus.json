@@ -1,0 +1,36 @@
+{
+  "_id": "qp1iCUBso2giIRjq",
+  "name": "Weapon Focus",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/weapon-focus.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>When using a favored type of weapon, the character is capable of devastating strikes. On an attack throw scoring an unmodified 20 when using his favored weapon, the character inflicts maximum normal damage plus rolls damage again and adds it to the total. A character may take this proficiency multiple times, selecting an additional Weapon Focus each time. The available Weapon Focuses are:</p>\n<ol>\n<li>axes;</li>\n<li>maces, flails and hammers;</li>\n<li>swords and daggers;</li>\n<li>bows and crossbows;</li>\n<li>slings and thrown weapons;</li>\n<li>spears and polearms.</li>\n</ol>\n<p>Weapon Focus does not allow a character to use weapons not available to his class.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!qp1iCUBso2giIRjq"
+}

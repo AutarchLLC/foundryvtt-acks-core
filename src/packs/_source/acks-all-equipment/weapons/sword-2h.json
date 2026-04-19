@@ -1,0 +1,58 @@
+{
+  "_id": "Asgal06yfrFoVszt",
+  "name": "Sword, 2H",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/sword.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p><span style=\"color: #191813;\">The classic weapon of knights and kings, the sword includes straight and curved slashing and thrusting blades of 30\" to 40\" in length useable with one or two hands. Historical examples include the Roman spatha, Viking sword, medieval knightly sword and falchion, Japanese katana, and Chinese jian and dao.</span></p>",
+    "damage": "1d8",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 10,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!Asgal06yfrFoVszt"
+}

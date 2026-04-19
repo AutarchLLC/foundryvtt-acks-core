@@ -1,0 +1,145 @@
+<section class="standard-form scrollable">
+
+  <fieldset>
+    <legend>Basic Information</legend>
+
+    <div class="form-group">
+      <label class="flex-1" for="{{@root.partId}}-tamperingChoice">Alignment</label>
+      <div class="form-fields flex-1">
+        <select name="tamperingChoice" id="{{@root.partId}}-tamperingChoice" data-dtype="String">
+          {{selectOptions tamperingChoices valueAttr="key" labelAttr="label" selected=system.tamperingChoice}}
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="flex-1" for="{{@root.partId}}-creatureLife">Span of Creature's Life</label>
+      <div class="form-fields flex-1">
+        <select name="creatureLife" id="{{@root.partId}}-creatureLife" data-dtype="Number">
+          {{selectOptions spanChoices valueAttr="value" labelAttr="label" selected=system.creatureLife}}
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="flex-2" for="{{@root.partId}}-castTemple">Casting in Temple of Spellcaster's God (+2)</label>
+      <div class="form-fields flex-1">
+        <input type="checkbox" name="castTemple" id="{{@root.partId}}-castTemple"
+          {{checked system.castTemple}}/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="flex-1" for="{{@root.partId}}-spellcasterLevel">Spellcaster's Power</label>
+      <div class="form-fields flex-1">
+        <select name="spellcasterLevel" id="{{@root.partId}}-spellcasterLevel" data-dtype="Number">
+          {{selectOptions classLevelChoices selected=system.spellcasterLevel}}
+        </select>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <div class="row">
+
+    <fieldset class="flex-1">
+      <legend>State of the Creature's Body</legend>
+
+      <div class="form-group">
+        <label class="flex-2" for="{{@root.partId}}-stillAlive">Still Alive (+5)</label>
+        <div class="form-fields flex-1">
+          <input type="checkbox" name="stillAlive" id="{{@root.partId}}-stillAlive"
+            {{checked system.stillAlive}}/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-2" for="{{@root.partId}}-instantKilled">Instantly Killed (-10)</label>
+        <div class="form-fields flex-1">
+          <input type="checkbox" name="instantKilled" id="{{@root.partId}}-instantKilled"
+            {{checked system.instantKilled}}/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-spine">Spine</label>
+        <div class="form-fields flex-1">
+          <select name="spine" id="{{@root.partId}}-spine" data-dtype="Number">
+            {{selectOptions spineChoices selected=system.spine}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-limbsDestroyed">Limbs Destroyed</label>
+        <div class="form-fields flex-1">
+          <select name="limbsDestroyed" id="{{@root.partId}}-limbsDestroyed" data-dtype="Number">
+            {{selectOptions limbsChoices selected=system.limbsDestroyed}}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-organsDestroyed">Organs Destroyed</label>
+        <div class="form-fields flex-1">
+          <input type="number" name="organsDestroyed" value="{{system.organsDestroyed}}"
+                 id="{{@root.partId}}-organsDestroyed"/>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <fieldset class="flex-1">
+      <legend>State of the Creature's Soul</legend>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-willModifier">Will Modifier</label>
+        <div class="form-fields flex-1">
+          <input type="number" name="willModifier" value="{{system.willModifier}}"
+                 id="{{@root.partId}}-willModifier" {{readonly isActor}}/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-daysSinceDeath">Days Since Death</label>
+        <div class="form-fields flex-1">
+          <input type="number" name="daysSinceDeath" value="{{system.daysSinceDeath}}"
+                 id="{{@root.partId}}-daysSinceDeath"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-sideEffects">Existing Side Effects</label>
+        <div class="form-fields flex-1">
+          <input type="number" name="sideEffects" value="{{system.sideEffects}}"
+                 id="{{@root.partId}}-sideEffects"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="flex-1" for="{{@root.partId}}-freeModifier">Additional Modifier</label>
+        <div class="form-fields flex-1">
+          <input type="number" name="freeModifier" value="{{system.freeModifier}}"
+                 id="{{@root.partId}}-freeModifier"/>
+        </div>
+      </div>
+
+    </fieldset>
+
+  </div>
+
+  <fieldset>
+    <div class="form-group">
+      <label class="flex-2" for="{{@root.partId}}-finalModifier">Final Modifier</label>
+      <div class="form-fields flex-1">
+        <input id="{{@root.partId}}-finalModifier" type="number" name="finalModifierValue"
+               value="{{finalModifier}}" data-dtype="Number" disabled/>
+      </div>
+    </div>
+  </fieldset>
+
+  <footer class="form-footer">
+    <button type="submit">Roll</button>
+  </footer>
+
+</section>

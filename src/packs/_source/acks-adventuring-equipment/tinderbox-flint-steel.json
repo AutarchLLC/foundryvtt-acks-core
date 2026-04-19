@@ -1,0 +1,38 @@
+{
+  "_id": "kGD2UDNgokWHdzIh",
+  "name": "Tinderbox (flint & steel)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/flint-spark.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This is a tinderbox used to start fires. Lighting a torch with flint and steel takes a full round, and lighting any other fire with them takes at least that long.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.8,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!kGD2UDNgokWHdzIh"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "3H3X5DKn7XIzlMXh",
+  "name": "Grappling Hook",
+  "type": "item",
+  "img": "systems/acks/assets/icons/grappling.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "These iron implements can be used to anchor a rope in place on their sturdy prongs. The hook may be thrown or attached manually by a climber. A successful attack throw is required to throw a grappling hook onto a target. The attack throw suffers a -2 penalty if the target is 11  30 away, a -5 penalty if the target is 31  50 away, and a -10 penalty if the target is 50 to 100 away. A grappling hook thrown against a creature functions as a bola (p. XX) but suffers a -2 penalty to attack throws.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 25,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!3H3X5DKn7XIzlMXh"
+}

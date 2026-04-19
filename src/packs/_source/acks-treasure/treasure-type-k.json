@@ -1,0 +1,199 @@
+{
+  "_id": "9dpcKu8aryWV49g6",
+  "name": "Treasure Type K",
+  "flags": {
+    "ose": {
+      "treasure": true
+    },
+    "better-rolltables": {
+      "table-type": "better",
+      "loot-amount-key": ""
+    },
+    "acks": {
+      "treasure": true
+    }
+  },
+  "description": "Incidental, 5,000gp average value",
+  "results": [
+    {
+      "_id": "uaoL1gfwiOsLlxsZ",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4*1000]]ep",
+      "name": "",
+      "_key": "!tables.results!9dpcKu8aryWV49g6.uaoL1gfwiOsLlxsZ"
+    },
+    {
+      "_id": "MGKlrkspssJ9ZAnq",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 25,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d6*1000]]gp",
+      "name": "",
+      "_key": "!tables.results!9dpcKu8aryWV49g6.MGKlrkspssJ9ZAnq"
+    },
+    {
+      "_id": "GIDN33LI5kRJvN1a",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 25,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] brilliants",
+      "name": "",
+      "_key": "!tables.results!9dpcKu8aryWV49g6.GIDN33LI5kRJvN1a"
+    },
+    {
+      "_id": "5LEX63onxLs3Tein",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 50,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] jewellry",
+      "name": "",
+      "_key": "!tables.results!9dpcKu8aryWV49g6.5LEX63onxLs3Tein"
+    },
+    {
+      "_id": "S1Awz2VwzLmZXmR7",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 1 Magic Item",
+      "name": "",
+      "_key": "!tables.results!9dpcKu8aryWV49g6.S1Awz2VwzLmZXmR7"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!9dpcKu8aryWV49g6"
+}

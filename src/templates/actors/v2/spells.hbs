@@ -1,0 +1,104 @@
+<section class="tab {{ tab.cssClass }} sheet-spells" data-group="primary" data-tab="spells">
+  <div class="content flexrow">
+    <div class="item-list-section spells">
+
+      <div class="list-header">
+        <div class="list-header__name">{{localize 'ACKS.category.spells'}}</div>
+        {{#if owner}}
+          <div class="list-header__controls">
+            <a class="item-control" data-tooltip='{{localize "ACKS.spells.ResetSlots"}}' data-action="resetSpellSlots">
+              <i class="fas fa-sync"></i>
+            </a>
+
+            <a class="item-control" data-tooltip='{{localize "ACKS.Add"}}' data-action="itemCreate" data-type="spell">
+              <i class="fas fa-plus"></i>
+            </a>
+          </div>
+        {{/if}}
+      </div>
+
+      {{#each spells as |spellGroup|}}
+        <!-- Spell Level Section -->
+        <section class="item-list-section">
+
+          <div class="list-header">
+            <div class="list-header__controls left-side">
+              <a class="item-control toggle" data-action="toggleListSection">
+                <i class="fas fa-caret-down"></i>
+              </a>
+            </div>
+
+            <div class="list-header__name">{{localize 'ACKS.spells.Level'}} {{@key}}</div>
+
+            <div>Spells per day</div>
+
+            <div class="item__inputs">
+              <input type="number" value="{{lookup @root.slots.used @key}}" name="system.spells.{{id}}.value"
+                     data-dtype="Number" placeholder="0" disabled class="small"
+                     data-tooltip="{{localize 'ACKS.spells.Slots'}}"/>
+              /
+              <input type="number" value="{{lookup (lookup ../actor.system.spells @key) 'max'}}"
+                     name="system.spells.{{@key}}.max" data-dtype="Number" placeholder="0" class="small"
+                     data-tooltip="Known"/>
+            </div>
+          </div>
+
+          <div class="item-list-wrapper expanded">
+
+            <ul class="item-list unlist">
+              {{#each spellGroup as |spell|}}
+
+                <li class="item draggable" data-item-id="{{spell._id}}">
+
+                  <div class="item-row">
+
+                    <!-- Spell Icon -->
+                    <div class="item__icon item-usable" data-action="itemUse">
+                      <img src="{{spell.img}}" alt="{{spell.name}}" class="item__image"/>
+                    </div>
+
+                    <!-- Spell Name -->
+                    <div class="item__text">
+                      <a data-action="toggleSummary">{{spell.name}}</a>
+                    </div>
+
+                    <!-- Spell Use Count -->
+                    <div>
+                      <input class="item-input small" type="number" data-name="system.cast" data-kind="item"
+                             value="{{spell.system.cast}}"
+                             data-dtype="Number" data-tooltip="{{localize 'ACKS.spells.Cast'}}"/>
+                    </div>
+
+                    <!-- Spell Controls -->
+                    {{#if ../../owner}}
+                    <div class="list-header__controls">
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Show"}}' data-action="itemShow">
+                        <i class="fas fa-eye"></i>
+                      </a>
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Edit"}}' data-action="itemEdit">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="item-control" data-tooltip='{{localize "ACKS.Delete"}}'
+                         data-action="itemDelete">
+                        <i class="fas fa-trash"></i>
+                      </a>
+                    </div>
+                    {{/if}}
+
+                  </div>
+
+                  <div class="item-summary"></div>
+
+                </li>
+
+              {{/each}}
+            </ul>
+
+          </div>
+
+        </section>
+      {{/each}}
+
+    </div>
+  </div>
+</section>

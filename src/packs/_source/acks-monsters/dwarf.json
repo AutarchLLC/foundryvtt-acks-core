@@ -1,0 +1,1242 @@
+{
+  "_id": "98iPw79aqD5JKJJv",
+  "name": "Dwarf",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "ose": {
+      "party": false
+    },
+    "acks": {
+      "party": false,
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/dwarves/dwarf_male_axe_shield_2.webp",
+  "items": [
+    {
+      "_id": "yTm1THvesNPn1EOS",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Humanoid",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/person.webp",
+      "sort": 1100001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th&nbsp;level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.yTm1THvesNPn1EOS"
+    },
+    {
+      "_id": "cS2QRsHln0eLStjj",
+      "flags": {},
+      "name": "Great Axe",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/battle-axe.webp",
+      "sort": 1300000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d10",
+        "bonus": 0,
+        "tags": [],
+        "slow": true,
+        "missile": false,
+        "melee": true,
+        "cost": 10,
+        "equipped": false,
+        "weight": 1,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.cS2QRsHln0eLStjj"
+    },
+    {
+      "_id": "jQlcakPYXCPGX1xj",
+      "flags": {},
+      "name": "War Hammer, 1H",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/claw-hammer.webp",
+      "sort": 1500000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6+1",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 5,
+        "equipped": false,
+        "weight": 0.166,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.jQlcakPYXCPGX1xj"
+    },
+    {
+      "_id": "mVm9GNn95TiOkFIj",
+      "flags": {},
+      "name": "War Hammer, 2H",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/claw-hammer.webp",
+      "sort": 1550000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d8",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 5,
+        "equipped": false,
+        "weight": 0.166,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.mVm9GNn95TiOkFIj"
+    },
+    {
+      "_id": "oRyMQ9bXljqD7Rlx",
+      "flags": {},
+      "name": "Hand Axe",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/hand-axe.webp",
+      "sort": 1600000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [],
+        "slow": false,
+        "missile": true,
+        "melee": true,
+        "cost": 4,
+        "equipped": false,
+        "weight": 0.166,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.oRyMQ9bXljqD7Rlx"
+    },
+    {
+      "_id": "81eaHjow9ZbIAY0E",
+      "flags": {},
+      "name": "Shield",
+      "type": "armor",
+      "img": "/systems/acks/assets/icons/round-shield.webp",
+      "sort": 100001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "description": "",
+        "ac": {
+          "value": 1
+        },
+        "aac": {
+          "value": null
+        },
+        "type": "shield",
+        "cost": 10,
+        "equipped": false,
+        "weight": 1,
+        "weight6": -1
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.81eaHjow9ZbIAY0E"
+    },
+    {
+      "_id": "q1JoE3iSiNDJnUWx",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        }
+      },
+      "name": "Crossbow",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/crossbow2.webp",
+      "sort": 3900000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 80,
+          "medium": 1600,
+          "long": 240
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Missile",
+            "value": "Missile"
+          },
+          {
+            "title": "Cleave 3",
+            "value": "Cleave 3"
+          }
+        ],
+        "slow": false,
+        "missile": true,
+        "melee": false,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 0,
+          "max": 0
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.q1JoE3iSiNDJnUWx"
+    },
+    {
+      "_id": "OLYEIIqxi7aAPydp",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "nPIaDpSV3Q2XX3w4"
+            },
+            "initialState": {
+              "id": "BhnzIbP1Ki8zuVNQ",
+              "count": 1,
+              "itemData": {
+                "_id": "BhnzIbP1Ki8zuVNQ",
+                "name": "Chain Armor",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "armor",
+                "data": {
+                  "description": "",
+                  "ac": {
+                    "value": 5
+                  },
+                  "aac": {
+                    "value": 4
+                  },
+                  "type": "light",
+                  "cost": 40,
+                  "equipped": false,
+                  "weight": 400
+                },
+                "folder": "TX25teNCvtR46Qsx",
+                "sort": 100000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/chain-shirt.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Chain Armor",
+      "type": "armor",
+      "img": "/systems/acks/assets/icons/chain-shirt.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "description": "",
+        "ac": {
+          "value": 5
+        },
+        "aac": {
+          "value": 4
+        },
+        "type": "light",
+        "cost": 40,
+        "equipped": false,
+        "weight": 400,
+        "weight6": -1
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!98iPw79aqD5JKJJv.OLYEIIqxi7aAPydp"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "1d8",
+      "value": 8,
+      "max": 8,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 4,
+      "mod": 0
+    },
+    "aac": {
+      "value": 5,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 20,
+      "bba": 0,
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 10
+      },
+      "wand": {
+        "value": 12
+      },
+      "paralysis": {
+        "value": 11
+      },
+      "breath": {
+        "value": 13
+      },
+      "spell": {
+        "value": "13"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 90,
+      "mod": 0,
+      "value": "",
+      "encounter": 30
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "Lawful",
+      "xp": "10",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d6",
+        "w": "1d12"
+      },
+      "morale": "0"
+    },
+    "attacks": "",
+    "actor": {
+      "name": "Dwarf",
+      "permission": {
+        "default": 0,
+        "ssuDiZtGIm56KS7h": 3
+      },
+      "type": "monster",
+      "data": {
+        "retainer": {
+          "enabled": false,
+          "loyalty": 0,
+          "wage": ""
+        },
+        "hp": {
+          "hd": "1d8",
+          "value": 4,
+          "max": 4
+        },
+        "ac": {
+          "value": 4,
+          "mod": 0
+        },
+        "aac": {
+          "value": 0,
+          "mod": 0
+        },
+        "thac0": {
+          "value": 20,
+          "bba": 0,
+          "mod": {
+            "missile": 0,
+            "melee": 0
+          }
+        },
+        "saves": {
+          "death": {
+            "value": 12
+          },
+          "wand": {
+            "value": 13
+          },
+          "paralysis": {
+            "value": 14
+          },
+          "breath": {
+            "value": 15
+          },
+          "spell": {
+            "value": "16"
+          }
+        },
+        "movement": {
+          "base": 90,
+          "encounter": 30,
+          "value": ""
+        },
+        "initiative": {
+          "value": 0,
+          "mod": 0
+        },
+        "spells": {
+          "1": {
+            "max": 0
+          },
+          "2": {
+            "max": 0
+          },
+          "3": {
+            "max": 0
+          },
+          "4": {
+            "max": 0
+          },
+          "5": {
+            "max": 0
+          },
+          "6": {
+            "max": 0
+          },
+          "enabled": false
+        },
+        "details": {
+          "biography": "",
+          "alignment": "L",
+          "xp": "10",
+          "treasure": {
+            "table": "",
+            "type": ""
+          },
+          "appearing": {
+            "d": "1d6",
+            "w": "0"
+          },
+          "morale": "7"
+        },
+        "attacks": "",
+        "isSlow": false,
+        "actor": {
+          "name": "Dwarf",
+          "permission": {
+            "default": 0,
+            "ssuDiZtGIm56KS7h": 3
+          },
+          "type": "monster",
+          "data": {
+            "retainer": {
+              "enabled": false,
+              "loyalty": 0,
+              "wage": ""
+            },
+            "hp": {
+              "hd": "1d8",
+              "value": 20,
+              "max": 20
+            },
+            "ac": {
+              "value": 4,
+              "mod": 0
+            },
+            "aac": {
+              "value": 0,
+              "mod": 0
+            },
+            "thac0": {
+              "value": 20,
+              "bba": 0,
+              "mod": {
+                "missile": 0,
+                "melee": 0
+              }
+            },
+            "saves": {
+              "death": {
+                "value": 12
+              },
+              "wand": {
+                "value": 13
+              },
+              "paralysis": {
+                "value": 14
+              },
+              "breath": {
+                "value": 15
+              },
+              "spell": {
+                "value": 16
+              }
+            },
+            "movement": {
+              "base": 90,
+              "encounter": 30
+            },
+            "initiative": {
+              "value": 0,
+              "mod": 0
+            },
+            "spells": {
+              "1": {
+                "max": 0
+              },
+              "2": {
+                "max": 0
+              },
+              "3": {
+                "max": 0
+              },
+              "4": {
+                "max": 0
+              },
+              "5": {
+                "max": 0
+              },
+              "6": {
+                "max": 0
+              },
+              "enabled": false
+            },
+            "details": {
+              "biography": "",
+              "alignment": "L",
+              "xp": "10",
+              "treasure": {
+                "table": "",
+                "type": ""
+              },
+              "appearing": {
+                "d": "1d6",
+                "w": "0"
+              },
+              "morale": "7"
+            },
+            "attacks": "",
+            "isSlow": false
+          },
+          "folder": "fPmGjwdFVj9i4YyC",
+          "sort": 2900000,
+          "flags": {
+            "ose": {
+              "conditions": []
+            }
+          },
+          "token": {
+            "flags": {},
+            "name": "Dwarf",
+            "displayName": 0,
+            "img": "icons/svg/mystery-man.svg",
+            "tint": null,
+            "width": 1,
+            "height": 1,
+            "scale": 1,
+            "lockRotation": false,
+            "rotation": 0,
+            "vision": false,
+            "dimSight": 0,
+            "brightSight": 0,
+            "dimLight": 0,
+            "brightLight": 0,
+            "sightAngle": 360,
+            "lightAngle": 360,
+            "lightAlpha": 1,
+            "actorId": "nPIaDpSV3Q2XX3w4",
+            "actorLink": false,
+            "actorData": {},
+            "disposition": -1,
+            "displayBars": 0,
+            "bar1": {},
+            "bar2": {},
+            "randomImg": false
+          },
+          "items": [],
+          "_id": "nPIaDpSV3Q2XX3w4",
+          "img": "icons/svg/mystery-man.svg"
+        }
+      },
+      "folder": "fPmGjwdFVj9i4YyC",
+      "sort": 2900000,
+      "flags": {
+        "ose": {
+          "conditions": []
+        }
+      },
+      "token": {
+        "flags": {},
+        "name": "Dwarf",
+        "displayName": 0,
+        "img": "icons/svg/mystery-man.svg",
+        "tint": null,
+        "width": 1,
+        "height": 1,
+        "scale": 1,
+        "lockRotation": false,
+        "rotation": 0,
+        "vision": false,
+        "dimSight": 0,
+        "brightSight": 0,
+        "dimLight": 0,
+        "brightLight": 0,
+        "sightAngle": 360,
+        "lightAngle": 360,
+        "lightAlpha": 1,
+        "actorId": "nPIaDpSV3Q2XX3w4",
+        "actorLink": false,
+        "actorData": {},
+        "disposition": -1,
+        "displayBars": 0,
+        "bar1": {},
+        "bar2": {},
+        "randomImg": false
+      },
+      "items": [
+        {
+          "_id": "yTm1THvesNPn1EOS",
+          "flags": {
+            "dynamiceffects": {
+              "equipActive": false,
+              "alwaysActive": false,
+              "effects": []
+            }
+          },
+          "name": "Humanoid",
+          "type": "ability",
+          "img": "systems/acks/assets/icons/person.webp",
+          "data": {
+            "pattern": "white",
+            "requirements": "",
+            "roll": "",
+            "rollType": "result",
+            "rollTarget": 0,
+            "blindroll": false,
+            "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th&nbsp;level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
+            "save": ""
+          },
+          "sort": 1100001
+        },
+        {
+          "_id": "cS2QRsHln0eLStjj",
+          "flags": {
+            "importid": "hJrpB6qakoDPANSJ"
+          },
+          "name": "Great Axe",
+          "type": "weapon",
+          "img": "/systems/acks/assets/icons/battle-axe.webp",
+          "data": {
+            "range": {
+              "short": 0,
+              "medium": 0,
+              "long": 0
+            },
+            "save": "",
+            "pattern": "white",
+            "description": "",
+            "damage": "1d10",
+            "bonus": 0,
+            "tags": [],
+            "qualities": "",
+            "slow": true,
+            "missile": false,
+            "melee": true,
+            "cost": 10,
+            "equipped": false,
+            "weight": 1,
+            "counter": {
+              "value": 0,
+              "max": 0
+            }
+          },
+          "sort": 1300000
+        },
+        {
+          "_id": "jQlcakPYXCPGX1xj",
+          "flags": {
+            "importid": "QuGDQe6mCwU4OB2I"
+          },
+          "name": "War Hammer, 1H",
+          "type": "weapon",
+          "img": "/systems/acks/assets/icons/claw-hammer.webp",
+          "data": {
+            "range": {
+              "short": 0,
+              "medium": 0,
+              "long": 0
+            },
+            "save": "",
+            "pattern": "white",
+            "description": "",
+            "damage": "1d6+1",
+            "bonus": 0,
+            "tags": [],
+            "qualities": "",
+            "slow": false,
+            "missile": false,
+            "melee": true,
+            "cost": 5,
+            "equipped": false,
+            "weight": 0.166,
+            "counter": {
+              "value": 1,
+              "max": 1
+            }
+          },
+          "sort": 1500000
+        },
+        {
+          "_id": "mVm9GNn95TiOkFIj",
+          "flags": {
+            "importid": "QboqWujS3NtKznPF"
+          },
+          "name": "War Hammer, 2H",
+          "type": "weapon",
+          "img": "/systems/acks/assets/icons/claw-hammer.webp",
+          "data": {
+            "range": {
+              "short": 0,
+              "medium": 0,
+              "long": 0
+            },
+            "save": "",
+            "pattern": "white",
+            "description": "",
+            "damage": "1d8",
+            "bonus": 0,
+            "tags": [],
+            "qualities": "",
+            "slow": false,
+            "missile": false,
+            "melee": true,
+            "cost": 5,
+            "equipped": false,
+            "weight": 0.166,
+            "counter": {
+              "value": 1,
+              "max": 1
+            }
+          },
+          "sort": 1550000
+        },
+        {
+          "_id": "oRyMQ9bXljqD7Rlx",
+          "flags": {
+            "importid": "uNG3yuKHhCIgHF64"
+          },
+          "name": "Hand Axe",
+          "type": "weapon",
+          "img": "/systems/acks/assets/icons/hand-axe.webp",
+          "data": {
+            "range": {
+              "short": 0,
+              "medium": 0,
+              "long": 0
+            },
+            "save": "",
+            "pattern": "white",
+            "description": "",
+            "damage": "1d6",
+            "bonus": 0,
+            "tags": [],
+            "qualities": "",
+            "slow": false,
+            "missile": true,
+            "melee": true,
+            "cost": 4,
+            "equipped": false,
+            "weight": 0.166,
+            "counter": {
+              "value": 1,
+              "max": 1
+            }
+          },
+          "sort": 1600000
+        },
+        {
+          "_id": "81eaHjow9ZbIAY0E",
+          "flags": {
+            "importid": "npq0uYx6mbi3CwNW"
+          },
+          "name": "Shield",
+          "type": "armor",
+          "img": "/systems/acks/assets/icons/round-shield.webp",
+          "data": {
+            "description": "",
+            "ac": {
+              "value": 1
+            },
+            "aac": {
+              "value": null
+            },
+            "type": "shield",
+            "cost": 10,
+            "equipped": false,
+            "weight": 1
+          },
+          "sort": 100001
+        },
+        {
+          "_id": "IK7yEgk4VFa3HAip",
+          "flags": {
+            "importid": "twc55yWkitzvrkeg"
+          },
+          "name": "Scale Armor",
+          "type": "armor",
+          "img": "/systems/acks/assets/icons/scale-mail.webp",
+          "data": {
+            "description": "",
+            "ac": {
+              "value": 3
+            },
+            "aac": {
+              "value": null
+            },
+            "type": "light",
+            "cost": 30,
+            "equipped": false,
+            "weight": 3
+          },
+          "sort": 500001
+        },
+        {
+          "_id": "q1JoE3iSiNDJnUWx",
+          "flags": {
+            "dynamiceffects": {
+              "equipActive": false,
+              "alwaysActive": false,
+              "effects": []
+            }
+          },
+          "name": "Crossbow",
+          "type": "weapon",
+          "img": "systems/acks/assets/icons/crossbow2.webp",
+          "data": {
+            "range": {
+              "short": 80,
+              "medium": 1600,
+              "long": 240
+            },
+            "save": "",
+            "pattern": "white",
+            "description": "",
+            "damage": "1d6",
+            "bonus": 0,
+            "tags": [
+              {
+                "title": "Missile",
+                "value": "Missile"
+              },
+              {
+                "title": "Cleave 3",
+                "value": "Cleave 3"
+              }
+            ],
+            "qualities": "",
+            "slow": false,
+            "missile": true,
+            "melee": false,
+            "cost": 0,
+            "equipped": false,
+            "weight": 0,
+            "counter": {
+              "value": 0,
+              "max": 0
+            }
+          },
+          "sort": 3900000
+        }
+      ],
+      "_id": "nPIaDpSV3Q2XX3w4",
+      "img": "icons/svg/mystery-man.svg"
+    }
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false,
+          "hidden": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Dwarf",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": 0,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "actor.data.actor.data.movement.encounter"
+    },
+    "randomImg": true,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/dwarves/dwarf_male_axe_shield_2.webp",
+      "tint": "#ffffff",
+      "scaleX": 1,
+      "scaleY": 1,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 0,
+      "brightness": 1,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!98iPw79aqD5JKJJv"
+}

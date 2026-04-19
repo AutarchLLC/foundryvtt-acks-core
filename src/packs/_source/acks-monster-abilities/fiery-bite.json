@@ -1,0 +1,88 @@
+{
+  "name": "Fiery Bite",
+  "type": "weapon",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "_id": "vYwjZQuRhV9OhqSB",
+            "flags": {},
+            "name": "Bite",
+            "type": "weapon",
+            "img": "systems/acks/assets/icons/fangs.webp",
+            "data": {
+              "range": {
+                "short": 0,
+                "medium": 0,
+                "long": 0
+              },
+              "save": "",
+              "pattern": "red",
+              "description": "",
+              "damage": "1d6",
+              "bonus": 0,
+              "tags": [],
+              "slow": false,
+              "missile": false,
+              "melee": true,
+              "cost": 0,
+              "equipped": false,
+              "weight": 0,
+              "counter": {
+                "value": -1,
+                "max": 0
+              }
+            },
+            "sort": 100000
+          }
+        }
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/fangs.webp",
+  "_id": "HFuYILKDcTqqPW5O",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "red",
+    "description": "",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight": 0,
+    "weight6": -1,
+    "counter": {
+      "value": -1,
+      "max": 0
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!HFuYILKDcTqqPW5O"
+}

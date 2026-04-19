@@ -1,0 +1,36 @@
+{
+  "_id": "rLHZo6ZY4aJT8Ijp",
+  "name": "Unflappable Casting",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/internal-injury.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>When the character loses a spell by being interrupted or taking damage during the round, he does not lose his action for the round. While he still loses the spell, he may now move and attack normally. Characters without this proficiency lose the opportunity to act at all if they are interrupted while casting a spell.&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!rLHZo6ZY4aJT8Ijp"
+}

@@ -1,0 +1,619 @@
+{
+  "_id": "1hl5WYtJ1rEZ1uVP",
+  "name": "Skeleton",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "acks": {
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/basic_undead/skeleton_axe_shield.webp",
+  "items": [
+    {
+      "_id": "zOvZ3V908AgY57Re",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "EkVkVBLCWghivIXO"
+            },
+            "initialState": {
+              "id": "XcsJeghTThsnVEuL",
+              "count": 1,
+              "itemData": {
+                "_id": "XcsJeghTThsnVEuL",
+                "name": "Undead",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from&nbsp;<em>cure </em>spells.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 675001,
+                "flags": {},
+                "img": "systems/acks/assets/icons/death-skull.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Undead",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/death-skull.webp",
+      "sort": 675001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from&nbsp;<em>cure </em>spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!1hl5WYtJ1rEZ1uVP.zOvZ3V908AgY57Re"
+    },
+    {
+      "_id": "hHPVsYorCcipPg9u",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "EkVkVBLCWghivIXO"
+            },
+            "initialState": {
+              "id": "7IbO3hOw7OqY9GLP",
+              "count": 1,
+              "itemData": {
+                "_id": "7IbO3hOw7OqY9GLP",
+                "name": "Construct",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Constructs are a type of mindless, unliving monster that includes animated statues, gargoyles, golems, skeletons, and zombies. (Note that skeletons and zombies are undead constructs.)</p>\n<p>Because they are not truly alive, all constructs are immune to gas and poison. Further, they are unaffected by <em>charm</em>, <em>sleep</em>, or <em>hold </em>spells. All constructs are enchanted creatures for the purposes of spells such as <em>dispel evil</em> and <em>protection from evil</em>.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 437501,
+                "flags": {},
+                "img": "systems/acks/assets/icons/gargoyle.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Construct",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/gargoyle.webp",
+      "sort": 437501,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Constructs are a type of mindless, unliving monster that includes animated statues, gargoyles, golems, skeletons, and zombies. (Note that skeletons and zombies are undead constructs.)</p>\n<p>Because they are not truly alive, all constructs are immune to gas and poison. Further, they are unaffected by <em>charm</em>, <em>sleep</em>, or <em>hold </em>spells. All constructs are enchanted creatures for the purposes of spells such as <em>dispel evil</em> and <em>protection from evil</em>.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!1hl5WYtJ1rEZ1uVP.hHPVsYorCcipPg9u"
+    },
+    {
+      "_id": "RSVo4BIybCHbzM9J",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "EkVkVBLCWghivIXO"
+            },
+            "initialState": {
+              "id": "RPuLnrmgb7RJ3KZg",
+              "count": 1,
+              "itemData": {
+                "_id": "RPuLnrmgb7RJ3KZg",
+                "name": "Sword, 1H",
+                "permission": {
+                  "default": 0,
+                  "dGqBYMuMCAlqvR2u": 3,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "weapon",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "white",
+                  "description": "",
+                  "damage": "1d6",
+                  "bonus": 0,
+                  "tags": [
+                    {
+                      "title": "Melee",
+                      "value": "Melee"
+                    }
+                  ],
+                  "slow": false,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 10,
+                  "equipped": false,
+                  "weight": 166.6,
+                  "counter": {
+                    "value": 0,
+                    "max": 0
+                  }
+                },
+                "folder": "a56Mr9t5ePSlDxM2",
+                "sort": 3100000,
+                "flags": {},
+                "img": "/systems/acks/assets/icons/sword.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Sword, 1H",
+      "type": "weapon",
+      "img": "/systems/acks/assets/icons/sword.webp",
+      "sort": 3100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "white",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 10,
+        "equipped": false,
+        "weight": 166.6,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!1hl5WYtJ1rEZ1uVP.RSVo4BIybCHbzM9J"
+    },
+    {
+      "_id": "8KX427ov4Tt4kIjF",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "EkVkVBLCWghivIXO"
+            },
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "name": "Bony Hands",
+                "type": "weapon",
+                "data": {
+                  "choices": "weapon,ability,armor,item"
+                },
+                "flags": {}
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Bony Hands",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/skeletal-hand.webp",
+      "sort": 3200000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "transparent",
+        "description": "",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!1hl5WYtJ1rEZ1uVP.8KX427ov4Tt4kIjF"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "1d8",
+      "value": 5,
+      "max": 5,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 2,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 19,
+      "bba": 0,
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 14
+      },
+      "wand": {
+        "value": 16
+      },
+      "paralysis": {
+        "value": 15
+      },
+      "breath": {
+        "value": 16
+      },
+      "spell": {
+        "value": "17"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 120,
+      "mod": 0,
+      "value": "40'",
+      "encounter": 40
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "C",
+      "xp": "13",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "3d4",
+        "w": "3d10"
+      },
+      "morale": "NA"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "hidden": false,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Skeleton",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/basic_undead/skeleton_axe_shield.webp",
+      "tint": "#ffffff",
+      "scaleX": 0.9,
+      "scaleY": 0.9,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!1hl5WYtJ1rEZ1uVP"
+}

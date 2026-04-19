@@ -1,0 +1,42 @@
+{
+  "_id": "wsczO3jHREXUzRLg",
+  "name": "Summon Hero",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/battle-gear.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "3 Turns",
+    "range": "10'",
+    "roll": "",
+    "description": "<p>With this spell, the caster summons a hero (4th level fighter) from another sphere of existence to his service. The hero will be armed with <em>sword +1</em>, shield, and plate armor, and will have the following characteristics:</p>\n<p><strong>AC</strong> 8, <strong>Move </strong>90', F4, <strong>hp </strong>20, <strong>#AT</strong> 1, +1 to attack throws, <strong>Dmg </strong>1d6+4, <strong>SV </strong>F4, <strong>ML </strong>12, <strong>AL </strong>N, +1 initiative.</p>\n<p>The hero will be completely loyal to the caster, capable of fighting his enemies, guarding him, opening doors, and performing other heroics. The spell will persist until the hero is slain or dispelled, or until 3 turns have elapsed. (Note that the hero's magic sword and other equipment disappear when the hero does!)</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!wsczO3jHREXUzRLg"
+}

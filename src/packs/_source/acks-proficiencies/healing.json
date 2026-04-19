@@ -1,0 +1,36 @@
+{
+  "_id": "Fc61XfNQajl2Okus",
+  "name": "Healing",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/arm-sling.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character is especially skilled at treating wounds and diagnosing illnesses among humans and demihumans. A proficiency throw of 11+ enables the character to identify whether a disease is magical or mundane, and if mundane, diagnose it. A patient under treatment of Healing naturally heals an extra 1d3 hit points each day. (HFH: BHR) If the character selects Healing twice, he can neutralize poison, cure disease, or cure light wounds with a proficiency throw of 18+, once per day per patient. If the character selects Healing three times, he can neutralize poison, cure disease, or cure serious wounds with a proficiency throw of 14+, once per day per patient. A character with Healing proficiency can use the healing herbs listed in the Equipment chapter (e.g. blackwort, comfrey, goldenrod, and woundwort) to heal additional damage or gain a bonus on his proficiency throws. In any one day, a character can supervise three different patients, plus an additional one each time Healing is selected.</p>\n<table border=\"1\">\n<tbody>\n<tr>\n<th style=\"text-align: center; background-color: #7e8c8d; width: 376.667px;\" colspan=\"5\">Healing Proficiency Progression</th>\n</tr>\n<tr>\n<th style=\"background-color: #7e8c8d; width: 71.3333px; text-align: left;\">Title</th>\n<th style=\"background-color: #7e8c8d; text-align: center; width: 72px;\">Rank</th>\n<th style=\"background-color: #7e8c8d; text-align: center; width: 74px;\">Gp earned</th>\n<th style=\"background-color: #7e8c8d; text-align: center; width: 76px;\">Patients/day</th>\n<th style=\"background-color: #7e8c8d; text-align: center; width: 72.6667px;\">Skills</th>\n</tr>\n<tr>\n<td style=\"width: 71.3333px; text-align: left;\">Healer</td>\n<td style=\"width: 72px; text-align: center;\">1</td>\n<td style=\"width: 74px; text-align: center;\">25gp</td>\n<td style=\"width: 76px; text-align: center;\">3</td>\n<td style=\"width: 72.6667px;\">\n<p>Identify 11+</p>\n<p>+1d3hp/day</p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 71.3333px; text-align: left;\">Physicker</td>\n<td style=\"width: 72px; text-align: center;\">2</td>\n<td style=\"width: 74px; text-align: center;\">50gp</td>\n<td style=\"width: 76px; text-align: center;\">4</td>\n<td style=\"width: 72.6667px;\">\n<p>Identify 7+</p>\n<p>neutralize poison, cure disease, cure light 18+</p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 71.3333px; text-align: left;\">Chirugeon</td>\n<td style=\"width: 72px; text-align: center;\">3</td>\n<td style=\"width: 74px; text-align: center;\">100gp</td>\n<td style=\"width: 76px; text-align: center;\">5</td>\n<td style=\"width: 72.6667px;\">\n<p>Identify 3+</p>\n<p>neutralize poison, cure disease, cure serious 14+</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Fc61XfNQajl2Okus"
+}

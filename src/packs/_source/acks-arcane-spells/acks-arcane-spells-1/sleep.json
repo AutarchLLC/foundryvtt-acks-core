@@ -1,0 +1,36 @@
+{
+  "_id": "mPIsBv8MfgHvzBYf",
+  "name": "Sleep",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/sleep.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "[[/r 4d4]] Turns",
+    "range": "240'",
+    "roll": "2d8 HD",
+    "description": "<p>With a sleep spell, the caster may attempt to put creatures into a magical slumber. All creatures to be affected must be visible and within range of the spell. The caster may choose to target 1 specific creature of 4+1 HD or less, or a group of up to 2d8 HD of creatures of 4 HD or less. Calculate monsters with less than 1 HD as having 1 HD, and monsters with a bonus to HD as having the flat amount. For example, a 3+2 HD monster would be calculated as having 3 HD. Hit Die that are not sufficient to affect a creature are wasted. Creatures with the fewest HD are affected first. Creatures with more than 4+1 HD cannot be affected at all.</p>\n<p>Sleeping creatures are helpless and can be killed in one round by unengaged opponents. Slapping or wounding awakens an affected creature, but normal noise does not. Sleep does not affect creatures that are already unconscious or undead, constructs, oozes, and other creatures that do not rest.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!mPIsBv8MfgHvzBYf"
+}

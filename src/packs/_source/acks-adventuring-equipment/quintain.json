@@ -1,0 +1,38 @@
+{
+  "_id": "79kd22XLg1eIVEJr",
+  "name": "Quintain",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A device for training cavalry troops in lance and sword techniques. A quintain consists of a shield or plank mounted on a swiveling pole. A club is affixed to the opposite end of the pole. The trainee practices striking the shield with sufficient velocity to avoid being struck by the club as it swivels around. The cost of quintains is already included in the training costs for cavalry. A quintain weighs 20 stone (200 lbs).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 15,
+    "weight": -1,
+    "weight6": 120,
+    "iconsource": null,
+    "iconlicense": null
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!79kd22XLg1eIVEJr"
+}

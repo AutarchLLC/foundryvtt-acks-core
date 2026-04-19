@@ -1,0 +1,36 @@
+{
+  "name": "Undead",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/death-skull.webp",
+  "_id": "in7fjsgu0ExJJ7Pa",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from&nbsp;<em>cure </em>spells.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!in7fjsgu0ExJJ7Pa"
+}

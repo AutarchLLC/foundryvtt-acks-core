@@ -1,0 +1,525 @@
+{
+  "_id": "C7wtR6lEsk8Bo6L1",
+  "name": "Zombie",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "ose": {
+      "party": false
+    },
+    "acks": {
+      "party": false,
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/basic_undead/zombie_male_green.webp",
+  "items": [
+    {
+      "_id": "hcOnpUXfYGiV6xhG",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "hcOnpUXfYGiV6xhG",
+                "flags": {},
+                "name": "Slam",
+                "type": "weapon",
+                "img": "systems/acks/assets/icons/punch.webp",
+                "data": {
+                  "range": {
+                    "short": 0,
+                    "medium": 0,
+                    "long": 0
+                  },
+                  "save": "",
+                  "pattern": "red",
+                  "description": "",
+                  "damage": "1d8",
+                  "bonus": 0,
+                  "tags": [],
+                  "slow": true,
+                  "missile": false,
+                  "melee": true,
+                  "cost": 0,
+                  "equipped": false,
+                  "weight": 0,
+                  "counter": {
+                    "value": 1,
+                    "max": 1
+                  }
+                },
+                "sort": 100000
+              }
+            }
+          }
+        }
+      },
+      "name": "Slam",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/punch.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "",
+        "pattern": "red",
+        "description": "",
+        "damage": "1d8",
+        "bonus": 0,
+        "tags": [],
+        "slow": true,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!C7wtR6lEsk8Bo6L1.hcOnpUXfYGiV6xhG"
+    },
+    {
+      "_id": "5nEqeUUEb6QxSTnG",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "5nEqeUUEb6QxSTnG",
+                "flags": {
+                  "dynamiceffects": {
+                    "equipActive": false,
+                    "alwaysActive": false,
+                    "effects": []
+                  }
+                },
+                "name": "Undead",
+                "type": "ability",
+                "img": "systems/acks/assets/icons/death-skull.webp",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from&nbsp;<em>healing </em>spells.</p>",
+                  "save": ""
+                },
+                "sort": 500001
+              }
+            }
+          }
+        }
+      },
+      "name": "Undead",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/death-skull.webp",
+      "sort": 500001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from&nbsp;<em>healing </em>spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!C7wtR6lEsk8Bo6L1.5nEqeUUEb6QxSTnG"
+    },
+    {
+      "_id": "mzOq3Tu9xENfUQq4",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "_id": "mzOq3Tu9xENfUQq4",
+                "flags": {
+                  "dynamiceffects": {
+                    "equipActive": false,
+                    "alwaysActive": false,
+                    "effects": []
+                  }
+                },
+                "name": "Construct",
+                "type": "ability",
+                "img": "systems/acks/assets/icons/gargoyle.webp",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Constructs are a type of mindless, unliving monster that includes animated statues, gargoyles, golems, skeletons, and zombies. (Note that skeletons and zombies are undead constructs.)</p>\n<p>Because they are not truly alive, all constructs are immune to gas and poison. Further, they are unaffected by <em>charm</em>, <em>sleep</em>, or <em>hold </em>spells. All constructs are enchanted creatures for the purposes of spells such as <em>dispel evil</em> and <em>protection from evil</em>.</p>",
+                  "save": ""
+                },
+                "sort": 700001
+              }
+            }
+          }
+        }
+      },
+      "name": "Construct",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/gargoyle.webp",
+      "sort": 700001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Constructs are a type of mindless, unliving monster that includes animated statues, gargoyles, golems, skeletons, and zombies. (Note that skeletons and zombies are undead constructs.)</p>\n<p>Because they are not truly alive, all constructs are immune to gas and poison. Further, they are unaffected by <em>charm</em>, <em>sleep</em>, or <em>hold </em>spells. All constructs are enchanted creatures for the purposes of spells such as <em>dispel evil</em> and <em>protection from evil</em>.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!C7wtR6lEsk8Bo6L1.mzOq3Tu9xENfUQq4"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "2d8",
+      "value": 9,
+      "max": 9,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 8,
+      "mod": 0
+    },
+    "aac": {
+      "value": 1,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 18,
+      "bba": 1,
+      "throw": 9,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 14
+      },
+      "wand": {
+        "value": 16
+      },
+      "paralysis": {
+        "value": 15
+      },
+      "breath": {
+        "value": 16
+      },
+      "spell": {
+        "value": "17"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 60,
+      "mod": 0,
+      "value": "",
+      "encounter": 20
+    },
+    "initiative": {
+      "value": -5,
+      "mod": -5
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "C",
+      "xp": "29",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "2d4",
+        "w": "4d6"
+      },
+      "morale": "NA"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "hidden": false,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Zombie",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/basic_undead/zombie_male_green.webp",
+      "tint": "#ffffff",
+      "scaleX": 0.9,
+      "scaleY": 0.9,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!C7wtR6lEsk8Bo6L1"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Fear of Fire",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/flame.webp",
+  "_id": "cBmVW9DDEMibCG11",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Rats fear fire, and must make a morale roll if burned with torches or oil.&nbsp;</p>\n<p>Trolls' morale drops to 0 when confronted by fire or acid.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!cBmVW9DDEMibCG11"
+}

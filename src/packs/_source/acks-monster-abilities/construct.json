@@ -1,0 +1,36 @@
+{
+  "name": "Construct",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/gargoyle.webp",
+  "_id": "H8zJ0sPi0e8kiut2",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Constructs are a type of mindless, unliving monster that includes animated statues, gargoyles, golems, skeletons, and zombies. (Note that skeletons and zombies are undead constructs.)</p>\n<p>Because they are not truly alive, all constructs are immune to gas and poison. Further, they are unaffected by <em>charm</em>, <em>sleep</em>, or <em>hold </em>spells. All constructs are enchanted creatures for the purposes of spells such as <em>dispel evil</em> and <em>protection from evil</em>.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!H8zJ0sPi0e8kiut2"
+}

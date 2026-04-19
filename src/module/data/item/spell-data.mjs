@@ -1,4 +1,4 @@
-import itemDescriptionSchema from "../schema/item-description-schema.mjs";
+import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 
 /**
  * Spell Item Data Model

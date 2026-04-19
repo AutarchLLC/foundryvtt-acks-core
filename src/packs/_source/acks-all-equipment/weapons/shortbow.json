@@ -1,0 +1,58 @@
+{
+  "_id": "dBgMeq1ZgYpuVuj6",
+  "name": "Shortbow",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/pocket-bow.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058486624,
+    "modifiedTime": 1730058486624,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 50,
+      "medium": 100,
+      "long": 150
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "white",
+    "description": "<p>A short bow is made from a single piece of wood, usually around 4' tall. Shortbows lack the range and power of either longbows or composite bows, but are cheap and fast to make. Historical examples include the Neolithic short bow and Comanche self bow.</p>\n<p>Limited to 4 cleaves. (Core Rules p. 105)</p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Missile",
+        "value": "Missile"
+      },
+      {
+        "title": "Two-handed",
+        "value": "Two-handed"
+      }
+    ],
+    "slow": false,
+    "missile": true,
+    "melee": false,
+    "cost": 3,
+    "equipped": false,
+    "weight": -1,
+    "weight6": 1,
+    "counter": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "folder": "9gTquBoiBlWRuTrh",
+  "sort": 0,
+  "_key": "!items!dBgMeq1ZgYpuVuj6"
+}

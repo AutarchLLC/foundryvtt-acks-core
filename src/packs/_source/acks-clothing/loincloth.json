@@ -1,0 +1,38 @@
+{
+  "_id": "NnuRVzwVRWC6qDs3",
+  "type": "item",
+  "name": "Loincloth",
+  "img": "systems/acks/assets/icons/game-icons/loincloth.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A loincloth is a one-piece garment, either wrapped around itself or kept in place by a belt. It covers the genitals and sometimes the buttocks.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.1,
+    "weight": -1,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/delapouite/loincloth.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!NnuRVzwVRWC6qDs3"
+}

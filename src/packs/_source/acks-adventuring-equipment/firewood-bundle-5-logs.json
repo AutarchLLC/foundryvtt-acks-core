@@ -1,0 +1,38 @@
+{
+  "_id": "PtUYRqsQEbHh6lJS",
+  "name": "Firewood Bundle (5 logs)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/half-log.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A bundle of pre-cut dried logs about 5 lbs in weight, 12 in length and 6 in diameter. One firewood bundle will maintain a campfire for 1 hour. Note that firewood is not the construction-quality timber bought and sold in mercantile ventures. A full cord of firewood costs between 2sp and 1gp depending on the proximity to forests.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.01,
+    "weight": -1,
+    "weight6": 15,
+    "iconsource": "https://game-icons.net/1x1/delapouite/half-log.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!PtUYRqsQEbHh6lJS"
+}

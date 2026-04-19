@@ -1,0 +1,295 @@
+{
+  "_id": "3sTqq4rvSqzDLpQj",
+  "name": "Treasure Type L",
+  "flags": {
+    "ose": {
+      "treasure": true
+    },
+    "better-rolltables": {
+      "table-type": "better",
+      "loot-amount-key": ""
+    },
+    "acks": {
+      "treasure": true
+    }
+  },
+  "description": "Raider, 6,000gp average value",
+  "results": [
+    {
+      "_id": "WIg7GxxTt2PSlXfT",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[3d6*1000]]cp",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.WIg7GxxTt2PSlXfT"
+    },
+    {
+      "_id": "MwkOPeIJVzpWE4dp",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 60,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[2d10*1000]]sp",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.MwkOPeIJVzpWE4dp"
+    },
+    {
+      "_id": "oUjNI6bpQEOjMquZ",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 75,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[3d6*1000]]ep",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.oUjNI6bpQEOjMquZ"
+    },
+    {
+      "_id": "5iI8Xx1vytrqTFZV",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 60,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d6]] gems",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.5iI8Xx1vytrqTFZV"
+    },
+    {
+      "_id": "zXklS7S2N5xFCqa5",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] jewellry",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.zXklS7S2N5xFCqa5"
+    },
+    {
+      "_id": "0TQIedkgHM2NdSgs",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 75,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 1 Sword, Weapon, or Armor",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.0TQIedkgHM2NdSgs"
+    },
+    {
+      "_id": "BaEe6lTY1WpiV9VB",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 75,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "1 Potion",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.BaEe6lTY1WpiV9VB"
+    },
+    {
+      "_id": "zvAn1FygGSU1hiig",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 1 Magic Item",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.zvAn1FygGSU1hiig"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!3sTqq4rvSqzDLpQj"
+}

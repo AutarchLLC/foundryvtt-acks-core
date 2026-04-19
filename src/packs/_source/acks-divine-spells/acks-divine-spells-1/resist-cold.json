@@ -1,0 +1,36 @@
+{
+  "_id": "I01hTvKb9LGgtDkH",
+  "name": "Resist Cold",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/cold-heart.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058358012,
+    "modifiedTime": 1730058358012,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Divine",
+    "duration": "6 Turns",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>This abjuration grants a creature temporary immunity to cold. Minor cold (such as exposure to winter weather in inadequate clothing) is ignored by the subject creature.</p>\n<p>Against more significant cold (such as the breath of a White Dragon), the subject creature gains a bonus of <strong>+2 on saving throws</strong>, and all damage from such attacks is reduced by <strong>-1 point per die of damage</strong> rolled. Any cold attacks will still inflict at least 1 point of damage per die rolled, however.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "NYA8pw0gLlA5SnQ1",
+  "sort": 0,
+  "_key": "!items!I01hTvKb9LGgtDkH"
+}

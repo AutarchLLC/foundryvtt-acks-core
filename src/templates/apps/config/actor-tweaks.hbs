@@ -1,0 +1,52 @@
+<section class="standard-form scrollable">
+  {{formGroup docFields.spells.fields.enabled label="ACKS.Spellcaster"
+              value=system.spells.enabled rootId=@root.partId localize=true}}
+
+  {{formGroup docFields.retainer.fields.enabled label="ACKS.Hireling"
+              value=system.retainer.enabled rootId=@root.partId localize=true}}
+
+  {{formGroup docFields.initiative.fields.mod label="ACKS.InitiativeBonus"
+              value=system.initiative.mod rootId=@root.partId localize=true}}
+
+  {{#if isCharacter}}
+
+    {{formGroup docFields.details.fields.xp.fields.next label="ACKS.details.experience.next"
+                value=system.details.xp.next rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.details.fields.xp.fields.bonus label="ACKS.details.experience.bonus"
+                value=system.details.xp.bonus rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.details.fields.xp.fields.share label="ACKS.details.experience.share"
+                value=system.details.xp.share rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.thac0.fields.mod.fields.melee label="ACKS.MeleeBonus"
+                value=system.thac0.mod.melee rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.damage.fields.mod.fields.melee label="ACKS.MeleeDamageBonus"
+                value=system.damage.mod.melee rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.thac0.fields.mod.fields.missile label="ACKS.MissileBonus"
+                value=system.thac0.mod.missile rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.damage.fields.mod.fields.missile label="ACKS.MissileDamageBonus"
+                value=system.damage.mod.missile rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.aac.fields.mod label="ACKS.ArmorClassBonus"
+                value=system.aac.mod rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.save.fields.mod label="ACKS.SaveBonus"
+                value=system.save.mod rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.encumbrance.fields.forcemax label="ACKS.EncumbranceStone"
+                value=system.encumbrance.forcemax rootId=@root.partId localize=true
+                hint="Force a value for the max encumbrance" disabled=(not isGM) }}
+
+    {{formGroup docFields.movement.fields.mod label="ACKS.movement.bonus"
+                value=system.movement.mod rootId=@root.partId localize=true}}
+
+    {{formGroup docFields.config.fields.movementAuto label="ACKS.Setting.MovementAuto"
+                value=system.config.movementAuto rootId=@root.partId localize=true
+                disabled=(not isGM) }}
+
+  {{/if}}
+</section>

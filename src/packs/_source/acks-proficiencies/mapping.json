@@ -1,0 +1,36 @@
+{
+  "_id": "CoPaxfe3qSw03xs5",
+  "name": "Mapping",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/mapping.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character can understand and make maps, even if he cannot read or write. With a proficiency throw of 11+, the character can interpret or draft complicated layouts or map an area by memory. This proficiency can be selected multiple times.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!CoPaxfe3qSw03xs5"
+}

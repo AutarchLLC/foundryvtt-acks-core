@@ -1,0 +1,36 @@
+{
+  "_id": "1swaY7qUsXhcJ8Ha",
+  "name": "Manual of Arms",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/manual-of-arms.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has the ability to train soldiers in military discipline, physical fitness, and weapon drill. If the character selects Manual of Arms once, he can earn 30gp per month training light infantry. It takes 1 month to turn raw recruits into light infantry. If the character also selects Riding, he can also train light cavalry (taking 3 months). If he also selects Weapon Focus (bows &amp; crossbows), he can train crossbowmen (1 month), bowmen (2 months), or longbowmen (3 months). Manual of Arms combined with Riding and Weapon Focus (bows &amp; crossbows) allows the character to train horse archers (6 months). If the character selects Manual of Arms twice, he earns 60gp per month and can train heavy infantry (1 month). Two ranks of Manual of Arms combined with Riding allow the character to train heavy cavalry (6 months). Two ranks of Manual of Arms combined with Riding and Weapon Focus (bows &amp; crossbows) allows the character to train cataphract cavalry (12 months). The character can train up to 60 soldiers during each training period.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!1swaY7qUsXhcJ8Ha"
+}

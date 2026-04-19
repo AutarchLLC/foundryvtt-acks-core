@@ -1,0 +1,545 @@
+{
+  "name": "Rings",
+  "flags": {
+    "better-rolltables": {
+      "table-type": "better",
+      "loot-amount-key": ""
+    }
+  },
+  "description": "Magical Rings",
+  "results": [
+    {
+      "_id": "ShwXxu3StM6ABuyc",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 4,
+      "range": [
+        1,
+        4
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Command Animal",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.ShwXxu3StM6ABuyc"
+    },
+    {
+      "_id": "qf65QKsx7JlcNHbP",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        5,
+        9
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Command Human",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.qf65QKsx7JlcNHbP"
+    },
+    {
+      "_id": "P3C40ZlGyrXBJVwG",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 6,
+      "range": [
+        10,
+        15
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of  Command Plant",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.P3C40ZlGyrXBJVwG"
+    },
+    {
+      "_id": "ac6v6boNKzUwLelA",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 10,
+      "range": [
+        16,
+        25
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Delusion",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.ac6v6boNKzUwLelA"
+    },
+    {
+      "_id": "iFmOL5SHfXE92uOH",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        26,
+        27
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Djinni Calling",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.iFmOL5SHfXE92uOH"
+    },
+    {
+      "_id": "r9oBhjONGflpHSAq",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 11,
+      "range": [
+        28,
+        38
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Fire Resistance",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.r9oBhjONGflpHSAq"
+    },
+    {
+      "_id": "gvulFnd3zwTClO2V",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 11,
+      "range": [
+        39,
+        49
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Invisibility",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.gvulFnd3zwTClO2V"
+    },
+    {
+      "_id": "91zq15HjWrQIMbhe",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 21,
+      "range": [
+        50,
+        70
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Protection",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.91zq15HjWrQIMbhe"
+    },
+    {
+      "_id": "3fH3D5gji5c4aByL",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        71,
+        72
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Regeneration",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.3fH3D5gji5c4aByL"
+    },
+    {
+      "_id": "T0pEIt2fZTarTH6T",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        73,
+        74
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Spell Storing",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.T0pEIt2fZTarTH6T"
+    },
+    {
+      "_id": "2nzMhp0kJPkRgLbb",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        75,
+        79
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Spell Turning",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.2nzMhp0kJPkRgLbb"
+    },
+    {
+      "_id": "s2IHbsnhuwqTDBcY",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 2,
+      "range": [
+        80,
+        81
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Telekinesis",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.s2IHbsnhuwqTDBcY"
+    },
+    {
+      "_id": "GyOqjETMaWhbgog2",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 6,
+      "range": [
+        82,
+        87
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Water Walking",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.GyOqjETMaWhbgog2"
+    },
+    {
+      "_id": "x9XXPj4kp8ZoXG8F",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 7,
+      "range": [
+        88,
+        94
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Weakness",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.x9XXPj4kp8ZoXG8F"
+    },
+    {
+      "_id": "nanGDB6gek1ItNqn",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        95,
+        97
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of Wishes",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.nanGDB6gek1ItNqn"
+    },
+    {
+      "_id": "hFPxbw6Zyo5LAMpv",
+      "flags": {
+        "better-rolltables": {
+          "brt-result-formula": {
+            "formula": ""
+          }
+        }
+      },
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 3,
+      "range": [
+        98,
+        100
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Ring of X-Ray Vision",
+      "name": "",
+      "_key": "!tables.results!gyyYnGzbFiIKT3WR.hFPxbw6Zyo5LAMpv"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_id": "gyyYnGzbFiIKT3WR",
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": null,
+  "sort": 0,
+  "_key": "!tables!gyyYnGzbFiIKT3WR"
+}

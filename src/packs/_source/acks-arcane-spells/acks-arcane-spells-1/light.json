@@ -1,0 +1,42 @@
+{
+  "_id": "0iPzyOlvEcLstYVH",
+  "name": "Light",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/Light.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "6 Turns + 1/lvl",
+    "range": "120'",
+    "roll": "",
+    "description": "<p>This spell creates a light equal to torchlight which illuminates a <strong>30' radius area</strong> (and provides <strong>dim light for an additional 20'</strong>) around the target location or object. The effect is <strong>immobile if cast into an area</strong>, but it <strong>can be cast on a movable object</strong>. Light taken into an area of magical darkness does not function.</p>\n<p>A light spell may be cast to counter and dispel the darkness spell of an equal or lower level caster (and vice versa). Doing so causes both spells to instantly cease, restoring the existing ambient light level.</p>\n<p>Either version of this spell may be used to <strong>blind an opponent by means of casting it on the target's ocular organs</strong>. The target is allowed a <strong>saving throw versus Spells to avoid the effect</strong>, and <strong>if the save is made, the spell does not take effect at all</strong>.</p>\n<p>A <em>Light </em>or <em>Darkness </em>spell cast to blind does not have the given area of effect (that is, no light or darkness is shed around the victim).</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": "spell"
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!0iPzyOlvEcLstYVH"
+}

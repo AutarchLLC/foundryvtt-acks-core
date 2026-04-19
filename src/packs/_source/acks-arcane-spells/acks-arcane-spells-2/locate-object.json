@@ -1,0 +1,36 @@
+{
+  "_id": "JCAx6hKofDUJPyBR",
+  "name": "Locate Object",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/locate.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058308020,
+    "modifiedTime": 1730058308020,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Arcane",
+    "duration": "6 Turns",
+    "range": "120'",
+    "roll": "",
+    "description": "<p>This spell allows the caster to sense the direction of a well-known or clearly visualized object. He can search for general items, in which case the nearest one of its kind is located if more than one is within range. The caster cannot specify a unique item unless he or she has observed that particular item firsthand (not through divination). The spell is blocked by even a thin sheet of lead or gold. Creatures cannot be found by this spell.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "RUa7ELuvVbuK8ABs",
+  "sort": 0,
+  "_key": "!items!JCAx6hKofDUJPyBR"
+}

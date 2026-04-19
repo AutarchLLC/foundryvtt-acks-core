@@ -1,0 +1,42 @@
+{
+  "_id": "tWwA5711ljsWH4CN",
+  "name": "Bane",
+  "type": "spell",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/bane.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058359991,
+    "modifiedTime": 1730058359991,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 2,
+    "class": "Divine",
+    "duration": "6 Turns",
+    "range": "0'",
+    "roll": "",
+    "description": "<p>This spell fills the caster&rsquo;s enemies (within a <strong>50' radius</strong>) with fear and doubt, causing each affected character or monster to suffer a <strong>-1 penalty on attack throws, damage rolls, morale rolls, and saving throws against magical fear</strong>.</p>\n<p><em>Bane </em>may also be used by chaotic divine casters of 7th&nbsp;level&nbsp;or higher, in conjunction with a sacrifice of at least 10gp, to create a vial of unholy water. Unholy water has beneficial effects when used in the animation of the dead.&nbsp;</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "6SjuYRK6RIpAEqyE",
+  "sort": 0,
+  "_key": "!items!tWwA5711ljsWH4CN"
+}

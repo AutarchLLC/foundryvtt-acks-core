@@ -1,0 +1,38 @@
+{
+  "_id": "RB8WJx1FLnetub7Z",
+  "name": "Herb, Belladonna (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Belladonna, also known as deadly nightshade, is a poisonous flower. A character who eats 1 lb of belladonna within one hour of being infected with lycanthropy may make a Death saving throw to shake off the affliction. If the character fails the saving throw, however, he dies from the poison after one turn. Even if the poison is then neutralized or the character is raised from the dead, he will still be afflicted with lycanthropy, and further doses of belladonna will be of no use. If purified by an alchemist or poisoner, belladonna can become even deadlier, such that a few drops can poison a blade or cup of water (see p. XX).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!RB8WJx1FLnetub7Z"
+}

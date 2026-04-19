@@ -1,0 +1,591 @@
+{
+  "_id": "tsSTuAz1uncMdH1g",
+  "name": "Spider, Phase",
+  "type": "monster",
+  "sort": 100001,
+  "flags": {
+    "ose": {
+      "party": false
+    },
+    "acks": {
+      "party": false,
+      "conditions": []
+    }
+  },
+  "img": "systems/acks/assets/tokens/dm_essentials1/DME_Spider_Giant_2.webp",
+  "items": [
+    {
+      "_id": "jyTRopEVEqI3lqnW",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "ZEVNVHwsaKDea4hA"
+            },
+            "initialState": {
+              "count": 1,
+              "itemData": {
+                "name": "Mandibles",
+                "type": "weapon",
+                "data": {
+                  "choices": "weapon,ability,armor,item"
+                },
+                "flags": {}
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Venemous Bite",
+      "type": "weapon",
+      "img": "systems/acks/assets/icons/insect-jaws.webp",
+      "sort": 100000,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "range": {
+          "short": 0,
+          "medium": 0,
+          "long": 0
+        },
+        "favorite": false,
+        "save": "death",
+        "pattern": "red",
+        "description": "<p>A phase spider's bite is venomous. Creatures bitten by a phase spider must succeed in a <strong>saving throw versus Poison or die instantly</strong>.</p>",
+        "damage": "1d6",
+        "bonus": 0,
+        "tags": [
+          {
+            "title": "Melee",
+            "value": "Melee"
+          }
+        ],
+        "slow": false,
+        "missile": false,
+        "melee": true,
+        "cost": 0,
+        "equipped": false,
+        "weight": 0,
+        "weight6": -1,
+        "counter": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!tsSTuAz1uncMdH1g.jyTRopEVEqI3lqnW"
+    },
+    {
+      "_id": "CQjHIuAVWSGA7joC",
+      "flags": {
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "ZEVNVHwsaKDea4hA"
+            },
+            "initialState": {
+              "id": "f0cnZCIWtLslfJHI",
+              "count": 1,
+              "itemData": {
+                "_id": "f0cnZCIWtLslfJHI",
+                "name": "Vermin",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 1400000,
+                "flags": {},
+                "img": "systems/acks/assets/icons/maggot.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Vermin",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/maggot.webp",
+      "sort": 900001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "white",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!tsSTuAz1uncMdH1g.CQjHIuAVWSGA7joC"
+    },
+    {
+      "_id": "cYUocUAMuBaDH5VZ",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "ZEVNVHwsaKDea4hA"
+            },
+            "initialState": {
+              "id": "AH6GetiY8UWmb7ZV",
+              "count": 1,
+              "itemData": {
+                "_id": "AH6GetiY8UWmb7ZV",
+                "flags": {},
+                "name": "Web",
+                "type": "ability",
+                "img": "systems/acks/assets/icons/spiders-web.webp",
+                "data": {
+                  "pattern": "green",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Giant Black Widows create a many-layered mass of strong, sticky strands covering an area. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p>Entangled creatures can’t move, but can break loose depending on their strength. Creatures of normal human strength or less will take&nbsp;<a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\">&nbsp;2d4</a>&nbsp;turns to break through the web. Strong humans (with ability scores 13-17) can break through the web in 1 turn. Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in 4 rounds. Giants or creatures of similar great strength can break through the web in 2 rounds.</p>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take&nbsp;<a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\">1d6</a>&nbsp;points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
+                  "save": ""
+                },
+                "sort": 1000001
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Web",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/spiders-web.webp",
+      "sort": 1050001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "green",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Phase Spiders create a many-layered mass of strong, sticky strands covering an area. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p>Entangled creatures can't move, but can break loose depending on their strength:</p>\n<ul>\n<li>Creatures of normal human strength or less will take <a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\">&nbsp;2d4</a>&nbsp;<strong>turns </strong>to break through the web.</li>\n<li>Strong humans (with ability scores 13-17) can break through the web in <strong>1 turn</strong>.</li>\n<li>Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in <strong>4 rounds</strong>.</li>\n<li>Giants or creatures of similar great strength can break through the web in <strong>2 rounds</strong>.</li>\n</ul>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take&nbsp;<a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\">1d6</a>&nbsp;points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!tsSTuAz1uncMdH1g.cYUocUAMuBaDH5VZ"
+    },
+    {
+      "_id": "3wFX0PsXcWilShxZ",
+      "flags": {
+        "dynamiceffects": {
+          "equipActive": false,
+          "alwaysActive": false,
+          "effects": []
+        },
+        "pick-up-stix": {
+          "pick-up-stix": {
+            "owner": {
+              "actorId": "ZEVNVHwsaKDea4hA"
+            },
+            "initialState": {
+              "id": "sdhmrzLP6qwxwjXN",
+              "count": 1,
+              "itemData": {
+                "name": "Phasing",
+                "permission": {
+                  "default": 0,
+                  "ssuDiZtGIm56KS7h": 3
+                },
+                "type": "ability",
+                "data": {
+                  "pattern": "white",
+                  "requirements": "",
+                  "roll": "",
+                  "rollType": "result",
+                  "rollTarget": 0,
+                  "blindroll": false,
+                  "description": "<p>Phase Spiders possess the uncanny ability to shift in and out of phase with the material plane at will.</p>\n<p>When out of phase, Phase Spiders are <strong>invulnerable to attack by any means</strong>. When in phase, they can be harmed by ordinary means.</p>\n<p>In combat, phase spiders are in phase only when they attack. In order to attack a phase spider, its opponent must <strong>equal or exceed its initiative roll and then act simultaneously with the phase spider</strong>.</p>\n<p>If the spell phase door is cast on a phase spider while it is in phase, it cannot phase out again for 7 rounds.&nbsp;</p>",
+                  "save": ""
+                },
+                "folder": "RAUqUVBGOMERIu3j",
+                "sort": 1500000,
+                "flags": {},
+                "_id": "sdhmrzLP6qwxwjXN",
+                "img": "systems/acks/assets/icons/portal.webp"
+              }
+            },
+            "itemType": "Item",
+            "isLocked": false
+          }
+        }
+      },
+      "name": "Phasing",
+      "type": "ability",
+      "img": "systems/acks/assets/icons/portal.webp",
+      "sort": 950001,
+      "effects": [],
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "system": {
+        "proficiencytype": "general",
+        "favorite": false,
+        "pattern": "blue",
+        "requirements": "",
+        "roll": "",
+        "rollType": "result",
+        "rollTarget": 0,
+        "blindroll": false,
+        "description": "<p>Phase Spiders possess the uncanny ability to shift in and out of phase with the material plane at will.</p>\n<p>When out of phase, Phase Spiders are <strong>invulnerable to attack by any means</strong>. When in phase, they can be harmed by ordinary means.</p>\n<p>In combat, phase spiders are in phase only when they attack. In order to attack a phase spider, its opponent must <strong>equal or exceed its initiative roll and then act simultaneously with the phase spider</strong>.</p>\n<p>If the spell phase door is cast on a phase spider while it is in phase, it cannot phase out again for 7 rounds.&nbsp;</p>",
+        "save": ""
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!tsSTuAz1uncMdH1g.3wFX0PsXcWilShxZ"
+    }
+  ],
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "isNew": false,
+    "retainer": {
+      "enabled": false,
+      "loyalty": 0,
+      "wage": "",
+      "managerid": "",
+      "category": "mercenary",
+      "quantity": 1
+    },
+    "hp": {
+      "hd": "5d8+5",
+      "value": 27,
+      "max": 27,
+      "bhr": "1d3"
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    },
+    "aac": {
+      "value": 2,
+      "mod": 0
+    },
+    "damage": {
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "thac0": {
+      "value": 18,
+      "bba": 5,
+      "throw": 5,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "saves": {
+      "death": {
+        "value": 11
+      },
+      "wand": {
+        "value": 13
+      },
+      "paralysis": {
+        "value": 12
+      },
+      "breath": {
+        "value": 13
+      },
+      "spell": {
+        "value": "14"
+      },
+      "implements": {
+        "value": 16
+      }
+    },
+    "save": {
+      "mod": 0
+    },
+    "movement": {
+      "base": 60,
+      "mod": 0,
+      "encounter": 20,
+      "value": "Web 150' (50')"
+    },
+    "initiative": {
+      "value": 0,
+      "mod": 0
+    },
+    "surprise": {
+      "mod": 0,
+      "surpriseothers": 0,
+      "avoidsurprise": 0
+    },
+    "spells": {
+      "1": {
+        "max": 0
+      },
+      "2": {
+        "max": 0
+      },
+      "3": {
+        "max": 0
+      },
+      "4": {
+        "max": 0
+      },
+      "5": {
+        "max": 0
+      },
+      "6": {
+        "max": 0
+      },
+      "enabled": false
+    },
+    "details": {
+      "biography": "",
+      "alignment": "Neutral",
+      "xp": "660",
+      "treasure": {
+        "table": "",
+        "type": ""
+      },
+      "appearing": {
+        "d": "1d6",
+        "w": "1d6"
+      },
+      "morale": "0"
+    },
+    "attacks": ""
+  },
+  "prototypeToken": {
+    "flags": {
+      "world": {
+        "dancingLights": {
+          "blurAmount": 10,
+          "dimBlurAmount": 10,
+          "type": "none",
+          "startColor": "#ffddbb",
+          "endColor": "#ffddbb",
+          "fireMovement": 5,
+          "blinkFadeColorEnabled": "none",
+          "blinkFadeColor1": "#ff0000",
+          "blinkFadeColor2": "#00ff00",
+          "blinkFadeColor3": "#0000ff",
+          "minFade": 0.4,
+          "maxFade": 1,
+          "speed": 1,
+          "cookiePath": "modules/DancingLights/ColorTest.webp",
+          "scaleCookie": true,
+          "cookieScaleValue": 1,
+          "hidden": false,
+          "enabled": false,
+          "blurEnabled": false,
+          "dimBlurEnabled": false,
+          "dimMovement": false,
+          "blinkColorOnly": false,
+          "dimFade": false,
+          "sync": false,
+          "animateDimAlpha": false,
+          "cookieEnabled": false,
+          "makeDefault": false
+        }
+      },
+      "token-auras": {
+        "aura1": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        },
+        "aura2": {
+          "colour": "#ffffff",
+          "opacity": 0.5,
+          "distance": null,
+          "square": false
+        }
+      }
+    },
+    "name": "Phase Spider",
+    "displayName": 10,
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "actorLink": false,
+    "disposition": -1,
+    "displayBars": 10,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "movement.encounter"
+    },
+    "randomImg": false,
+    "light": {
+      "dim": 0,
+      "bright": 0,
+      "angle": 360,
+      "color": null,
+      "alpha": 1,
+      "negative": false,
+      "priority": 0,
+      "coloration": 1,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "texture": {
+      "src": "systems/acks/assets/tokens/dm_essentials1/DME_Spider_Giant_2.webp",
+      "tint": "#ffffff",
+      "scaleX": 1.4,
+      "scaleY": 1.4,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "rotation": 0,
+      "alphaThreshold": 0.75
+    },
+    "sight": {
+      "angle": 360,
+      "enabled": true,
+      "range": 60,
+      "brightness": 0,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "appendNumber": false,
+    "prependAdjective": false,
+    "alpha": 1,
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null
+  },
+  "folder": null,
+  "_key": "!actors!tsSTuAz1uncMdH1g"
+}

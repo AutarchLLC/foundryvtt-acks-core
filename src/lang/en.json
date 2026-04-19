@@ -13,7 +13,8 @@
       "item": "Item",
       "misc": "Misc",
       "language": "Language",
-      "money": "Money"
+      "money": "Money",
+      "bundle": "Item Bundle"
     }
   },
   "COMBAT.TurnPrev": "Prev. Combatant",
@@ -40,6 +41,8 @@
   "ACKS.name": "Name",
   "ACKS.Hireling": "Hireling",
 
+  "ACKS.party.noMembers": "No party members yet. Drop a character here to add it to the party.",
+
   "ACKS.dialog.tweaks": "Tweaks",
   "ACKS.dialog.partysheet": "Party Overview",
   "ACKS.dialog.selectActors": "Select PCs",
@@ -47,7 +50,7 @@
   "ACKS.dialog.generator": "Attributes",
   "ACKS.dialog.generateSaves": "Generate Saves",
   "ACKS.dialog.generateScores": "Generate Scores",
-  "ACKS.dialog.generateScore": "Rolling {score} ({count})",
+  "ACKS.dialog.generateScore": "Rolling {score}",
   "ACKS.dialog.createItem": "Create Item",
   "ACKS.dialog.itemType": "Item type",
   "ACKS.dialog.itemName": "Item name",
@@ -87,10 +90,10 @@
   "ACKS.details.level": "Level",
   "ACKS.details.experience.base": "Experience",
   "ACKS.details.experience.baseshort": "XP",
-  "ACKS.details.experience.bonus": "Bonus Experience",
+  "ACKS.details.experience.bonus": "Bonus Experience (%)",
   "ACKS.details.experience.next": "Next level",
   "ACKS.details.experience.nextshort": "Next lvl",
-  "ACKS.details.experience.share": "Experience Share",
+  "ACKS.details.experience.share": "Experience Share (%)",
   "ACKS.details.experience.award": "XP Award",
   "ACKS.details.treasure": "Treasure type",
   "ACKS.details.treasureTable": "Table",
@@ -246,6 +249,7 @@
   "ACKS.category.equipment": "Equipment",
   "ACKS.category.bonuses": "Bonuses",
   "ACKS.category.effects": "Effects",
+  "ACKS.category.contents": "Contents",
   "ACKS.category.henchmen": "Henchmen",
   "ACKS.category.hirelings": "Hirelings",
 
@@ -277,20 +281,23 @@
   "ACKS.Setting.MovementAuto": "Calculate Movement",
   "ACKS.Setting.SignificantTreasure": "Significant Treasure Weight",
   "ACKS.Setting.SignificantTreasureHint": "Weight at which treasure will reduce the movement, only useful for basic encumbrance",
-  "ACKS.Setting.Explode20": "HFH: Exploding attack throws",
-  "ACKS.Setting.Explode20Hint": "Heroic Fantasy Option: Attack throws explode on 20 - Critical if exceed target AC by 10",
+  "ACKS.Setting.Explode20": "Exploding 20s + Critical Hits",
+  "ACKS.Setting.Explode20Hint": "Attack throws explode on 20; Critical if exceed target AC by 10",
   "ACKS.Setting.BHR": "HFH: Base Healing Rate",
   "ACKS.Setting.BHRHint": "Heroic Fantasy Option: Base Healing Rate per day varies by Max HP",
-  "ACKS.Setting.RemoveMagicBonus": "HFH: Wisdom Bonus to All Saves",
-  "ACKS.Setting.RemoveMagicBonusHint": "Heroic Fantasy Option: PCs will add their wisdom modifier to all saving throws, not just magic",
   "ACKS.Setting.enableCombatantColor": "Enable colored highlight for combatants",
   "ACKS.Setting.enableCombatantColorHint": "Change the color of combatants depending on their group",
   "ACKS.Setting.colorFriendlies": "Color for friendlies combatants",
   "ACKS.Setting.colorHostiles": "Color for hostiles combatants",
+  "ACKS.Setting.AutoRollMonsterHP.Name": "Roll Monster HP",
+  "ACKS.Setting.AutoRollMonsterHP.Hint": "Automatically rolls HP for unlinked monsters when they are created",
+  "ACKS.Setting.ConfirmDeletion.Name": "Confirm Item Deletion",
+  "ACKS.Setting.ConfirmDeletion.Hint": "Ask for confirmation before deleting an item from actor sheet",
 
   "ACKS.items.Equip": "Equip",
   "ACKS.items.Unequip": "Unequip",
   "ACKS.items.Misc": "Items",
+  "ACKS.items.Clothes": "Clothes",
   "ACKS.items.Weapons": "Weapons",
   "ACKS.items.Treasure": "Heavy Items",
   "ACKS.items.Armors": "Armor",
@@ -443,9 +450,9 @@
   "ACKS.surprise.surprised": "<strong>Surprised!</strong><br/>(result {result}, {formula})",
   "ACKS.surprise.actormodifier": "Per actor modifiers",
 
-  "ACKS.surprise.title.forelos": "Fore+LOS",
+  "ACKS.surprise.title.forelos": "Fore + LoS",
   "ACKS.surprise.title.fore": "Fore",
-  "ACKS.surprise.title.los": "LOS",
+  "ACKS.surprise.title.los": "LoS",
   "ACKS.surprise.title.none": "None",
 
   "ACKS.StatusOutNumbered": "OutNumbered",
@@ -471,9 +478,5 @@
   "ACKS.hireling.specialist": "Specialist",
   "ACKS.hireling.category": "Category",
 
-  "ACKS.Welcome": {
-    "Message-12-2": "<h2>Welcome to the ACKS system version 12.2.1 !</h2><h2 class=\"western\">New Features</h2> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Character Sheet Updates</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Many visual enhancements to the actor sheet</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Favorites items</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Proper saves name</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Better organization of fields for efficient access</p></li> </ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Hireling &amp; Henchmen Support</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">New character sheet tab</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Set this using the Tweaks menu</p></li> </ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Coins and Money</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Can track individual counts of each type of coin (cp, sp, gp, etc.)</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Coins carried are tracked separately from coins in the bank</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Allows adding user-defined money types</p></li> </ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Languages</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Now a separate type of Item that can be added to the character sheet</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Supports all languages from ACKS II Revised Rulebook</p></li> </ul> </ul><h2 class=\"western\">Automatically Migrated</h2> <p style=\"line-height: 100%; margin-bottom: 0cm\">This information will be automatically updated as part of the update.</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Character statistics</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Saving throws</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Weights</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Encumbrance</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Movement Rates</p></li> </ul> <h2 class=\"western\">Manual Updates – Things you need to do</h2> <p style=\"line-height: 100%; margin-bottom: 0cm\">After the upgrade, you will need to check and update the following.</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Languages – check if migrated</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Gold / Money</p></li> </ul> <p style=\"line-height: 100%; margin-bottom: 0cm\"><br/> </p>",
-    "Message-13-0": "<h2>Welcome to the ACKS system version 12.3.2 !</h2><h2 class=\"western\">New Features</h2> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Character Sheet Updates</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Mortal Wounds dialog (displayed when HP <= 0)</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Tampering With Mortality dialog (displayed when HP  <= 0)</p></li> </ul> <p style=\"line-height: 100%; margin-bottom: 0.28cm\">System</p> <ul> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Mortal Wounds Dialog available from actors sidebar</p></li> <li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Tampering With Mortality dialog available from actors sidebar</p></li><li><p style=\"line-height: 100%; margin-bottom: 0.28cm\">Preliminary support for Foundry v13</p></li> ",
-    "Button": "Close"
-  }
+  "ACKS.Welcome.Title": "Welcome!"
 }

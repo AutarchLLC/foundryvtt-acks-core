@@ -1,0 +1,38 @@
+{
+  "_id": "Z5YJB9JSMahrVUKf",
+  "name": "Metamphora",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/amphora.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Designed to store special components, metamphora are ceramic jars inscribed with alchemical sigils and stoppered with copper seals. Metamphora come in an array of different sizes and shapes, as more valuable special components require sturdier, stronger metamphora to prevent leakage. Metamphora cost 5gp and weigh 1 stone for every 60gp of value they can store.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 5,
+    "weight": -1,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/delapouite/amphora.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!Z5YJB9JSMahrVUKf"
+}

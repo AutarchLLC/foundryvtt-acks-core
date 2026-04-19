@@ -1,0 +1,38 @@
+{
+  "_id": "PcOQ4siuxMQd0R1j",
+  "name": "Oil, Military (1 pint)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/oil-military.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Military oil is a weapon made of naphtha, and cannot be easily doused with water. Military oil may be thrown at monsters, dealing 1d8 {F} damage for 2 rounds to the creature struck, or poured on the floor and ignited to burn for a full turn and delay pursuit.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 2,
+    "weight": -1,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730059981959,
+    "modifiedTime": 1732528518536,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "folder": null,
+  "_key": "!items!PcOQ4siuxMQd0R1j"
+}

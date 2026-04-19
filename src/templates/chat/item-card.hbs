@@ -1,0 +1,54 @@
+<div class="acks chat-card item-card" data-actor-id="{{actor._id}}" data-item-id="{{item._id}}"
+  {{attrIfHasValue "data-token-id" tokenId}}>
+
+  <header class="card-header flexrow">
+    <img src="{{item.img}}" title="{{item.name}}" width="36" height="36"/>
+    <h3 class="item-name">
+      <a>{{item.name}}</a>
+    </h3>
+  </header>
+
+  <div class="card-content expanded">
+    <div class="card-content__description">
+      {{{data.description}}}
+    </div>
+  </div>
+
+  <div class="card-buttons">
+    {{#if hasAttack}}
+      <button data-action="attack">{{ localize "ACKS.Attack" }}</button>{{/if}}
+
+    {{#if hasDamage}}
+      <button data-action="damage">
+        {{#if isHealing}}
+          {{ localize "ACKS.Healing" }}
+        {{else}}
+          {{localize "ACKS.Damage" }}
+        {{/if}}
+      </button>
+    {{/if}}
+
+    {{#if data.system.save}}
+      <button data-action="save" data-save="{{data.system.save}}" data-tokenId="{{data.token._id}}"
+              data-actorId="{{data.actor._id}}" disabled>
+        {{lookup config.saves_long data.system.save}} - {{localize "ACKS.spells.Save"}}
+      </button>
+    {{/if}}
+
+    {{#if data.system.roll}}
+      <button data-action="formula" data-tokenId="{{data.token._id}}" data-actorId="{{data.actor._id}}">
+        {{ localize "ACKS.Roll"}} {{data.system.roll}}
+        {{#if data.system.blindroll}}
+          ({{localize 'ACKS.items.BlindRoll'}})
+        {{/if}}
+      </button>
+    {{/if}}
+  </div>
+
+  <footer class="card-footer">
+    {{#each data.properties}}
+      <span>{{this}}</span>
+    {{/each}}
+  </footer>
+
+</div>

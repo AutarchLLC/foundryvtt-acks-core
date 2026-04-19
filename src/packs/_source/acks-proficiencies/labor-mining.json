@@ -1,0 +1,36 @@
+{
+  "_id": "X5jYE6pHoU66TaQK",
+  "name": "Labor: Mining",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/gold-mine.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20ms>11",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is highly proficient at a particular type of physical labor, such as bricklaying, farming, mining, or stonecutting. The character can make his living off his labors, earning 3-12gp per month. With a proficiency throw of 11+, the character can interpret information in light of his skill. A character may learn other labor proficiencies by taking this proficiency multiple times. Labor does not require enough skill to be able to be improved by taking this proficiency multiple times.</p>",
+    "save": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!X5jYE6pHoU66TaQK"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "beQaEAfXlYd8Qbkk",
+  "name": "Magic Rope",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/magic-rope.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "1 Turn / lvl",
+    "range": "Touch",
+    "roll": "",
+    "description": "<p>This spell enchants a length of up to 50' of rope. The rope must be at least as thick as a finger and in reasonable condition, e.g. not severed or completely frayed. Once enchanted, the magic rope is strong enough to support 100 stone (1,000lb) regardless of its normal carrying capacity. Upon command, the magic rope snakes forward, upward, downward, or in any other direction at 10' per round, attaching itself securely wherever its owner desires. It can unfasten itself and return in the same manner. A creature must hold one end of the magic rope when its magic is invoked.&nbsp;</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!beQaEAfXlYd8Qbkk"
+}

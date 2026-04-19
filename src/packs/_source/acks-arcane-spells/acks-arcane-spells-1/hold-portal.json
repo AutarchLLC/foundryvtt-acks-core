@@ -1,0 +1,36 @@
+{
+  "_id": "av40NMpjEBmwV1Ve",
+  "name": "Hold Portal",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/hold-portal.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "[[/r 2d6 #Turns]] Turns",
+    "range": "10'",
+    "roll": "",
+    "description": "<p>This spell magically holds shut a door, gate, window, or shutter of wood, metal, or stone. The magic affects the portal just as if it were securely closed and normally locked, though a thief may not attempt to Pick Locks upon it. A knock spell or a successful dispel magic spell can negate a hold portal spell.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!av40NMpjEBmwV1Ve"
+}

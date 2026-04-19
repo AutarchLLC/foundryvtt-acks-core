@@ -1,0 +1,98 @@
+{
+  "name": "Stingers",
+  "type": "weapon",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "_id": "sloQDItuAIiiaTea",
+            "flags": {},
+            "name": "Stingers",
+            "type": "weapon",
+            "img": "systems/acks/assets/icons/tentacle-strike.webp",
+            "data": {
+              "range": {
+                "short": 0,
+                "medium": 0,
+                "long": 0
+              },
+              "save": "paralysis",
+              "pattern": "red",
+              "description": "<p>When the stingers strike an opponent, he must succeed in a saving throw versus Paralysis or become paralyzed for [[/r 2d4 #Paralysis lasts for this many Turns]] turns. If not faced with more opponents, the carcass scavenger will swallow the paralyzed character on the subsequent round, killing him. Paralysis may be cured with cure light wounds, but when used in this way it does not heal damage.</p>",
+              "damage": "0",
+              "bonus": 0,
+              "tags": [
+                {
+                  "title": "Paralysis",
+                  "value": "Paralysis"
+                }
+              ],
+              "slow": false,
+              "missile": false,
+              "melee": true,
+              "cost": 0,
+              "equipped": false,
+              "weight": 0,
+              "counter": {
+                "value": 8,
+                "max": 8
+              }
+            },
+            "sort": 100000
+          }
+        }
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/tentacle-strike.webp",
+  "_id": "yITs1MfmwUG3Ve8f",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "13.342",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "paralysis",
+    "pattern": "red",
+    "description": "<p>When the stingers strike an opponent, he must succeed in a saving throw versus Paralysis or become paralyzed for [[/r 2d4 #Paralysis lasts for this many Turns]] turns. If not faced with more opponents, the carcass scavenger will swallow the paralyzed character on the subsequent round, killing him. Paralysis may be cured with cure light wounds, but when used in this way it does not heal damage.</p>",
+    "damage": "0",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Paralysis",
+        "value": "Paralysis"
+      }
+    ],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight": 0,
+    "weight6": -1,
+    "counter": {
+      "value": 8,
+      "max": 8
+    }
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!yITs1MfmwUG3Ve8f"
+}

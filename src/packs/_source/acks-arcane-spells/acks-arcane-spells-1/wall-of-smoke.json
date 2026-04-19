@@ -1,0 +1,36 @@
+{
+  "_id": "1hopT86hjNOidFOL",
+  "name": "Wall of Smoke",
+  "type": "spell",
+  "flags": {},
+  "img": "systems/acks/assets/icons/wall-of-smoke.webp",
+  "effects": [],
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "acks",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730058305652,
+    "modifiedTime": 1730058305652,
+    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
+    "exportSource": null
+  },
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "favorite": false,
+    "lvl": 1,
+    "class": "Arcane",
+    "duration": "1 Turn",
+    "range": "120'",
+    "roll": "",
+    "description": "<p>This spell causes an immobile, opaque, wall of billowing smoke to spring into existence. The wall can be as large as 1,000 square feet, and may be shaped in any manner and to any dimensions the caster desires, so that it can be a straight wall or curved into a protective circle. As with other spells of this sort, the wall of smoke may not be evoked so that it appears where objects or creatures already are.</p>\n<p>The wall of smoke is impermeable to vision and light, but presents no obstacle to movement or magical effects (except for those requiring a line of sight to target, of course). Once created, the wall of smoke can be affected by water or strong winds like an ordinary cloud of smoke, though other attacks will have correspondingly little effect on it. A disintegrate or dispel magic spell will destroy the wall of smoke instantly; it will otherwise dissipate in 1 turn.</p>",
+    "memorized": 0,
+    "cast": 0,
+    "save": ""
+  },
+  "folder": "jovYtuhNu2Eim4dQ",
+  "sort": 0,
+  "_key": "!items!1hopT86hjNOidFOL"
+}
