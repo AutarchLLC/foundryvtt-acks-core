@@ -39,7 +39,7 @@ export default class ActorTweaksConfig extends HandlebarsApplicationMixin(Docume
     const context = await super._prepareContext(options);
 
     context.docFields = this.document.system.schema.fields;
-    context.system = this.document.system;
+    context.system = this.document._source.system;
     context.isGM = game.user.isGM;
 
     context.isCharacter = this.document.type === "character";
