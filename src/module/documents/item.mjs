@@ -48,11 +48,11 @@ export default class AcksItem extends Item {
     });
   }
 
-  async getChatData(htmlOptions) {
+  async getChatData() {
     const data = foundry.utils.duplicate(this);
 
     // Rich text description
-    data.description = await TextEditor.enrichHTML(this.system.description, { ...{ async: true }, ...htmlOptions });
+    data.description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description);
     data.system = this.system;
 
     // Item properties
@@ -275,7 +275,7 @@ export default class AcksItem extends Item {
     // Basic chat message data
     const chatData = {
       user: game.user.id,
-      type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+      style: CONST.CHAT_MESSAGE_STYLES.OTHER,
       content: html,
       speaker: {
         actor: this.actor.id,

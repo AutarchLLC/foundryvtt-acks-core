@@ -30,7 +30,7 @@
 
     {{#if data.system.save}}
       <button data-action="save" data-save="{{data.system.save}}" data-tokenId="{{data.token._id}}"
-              data-actorId="{{data.actor._id}}" disabled>
+              data-actorId="{{data.actor._id}}">
         {{lookup config.saves_long data.system.save}} - {{localize "ACKS.spells.Save"}}
       </button>
     {{/if}}

@@ -4,7 +4,6 @@ import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
-const TextEditorRef = foundry.applications.ux.TextEditor.implementation;
 
 export default class AcksPartyOverviewApp extends HandlebarsApplicationMixin(ApplicationV2) {
   constructor(options) {
@@ -131,7 +130,7 @@ export default class AcksPartyOverviewApp extends HandlebarsApplicationMixin(App
   }
 
   async _onDrop(event) {
-    const data = TextEditorRef.getDragEventData(event);
+    const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
     const documentClass = foundry.utils.getDocumentClass(data.type);
     if (documentClass) {
       const doc = await documentClass.fromDropData(data);
