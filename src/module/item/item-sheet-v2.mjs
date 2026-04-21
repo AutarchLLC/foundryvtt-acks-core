@@ -8,7 +8,6 @@ import ACKSDialog from "../dialog/dialog.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
-const TextEditorRef = foundry.applications.ux.TextEditor.implementation;
 
 export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemSheetV2) {
   constructor(...args) {
@@ -137,7 +136,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @protected
    */
   async _onDrop(event) {
-    const data = TextEditorRef.getDragEventData(event);
+    const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
     const documentClass = foundry.utils.getDocumentClass(data.type);
     if (documentClass) {
       const doc = await documentClass.fromDropData(data);
@@ -354,7 +353,10 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     };
 
     context.enriched = {
-      description: await TextEditorRef.enrichHTML(this.item.system.description, enrichmentOptions),
+      description: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.item.system.description,
+        enrichmentOptions,
+      ),
     };
 
     return context;

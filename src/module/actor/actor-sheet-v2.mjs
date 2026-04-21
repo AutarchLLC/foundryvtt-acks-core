@@ -7,7 +7,6 @@ import AcksEffectUtil from "../effect/acks-effect-util.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
-const TextEditorRef = foundry.applications.ux.TextEditor.implementation;
 
 /**
  * @see https://foundryvtt.wiki/en/development/api/applicationv2
@@ -186,7 +185,10 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
         secrets: item.isOwner,
         relativeTo: item,
       };
-      const enriched = await TextEditorRef.enrichHTML(item.system.description, enrichmentOptions);
+      const enriched = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        item.system.description,
+        enrichmentOptions,
+      );
       const tagsHtmlString = item.getTags();
       const tags = tagsHtmlString.length > 0 ? `<ol class="tag-list unlist">${tagsHtmlString}</ol>` : "";
       summaryEl.innerHTML = `<div>${tags}${enriched}</div>`;
@@ -433,8 +435,10 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     context.isNew = this.actor.isNew();
 
     context.enriched = {
-      biography: await TextEditorRef.enrichHTML(this.actor.system.details.biography),
-      notes: await TextEditorRef.enrichHTML(this.actor.system.details.notes),
+      biography: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.actor.system.details.biography,
+      ),
+      notes: await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.actor.system.details.notes),
     };
 
     return context;
