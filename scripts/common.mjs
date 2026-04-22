@@ -1,5 +1,6 @@
 import { readdir } from "node:fs/promises";
 import path from "path";
+import process from "node:process";
 
 export const PACK_BASE_DIR = "src/";
 export const PACK_DEST = "src/packs";

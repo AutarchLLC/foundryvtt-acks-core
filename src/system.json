@@ -10,7 +10,7 @@
   "relationships": {},
   "compatibility": {
     "minimum": "13.351",
-    "verified": "14.359"
+    "verified": "14.360"
   },
   "flags": {
     "hotReload": {
