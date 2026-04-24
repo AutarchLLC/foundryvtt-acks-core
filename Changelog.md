@@ -2,6 +2,12 @@
 
 This is the change history for the FoundryVTT ACKS II core system module (search for *acks* in the Foundry installer).
 
+## Release 14.0.1
+1. FIX: fixed a bug with spell chat card's buttons not working.
+2. FIX: now opening and updating values in Tweaks dialog will not increase changed values indefinitely if same value is also modified by Active Effects.
+3. FIX: fixed roll result chat card's header.
+4. Updated some development documentation.
+
 ## Release 14.0.0
 
 1. Added support for Foundry v13 and v14. Dropped support for Foundry v12 and below.

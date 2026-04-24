@@ -2,10 +2,10 @@
   "id": "acks",
   "title": "Adventurer Conqueror King System",
   "description": "Play B/X or other OSR compatible content using the ACKS system",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "url": "https://github.com/AutarchLLC/foundryvtt-acks-core",
   "manifest": "https://github.com/AutarchLLC/foundryvtt-acks-core/releases/latest/download/system.json",
-  "download": "https://github.com/AutarchLLC/foundryvtt-acks-core/releases/download/release-14.0.0/acks-14.0.0.zip",
+  "download": "https://github.com/AutarchLLC/foundryvtt-acks-core/releases/download/release-14.0.1/acks-14.0.1.zip",
   "socket": true,
   "relationships": {},
   "compatibility": {
