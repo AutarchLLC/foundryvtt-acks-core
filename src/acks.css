@@ -678,13 +678,14 @@
   line-height: 34px;
   margin: 0;
   color: whitesmoke;
-  text-indent: 10px;
+  text-indent: 2px;
   font-size: 16px;
   word-break: break-all;
 }
 .acks.chat-block .chat-header .chat-img {
   flex: 0 0 42px;
   background-size: cover;
+  height: 42px;
 }
 .acks.chat-block .chat-target {
   text-align: right;
