@@ -6,14 +6,14 @@
       <div class="chat-title">
         <h2>{{title}}</h2>
       </div>
-      {{#if data.system.item}}
-        <div class="chat-img" style="background-image:url('{{data.system.item.img}}')"></div>
+      {{#if data.item}}
+        <div class="chat-img" style="background-image:url('{{data.item.img}}')"></div>
       {{else}}
-        <div class="chat-img" style="background-image:url('{{data.system.actor.img}}')"></div>
+        <div class="chat-img" style="background-image:url('{{data.actor.img}}')"></div>
       {{/if}}
     </div>
 
-    <div class="blindable" data-blind="{{data.system.roll.blindroll}}">
+    <div class="blindable" data-blind="{{data.roll.blindroll}}">
       {{#if result.details}}
         <div class="chat-details">{{{result.details}}}</div>
       {{/if}}
