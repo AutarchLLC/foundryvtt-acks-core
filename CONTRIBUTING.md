@@ -9,9 +9,12 @@ You can use [acks-vtt-collaboration](https://discord.com/channels/42756765044991
 ## Development Setup
 * Clone the repo into a local folder in your dev environment
 * From within the clone's folder, install dependencies with `npm ci`.
-* You'll now need to create a symbolic link between the clone's `src` folder and your Foundry's data folder. If you don't know how you can find instructions below. 
+* You'll now need to create a symbolic link between the clone's `src` folder and your Foundry's data folder. If you don't know how you can find instructions below.
 
-### Creating symbolic link on Windows
+### Automatic symbolic link
+Run `npm run link` from the root of the cloned repo. This will attempt to create symbolic link for you, just follow on-screen instructions.
+
+### Manually creating symbolic link on Windows
 This can be done by various means. This is one of them:
 * Make sure you have [Windows Powershell installed](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell).
 * Open terminal as administrator. Make sure you are not using CMD but Windows Powershell or alternative like [Windows Terminal](https://github.com/microsoft/terminal).
@@ -19,7 +22,7 @@ This can be done by various means. This is one of them:
 * Run following command `New-Item -ItemType SymbolicLink -Path .\acks\ -Target "d:\projects\js\foundryvtt-acks-core-dev\src\"`. Make sure you use correct Target path to the cloned repo on your machine.
 * Now you should have `acks` folder in your Foundry's data folder that is linked to your cloned repo.
 
-### Creating symbolic link on Linux
+### Manually creating symbolic link on Linux
 Check [docs](docs/dev-workflow.md) for an example.
 
 ## Code
