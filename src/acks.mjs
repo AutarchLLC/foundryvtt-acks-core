@@ -30,6 +30,7 @@ import { showPartySheet } from "./module/party.mjs";
 import AcksCombatHelper from "./module/combat-helper.mjs";
 import ACKSToken from "./module/documents/token.mjs";
 import hotbarDrop from "./module/hooks/hotbar-drop.mjs";
+import { runMigrations } from "./module/migration/migration.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -152,6 +153,10 @@ Hooks.on("chatMessage", (html, content, msg) => {
 });
 
 Hooks.once("ready", async () => {
+  // Run data migrations first — must complete before any other ready logic
+  // that might depend on current-schema data.
+  await runMigrations();
+
   Hooks.on("hotbarDrop", hotbarDrop);
 
   AcksUtility.updateWeightsLanguages();

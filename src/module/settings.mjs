@@ -18,6 +18,14 @@ export const registerMainSettings = async () => {
     default: "",
   });
 
+  game.settings.register("acks", "systemSchemaVersion", {
+    name: "Last completed data migration version",
+    scope: "world",
+    type: Number,
+    config: false,
+    default: 0,
+  });
+
   game.settings.register("acks", "skip-dialog-key", {
     name: "Key used to skip roll dialog ",
     hint: "When pressed while clicking on a rollable item, the dialog will be skipped and the roll will be made with the default options",

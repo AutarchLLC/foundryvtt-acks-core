@@ -2,22 +2,22 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
 import { ACKS } from "../../config.mjs";
+import BaseDataModel from "../common/base-data-model.mjs";
 
 /**
  * Item Item Data Model :D:D:D
- * @see https://foundryvtt.com/api/classes/foundry.abstract.TypeDataModel.html
- * @see https://foundryvtt.wiki/en/development/api/DataModel
- * @see https://foundryvtt.com/article/system-data-models/
  */
-export default class ItemData extends foundry.abstract.TypeDataModel {
+export default class ItemData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
+   * @override
    * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, subtype, quantity, treasure, iconsource, iconlicense}}
    */
   static defineSchema() {
     const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
+      ...super.defineSchema(),
       // common item description
       ...itemDescriptionSchema(),
       // cost and weight

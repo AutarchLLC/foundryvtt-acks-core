@@ -1,12 +1,17 @@
 /* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
+import BaseDataModel from "../common/base-data-model.mjs";
 
-export default class ItemBundleData extends foundry.abstract.TypeDataModel {
+export default class ItemBundleData extends BaseDataModel {
+  /**
+   * @override
+   */
   static defineSchema() {
     const { ArrayField, BooleanField, DocumentIdField, DocumentUUIDField, NumberField, SchemaField, StringField } =
       foundry.data.fields;
 
     return {
+      ...super.defineSchema(),
       // common item description
       ...itemDescriptionSchema(),
       itemList: new ArrayField(

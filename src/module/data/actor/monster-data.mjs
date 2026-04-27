@@ -1,23 +1,22 @@
 /* global foundry, CONST */
 import actorCommonSchema from "./templates/actor-common-schema.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
+import BaseDataModel from "../common/base-data-model.mjs";
 
 /**
  * Monster Data Model
- *
- * @see https://foundryvtt.com/api/classes/foundry.abstract.TypeDataModel.html
- * @see https://foundryvtt.wiki/en/development/api/DataModel
- * @see https://foundryvtt.com/article/system-data-models/
  */
-export default class MonsterData extends foundry.abstract.TypeDataModel {
+export default class MonsterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
+   * @override
    * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise, spells, details, attacks}}
    */
   static defineSchema() {
     const { NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
+      ...super.defineSchema(),
       // common actor template
       ...actorCommonSchema(),
       // spellcaster actor template

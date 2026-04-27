@@ -2,22 +2,22 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import { ACKS } from "../../config.mjs";
 import { ROLL_TYPE } from "../../constants.mjs";
+import BaseDataModel from "../common/base-data-model.mjs";
 
 /**
  * Ability / Proficiency Item Data Model
- * @see https://foundryvtt.com/api/classes/foundry.abstract.TypeDataModel.html
- * @see https://foundryvtt.wiki/en/development/api/DataModel
- * @see https://foundryvtt.com/article/system-data-models/
  */
-export default class AbilityData extends foundry.abstract.TypeDataModel {
+export default class AbilityData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
+   * @override
    * @return {{description: HTMLField, proficiencytype, favorite, pattern, requirements, roll, rollType, rollTarget, blindroll, save}}
    */
   static defineSchema() {
     const { BooleanField, NumberField, StringField } = foundry.data.fields;
 
     return {
+      ...super.defineSchema(),
       // common item description
       ...itemDescriptionSchema(),
       // proficiency type (general / class)
