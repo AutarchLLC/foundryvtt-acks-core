@@ -2,7 +2,7 @@
 
 /**
  * The current data schema version.
- * Bump this to the highest MigrationBase.version number whenever you add a
+ * Bump this to the highest *MigrationBase.version* number whenever you add a
  * new migration class. Must be a plain integer — matches the version numbers
  * used on individual MigrationBase subclasses in migration/migrations/.
  *
@@ -32,6 +32,7 @@ export async function runMigrations() {
     return;
   }
 
+  /** @type number */
   const stored = game.settings.get("acks", "systemSchemaVersion") ?? 0;
   if (CURRENT_SCHEMA_VERSION <= stored) {
     return;
