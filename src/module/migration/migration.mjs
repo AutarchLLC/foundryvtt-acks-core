@@ -1,5 +1,8 @@
 /* global game, Actor, Item, foundry, ui */
 
+import MigrationList from "./runner/migration-list.mjs";
+import MigrationRunner from "./runner/migration-runner.mjs";
+
 /**
  * The current data schema version.
  * Bump this to the highest *MigrationBase.version* number whenever you add a
@@ -12,7 +15,7 @@
  *
  * @type {number}
  */
-export const CURRENT_SCHEMA_VERSION = 0; // bump to highest migration version when you add migrations
+export const CURRENT_SCHEMA_VERSION = 1; // bump to highest migration version when you add migrations
 
 // ─── Public API ──────────────────────────────────────────────────────────────
 
@@ -32,32 +35,39 @@ export async function runMigrations() {
     return;
   }
 
+  await game.settings.set("acks", "systemSchemaVersion", 0); // FIXME: reset for testing; remove in production
+
   /** @type number */
-  const stored = game.settings.get("acks", "systemSchemaVersion") ?? 0;
-  if (CURRENT_SCHEMA_VERSION <= stored) {
-    return;
-  }
+  const worldSchemaVersion = game.settings.get("acks", "systemSchemaVersion") ?? 0;
+  const migrations = MigrationList.afterVersion(worldSchemaVersion);
+  const migrationRunner = new MigrationRunner(migrations);
 
-  console.log(`ACKS | Starting migration from schema v${stored} to v${CURRENT_SCHEMA_VERSION}…`);
-  const notice = ui.notifications.warn(`ACKS | Data migration in progress — do not close the browser.`, {
-    permanent: true,
-  });
-
-  try {
-    await _migrateWorldActors();
-    await _migrateWorldItems();
-    await _migrateSceneTokens();
-    await game.settings.set("acks", "systemSchemaVersion", CURRENT_SCHEMA_VERSION);
-    console.log(`ACKS | Migration to schema v${CURRENT_SCHEMA_VERSION} complete.`);
-    ui.notifications.info(`ACKS | Migration to schema v${CURRENT_SCHEMA_VERSION} complete.`);
-  } catch (err) {
-    console.error("ACKS | Migration failed:", err);
-    ui.notifications.error("ACKS | Migration failed. See browser console for details.", {
+  if (migrationRunner.needsMigration(worldSchemaVersion, CURRENT_SCHEMA_VERSION)) {
+    console.info(`ACKS | Starting migration from schema v${worldSchemaVersion} to v${CURRENT_SCHEMA_VERSION}…`);
+    const notice = ui.notifications.warn(`ACKS | Data migration in progress — do not close the browser.`, {
       permanent: true,
     });
-  } finally {
-    ui.notifications.remove?.(notice);
+
+    try {
+      await migrationRunner.runMigration();
+
+      await game.settings.set("acks", "systemSchemaVersion", CURRENT_SCHEMA_VERSION);
+
+      console.info(`ACKS | Migration to schema v${CURRENT_SCHEMA_VERSION} complete.`);
+      ui.notifications.info(`ACKS | Migration to schema v${CURRENT_SCHEMA_VERSION} complete.`);
+    } catch (err) {
+      console.error("ACKS | Migration failed:", err);
+      ui.notifications.error("ACKS | Migration failed. See browser console for details.", {
+        permanent: true,
+      });
+    } finally {
+      ui.notifications.remove?.(notice);
+    }
   }
+
+  //await _migrateWorldActors();
+  //await _migrateWorldItems();
+  //await _migrateSceneTokens();
 }
 
 /**

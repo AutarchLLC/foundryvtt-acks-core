@@ -1,6 +1,7 @@
 import * as migrations from "../migrations/index.mjs";
+
 export default class MigrationList {
-  /** @type {typeof import("./migration-base.mjs").default[]} */
+  /** @type {MigrationBase[]} */
   static #migrations = Object.values(migrations).sort((a, b) => a.version - b.version);
 
   /** All migrations in ascending version order. */
