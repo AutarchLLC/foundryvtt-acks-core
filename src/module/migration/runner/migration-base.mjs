@@ -11,46 +11,77 @@ export default class MigrationBase {
   requiresFlush = false;
 
   /**
-   * Build a Foundry update object for a single actor.
-   * Each block should be guarded so it only runs when the old field exists,
-   * making the function safe to call multiple times.
-   * Modify actor field - `"source.system.foo" = newValue`.
-   * Delete a key - `"system.saves.-=wand": null`   (the "-=" prefix) TODO: this is deprecated in Foundry v14
+   * Migrate a single actor. Mutate `source` in place.
    *
-   * Add an item - Push to `source.items` *without* `_id`.
-   * Remove an item - Splice/filter from `source.items` by `_id`.
-   * @param source
+   * Modify actor fields:  source.system.foo = newValue
+   * Add an item:          push to source.items WITHOUT an _id
+   * Remove an item:       splice/filter source.items by _id
+   *
+   * Item roster changes (add/remove) must only be done here, not in updateItem.
+   * The runner diffs source.items by _id after this method runs:
+   *   - Entry without _id  → createEmbeddedDocuments
+   *   - Original _id missing from result → deleteEmbeddedDocuments
+   *   - Do NOT copy an existing item with its _id to "duplicate" it — that updates the original.
+   *
+   * @param {object} source  Actor plain object. Mutate in place.
    * @return {Promise<boolean>}
+   *
+   * @example <caption>A — Rename a field</caption>
+   * if (source.system.saves?.wand !== undefined && source.system.saves?.implements === undefined) {
+   *   source.system.saves.implements = source.system.saves.wand;
+   *   // Use "-=" prefix — NOT JS delete. Absent keys are ignored by Foundry's update pipeline;
+   *   // only the "-=key": null syntax signals an actual DB deletion via SchemaField._updateDiff.
+   *   source.system.saves["-=wand"] = null;
+   * }
+   *
+   * @example <caption>B — Restructure a flat value into an object</caption>
+   * if (typeof source.system.movement === "number") {
+   *   const old = source.system.movement;
+   *   source.system.movement = { exploration: old, combat: old * 3 };
+   * }
+   *
+   * @example <caption>C — Type coercion</caption>
+   * if (typeof source.system.details?.xp === "string") {
+   *   source.system.details.xp = Number(source.system.details.xp) || 0;
+   * }
+   *
+   * @example <caption>D — Add a new embedded item</caption>
+   * if (!source.items.some((i) => i.type === "language" && i.name === "Common")) {
+   *   source.items.push({ type: "language", name: "Common", system: {} }); // no _id!
+   * }
+   *
+   * @example <caption>E — Remove an embedded item</caption>
+   * source.items = source.items.filter((i) => i.type !== "money" || i.name !== "Obsolete Currency");
    */
   // eslint-disable-next-line no-unused-vars
   async updateActor(source) {
-    // Example A — rename a field:
-    //   if ("wand" in (system.saves ?? {}) && !("implements" in (system.saves ?? {}))) {
-    //     update["system.saves.implements"] = { value: system.saves.wand.value };
-    //     update["system.saves.-=wand"] = null;
-    //   }
-    //
-    // Example B — restructure a flat field into a SchemaField:
-    //   if (typeof system.movement === "number") {
-    //     update["system.movementacks"] = {
-    //       exploration: system.movement * 10,
-    //       combat:      system.movement * 3,
-    //     };
-    //     update["system.-=movement"] = null;
-    //   }
-    //
-    // Example C — type coercion:
-    //   if (typeof system.details?.xp === "string") {
-    //     update["system.details.xp"] = Number(system.details.xp) || 0;
-    //   }
     return false;
   }
 
   /**
-   * Build a Foundry update object for a single item.
-   * @param source
-   * @param actorSource
+   * Migrate a single item's own fields. Mutate `source` in place.
+   * Do NOT add or remove items here — use updateActor for roster changes.
+   *
+   * @param {object} source            Item plain object. Mutate in place.
+   * @param {object|null} actorSource  Parent actor plain object (after updateActor ran),
+   *                                   or null when migrating a world item with no parent.
    * @return {Promise<boolean>}
+   *
+   * @example <caption>A — Rename a field</caption>
+   * if (source.type === "weapon" && source.system.dmg !== undefined && source.system.damage === undefined) {
+   *   source.system.damage = source.system.dmg;
+   *   source.system["-=dmg"] = null; // "-=" signals DB deletion; JS delete alone is not enough
+   * }
+   *
+   * @example <caption>B — Set a new field from actor context</caption>
+   * if (source.type === "ability" && source.system.classTag === undefined && actorSource) {
+   *   source.system.classTag = actorSource.system.details.class ?? "";
+   * }
+   *
+   * @example <caption>C — Restructure nested data</caption>
+   * if (source.type === "spell" && typeof source.system.range === "string") {
+   *   source.system.range = { value: source.system.range, unit: "ft" };
+   * }
    */
   // eslint-disable-next-line no-unused-vars
   async updateItem(source, actorSource) {
