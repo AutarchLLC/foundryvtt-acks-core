@@ -65,8 +65,6 @@ export async function runMigrations() {
     }
   }
 
-  //await _migrateWorldActors();
-  //await _migrateWorldItems();
   //await _migrateSceneTokens();
 }
 
@@ -89,36 +87,6 @@ export function isCurrentSchema(source) {
   return (source?._schemaVersion ?? 0) >= CURRENT_SCHEMA_VERSION;
 }
 
-// ─── Bulk migration helpers ───────────────────────────────────────────────────
-
-async function _migrateWorldActors() {
-  const actorUpdates = [];
-  const actorItemUpdates = new Map(); // actorId → Item update array
-
-  for (const actor of game.actors) {
-    const raw = actor.toObject();
-
-    const actorUpdate = _buildActorUpdate(raw);
-    if (actorUpdate) actorUpdates.push({ _id: actor.id, ...actorUpdate });
-
-    const itemUpdates = [];
-    for (const item of actor.items) {
-      const itemUpdate = _buildItemUpdate(item.toObject());
-      if (itemUpdate) itemUpdates.push({ _id: item.id, ...itemUpdate });
-    }
-    if (itemUpdates.length) actorItemUpdates.set(actor.id, itemUpdates);
-  }
-
-  if (actorUpdates.length) {
-    console.log(`ACKS | Migrating ${actorUpdates.length} world actor(s)…`);
-    await Actor.implementation.updateDocuments(actorUpdates);
-  }
-
-  for (const [actorId, itemUpdates] of actorItemUpdates) {
-    const actor = game.actors.get(actorId);
-    await Item.implementation.updateDocuments(itemUpdates, { parent: actor });
-  }
-}
 
 async function _migrateSceneTokens() {
   for (const scene of game.scenes) {
@@ -146,79 +114,6 @@ async function _migrateSceneTokens() {
       await scene.updateEmbeddedDocuments("Token", tokenUpdates);
     }
   }
-}
-
-// ─── Per-document migration builders ─────────────────────────────────────────
-
-/**
- * Build a Foundry update object for a single actor.
- * Returns null when no migration is needed (already current schema).
- *
- * Key syntax reminders:
- *   Set a nested field  →  "system.saves.implements.value": 16
- *   Delete a key        →  "system.saves.-=wand": null   (the "-=" prefix)
- *
- * @param {object} actorData  actor.toObject() result
- * @returns {object|null}     Partial update object, or null
- */
-function _buildActorUpdate(actorData) {
-  const system = actorData.system ?? {};
-  if (isCurrentSchema(system)) return null;
-
-  const update = {};
-
-  // ── ADD ACTOR MIGRATIONS HERE ─────────────────────────────────────────────
-  //
-  // Each block should be guarded so it only runs when the old field exists,
-  // making the function safe to call multiple times.
-  //
-  // Example A — rename a field:
-  //   if ("wand" in (system.saves ?? {}) && !("implements" in (system.saves ?? {}))) {
-  //     update["system.saves.implements"] = { value: system.saves.wand.value };
-  //     update["system.saves.-=wand"] = null;
-  //   }
-  //
-  // Example B — restructure a flat field into a SchemaField:
-  //   if (typeof system.movement === "number") {
-  //     update["system.movementacks"] = {
-  //       exploration: system.movement * 10,
-  //       combat:      system.movement * 3,
-  //     };
-  //     update["system.-=movement"] = null;
-  //   }
-  //
-  // Example C — type coercion:
-  //   if (typeof system.details?.xp === "string") {
-  //     update["system.details.xp"] = Number(system.details.xp) || 0;
-  //   }
-  //
-  // ─────────────────────────────────────────────────────────────────────────
-
-  update["system._schemaVersion"] = CURRENT_SCHEMA_VERSION;
-  return update;
-}
-
-/**
- * Build a Foundry update object for a single item.
- * Returns null when no migration is needed.
- *
- * @param {object} itemData  item.toObject() result
- * @returns {object|null}
- */
-function _buildItemUpdate(itemData) {
-  const system = itemData.system ?? {};
-  if (isCurrentSchema(system)) return null;
-
-  const update = {};
-
-  // ── ADD ITEM MIGRATIONS HERE ──────────────────────────────────────────────
-  //
-  // Guard each block on old-field existence, same pattern as actor above.
-  //
-  // ─────────────────────────────────────────────────────────────────────────
-
-  update["system._schemaVersion"] = CURRENT_SCHEMA_VERSION;
-  return update;
 }
 
 /**
