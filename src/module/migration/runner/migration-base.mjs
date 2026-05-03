@@ -10,11 +10,20 @@ export default class MigrationBase {
    */
   requiresFlush = false;
 
-  async updateActor(_source) {
+  /**
+   * Modify actor field - `source.system.foo = newValue`.
+   * Add an item - Push to `source.items` *without* `_id`.
+   * Remove an item - Splice/filter from `source.items` by `_id`.
+   * @param source
+   * @return {Promise<boolean>}
+   */
+  // eslint-disable-next-line no-unused-vars
+  async updateActor(source) {
     return false;
   }
 
-  async updateItem(_source, _actorSource) {
+  // eslint-disable-next-line no-unused-vars
+  async updateItem(source, actorSource) {
     return false;
   }
 }

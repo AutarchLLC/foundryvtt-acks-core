@@ -120,20 +120,6 @@ async function _migrateWorldActors() {
   }
 }
 
-async function _migrateWorldItems() {
-  const itemUpdates = [];
-
-  for (const item of game.items) {
-    const update = _buildItemUpdate(item.toObject());
-    if (update) itemUpdates.push({ _id: item.id, ...update });
-  }
-
-  if (itemUpdates.length) {
-    console.log(`ACKS | Migrating ${itemUpdates.length} world item(s)…`);
-    await Item.implementation.updateDocuments(itemUpdates);
-  }
-}
-
 async function _migrateSceneTokens() {
   for (const scene of game.scenes) {
     const tokenUpdates = [];
