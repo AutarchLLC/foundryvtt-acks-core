@@ -1,4 +1,4 @@
-/* global game, Actor, Item, foundry, ui */
+/* global game, ui */
 
 import MigrationList from "./runner/migration-list.mjs";
 import MigrationRunner from "./runner/migration-runner.mjs";
@@ -16,8 +16,6 @@ import MigrationRunner from "./runner/migration-runner.mjs";
  * @type {number}
  */
 export const CURRENT_SCHEMA_VERSION = 1; // bump to highest migration version when you add migrations
-
-// ─── Public API ──────────────────────────────────────────────────────────────
 
 /**
  * Run all pending data migrations.
@@ -64,8 +62,6 @@ export async function runMigrations() {
       ui.notifications.remove?.(notice);
     }
   }
-
-  //await _migrateSceneTokens();
 }
 
 /**
@@ -85,58 +81,4 @@ export async function runMigrations() {
  */
 export function isCurrentSchema(source) {
   return (source?._schemaVersion ?? 0) >= CURRENT_SCHEMA_VERSION;
-}
-
-
-async function _migrateSceneTokens() {
-  for (const scene of game.scenes) {
-    const tokenUpdates = [];
-
-    for (const token of scene.tokens) {
-      // Linked tokens derive their data from the world actor (migrated above).
-      if (token.actorLink) continue;
-
-      // Unlinked tokens store actor overrides in token.delta.
-      // Only bother if the delta carries system data at all.
-      const deltaObj = token.delta?.toObject?.() ?? {};
-      if (!deltaObj.system || Object.keys(deltaObj.system).length === 0) continue;
-
-      if (isCurrentSchema(deltaObj.system)) continue;
-
-      // Deep-clone so we can mutate safely, then apply actor-level transforms.
-      const system = foundry.utils.deepClone(deltaObj.system);
-      const changed = _migrateActorSystemInPlace(system);
-      if (changed) tokenUpdates.push({ _id: token.id, "delta.system": system });
-    }
-
-    if (tokenUpdates.length) {
-      console.log(`ACKS | Migrating ${tokenUpdates.length} unlinked token(s) in scene "${scene.name}"…`);
-      await scene.updateEmbeddedDocuments("Token", tokenUpdates);
-    }
-  }
-}
-
-/**
- * Mutate a raw system object in-place (for unlinked token deltas).
- * Must mirror the logic in _buildActorUpdate, but operates directly on the
- * object rather than building dot-notation update keys.
- *
- * @param {object} system  Raw system data, already deep-cloned
- * @returns {boolean}      True if any change was made
- */
-function _migrateActorSystemInPlace(system) {
-  if (isCurrentSchema(system)) return false;
-
-  // ── MIRROR OF _buildActorUpdate LOGIC ────────────────────────────────────
-  //
-  // Example A — rename:
-  //   if (system.saves?.wand && !system.saves?.implements) {
-  //     system.saves.implements = { value: system.saves.wand.value };
-  //     delete system.saves.wand;
-  //   }
-  //
-  // ─────────────────────────────────────────────────────────────────────────
-
-  system._schemaVersion = CURRENT_SCHEMA_VERSION;
-  return true;
 }

@@ -48,6 +48,8 @@ export default class MigrationRunner {
     await this.#migrateWorldActors(migrations);
     // Migrate World Items
     await this.#migrateWorldItems(migrations);
+    // Migrate World Tokens from all Scenes
+    await this.#migrateSceneTokens(migrations);
   }
 
   async #migrateWorldActors(migrations) {
@@ -58,29 +60,7 @@ export default class MigrationRunner {
       const actorUpdate = await this.#buildActorUpdate(raw, migrations);
 
       if (actorUpdate) {
-        const originalIds = new Set(raw.items.map((i) => i._id));
-        const updatedItems = actorUpdate.items ?? [];
-        const updatedIds = new Set(updatedItems.filter((i) => i._id).map((i) => i._id));
-
-        // Items removed by a migration
-        const deletedIds = [...originalIds].filter((id) => !updatedIds.has(id));
-        if (deletedIds.length) {
-          await actor.deleteEmbeddedDocuments("Item", deletedIds);
-        }
-
-        // Items added by a migration (no _id = new)
-        const createdItems = updatedItems.filter((i) => !i._id);
-        if (createdItems.length) {
-          await actor.createEmbeddedDocuments("Item", createdItems);
-        }
-
-        // Existing items updated in-place during #buildActorUpdate
-        const itemUpdates = updatedItems.filter((i) => i._id && originalIds.has(i._id));
-        if (itemUpdates.length) {
-          await actor.updateEmbeddedDocuments("Item", itemUpdates);
-        }
-
-        delete actorUpdate.items;
+        await this.#processActorItems(actor, raw, actorUpdate);
         actorUpdates.push({ _id: actor.id, ...actorUpdate });
       }
     }
@@ -88,6 +68,98 @@ export default class MigrationRunner {
     if (actorUpdates.length) {
       console.log(`ACKS | Migrating ${actorUpdates.length} world actor(s)…`);
       await Actor.implementation.updateDocuments(actorUpdates);
+    }
+  }
+
+  async #processActorItems(actor, raw, actorUpdate) {
+    const originalIds = new Set(raw.items.map((i) => i._id));
+    const updatedItems = actorUpdate.items ?? [];
+    const updatedIds = new Set(updatedItems.filter((i) => i._id).map((i) => i._id));
+
+    // Items removed by a migration
+    const deletedIds = [...originalIds].filter((id) => !updatedIds.has(id));
+    if (deletedIds.length) {
+      await actor.deleteEmbeddedDocuments("Item", deletedIds);
+    }
+
+    // Items added by a migration (no _id = new)
+    const createdItems = updatedItems.filter((i) => !i._id);
+    if (createdItems.length) {
+      await actor.createEmbeddedDocuments("Item", createdItems);
+    }
+
+    // Existing items updated in-place during #buildActorUpdate
+    const itemUpdates = updatedItems.filter((i) => i._id && originalIds.has(i._id));
+    if (itemUpdates.length) {
+      await actor.updateEmbeddedDocuments("Item", itemUpdates);
+    }
+
+    delete actorUpdate.items;
+  }
+
+  async #migrateSceneTokens(migrations) {
+    for (const scene of game.scenes) {
+      for (const token of scene.tokens) {
+        // Linked tokens derive their data from the world actor (migrated above).
+        if (token.actorLink) {
+          continue;
+        }
+
+        // The delta is the sparse set of overrides on top of the base actor.
+        // Only proceed if the delta carries system data at all.
+        const delta = token.delta;
+        if (!delta) {
+          continue;
+        }
+
+        const deltaObj = delta.toObject();
+        if (!deltaObj.system || Object.keys(deltaObj.system).length === 0) {
+          continue;
+        }
+        if (isCurrentSchema(deltaObj.system)) {
+          continue;
+        }
+
+        // Build a migration target from delta-only data (sparse — only overridden fields).
+        // Migrations guard every field access, so operating on partial data is safe.
+        // deltaObj.items contains only overridden/added items and tombstone records.
+        const deltaTarget = foundry.utils.deepClone(deltaObj);
+        deltaTarget.items = (deltaTarget.items ?? []).filter((i) => !i._tombstone);
+
+        for (const migration of migrations) {
+          await migration.updateActor(deltaTarget);
+          for (const item of deltaTarget.items) {
+            await migration.updateItem(item, deltaTarget);
+          }
+        }
+
+        deltaTarget.system._schemaVersion = CURRENT_SCHEMA_VERSION;
+        for (const item of deltaTarget.items) {
+          foundry.utils.setProperty(item, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
+        }
+
+        // Diff items against the original delta items (not the full merged actor).
+        const syntheticActor = token.actor;
+        if (syntheticActor) {
+          const originalIds = new Set(deltaObj.items?.filter((i) => !i._tombstone).map((i) => i._id) ?? []);
+          const updatedItems = deltaTarget.items ?? [];
+          const updatedIds = new Set(updatedItems.filter((i) => i._id).map((i) => i._id));
+
+          const deletedIds = [...originalIds].filter((id) => !updatedIds.has(id));
+          if (deletedIds.length) await syntheticActor.deleteEmbeddedDocuments("Item", deletedIds);
+
+          const createdItems = updatedItems.filter((i) => !i._id);
+          if (createdItems.length) await syntheticActor.createEmbeddedDocuments("Item", createdItems);
+
+          const itemUpdates = updatedItems.filter((i) => i._id && originalIds.has(i._id));
+          if (itemUpdates.length) await syntheticActor.updateEmbeddedDocuments("Item", itemUpdates);
+        }
+
+        // Write migrated system data back via "delta.system" — the correct key path
+        // for reaching into the ActorDelta embedded on a TokenDocument.
+        // Using token.id (NOT actor.id) as the identifier for the token document.
+        await scene.updateEmbeddedDocuments("Token", [{ _id: token.id, "delta.system": deltaTarget.system }]);
+      }
     }
   }
 
