@@ -23,15 +23,19 @@ export default class MigrationBase {
    *   - Original _id missing from result → deleteEmbeddedDocuments
    *   - Do NOT copy an existing item with its _id to "duplicate" it — that updates the original.
    *
+   * To delete a field from the DB use foundry.data.operators.ForcedDeletion (v14+).
+   * The old "-=fieldName": null syntax still works in v14 but is deprecated (removed in v16).
+   *
    * @param {object} source  Actor plain object. Mutate in place.
    * @return {Promise<boolean>}
    *
    * @example <caption>A — Rename a field</caption>
    * if (source.system.saves?.wand !== undefined && source.system.saves?.implements === undefined) {
    *   source.system.saves.implements = source.system.saves.wand;
-   *   // Use "-=" prefix — NOT JS delete. Absent keys are ignored by Foundry's update pipeline;
-   *   // only the "-=key": null syntax signals an actual DB deletion via SchemaField._updateDiff.
-   *   source.system.saves["-=wand"] = null;
+   *   // v14+: ForcedDeletion permanently removes the key from the DB.
+   *   source.system.saves.wand = new foundry.data.operators.ForcedDeletion();
+   *   // v13 equivalent (deprecated in v14, removed in v16):
+   *   // source.system.saves["-=wand"] = null;
    * }
    *
    * @example <caption>B — Restructure a flat value into an object</caption>
@@ -70,7 +74,10 @@ export default class MigrationBase {
    * @example <caption>A — Rename a field</caption>
    * if (source.type === "weapon" && source.system.dmg !== undefined && source.system.damage === undefined) {
    *   source.system.damage = source.system.dmg;
-   *   source.system["-=dmg"] = null; // "-=" signals DB deletion; JS delete alone is not enough
+   *   // v14+: ForcedDeletion permanently removes the key from the DB.
+   *   source.system.dmg = new foundry.data.operators.ForcedDeletion();
+   *   // v13 equivalent (deprecated in v14, removed in v16):
+   *   // source.system["-=dmg"] = null;
    * }
    *
    * @example <caption>B — Set a new field from actor context</caption>
