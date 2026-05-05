@@ -133,7 +133,7 @@ export default class MigrationRunner {
           }
         }
 
-        deltaTarget.system._schemaVersion = CURRENT_SCHEMA_VERSION;
+        foundry.utils.setProperty(deltaTarget, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
         for (const item of deltaTarget.items) {
           foundry.utils.setProperty(item, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
         }
@@ -201,7 +201,7 @@ export default class MigrationRunner {
       }
     }
 
-    update["system._schemaVersion"] = CURRENT_SCHEMA_VERSION;
+    foundry.utils.setProperty(update, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
     for (const item of update.items ?? []) {
       foundry.utils.setProperty(item, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
     }
@@ -229,7 +229,69 @@ export default class MigrationRunner {
       await migration.updateItem(update, null);
     }
 
-    update["system._schemaVersion"] = CURRENT_SCHEMA_VERSION;
+    foundry.utils.setProperty(update, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
     return update;
+  }
+
+  /**
+   * Reset system._schemaVersion to 0 for all world actors (and their embedded items),
+   * world items, and unlinked token deltas in every scene.
+   *
+   * Use this in development to re-run migrations from scratch:
+   *   const runner = new MigrationRunner(MigrationList.all);
+   *   await runner.resetSchemaVersions();
+   *   await runner.runMigration();
+   *
+   * Never call this in production — it will trigger a full re-migration for every GM
+   * who opens the world.
+   */
+  static async resetSchemaVersions(resetVersion = 0) {
+    if (!game.user.isGM) {
+      return;
+    }
+    console.warn(`ACKS | resetSchemaVersions() called — all schema versions will be reset to ${resetVersion}.`);
+
+    // ── World actors + embedded items ───────────────────────────────────────
+    const actorUpdates = [];
+    for (const actor of game.actors) {
+      actorUpdates.push({ _id: actor.id, "system._schemaVersion": resetVersion });
+
+      const itemUpdates = actor.items.map((i) => ({ _id: i.id, "system._schemaVersion": resetVersion }));
+      if (itemUpdates.length) {
+        await actor.updateEmbeddedDocuments("Item", itemUpdates);
+      }
+    }
+    if (actorUpdates.length) {
+      await Actor.implementation.updateDocuments(actorUpdates);
+    }
+
+    // ── World items ─────────────────────────────────────────────────────────
+    const itemUpdates = game.items.map((i) => ({ _id: i.id, "system._schemaVersion": resetVersion }));
+    if (itemUpdates.length) {
+      await Item.implementation.updateDocuments(itemUpdates);
+    }
+
+    // ── Unlinked token deltas ───────────────────────────────────────────────
+    for (const scene of game.scenes) {
+      const tokenUpdates = [];
+      for (const token of scene.tokens) {
+        if (token.actorLink) {
+          continue;
+        }
+        const deltaObj = token.delta?.toObject?.() ?? {};
+        if (!deltaObj.system || Object.keys(deltaObj.system).length === 0) {
+          continue;
+        }
+        tokenUpdates.push({ _id: token.id, "delta.system._schemaVersion": resetVersion });
+      }
+      if (tokenUpdates.length) {
+        await scene.updateEmbeddedDocuments("Token", tokenUpdates);
+      }
+    }
+
+    // ── Reset the world-level migration version setting ─────────────────────
+    await game.settings.set("acks", "systemSchemaVersion", resetVersion);
+
+    console.log("ACKS | resetSchemaVersions() complete — run runMigration() to re-apply all migrations.");
   }
 }

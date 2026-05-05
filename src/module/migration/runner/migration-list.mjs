@@ -11,10 +11,11 @@ export default class MigrationList {
 
   /**
    * All migrations with a version number greater than the given version.
-   * @param {number} version - Last completed migration version (0 if never run).
+   * @param {number} from - Last completed migration version (0 if never run).
+   * @param {number} to - target migration version.
    * @returns {import("./migration-base.mjs").default[]}
    */
-  static afterVersion(version) {
-    return this.#migrations.filter((M) => M.version > version).map((M) => new M());
+  static fromVersionTo(from, to) {
+    return this.#migrations.filter((M) => M.version > from && M.version <= to).map((M) => new M());
   }
 }

@@ -84,7 +84,7 @@ export default class MigrationBase {
    * }
    */
   // eslint-disable-next-line no-unused-vars
-  async updateItem(source, actorSource) {
+  async updateItem(source, actorSource = null) {
     return false;
   }
 }

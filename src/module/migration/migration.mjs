@@ -33,11 +33,11 @@ export async function runMigrations() {
     return;
   }
 
-  await game.settings.set("acks", "systemSchemaVersion", 0); // FIXME: reset for testing; remove in production
+  await MigrationRunner.resetSchemaVersions(); // FIXME: reset for testing; remove in production
 
   /** @type number */
   const worldSchemaVersion = game.settings.get("acks", "systemSchemaVersion") ?? 0;
-  const migrations = MigrationList.afterVersion(worldSchemaVersion);
+  const migrations = MigrationList.fromVersionTo(worldSchemaVersion, CURRENT_SCHEMA_VERSION);
   const migrationRunner = new MigrationRunner(migrations);
 
   if (migrationRunner.needsMigration(worldSchemaVersion, CURRENT_SCHEMA_VERSION)) {

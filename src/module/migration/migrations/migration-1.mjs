@@ -7,11 +7,9 @@ export class Migration1Test extends MigrationBase {
 
   async updateActor(source) {
     return super.updateActor(source);
-    debugger;
   }
 
-  async updateItem(source, actorSource) {
+  async updateItem(source, actorSource = null) {
     return super.updateItem(source, actorSource);
-    debugger;
   }
 }
