@@ -30,16 +30,16 @@ export const ACKS = {
   },
   saves_short: {
     death: "ACKS.saves.death.short",
-    wand: "ACKS.saves.wand.short",
+    implements: "ACKS.saves.implements.short",
     paralysis: "ACKS.saves.paralysis.short",
-    breath: "ACKS.saves.breath.short",
+    blast: "ACKS.saves.blast.short",
     spell: "ACKS.saves.spell.short",
   },
   saves_long: {
     death: "ACKS.saves.death.long",
-    wand: "ACKS.saves.wand.long",
+    implements: "ACKS.saves.implements.long",
     paralysis: "ACKS.saves.paralysis.long",
-    breath: "ACKS.saves.breath.long",
+    blast: "ACKS.saves.blast.long",
     spell: "ACKS.saves.spell.long",
   },
   armor: {

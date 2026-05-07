@@ -391,12 +391,6 @@ export default class AcksActor extends Actor {
     }
   }
 
-  async updateImplements() {
-    if (this.system.saves.implements?.value === -1) {
-      this.update({ "system.saves.implements.value": this.system.saves.wand.value });
-    }
-  }
-
   async updateLanguages() {
     if (this.type !== "character") {
       return;
@@ -441,11 +435,9 @@ export default class AcksActor extends Actor {
       "system.saves": {
         paralysis: { value: savingThrows.p },
         death: { value: savingThrows.d },
-        breath: { value: savingThrows.b },
+        blast: { value: savingThrows.b },
         implements: { value: savingThrows.i },
         spell: { value: savingThrows.s },
-
-        wand: { value: savingThrows.i },
       },
     });
   }

@@ -416,13 +416,10 @@
       "death": {
         "value": 15
       },
-      "wand": {
-        "value": 17
-      },
       "paralysis": {
         "value": 16
       },
-      "breath": {
+      "blast": {
         "value": 15
       },
       "spell": {

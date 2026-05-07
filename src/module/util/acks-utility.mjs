@@ -17,7 +17,6 @@ export class AcksUtility {
     for (const actor of game.actors) {
       actor.updateWeight();
       actor.updateLanguages();
-      actor.updateImplements();
     }
     for (const item of game.items) {
       item.updateWeight();

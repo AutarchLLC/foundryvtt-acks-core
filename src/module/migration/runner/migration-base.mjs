@@ -27,7 +27,7 @@ export default class MigrationBase {
    * The old "-=fieldName": null syntax still works in v14 but is deprecated (removed in v16).
    *
    * @param {object} source  Actor plain object. Mutate in place.
-   * @return {Promise<boolean>}
+   * @return {Promise<void>}
    *
    * @example <caption>A — Rename a field</caption>
    * if (source.system.saves?.wand !== undefined && source.system.saves?.implements === undefined) {
@@ -58,9 +58,7 @@ export default class MigrationBase {
    * source.items = source.items.filter((i) => i.type !== "money" || i.name !== "Obsolete Currency");
    */
   // eslint-disable-next-line no-unused-vars
-  async updateActor(source) {
-    return false;
-  }
+  async updateActor(source) {}
 
   /**
    * Migrate a single item's own fields. Mutate `source` in place.
@@ -69,7 +67,7 @@ export default class MigrationBase {
    * @param {object} source            Item plain object. Mutate in place.
    * @param {object|null} actorSource  Parent actor plain object (after updateActor ran),
    *                                   or null when migrating a world item with no parent.
-   * @return {Promise<boolean>}
+   * @return {Promise<void>}
    *
    * @example <caption>A — Rename a field</caption>
    * if (source.type === "weapon" && source.system.dmg !== undefined && source.system.damage === undefined) {
@@ -91,7 +89,5 @@ export default class MigrationBase {
    * }
    */
   // eslint-disable-next-line no-unused-vars
-  async updateItem(source, actorSource = null) {
-    return false;
-  }
+  async updateItem(source, actorSource = null) {}
 }

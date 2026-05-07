@@ -30,11 +30,11 @@
     "class": "Arcane",
     "duration": "Instant",
     "range": "0'",
-    "roll": "1d4 Fire Damage",
+    "roll": "1d4",
     "description": "<p>This spell produces a <strong>cone of searing flame 40' long and 20' wide</strong> stretching from the caster's hands. Any creatures within the cone will suffer <strong>1d4 points of damage per level of the caster</strong> (maximum 5d4).</p>\n<p>A successful saving throw versus Blast reduces damage to half.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": "breath"
+    "save": "blast"
   },
   "folder": "jovYtuhNu2Eim4dQ",
   "sort": 0,

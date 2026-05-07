@@ -196,13 +196,10 @@
       "death": {
         "value": 14
       },
-      "wand": {
-        "value": 16
-      },
       "paralysis": {
         "value": 15
       },
-      "breath": {
+      "blast": {
         "value": 16
       },
       "spell": {
@@ -304,17 +301,17 @@
           "death": {
             "value": 0
           },
-          "wand": {
-            "value": 0
-          },
           "paralysis": {
             "value": 0
           },
-          "breath": {
+          "blast": {
             "value": 0
           },
           "spell": {
             "value": "0"
+          },
+          "implements": {
+            "value": 0
           }
         },
         "movement": {
@@ -400,17 +397,17 @@
               "death": {
                 "value": 0
               },
-              "wand": {
-                "value": 0
-              },
               "paralysis": {
                 "value": 0
               },
-              "breath": {
+              "blast": {
                 "value": 0
               },
               "spell": {
                 "value": "0"
+              },
+              "implements": {
+                "value": 0
               }
             },
             "movement": {
@@ -496,16 +493,16 @@
                   "death": {
                     "value": 0
                   },
-                  "wand": {
-                    "value": 0
-                  },
                   "paralysis": {
                     "value": 0
                   },
-                  "breath": {
+                  "blast": {
                     "value": 0
                   },
                   "spell": {
+                    "value": 0
+                  },
+                  "implements": {
                     "value": 0
                   }
                 },

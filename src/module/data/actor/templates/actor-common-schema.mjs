@@ -80,7 +80,7 @@ export default function actorCommonSchema() {
         value: new NumberField({ required: true, initial: 14 }),
       }),
       // Blast saving throw
-      breath: new SchemaField({
+      blast: new SchemaField({
         value: new NumberField({ required: true, initial: 15 }),
       }),
       // Implements saving throw
@@ -90,10 +90,6 @@ export default function actorCommonSchema() {
       // Spells saving throw
       spell: new SchemaField({
         value: new NumberField({ required: true, initial: 17 }),
-      }),
-      // TODO: wand is not used, renamed to implements. Write migration and remove from data model
-      wand: new SchemaField({
-        value: new NumberField({ initial: 16 }),
       }),
     }),
     // Saving throw bonus, configured via Actor Tweaks

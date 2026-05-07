@@ -106,7 +106,7 @@
                   "rollTarget": 0,
                   "blindroll": false,
                   "description": "<p>Hellhounds fiery breath affects one target within 15' and deals 1d6 points of damage per Hit Die the attacking hell hound possesses. A successful saving throw versus Breath reduces the damage by half.&nbsp;</p>",
-                  "save": "breath"
+                  "save": "blast"
                 },
                 "sort": 200000
               }
@@ -140,7 +140,7 @@
         "rollTarget": 0,
         "blindroll": false,
         "description": "<p>Hellhounds fiery breath affects one target within 15' and deals 1d6 points of damage per Hit Die the attacking hell hound possesses. A successful saving throw versus Breath reduces the damage by half.&nbsp;</p>",
-        "save": "breath"
+        "save": "blast"
       },
       "folder": null,
       "ownership": {
@@ -295,13 +295,10 @@
       "death": {
         "value": 13
       },
-      "wand": {
-        "value": 15
-      },
       "paralysis": {
         "value": 14
       },
-      "breath": {
+      "blast": {
         "value": 15
       },
       "spell": {

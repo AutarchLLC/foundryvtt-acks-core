@@ -1,4 +1,4 @@
-/* global foundry, game, Actor, Item */
+/* global foundry, game, Actor, Item, ui */
 import { CURRENT_SCHEMA_VERSION, isCurrentSchema } from "../migration.mjs";
 
 export default class MigrationRunner {
@@ -28,6 +28,71 @@ export default class MigrationRunner {
       await this.#migrateWorldActors(phase);
       await this.#migrateWorldItems(phase);
       await this.#migrateSceneTokens(phase);
+      await this.#migrateWorldCompendiums(phase);
+    }
+  }
+
+  /**
+   * Migrate all world-owned (unlockable) compendium packs.
+   * System and module compendium packs are read-only at runtime and are skipped —
+   * those rely on migrateData() as a safety net instead.
+   * @param {MigrationBase[]} migrations
+   * @return {Promise<void>}
+   */
+  async #migrateWorldCompendiums(migrations) {
+    for (const pack of game.packs) {
+      // Only world-owned packs are writable. System/module packs are read-only at runtime.
+      if (pack.metadata.packageType !== "world") {
+        continue;
+      }
+
+      const documentName = pack.documentName;
+      if (documentName !== "Actor" && documentName !== "Item") {
+        continue;
+      }
+
+      const wasLocked = pack.locked;
+      if (wasLocked) {
+        await pack.configure({ locked: false });
+      }
+
+      try {
+        const documents = await pack.getDocuments();
+        if (documentName === "Actor") {
+          const actorUpdates = [];
+          for (const actor of documents) {
+            const raw = actor.toObject();
+            const actorUpdate = await this.#buildActorUpdate(raw, migrations);
+            if (actorUpdate) {
+              await this.#commitActorItems(actor, raw.items, actorUpdate);
+              actorUpdates.push({ _id: actor.id, ...actorUpdate });
+            }
+          }
+          if (actorUpdates.length) {
+            console.log(`ACKS | Migrating ${actorUpdates.length} actor(s) in compendium "${pack.metadata.label}"…`);
+            await pack.documentClass.updateDocuments(actorUpdates, { pack: pack.collection });
+          }
+        } else {
+          const itemUpdates = [];
+          for (const item of documents) {
+            const update = await this.#buildItemUpdate(item.toObject(), migrations);
+            if (update) {
+              itemUpdates.push({ _id: item.id, ...update });
+            }
+          }
+          if (itemUpdates.length) {
+            console.log(`ACKS | Migrating ${itemUpdates.length} item(s) in compendium "${pack.metadata.label}"…`);
+            await pack.documentClass.updateDocuments(itemUpdates, { pack: pack.collection });
+          }
+        }
+      } catch (err) {
+        ui.notifications.error(`ACKS | Failed to migrate compendium "${pack.metadata.label}": ${err.message}`);
+        console.error(err);
+      } finally {
+        if (wasLocked) {
+          await pack.configure({ locked: true });
+        }
+      }
     }
   }
 

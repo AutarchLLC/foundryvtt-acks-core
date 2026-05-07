@@ -499,13 +499,10 @@
       "death": {
         "value": 10
       },
-      "wand": {
-        "value": 12
-      },
       "paralysis": {
         "value": 11
       },
-      "breath": {
+      "blast": {
         "value": 13
       },
       "spell": {
@@ -607,17 +604,17 @@
           "death": {
             "value": 12
           },
-          "wand": {
-            "value": 13
-          },
           "paralysis": {
             "value": 14
           },
-          "breath": {
+          "blast": {
             "value": 15
           },
           "spell": {
             "value": "16"
+          },
+          "implements": {
+            "value": 13
           }
         },
         "movement": {
@@ -704,17 +701,17 @@
               "death": {
                 "value": 12
               },
-              "wand": {
-                "value": 13
-              },
               "paralysis": {
                 "value": 14
               },
-              "breath": {
+              "blast": {
                 "value": 15
               },
               "spell": {
                 "value": 16
+              },
+              "implements": {
+                "value": 13
               }
             },
             "movement": {
