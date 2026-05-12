@@ -15,11 +15,7 @@ export class AcksUtility {
   static updateWeightsLanguages() {
     // TODO: write proper migration using data model
     for (const actor of game.actors) {
-      actor.updateWeight();
       actor.updateLanguages();
-    }
-    for (const item of game.items) {
-      item.updateWeight();
     }
   }
 

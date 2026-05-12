@@ -378,19 +378,6 @@ export default class AcksActor extends Actor {
     return { stone: nbStone, item: nbItems };
   }
 
-  updateWeight() {
-    const toUpdate = [];
-    for (const i of this.items) {
-      if (i.system?.weight !== undefined && i.system?.weight6 === -1) {
-        const nbStones6 = Math.floor(i.system.weight / 166.66);
-        toUpdate.push({ _id: i.id, "system.weight6": nbStones6, "system.weight": -1 });
-      }
-    }
-    if (toUpdate.length > 0) {
-      this.updateEmbeddedDocuments("Item", toUpdate);
-    }
-  }
-
   async updateLanguages() {
     if (this.type !== "character") {
       return;
