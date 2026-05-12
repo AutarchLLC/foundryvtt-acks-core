@@ -3,6 +3,7 @@ import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import { ACKS } from "../../config.mjs";
 import { ROLL_TYPE } from "../../constants.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Ability / Proficiency Item Data Model
@@ -39,5 +40,23 @@ export default class AbilityData extends BaseDataModel {
       // saving throw
       save: new StringField({ blank: true, initial: "" }),
     };
+  }
+
+  /**
+   * @inheritDoc
+   * @override
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    if (source.save === "wand") {
+      source.save = "implements";
+    } else if (source.save === "breath") {
+      source.save = "blast";
+    }
+
+    return super.migrateData(source);
   }
 }

@@ -1,7 +1,9 @@
 /* global foundry, CONST */
-import actorCommonSchema from "./templates/actor-common-schema.mjs";
+import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
+import SavingThrowsTemplate from "./templates/saving-throws.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Character Data Model
@@ -18,7 +20,19 @@ export default class CharacterData extends BaseDataModel {
     return {
       ...super.defineSchema(),
       // common actor template
-      ...actorCommonSchema(),
+      ...ActorCommonTemplate.isNew,
+      ...ActorCommonTemplate.retainer,
+      ...ActorCommonTemplate.hp,
+      ...ActorCommonTemplate.aac,
+      ...ActorCommonTemplate.damage,
+      ...ActorCommonTemplate.thac0,
+      ...ActorCommonTemplate.movement,
+      ...ActorCommonTemplate.initiative,
+      ...ActorCommonTemplate.surprise,
+      // Saving Throws
+      ...SavingThrowsTemplate.saves,
+      ...SavingThrowsTemplate.save,
+
       // spellcaster actor template
       ...actorSpellcasterSchema(),
       // character config
@@ -182,6 +196,22 @@ export default class CharacterData extends BaseDataModel {
         forcemax: new NumberField({ initial: -1 }),
       }),
     };
+  }
+
+  /**
+   * @override
+   * @inheritDoc
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    // Migration 1: saves.wand → saves.implements, saves.breath → saves.blast
+    SavingThrowsTemplate.migrateWandToImplements(source);
+    SavingThrowsTemplate.migrateBreathToBlast(source);
+
+    return super.migrateData(source);
   }
 
   /**

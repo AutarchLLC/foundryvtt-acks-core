@@ -1,8 +1,9 @@
 /* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
+import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import { ACKS } from "../../config.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Item Item Data Model :D:D:D
@@ -21,7 +22,7 @@ export default class ItemData extends BaseDataModel {
       // common item description
       ...itemDescriptionSchema(),
       // cost and weight
-      ...itemPhysicalSchema(),
+      ...ItemPhysicalTemplate.schema,
       // Item subtype. For now, it can be "item" or "clothing"
       subtype: new StringField({ choices: ACKS.item_subtypes, required: true, initial: "item" }),
       // item quantity
@@ -38,5 +39,19 @@ export default class ItemData extends BaseDataModel {
       // TODO: not used anywhere. Remove and add license information to license file?
       iconlicense: new StringField({ blank: true, initial: "" }),
     };
+  }
+
+  /**
+   * @inheritDoc
+   * @override
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    ItemPhysicalTemplate.migrateWeightToWeight6(source);
+
+    return super.migrateData(source);
   }
 }

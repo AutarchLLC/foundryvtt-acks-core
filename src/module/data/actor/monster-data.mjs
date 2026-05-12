@@ -1,7 +1,9 @@
 /* global foundry, CONST */
-import actorCommonSchema from "./templates/actor-common-schema.mjs";
+import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
+import SavingThrowsTemplate from "./templates/saving-throws.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Monster Data Model
@@ -18,7 +20,19 @@ export default class MonsterData extends BaseDataModel {
     return {
       ...super.defineSchema(),
       // common actor template
-      ...actorCommonSchema(),
+      ...ActorCommonTemplate.isNew,
+      ...ActorCommonTemplate.retainer,
+      ...ActorCommonTemplate.hp,
+      ...ActorCommonTemplate.aac,
+      ...ActorCommonTemplate.damage,
+      ...ActorCommonTemplate.thac0,
+      ...ActorCommonTemplate.movement,
+      ...ActorCommonTemplate.initiative,
+      ...ActorCommonTemplate.surprise,
+      // Saving Throws
+      ...SavingThrowsTemplate.saves,
+      ...SavingThrowsTemplate.save,
+
       // spellcaster actor template
       ...actorSpellcasterSchema(),
       // monster details
@@ -49,7 +63,12 @@ export default class MonsterData extends BaseDataModel {
     };
   }
 
+  /**
+   * @override
+   * @inheritDoc
+   */
   static migrateData(source) {
+    // TODO: write migration
     if (source?.details?.xp && foundry.utils.getType(source.details.xp) === "string") {
       source.details.xp = Number(source.details.xp) || 0;
     }
@@ -57,6 +76,13 @@ export default class MonsterData extends BaseDataModel {
     if (source?.details?.morale && foundry.utils.getType(source.details.morale) === "string") {
       source.details.morale = Number(source.details.morale) || 0;
     }
+
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    SavingThrowsTemplate.migrateWandToImplements(source);
+    SavingThrowsTemplate.migrateBreathToBlast(source);
 
     return super.migrateData(source);
   }

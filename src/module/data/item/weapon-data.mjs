@@ -1,7 +1,8 @@
 /* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
+import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Weapon Item Data Model
@@ -23,7 +24,7 @@ export default class WeaponData extends BaseDataModel {
       // common item description
       ...itemDescriptionSchema(),
       // cost and weight
-      ...itemPhysicalSchema(),
+      ...ItemPhysicalTemplate.schema,
       // missile weapon ranges
       range: new SchemaField({
         short: new NumberField({ initial: 0, min: 0 }),
@@ -63,5 +64,25 @@ export default class WeaponData extends BaseDataModel {
         max: new NumberField({ initial: 0, min: 0 }),
       }),
     };
+  }
+
+  /**
+   * @inheritDoc
+   * @override
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    if (source.save === "wand") {
+      source.save = "implements";
+    } else if (source.save === "breath") {
+      source.save = "blast";
+    }
+
+    ItemPhysicalTemplate.migrateWeightToWeight6(source);
+
+    return super.migrateData(source);
   }
 }

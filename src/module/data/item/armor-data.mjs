@@ -1,8 +1,9 @@
 /* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
+import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import { ACKS } from "../../config.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Armor Item Data Model
@@ -21,7 +22,7 @@ export default class ArmorData extends BaseDataModel {
       // common item description
       ...itemDescriptionSchema(),
       // cost and weight
-      ...itemPhysicalSchema(),
+      ...ItemPhysicalTemplate.schema,
       // Ascending AC value
       aac: new SchemaField({
         value: new NumberField({ initial: 0 }),
@@ -31,5 +32,19 @@ export default class ArmorData extends BaseDataModel {
       // Is armor equipped
       equipped: new BooleanField({ initial: false }),
     };
+  }
+
+  /**
+   * @inheritDoc
+   * @override
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    ItemPhysicalTemplate.migrateWeightToWeight6(source);
+
+    return super.migrateData(source);
   }
 }
