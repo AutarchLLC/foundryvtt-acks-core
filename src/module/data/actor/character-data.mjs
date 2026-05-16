@@ -12,7 +12,7 @@ export default class CharacterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, languages, fight, exploration, scores, encumbrance}}
+   * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, exploration, scores, encumbrance}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -103,13 +103,6 @@ export default class CharacterData extends BaseDataModel {
         listening: new NumberField({ initial: 18 }),
         searching: new NumberField({ initial: 18 }),
         trapbreaking: new NumberField({ initial: 18 }),
-      }),
-      // languages.
-      // TODO: seems like deprecated in favor of language items? write migration and remove?
-      languages: new SchemaField({
-        literacy: new StringField({ blank: true, initial: "" }),
-        spoken: new StringField({ blank: true, initial: "" }),
-        value: new ArrayField(new StringField({ blank: true, initial: "" })),
       }),
       fight: new SchemaField({
         // Base Healing Rate formula

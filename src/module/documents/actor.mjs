@@ -378,41 +378,6 @@ export default class AcksActor extends Actor {
     return { stone: nbStone, item: nbItems };
   }
 
-  async updateLanguages() {
-    if (this.type !== "character") {
-      return;
-    }
-    // Load compendium languages
-    const languages = await AcksUtility.loadCompendium("acks.acks-languages");
-    const langList = languages.map((i) => i.toObject());
-
-    const toPush = [];
-    if (this.system?.languages?.value) {
-      for (const langName of this.system.languages.value) {
-        // Do we have existing language?
-        if (this.items.find((i) => i.name.toLowerCase() === langName.toLowerCase() && i.type === "language")) {
-          continue;
-        }
-        const lang = langList.find((i) => i.name.toLowerCase() === langName.toLowerCase());
-        if (lang) {
-          toPush.push(lang);
-        } else {
-          // Create a new dynamic language item
-          toPush.push({
-            name: langName,
-            type: "language",
-            system: {
-              description: "",
-            },
-          });
-        }
-      }
-      if (toPush.length > 0) {
-        this.createEmbeddedDocuments("Item", toPush);
-      }
-    }
-  }
-
   isNew() {
     return this.system.isNew;
   }

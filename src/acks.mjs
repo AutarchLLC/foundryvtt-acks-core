@@ -159,7 +159,6 @@ Hooks.once("ready", async () => {
 
   Hooks.on("hotbarDrop", hotbarDrop);
 
-  AcksUtility.updateWeightsLanguages();
   AcksUtility.displayWelcomeMessage();
   AcksUtility.setupSocket();
   ACKSTableManager.init();
