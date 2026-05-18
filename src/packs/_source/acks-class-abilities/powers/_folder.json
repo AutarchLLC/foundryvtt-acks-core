@@ -1,0 +1,22 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Powers",
+  "color": null,
+  "sorting": "a",
+  "_id": "sFB1mhQrNkHDlaUi",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122493273,
+    "modifiedTime": 1779122493273,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!sFB1mhQrNkHDlaUi"
+}

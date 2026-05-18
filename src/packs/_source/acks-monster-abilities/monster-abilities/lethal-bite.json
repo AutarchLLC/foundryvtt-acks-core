@@ -1,0 +1,88 @@
+{
+  "name": "Lethal Bite",
+  "type": "weapon",
+  "flags": {
+    "pick-up-stix": {
+      "pick-up-stix": {
+        "initialState": {
+          "count": 1,
+          "itemData": {
+            "_id": "PDIsSWKaIKHVK7rN",
+            "flags": {},
+            "name": "Lethal Bite",
+            "type": "weapon",
+            "img": "systems/acks/assets/icons/insect-jaws.webp",
+            "data": {
+              "range": {
+                "short": 0,
+                "medium": 0,
+                "long": 0
+              },
+              "save": "death",
+              "pattern": "red",
+              "description": "<p>Any opponent bitten by the giant black widow must make a saving throw versus Poison; failure indicates death after 1 turn.</p>",
+              "damage": "2d6",
+              "bonus": 0,
+              "tags": [],
+              "slow": false,
+              "missile": false,
+              "melee": true,
+              "cost": 0,
+              "equipped": false,
+              "weight": 0,
+              "counter": {
+                "value": 1,
+                "max": 1
+              }
+            },
+            "sort": 100000
+          }
+        }
+      }
+    }
+  },
+  "img": "systems/acks/assets/icons/insect-jaws.webp",
+  "_id": "m5mYSUwVYS0WLO0p",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999782,
+    "modifiedTime": 1779122999785,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "death",
+    "pattern": "red",
+    "description": "<p>Any opponent bitten by the giant black widow must make a saving throw versus Poison; failure indicates death after 1 turn.</p>",
+    "damage": "2d6",
+    "bonus": 0,
+    "tags": [],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight6": 0,
+    "counter": {
+      "value": 1,
+      "max": 1
+    },
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!m5mYSUwVYS0WLO0p"
+}

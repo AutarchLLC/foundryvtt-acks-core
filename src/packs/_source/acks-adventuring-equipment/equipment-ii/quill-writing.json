@@ -1,0 +1,38 @@
+{
+  "_id": "hsewmbIYbsqq1crS",
+  "name": "Quill, writing",
+  "type": "item",
+  "img": "systems/acks/assets/icons/quill-ink2.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A writing implement made from the flight feather of a large bird such as an eagle, goose, or swan. A carefully-maintained quill can write 50 pages before replacement is required.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight6": 0,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581846,
+    "modifiedTime": 1779120581854,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!hsewmbIYbsqq1crS"
+}

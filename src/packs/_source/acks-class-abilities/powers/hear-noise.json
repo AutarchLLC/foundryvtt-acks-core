@@ -1,0 +1,43 @@
+{
+  "name": "Hear Noise",
+  "type": "ability",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/hear-noise.webp",
+  "_id": "CozLZgzjF2kZzI6W",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122493274,
+    "modifiedTime": 1779122493280,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "Thief",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 14,
+    "blindroll": true,
+    "description": "",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "sFB1mhQrNkHDlaUi",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!CozLZgzjF2kZzI6W"
+}

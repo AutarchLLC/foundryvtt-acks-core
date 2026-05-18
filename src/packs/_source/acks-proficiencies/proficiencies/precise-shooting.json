@@ -1,0 +1,37 @@
+{
+  "_id": "iPrkTDZDvshYYBax",
+  "name": "Precise Shooting",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/precise-shooting.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703818,
+    "modifiedTime": 1779122703828,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character may conduct missile attacks against opponents engaged in melee at a -4 penalty to his attack throw. A character may take this proficiency multiple times. Each time the proficiency is taken, the penalty to attack opponents in melee is reduced by 2. Characters without this proficiency cannot attack opponents engaged in melee with missile attacks.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!iPrkTDZDvshYYBax"
+}

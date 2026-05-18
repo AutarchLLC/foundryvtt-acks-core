@@ -1,0 +1,38 @@
+{
+  "_id": "4iO9PengBPYw00AK",
+  "name": "Rucksack (holds 2 stone)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/light-backpack.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A rucksack is a small backpack. It holds up to 2 stone (20 lbs).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight6": 1,
+    "iconsource": "https://game-icons.net/1x1/delapouite/light-backpack.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581841,
+    "modifiedTime": 1779120581850,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!4iO9PengBPYw00AK"
+}

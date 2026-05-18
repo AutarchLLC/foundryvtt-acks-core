@@ -1,0 +1,22 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Equipment (II)",
+  "color": null,
+  "sorting": "a",
+  "_id": "04ETGKe7ejKtPVS9",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581839,
+    "modifiedTime": 1779120581839,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!04ETGKe7ejKtPVS9"
+}

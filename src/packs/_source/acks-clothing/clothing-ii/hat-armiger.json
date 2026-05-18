@@ -1,0 +1,38 @@
+{
+  "_id": "Ir279UqAkxngNfMZ",
+  "type": "item",
+  "name": "Hat, Armiger",
+  "img": "systems/acks/assets/icons/flaticon/hat-armiger-01.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A hat is a cap, fez, turban, or other headgear for protecting the head from the elements. Citizens of the Auran Empire rarely wear hats, but in the sunbaked Sunset Kingdoms they are quite common.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight6": 0,
+    "iconsource": "https://www.flaticon.com/free-icon/hat_10513510",
+    "iconlicense": "<a href=\\\"https://www.flaticon.com/free-icons/felt\\\" title=\\\"felt icons\\\">Felt icons created by popo2021 - Flaticon</a>",
+    "_schemaVersion": 3
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120312013,
+    "modifiedTime": 1779120312019,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!Ir279UqAkxngNfMZ"
+}

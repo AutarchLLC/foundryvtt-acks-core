@@ -1,0 +1,37 @@
+{
+  "_id": "vTM3tUBOQYif9y3C",
+  "name": "Navigation",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/navigation.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703822,
+    "modifiedTime": 1779122703830,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can take the position of the sun and stars to determine roughly where he is. He gains a +4 bonus on proficiency throws to avoid getting lost in the wilderness. He can serve as a navigator on a seagoing vessel as described in Specialists.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!vTM3tUBOQYif9y3C"
+}

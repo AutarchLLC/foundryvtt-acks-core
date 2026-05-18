@@ -1,0 +1,38 @@
+{
+  "_id": "igzXQRKGqycUQBSM",
+  "name": "Boardgame",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/conway-life-glider.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Rulers and officers enjoy the intellectual stimulation of a variety of strategic boardgames. The listed price is for a basic wooden board with bone or stone pieces. Vastly more expensive boardgames may feature inlaid woods, precious metals, and gem- carved pieces. Historical examples include the Egyptian senet (passing), Germanic hnefatafl (kings table), Indian chaturanga (game of four divisions), Roman latrones (game of brigands), and Sumerian ur (game of twenty squares). In the Auran Empire, the most popular boardgame is kyrpeges (wargame).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 5,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/delapouite/conway-life-glider.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581846,
+    "modifiedTime": 1779120581854,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!igzXQRKGqycUQBSM"
+}

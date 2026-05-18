@@ -1,0 +1,37 @@
+{
+  "_id": "SuFFZ1lUwPQPy6vV",
+  "name": "Alertness",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/alertness.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703817,
+    "modifiedTime": 1779122703827,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character gains a +4 bonus on any proficiency throws to hear noises and detect secret doors. With a proficiency throw of 18+ he can notice secret doors with just casual observation. He gains a +1 bonus to avoid surprise.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!SuFFZ1lUwPQPy6vV"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "sjKuViPtJBHnpbeL",
+  "name": "Craftsman's Workshop (any)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/hanging-sign.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A craftsmans workshop has a full complement of craftsmans tools and furnishings sufficient to allow up to 8 craftsmen to work together. A master craftsman must have access to a craftsmans workshop in order to increase the productivity of journeymen and apprentices. Each craft has its own specific type of craftsmans workshop. When set up, a workshop takes up 20 x 20 space.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 350,
+    "weight6": 90,
+    "iconsource": "https://game-icons.net/1x1/delapouite/hanging-sign.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581848,
+    "modifiedTime": 1779120581855,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!sjKuViPtJBHnpbeL"
+}

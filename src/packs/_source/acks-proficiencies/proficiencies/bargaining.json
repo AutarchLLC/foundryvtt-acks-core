@@ -1,0 +1,37 @@
+{
+  "_id": "xjcoi1jaKSJliXGJ",
+  "name": "Bargaining",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/bargaining.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703823,
+    "modifiedTime": 1779122703830,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character gets the best deals available for goods, services, and information. Any items the character purchases costs 10% less than the listed price and any items he sells go for 10% more than the listed price. If both the buyer and seller have the Bargaining proficiency, the opposed Bargainers should make reaction rolls. Whichever character scores the higher result gets the discount. A character may select Bargaining multiple times if desired. Each time the proficiency is selected, the character receives a +2 bonus on his reaction roll when negotiating with other bargainers.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!xjcoi1jaKSJliXGJ"
+}

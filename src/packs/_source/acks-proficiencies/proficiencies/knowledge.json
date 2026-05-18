@@ -1,0 +1,37 @@
+{
+  "_id": "7q7nKEKyLK1hIE6O",
+  "name": "Knowledge",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/knowledge.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703811,
+    "modifiedTime": 1779122703825,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character has made a specialized study of a particular field, such as architecture, astrology, geography, history, mathematics, metaphysics, natural history, natural philosophy, or political economy. The character can usually make his living by acting as an expert on the subject. With a proficiency throw of 11+, the character can recall expert commentary or information relating to his area of knowledge. The character must choose his area of knowledge at the time he chooses the proficiency. He can spend more proficiency selections to have several different areas of knowledge. If a character selects the same knowledge twice, he is an expert in the subject and can train students and write books on the topic. If he selects the same subject three times, he could work as a sage of the subject (as described in Specialists in Chapter 3).</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!7q7nKEKyLK1hIE6O"
+}

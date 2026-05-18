@@ -1,0 +1,38 @@
+{
+  "_id": "883YD7PtXAVftHIJ",
+  "name": "Saddle and Tack, War",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/saddle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This includes a leather and wooden saddle with metal fastenings, a leather and metal bridle and bit, and stirrups. Draft saddle and tack is used to harness to a cart or wagon or carry saddlebags; it cannot be used for riding. Riding saddle and tack is designed for the riders comfort. Military saddle and tack is designed for stability during combat. A character in combat without a military saddle must make a Paralysis save every time he is dealt damage or be knocked off the horse. See Mounted Combat, p. XX.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 25,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/delapouite/saddle.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581842,
+    "modifiedTime": 1779120581850,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!883YD7PtXAVftHIJ"
+}

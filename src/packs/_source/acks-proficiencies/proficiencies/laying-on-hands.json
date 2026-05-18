@@ -1,0 +1,37 @@
+{
+  "_id": "P5kEdccMg020N4yS",
+  "name": "Laying on Hands",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/laying-on-hands.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703816,
+    "modifiedTime": 1779122703827,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "2",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can heal himself or another by laying on hands once per day. The character can restore 2 hit points per experience level. A character may take this proficiency multiple times. Each time it is taken, the character may lay on hands an additional time per day.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!P5kEdccMg020N4yS"
+}

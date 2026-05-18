@@ -1,0 +1,38 @@
+{
+  "_id": "acj7fY5vykOr5su4",
+  "name": "Crutch",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A shoulder-height padded staff used by characters with missing or maimed legs who lack prostheses. A crutch has an encumbrance of 1 stone (10 lbs) and requires one free arm to use.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight6": 6,
+    "iconsource": "",
+    "iconlicense": "",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581845,
+    "modifiedTime": 1779120581853,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!acj7fY5vykOr5su4"
+}

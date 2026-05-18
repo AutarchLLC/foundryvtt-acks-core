@@ -1,0 +1,38 @@
+{
+  "_id": "HSvVn4D1ARu0PAzQ",
+  "name": "Rope, 50'",
+  "type": "item",
+  "img": "systems/acks/assets/icons/rope.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This strong cord, woven of hair, hemp, or other fibers, can bear 50 stone (500 lbs). A 50 length of rope weighs 1 stone.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight6": 6,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581842,
+    "modifiedTime": 1779120581851,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!HSvVn4D1ARu0PAzQ"
+}

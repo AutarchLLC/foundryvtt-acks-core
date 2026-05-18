@@ -1,0 +1,38 @@
+{
+  "_id": "tr8WENFbfXFD8s4X",
+  "name": "Lock",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/padlock.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "These are mechanisms designed to secure chests, doors, and other portals from those who lack the key. More complex locks, made by highly skilled locksmiths, might be available (Judges discretion); these impose penalties on a characters proficiency throws to open it.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 20,
+    "weight6": 1,
+    "iconsource": "https://game-icons.net/1x1/lorc/padlock.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581848,
+    "modifiedTime": 1779120581855,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!tr8WENFbfXFD8s4X"
+}

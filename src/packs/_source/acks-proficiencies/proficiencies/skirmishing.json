@@ -1,0 +1,37 @@
+{
+  "_id": "TdQ1ESMfZzwdiZBn",
+  "name": "Skirmishing",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/skirmishing2.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703817,
+    "modifiedTime": 1779122703827,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character may withdraw or retreat from melee combat without declaring the intention to do so at the start of the melee round. Characters without this proficiency must declare defensive movement before initiative dice are rolled. See Defensive Movement in Chapter 6.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!TdQ1ESMfZzwdiZBn"
+}

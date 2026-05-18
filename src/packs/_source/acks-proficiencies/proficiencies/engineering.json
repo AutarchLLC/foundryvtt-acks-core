@@ -1,0 +1,37 @@
+{
+  "_id": "BcEWCkssoeKJKEvz",
+  "name": "Engineering",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/engineering.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703812,
+    "modifiedTime": 1779122703826,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character is skilled in planning, designing, and constructing castles, towers, roads, and so forth. Any character with this skill can evaluate constructions the party is passing through to assess what shape they are in, when and by whom they were built, etc., with a proficiency throw of 11+. Each time this proficiency is taken, the character can supervise 25,000gp worth of permanent construction. A character who has taken this proficiency four times is the equivalent of the engineer specialist described in the Specialists section.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!BcEWCkssoeKJKEvz"
+}

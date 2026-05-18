@@ -1,0 +1,38 @@
+{
+  "_id": "dmiDXCldGzfGUms7",
+  "name": "Journal",
+  "type": "item",
+  "img": "systems/acks/assets/icons/book.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A journal is a folded parchment or papyrus notebook used for writing ships logs, maps, illustrations, and book-keeping entries. A journal has 50 pages and is considerably less sturdy than a spell book. A historical example is the Roman pugillares membrane.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581846,
+    "modifiedTime": 1779120581854,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!dmiDXCldGzfGUms7"
+}

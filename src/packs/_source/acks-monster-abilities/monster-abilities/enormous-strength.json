@@ -1,0 +1,43 @@
+{
+  "name": "Enormous Strength",
+  "type": "ability",
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": false,
+      "alwaysActive": false,
+      "effects": []
+    }
+  },
+  "img": "systems/acks/assets/icons/muscle-up.webp",
+  "_id": "MtuPG7yTSn0d8Fh1",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999780,
+    "modifiedTime": 1779122999785,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>They are extremely strong, and receive a +2 to damage when they employ weapons.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!MtuPG7yTSn0d8Fh1"
+}

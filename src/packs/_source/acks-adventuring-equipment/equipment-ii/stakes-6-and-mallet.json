@@ -1,0 +1,38 @@
+{
+  "_id": "fjRiFk9iZZtI9dPk",
+  "name": "Stakes (6) and Mallet",
+  "type": "item",
+  "img": "systems/acks/assets/icons/stake-mallet.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "These 18 sharpened wood shafts come in sets of 6 and are used to destroy vampires and/or pitch tents.",
+    "quantity": {
+      "value": 6,
+      "max": 6
+    },
+    "treasure": false,
+    "cost": 3,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581846,
+    "modifiedTime": 1779120581854,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!fjRiFk9iZZtI9dPk"
+}

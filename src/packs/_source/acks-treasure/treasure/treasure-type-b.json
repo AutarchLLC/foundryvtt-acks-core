@@ -1,0 +1,143 @@
+{
+  "_id": "rhsNAV5eHn6TziUC",
+  "name": "Treasure Type B",
+  "flags": {
+    "better-rolltables": {
+      "table-type": "better",
+      "loot-amount-key": ""
+    },
+    "ose": {
+      "treasure": true
+    },
+    "acks": {
+      "treasure": true
+    }
+  },
+  "description": "Hoarder, 500gp average value",
+  "results": [
+    {
+      "_id": "azq44ugVmNRS4k8R",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 80,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317968,
+        "modifiedTime": 1779122317968,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d6*1000]]sp",
+      "name": "",
+      "_key": "!tables.results!rhsNAV5eHn6TziUC.azq44ugVmNRS4k8R"
+    },
+    {
+      "_id": "T7l2ot92szsQkVk7",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 70,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317968,
+        "modifiedTime": 1779122317968,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] ornamentals",
+      "name": "",
+      "_key": "!tables.results!rhsNAV5eHn6TziUC.T7l2ot92szsQkVk7"
+    },
+    {
+      "_id": "efWoFmV6pzhLnOYq",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317968,
+        "modifiedTime": 1779122317968,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] trinkets",
+      "name": "",
+      "_key": "!tables.results!rhsNAV5eHn6TziUC.efWoFmV6pzhLnOYq"
+    },
+    {
+      "_id": "GBXwCdHZcYe6qzCb",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 5,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317968,
+        "modifiedTime": 1779122317968,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 2 Magic Items",
+      "name": "",
+      "_key": "!tables.results!rhsNAV5eHn6TziUC.GBXwCdHZcYe6qzCb"
+    }
+  ],
+  "formula": "",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122317968,
+    "modifiedTime": 1779122317977,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": "fCJecBck9wkWLKtb",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!tables!rhsNAV5eHn6TziUC"
+}

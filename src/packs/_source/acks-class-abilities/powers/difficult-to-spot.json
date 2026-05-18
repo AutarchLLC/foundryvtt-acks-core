@@ -1,0 +1,37 @@
+{
+  "name": "Difficult to Spot",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/difficult-to-spot.webp",
+  "_id": "MuqnNwORybSGHlkj",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122493274,
+    "modifiedTime": 1779122493280,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 3,
+    "blindroll": true,
+    "description": "<p>This character is difficult to spot in the wilderness, having the ability to seemingly disappear into woods and underbrush with a proficiency throw of 3+ on 1d20. </p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "sFB1mhQrNkHDlaUi",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!MuqnNwORybSGHlkj"
+}

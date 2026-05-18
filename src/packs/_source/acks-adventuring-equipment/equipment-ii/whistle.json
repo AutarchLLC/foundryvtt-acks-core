@@ -1,0 +1,38 @@
+{
+  "_id": "c3ikR9WvtQ3YIm2q",
+  "name": "Whistle",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A signaling device made of wood, horn, or similar materials. It emits a shrill, high-pitched sound audible up to one mile.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 1,
+    "weight6": 1,
+    "iconsource": "",
+    "iconlicense": "",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581845,
+    "modifiedTime": 1779120581854,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!c3ikR9WvtQ3YIm2q"
+}

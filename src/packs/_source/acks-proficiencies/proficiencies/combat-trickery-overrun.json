@@ -1,0 +1,37 @@
+{
+  "_id": "En0vSCf3qARcPQLZ",
+  "name": "Combat Trickery: Overrun",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/overrun.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703813,
+    "modifiedTime": 1779122703826,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character is a cunning and tricky fighter. When the character attempts the Overrun special maneuver in combat, the normal penalty for attempting the maneuver is reduced by 2 (e.g. from -4 to -2), and his opponent suffers a -2 penalty to his saving throw to resist the special maneuver. See Special Maneuvers in Chapter 6 for more details. </p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!En0vSCf3qARcPQLZ"
+}

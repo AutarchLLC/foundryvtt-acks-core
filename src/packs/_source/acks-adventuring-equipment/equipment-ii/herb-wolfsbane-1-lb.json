@@ -1,0 +1,38 @@
+{
+  "_id": "cjiC6f6mFbI6w7uq",
+  "name": "Herb, Wolfsbane (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Wolfsbane (dried aconite flowers) may drive off werewolves and other lycanthropes if a character strikes the monster in hand-to-hand combat with the sprig. If the lycanthrope fails a Death saving throw, it must flee as if rebuked. Wolfsbane can be used to make a plant poison (p. XX). A character foolish enough to eat a pound of fresh wolfsbane must make a Death saving throw or die after one turn.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581845,
+    "modifiedTime": 1779120581854,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!cjiC6f6mFbI6w7uq"
+}

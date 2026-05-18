@@ -1,0 +1,28 @@
+{
+  "_id": "WPWGWyllEyM6tFun",
+  "name": "Northern Classical Dappakosean",
+  "type": "language",
+  "folder": "rba80YUP9IAjoB3d",
+  "img": "systems/acks/assets/icons/language.png",
+  "system": {
+    "description": "For more information on the Auran Empire setting, including its Customs, People, and Languages, refer to <em>Appendix A: Setting</em> and the <em>Languages</em> taxonomy on page 505 of the <em>ACKS II Revised Rulebook.</em>",
+    "_schemaVersion": 3
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779121564701,
+    "modifiedTime": 1779121564710,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!WPWGWyllEyM6tFun"
+}

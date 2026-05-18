@@ -1,0 +1,37 @@
+{
+  "name": "Inspire Courage",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/martial-training.webp",
+  "_id": "nXvT7YgwPcas45ke",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122493276,
+    "modifiedTime": 1779122493281,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Their noble upbringing gives a courtier the leadership skills and self-confidence to inspire courage in their allies, in the same manner as bards. Inspiring courage requires a few moments of oration before a battle (one round), and grants the courtier's allies within a 50' radius a +1 bonus to attack throws, damage rolls, morale rolls (for monsters or NPCs allied with the caster), and saving throws against magical fear. The bonus lasts for 10 minutes (1 turn). A courtier can inspire courage in any given character once per day per class level. (Even the most inspiring epic gets old if you hear it twice in the same day.) A courtier cannot inspire courage on characters who are already engaged in combat.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "sFB1mhQrNkHDlaUi",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!nXvT7YgwPcas45ke"
+}

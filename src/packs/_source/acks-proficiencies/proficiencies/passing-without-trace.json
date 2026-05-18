@@ -1,0 +1,37 @@
+{
+  "_id": "pRVx0aUBBrnga8VU",
+  "name": "Passing Without Trace",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/pass-without-trace.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703820,
+    "modifiedTime": 1779122703829,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character leaves no sign of his passing over wilderness terrain, and may not be tracked. For every 3 levels of experience, the character may cover the tracks of an additional traveling companion.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!pRVx0aUBBrnga8VU"
+}
