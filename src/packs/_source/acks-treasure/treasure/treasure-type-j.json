@@ -1,29 +1,12 @@
 {
   "_id": "SO6o5yA9WwThWJHz",
   "name": "Treasure Type J",
-  "flags": {
-    "ose": {
-      "treasure": true
-    },
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Raider, 4,000gp average value",
   "results": [
     {
       "_id": "lwW4Tct884wafptX",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 50,
@@ -49,13 +32,7 @@
     },
     {
       "_id": "02kqYGGXpaaSrXqY",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 70,
@@ -81,13 +58,7 @@
     },
     {
       "_id": "A4Qwlo30XeKxJkpw",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 70,
@@ -113,13 +84,7 @@
     },
     {
       "_id": "w6dj2skZxTw2f1yb",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 50,
@@ -145,13 +110,7 @@
     },
     {
       "_id": "d5tfUnB27gbQs5Um",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 50,
@@ -177,13 +136,7 @@
     },
     {
       "_id": "V0NAYjYoMQuqXyhv",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 50,
@@ -209,13 +162,7 @@
     },
     {
       "_id": "YTqCJitajYlIMt8O",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 45,
@@ -241,13 +188,7 @@
     },
     {
       "_id": "xlstNwH0uv2Xrwf1",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 20,
@@ -281,7 +222,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317955,
     "modifiedTime": 1779122317974,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

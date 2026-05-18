@@ -7,57 +7,7 @@
   "items": [
     {
       "_id": "uLXYDXgEJpj7Vmp0",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "owner": {
-              "actorId": "ALheggdkiThmGhjS"
-            },
-            "initialState": {
-              "id": "QZhWgIEMMwRNF37A",
-              "count": 1,
-              "itemData": {
-                "_id": "QZhWgIEMMwRNF37A",
-                "flags": {},
-                "name": "Envelop",
-                "type": "weapon",
-                "img": "systems/acks/assets/icons/transparent-slime.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "death",
-                  "pattern": "red",
-                  "description": "<p>Any non-magical armor or clothing is destroyed immediately after a successful hit from the ooze, as the acid eats through it viciously. A non-magical metal or wooden weapon that strikes gray ooze also dissolves immediately after dealing damage. Magical weapons, armor, and clothing are allowed a saving throw using the wearer’s save versus Death, adding any magical bonus to the roll if applicable. Once it has hit, the ooze clings to an opponent and deals [[/r 2d8 #Acid damage from the clinging ooze!]] points of damage every round until it can be neutralized.</p>",
-                  "damage": "2d8",
-                  "bonus": 0,
-                  "tags": [],
-                  "slow": false,
-                  "missile": false,
-                  "melee": true,
-                  "cost": 0,
-                  "equipped": false,
-                  "weight": 0,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 100000
-              }
-            },
-            "itemType": "Item",
-            "isLocked": false
-          }
-        },
-        "dynamiceffects": {
-          "equipActive": false,
-          "alwaysActive": false,
-          "effects": []
-        }
-      },
+      "flags": {},
       "name": "Body Slam",
       "type": "weapon",
       "img": "systems/acks/assets/icons/transparent-slime.webp",
@@ -69,7 +19,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119153,
         "modifiedTime": 1779123119153,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -124,7 +74,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119153,
         "modifiedTime": 1779123119153,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -162,7 +112,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119153,
         "modifiedTime": 1779123119153,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -194,7 +144,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779123119153,
     "modifiedTime": 1779123119168,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

@@ -1,17 +1,7 @@
 {
   "_id": "NJXaEn87H1JyGsZS",
   "name": "Treasure Type A",
-  "flags": {
-    "ose": {
-      "treasure": true
-    },
-    "better-rolltables": {
-      "table-type": "none"
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Incidental, average 275gp value",
   "results": [
     {
@@ -129,7 +119,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317953,
     "modifiedTime": 1779122317973,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

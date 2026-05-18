@@ -1,29 +1,12 @@
 {
   "_id": "iR895LxOdFlztB6S",
   "name": "Treasure Type M",
-  "flags": {
-    "ose": {
-      "treasure": true
-    },
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Incidental, 8,000gp average value",
   "results": [
     {
       "_id": "sq8EHecwkZIdO273",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 25,
@@ -49,13 +32,7 @@
     },
     {
       "_id": "R0qGD5bt8hi1DJ2N",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 15,
@@ -81,13 +58,7 @@
     },
     {
       "_id": "zPAqrBkYv8vuMNwB",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 30,
@@ -113,13 +84,7 @@
     },
     {
       "_id": "fkvWoq8liwDBVqtV",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 50,
@@ -145,13 +110,7 @@
     },
     {
       "_id": "NU7fmr0AbDBTX2p7",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 30,
@@ -185,7 +144,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317963,
     "modifiedTime": 1779122317975,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

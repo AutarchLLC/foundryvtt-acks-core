@@ -2,59 +2,12 @@
   "_id": "Shup7IcyrKuHLbm0",
   "name": "Spider, Crab",
   "type": "monster",
-  "flags": {
-    "ose": {
-      "party": false
-    },
-    "acks": {
-      "party": false,
-      "conditions": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/tokens/dm_essentials1/DME_Spider_Giant.webp",
   "items": [
     {
       "_id": "qpiuCgaVERlSSJCw",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "qpiuCgaVERlSSJCw",
-                "flags": {},
-                "name": "Mandibles",
-                "type": "weapon",
-                "img": "systems/acks/assets/icons/insect-jaws.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "death",
-                  "pattern": "red",
-                  "description": "<p>The bite of the giant crab spider is venomous, and a victim will die in [[/r 1d4 #Die from poison in this many Turns!]] turns unless a saving throw versus Poison is made. The saving throw receives a bonus of +2, due to the less potent nature of the crab spider’s venom.</p>",
-                  "damage": "1d8",
-                  "bonus": 0,
-                  "tags": [],
-                  "slow": false,
-                  "missile": false,
-                  "melee": true,
-                  "cost": 0,
-                  "equipped": false,
-                  "weight": 0,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 100000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Poisonous Bite",
       "type": "weapon",
       "img": "systems/acks/assets/icons/insect-jaws.webp",
@@ -66,7 +19,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119141,
         "modifiedTime": 1779123119141,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -104,44 +57,7 @@
     },
     {
       "_id": "h2lqzexkJHGkHeDs",
-      "flags": {
-        "dynamiceffects": {
-          "equipActive": false,
-          "alwaysActive": false,
-          "effects": []
-        },
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "h2lqzexkJHGkHeDs",
-                "flags": {
-                  "dynamiceffects": {
-                    "equipActive": false,
-                    "alwaysActive": false,
-                    "effects": []
-                  }
-                },
-                "name": "Vermin",
-                "type": "ability",
-                "img": "systems/acks/assets/icons/maggot.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
-                  "save": ""
-                },
-                "sort": 1100001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Vermin",
       "type": "ability",
       "img": "systems/acks/assets/icons/maggot.webp",
@@ -153,7 +69,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119141,
         "modifiedTime": 1779123119141,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -185,7 +101,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779123119141,
     "modifiedTime": 1779123119163,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

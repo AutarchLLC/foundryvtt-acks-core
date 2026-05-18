@@ -1,46 +1,7 @@
 {
   "name": "Diseased Bite",
   "type": "weapon",
-  "flags": {
-    "pick-up-stix": {
-      "pick-up-stix": {
-        "initialState": {
-          "count": 1,
-          "itemData": {
-            "_id": "WvaRaBxsgZci1T98",
-            "flags": {},
-            "name": "Bite",
-            "type": "weapon",
-            "img": "systems/acks/assets/icons/bestial-fangs.webp",
-            "data": {
-              "range": {
-                "short": 0,
-                "medium": 0,
-                "long": 0
-              },
-              "save": "",
-              "pattern": "red",
-              "description": "<p>Giant rats are disease carriers, and any time a character is bitten by a giant rat there is a [[/r 1d100ms&gt;5 #5% of Disease]] chance the character contracts a disease. A saving throw versus Poison is permitted, and should it fail the character dies of the disease [[/r 1d6 #Dies this many days later]] days later. A successful saving throw indicates that the character gets ill and is bedridden for 30 days, but the disease does not prove fatal. The spell cure disease will cure this infection.&nbsp;</p>",
-              "damage": "1d3",
-              "bonus": 0,
-              "tags": [],
-              "slow": false,
-              "missile": false,
-              "melee": true,
-              "cost": 0,
-              "equipped": false,
-              "weight": 0,
-              "counter": {
-                "value": 1,
-                "max": 1
-              }
-            },
-            "sort": 100000
-          }
-        }
-      }
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/bestial-fangs.webp",
   "_id": "Ge32GqU70pcNBTrx",
   "effects": [],
@@ -50,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122999780,
     "modifiedTime": 1779122999785,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

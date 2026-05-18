@@ -1,15 +1,7 @@
 {
   "_id": "eVY6oJGHJCp3W3sU",
   "name": "Magic Item Type",
-  "flags": {
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": "1"
-    },
-    "acks": {
-      "treasure": false
-    }
-  },
+  "flags": {},
   "description": "",
   "results": [
     {
@@ -235,7 +227,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317959,
     "modifiedTime": 1779122317975,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

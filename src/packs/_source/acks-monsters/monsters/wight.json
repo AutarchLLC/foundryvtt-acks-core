@@ -2,59 +2,12 @@
   "_id": "1eugequsJF72qLfi",
   "name": "Wight",
   "type": "monster",
-  "flags": {
-    "ose": {
-      "party": false
-    },
-    "acks": {
-      "party": false,
-      "conditions": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/tokens/basic_undead/lich_blue.webp",
   "items": [
     {
       "_id": "Ur8EZMv22FEXa89F",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "Ur8EZMv22FEXa89F",
-                "flags": {},
-                "name": "Icy Touch",
-                "type": "weapon",
-                "img": "images/icons/high-five.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "",
-                  "pattern": "white",
-                  "description": "<p>Energy Drain 1 Level</p>",
-                  "damage": "0",
-                  "bonus": 0,
-                  "tags": [],
-                  "slow": false,
-                  "missile": false,
-                  "melee": true,
-                  "cost": 0,
-                  "equipped": false,
-                  "weight": 0,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 100000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Icy Touch",
       "type": "weapon",
       "img": "images/icons/high-five.webp",
@@ -66,7 +19,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119123,
         "modifiedTime": 1779123119123,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -104,44 +57,7 @@
     },
     {
       "_id": "GJhpYSUpJG1wRzML",
-      "flags": {
-        "dynamiceffects": {
-          "equipActive": false,
-          "alwaysActive": false,
-          "effects": []
-        },
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "GJhpYSUpJG1wRzML",
-                "flags": {
-                  "dynamiceffects": {
-                    "equipActive": false,
-                    "alwaysActive": false,
-                    "effects": []
-                  }
-                },
-                "name": "Undead",
-                "type": "ability",
-                "img": "images/icons/death-skull.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from&nbsp;<em>healing </em>spells.</p>",
-                  "save": ""
-                },
-                "sort": 500001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Undead",
       "type": "ability",
       "img": "systems/acks/assets/icons/death-skull.webp",
@@ -153,7 +69,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119123,
         "modifiedTime": 1779123119123,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -185,7 +101,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779123119123,
     "modifiedTime": 1779123119158,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

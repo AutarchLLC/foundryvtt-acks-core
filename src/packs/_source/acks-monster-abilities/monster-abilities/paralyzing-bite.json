@@ -1,46 +1,7 @@
 {
   "name": "Paralyzing Bite",
   "type": "weapon",
-  "flags": {
-    "pick-up-stix": {
-      "pick-up-stix": {
-        "initialState": {
-          "count": 1,
-          "itemData": {
-            "_id": "QCwtYxkrFMqPVhjN",
-            "flags": {},
-            "name": "Bite",
-            "type": "weapon",
-            "img": "systems/acks/assets/icons/incisors.webp",
-            "data": {
-              "range": {
-                "short": 0,
-                "medium": 0,
-                "long": 0
-              },
-              "save": "paralysis",
-              "pattern": "red",
-              "description": "<p>Save versus Paralysis or be paralyzed for [[/r 2d4]] turns. This paralysis may be cured with <em>cure light wounds</em>. Elves are immune to the paralysis of ghouls, and the paralysis cannot take effect on humanoids larger than ogres.&nbsp;</p>",
-              "damage": "1d3",
-              "bonus": 0,
-              "tags": [],
-              "slow": false,
-              "missile": false,
-              "melee": true,
-              "cost": 0,
-              "equipped": false,
-              "weight": 0,
-              "counter": {
-                "value": 1,
-                "max": 1
-              }
-            },
-            "sort": 200000
-          }
-        }
-      }
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/incisors.webp",
   "_id": "sjHLukvR08MLWzpy",
   "effects": [],
@@ -50,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122999783,
     "modifiedTime": 1779122999786,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

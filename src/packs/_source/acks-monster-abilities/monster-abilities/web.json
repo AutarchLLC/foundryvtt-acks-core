@@ -1,44 +1,7 @@
 {
   "name": "Web",
   "type": "ability",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    },
-    "pick-up-stix": {
-      "pick-up-stix": {
-        "owner": {
-          "actorId": "ZEVNVHwsaKDea4hA"
-        },
-        "initialState": {
-          "id": "AH6GetiY8UWmb7ZV",
-          "count": 1,
-          "itemData": {
-            "_id": "AH6GetiY8UWmb7ZV",
-            "flags": {},
-            "name": "Web",
-            "type": "ability",
-            "img": "systems/acks/assets/icons/spiders-web.webp",
-            "data": {
-              "pattern": "green",
-              "requirements": "",
-              "roll": "",
-              "rollType": "result",
-              "rollTarget": 0,
-              "blindroll": false,
-              "description": "<p>Giant Black Widows create a many-layered mass of strong, sticky strands covering an area. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p>Entangled creatures can’t move, but can break loose depending on their strength. Creatures of normal human strength or less will take&nbsp;<a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\">&nbsp;2d4</a>&nbsp;turns to break through the web. Strong humans (with ability scores 13-17) can break through the web in 1 turn. Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in 4 rounds. Giants or creatures of similar great strength can break through the web in 2 rounds.</p>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take&nbsp;<a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\">1d6</a>&nbsp;points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
-              "save": ""
-            },
-            "sort": 1000001
-          }
-        },
-        "itemType": "Item",
-        "isLocked": false
-      }
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/spiders-web.webp",
   "_id": "Z7oUgyBzLViZlCPX",
   "effects": [],
@@ -48,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122999781,
     "modifiedTime": 1779122999785,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

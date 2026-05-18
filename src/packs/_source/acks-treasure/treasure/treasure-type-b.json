@@ -1,18 +1,7 @@
 {
   "_id": "rhsNAV5eHn6TziUC",
   "name": "Treasure Type B",
-  "flags": {
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    },
-    "ose": {
-      "treasure": true
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Hoarder, 500gp average value",
   "results": [
     {
@@ -129,7 +118,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317968,
     "modifiedTime": 1779122317977,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

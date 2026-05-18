@@ -1,46 +1,7 @@
 {
   "name": "Icy Touch",
   "type": "weapon",
-  "flags": {
-    "pick-up-stix": {
-      "pick-up-stix": {
-        "initialState": {
-          "count": 1,
-          "itemData": {
-            "_id": "Ur8EZMv22FEXa89F",
-            "flags": {},
-            "name": "Icy Touch",
-            "type": "weapon",
-            "img": "systems/acks/assets/icons/high-five.webp",
-            "data": {
-              "range": {
-                "short": 0,
-                "medium": 0,
-                "long": 0
-              },
-              "save": "",
-              "pattern": "white",
-              "description": "<p>Energy Drain 1 Level</p>",
-              "damage": "0",
-              "bonus": 0,
-              "tags": [],
-              "slow": false,
-              "missile": false,
-              "melee": true,
-              "cost": 0,
-              "equipped": false,
-              "weight": 0,
-              "counter": {
-                "value": 1,
-                "max": 1
-              }
-            },
-            "sort": 100000
-          }
-        }
-      }
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/high-five.webp",
   "_id": "q0RtE5L6GHAofyNS",
   "effects": [],
@@ -50,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122999783,
     "modifiedTime": 1779122999786,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

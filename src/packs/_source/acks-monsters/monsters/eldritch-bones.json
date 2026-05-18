@@ -2,61 +2,12 @@
   "_id": "rFP03IFxji7ZTTz4",
   "name": "Eldritch Bones",
   "type": "monster",
-  "flags": {
-    "ose": {
-      "party": false
-    },
-    "acks": {
-      "party": false,
-      "conditions": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/tokens/basic_undead/skeleton_sword_shield.webp",
   "items": [
     {
       "_id": "UR0sPQRK3ENQkw7I",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "UR0sPQRK3ENQkw7I",
-                "flags": {
-                  "importid": "uNG3yuKHhCIgHF64"
-                },
-                "name": "Hand Axe",
-                "type": "weapon",
-                "img": "/systems/acks/assets/icons/hand-axe.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "",
-                  "pattern": "red",
-                  "description": "",
-                  "damage": "1d6+1",
-                  "bonus": 0,
-                  "tags": [],
-                  "slow": false,
-                  "missile": false,
-                  "melee": true,
-                  "cost": 4,
-                  "equipped": false,
-                  "weight": 0.166,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 100000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Hand Axe",
       "type": "weapon",
       "img": "/systems/acks/assets/icons/hand-axe.webp",
@@ -68,7 +19,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119151,
         "modifiedTime": 1779123119151,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -106,38 +57,7 @@
     },
     {
       "_id": "QLpKqGvqWIGlwUCv",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "QLpKqGvqWIGlwUCv",
-                "flags": {
-                  "importid": "npq0uYx6mbi3CwNW"
-                },
-                "name": "Shield",
-                "type": "armor",
-                "img": "/systems/acks/assets/icons/round-shield.webp",
-                "data": {
-                  "description": "",
-                  "ac": {
-                    "value": 1
-                  },
-                  "aac": {
-                    "value": null
-                  },
-                  "type": "shield",
-                  "cost": 10,
-                  "equipped": false,
-                  "weight": 1
-                },
-                "sort": 100001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Shield",
       "type": "armor",
       "img": "/systems/acks/assets/icons/round-shield.webp",
@@ -149,7 +69,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119151,
         "modifiedTime": 1779123119151,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -173,33 +93,7 @@
     },
     {
       "_id": "xiwjqyr9WiF2Rndo",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "xiwjqyr9WiF2Rndo",
-                "flags": {},
-                "name": "Piercing Resistance",
-                "type": "ability",
-                "img": "systems/acks/assets/icons/william-tell-skull.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>This monster only takes 1/2 damage, rounded down, from weapons that inflict piercing damage (arrows, bolts, daggers, darts, javelins, picks, tridents, and spears).</p>",
-                  "save": ""
-                },
-                "sort": 100000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Piercing Resistance",
       "type": "ability",
       "img": "systems/acks/assets/icons/william-tell-skull.webp",
@@ -211,7 +105,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119151,
         "modifiedTime": 1779123119151,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -237,33 +131,7 @@
     },
     {
       "_id": "OUxdr3JMkOKk6NxJ",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "OUxdr3JMkOKk6NxJ",
-                "flags": {},
-                "name": "Slashing Resistance",
-                "type": "ability",
-                "img": "systems/acks/assets/icons/chopped-skull.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>This monster only takes 1/2 damage, rounded down, from weapons that inflict slashing damage (axes, polearms, and swords).</p>",
-                  "save": ""
-                },
-                "sort": 200001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Slashing Resistance",
       "type": "ability",
       "img": "systems/acks/assets/icons/chopped-skull.webp",
@@ -275,7 +143,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119151,
         "modifiedTime": 1779123119151,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -301,44 +169,7 @@
     },
     {
       "_id": "l7gs4npPPhsC71sC",
-      "flags": {
-        "dynamiceffects": {
-          "equipActive": false,
-          "alwaysActive": false,
-          "effects": []
-        },
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "l7gs4npPPhsC71sC",
-                "flags": {
-                  "dynamiceffects": {
-                    "equipActive": false,
-                    "alwaysActive": false,
-                    "effects": []
-                  }
-                },
-                "name": "Construct",
-                "type": "ability",
-                "img": "systems/acks/assets/icons/gargoyle.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>Constructs are a type of mindless, unliving monster that includes animated statues, gargoyles, golems, skeletons, and zombies. (Note that skeletons and zombies are undead constructs.)</p>\n<p>Because they are not truly alive, all constructs are immune to gas and poison. Further, they are unaffected by <em>charm</em>, <em>sleep</em>, or <em>hold </em>spells. All constructs are enchanted creatures for the purposes of spells such as <em>dispel evil</em> and <em>protection from evil</em>.</p>",
-                  "save": ""
-                },
-                "sort": 0
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Construct",
       "type": "ability",
       "img": "systems/acks/assets/icons/gargoyle.webp",
@@ -350,7 +181,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119151,
         "modifiedTime": 1779123119151,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -382,7 +213,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779123119151,
     "modifiedTime": 1779123119167,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

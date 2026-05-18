@@ -2,13 +2,7 @@
   "_id": "uMRfYHvbegsCYVH6",
   "name": "Magic Missile",
   "type": "spell",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/magic-missile.webp",
   "effects": [],
   "_stats": {
@@ -17,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122850791,
     "modifiedTime": 1779122850797,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

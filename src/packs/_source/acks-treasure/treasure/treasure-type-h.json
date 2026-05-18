@@ -1,29 +1,12 @@
 {
   "_id": "lgDnbE7RGDTG0pTF",
   "name": "Treasure Type H",
-  "flags": {
-    "ose": {
-      "treasure": true
-    },
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Hoarder, 2,500gp average value",
   "results": [
     {
       "_id": "gCexiqhYXZ2mqnmJ",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 25,
@@ -49,13 +32,7 @@
     },
     {
       "_id": "cIWZC6iNAc0pY3xo",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 70,
@@ -81,13 +58,7 @@
     },
     {
       "_id": "Byii10M3zWepyAdU",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 80,
@@ -113,13 +84,7 @@
     },
     {
       "_id": "KPrPXwqHHEzTT7nG",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 80,
@@ -145,13 +110,7 @@
     },
     {
       "_id": "PNEn3VlgwkU7lbQ7",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 25,
@@ -185,7 +144,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317964,
     "modifiedTime": 1779122317976,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

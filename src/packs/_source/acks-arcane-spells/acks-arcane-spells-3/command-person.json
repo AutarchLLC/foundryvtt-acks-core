@@ -2,13 +2,7 @@
   "_id": "bmF7gA5Vw5I7ByeA",
   "name": "Command Person",
   "type": "spell",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/Command2.webp",
   "effects": [],
   "_stats": {
@@ -17,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122850795,
     "modifiedTime": 1779122850798,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

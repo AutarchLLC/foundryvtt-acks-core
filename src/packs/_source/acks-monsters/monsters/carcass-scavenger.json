@@ -2,64 +2,12 @@
   "_id": "uAf1frlms7fmVuje",
   "name": "Carcass Scavenger",
   "type": "monster",
-  "flags": {
-    "ose": {
-      "party": false
-    },
-    "acks": {
-      "party": false,
-      "conditions": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/tokens/dm_essentials1/DME_Carrion_Crawler_2.webp",
   "items": [
     {
       "_id": "sloQDItuAIiiaTea",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "sloQDItuAIiiaTea",
-                "flags": {},
-                "name": "Stingers",
-                "type": "weapon",
-                "img": "systems/acks/assets/icons/tentacle-strike.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "paralysis",
-                  "pattern": "red",
-                  "description": "<p>When the stingers strike an opponent, he must succeed in a saving throw versus Paralysis or become paralyzed for [[/r 2d4 #Paralysis lasts for this many Turns]] turns. If not faced with more opponents, the carcass scavenger will swallow the paralyzed character on the subsequent round, killing him. Paralysis may be cured with cure light wounds, but when used in this way it does not heal damage.</p>",
-                  "damage": "0",
-                  "bonus": 0,
-                  "tags": [
-                    {
-                      "title": "Paralysis",
-                      "value": "Paralysis"
-                    }
-                  ],
-                  "slow": false,
-                  "missile": false,
-                  "melee": true,
-                  "cost": 0,
-                  "equipped": false,
-                  "weight": 0,
-                  "counter": {
-                    "value": 8,
-                    "max": 8
-                  }
-                },
-                "sort": 100000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Stingers",
       "type": "weapon",
       "img": "systems/acks/assets/icons/tentacle-strike.webp",
@@ -71,7 +19,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119155,
         "modifiedTime": 1779123119155,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -114,33 +62,7 @@
     },
     {
       "_id": "p7aJ5BnZveDOBEWB",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "p7aJ5BnZveDOBEWB",
-                "flags": {},
-                "name": "Vermin",
-                "type": "ability",
-                "img": "systems/acks/assets/icons/maggot.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
-                  "save": ""
-                },
-                "sort": 1100001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Vermin",
       "type": "ability",
       "img": "systems/acks/assets/icons/maggot.webp",
@@ -152,7 +74,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119155,
         "modifiedTime": 1779123119155,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -184,7 +106,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779123119155,
     "modifiedTime": 1779123119168,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

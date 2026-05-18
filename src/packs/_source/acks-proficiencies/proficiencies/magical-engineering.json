@@ -2,13 +2,7 @@
   "_id": "xbj9M4ec8OSM287Z",
   "name": "Magical Engineering",
   "type": "ability",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/lightning-spanner.webp",
   "effects": [],
   "_stats": {
@@ -17,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122703823,
     "modifiedTime": 1779122703830,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

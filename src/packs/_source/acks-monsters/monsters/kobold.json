@@ -2,61 +2,12 @@
   "_id": "5NgKVLQ4lX2b5TI3",
   "name": "Kobold",
   "type": "monster",
-  "flags": {
-    "ose": {
-      "party": false
-    },
-    "acks": {
-      "party": false,
-      "conditions": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/tokens/goblins_kobolds/kobold_fighter.webp",
   "items": [
     {
       "_id": "EsoKeY1M7aBdwz8y",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "EsoKeY1M7aBdwz8y",
-                "flags": {
-                  "importid": "MEdm8ZUg6Z1nz3dN"
-                },
-                "name": "Short Sword",
-                "type": "weapon",
-                "img": "/systems/acks/assets/icons/short-sword.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "",
-                  "pattern": "white",
-                  "description": "",
-                  "damage": "1d6",
-                  "bonus": 0,
-                  "tags": [],
-                  "slow": false,
-                  "missile": false,
-                  "melee": true,
-                  "cost": 7,
-                  "equipped": false,
-                  "weight": 0.166,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 100000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Short Sword",
       "type": "weapon",
       "img": "/systems/acks/assets/icons/short-sword.webp",
@@ -68,7 +19,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119129,
         "modifiedTime": 1779123119129,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -106,48 +57,7 @@
     },
     {
       "_id": "o06KcC5hYqyNJ02V",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "o06KcC5hYqyNJ02V",
-                "flags": {
-                  "importid": "eLXxMDK1JsZnbNwK"
-                },
-                "name": "Shortbow",
-                "type": "weapon",
-                "img": "/systems/acks/assets/icons/pocket-bow.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "",
-                  "pattern": "white",
-                  "description": "",
-                  "damage": "1d6",
-                  "bonus": 0,
-                  "tags": [],
-                  "slow": false,
-                  "missile": true,
-                  "melee": false,
-                  "cost": 3,
-                  "equipped": false,
-                  "weight": 0.5,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 2700000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Shortbow",
       "type": "weapon",
       "img": "/systems/acks/assets/icons/pocket-bow.webp",
@@ -159,7 +69,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119129,
         "modifiedTime": 1779123119129,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -197,35 +107,7 @@
     },
     {
       "_id": "5KFKhWbRevXVQlzO",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "5KFKhWbRevXVQlzO",
-                "flags": {
-                  "importid": "K5jmS3aiMG8zxoOG"
-                },
-                "name": "Oil, Military",
-                "type": "item",
-                "img": "/systems/acks/assets/icons/oil-military.webp",
-                "data": {
-                  "description": "<p>Military oil is a weapon made of naphtha, and cannot be easily doused with water. Military oil may be thrown at monsters, dealing <a class=\"inline-roll roll\" data-mode=\"roll\" data-flavor=\"Flaming oil!\" data-formula=\"1d8\" title=\"Flaming oil!\"><i class=\"fas fa-dice-d20\"></i> 1d8</a> points of damage for 2 rounds to the creature struck, or poured on the floor and ignited to delay pursuit.</p>",
-                  "quantity": {
-                    "value": 1,
-                    "max": 1
-                  },
-                  "treasure": false,
-                  "cost": 2,
-                  "weight": 0.166
-                },
-                "sort": 3300001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Oil, Military",
       "type": "item",
       "img": "/systems/acks/assets/icons/oil-military.webp",
@@ -237,7 +119,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119129,
         "modifiedTime": 1779123119129,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -264,44 +146,7 @@
     },
     {
       "_id": "yQwlUORXQ8saCaox",
-      "flags": {
-        "dynamiceffects": {
-          "equipActive": false,
-          "alwaysActive": false,
-          "effects": []
-        },
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "yQwlUORXQ8saCaox",
-                "flags": {
-                  "dynamiceffects": {
-                    "equipActive": false,
-                    "alwaysActive": false,
-                    "effects": []
-                  }
-                },
-                "name": "Humanoid",
-                "type": "ability",
-                "img": "systems/acks/assets/icons/person.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th&nbsp;level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
-                  "save": ""
-                },
-                "sort": 1100001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Humanoid",
       "type": "ability",
       "img": "systems/acks/assets/icons/person.webp",
@@ -313,7 +158,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119129,
         "modifiedTime": 1779123119129,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -339,44 +184,7 @@
     },
     {
       "_id": "DZeLOXwn9BPbkGS2",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "owner": {
-              "actorId": "EZN1MNfeIilDRlYE"
-            },
-            "initialState": {
-              "id": "FtGRSEqrHPRLOKiQ",
-              "count": 1,
-              "itemData": {
-                "_id": "FtGRSEqrHPRLOKiQ",
-                "name": "Beastman",
-                "permission": {
-                  "default": 0,
-                  "ssuDiZtGIm56KS7h": 3
-                },
-                "type": "ability",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>Beastmen are a special type of monster that were created through ancient magic by blending a humanoid with an animal or fantastic creature. Beastmen include bugbears, centaurs, gnolls, goblins, hobgoblins, kobolds, lizardmen, lycanthropes, mermen, minotaurs, ogres, orcs, trolls, and troglodytes.</p>",
-                  "save": ""
-                },
-                "folder": "RAUqUVBGOMERIu3j",
-                "sort": 100000,
-                "flags": {},
-                "img": "systems/acks/assets/icons/minotaur.webp"
-              }
-            },
-            "itemType": "Item",
-            "isLocked": false
-          }
-        }
-      },
+      "flags": {},
       "name": "Beastman",
       "type": "ability",
       "img": "systems/acks/assets/icons/minotaur.webp",
@@ -388,7 +196,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119129,
         "modifiedTime": 1779123119129,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -420,7 +228,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779123119129,
     "modifiedTime": 1779123119160,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

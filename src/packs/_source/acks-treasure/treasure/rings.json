@@ -1,22 +1,11 @@
 {
   "name": "Rings",
-  "flags": {
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    }
-  },
+  "flags": {},
   "description": "Magical Rings",
   "results": [
     {
       "_id": "ShwXxu3StM6ABuyc",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 4,
@@ -42,13 +31,7 @@
     },
     {
       "_id": "qf65QKsx7JlcNHbP",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 5,
@@ -74,13 +57,7 @@
     },
     {
       "_id": "P3C40ZlGyrXBJVwG",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 6,
@@ -106,13 +83,7 @@
     },
     {
       "_id": "ac6v6boNKzUwLelA",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 10,
@@ -138,13 +109,7 @@
     },
     {
       "_id": "iFmOL5SHfXE92uOH",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 2,
@@ -170,13 +135,7 @@
     },
     {
       "_id": "r9oBhjONGflpHSAq",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 11,
@@ -202,13 +161,7 @@
     },
     {
       "_id": "gvulFnd3zwTClO2V",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 11,
@@ -234,13 +187,7 @@
     },
     {
       "_id": "91zq15HjWrQIMbhe",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 21,
@@ -266,13 +213,7 @@
     },
     {
       "_id": "3fH3D5gji5c4aByL",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 2,
@@ -298,13 +239,7 @@
     },
     {
       "_id": "T0pEIt2fZTarTH6T",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 2,
@@ -330,13 +265,7 @@
     },
     {
       "_id": "2nzMhp0kJPkRgLbb",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 5,
@@ -362,13 +291,7 @@
     },
     {
       "_id": "s2IHbsnhuwqTDBcY",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 2,
@@ -394,13 +317,7 @@
     },
     {
       "_id": "GyOqjETMaWhbgog2",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 6,
@@ -426,13 +343,7 @@
     },
     {
       "_id": "x9XXPj4kp8ZoXG8F",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 7,
@@ -458,13 +369,7 @@
     },
     {
       "_id": "nanGDB6gek1ItNqn",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 3,
@@ -490,13 +395,7 @@
     },
     {
       "_id": "hFPxbw6Zyo5LAMpv",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 3,
@@ -531,7 +430,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317962,
     "modifiedTime": 1779122317975,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

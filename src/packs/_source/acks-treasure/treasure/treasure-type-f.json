@@ -1,18 +1,7 @@
 {
   "_id": "QNzZjNV4Earoxubx",
   "name": "Treasure Type F",
-  "flags": {
-    "ose": {
-      "treasure": true
-    },
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Incidental, 1,500gp average value",
   "results": [
     {
@@ -155,7 +144,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317955,
     "modifiedTime": 1779122317974,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

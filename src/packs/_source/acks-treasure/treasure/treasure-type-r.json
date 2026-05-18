@@ -1,29 +1,12 @@
 {
   "_id": "5E2YM6DYynMZUjN9",
   "name": "Treasure Type R",
-  "flags": {
-    "ose": {
-      "treasure": true
-    },
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Hoarder, 45,000gp average value",
   "results": [
     {
       "_id": "omGs2Py2RNJEmWZ8",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 50,
@@ -49,13 +32,7 @@
     },
     {
       "_id": "NElNwON6avUleWUd",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 60,
@@ -81,13 +58,7 @@
     },
     {
       "_id": "UQbxwqt3dChVgwIz",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 80,
@@ -113,13 +84,7 @@
     },
     {
       "_id": "Q6URliVCN8OL3J6z",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 70,
@@ -145,13 +110,7 @@
     },
     {
       "_id": "MpbxxKmiu8nfnRDO",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 60,
@@ -177,13 +136,7 @@
     },
     {
       "_id": "yPjSpWVl0bYog1jN",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 100,
@@ -209,13 +162,7 @@
     },
     {
       "_id": "HXm5SQm7eVnEQdVL",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 100,
@@ -241,13 +188,7 @@
     },
     {
       "_id": "GSx3CsKntcETsA1K",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 75,
@@ -273,13 +214,7 @@
     },
     {
       "_id": "FjHRuYBzsqlwxSMR",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 75,
@@ -305,13 +240,7 @@
     },
     {
       "_id": "NH3U7buFE5kKnlRN",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 75,
@@ -337,13 +266,7 @@
     },
     {
       "_id": "ctoNpt5KsCe1ETew",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 75,
@@ -369,13 +292,7 @@
     },
     {
       "_id": "75ZamjDdpeRsKmyt",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 75,
@@ -401,13 +318,7 @@
     },
     {
       "_id": "hwhVNIdVKZXi7z0z",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 75,
@@ -441,7 +352,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317949,
     "modifiedTime": 1779122317972,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

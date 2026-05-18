@@ -1,19 +1,6 @@
 {
   "name": "Treasure Type C",
-  "flags": {
-    "better-rolltables": {
-      "table-type": "better",
-      "table-currency-string": "",
-      "loot-actor-name": "",
-      "loot-amount-key": ""
-    },
-    "ose": {
-      "treasure": true
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "Incidental, 700gp average value",
   "results": [
     {
@@ -131,7 +118,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317967,
     "modifiedTime": 1779122317976,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

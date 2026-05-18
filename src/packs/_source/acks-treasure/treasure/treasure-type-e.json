@@ -1,29 +1,12 @@
 {
   "_id": "fnFtAtFvP7PU9Rik",
   "name": "Treasure Type E",
-  "flags": {
-    "ose": {
-      "treasure": true
-    },
-    "better-rolltables": {
-      "table-type": "better",
-      "loot-amount-key": ""
-    },
-    "acks": {
-      "treasure": true
-    }
-  },
+  "flags": {},
   "description": "<p>Raider, 1,250gp average value</p>",
   "results": [
     {
       "_id": "VATbju1Q7hehTcS9",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 80,
@@ -49,13 +32,7 @@
     },
     {
       "_id": "JQNgaTCsiq8FmmGn",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 70,
@@ -81,13 +58,7 @@
     },
     {
       "_id": "I3lFuGpv6nEiy73Q",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 60,
@@ -113,13 +84,7 @@
     },
     {
       "_id": "ydKOg950Cz8jqD3s",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 40,
@@ -145,13 +110,7 @@
     },
     {
       "_id": "QLFPAvL8vVsAh4xX",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 15,
@@ -177,13 +136,7 @@
     },
     {
       "_id": "C63Y28yTclN6rg9u",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 15,
@@ -209,13 +162,7 @@
     },
     {
       "_id": "0g58kRUbJ2o6lcf2",
-      "flags": {
-        "better-rolltables": {
-          "brt-result-formula": {
-            "formula": ""
-          }
-        }
-      },
+      "flags": {},
       "type": "text",
       "img": "icons/svg/d20-black.svg",
       "weight": 5,
@@ -249,7 +196,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122317959,
     "modifiedTime": 1779122317975,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

@@ -2,64 +2,12 @@
   "_id": "aUXt9TeNTP79DqBv",
   "name": "Beetle, Giant Bombardier",
   "type": "monster",
-  "flags": {
-    "ose": {
-      "party": false
-    },
-    "acks": {
-      "party": false,
-      "conditions": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/tokens/generic/beetle.webp",
   "items": [
     {
       "_id": "uMJMtL4fL3zj7VlV",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "uMJMtL4fL3zj7VlV",
-                "flags": {},
-                "name": "Bite",
-                "type": "weapon",
-                "img": "systems/acks/assets/icons/insect-jaws.webp",
-                "data": {
-                  "range": {
-                    "short": 0,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "",
-                  "pattern": "red",
-                  "description": "",
-                  "damage": "1d6",
-                  "bonus": 0,
-                  "tags": [
-                    {
-                      "title": "Melee",
-                      "value": "Melee"
-                    }
-                  ],
-                  "slow": false,
-                  "missile": false,
-                  "melee": true,
-                  "cost": 0,
-                  "equipped": false,
-                  "weight": 0,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 100000
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Bite",
       "type": "weapon",
       "img": "systems/acks/assets/icons/insect-jaws.webp",
@@ -71,7 +19,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119145,
         "modifiedTime": 1779123119145,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -114,33 +62,7 @@
     },
     {
       "_id": "spAIUWoZac8VqBwJ",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "spAIUWoZac8VqBwJ",
-                "flags": {},
-                "name": "Vermin",
-                "type": "ability",
-                "img": "systems/acks/assets/icons/maggot.webp",
-                "data": {
-                  "pattern": "white",
-                  "requirements": "",
-                  "roll": "",
-                  "rollType": "result",
-                  "rollTarget": 0,
-                  "blindroll": false,
-                  "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
-                  "save": ""
-                },
-                "sort": 1100001
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Vermin",
       "type": "ability",
       "img": "systems/acks/assets/icons/maggot.webp",
@@ -152,7 +74,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119145,
         "modifiedTime": 1779123119145,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -178,51 +100,7 @@
     },
     {
       "_id": "axCXHAgO2KefwDrU",
-      "flags": {
-        "pick-up-stix": {
-          "pick-up-stix": {
-            "initialState": {
-              "count": 1,
-              "itemData": {
-                "_id": "axCXHAgO2KefwDrU",
-                "flags": {},
-                "name": "Toxic Spray",
-                "type": "weapon",
-                "img": "systems/acks/assets/icons/steam.webp",
-                "data": {
-                  "range": {
-                    "short": 5,
-                    "medium": 0,
-                    "long": 0
-                  },
-                  "save": "",
-                  "pattern": "yellow",
-                  "description": "<p>These beetles have a toxic spray that can squirt an opponent within 5' of the beetle. When the toxic fluid successfully strikes an opponent, it is extremely painful and causes chemical burns and blisters. This effect makes the opponent suffer a -2 penalty to attack throws for 1 day, or until the spell cure light wounds is used.</p>",
-                  "damage": "",
-                  "bonus": 0,
-                  "tags": [
-                    {
-                      "title": "Missile",
-                      "value": "Missile"
-                    }
-                  ],
-                  "slow": false,
-                  "missile": true,
-                  "melee": true,
-                  "cost": 0,
-                  "equipped": false,
-                  "weight": 0,
-                  "counter": {
-                    "value": 1,
-                    "max": 1
-                  }
-                },
-                "sort": 0
-              }
-            }
-          }
-        }
-      },
+      "flags": {},
       "name": "Toxic Spray",
       "type": "weapon",
       "img": "systems/acks/assets/icons/steam.webp",
@@ -234,7 +112,7 @@
         "systemVersion": "14.0.1",
         "createdTime": 1779123119145,
         "modifiedTime": 1779123119145,
-        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "lastModifiedBy": "ammonar0000",
         "exportSource": null,
         "compendiumSource": null,
         "duplicateSource": null
@@ -283,7 +161,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779123119145,
     "modifiedTime": 1779123119164,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

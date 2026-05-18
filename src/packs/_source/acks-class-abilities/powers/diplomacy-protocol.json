@@ -1,13 +1,7 @@
 {
   "name": "Diplomacy & Protocol",
   "type": "ability",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/coronation.webp",
   "_id": "sLTkt4wMPobWjcM5",
   "effects": [],
@@ -17,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122493277,
     "modifiedTime": 1779122493281,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },

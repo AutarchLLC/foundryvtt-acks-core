@@ -2,13 +2,7 @@
   "_id": "0iPzyOlvEcLstYVH",
   "name": "Light",
   "type": "spell",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/Light.webp",
   "effects": [],
   "_stats": {
@@ -17,7 +11,7 @@
     "systemVersion": "14.0.1",
     "createdTime": 1779122850788,
     "modifiedTime": 1779122850796,
-    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "lastModifiedBy": "ammonar0000",
     "exportSource": null,
     "duplicateSource": null
   },
