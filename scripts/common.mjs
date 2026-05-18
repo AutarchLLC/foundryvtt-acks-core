@@ -51,7 +51,7 @@ export async function cleanPackEntry(data, { clearSourceId = true, ownership = 0
   delete data.flags?.exportSource;
 
   if (data._stats?.lastModifiedBy) {
-    data._stats.lastModifiedBy = "ammonar0000";
+    data._stats.lastModifiedBy = "acksiiammonar000";
   }
 
   // Remove empty entries in flags
