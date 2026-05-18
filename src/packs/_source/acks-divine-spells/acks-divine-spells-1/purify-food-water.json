@@ -12,17 +12,14 @@
   "img": "systems/acks/assets/icons/purify-food-and-water.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058358012,
-    "modifiedTime": 1730058358012,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122894798,
+    "modifiedTime": 1779122894800,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -34,9 +31,13 @@
     "description": "<p>This spell makes spoiled, rotten, poisonous, or otherwise contaminated food and water pure and suitable for eating and drinking. This spell will purify one ration of food, 6 skins of water, or enough normal food to feed a dozen people. This spell does not prevent subsequent natural decay or spoilage. Unholy water and similar food and drink of significance is spoiled by purify food and water, but the spell has no effect on creatures of any type, nor upon magic potions.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "NYA8pw0gLlA5SnQ1",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!KxPVOoif9rxoFcn3"
 }

@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/battered-axe.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058486624,
-    "modifiedTime": 1730058486624,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122770657,
+    "modifiedTime": 1779122770660,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "range": {
@@ -27,7 +24,7 @@
     "favorite": false,
     "save": "",
     "pattern": "white",
-    "description": "<p>This is a single- or double-bitted axe with a 24\"&nbsp;to 48\" haft, designed for battle and useable with one or two hands. Historical examples include the Scythian sagaris, Viking bearded and skeg axe, Celtic war axe, medieval battle axe, and Persian tabarzin.</p>",
+    "description": "<p>This is a single- or double-bitted axe with a 24\" to 48\" haft, designed for battle and useable with one or two hands. Historical examples include the Scythian sagaris, Viking bearded and skeg axe, Celtic war axe, medieval battle axe, and Persian tabarzin.</p>",
     "damage": "1d8",
     "bonus": 0,
     "tags": [
@@ -45,14 +42,17 @@
     "melee": true,
     "cost": 7,
     "equipped": false,
-    "weight": -1,
     "weight6": 1,
     "counter": {
       "value": 0,
       "max": 0
-    }
+    },
+    "_schemaVersion": 3
   },
   "folder": "9gTquBoiBlWRuTrh",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!axlm9WQSgMzy7uC0"
 }

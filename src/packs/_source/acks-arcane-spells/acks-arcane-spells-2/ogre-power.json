@@ -12,17 +12,14 @@
   "img": "systems/acks/assets/icons/ogre-power.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058308020,
-    "modifiedTime": 1730058308020,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850793,
+    "modifiedTime": 1779122850797,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -34,9 +31,13 @@
     "description": "<p>This spell grants the recipient the strength and prowess of an ogre. For the duration of the spell, the character has an effective <strong>Strength score of 18</strong>, receiving a <strong>+3 bonus to attack throws and damage rolls</strong> and other benefits that this ability score confers.</p>\n<p>In addition, the character gains the ability to s<strong>trike barehanded for 1d4 points of damage</strong>, and to <strong>carry an extra 10 stone</strong>.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "RUa7ELuvVbuK8ABs",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!Mz42Kp79VFqTZb9G"
 }

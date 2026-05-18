@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/bardiche.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058486624,
-    "modifiedTime": 1730058486624,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122770659,
+    "modifiedTime": 1779122770661,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "range": {
@@ -27,7 +24,7 @@
     "favorite": false,
     "save": "",
     "pattern": "white",
-    "description": "<p>Pole arms are two-handed slashing and piercing&nbsp;weapons with a metal head and a long wooden shaft. Pole arms range in length from 6' to 21'. Historical examples include the Thracian rhomphaia, Dacian falx, and Macedonian sarissa; the medieval bill, fauchard, glaive, guisarme, halberd, partisan, pike, ranseur, spetum, and voulge; the Chinese gun dao; and the Japanese bisento, nagamaki, and naginata. Pole arms can be used to attack from the second rank in melee, and inflict double damage when used in or against a charge, but impose a -1 penalty on initiative rolls.</p>",
+    "description": "<p>Pole arms are two-handed slashing and piercing weapons with a metal head and a long wooden shaft. Pole arms range in length from 6' to 21'. Historical examples include the Thracian rhomphaia, Dacian falx, and Macedonian sarissa; the medieval bill, fauchard, glaive, guisarme, halberd, partisan, pike, ranseur, spetum, and voulge; the Chinese gun dao; and the Japanese bisento, nagamaki, and naginata. Pole arms can be used to attack from the second rank in melee, and inflict double damage when used in or against a charge, but impose a -1 penalty on initiative rolls.</p>",
     "damage": "1d10",
     "bonus": 0,
     "tags": [
@@ -45,14 +42,17 @@
     "melee": true,
     "cost": 7,
     "equipped": false,
-    "weight": -1,
     "weight6": 6,
     "counter": {
       "value": 0,
       "max": 0
-    }
+    },
+    "_schemaVersion": 3
   },
   "folder": "9gTquBoiBlWRuTrh",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!taI2Lp75RzDEN2iJ"
 }

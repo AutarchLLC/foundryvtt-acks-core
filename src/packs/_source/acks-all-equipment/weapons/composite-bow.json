@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/composite-bow.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058486624,
-    "modifiedTime": 1730058486624,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122770657,
+    "modifiedTime": 1779122770660,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "range": {
@@ -27,7 +24,7 @@
     "favorite": false,
     "save": "",
     "pattern": "white",
-    "description": "<p>A composite bow is a recurved bow made&nbsp;of laminated wood, horn, and sinew. Composite bows are time consuming and expensive to craft but offer a better combination of mobility and power than longbows or shortbows. Historical examples include the Scythian horn bow, Chinese laminated bamboo bow, Greek and Roman composite bow, Mongolian composite bow, and Japanese yumi.</p>\n<p>Limited to 4 cleave attacks. (Core Rules p. 105)</p>",
+    "description": "<p>A composite bow is a recurved bow made of laminated wood, horn, and sinew. Composite bows are time consuming and expensive to craft but offer a better combination of mobility and power than longbows or shortbows. Historical examples include the Scythian horn bow, Chinese laminated bamboo bow, Greek and Roman composite bow, Mongolian composite bow, and Japanese yumi.</p>\n<p>Limited to 4 cleave attacks. (Core Rules p. 105)</p>",
     "damage": "1d6",
     "bonus": 0,
     "tags": [
@@ -45,14 +42,17 @@
     "melee": false,
     "cost": 40,
     "equipped": false,
-    "weight": -1,
     "weight6": 6,
     "counter": {
       "value": 0,
       "max": 0
-    }
+    },
+    "_schemaVersion": 3
   },
   "folder": "9gTquBoiBlWRuTrh",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!OKIkawWJve0VG5vX"
 }

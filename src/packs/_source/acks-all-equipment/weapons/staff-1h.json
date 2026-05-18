@@ -6,17 +6,14 @@
   "_id": "s7DaCWDL3znp2bIl",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058486624,
-    "modifiedTime": 1730058486624,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122770659,
+    "modifiedTime": 1779122770661,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "range": {
@@ -41,14 +38,17 @@
     "melee": true,
     "cost": 1,
     "equipped": false,
-    "weight": -1,
     "weight6": 6,
     "counter": {
       "value": 0,
       "max": 0
-    }
+    },
+    "_schemaVersion": 3
   },
   "folder": "9gTquBoiBlWRuTrh",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!s7DaCWDL3znp2bIl"
 }

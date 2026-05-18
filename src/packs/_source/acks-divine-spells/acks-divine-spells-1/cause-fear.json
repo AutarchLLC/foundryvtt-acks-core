@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/fear.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058358012,
-    "modifiedTime": 1730058358012,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122894797,
+    "modifiedTime": 1779122894800,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -25,12 +22,16 @@
     "duration": "2 Turns",
     "range": "120'",
     "roll": "",
-    "description": "<p>This spell, the reverse of&nbsp;<em>Remove Fear</em>, causes one target creature within 120' to become frightened; if the target fails to save versus Death, it flees for 2 turns.</p>\n<p>Creatures with 6 or more Hit Dice are immune to this effect.</p>",
+    "description": "<p>This spell, the reverse of <em>Remove Fear</em>, causes one target creature within 120' to become frightened; if the target fails to save versus Death, it flees for 2 turns.</p>\n<p>Creatures with 6 or more Hit Dice are immune to this effect.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": "death"
+    "save": "death",
+    "_schemaVersion": 3
   },
   "folder": "NYA8pw0gLlA5SnQ1",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!1FQ9DvDaPJtRPZFg"
 }

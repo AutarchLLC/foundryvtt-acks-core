@@ -12,17 +12,14 @@
   "img": "systems/acks/assets/icons/stink.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058308020,
-    "modifiedTime": 1730058308020,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850792,
+    "modifiedTime": 1779122850797,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -34,9 +31,13 @@
     "description": "<p>This spell creates a <strong>billowing mass of foul-smelling vapors</strong> to arise within 30'. The stinking cloud will be <strong>20' x 20' x 20' in size</strong>. Any creature caught within the cloud must make a successful <strong>saving throw versus Poison or be helpless due to nausea</strong>. This condition lasts <strong>as long as the creature is in the cloud</strong> and for <strong>1d4+1 rounds after it leaves</strong>.</p>\n<p>Any creature that succeeds on its save but remains in the cloud must continue to save each round.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": "death"
+    "save": "death",
+    "_schemaVersion": 3
   },
   "folder": "RUa7ELuvVbuK8ABs",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!An63AWdDiVAr7Uks"
 }

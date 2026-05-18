@@ -12,17 +12,14 @@
   "img": "systems/acks/assets/icons/wizard-lock.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058308020,
-    "modifiedTime": 1730058308020,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850793,
+    "modifiedTime": 1779122850797,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -34,9 +31,13 @@
     "description": "<p>A wizard lock spell cast upon a door, chest, or portal magically locks it. The caster can freely pass his own wizard lock without affecting it, as can any arcane spellcaster 3 or more levels higher than the caster of the wizard lock; otherwise, a door or object secured with this spell can be opened only by breaking in or with a successful dispel magic or knock spell.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "RUa7ELuvVbuK8ABs",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!W22R5zkK9eM0TInP"
 }

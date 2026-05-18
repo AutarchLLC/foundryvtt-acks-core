@@ -6,33 +6,30 @@
   "img": "systems/acks/assets/icons/hide-armor.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058483071,
-    "modifiedTime": 1730058483071,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122770653,
+    "modifiedTime": 1779122770659,
+    "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "description": "<p>This crude armor consists of thick pelts.</p>",
-    "ac": {
-      "value": 8
-    },
     "aac": {
       "value": 1
     },
     "type": "light",
     "cost": 10,
     "equipped": false,
-    "weight": -1,
-    "weight6": 6
+    "weight6": 6,
+    "_schemaVersion": 3
   },
   "folder": "8qVpUlESUQsGqpcL",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!k70OsRLou54ioHgS"
 }
