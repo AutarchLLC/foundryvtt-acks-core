@@ -30,7 +30,7 @@ import { showPartySheet } from "./module/party.mjs";
 import AcksCombatHelper from "./module/combat-helper.mjs";
 import ACKSToken from "./module/documents/token.mjs";
 import hotbarDrop from "./module/hooks/hotbar-drop.mjs";
-import { runMigrations } from "./module/migration/migration.mjs";
+import { forceWorldMigration, runMigrations } from "./module/migration/migration.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -57,6 +57,9 @@ Hooks.once("init", async function () {
   game.acks = {
     macro: {
       rollItem: rollItem,
+    },
+    debug: {
+      forceWorldMigration: forceWorldMigration,
     },
   };
 

@@ -82,3 +82,23 @@ export async function runMigrations() {
 export function isCurrentSchema(source) {
   return (source?._schemaVersion ?? 0) >= CURRENT_SCHEMA_VERSION;
 }
+
+/**
+ * FOR DEVELOPMENT ONLY!
+ * Forcefully reset world schema version and run migration.
+ * Useful when migrating compendium packs:
+ * - Create and open new world.
+ * - Import all content from a pack (saving documents IDs) into a world.
+ * - Force migration.
+ * - Delete content from pack.
+ * - Export content from world back into compendium.
+ * - Repeat for all packs.
+ * ...
+ * - Profit :)
+ * @param {number} from
+ * @return {Promise<void>}
+ */
+export async function forceWorldMigration(from = 0) {
+  await MigrationRunner.resetSchemaVersions(from);
+  await runMigrations();
+}
