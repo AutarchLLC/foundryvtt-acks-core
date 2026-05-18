@@ -1,0 +1,38 @@
+{
+  "_id": "wd3afIcDkh7mUZB0",
+  "name": "Earplugs",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Made of clay, cotton, or wax, these protect the wearer from loud sounds. Commanders may issue these to troops that will face harpies on the field of battle. Adventurers can wear earplugs loosely to reduce earshot by half or tightly to become deafened.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.1,
+    "weight6": 1,
+    "iconsource": "",
+    "iconlicense": "",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581849,
+    "modifiedTime": 1779120581855,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!wd3afIcDkh7mUZB0"
+}

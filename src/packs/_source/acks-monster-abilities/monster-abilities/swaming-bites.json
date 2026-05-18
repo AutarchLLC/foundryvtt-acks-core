@@ -1,0 +1,54 @@
+{
+  "name": "Swaming Bites",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/bestial-fangs.webp",
+  "_id": "WgopgtnKkwiGM1IK",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999781,
+    "modifiedTime": 1779122999785,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "paralysis",
+    "pattern": "transparent",
+    "description": "<p>Sapient rats are too small to harm man-sized creatures individually. Instead, they may fight as packs, getting <strong>1 attack per 5 individuals</strong> in the pack.</p>\n<p>If a character is attacked by 10 or more sapient rats at once, he must also succeed in a saving throw versus Paralysis or fall to the ground under the writhing rodent horde. He may stand up the following round, but must make a new saving throw each time he is attacked by 10 or more rats. The character can take no other actions until he gets back on his feet.</p>",
+    "damage": "1d6",
+    "bonus": 0,
+    "tags": [
+      {
+        "title": "Melee",
+        "value": "Melee"
+      }
+    ],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight6": 0,
+    "counter": {
+      "value": 1,
+      "max": 1
+    },
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!WgopgtnKkwiGM1IK"
+}

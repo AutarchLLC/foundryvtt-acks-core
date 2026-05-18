@@ -1,0 +1,22 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Monster Abilities",
+  "color": null,
+  "sorting": "a",
+  "_id": "1aw85lzuAfTBazRX",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999777,
+    "modifiedTime": 1779122999777,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!1aw85lzuAfTBazRX"
+}

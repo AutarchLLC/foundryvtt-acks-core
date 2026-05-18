@@ -1,25 +1,38 @@
 /* global foundry, CONST */
-import actorCommonSchema from "./templates/actor-common-schema.mjs";
+import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
+import BaseDataModel from "../common/base-data-model.mjs";
+import SavingThrowsTemplate from "./templates/saving-throws.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Character Data Model
- *
- * @see https://foundryvtt.com/api/classes/foundry.abstract.TypeDataModel.html
- * @see https://foundryvtt.wiki/en/development/api/DataModel
- * @see https://foundryvtt.com/article/system-data-models/
  */
-export default class CharacterData extends foundry.abstract.TypeDataModel {
+export default class CharacterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
-   * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, languages, fight, exploration, scores, encumbrance}}
+   * @override
+   * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, exploration, scores, encumbrance}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
+      ...super.defineSchema(),
       // common actor template
-      ...actorCommonSchema(),
+      ...ActorCommonTemplate.isNew,
+      ...ActorCommonTemplate.retainer,
+      ...ActorCommonTemplate.hp,
+      ...ActorCommonTemplate.aac,
+      ...ActorCommonTemplate.damage,
+      ...ActorCommonTemplate.thac0,
+      ...ActorCommonTemplate.movement,
+      ...ActorCommonTemplate.initiative,
+      ...ActorCommonTemplate.surprise,
+      // Saving Throws
+      ...SavingThrowsTemplate.saves,
+      ...SavingThrowsTemplate.save,
+
       // spellcaster actor template
       ...actorSpellcasterSchema(),
       // character config
@@ -90,13 +103,6 @@ export default class CharacterData extends foundry.abstract.TypeDataModel {
         listening: new NumberField({ initial: 18 }),
         searching: new NumberField({ initial: 18 }),
         trapbreaking: new NumberField({ initial: 18 }),
-      }),
-      // languages.
-      // TODO: seems like deprecated in favor of language items? write migration and remove?
-      languages: new SchemaField({
-        literacy: new StringField({ blank: true, initial: "" }),
-        spoken: new StringField({ blank: true, initial: "" }),
-        value: new ArrayField(new StringField({ blank: true, initial: "" })),
       }),
       fight: new SchemaField({
         // Base Healing Rate formula
@@ -183,6 +189,22 @@ export default class CharacterData extends foundry.abstract.TypeDataModel {
         forcemax: new NumberField({ initial: -1 }),
       }),
     };
+  }
+
+  /**
+   * @override
+   * @inheritDoc
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    // Migration 1: saves.wand → saves.implements, saves.breath → saves.blast
+    SavingThrowsTemplate.migrateWandToImplements(source);
+    SavingThrowsTemplate.migrateBreathToBlast(source);
+
+    return super.migrateData(source);
   }
 
   /**

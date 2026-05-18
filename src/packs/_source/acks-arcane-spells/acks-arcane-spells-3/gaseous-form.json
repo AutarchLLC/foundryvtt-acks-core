@@ -2,27 +2,18 @@
   "_id": "3NtKtiAIjZPuhWIo",
   "name": "Gaseous Form",
   "type": "spell",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/gaseous-form.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058310247,
-    "modifiedTime": 1730058310247,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850795,
+    "modifiedTime": 1779122850798,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -34,9 +25,13 @@
     "description": "<p>This spell causes the recipient to immediately take on the form of a translucent cloud of gas. Anything the subject was carrying or wearing immediately falls to the floor.</p>\n<p>While in gaseous form, a creature cannot attack, but it can <strong>move at 30' per round</strong> and can <strong>flow below doors and other small spaces</strong> that are not sealed airtight. A gaseous creature has an <strong>AC of 11</strong> and is <strong>immune to non-magical weapons</strong>.</p>\n<p>An unwilling target of this spell may make a saving throw versus Spells to resist the effect.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": "spell"
+    "save": "spell",
+    "_schemaVersion": 3
   },
   "folder": "R5pYVHvoF9GtMtIa",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!3NtKtiAIjZPuhWIo"
 }

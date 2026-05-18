@@ -1,0 +1,38 @@
+{
+  "_id": "kzq2Bqrm8HXaTmmc",
+  "name": "Hammer (small)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/3d-hammer.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "The small hammer can be used for construction or as a mallet with iron or wooden spikes. If used in melee, it counts as a small weapon and deals 1d4 {B!} damage.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 2,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581847,
+    "modifiedTime": 1779120581855,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!kzq2Bqrm8HXaTmmc"
+}

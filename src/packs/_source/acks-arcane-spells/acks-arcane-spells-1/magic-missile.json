@@ -2,27 +2,18 @@
   "_id": "uMRfYHvbegsCYVH6",
   "name": "Magic Missile",
   "type": "spell",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/magic-missile.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058305652,
-    "modifiedTime": 1730058305652,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850791,
+    "modifiedTime": 1779122850797,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -34,9 +25,13 @@
     "description": "<p>This spell causes a missile of magical energy to dart forth from the caster's fingertip and strike its target, dealing <strong>1d6+1 points of damage</strong>. The missile <strong>strikes unerringly</strong>, even if the target is in melee combat, so long as the target has less than total cover or total concealment. Specific parts of a creature can't be singled out. Inanimate objects are not damaged by the spell.</p>\n<p>For every five caster levels beyond 1st , an additional two missiles are fired – three missiles at 6th level, and the maximum of five missiles at 13th. If the caster fires multiple missiles, he can target a single creature or several creatures. A single missile can strike only one creature. Targets must be designated before damage is rolled.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "jovYtuhNu2Eim4dQ",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!uMRfYHvbegsCYVH6"
 }

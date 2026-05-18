@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/sword.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058486624,
-    "modifiedTime": 1730058486624,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122770656,
+    "modifiedTime": 1779122770660,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "range": {
@@ -27,7 +24,7 @@
     "favorite": false,
     "save": "",
     "pattern": "white",
-    "description": "<p><span style=\"color: #191813;\">The classic weapon of knights and kings, the sword includes straight and curved slashing and thrusting blades of 30\" to 40\" in length useable with one or two hands. Historical examples include the Roman spatha, Viking sword, medieval knightly sword and falchion, Japanese katana, and Chinese jian and dao.</span></p>",
+    "description": "<p><span style=\"color:#191813\">The classic weapon of knights and kings, the sword includes straight and curved slashing and thrusting blades of 30\" to 40\" in length useable with one or two hands. Historical examples include the Roman spatha, Viking sword, medieval knightly sword and falchion, Japanese katana, and Chinese jian and dao.</span></p>",
     "damage": "1d8",
     "bonus": 0,
     "tags": [
@@ -45,14 +42,17 @@
     "melee": true,
     "cost": 10,
     "equipped": false,
-    "weight": -1,
     "weight6": 1,
     "counter": {
       "value": 0,
       "max": 0
-    }
+    },
+    "_schemaVersion": 3
   },
   "folder": "9gTquBoiBlWRuTrh",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!Asgal06yfrFoVszt"
 }

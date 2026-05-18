@@ -1,0 +1,38 @@
+{
+  "_id": "90EnYvxK6I2NUwDs",
+  "name": "Rations, Standard (one week)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cornucopia.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This is fresh food. While cheaper and tastier than iron rations, standard rations do not remain edible for long: one week in the wilderness and one day in dank dungeons. The cost for this food will vary depending on quality. The cheapest stan dard rations include fresh bread, cheese, and butter, lard, or oil. Better standard rations will include bacon or other meat, eggs, beans, and fresh fruit and vegetables. A days standard rations counts as 1/6 stone (one item) for encumbrance purposes, while a weeks standard rations count as one stone.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 3,
+    "weight6": 6,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581842,
+    "modifiedTime": 1779120581851,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!90EnYvxK6I2NUwDs"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Motionless & Quiet",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/dungeon-hide.webp",
+  "_id": "oT5KEpS0eC8YYsb3",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122493276,
+    "modifiedTime": 1779122493281,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 14,
+    "blindroll": true,
+    "description": "<p>In dungeons, this character, if he is motionless and quiet in cover, can escape detection with a proficiency throw of 14+ on 1d20.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "sFB1mhQrNkHDlaUi",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!oT5KEpS0eC8YYsb3"
+}

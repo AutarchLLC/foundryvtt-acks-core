@@ -1,0 +1,38 @@
+{
+  "_id": "MthAtId1xCVyy1YF",
+  "name": "Blanket",
+  "type": "item",
+  "img": "systems/acks/assets/icons/rolled-cloth.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A large woven covering that provides warmth and comfort. A character resting under a blanket is considered to have protection from frigid weather (p. XX) unless there is flurry or snowy precipitation. In this case, a tent is also required.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 2,
+    "weight6": 6,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581843,
+    "modifiedTime": 1779120581852,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!MthAtId1xCVyy1YF"
+}

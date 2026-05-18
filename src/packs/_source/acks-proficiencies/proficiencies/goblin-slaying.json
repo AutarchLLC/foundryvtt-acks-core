@@ -1,0 +1,37 @@
+{
+  "_id": "Cf4jdGDYmPaP7VlD",
+  "name": "Goblin-Slaying",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/goblin-head.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703812,
+    "modifiedTime": 1779122703826,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character has been trained to ruthlessly cut down his race's humanoid foes. He receives +1 on attack throws against kobolds, goblins, orcs, gnolls, hobgoblins, bugbears, ogres, trolls, and giants. At level 7, this bonus increases to +2, and at level 13 it increases to +3.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!Cf4jdGDYmPaP7VlD"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "TITeGXMn6nUdfUPB",
+  "type": "item",
+  "name": "Skullcap",
+  "img": "systems/acks/assets/icons/flaticon/skullcap.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A small domed cap that covers the area from the forehead to just above the back of the neck.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 3,
+    "weight6": 0,
+    "iconsource": "https://www.flaticon.com/free-icon/skullcap_15719608",
+    "iconlicense": "<a href=\\\"https://www.flaticon.com/free-icons/skullcap\\\" title=\\\"skullcap icons\\\">Skullcap icons created by IconBaandar - Flaticon</a>",
+    "_schemaVersion": 3
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120312014,
+    "modifiedTime": 1779120312019,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!TITeGXMn6nUdfUPB"
+}

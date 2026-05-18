@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/dagger.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058486624,
-    "modifiedTime": 1730058486624,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122770657,
+    "modifiedTime": 1779122770660,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "range": {
@@ -27,7 +24,7 @@
     "favorite": false,
     "save": "",
     "pattern": "white",
-    "description": "<p>A dagger has a small 6\" to 12\" blade, either singleedged&nbsp;for cutting, or doubled edged for stabbing. Daggers may&nbsp;be used in melee or for throwing. Historical examples include the Asian kris, medieval poniard, Japanese tanto, Scottish dirk, and Renaissance stiletto. Some daggers have blades coated with silver for use against enchanted creatures.</p>\n<p>Up to 4 daggers may be thrown when cleaving. (Core rules p. 105)</p>",
+    "description": "<p>A dagger has a small 6\" to 12\" blade, either singleedged for cutting, or doubled edged for stabbing. Daggers may be used in melee or for throwing. Historical examples include the Asian kris, medieval poniard, Japanese tanto, Scottish dirk, and Renaissance stiletto. Some daggers have blades coated with silver for use against enchanted creatures.</p>\n<p>Up to 4 daggers may be thrown when cleaving. (Core rules p. 105)</p>",
     "damage": "1d4",
     "bonus": 0,
     "tags": [
@@ -45,14 +42,17 @@
     "melee": true,
     "cost": 3,
     "equipped": false,
-    "weight": -1,
     "weight6": 1,
     "counter": {
       "value": 0,
       "max": 0
-    }
+    },
+    "_schemaVersion": 3
   },
   "folder": "9gTquBoiBlWRuTrh",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!cjQUIUtxC4mKaJbv"
 }

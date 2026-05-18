@@ -1,0 +1,38 @@
+{
+  "_id": "jDMmCpf88dVanElZ",
+  "name": "Surgical Saw, Large",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/hand-saw.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Sharp, sturdy saws are used to saw through bone and tissue when amputation of the limbs is required. Use of a surgical saw gives a bonus on Healing proficiency throws to cure light injury or cure serious injury in mortally, grievously, or critically wounded characters who need healing to survive one of these permanent wounds. The bonus is +2 from a small saw and +4 from a large saw. See Mortal Wounds (p. XX) for more information. A large surgical saw weighs 1 stone (10 lbs).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight6": 6,
+    "iconsource": "https://game-icons.net/1x1/delapouite/hand-saw.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581846,
+    "modifiedTime": 1779120581854,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!jDMmCpf88dVanElZ"
+}

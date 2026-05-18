@@ -48,6 +48,12 @@ export async function cleanPackEntry(data, { clearSourceId = true, ownership = 0
     delete data.flags?.core?.sourceId;
   }
 
+  delete data.flags?.exportSource;
+
+  if (data._stats?.lastModifiedBy) {
+    data._stats.lastModifiedBy = "acksiiammonar000";
+  }
+
   // Remove empty entries in flags
   if (!data.flags) {
     data.flags = {};
@@ -69,6 +75,12 @@ export async function cleanPackEntry(data, { clearSourceId = true, ownership = 0
   }
   if (data.system?.description) {
     data.system.description = cleanString(data.system.description);
+  }
+  if (data.system?.details?.biography) {
+    data.system.details.biography = cleanString(data.system.details.biography);
+  }
+  if (data.system?.details?.notes) {
+    data.system.details.notes = cleanString(data.system.details.notes);
   }
   if (data.label) {
     data.label = cleanString(data.label);

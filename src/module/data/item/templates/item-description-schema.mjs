@@ -1,3 +1,4 @@
+/* global foundry */
 /**
  * Shared data schema for item's description
  * @return {ItemDescriptionDataSchema}

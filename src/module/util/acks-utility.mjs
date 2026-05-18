@@ -12,18 +12,6 @@ export class AcksUtility {
     return game.release.generation >= minVersion;
   }
 
-  static updateWeightsLanguages() {
-    // TODO: write proper migration using data model
-    for (const actor of game.actors) {
-      actor.updateWeight();
-      actor.updateLanguages();
-      actor.updateImplements();
-    }
-    for (const item of game.items) {
-      item.updateWeight();
-    }
-  }
-
   static roundToEven(num) {
     // Get the fractional part
     const fraction = Math.abs(num) - Math.floor(Math.abs(num));
@@ -58,13 +46,13 @@ export class AcksUtility {
     }
   }
 
-  static async loadCompendiumData(compendium) {
+  static async getCompendiumDocuments(compendium) {
     const pack = game.packs.get(compendium);
     return (await pack?.getDocuments()) ?? [];
   }
 
   static async loadCompendium(compendium, filter = (_item) => true) {
-    const compendiumData = await AcksUtility.loadCompendiumData(compendium);
+    const compendiumData = await AcksUtility.getCompendiumDocuments(compendium);
     return compendiumData.filter(filter);
   }
 

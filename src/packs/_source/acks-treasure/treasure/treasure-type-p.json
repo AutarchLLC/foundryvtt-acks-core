@@ -1,0 +1,158 @@
+{
+  "_id": "tfovFVpRkOftcOnM",
+  "name": "Treasure Type P",
+  "flags": {},
+  "description": "Incidental, 17,000gp average value",
+  "results": [
+    {
+      "_id": "gCiPni0plP3d8smM",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317972,
+        "modifiedTime": 1779122317972,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4*1000]]gp",
+      "name": "",
+      "_key": "!tables.results!tfovFVpRkOftcOnM.gCiPni0plP3d8smM"
+    },
+    {
+      "_id": "qao3qJepjYtXz6yV",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317972,
+        "modifiedTime": 1779122317972,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4*1000]]pp",
+      "name": "",
+      "_key": "!tables.results!tfovFVpRkOftcOnM.qao3qJepjYtXz6yV"
+    },
+    {
+      "_id": "jH0BUdS7FTQhZGi2",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317972,
+        "modifiedTime": 1779122317972,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] brilliants",
+      "name": "",
+      "_key": "!tables.results!tfovFVpRkOftcOnM.jH0BUdS7FTQhZGi2"
+    },
+    {
+      "_id": "PgRd9sXF7O7qQLI6",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317972,
+        "modifiedTime": 1779122317972,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] regalia",
+      "name": "",
+      "_key": "!tables.results!tfovFVpRkOftcOnM.PgRd9sXF7O7qQLI6"
+    },
+    {
+      "_id": "HFfz4OwAYfxJdcPT",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317972,
+        "modifiedTime": 1779122317972,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 3 Magic Items",
+      "name": "",
+      "_key": "!tables.results!tfovFVpRkOftcOnM.HFfz4OwAYfxJdcPT"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122317972,
+    "modifiedTime": 1779122317978,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": "fCJecBck9wkWLKtb",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!tables!tfovFVpRkOftcOnM"
+}

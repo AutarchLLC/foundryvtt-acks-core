@@ -2,27 +2,18 @@
   "_id": "sJb7qV4bZLI4ffDN",
   "name": "Alter Self",
   "type": "spell",
-  "flags": {
-    "dynamiceffects": {
-      "equipActive": false,
-      "alwaysActive": false,
-      "effects": []
-    }
-  },
+  "flags": {},
   "img": "systems/acks/assets/icons/drama-masks3.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058308020,
-    "modifiedTime": 1730058308020,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850794,
+    "modifiedTime": 1779122850798,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -34,9 +25,13 @@
     "description": "<p>This spell grants the caster the <strong>ability to alter his shape into that of any other humanoid creature</strong>. The caster can control his new shape's physical qualities (such as <strong>height, weight, gender, hair color, hair texture, and skin color</strong>) within the <strong>normal ranges for a creature of its kind</strong>.</p>\n<p>His equipment, if any, remains worn or held where possible, and otherwise melds into the new form. If used <strong>in conjunction with</strong> a successful <strong>Disguise proficiency throw @Item[Bg7vFxZcgV737OYE]{Disguise}</strong>, <em>Alter Self</em> can allow the caster to appear as a specific individual.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "RUa7ELuvVbuK8ABs",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!sJb7qV4bZLI4ffDN"
 }

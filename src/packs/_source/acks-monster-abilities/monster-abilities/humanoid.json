@@ -1,0 +1,37 @@
+{
+  "name": "Humanoid",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/person.webp",
+  "_id": "enbpnHrge0KnVWSG",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999782,
+    "modifiedTime": 1779122999785,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!enbpnHrge0KnVWSG"
+}

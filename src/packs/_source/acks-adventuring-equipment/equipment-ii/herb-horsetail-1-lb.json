@@ -1,0 +1,38 @@
+{
+  "_id": "XoORKh2JOQePSb8C",
+  "name": "Herb, Horsetail (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Horsetail, also known as snake grass, is a healing herb that slows bleeding and promotes clotting. A character with Healing proficiency can use a poultice made of 1 lb of horsetail to treat the wounds of an unconscious and possibly mortally wounded patient (with 0 hit points or fewer). Used in this manner, it provides an additional +2 bonus to the patients 1d20 roll on the Mortal Wounds table. A character with two ranks of Healing proficiency can use a poultice of horsetail to delay death with a proficiency throw of 18+ (one attempt per patient). A character with three ranks of Healing proficiency can use a poultice of horsetail to delay death (as the spell) with a proficiency throw of 14+. Applying the poultice takes 1 round.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 15,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581844,
+    "modifiedTime": 1779120581853,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!XoORKh2JOQePSb8C"
+}

@@ -1,0 +1,37 @@
+{
+  "_id": "qcViwDfsJ4Eny7us",
+  "name": "Breathe Fire",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/fire-breath2.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999783,
+    "modifiedTime": 1779122999786,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "yellow",
+    "requirements": "",
+    "roll": "3d6",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Hellhounds fiery breath affects one target within 15' and deals 1d6 points of damage per Hit Die the attacking hell hound possesses. A successful saving throw versus Breath reduces the damage by half. </p>",
+    "save": "blast",
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!qcViwDfsJ4Eny7us"
+}

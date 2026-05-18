@@ -378,60 +378,6 @@ export default class AcksActor extends Actor {
     return { stone: nbStone, item: nbItems };
   }
 
-  updateWeight() {
-    const toUpdate = [];
-    for (const i of this.items) {
-      if (i.system?.weight !== undefined && i.system?.weight6 === -1) {
-        const nbStones6 = Math.floor(i.system.weight / 166.66);
-        toUpdate.push({ _id: i.id, "system.weight6": nbStones6, "system.weight": -1 });
-      }
-    }
-    if (toUpdate.length > 0) {
-      this.updateEmbeddedDocuments("Item", toUpdate);
-    }
-  }
-
-  async updateImplements() {
-    if (this.system.saves.implements?.value === -1) {
-      this.update({ "system.saves.implements.value": this.system.saves.wand.value });
-    }
-  }
-
-  async updateLanguages() {
-    if (this.type !== "character") {
-      return;
-    }
-    // Load compendium languages
-    const languages = await AcksUtility.loadCompendium("acks.acks-languages");
-    const langList = languages.map((i) => i.toObject());
-
-    const toPush = [];
-    if (this.system?.languages?.value) {
-      for (const langName of this.system.languages.value) {
-        // Do we have existing language?
-        if (this.items.find((i) => i.name.toLowerCase() === langName.toLowerCase() && i.type === "language")) {
-          continue;
-        }
-        const lang = langList.find((i) => i.name.toLowerCase() === langName.toLowerCase());
-        if (lang) {
-          toPush.push(lang);
-        } else {
-          // Create a new dynamic language item
-          toPush.push({
-            name: langName,
-            type: "language",
-            system: {
-              description: "",
-            },
-          });
-        }
-      }
-      if (toPush.length > 0) {
-        this.createEmbeddedDocuments("Item", toPush);
-      }
-    }
-  }
-
   isNew() {
     return this.system.isNew;
   }
@@ -441,11 +387,9 @@ export default class AcksActor extends Actor {
       "system.saves": {
         paralysis: { value: savingThrows.p },
         death: { value: savingThrows.d },
-        breath: { value: savingThrows.b },
+        blast: { value: savingThrows.b },
         implements: { value: savingThrows.i },
         spell: { value: savingThrows.s },
-
-        wand: { value: savingThrows.i },
       },
     });
   }

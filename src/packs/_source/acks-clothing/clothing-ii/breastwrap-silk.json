@@ -1,0 +1,38 @@
+{
+  "_id": "DL3hAC8xj1iW5XJ1",
+  "type": "item",
+  "name": "Breastwrap, Silk",
+  "img": "systems/acks/assets/icons/game-icons/ribbon.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "This is a band of wool or linen wrapped across the breasts for support. Silk breastwraps signify a woman of wealth and status. Historical examples include the Greek apodesmos and Roman mamillare.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 20,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/lorc/ribbon.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120312013,
+    "modifiedTime": 1779120312018,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!DL3hAC8xj1iW5XJ1"
+}

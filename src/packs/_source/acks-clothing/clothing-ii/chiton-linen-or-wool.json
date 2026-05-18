@@ -1,0 +1,38 @@
+{
+  "_id": "qBJO8C1mLpCaiCWI",
+  "type": "item",
+  "name": "Chiton, Linen or Wool",
+  "img": "systems/acks/assets/icons/flaticon/blouse.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "The chiton is a linen or wool garment made up of a single rectangle of fabric, worn draped over the shoulders and girdled around the waist. A silk chiton is a mark of status and money.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 2,
+    "weight6": 0,
+    "iconsource": "https://www.flaticon.com/free-icon/blouse_1882420",
+    "iconlicense": "<a href=\\\"https://www.flaticon.com/free-icons/blouse\\\" title=\\\"blouse icons\\\">Blouse icons created by Freepik - Flaticon</a>",
+    "_schemaVersion": 3
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120312017,
+    "modifiedTime": 1779120312020,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!qBJO8C1mLpCaiCWI"
+}

@@ -1,0 +1,37 @@
+{
+  "_id": "bH8DsITHozBdLQKF",
+  "name": "Loremastery",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/loremastery.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703818,
+    "modifiedTime": 1779122703828,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 18,
+    "blindroll": false,
+    "description": "<p>The character is knowledgeable on a variety of esoteric subjects. At level 1, the character may make a proficiency throw of 18+ to decipher occult runes, remember ancient history, or identify a historic artifact. The proficiency throw required reduces by 1 per level. Note that bards automatically begin play with this proficiency as part of their class.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!bH8DsITHozBdLQKF"
+}

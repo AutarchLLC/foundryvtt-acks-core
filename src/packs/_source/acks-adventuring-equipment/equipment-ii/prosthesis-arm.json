@@ -1,0 +1,38 @@
+{
+  "_id": "tDl5AI2qI1Hgx0y2",
+  "name": "Prosthesis, Arm",
+  "type": "item",
+  "img": "systems/acks/assets/icons/game-icons/arm.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Nothing is as common as the sight of an old soldier with a missing limb. Most maimed characters, lacking the wealth to pay for a restore life and limb spell, replace the limb with a prosthesis. Basic prostheses are made of wood or bronze, but prostheses may be also made of iron (cost x2), silver (x5), or gold (x50). Decorations, leather or silk wrappings, and other adornment is extra. A character with a prosthetic arm or hand regains the ability to use a shield. Alternatively, the arm or hand may be replaced by a weapon, such as a club, hook, or short sword. A character with a prosthetic leg or foot can walk without use of a crutch, but does not avoid the movement and Dexterity penalties from loss of the limb. Dwarven machinists may be able to forge superior prostheses using gears and clockwork mechanisms. See By This Axe for information on dwarven machinists.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 25,
+    "weight6": 0,
+    "iconsource": "https://game-icons.net/1x1/delapouite/arm.html",
+    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581848,
+    "modifiedTime": 1779120581855,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!tDl5AI2qI1Hgx0y2"
+}

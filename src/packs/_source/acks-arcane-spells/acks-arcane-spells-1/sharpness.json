@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/sparkling-sabre.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058305652,
-    "modifiedTime": 1730058305652,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850789,
+    "modifiedTime": 1779122850796,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -28,9 +25,13 @@
     "description": "<p>When cast on the blade of an edged or pointed weapon, this spell temporarily enhances it to the equivalent of a <strong>magic weapon +1</strong>. Weapons that are already enchanted gain an additional <strong>+1</strong> while the spell is in effect. A single casting will affect 20 arrows, 2 one-handed weapons, or 1 two-handed weapon.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "jovYtuhNu2Eim4dQ",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!CSPMlcUl6op1qi5t"
 }

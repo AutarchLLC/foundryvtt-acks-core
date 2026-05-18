@@ -1,0 +1,37 @@
+{
+  "_id": "NtDWdfaudMJGYGR1",
+  "name": "Trapping",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/box-trap.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703816,
+    "modifiedTime": 1779122703827,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character can build simple pits, snares, and deadfalls capable of capturing creatures up to the size of an elephant (such as giants, ogres, wyverns, etc). With a proficiency throw of 11+ the snare is built properly. The character can also detect and disable simple wilderness pits, snares, deadfalls, etc., as a thief of his class level. This proficiency provides no abilities with regard to mechanical traps in a dungeon, or magical traps of any sort.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!NtDWdfaudMJGYGR1"
+}

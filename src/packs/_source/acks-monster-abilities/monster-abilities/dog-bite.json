@@ -1,0 +1,49 @@
+{
+  "name": "Dog Bite",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/jawbone.webp",
+  "_id": "Le31NrPbrB69nRjU",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999780,
+    "modifiedTime": 1779122999785,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "",
+    "pattern": "transparent",
+    "description": "",
+    "damage": "1d4",
+    "bonus": 0,
+    "tags": [],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight6": 0,
+    "counter": {
+      "value": 1,
+      "max": 1
+    },
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!Le31NrPbrB69nRjU"
+}

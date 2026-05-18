@@ -318,13 +318,6 @@ export default class AcksItem extends Item {
     }
   }
 
-  updateWeight() {
-    if (this.system?.weight !== undefined && this.system?.weight6 === -1) {
-      let nbStones6 = Math.ceil(this.system.weight / 166.66);
-      this.update({ "system.weight6": nbStones6, "system.weight": -1 });
-    }
-  }
-
   static async #onChatCardAction(event) {
     event.preventDefault();
 

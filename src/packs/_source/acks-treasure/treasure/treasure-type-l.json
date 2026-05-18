@@ -1,0 +1,236 @@
+{
+  "_id": "3sTqq4rvSqzDLpQj",
+  "name": "Treasure Type L",
+  "flags": {},
+  "description": "Raider, 6,000gp average value",
+  "results": [
+    {
+      "_id": "WIg7GxxTt2PSlXfT",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[3d6*1000]]cp",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.WIg7GxxTt2PSlXfT"
+    },
+    {
+      "_id": "MwkOPeIJVzpWE4dp",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 60,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[2d10*1000]]sp",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.MwkOPeIJVzpWE4dp"
+    },
+    {
+      "_id": "oUjNI6bpQEOjMquZ",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 75,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[3d6*1000]]ep",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.oUjNI6bpQEOjMquZ"
+    },
+    {
+      "_id": "5iI8Xx1vytrqTFZV",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 60,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d6]] gems",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.5iI8Xx1vytrqTFZV"
+    },
+    {
+      "_id": "zXklS7S2N5xFCqa5",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 40,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "[[1d4]] jewellry",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.zXklS7S2N5xFCqa5"
+    },
+    {
+      "_id": "0TQIedkgHM2NdSgs",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 75,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 1 Sword, Weapon, or Armor",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.0TQIedkgHM2NdSgs"
+    },
+    {
+      "_id": "BaEe6lTY1WpiV9VB",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 75,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "1 Potion",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.BaEe6lTY1WpiV9VB"
+    },
+    {
+      "_id": "zvAn1FygGSU1hiig",
+      "flags": {},
+      "type": "text",
+      "img": "icons/svg/d20-black.svg",
+      "weight": 30,
+      "range": [
+        0,
+        0
+      ],
+      "drawn": false,
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "acks",
+        "systemVersion": "14.0.1",
+        "createdTime": 1779122317948,
+        "modifiedTime": 1779122317948,
+        "lastModifiedBy": "Vz7fUzX6pv74TN4D",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Any 1 Magic Item",
+      "name": "",
+      "_key": "!tables.results!3sTqq4rvSqzDLpQj.zvAn1FygGSU1hiig"
+    }
+  ],
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122317948,
+    "modifiedTime": 1779122317972,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "img": "icons/svg/d20-grey.svg",
+  "folder": "fCJecBck9wkWLKtb",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!tables!3sTqq4rvSqzDLpQj"
+}

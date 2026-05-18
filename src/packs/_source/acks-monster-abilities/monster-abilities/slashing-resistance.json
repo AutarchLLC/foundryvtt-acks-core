@@ -1,0 +1,37 @@
+{
+  "name": "Slashing Resistance",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/chopped-skull.webp",
+  "_id": "36TJgsELOJQg3Dfp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999778,
+    "modifiedTime": 1779122999784,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>This monster only takes 1/2 damage, rounded down, from weapons that inflict slashing damage (axes, polearms, and swords).</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!36TJgsELOJQg3Dfp"
+}

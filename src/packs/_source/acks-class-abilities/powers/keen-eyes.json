@@ -1,0 +1,37 @@
+{
+  "name": "Keen Eyes",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/eye.webp",
+  "_id": "eb3ZOVyvqhpCYmp3",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122493276,
+    "modifiedTime": 1779122493281,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 14,
+    "blindroll": true,
+    "description": "<p>Elves have <strong>keen eyes</strong> that allow them to detect hidden and secret doors with a proficiency throw of 8+ on 1d20 when actively searching, or 14+ on casual inspection.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "sFB1mhQrNkHDlaUi",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!eb3ZOVyvqhpCYmp3"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Proficiencies",
+  "color": null,
+  "sorting": "a",
+  "_id": "ackso0XoIXnAEcH9",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703808,
+    "modifiedTime": 1779122703808,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!ackso0XoIXnAEcH9"
+}

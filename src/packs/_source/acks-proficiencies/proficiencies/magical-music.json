@@ -1,0 +1,37 @@
+{
+  "_id": "Im05zcpRBubpCcbZ",
+  "name": "Magical Music",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/magical-music.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703815,
+    "modifiedTime": 1779122703826,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>The character can perform music that can serenade those who are potentially attracted to the character (as a charm person spell) or tame savage beasts (as a sleep spell). The character must succeed on an appropriate Performance proficiency throw to use Magical Music. If successful, the charm or sleep effect begins immediately and lasts until the character stops performing. If the character performs for a full turn (10 minutes), the effect has the duration of the spell. Magical music has no effect if used against creatures that are already in combat.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!Im05zcpRBubpCcbZ"
+}

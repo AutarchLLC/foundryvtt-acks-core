@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/shouting.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058305652,
-    "modifiedTime": 1730058305652,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850788,
+    "modifiedTime": 1779122850796,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -28,9 +25,13 @@
     "description": "<p>This spell allows the caster to cause his voice to sound from someplace else within range, such as from a dark alcove or statue.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "jovYtuhNu2Eim4dQ",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!2ab1AzFirHFJc59v"
 }

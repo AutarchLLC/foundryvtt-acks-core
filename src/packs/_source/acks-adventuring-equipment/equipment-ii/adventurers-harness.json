@@ -1,0 +1,38 @@
+{
+  "_id": "RXQu1LhKFjm10AiA",
+  "name": "Adventurer's Harness",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Also known as a burglars harness or delvers harness, this is a set of belts, straps, sheaths, and cases designed to securely fasten items to ones body without hampering movement. A character wearing an adventurers harness can ignore 1 stones worth of equipment when calculating encumbrance. It cannot secure heavy items, or coins and similar items. It cannot be worn over heavy armor.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight6": 1,
+    "iconsource": "",
+    "iconlicense": "",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581843,
+    "modifiedTime": 1779120581853,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!RXQu1LhKFjm10AiA"
+}

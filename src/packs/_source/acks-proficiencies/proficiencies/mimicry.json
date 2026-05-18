@@ -1,0 +1,37 @@
+{
+  "_id": "mKn0i7NtHEa2UCZI",
+  "name": "Mimicry",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/mimicry.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122703819,
+    "modifiedTime": 1779122703829,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 11,
+    "blindroll": false,
+    "description": "<p>The character can imitate animal calls and foreign language accents. With a proficiency throw of 11+, the character's mimicry (e.g. imitating the screech of a hoot owl or a noise from some other animal) is so authentic as to fool listeners into believing they have heard the actual animal. This proficiency can be selected multiple times.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "ackso0XoIXnAEcH9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!mKn0i7NtHEa2UCZI"
+}

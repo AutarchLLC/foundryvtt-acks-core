@@ -1,20 +1,22 @@
+/* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
+import BaseDataModel from "../common/base-data-model.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Spell Item Data Model
- * @see https://foundryvtt.com/api/classes/foundry.abstract.TypeDataModel.html
- * @see https://foundryvtt.wiki/en/development/api/DataModel
- * @see https://foundryvtt.com/article/system-data-models/
  */
-export default class SpellData extends foundry.abstract.TypeDataModel {
+export default class SpellData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
+   * @override
    * @return {{description: HTMLField, favorite, lvl, class, duration, range, roll, memorized, cast, save}}
    */
   static defineSchema() {
     const { BooleanField, NumberField, StringField } = foundry.data.fields;
 
     return {
+      ...super.defineSchema(),
       // common item description
       ...itemDescriptionSchema(),
       // is added to favorites
@@ -36,5 +38,23 @@ export default class SpellData extends foundry.abstract.TypeDataModel {
       // saving throw
       save: new StringField({ blank: true, initial: "" }),
     };
+  }
+
+  /**
+   * @inheritDoc
+   * @override
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    if (source.save === "wand") {
+      source.save = "implements";
+    } else if (source.save === "breath") {
+      source.save = "blast";
+    }
+
+    return super.migrateData(source);
   }
 }

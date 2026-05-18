@@ -1,3 +1,4 @@
+/* global foundry */
 /**
  * Spellcaster shared actor schema
  * @return {{spells}}

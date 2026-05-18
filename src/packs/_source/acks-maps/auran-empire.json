@@ -7,18 +7,15 @@
     }
   },
   "navigation": false,
-  "navOrder": 0,
   "navName": "Map of the Auran Empire",
-  "active": false,
   "initial": {
     "x": 2699,
     "y": 1948,
     "scale": 0.36
   },
-  "thumb": "systems/acks/assets/scenes/0H57pHt3dghKedDy-thumb.png",
+  "thumb": "worlds/acks-data-migration/assets/scenes/thumb-UyWvpbsVgsDTIIkNj_akEg.webp",
   "width": 3300,
   "height": 2550,
-  "backgroundColor": "#000000",
   "tiles": [],
   "grid": {
     "size": 50,
@@ -36,37 +33,20 @@
   "lights": [],
   "playlist": null,
   "sounds": [],
-  "templates": [],
   "journal": null,
   "notes": [],
   "weather": "",
   "drawings": [],
   "regions": [],
   "_stats": {
-    "coreVersion": "13.342",
-    "systemId": null,
-    "systemVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null,
-    "duplicateSource": null,
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
-  },
-  "background": {
-    "src": "systems/acks/assets/Auran_Empire_Map.webp",
-    "offsetX": 0,
-    "offsetY": 0,
-    "anchorX": 0,
-    "anchorY": 0,
-    "fit": "fill",
-    "scaleX": 1,
-    "scaleY": 1,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "alphaThreshold": 0
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122123282,
+    "modifiedTime": 1779122123282,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "environment": {
     "globalLight": {
@@ -103,21 +83,72 @@
     }
   },
   "fog": {
-    "exploration": false,
     "reset": null,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 0
   },
-  "foreground": null,
-  "foregroundElevation": null,
   "padding": 0.25,
   "playlistSound": null,
   "journalEntryPage": null,
   "folder": null,
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Auran Empire",
+      "background": {
+        "color": "#000000",
+        "src": "systems/acks/assets/Auran_Empire_Map.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {},
+      "_key": "!scenes.levels!0H57pHt3dghKedDy.defaultLevel0000"
+    }
+  ],
+  "shiftX": 0,
+  "shiftY": 0,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "navOrder": 0,
+  "ownership": {
+    "default": 0
+  },
+  "active": false,
   "sort": 0,
-  "levels": [],
-  "_key": "!scenes!0H57pHt3dghKedDy"
+  "_key": "!scenes!0H57pHt3dghKedDy",
+  "templates": []
 }

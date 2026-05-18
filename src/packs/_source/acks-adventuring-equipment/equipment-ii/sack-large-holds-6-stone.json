@@ -1,0 +1,38 @@
+{
+  "_id": "7v3nPNoKxwFOfZbo",
+  "name": "Sack, Large (holds 6 stone)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/powder-bag.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This is a 2 x 4 burlap, cloth, or leather bag that can contain 6 stone (60 lbs). It is normally carried over the shoulder and dropped when combat begins.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.8,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581841,
+    "modifiedTime": 1779120581850,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!7v3nPNoKxwFOfZbo"
+}

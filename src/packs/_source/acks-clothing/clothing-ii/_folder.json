@@ -1,0 +1,22 @@
+{
+  "type": "Item",
+  "folder": null,
+  "name": "Clothing (II)",
+  "color": null,
+  "sorting": "a",
+  "_id": "qoFMNY0h05JztOaR",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120312011,
+    "modifiedTime": 1779120312011,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!qoFMNY0h05JztOaR"
+}

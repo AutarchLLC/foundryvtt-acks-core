@@ -1,0 +1,49 @@
+{
+  "name": "Paralyzing Claws",
+  "type": "weapon",
+  "flags": {},
+  "img": "systems/acks/assets/icons/barbed-nails.webp",
+  "_id": "mfEyCWz9UYS7bj6d",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999782,
+    "modifiedTime": 1779122999786,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "range": {
+      "short": 0,
+      "medium": 0,
+      "long": 0
+    },
+    "favorite": false,
+    "save": "paralysis",
+    "pattern": "red",
+    "description": "<p>Save versus Paralysis or be paralyzed for [[/r 2d4]] turns. This paralysis may be cured with <em>cure light wounds</em>. Elves are immune to the paralysis of ghouls, and the paralysis cannot take effect on humanoids larger than ogres. </p>",
+    "damage": "1d3",
+    "bonus": 0,
+    "tags": [],
+    "slow": false,
+    "missile": false,
+    "melee": true,
+    "cost": 0,
+    "equipped": false,
+    "weight6": 0,
+    "counter": {
+      "value": 2,
+      "max": 2
+    },
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!mfEyCWz9UYS7bj6d"
+}

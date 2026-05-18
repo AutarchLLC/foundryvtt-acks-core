@@ -1,0 +1,38 @@
+{
+  "_id": "Xv9XveUOuO4a8z9D",
+  "name": "Candle (tallow, 1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/candle-light.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A candle is a pillar-shaped light source made of wax or tallow. When lit, a candle sheds bright light out to a 5 radius and dim light to another 10 (15 total), burning for 6 turns (1 hour). Wax candles burn cleanly, but tallow candles produce a foul smelling smoke. Adventurers carrying tallow candles will never surprise creatures with acute olfaction.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.2,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581844,
+    "modifiedTime": 1779120581853,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!Xv9XveUOuO4a8z9D"
+}

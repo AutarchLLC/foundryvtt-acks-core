@@ -1,0 +1,38 @@
+{
+  "_id": "vIKzXHmnIR1agYHZ",
+  "name": "Waterskin",
+  "type": "item",
+  "img": "systems/acks/assets/icons/waterskin.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "This container, made of hide or preserved animal bladder, will hold about 25 ounces of fluid. Humans typically consume 1 gallon (128 fluid ounces) of water each day, or 5 waterskins worth.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 0.6,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581849,
+    "modifiedTime": 1779120581855,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!vIKzXHmnIR1agYHZ"
+}

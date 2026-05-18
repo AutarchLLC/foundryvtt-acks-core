@@ -1,0 +1,22 @@
+{
+  "type": "Actor",
+  "folder": null,
+  "name": "Monsters",
+  "color": null,
+  "sorting": "a",
+  "_id": "jOOhFu5khZ0U60hn",
+  "description": "",
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779123119122,
+    "modifiedTime": 1779123119122,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!jOOhFu5khZ0U60hn"
+}

@@ -1,5 +1,7 @@
 src/packs/*
 !src/packs/_source/
+foundry
+AGENTS.md
 
 .history/
 .vscode/settings.json

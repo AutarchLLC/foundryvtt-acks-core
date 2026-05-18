@@ -9,6 +9,22 @@ export const ITEM_TYPE = Object.freeze({
   BUNDLE: "bundle",
 });
 
+export const CORE_PACK_NAME = Object.freeze({
+  CLASS_ABILITIES: "acks.acks-class-abilities",
+  PROFICIENCIES: "acks.acks-proficiencies",
+  EQUIPMENT: "acks.acks-all-equipment",
+  ARCANE_SPELLS: "acks.acks-arcane-spells",
+  DIVINE_SPELLS: "acks.acks-divine-spells",
+  ADVENTURING_EQUIPMENT: "acks.acks-adventuring-equipment",
+  MONSTER_ABILITIES: "acks.acks-monster-abilities",
+  LANGUAGES: "acks.acks-languages",
+  MONSTERS: "acks.acks-monsters",
+  TREASURE: "acks.acks-treasure",
+  MAPS: "acks.acks-maps",
+  CLOTHING: "acks.acks-clothing",
+  JOURNALS: "acks.acks-journals",
+});
+
 export const DEFAULT_MONSTER_ITEM_OPTIONS = Object.freeze([
   { value: ITEM_TYPE.WEAPON, label: "TYPES.Item.weapon" },
   { value: ITEM_TYPE.ARMOR, label: "TYPES.Item.armor" },

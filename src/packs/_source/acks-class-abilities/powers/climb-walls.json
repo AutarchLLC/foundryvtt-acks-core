@@ -1,0 +1,37 @@
+{
+  "name": "Climb Walls",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/climb.webp",
+  "_id": "RHz0YGcg6pqyQ0p1",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122493275,
+    "modifiedTime": 1779122493280,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "Thief",
+    "roll": "1d20",
+    "rollType": "above",
+    "rollTarget": 6,
+    "blindroll": false,
+    "description": "<p>Nightblades are adept at scaling sheer surfaces, including walls or steep cliffs. They require a proficiency throw for each 100' they intend to climb. If the roll fails, they fall a distance equal to half the attempted distance, plus the distance covered by any previous throws, taking 1d6 points of damage per 10 feet. Nightblades climb at ¼ their standard combat movement rate.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "sFB1mhQrNkHDlaUi",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!RHz0YGcg6pqyQ0p1"
+}

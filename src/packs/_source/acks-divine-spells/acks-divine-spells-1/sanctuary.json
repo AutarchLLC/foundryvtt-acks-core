@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/sanctuary.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058358012,
-    "modifiedTime": 1730058358012,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122894799,
+    "modifiedTime": 1779122894801,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -28,9 +25,13 @@
     "description": "<p>Any opponent attempting to strike or otherwise directly attack the warded creature must attempt a saving throw versus Spells. If the save succeeds, the opponent can attack normally and is unaffected by that casting of the spell. If the save fails, the opponent will not attack the warded creature and will attack another creature instead. However, area effects (e.g. fireball) may still affect the warded creature.</p>\n<p>The warded creature may not make offensive actions while this spell is in effect, but he may cast non-offensive spells to help companions.</p>",
     "memorized": 0,
     "cast": 0,
-    "save": "spell"
+    "save": "spell",
+    "_schemaVersion": 3
   },
   "folder": "NYA8pw0gLlA5SnQ1",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!xDwept9wjFOOMGhY"
 }

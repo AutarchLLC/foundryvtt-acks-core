@@ -30,6 +30,7 @@ import { showPartySheet } from "./module/party.mjs";
 import AcksCombatHelper from "./module/combat-helper.mjs";
 import ACKSToken from "./module/documents/token.mjs";
 import hotbarDrop from "./module/hooks/hotbar-drop.mjs";
+import { forceWorldMigration, runMigrations } from "./module/migration/migration.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -56,6 +57,9 @@ Hooks.once("init", async function () {
   game.acks = {
     macro: {
       rollItem: rollItem,
+    },
+    debug: {
+      forceWorldMigration: forceWorldMigration,
     },
   };
 
@@ -152,9 +156,12 @@ Hooks.on("chatMessage", (html, content, msg) => {
 });
 
 Hooks.once("ready", async () => {
+  // Run data migrations first — must complete before any other ready logic
+  // that might depend on current-schema data.
+  await runMigrations();
+
   Hooks.on("hotbarDrop", hotbarDrop);
 
-  AcksUtility.updateWeightsLanguages();
   AcksUtility.displayWelcomeMessage();
   AcksUtility.setupSocket();
   ACKSTableManager.init();

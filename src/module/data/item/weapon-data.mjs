@@ -1,5 +1,8 @@
+/* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
+import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
+import BaseDataModel from "../common/base-data-model.mjs";
+import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
  * Weapon Item Data Model
@@ -7,19 +10,21 @@ import itemPhysicalSchema from "./templates/item-physical-schema.mjs";
  * @see https://foundryvtt.wiki/en/development/api/DataModel
  * @see https://foundryvtt.com/article/system-data-models/
  */
-export default class WeaponData extends foundry.abstract.TypeDataModel {
+export default class WeaponData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
+   * @override
    * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, range, favorite, save, pattern, damage, bonus, tags, slow, missile, melee, equipped, counter}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
+      ...super.defineSchema(),
       // common item description
       ...itemDescriptionSchema(),
       // cost and weight
-      ...itemPhysicalSchema(),
+      ...ItemPhysicalTemplate.schema,
       // missile weapon ranges
       range: new SchemaField({
         short: new NumberField({ initial: 0, min: 0 }),
@@ -59,5 +64,25 @@ export default class WeaponData extends foundry.abstract.TypeDataModel {
         max: new NumberField({ initial: 0, min: 0 }),
       }),
     };
+  }
+
+  /**
+   * @inheritDoc
+   * @override
+   */
+  static migrateData(source) {
+    if (isCurrentSchema(source)) {
+      return super.migrateData(source);
+    }
+
+    if (source.save === "wand") {
+      source.save = "implements";
+    } else if (source.save === "breath") {
+      source.save = "blast";
+    }
+
+    ItemPhysicalTemplate.migrateWeightToWeight6(source);
+
+    return super.migrateData(source);
   }
 }

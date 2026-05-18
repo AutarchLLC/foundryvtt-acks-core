@@ -1,0 +1,38 @@
+{
+  "_id": "1zqRtgt12zWAmFpW",
+  "name": "Herb, Bitterwood (1 lb)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/herbs-bundle.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "Bitterwood, also known as quassia, is a healing herb used to induce vomiting. A character with Healing proficiency can treat a patient who has ingested poison within 1 turn (10 minutes) with an emetic made from 1lb of bitterwood. Upon consuming the emetic, the patient must make a Death saving throw. If the save succeeds, the patient spends the next 1d3 turns purging himself of the poison, gaining the benefits of neutralize poison. If the save fails, the character still loses 1d3 turns purging himself, but it does not neutralize the poison. Administering the emetic takes 1 round.",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 10,
+    "weight6": 1,
+    "iconsource": "Legacy ACKS / OSE",
+    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581841,
+    "modifiedTime": 1779120581850,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!1zqRtgt12zWAmFpW"
+}

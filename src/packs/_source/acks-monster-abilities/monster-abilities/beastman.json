@@ -1,0 +1,37 @@
+{
+  "name": "Beastman",
+  "type": "ability",
+  "flags": {},
+  "img": "systems/acks/assets/icons/minotaur.webp",
+  "_id": "bjxROle1Rolhki2S",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122999781,
+    "modifiedTime": 1779122999785,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "system": {
+    "proficiencytype": "general",
+    "favorite": false,
+    "pattern": "white",
+    "requirements": "",
+    "roll": "",
+    "rollType": "result",
+    "rollTarget": 0,
+    "blindroll": false,
+    "description": "<p>Beastmen are a special type of monster that were created through ancient magic by blending a humanoid with an animal or fantastic creature. Beastmen include bugbears, centaurs, gnolls, goblins, hobgoblins, kobolds, lizardmen, lycanthropes, mermen, minotaurs, ogres, orcs, trolls, and troglodytes.</p>",
+    "save": "",
+    "_schemaVersion": 3
+  },
+  "folder": "1aw85lzuAfTBazRX",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!bjxROle1Rolhki2S"
+}

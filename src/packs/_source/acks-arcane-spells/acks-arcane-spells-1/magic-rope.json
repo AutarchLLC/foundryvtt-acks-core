@@ -6,17 +6,14 @@
   "img": "systems/acks/assets/icons/magic-rope.webp",
   "effects": [],
   "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "13.342",
+    "coreVersion": "14.361",
     "systemId": "acks",
-    "systemVersion": "#{VERSION}#",
-    "createdTime": 1730058305652,
-    "modifiedTime": 1730058305652,
-    "lastModifiedBy": "T3X1ipvtFNIrFO0I",
-    "exportSource": null
-  },
-  "ownership": {
-    "default": 0
+    "systemVersion": "14.0.1",
+    "createdTime": 1779122850790,
+    "modifiedTime": 1779122850796,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
   },
   "system": {
     "favorite": false,
@@ -25,12 +22,16 @@
     "duration": "1 Turn / lvl",
     "range": "Touch",
     "roll": "",
-    "description": "<p>This spell enchants a length of up to 50' of rope. The rope must be at least as thick as a finger and in reasonable condition, e.g. not severed or completely frayed. Once enchanted, the magic rope is strong enough to support 100 stone (1,000lb) regardless of its normal carrying capacity. Upon command, the magic rope snakes forward, upward, downward, or in any other direction at 10' per round, attaching itself securely wherever its owner desires. It can unfasten itself and return in the same manner. A creature must hold one end of the magic rope when its magic is invoked.&nbsp;</p>",
+    "description": "<p>This spell enchants a length of up to 50' of rope. The rope must be at least as thick as a finger and in reasonable condition, e.g. not severed or completely frayed. Once enchanted, the magic rope is strong enough to support 100 stone (1,000lb) regardless of its normal carrying capacity. Upon command, the magic rope snakes forward, upward, downward, or in any other direction at 10' per round, attaching itself securely wherever its owner desires. It can unfasten itself and return in the same manner. A creature must hold one end of the magic rope when its magic is invoked. </p>",
     "memorized": 0,
     "cast": 0,
-    "save": ""
+    "save": "",
+    "_schemaVersion": 3
   },
   "folder": "jovYtuhNu2Eim4dQ",
+  "ownership": {
+    "default": 0
+  },
   "sort": 0,
   "_key": "!items!beQaEAfXlYd8Qbkk"
 }

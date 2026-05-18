@@ -1,0 +1,38 @@
+{
+  "_id": "sO88nWIK5jcFkagI",
+  "name": "Pell, Light",
+  "type": "item",
+  "img": "systems/acks/assets/icons/cancel.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "A device for training troops in sword and shield techniques. A pell is generally a stout wooden post, man-height and about 6 to 1 in diameter, planted firmly in the ground. The trainee practices striking the pell with a wooden sword and shield. The cost of pells is already included in the training costs for infantry troops. A pell weighs 15  30 stone (150  300 lbs).",
+    "quantity": {
+      "value": 1,
+      "max": 0
+    },
+    "treasure": false,
+    "cost": 12,
+    "weight6": 90,
+    "iconsource": "",
+    "iconlicense": "",
+    "_schemaVersion": 3
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1779120581848,
+    "modifiedTime": 1779120581855,
+    "lastModifiedBy": "acksiiammonar000",
+    "exportSource": null,
+    "duplicateSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!sO88nWIK5jcFkagI"
+}
