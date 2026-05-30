@@ -1,0 +1,21 @@
+<section class="tab {{ tab.cssClass }} details standard-form" data-group="primary" data-tab="details">
+    <fieldset>
+        <legend>Details</legend>
+        {{ formGroup fields.size value=system.size localize=true }}
+        {{ formGroup fields.category value=system.category localize=true }}
+    </fieldset>
+    <fieldset>
+        <legend>Special</legend>
+        {{ formGroup fields.special.fields.cleave value=system.special.cleave localize=true}}
+        {{ formGroup fields.special.fields.entangling value=system.special.entangling localize=true}}
+        {{ formGroup fields.special.fields.flexible value=system.special.flexible localize=true}}
+        {{ formGroup fields.special.fields.handy value=system.special.handy localize=true}}
+        {{ formGroup fields.special.fields.impact value=system.special.impact localize=true}}
+        {{ formGroup fields.special.fields.incapacitating value=system.special.incapacitating localize=true}}
+        {{ formGroup fields.special.fields.long value=system.special.long localize=true}}
+        {{ formGroup fields.special.fields.mounted value=system.special.mounted localize=true}}
+        {{ formGroup fields.special.fields.silver value=system.special.silver localize=true}}
+        {{ formGroup fields.special.fields.slow value=system.special.slow localize=true}}
+        {{ formGroup fields.special.fields.thrown value=system.special.thrown localize=true}}
+    </fieldset>
+</section>

@@ -3,6 +3,7 @@ import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
+import { WEAPON_CATEGORY, WEAPON_CATEGORY_CHOICES, WEAPON_SIZE, WEAPON_SIZE_CHOICES } from "../../constants.mjs";
 
 /**
  * Weapon Item Data Model
@@ -17,7 +18,7 @@ export default class WeaponData extends BaseDataModel {
    * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, range, favorite, save, pattern, damage, bonus, tags, slow, missile, melee, equipped, counter}}
    */
   static defineSchema() {
-    const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
+    const { ArrayField, BooleanField, NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
 
     return {
       ...super.defineSchema(),
@@ -62,6 +63,37 @@ export default class WeaponData extends BaseDataModel {
         value: new NumberField({ initial: 0, min: 0 }),
         // max value
         max: new NumberField({ initial: 0, min: 0 }),
+      }),
+
+      // ACKS II
+      size: new StringField({
+        required: true,
+        nullable: false,
+        blank: false,
+        choices: WEAPON_SIZE_CHOICES,
+        initial: WEAPON_SIZE.MEDIUM,
+        label: "ACKS.weapon.label.size",
+      }),
+      category: new StringField({
+        required: true,
+        nullable: false,
+        blank: false,
+        choices: WEAPON_CATEGORY_CHOICES,
+        initial: WEAPON_CATEGORY.OTHER,
+        label: "ACKS.weapon.label.category",
+      }),
+      special: new SchemaField({
+        cleave: new BooleanField({ initial: false, label: "ACKS.weapon.label.cleave" }),
+        entangling: new BooleanField({ initial: false, label: "ACKS.weapon.label.entangling" }),
+        flexible: new BooleanField({ initial: false, label: "ACKS.weapon.label.flexible" }),
+        handy: new BooleanField({ initial: false, label: "ACKS.weapon.label.handy" }),
+        impact: new BooleanField({ initial: false, label: "ACKS.weapon.label.impact" }),
+        incapacitating: new BooleanField({ initial: false, label: "ACKS.weapon.label.incapacitating" }),
+        long: new BooleanField({ initial: false, label: "ACKS.weapon.label.long" }),
+        mounted: new BooleanField({ initial: false, label: "ACKS.weapon.label.mounted" }),
+        silver: new BooleanField({ initial: false, label: "ACKS.weapon.label.silver" }),
+        slow: new BooleanField({ initial: false, label: "ACKS.weapon.label.slow" }),
+        thrown: new BooleanField({ initial: false, label: "ACKS.weapon.label.thrown" }),
       }),
     };
   }

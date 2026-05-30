@@ -589,3 +589,37 @@ export const ROLL_TYPE = Object.freeze({
   // result will not be less than 2 and contain details from provided table
   TABLE: "table",
 });
+
+export const WEAPON_SIZE = Object.freeze({
+  NA: "na",
+  TINY: "tiny",
+  SMALL: "small",
+  MEDIUM: "medium",
+  LARGE: "large",
+});
+
+export const WEAPON_SIZE_CHOICES = Object.freeze({
+  [WEAPON_SIZE.NA]: "ACKS.weapon.size.na",
+  [WEAPON_SIZE.TINY]: "ACKS.weapon.size.tiny",
+  [WEAPON_SIZE.SMALL]: "ACKS.weapon.size.small",
+  [WEAPON_SIZE.MEDIUM]: "ACKS.weapon.size.medium",
+  [WEAPON_SIZE.LARGE]: "ACKS.weapon.size.large",
+});
+
+export const WEAPON_CATEGORY = Object.freeze({
+  BOWS_CROSSBOWS: "bowsCrossbows",
+  AXES: "axes",
+  BLUDGEONS: "bludgeons",
+  SWORDS_DAGGERS: "swordsDaggers",
+  SPEARS_POLEARMS: "spearsPolearms",
+  OTHER: "other",
+});
+
+export const WEAPON_CATEGORY_CHOICES = Object.freeze({
+  [WEAPON_CATEGORY.BOWS_CROSSBOWS]: "ACKS.weapon.category.bowsCrossbows",
+  [WEAPON_CATEGORY.AXES]: "ACKS.weapon.category.axes",
+  [WEAPON_CATEGORY.BLUDGEONS]: "ACKS.weapon.category.bludgeons",
+  [WEAPON_CATEGORY.SWORDS_DAGGERS]: "ACKS.weapon.category.swordsDaggers",
+  [WEAPON_CATEGORY.SPEARS_POLEARMS]: "ACKS.weapon.category.spearsPolearms",
+  [WEAPON_CATEGORY.OTHER]: "ACKS.weapon.category.other",
+});
