@@ -31,6 +31,9 @@ import AcksCombatHelper from "./module/combat-helper.mjs";
 import ACKSToken from "./module/documents/token.mjs";
 import hotbarDrop from "./module/hooks/hotbar-drop.mjs";
 import { forceWorldMigration, runMigrations } from "./module/migration/migration.mjs";
+import configureSystemFonts from "./module/fonts.mjs";
+import WeaponSheetV2 from "./module/item/weapon-sheet-v2.mjs";
+import { ITEM_TYPE } from "./module/constants.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -87,11 +90,18 @@ Hooks.once("init", async function () {
   CONFIG.Combat.documentClass = AcksCombat;
   CONFIG.Token.documentClass = ACKSToken;
 
+  // set up fonts
+  configureSystemFonts();
+
   // Unregister default sheets
   foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
   foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
 
   foundry.documents.collections.Items.registerSheet("acks", AcksItemSheetV2, { makeDefault: true });
+  foundry.documents.collections.Items.registerSheet("acks", WeaponSheetV2, {
+    types: [ITEM_TYPE.WEAPON],
+    makeDefault: true,
+  });
 
   foundry.documents.collections.Actors.registerSheet("acks", ACKSCharacterSheetV2, {
     types: ["character"],

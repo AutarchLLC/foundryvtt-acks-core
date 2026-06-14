@@ -14,7 +14,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     super(...args);
   }
 
-  /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["acks", "acks2", "item-v2"],
     position: {

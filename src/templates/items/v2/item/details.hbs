@@ -1,10 +1,10 @@
-<section class="tab {{ tab.cssClass }} details standard-form" data-group="primary" data-tab="details">
+<section class="tab {{ tab.cssClass }} details" data-group="primary" data-tab="details">
     <fieldset>
         <legend>Details</legend>
         {{ formGroup fields.size value=system.size localize=true }}
         {{ formGroup fields.category value=system.category localize=true }}
     </fieldset>
-    <fieldset>
+    <fieldset class="input-grid">
         <legend>Special</legend>
         {{ formGroup fields.special.fields.cleave value=system.special.cleave localize=true}}
         {{ formGroup fields.special.fields.entangling value=system.special.entangling localize=true}}

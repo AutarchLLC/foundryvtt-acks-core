@@ -13,8 +13,7 @@
       1px 1px 4px #4b4a44;
   }
 }
-
-/* ----------------------------------------- */
+/* VARIABLES */
 :root {
   --acks-purple: #620630;
   --acks-sheet-background: url("./assets/ui/acks_sheet_background.webp");
@@ -23,6 +22,79 @@
   --acks-sheet-tabs-background: rgb(190, 190, 161);
   --input-text-color: #4b4a44;
   --icon-size: 2rem;
+
+  /* ACKS II START */
+  --text-light: #040316;
+  --background-light: #fbfbfe;
+  --primary-light: #60062f;
+  --secondary-light: #f66fc2;
+  --accent-light: #f33f5a;
+
+  --text-dark: #eae9fc;
+  --background-dark: #010104;
+  --primary-dark: #f99fc8;
+  --secondary-dark: #90095c;
+  --accent-dark: #c00c27;
+  /* ACKS II END */
+}
+
+/*.application.themed.theme-dark.acksii {
+  --background: var(--background-dark);
+  --color-text-primary: var(--text-dark);
+}*/
+
+/*.application.themed.theme-light.acksii {
+  --background: var(--background-light);
+  --color-text-primary: var(--text-light);
+}*/
+
+.application.acksii {
+  font-family: "RobotoRegular", sans-serif;
+}
+
+.standard-form.acksii {
+  gap: 0;
+}
+
+.acksii .window-content {
+  padding: 0;
+}
+
+.standard-form.acksii .tab {
+  gap: 0.5rem;
+  font-size: var(--font-size-12);
+}
+
+.standard-form.acksii fieldset {
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.standard-form.acksii fieldset legend {
+  font-size: var(--font-size-12);
+  font-weight: normal;
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.standard-form.acksii fieldset.input-grid {
+  --grid-cols: 3;
+  column-gap: 2rem;
+}
+
+.sheet.acks.item-v2.acksii .form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  --input-height:1.5rem;
+}
+
+.standard-form.acksii .form-group > label,
+.standard-form.acksii .form-group > span.label {
+  font-weight: normal;
+}
+
+.acksii select {
+  padding: 0 4px;
 }
 
 /* ----------------------------------------- */
