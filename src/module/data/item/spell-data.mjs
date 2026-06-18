@@ -2,6 +2,7 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
+import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 
 /**
  * Spell Item Data Model
@@ -49,11 +50,7 @@ export default class SpellData extends BaseDataModel {
       return super.migrateData(source);
     }
 
-    if (source.save === "wand") {
-      source.save = "implements";
-    } else if (source.save === "breath") {
-      source.save = "blast";
-    }
+    SavingThrowsTemplate.migrateSaveValue(source);
 
     return super.migrateData(source);
   }

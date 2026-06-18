@@ -1,4 +1,4 @@
-<div class="acks chat-card item-card" data-actor-id="{{data.system.actor._id}}" data-item-id="{{data.system.item._id}}"
+<div class="acks chat-card item-card" data-actor-id="{{data.actor._id}}" data-item-id="{{data.item._id}}"
   {{attrIfHasValue "data-token-id" tokenId}}>
 
   <div class="acks chat-block">
@@ -7,10 +7,10 @@
       <div class="chat-title">
         <h2>{{title}}</h2>
       </div>
-      {{#if data.system.item}}
-        <div class="chat-img" style="background-image:url('{{data.system.item.img}}')"></div>
+      {{#if data.item}}
+        <div class="chat-img" style="background-image:url('{{data.item.img}}')"></div>
       {{else}}
-        <div class="chat-img" style="background-image:url('{{data.system.actor.img}}')"></div>
+        <div class="chat-img" style="background-image:url('{{data.actor.img}}')"></div>
       {{/if}}
     </div>
 
@@ -20,7 +20,7 @@
       </div>
     {{/if}}
 
-    <div class="blindable" data-blind="{{data.system.roll.blindroll}}">
+    <div class="blindable" data-blind="{{data.roll.blindroll}}">
 
       <div class="chat-details">
         <div class="roll-result">{{{result.details}}}</div>
@@ -35,10 +35,10 @@
           <div class="roll-result"><b>{{localize 'ACKS.messages.InflictsDamage'}}</b></div>
         </div>
         <div class="damage-roll">{{{rollDamage}}}</div>
-        {{#if data.system.roll.save}}
+        {{#if data.roll.save}}
           <div class="card-buttons">
-            <button data-action="save" data-save="{{data.system.roll.save}}" disabled>
-              {{lookup config.saves_long data.system.roll.save}} - {{localize "ACKS.spells.Save"}}
+            <button data-action="save" data-save="{{data.roll.save}}">
+              {{lookup config.saves_long data.roll.save}} - {{localize "ACKS.spells.Save"}}
             </button>
           </div>
         {{/if}}

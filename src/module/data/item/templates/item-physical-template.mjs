@@ -8,7 +8,7 @@ export default class ItemPhysicalTemplate {
     const { NumberField } = foundry.data.fields;
 
     return {
-      // item cost (in GP?)
+      // item cost in GP
       cost: new NumberField({ initial: 0, min: 0 }),
       // weight in 1/6 stone
       weight6: new NumberField({ initial: 0 }),

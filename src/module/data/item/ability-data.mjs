@@ -4,6 +4,7 @@ import { ACKS } from "../../config.mjs";
 import { ROLL_TYPE } from "../../constants.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
+import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 
 /**
  * Ability / Proficiency Item Data Model
@@ -51,11 +52,7 @@ export default class AbilityData extends BaseDataModel {
       return super.migrateData(source);
     }
 
-    if (source.save === "wand") {
-      source.save = "implements";
-    } else if (source.save === "breath") {
-      source.save = "blast";
-    }
+    SavingThrowsTemplate.migrateSaveValue(source);
 
     return super.migrateData(source);
   }

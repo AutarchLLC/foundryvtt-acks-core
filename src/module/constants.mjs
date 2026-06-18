@@ -623,3 +623,19 @@ export const WEAPON_CATEGORY_CHOICES = Object.freeze({
   [WEAPON_CATEGORY.SPEARS_POLEARMS]: "ACKS.weapon.category.spearsPolearms",
   [WEAPON_CATEGORY.OTHER]: "ACKS.weapon.category.other",
 });
+
+export const SAVING_THROW = Object.freeze({
+  DEATH: "death",
+  IMPLEMENTS: "implements",
+  PARALYSIS: "paralysis",
+  BLAST: "blast",
+  SPELL: "spell",
+});
+
+export const SAVING_THROW_CHOICES = Object.freeze({
+  [SAVING_THROW.DEATH]: "ACKS.saves.death.long",
+  [SAVING_THROW.IMPLEMENTS]: "ACKS.saves.implements.long",
+  [SAVING_THROW.PARALYSIS]: "ACKS.saves.paralysis.long",
+  [SAVING_THROW.BLAST]: "ACKS.saves.blast.long",
+  [SAVING_THROW.SPELL]: "ACKS.saves.spell.long",
+});

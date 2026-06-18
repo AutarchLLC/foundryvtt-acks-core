@@ -1,21 +1,42 @@
 <section class="tab {{ tab.cssClass }} details" data-group="primary" data-tab="details">
     <fieldset>
         <legend>Details</legend>
-        {{ formGroup fields.size value=system.size localize=true }}
-        {{ formGroup fields.category value=system.category localize=true }}
+        {{ formGroup fields.size value=system.size localize=true rootId=partId}}
+        {{ formGroup fields.category value=system.category localize=true rootId=partId}}
+        {{ formGroup fields.melee value=system.melee localize=true rootId=partId}}
+        {{ formGroup fields.missile value=system.missile localize=true rootId=partId}}
     </fieldset>
     <fieldset class="input-grid">
         <legend>Special</legend>
-        {{ formGroup fields.special.fields.cleave value=system.special.cleave localize=true}}
-        {{ formGroup fields.special.fields.entangling value=system.special.entangling localize=true}}
-        {{ formGroup fields.special.fields.flexible value=system.special.flexible localize=true}}
-        {{ formGroup fields.special.fields.handy value=system.special.handy localize=true}}
-        {{ formGroup fields.special.fields.impact value=system.special.impact localize=true}}
-        {{ formGroup fields.special.fields.incapacitating value=system.special.incapacitating localize=true}}
-        {{ formGroup fields.special.fields.long value=system.special.long localize=true}}
-        {{ formGroup fields.special.fields.mounted value=system.special.mounted localize=true}}
-        {{ formGroup fields.special.fields.silver value=system.special.silver localize=true}}
-        {{ formGroup fields.special.fields.slow value=system.special.slow localize=true}}
-        {{ formGroup fields.special.fields.thrown value=system.special.thrown localize=true}}
+        {{ formGroup fields.special.fields.cleave value=system.special.cleave localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.entangling value=system.special.entangling localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.flexible value=system.special.flexible localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.handy value=system.special.handy localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.impact value=system.special.impact localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.incapacitating value=system.special.incapacitating localize=true
+                     rootId=partId}}
+        {{ formGroup fields.special.fields.long value=system.special.long localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.mounted value=system.special.mounted localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.silver value=system.special.silver localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.slow value=system.special.slow localize=true rootId=partId}}
+        {{ formGroup fields.special.fields.thrown value=system.special.thrown localize=true rootId=partId}}
+    </fieldset>
+    <fieldset>
+        <legend>{{localize "ACKS.items.Damage"}}</legend>
+        {{ formGroup fields.damage value=system.damage localize=true label="ACKS.items.Damage" rootId=partId}}
+        {{ formGroup fields.bonus value=system.bonus localize=true label="ACKS.items.AtkBonus" rootId=partId}}
+    </fieldset>
+    {{#if system.isRanged}}
+        <fieldset>
+            <legend>{{localize "ACKS.items.Range"}}</legend>
+            {{ formGroup fields.range.fields.short value=system.range.short localize=true label="Short" rootId=partId}}
+            {{ formGroup fields.range.fields.medium value=system.range.medium localize=true label="Medium"
+                         rootId=partId}}
+            {{ formGroup fields.range.fields.long value=system.range.long localize=true label="Long" rootId=partId}}
+        </fieldset>
+    {{/if}}
+    <fieldset>
+        <legend>Misc</legend>
+        {{ formGroup fields.save value=system.save localize=true rootId=partId}}
     </fieldset>
 </section>

@@ -34,8 +34,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       toggleEffect: AcksItemSheetV2.#toggleEffect,
       editEffect: AcksItemSheetV2.#editEffect,
       deleteEffect: AcksItemSheetV2.#deleteEffect,
-      toggleMelee: AcksItemSheetV2.#toggleMelee,
-      toggleMissile: AcksItemSheetV2.#toggleMissile,
       deleteTag: AcksItemSheetV2.#deleteTag,
       viewItemFromBundle: AcksItemSheetV2.#viewItemFromBundle,
       deleteItemFromBundle: AcksItemSheetV2.#deleteItemFromBundle,
@@ -116,8 +114,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    */
   async _onRender(context, options) {
     await super._onRender(context, options);
-    const tagInput = this.element.querySelector(':scope input[data-action="add-tag"]');
-    tagInput?.addEventListener("keydown", this.#tagInputKeydownHandler.bind(this));
 
     if (this._isItemBundle()) {
       /** @type {DragDropConfiguration} */
@@ -446,28 +442,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
-   * Handle melee flag toggling for weapon.
-   * @this {AcksItemSheetV2}
-   * @param {Event} _event
-   * @param {HTMLElement} _target
-   * @return {Promise<void>}
-   */
-  static async #toggleMelee(_event, _target) {
-    this.item.update({ "system.melee": !this.item.system.melee });
-  }
-
-  /**
-   * Handle missile flag toggling for weapon.
-   * @this {AcksItemSheetV2}
-   * @param {Event} _event
-   * @param {HTMLElement} _target
-   * @return {Promise<void>}
-   */
-  static async #toggleMissile(_event, _target) {
-    this.item.update({ "system.missile": !this.item.system.missile });
-  }
-
-  /**
    * Remove tag from item
    * @param {Event} event
    * @param {HTMLElement} target
@@ -529,20 +503,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
         itemRecord.quantity = quantity;
         const updatedItemList = foundry.utils.deepClone(this.item.system.itemList);
         await this.item.update({ "system.itemList": updatedItemList });
-      }
-    }
-  }
-
-  /**
-   * Handle Enter key press in TAG input of weapon sheet
-   * @param {KeyboardEvent} event
-   */
-  #tagInputKeydownHandler(event) {
-    if (event.code === "Enter" || event.code === "NumpadEnter") {
-      const val = event.target?.value ?? "";
-      if (val.length > 0) {
-        const values = val.split(",");
-        this.item.pushTag(values);
       }
     }
   }

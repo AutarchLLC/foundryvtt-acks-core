@@ -319,8 +319,6 @@
   "ACKS.items.roundAttacksMax": "Maximum Attacks per Round",
   "ACKS.items.resetAttacks": "Reset all Attacks per Round",
   "ACKS.items.hasShield": "Has a Shield bonus",
-  "ACKS.items.typeTag": "Type a comma separated list of tag e.g 'Melee,Missile (5’–10’ / 11’–20’ / 21’–30’)' and press ENTER",
-  "ACKS.items.enterTag": "Tags",
   "ACKS.items.pattern": "Attack pattern marker",
   "ACKS.items.proficiencyType": "Type",
   "ACKS.items.quantity": "Qty.",

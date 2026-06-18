@@ -3,7 +3,14 @@ import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
-import { WEAPON_CATEGORY, WEAPON_CATEGORY_CHOICES, WEAPON_SIZE, WEAPON_SIZE_CHOICES } from "../../constants.mjs";
+import {
+  SAVING_THROW_CHOICES,
+  WEAPON_CATEGORY,
+  WEAPON_CATEGORY_CHOICES,
+  WEAPON_SIZE,
+  WEAPON_SIZE_CHOICES,
+} from "../../constants.mjs";
+import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 
 /**
  * Weapon Item Data Model
@@ -18,7 +25,7 @@ export default class WeaponData extends BaseDataModel {
    * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, range, favorite, save, pattern, damage, bonus, tags, slow, missile, melee, equipped, counter}}
    */
   static defineSchema() {
-    const { ArrayField, BooleanField, NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
+    const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
       ...super.defineSchema(),
@@ -34,8 +41,6 @@ export default class WeaponData extends BaseDataModel {
       }),
       // is added to favorites
       favorite: new BooleanField({ initial: false }),
-      // saving throw
-      save: new StringField({ blank: true, initial: "" }),
       // attack pattern marker (currently used for monsters only)
       pattern: new StringField({ required: true, initial: "transparent" }),
       // damage formula
@@ -49,12 +54,6 @@ export default class WeaponData extends BaseDataModel {
           value: new StringField(),
         }),
       ),
-      // TODO: not used? is weapon slow?
-      slow: new BooleanField({ initial: false }),
-      // Is weapon ranged
-      missile: new BooleanField({ initial: false }),
-      // Is weapon melee
-      melee: new BooleanField({ initial: false }),
       // Is weapon equipped
       equipped: new BooleanField({ initial: false }),
       // counter?
@@ -82,6 +81,13 @@ export default class WeaponData extends BaseDataModel {
         initial: WEAPON_CATEGORY.OTHER,
         label: "ACKS.weapon.label.category",
       }),
+      // Is weapon melee
+      melee: new BooleanField({ initial: false, label: "ACKS.items.Melee" }),
+      // Is weapon missile
+      missile: new BooleanField({ initial: false, label: "ACKS.items.Missile" }),
+      // saving throw
+      save: new StringField({ blank: true, choices: SAVING_THROW_CHOICES, initial: "", label: "ACKS.spells.Save" }),
+      // special weapon properties (RR 127)
       special: new SchemaField({
         cleave: new BooleanField({ initial: false, label: "ACKS.weapon.label.cleave" }),
         entangling: new BooleanField({ initial: false, label: "ACKS.weapon.label.entangling" }),
@@ -98,6 +104,18 @@ export default class WeaponData extends BaseDataModel {
     };
   }
 
+  /* --- Derived properties --- */
+
+  /**
+   * Whether this weapon is a ranged weapon, determined by the `missile` property or the `thrown` special property.
+   * @return {boolean}
+   */
+  get isRanged() {
+    return this.missile || this.special?.thrown;
+  }
+
+  /* --- Data Migration --- */
+
   /**
    * @inheritDoc
    * @override
@@ -107,12 +125,7 @@ export default class WeaponData extends BaseDataModel {
       return super.migrateData(source);
     }
 
-    if (source.save === "wand") {
-      source.save = "implements";
-    } else if (source.save === "breath") {
-      source.save = "blast";
-    }
-
+    SavingThrowsTemplate.migrateSaveValue(source);
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
 
     return super.migrateData(source);
