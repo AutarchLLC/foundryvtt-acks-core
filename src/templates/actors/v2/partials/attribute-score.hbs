@@ -15,7 +15,7 @@
     <input name="system.scores.{{abbr}}.value" type="text" id="{{@root.partId}}-score-{{abbr}}"
            value="{{lookup (lookup (lookup system "scores") abbr) "value"}}" class="attribute-value__value"
            placeholder="0" data-dtype="Number"/>
-    <input type="text" value="{{mod (lookup (lookup (lookup system "scores") abbr) "mod")}}" data-tooltip="Modifier"
+    <input type="text" value="{{mod (lookup (lookup (lookup system "scores") abbr) "mod")}}" data-tooltip="{{localize "ACKS.Modifier"}}"
            class="attribute-value__mod" data-dtype="Number" disabled/>
   </div>
 </div>
