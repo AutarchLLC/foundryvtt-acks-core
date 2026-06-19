@@ -32,7 +32,7 @@
 
           <div class="item__range">{{localize "ACKS.items.Range"}}</div>
 
-          <div class="item__special">Special</div>
+          <div class="item__special">{{localize "ACKS.items.Special"}}</div>
 
           <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
 
@@ -87,7 +87,7 @@
                     <div class="list-header__controls controls__weapon">
 
                       {{#if item.system.equipped}}
-                        <a class="item-control" data-tooltip='Unequip' data-action="itemToggleEquipped">
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Unequip"}}' data-action="itemToggleEquipped">
                           <i class="fa-solid fa-tshirt"></i>
                         </a>
                       {{else}}
@@ -98,12 +98,12 @@
                       {{/if}}
 
                       {{#if item.system.favorite}}
-                        <a class="item-control" data-tooltip='Remove from favorites'
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.RemoveFromFavorites"}}'
                            data-action="itemToggleFavorite">
                           <i class="fa-solid fa-star"></i>
                         </a>
                       {{else}}
-                        <a class="item-control" data-tooltip='Add to favorites' data-action="itemToggleFavorite">
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.AddToFavorites"}}' data-action="itemToggleFavorite">
                           <i class="fa-regular fa-star"></i>
                         </a>
                       {{/if}}
@@ -185,7 +185,7 @@
                     <div class="list-header__controls controls__armor">
 
                       {{#if item.system.equipped}}
-                        <a class="item-control" data-tooltip='Unequip' data-action="itemToggleEquipped">
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Unequip"}}' data-action="itemToggleEquipped">
                           <i class="fa-solid fa-tshirt"></i>
                         </a>
                       {{else}}
