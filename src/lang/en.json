@@ -296,6 +296,9 @@
 
   "ACKS.items.Equip": "Equip",
   "ACKS.items.Unequip": "Unequip",
+  "ACKS.items.Special": "Special",
+  "ACKS.items.AddToFavorites": "Add to favorites",
+  "ACKS.items.RemoveFromFavorites": "Remove from favorites",
   "ACKS.items.Misc": "Items",
   "ACKS.items.Clothes": "Clothes",
   "ACKS.items.Weapons": "Weapons",
