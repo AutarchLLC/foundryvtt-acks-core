@@ -33,7 +33,7 @@ export async function runMigrations() {
     return;
   }
 
-  //await MigrationRunner.resetSchemaVersions(CURRENT_SCHEMA_VERSION - 1); // FIXME: reset for testing; remove in production
+  await MigrationRunner.resetSchemaVersions(CURRENT_SCHEMA_VERSION - 1); // FIXME: reset for testing; remove in production
 
   /** @type number */
   const worldSchemaVersion = game.settings.get("acks", "systemSchemaVersion") ?? 0;

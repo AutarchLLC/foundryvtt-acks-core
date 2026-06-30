@@ -96,5 +96,15 @@ export default function configureSystemFonts() {
         },
       ],
     },
+    AcksSymbols: {
+      editor: false,
+      fonts: [
+        {
+          urls: ["systems/acks/assets/fonts/AcksSymbols-Regular.ttf"],
+          weight: "400", // normal
+          style: "normal",
+        },
+      ],
+    },
   });
 }

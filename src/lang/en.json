@@ -506,5 +506,19 @@
   "ACKS.hireling.specialist": "Specialist",
   "ACKS.hireling.category": "Category",
 
-  "ACKS.Welcome.Title": "Welcome!"
+  "ACKS.Welcome.Title": "Welcome!",
+
+  "ACKS.damage.type.acidic": "Acidic",
+  "ACKS.damage.type.arcane": "Arcane",
+  "ACKS.damage.type.bludgeoning": "Bludgeoning",
+  "ACKS.damage.type.cold": "Cold",
+  "ACKS.damage.type.electrical": "Electrical",
+  "ACKS.damage.type.fire": "Fire",
+  "ACKS.damage.type.luminous": "Luminous",
+  "ACKS.damage.type.necrotic": "Necrotic",
+  "ACKS.damage.type.piercing": "Piercing",
+  "ACKS.damage.type.poisonous": "Poisonous",
+  "ACKS.damage.type.seismic": "Seismic",
+  "ACKS.damage.type.slashing": "Slashing",
+  "ACKS.damage.type.variesByWeapon": "Varies by Weapon"
 }

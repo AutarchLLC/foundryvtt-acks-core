@@ -639,3 +639,38 @@ export const SAVING_THROW_CHOICES = Object.freeze({
   [SAVING_THROW.BLAST]: "ACKS.saves.blast.long",
   [SAVING_THROW.SPELL]: "ACKS.saves.spell.long",
 });
+
+export const DAMAGE_TYPE = Object.freeze({
+  // physical
+  ACIDIC: "acidic",
+  ARCANE: "arcane",
+  BLUDGEONING: "bludgeoning",
+  PIERCING: "piercing",
+  POISONOUS: "poisonous",
+  SLASHING: "slashing",
+  // energy
+  COLD: "cold",
+  ELECTRICAL: "electrical",
+  FIRE: "fire",
+  LUMINOUS: "luminous",
+  NECROTIC: "necrotic",
+  SEISMIC: "seismic",
+
+  VARIES_BY_WEAPON: "variesByWeapon",
+});
+
+export const DAMAGE_TYPE_CHOICES = Object.freeze({
+  [DAMAGE_TYPE.ACIDIC]: "ACKS.damage.type.acidic",
+  [DAMAGE_TYPE.ARCANE]: "ACKS.damage.type.arcane",
+  [DAMAGE_TYPE.BLUDGEONING]: "ACKS.damage.type.bludgeoning",
+  [DAMAGE_TYPE.COLD]: "ACKS.damage.type.cold",
+  [DAMAGE_TYPE.ELECTRICAL]: "ACKS.damage.type.electrical",
+  [DAMAGE_TYPE.FIRE]: "ACKS.damage.type.fire",
+  [DAMAGE_TYPE.LUMINOUS]: "ACKS.damage.type.luminous",
+  [DAMAGE_TYPE.NECROTIC]: "ACKS.damage.type.necrotic",
+  [DAMAGE_TYPE.PIERCING]: "ACKS.damage.type.piercing",
+  [DAMAGE_TYPE.POISONOUS]: "ACKS.damage.type.poisonous",
+  [DAMAGE_TYPE.SEISMIC]: "ACKS.damage.type.seismic",
+  [DAMAGE_TYPE.SLASHING]: "ACKS.damage.type.slashing",
+  [DAMAGE_TYPE.VARIES_BY_WEAPON]: "ACKS.damage.type.variesByWeapon",
+});

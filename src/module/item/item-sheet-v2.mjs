@@ -34,7 +34,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       toggleEffect: AcksItemSheetV2.#toggleEffect,
       editEffect: AcksItemSheetV2.#editEffect,
       deleteEffect: AcksItemSheetV2.#deleteEffect,
-      deleteTag: AcksItemSheetV2.#deleteTag,
       viewItemFromBundle: AcksItemSheetV2.#viewItemFromBundle,
       deleteItemFromBundle: AcksItemSheetV2.#deleteItemFromBundle,
       changeQuantityInBundle: AcksItemSheetV2.#changeQuantityInBundle,
@@ -442,23 +441,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
-   * Remove tag from item
-   * @param {Event} event
-   * @param {HTMLElement} target
-   * @return {Promise<void>}
-   */
-  static async #deleteTag(event, target) {
-    if (this.isEditable) {
-      if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
-        return;
-      }
-      const tag = target.dataset.tag;
-      this.item.popTag(tag);
-    }
-  }
-
-  /**
-   * Remove tag from item
+   * View item in bundle
    * @param {Event} event
    * @param {HTMLElement} target
    * @return {Promise<void>}
@@ -472,7 +455,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
-   * Remove tag from item
+   * Remove item form bundle
    * @param {Event} event
    * @param {HTMLElement} target
    * @return {Promise<void>}

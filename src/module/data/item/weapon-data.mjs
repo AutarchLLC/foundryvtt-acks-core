@@ -11,6 +11,7 @@ import {
   WEAPON_SIZE_CHOICES,
 } from "../../constants.mjs";
 import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
+import WeaponDamageTemplate from "./templates/weapon-damage-template.mjs";
 
 /**
  * Weapon Item Data Model
@@ -22,10 +23,9 @@ export default class WeaponData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, range, favorite, save, pattern, damage, bonus, tags, slow, missile, melee, equipped, counter}}
    */
   static defineSchema() {
-    const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
+    const { ArrayField, BooleanField, NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
 
     return {
       ...super.defineSchema(),
@@ -43,8 +43,6 @@ export default class WeaponData extends BaseDataModel {
       favorite: new BooleanField({ initial: false }),
       // attack pattern marker (currently used for monsters only)
       pattern: new StringField({ required: true, initial: "transparent" }),
-      // damage formula
-      damage: new StringField({ initial: "1d6" }),
       // attack throw bonus?
       bonus: new NumberField({ initial: 0 }),
       // weapon tags
@@ -101,6 +99,17 @@ export default class WeaponData extends BaseDataModel {
         slow: new BooleanField({ initial: false, label: "ACKS.weapon.label.slow" }),
         thrown: new BooleanField({ initial: false, label: "ACKS.weapon.label.thrown" }),
       }),
+      // cleave limit
+      cleaveLimit: new SchemaField({
+        numeric: new NumberField({ initial: 2, integer: true, label: "Cleave Limit" }),
+        addStrMod: new BooleanField({ initial: false, label: "Add STR mod to Cleave Limit" }),
+      }),
+      // weapon damage
+      ...WeaponDamageTemplate.schema,
+      customTags: new SetField(new StringField({ blank: false }), {
+        label: "Custom Tags",
+        placeholder: "Enter custom tag",
+      }),
     };
   }
 
@@ -112,6 +121,14 @@ export default class WeaponData extends BaseDataModel {
    */
   get isRanged() {
     return this.missile || this.special?.thrown;
+  }
+
+  /**
+   * Whether this weapon has alternate damage formula
+   * @return {boolean}
+   */
+  get hasAlternateDamage() {
+    return (this.size === WEAPON_SIZE.MEDIUM || this.size === WEAPON_SIZE.LARGE) && this.melee;
   }
 
   /* --- Data Migration --- */
@@ -127,7 +144,15 @@ export default class WeaponData extends BaseDataModel {
 
     SavingThrowsTemplate.migrateSaveValue(source);
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
+    WeaponDamageTemplate.migrateDamageStringToObject(source);
 
     return super.migrateData(source);
+  }
+
+  /**
+   * @param {object} source  The candidate source data from which the model will be constructed.
+   */
+  static migrateTags(source) {
+    // TODO: implement tags migration
   }
 }

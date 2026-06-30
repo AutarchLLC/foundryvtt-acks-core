@@ -173,54 +173,6 @@ export default class AcksItem extends Item {
     return "";
   }
 
-  pushTag(values) {
-    let update = [];
-    if (this.system.tags) {
-      update = foundry.utils.duplicate(this.system.tags);
-    }
-    const newData = {};
-    const regExp = /\(([^)]+)\)/;
-    if (update) {
-      values.forEach((val) => {
-        // Catch infos in brackets
-        const matches = regExp.exec(val);
-        let title;
-        if (matches) {
-          title = matches[1];
-          val = val.substring(0, matches.index).trim();
-        } else {
-          val = val.trim();
-          title = val;
-        }
-        // Auto fill checkboxes
-        switch (val) {
-          case ACKS.tags.melee:
-            newData.melee = true;
-            break;
-          case ACKS.tags.slow:
-            newData.slow = true;
-            break;
-          case ACKS.tags.missile:
-            newData.missile = true;
-            break;
-        }
-        update.push({ title: title, value: val });
-      });
-    } else {
-      update = values;
-    }
-    newData.tags = update;
-    return this.update({ system: newData });
-  }
-
-  popTag(value) {
-    const update = this.system.tags.filter((el) => el.value !== value);
-    const newData = {
-      tags: update,
-    };
-    return this.update({ system: newData });
-  }
-
   use() {
     switch (this.type) {
       case ITEM_TYPE.WEAPON:
