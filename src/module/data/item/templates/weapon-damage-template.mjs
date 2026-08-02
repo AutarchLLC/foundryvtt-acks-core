@@ -8,16 +8,10 @@ export default class WeaponDamageTemplate {
 
     return {
       damage: new SchemaField({
-        base: new SchemaField({
-          formula: new StringField({ blank: true, initial: "1d6", label: "Damage Formula" }),
-          types: new SetField(new StringField({ choices: DAMAGE_TYPE_CHOICES }), { label: "Damage Type" }),
-          extraordinary: new BooleanField({ initial: false, label: "Extraordinary" }),
-        }),
-        alternate: new SchemaField({
-          formula: new StringField({ blank: true, initial: "", label: "Damage Formula" }),
-          types: new SetField(new StringField({ choices: DAMAGE_TYPE_CHOICES }), { label: "Damage Type" }),
-          extraordinary: new BooleanField({ initial: false, label: "Extraordinary" }),
-        }),
+        formula: new StringField({ blank: true, initial: "1d6", label: "Damage Formula" }),
+        twoHandFormula: new StringField({ blank: true, initial: "1d8", label: "Two-Handed Damage Formula" }),
+        types: new SetField(new StringField({ choices: DAMAGE_TYPE_CHOICES }), { label: "Damage Type" }),
+        extraordinary: new BooleanField({ initial: false, label: "Extraordinary" }),
       }),
     };
   }
@@ -30,16 +24,10 @@ export default class WeaponDamageTemplate {
       const damageFormula = source.damage;
 
       source.damage = {
-        base: {
-          formula: damageFormula,
-          types: [],
-          extraordinary: false,
-        },
-        alternate: {
-          formula: "",
-          types: [],
-          extraordinary: false,
-        },
+        formula: damageFormula,
+        twoHandFormula: "",
+        types: [],
+        extraordinary: false,
       };
     }
   }

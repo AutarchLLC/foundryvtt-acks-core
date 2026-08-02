@@ -80,6 +80,15 @@ export const registerHelpers = async function () {
     return new Handlebars.SafeString([...icons, ...text].join(""));
   });
 
+  Handlebars.registerHelper("tagList", function (tagList) {
+    if (tagList?.length > 0) {
+      const tags = tagList.reduce((acc, tag) => `${acc}<li class="tag">${tag.label}</li>`, "");
+      return new Handlebars.SafeString(`<ul class="tag-list unlist">${tags}</ul>`);
+    } else {
+      return "";
+    }
+  });
+
   Handlebars.registerHelper("stoneWeight", function (sixths) {
     // Input: number of 1/6-stone units (e.g., 10 → 10/6 stones = 1 4/6)
     // Output: HTML string for nice display (e.g., "1 <sup>4</sup>&frasl;<sub>6</sub>")

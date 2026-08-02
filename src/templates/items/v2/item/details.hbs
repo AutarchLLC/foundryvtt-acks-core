@@ -22,25 +22,15 @@
     {{ formGroup fields.special.fields.thrown value=system.special.thrown localize=true rootId=partId}}
   </fieldset>
   <fieldset>
-    <legend>Base Damage</legend>
-    {{ formGroup fields.damage.fields.base.fields.formula value=system.damage.base.formula localize=true
-                 rootId=partId}}
-    {{ formGroup fields.damage.fields.base.fields.extraordinary value=system.damage.base.extraordinary localize=true
-                 rootId=partId}}
-    {{ formGroup fields.damage.fields.base.fields.types value=system.damage.base.types localize=true rootId=partId}}
+    <legend>Damage</legend>
+    {{ formGroup fields.damage.fields.formula value=system.damage.formula localize=true rootId=partId}}
+    {{#if system.hasTwoHandedDamage}}
+      {{ formGroup fields.damage.fields.twoHandFormula value=system.damage.twoHandFormula localize=true rootId=partId}}
+    {{/if}}
+    {{ formGroup fields.damage.fields.extraordinary value=system.damage.extraordinary localize=true rootId=partId}}
+    {{ formGroup fields.damage.fields.types value=system.damage.types localize=true rootId=partId}}
     {{ formGroup fields.bonus value=system.bonus localize=true label="ACKS.items.AtkBonus" rootId=partId}}
   </fieldset>
-  {{#if system.hasAlternateDamage}}
-    <fieldset>
-      <legend>Two Handed Damage</legend>
-      {{ formGroup fields.damage.fields.alternate.fields.formula value=system.damage.alternate.formula
-                   localize=true rootId=partId}}
-      {{ formGroup fields.damage.fields.alternate.fields.extraordinary value=system.damage.alternate.extraordinary
-                   localize=true rootId=partId}}
-      {{ formGroup fields.damage.fields.alternate.fields.types value=system.damage.alternate.types localize=true
-                   rootId=partId}}
-    </fieldset>
-  {{/if}}
   {{#if system.isRanged}}
     <fieldset>
       <legend>{{localize "ACKS.items.Range"}}</legend>

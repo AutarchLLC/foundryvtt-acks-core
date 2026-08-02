@@ -12,6 +12,7 @@ import {
 } from "../../constants.mjs";
 import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 import WeaponDamageTemplate from "./templates/weapon-damage-template.mjs";
+import WeaponCustomTagsTemplate from "./templates/weapon-custom-tags-template.mjs";
 
 /**
  * Weapon Item Data Model
@@ -25,7 +26,7 @@ export default class WeaponData extends BaseDataModel {
    * @override
    */
   static defineSchema() {
-    const { ArrayField, BooleanField, NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
+    const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
       ...super.defineSchema(),
@@ -45,13 +46,6 @@ export default class WeaponData extends BaseDataModel {
       pattern: new StringField({ required: true, initial: "transparent" }),
       // attack throw bonus?
       bonus: new NumberField({ initial: 0 }),
-      // weapon tags
-      tags: new ArrayField(
-        new SchemaField({
-          title: new StringField(),
-          value: new StringField(),
-        }),
-      ),
       // Is weapon equipped
       equipped: new BooleanField({ initial: false }),
       // counter?
@@ -80,7 +74,7 @@ export default class WeaponData extends BaseDataModel {
         label: "ACKS.weapon.label.category",
       }),
       // Is weapon melee
-      melee: new BooleanField({ initial: false, label: "ACKS.items.Melee" }),
+      melee: new BooleanField({ initial: true, label: "ACKS.items.Melee" }),
       // Is weapon missile
       missile: new BooleanField({ initial: false, label: "ACKS.items.Missile" }),
       // saving throw
@@ -106,10 +100,8 @@ export default class WeaponData extends BaseDataModel {
       }),
       // weapon damage
       ...WeaponDamageTemplate.schema,
-      customTags: new SetField(new StringField({ blank: false }), {
-        label: "Custom Tags",
-        placeholder: "Enter custom tag",
-      }),
+      // custom tags
+      ...WeaponCustomTagsTemplate.schema,
     };
   }
 
@@ -124,10 +116,10 @@ export default class WeaponData extends BaseDataModel {
   }
 
   /**
-   * Whether this weapon has alternate damage formula
+   * Whether this weapon has Two-Handed damage formula.
    * @return {boolean}
    */
-  get hasAlternateDamage() {
+  get hasTwoHandedDamage() {
     return (this.size === WEAPON_SIZE.MEDIUM || this.size === WEAPON_SIZE.LARGE) && this.melee;
   }
 
@@ -145,14 +137,8 @@ export default class WeaponData extends BaseDataModel {
     SavingThrowsTemplate.migrateSaveValue(source);
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
     WeaponDamageTemplate.migrateDamageStringToObject(source);
+    WeaponCustomTagsTemplate.migrateTags(source);
 
     return super.migrateData(source);
-  }
-
-  /**
-   * @param {object} source  The candidate source data from which the model will be constructed.
-   */
-  static migrateTags(source) {
-    // TODO: implement tags migration
   }
 }

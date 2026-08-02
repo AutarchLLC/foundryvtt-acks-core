@@ -15,19 +15,6 @@
   </div>
 
   <div class="card-buttons">
-    {{#if hasAttack}}
-      <button data-action="attack">{{ localize "ACKS.Attack" }}</button>{{/if}}
-
-    {{#if hasDamage}}
-      <button data-action="damage">
-        {{#if isHealing}}
-          {{ localize "ACKS.Healing" }}
-        {{else}}
-          {{localize "ACKS.Damage" }}
-        {{/if}}
-      </button>
-    {{/if}}
-
     {{#if data.system.save}}
       <button data-action="save" data-save="{{data.system.save}}" data-tokenId="{{data.token._id}}"
               data-actorId="{{data.actor._id}}">

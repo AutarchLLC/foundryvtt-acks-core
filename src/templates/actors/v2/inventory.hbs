@@ -65,18 +65,24 @@
                   </div>
 
                   <!-- Weapon Damage -->
-                  <div class="item__damage">{{system.damage}}</div>
+                  <div class="item__damage">
+                    {{item.system.damage.formula}}
+                    {{#if item.system.hasTwoHandedDamage}}
+                      / {{item.system.damage.twoHandFormula}}
+                    {{/if}}
+                  </div>
 
                   <!-- Weapon Range -->
                   <div class="item__range">
-                    {{#if system.missile}}
-                      {{system.range.short}}/{{system.range.medium}}/{{system.range.long}}
+                    {{#if item.system.isRanged}}
+                      {{item.system.range.short}}/{{item.system.range.medium}}/{{item.system.range.long}}
                     {{/if}}
                   </div>
 
                   <!-- Weapon Special Tags -->
                   <div class="item__tags item__special">
-                    {{generateTags item.system.tags}}
+                    {{!generateTags item.system.tags}}
+                    {{ tagList item.labels.special }}
                   </div>
 
                   <!-- Item Weight in 1/6th stones -->
@@ -87,7 +93,8 @@
                     <div class="list-header__controls controls__weapon">
 
                       {{#if item.system.equipped}}
-                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Unequip"}}' data-action="itemToggleEquipped">
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Unequip"}}'
+                           data-action="itemToggleEquipped">
                           <i class="fa-solid fa-tshirt"></i>
                         </a>
                       {{else}}
@@ -103,7 +110,8 @@
                           <i class="fa-solid fa-star"></i>
                         </a>
                       {{else}}
-                        <a class="item-control" data-tooltip='{{localize "ACKS.items.AddToFavorites"}}' data-action="itemToggleFavorite">
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.AddToFavorites"}}'
+                           data-action="itemToggleFavorite">
                           <i class="fa-regular fa-star"></i>
                         </a>
                       {{/if}}
@@ -185,7 +193,8 @@
                     <div class="list-header__controls controls__armor">
 
                       {{#if item.system.equipped}}
-                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Unequip"}}' data-action="itemToggleEquipped">
+                        <a class="item-control" data-tooltip='{{localize "ACKS.items.Unequip"}}'
+                           data-action="itemToggleEquipped">
                           <i class="fa-solid fa-tshirt"></i>
                         </a>
                       {{else}}

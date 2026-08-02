@@ -364,6 +364,7 @@
   "ACKS.weapon.label.size": "Size",
   "ACKS.weapon.label.category": "Category",
   "ACKS.weapon.label.cleave": "Cleave",
+  "ACKS.weapon.label.cleaveAddStrMod": " + STR mod",
   "ACKS.weapon.label.entangling": "Entangling",
   "ACKS.weapon.label.flexible": "Flexible",
   "ACKS.weapon.label.handy": "Handy",

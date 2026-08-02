@@ -1,14 +1,6 @@
 <div class="item-description">
 
-  {{#if hasTags}}
-    <div class="tag-list">
-      {{#each system.tags as |tag|}}
-        <div class="tag" aria-label="{{tag.title}}">
-          <span>{{tag.value}}</span>
-        </div>
-      {{/each}}
-    </div>
-  {{/if}}
+  {{ tagList item.labels.all }}
 
   <prose-mirror name="system.description" value="{{ system.description }}" document-uuid="{{ item.uuid }}" compact
                 toggled>{{{ enriched.description }}}</prose-mirror>

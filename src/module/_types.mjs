@@ -50,3 +50,9 @@
  * @property {string|null} [flavor=null] - Optional flavor text to include in the chat message
  * @property {object} [speaker=null] - Optional speaker data for the chat message (e.g. {actor: actor, token: token})
  */
+
+/**
+ * @typedef {Object} TItemTag
+ * @property {string} label
+ * @property {string} icon
+ */

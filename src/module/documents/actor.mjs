@@ -776,7 +776,7 @@ export default class AcksActor extends Actor {
       dmgParts.push("1d6");
     } else {
       label = game.i18n.format("ACKS.roll.attacksWith", { name: attData.item.name });
-      dmgParts.push(attData.item.system.damage);
+      dmgParts.push(attData.item.system.damage.formula);
     }
 
     rollParts.push(data.thac0.bba.toString());

@@ -276,7 +276,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       fields: this.item.system.schema.fields,
       isGM: game.user.isGM,
       isPhysical: "cost" in this.item.system && "weight6" in this.item.system,
-      hasTags: "tags" in this.item.system && this.item.system.tags.length > 0,
     };
 
     return context;

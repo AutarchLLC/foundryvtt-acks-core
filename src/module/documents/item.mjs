@@ -1,9 +1,9 @@
-/* global Item, foundry, TextEditor, ui, ChatMessage, game, CONST, canvas */
+/* global Item, foundry, ui, ChatMessage, game, CONST, canvas */
 import AcksDice from "../dice.mjs";
-import { createTagHtmlString } from "../util/html-util.mjs";
 import { ACKS } from "../config.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 import { ITEM_TYPE } from "../constants.mjs";
+import { AcksHtmlUtil } from "../util/html-util.mjs";
 
 /**
  * Override and extend the basic :class:`Item` implementation
@@ -17,6 +17,7 @@ export default class AcksItem extends Item {
    * Determine default artwork based on the provided item data.
    * @param {ItemData} itemData  The source item data.
    * @returns {{img: string}}    Candidate item image.
+   * @override
    */
   static getDefaultArtwork(itemData) {
     const { type } = itemData;
@@ -46,6 +47,68 @@ export default class AcksItem extends Item {
         this.#onChatCardToggleContent(event);
       }
     });
+  }
+
+  /**
+   * Apply transformations or derivations to the values of the source data object.
+   * Compute data fields whose values are not stored to the database.
+   *
+   * If possible when modifying the `system` object you should use
+   * {@link foundry.abstract.TypeDataModel.prepareDerivedData | TypeDataModel#prepareDerivedData} on your data models
+   * instead of this method directly on the document.
+   */
+  prepareDerivedData() {
+    //TODO: should this be in the data model instead of the document?
+    this.labels = {
+      special: this.getSpecialTags(),
+      custom: this.getCustomTags(),
+    };
+    this.labels.all = [...this.labels.special, ...this.labels.custom];
+  }
+
+  /**
+   * Get list of labels and icons for special properties
+   * @return {TItemTag[]}
+   */
+  getSpecialTags() {
+    // TODO: cache localized labels
+    /** @type {TItemTag[]} */
+    const tags = [];
+
+    for (const [key, value] of Object.entries(this.system.special ?? {})) {
+      if (value) {
+        if (key === "cleave") {
+          const cleaveLoc = game.i18n.localize(`ACKS.weapon.label.${key}`);
+          const strModLoc = this.system.cleaveLimit.addStrMod
+            ? game.i18n.localize("ACKS.weapon.label.cleaveAddStrMod")
+            : "";
+
+          tags.push({
+            label: `${cleaveLoc} ${this.system.cleaveLimit.numeric}${strModLoc}`,
+            icon: "",
+          });
+        } else {
+          tags.push({ label: game.i18n.localize(`ACKS.weapon.label.${key}`), icon: "" });
+        }
+      }
+    }
+
+    return tags;
+  }
+
+  /**
+   * Get list of labels and icons for custom properties
+   * @return {TItemTag[]}
+   */
+  getCustomTags() {
+    /** @type {TItemTag[]} */
+    const tags = [];
+
+    for (const tag of this.system.customTags ?? []) {
+      tags.push({ label: tag, icon: "" });
+    }
+
+    return tags;
   }
 
   async getChatData() {
@@ -135,42 +198,41 @@ export default class AcksItem extends Item {
 
   getTags() {
     switch (this.type) {
-      case "weapon": {
-        let tagHtmlString = createTagHtmlString(this.system.damage, "fa-tint");
-        this.system.tags.forEach((t) => {
-          tagHtmlString += createTagHtmlString(t.value);
+      case ITEM_TYPE.WEAPON: {
+        let tagHtmlString = AcksHtmlUtil.createTagHtmlString(this.system.damage.formula, "fa-tint");
+        this.system.customTags.forEach((tag) => {
+          tagHtmlString += AcksHtmlUtil.createTagHtmlString(tag);
         });
-        tagHtmlString += createTagHtmlString(ACKS.saves_long[this.system.save], "fa-skull");
-        if (this.system.missile) {
-          tagHtmlString += createTagHtmlString(
+        tagHtmlString += AcksHtmlUtil.createTagHtmlString(ACKS.saves_long[this.system.save], "fa-skull");
+        if (this.system.isRanged) {
+          tagHtmlString += AcksHtmlUtil.createTagHtmlString(
             this.system.range.short + "/" + this.system.range.medium + "/" + this.system.range.long,
             "fa-bullseye",
           );
         }
         return tagHtmlString;
       }
-      case "armor":
-        return `${createTagHtmlString(ACKS.armor[this.system.type], "fa-tshirt")}`;
-      case "item":
-        return "";
-      case "spell": {
-        let tagHtmlString = `${createTagHtmlString(this.system.class)}${createTagHtmlString(
+      case ITEM_TYPE.ARMOR:
+        return `${AcksHtmlUtil.createTagHtmlString(ACKS.armor[this.system.type], "fa-tshirt")}`;
+      case ITEM_TYPE.SPELL: {
+        let tagHtmlString = `${AcksHtmlUtil.createTagHtmlString(this.system.class)}${AcksHtmlUtil.createTagHtmlString(
           this.system.range,
-        )}${createTagHtmlString(this.system.duration)}${createTagHtmlString(this.system.roll)}`;
+        )}${AcksHtmlUtil.createTagHtmlString(this.system.duration)}${AcksHtmlUtil.createTagHtmlString(this.system.roll)}`;
         if (this.system.save) {
-          tagHtmlString += createTagHtmlString(ACKS.saves_long[this.system.save], "fa-skull");
+          tagHtmlString += AcksHtmlUtil.createTagHtmlString(ACKS.saves_long[this.system.save], "fa-skull");
         }
         return tagHtmlString;
       }
-      case "ability": {
+      case ITEM_TYPE.PROFICIENCY: {
         let roll = "";
         roll += this.system.roll ? this.system.roll : "";
         roll += this.system.rollTarget ? ACKS.roll_type[this.system.rollType] : "";
         roll += this.system.rollTarget ? this.system.rollTarget : "";
-        return `${createTagHtmlString(this.system.requirements)}${createTagHtmlString(roll)}`;
+        return `${AcksHtmlUtil.createTagHtmlString(this.system.requirements)}${AcksHtmlUtil.createTagHtmlString(roll)}`;
       }
+      default:
+        return "";
     }
-    return "";
   }
 
   use() {
@@ -213,11 +275,6 @@ export default class AcksItem extends Item {
       tokenId: token ? `${token.parent.id}.${token.id}` : null,
       item: this.toObject(),
       data: await this.getChatData(),
-      labels: this.labels,
-      isHealing: this.isHealing,
-      hasDamage: this.hasDamage,
-      isSpell: this.type === "spell",
-      hasSave: this.hasSave,
       config: ACKS,
     };
     // Render the chat card template
