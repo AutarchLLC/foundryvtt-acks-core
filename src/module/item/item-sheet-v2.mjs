@@ -99,7 +99,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     super._configureRenderOptions(options);
 
     // change initial height of window to accommodate for more details (left "stats" block with configuration)
-    if (options.isFirstRender && [ITEM_TYPE.SPELL, ITEM_TYPE.PROFICIENCY, ITEM_TYPE.WEAPON].includes(this.item.type)) {
+    if (options.isFirstRender && [ITEM_TYPE.SPELL, ITEM_TYPE.PROFICIENCY].includes(this.item.type)) {
       Object.assign(options.position, { height: 530 });
     }
   }
@@ -275,7 +275,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       system: this.item.system,
       fields: this.item.system.schema.fields,
       isGM: game.user.isGM,
-      isPhysical: "cost" in this.item.system && "weight6" in this.item.system,
     };
 
     return context;
@@ -314,12 +313,27 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
         context = await this._prepareItemBundleContext(context);
         break;
 
+      case "header":
+        context = await this._prepareHeaderContext(context);
+        break;
+
       default:
         break;
     }
 
     context.tab = context.tabs[partId];
 
+    return context;
+  }
+
+  /**
+   * Prepare context for Header
+   * @param {ApplicationRenderContext} context
+   * @return {Promise<ApplicationRenderContext>}
+   * @protected
+   */
+  async _prepareHeaderContext(context) {
+    context.isPhysical = "cost" in this.item.system && "weight6" in this.item.system;
     return context;
   }
 
@@ -373,6 +387,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     context.getDetailsPartialPath = () => {
       return `systems/acks/templates/items/v2/details/details-${this.item.type}.hbs`;
     };
+
+    context.descriptionPartialName = this.item.system?.descriptionPartialName ?? "";
 
     const enrichmentOptions = {
       secrets: this.item.isOwner,

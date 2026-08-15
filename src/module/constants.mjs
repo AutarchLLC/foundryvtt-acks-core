@@ -674,3 +674,25 @@ export const DAMAGE_TYPE_CHOICES = Object.freeze({
   [DAMAGE_TYPE.SLASHING]: "ACKS.damage.type.slashing",
   [DAMAGE_TYPE.VARIES_BY_WEAPON]: "ACKS.damage.type.variesByWeapon",
 });
+
+// CSS classes for the AcksSymbols icon font (see src/acks.css), keyed by damage type.
+export const DAMAGE_TYPE_ICON = Object.freeze({
+  [DAMAGE_TYPE.ACIDIC]: "acks-icon acks-icon-acidic",
+  [DAMAGE_TYPE.ARCANE]: "acks-icon acks-icon-arcane",
+  [DAMAGE_TYPE.BLUDGEONING]: "acks-icon acks-icon-bludgeoning",
+  [DAMAGE_TYPE.COLD]: "acks-icon acks-icon-cold",
+  [DAMAGE_TYPE.ELECTRICAL]: "acks-icon acks-icon-electrical",
+  [DAMAGE_TYPE.FIRE]: "acks-icon acks-icon-fire",
+  [DAMAGE_TYPE.LUMINOUS]: "acks-icon acks-icon-luminous",
+  [DAMAGE_TYPE.NECROTIC]: "acks-icon acks-icon-necrotic",
+  [DAMAGE_TYPE.PIERCING]: "acks-icon acks-icon-piercing",
+  [DAMAGE_TYPE.POISONOUS]: "acks-icon acks-icon-poisonous",
+  [DAMAGE_TYPE.SEISMIC]: "acks-icon acks-icon-seismic",
+  [DAMAGE_TYPE.SLASHING]: "acks-icon acks-icon-slashing",
+  [DAMAGE_TYPE.VARIES_BY_WEAPON]: "acks-icon acks-icon-varies-by-weapon",
+});
+
+// Handlebars partial names.
+export const HB_PARTIAL_NAME = Object.freeze({
+  ITEM_WEAPON_DESC: "descriptionWeapon",
+});

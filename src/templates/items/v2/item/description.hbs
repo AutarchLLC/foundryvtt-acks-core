@@ -4,6 +4,16 @@
     {{! systems/acks/templates/items/v2/details/details-ITEM_TYPE.hbs }}
     {{! See AcksItemSheetV2 _prepareDescriptionContext }}
     {{> (getDetailsPartialPath) }}
-    {{> "systems/acks/templates/items/v2/common/item-description.hbs" }}
+
+    <div class="item-description">
+      {{ tagList item.labels.all }}
+
+      {{#if descriptionPartialName}}
+        {{> (lookup . 'descriptionPartialName') }}
+      {{/if}}
+
+      <prose-mirror name="system.description" value="{{ system.description }}" document-uuid="{{ item.uuid }}" compact
+                    toggled>{{{ enriched.description }}}</prose-mirror>
+    </div>
   </div>
 </section>

@@ -23,12 +23,14 @@
   </fieldset>
   <fieldset>
     <legend>Damage</legend>
-    {{ formGroup fields.damage.fields.formula value=system.damage.formula localize=true rootId=partId}}
+    {{ formGroup fields.damage.fields.base.fields.formula value=system.damage.base.formula localize=true rootId=partId}}
     {{#if system.hasTwoHandedDamage}}
-      {{ formGroup fields.damage.fields.twoHandFormula value=system.damage.twoHandFormula localize=true rootId=partId}}
+      {{ formGroup fields.damage.fields.twoHanded.fields.formula value=system.damage.twoHanded.formula localize=true
+                   rootId=partId label="Two-Handed Damage Formula"}}
     {{/if}}
-    {{ formGroup fields.damage.fields.extraordinary value=system.damage.extraordinary localize=true rootId=partId}}
-    {{ formGroup fields.damage.fields.types value=system.damage.types localize=true rootId=partId}}
+    {{ formGroup fields.damage.fields.base.fields.extraordinary value=system.damage.base.extraordinary localize=true
+                 rootId=partId}}
+    {{ formGroup fields.damage.fields.base.fields.types value=system.damage.base.types localize=true rootId=partId}}
     {{ formGroup fields.bonus value=system.bonus localize=true label="ACKS.items.AtkBonus" rootId=partId}}
   </fieldset>
   {{#if system.isRanged}}

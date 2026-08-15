@@ -4,6 +4,7 @@ import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
 import {
+  HB_PARTIAL_NAME,
   SAVING_THROW_CHOICES,
   WEAPON_CATEGORY,
   WEAPON_CATEGORY_CHOICES,
@@ -11,8 +12,8 @@ import {
   WEAPON_SIZE_CHOICES,
 } from "../../constants.mjs";
 import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
-import WeaponDamageTemplate from "./templates/weapon-damage-template.mjs";
 import WeaponCustomTagsTemplate from "./templates/weapon-custom-tags-template.mjs";
+import DamageField from "./fields/damage-field.mjs";
 
 /**
  * Weapon Item Data Model
@@ -99,13 +100,16 @@ export default class WeaponData extends BaseDataModel {
         addStrMod: new BooleanField({ initial: false, label: "Add STR mod to Cleave Limit" }),
       }),
       // weapon damage
-      ...WeaponDamageTemplate.schema,
+      damage: new SchemaField({
+        base: new DamageField(),
+        twoHanded: new DamageField(),
+      }),
       // custom tags
       ...WeaponCustomTagsTemplate.schema,
     };
   }
 
-  /* --- Derived properties --- */
+  //region DERIVED PROPERTIES
 
   /**
    * Whether this weapon is a ranged weapon, determined by the `missile` property or the `thrown` special property.
@@ -123,7 +127,21 @@ export default class WeaponData extends BaseDataModel {
     return (this.size === WEAPON_SIZE.MEDIUM || this.size === WEAPON_SIZE.LARGE) && this.melee;
   }
 
-  /* --- Data Migration --- */
+  /**
+   * Returns the partial name for the weapon description template.
+   * @return {string}
+   */
+  get descriptionPartialName() {
+    return HB_PARTIAL_NAME.ITEM_WEAPON_DESC;
+  }
+
+  /** @override */
+  prepareDerivedData() {
+    this.damage.base.prepareDerivedData();
+  }
+
+  //endregion DERIVED PROPERTIES
+  //region DATA MIGRATION
 
   /**
    * @inheritDoc
@@ -136,9 +154,33 @@ export default class WeaponData extends BaseDataModel {
 
     SavingThrowsTemplate.migrateSaveValue(source);
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
-    WeaponDamageTemplate.migrateDamageStringToObject(source);
+    this.migrateDamageStringToObject(source);
     WeaponCustomTagsTemplate.migrateTags(source);
 
     return super.migrateData(source);
   }
+
+  /**
+   * @param {object} source  The candidate source data from which the model will be constructed.
+   */
+  static migrateDamageStringToObject(source) {
+    if (foundry.utils.getType(source.damage) === "string") {
+      const damageFormula = source.damage;
+
+      source.damage = {
+        base: {
+          formula: damageFormula,
+          types: [],
+          extraordinary: false,
+        },
+        twoHanded: {
+          formula: "",
+          types: [],
+          extraordinary: false,
+        },
+      };
+    }
+  }
+
+  //endregion DATA MIGRATION
 }

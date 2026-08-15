@@ -109,6 +109,81 @@
 }
 
 /* ----------------------------------------- */
+/* ACKS Symbols icon font (damage type icons, Font Awesome-style usage) */
+/* The "AcksSymbols" font family itself is registered via CONFIG.fontDefinitions in fonts.mjs */
+.acks-icon {
+  font-family: "AcksSymbols" !important;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-feature-settings: normal;
+  font-synthesis: none;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.acks-icon-extraordinary {
+  color: #b31818;
+}
+
+.acks-icon-acidic::before {
+  content: "\0041";
+}
+
+.acks-icon-arcane::before {
+  content: "\0061";
+}
+
+.acks-icon-bludgeoning::before {
+  content: "\0042";
+}
+
+.acks-icon-cold::before {
+  content: "\0043";
+}
+
+.acks-icon-electrical::before {
+  content: "\0045";
+}
+
+.acks-icon-fire::before {
+  content: "\0046";
+}
+
+.acks-icon-luminous::before {
+  content: "\004C";
+}
+
+.acks-icon-necrotic::before {
+  content: "\004E";
+}
+
+.acks-icon-piercing::before {
+  content: "\0070";
+}
+
+.acks-icon-poisonous::before {
+  content: "\0050";
+}
+
+.acks-icon-seismic::before {
+  content: "\0053";
+}
+
+.acks-icon-slashing::before {
+  content: "\0073";
+}
+
+.acks-icon-varies-by-weapon::before {
+  content: "\0057";
+}
+
+/* ----------------------------------------- */
 /* Combat tracker specific overloads */
 /* TODO: change colors of icons so they look nice on both dark and light themes */
 .combat-sidebar li.combatant .roll {
@@ -1741,6 +1816,9 @@
   flex: 1;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
 }
 
 .sheet.acks.item-v2 .sheet-header__middle input[type="text"] {
@@ -1912,8 +1990,8 @@
 .sheet.acks.item-v2 .tag,
 .sheet.acks.actor-v2 .tag {
   color: var(--color-text-selection);
-  background: var(--color-text-selection-bg);
-  border-radius: 5px;
+  background: var(--acks-purple);
+  border-radius: 4px;
   padding: 0 4px;
   display: flex;
   gap: 4px;

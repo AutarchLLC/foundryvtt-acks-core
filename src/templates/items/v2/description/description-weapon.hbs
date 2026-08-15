@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <div>
+      AT Bonus: {{mod system.bonus}}
+    </div>
+    <div>
+      Damage: {{system.damage.base.formula}}
+      {{# if system.hasTwoHandedDamage}}
+        / {{system.damage.twoHanded.formula}}
+      {{/if}}
+      {{#if system.damage.base.icons}}
+        {{#each system.damage.base.icons}}
+          <i class="{{this}}"></i>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</div>

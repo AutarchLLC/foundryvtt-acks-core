@@ -100,7 +100,7 @@ export default function configureSystemFonts() {
       editor: false,
       fonts: [
         {
-          urls: ["systems/acks/assets/fonts/AcksSymbols-Regular.ttf"],
+          urls: ["systems/acks/assets/fonts/Acks_Symbols/AcksSymbols-Regular.ttf"],
           weight: "400", // normal
           style: "normal",
         },

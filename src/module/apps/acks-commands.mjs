@@ -33,6 +33,12 @@ export default class ACKSCommands {
   }
 
   processChatCommand(commandLine, content = "", msg = {}) {
+    const command = commandLine[0].toLowerCase();
+    if (this.#commandsTable[command] === undefined) {
+      return false;
+    }
+    const params = commandLine.slice(1);
+
     // Setup new message's visibility
     const rollMode = game.settings.get("core", "rollMode");
     if (["gmroll", "blindroll"].includes(rollMode)) {
@@ -42,9 +48,6 @@ export default class ACKSCommands {
       msg.blind = true;
     }
     msg.type = 0;
-
-    const command = commandLine[0].toLowerCase();
-    const params = commandLine.slice(1);
 
     return this.#process(command, params, content, msg);
   }
@@ -95,7 +98,7 @@ export default class ACKSCommands {
   #processCommand(commandsTable, name, params, content = "", msg = {}, path = "") {
     const command = commandsTable[name];
     path = path + name + " ";
-    if (command.subTable) {
+    if (command?.subTable) {
       if (params[0]) {
         return this.#processCommand(command.subTable, params[0], params.slice(1), content, msg, path);
       } else {
@@ -103,7 +106,7 @@ export default class ACKSCommands {
         return true;
       }
     }
-    if (command.func) {
+    if (command?.func) {
       const result = command.func(content, msg, params);
       if (!result) {
         ACKSCommands.#chatAnswer(msg, command.desc);

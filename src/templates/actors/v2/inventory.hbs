@@ -66,9 +66,9 @@
 
                   <!-- Weapon Damage -->
                   <div class="item__damage">
-                    {{item.system.damage.formula}}
+                    {{item.system.damage.base.formula}}
                     {{#if item.system.hasTwoHandedDamage}}
-                      / {{item.system.damage.twoHandFormula}}
+                      / {{item.system.damage.twoHanded.formula}}
                     {{/if}}
                   </div>
 

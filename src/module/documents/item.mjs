@@ -199,7 +199,7 @@ export default class AcksItem extends Item {
   getTags() {
     switch (this.type) {
       case ITEM_TYPE.WEAPON: {
-        let tagHtmlString = AcksHtmlUtil.createTagHtmlString(this.system.damage.formula, "fa-tint");
+        let tagHtmlString = AcksHtmlUtil.createTagHtmlString(this.system.damage.base.formula, "fa-tint");
         this.system.customTags.forEach((tag) => {
           tagHtmlString += AcksHtmlUtil.createTagHtmlString(tag);
         });

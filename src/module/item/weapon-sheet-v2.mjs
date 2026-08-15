@@ -7,5 +7,6 @@ export default class WeaponSheetV2 extends AcksItemSheetV2 {
 
   static DEFAULT_OPTIONS = {
     classes: ["acksii", "standard-form"],
+    //position: { height: "auto" },
   };
 }
