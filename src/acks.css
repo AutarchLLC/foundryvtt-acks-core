@@ -2705,3 +2705,20 @@
   width: 6rem;
   text-align: left;
 }
+
+.acksii.item-v2 .info-card {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.acksii.item-v2 .info-card-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.acksii.item-v2 .info-card-item__label {
+  font-family: "RobotoSlab", sans-serif;
+}

@@ -521,5 +521,7 @@
   "ACKS.damage.type.poisonous": "Poisonous",
   "ACKS.damage.type.seismic": "Seismic",
   "ACKS.damage.type.slashing": "Slashing",
-  "ACKS.damage.type.variesByWeapon": "Varies by Weapon"
+  "ACKS.damage.type.variesByWeapon": "Varies by Weapon",
+
+  "ACKS.damage.label.extraordinary": "Extraordinary"
 }
