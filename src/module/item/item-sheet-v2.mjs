@@ -391,7 +391,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     context.descriptionPartialName = this.item.system?.descriptionPartialName ?? "";
 
     const enrichmentOptions = {
-      secrets: this.item.isOwner,
+      secrets: game.user.isGM,
       relativeTo: this.item,
     };
 

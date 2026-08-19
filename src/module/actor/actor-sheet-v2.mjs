@@ -182,7 +182,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     } else {
       // Expand
       const enrichmentOptions = {
-        secrets: item.isOwner,
+        secrets: game.user.isGM,
         relativeTo: item,
       };
       const enriched = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
