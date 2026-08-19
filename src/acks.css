@@ -1818,7 +1818,7 @@
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .sheet.acks.item-v2 .sheet-header__middle input[type="text"] {

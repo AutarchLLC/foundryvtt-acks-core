@@ -54,5 +54,5 @@
 /**
  * @typedef {Object} TItemTag
  * @property {string} label
- * @property {string} icon
+ * @property {string} [icon]
  */

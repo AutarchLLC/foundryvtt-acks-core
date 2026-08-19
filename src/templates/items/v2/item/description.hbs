@@ -6,7 +6,7 @@
     {{> (getDetailsPartialPath) }}
 
     <div class="item-description">
-      {{ tagList item.labels.all }}
+      {{ tagList item.system.tags.all }}
 
       {{#if descriptionPartialName}}
         {{> (lookup . 'descriptionPartialName') }}

@@ -49,68 +49,6 @@ export default class AcksItem extends Item {
     });
   }
 
-  /**
-   * Apply transformations or derivations to the values of the source data object.
-   * Compute data fields whose values are not stored to the database.
-   *
-   * If possible when modifying the `system` object you should use
-   * {@link foundry.abstract.TypeDataModel.prepareDerivedData | TypeDataModel#prepareDerivedData} on your data models
-   * instead of this method directly on the document.
-   */
-  prepareDerivedData() {
-    //TODO: should this be in the data model instead of the document?
-    this.labels = {
-      special: this.getSpecialTags(),
-      custom: this.getCustomTags(),
-    };
-    this.labels.all = [...this.labels.special, ...this.labels.custom];
-  }
-
-  /**
-   * Get list of labels and icons for special properties
-   * @return {TItemTag[]}
-   */
-  getSpecialTags() {
-    // TODO: cache localized labels
-    /** @type {TItemTag[]} */
-    const tags = [];
-
-    for (const [key, value] of Object.entries(this.system.special ?? {})) {
-      if (value) {
-        if (key === "cleave") {
-          const cleaveLoc = game.i18n.localize(`ACKS.weapon.label.${key}`);
-          const strModLoc = this.system.cleaveLimit.addStrMod
-            ? game.i18n.localize("ACKS.weapon.label.cleaveAddStrMod")
-            : "";
-
-          tags.push({
-            label: `${cleaveLoc} ${this.system.cleaveLimit.numeric}${strModLoc}`,
-            icon: "",
-          });
-        } else {
-          tags.push({ label: game.i18n.localize(`ACKS.weapon.label.${key}`), icon: "" });
-        }
-      }
-    }
-
-    return tags;
-  }
-
-  /**
-   * Get list of labels and icons for custom properties
-   * @return {TItemTag[]}
-   */
-  getCustomTags() {
-    /** @type {TItemTag[]} */
-    const tags = [];
-
-    for (const tag of this.system.customTags ?? []) {
-      tags.push({ label: tag, icon: "" });
-    }
-
-    return tags;
-  }
-
   async getChatData() {
     const data = foundry.utils.duplicate(this);
 

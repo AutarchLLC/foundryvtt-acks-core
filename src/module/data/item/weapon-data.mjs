@@ -1,4 +1,4 @@
-/* global foundry */
+/* global foundry, game */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
@@ -137,7 +137,72 @@ export default class WeaponData extends BaseDataModel {
 
   /** @override */
   prepareDerivedData() {
+    // we don't call prepareDerivedData on `damage.twoHanded` cause we only care about damage formula from it.
     this.damage.base.prepareDerivedData();
+
+    this.tags = {
+      properties: this.generatePropertiesTags(),
+      special: this.generateSpecialTags(),
+      custom: this.generateCustomTags(),
+    };
+
+    this.tags.all = [...this.tags.properties, ...this.tags.special, ...this.tags.custom];
+  }
+
+  generatePropertiesTags() {
+    /** @type {TItemTag[]} */
+    const tags = [];
+    if (this.melee) {
+      tags.push({ label: game.i18n.localize(WEAPON_SIZE_CHOICES[this.size]) });
+      tags.push({ label: game.i18n.localize("ACKS.items.Melee") });
+    }
+    if (this.missile) {
+      tags.push({ label: game.i18n.localize("ACKS.items.Missile") });
+    }
+    if (this.isRanged) {
+      tags.push({ label: `${this.range.short}/${this.range.medium}/${this.range.long}` });
+    }
+    return tags;
+  }
+
+  /**
+   * Get list of labels and icons for special properties
+   * @return {TItemTag[]}
+   */
+  generateSpecialTags() {
+    // TODO: cache localized labels
+    /** @type {TItemTag[]} */
+    const tags = [];
+
+    for (const [key, value] of Object.entries(this.special ?? {})) {
+      if (value) {
+        if (key === "cleave") {
+          const cleaveLoc = game.i18n.localize(`ACKS.weapon.label.${key}`);
+          const strModLoc = this.cleaveLimit.addStrMod ? game.i18n.localize("ACKS.weapon.label.cleaveAddStrMod") : "";
+
+          tags.push({ label: `${cleaveLoc} ${this.cleaveLimit.numeric}${strModLoc}` });
+        } else {
+          tags.push({ label: game.i18n.localize(`ACKS.weapon.label.${key}`) });
+        }
+      }
+    }
+
+    return tags;
+  }
+
+  /**
+   * Get list of labels and icons for custom properties
+   * @return {TItemTag[]}
+   */
+  generateCustomTags() {
+    /** @type {TItemTag[]} */
+    const tags = [];
+
+    for (const tag of this.customTags ?? []) {
+      tags.push({ label: tag });
+    }
+
+    return tags;
   }
 
   //endregion DERIVED PROPERTIES
