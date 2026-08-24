@@ -1,5 +1,5 @@
 /* global foundry, game, ui, Item */
-import { ITEM_TYPE } from "../constants.mjs";
+import { ACTOR_TYPE, ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 import ActorTweaksConfig from "../apps/actor-tweaks-config.mjs";
@@ -132,7 +132,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   *
+   * Handler for rolling a generic attack without item.
    * @param {PointerEvent} event
    * @param {HTMLElement} target
    */
@@ -268,18 +268,18 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   static async #itemUse(event, target) {
     const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
     const skipKey = game.settings.get("acks", "skip-dialog-key");
-    const skipDialog = event[skipKey] || false;
+    const skipDialog = event[skipKey] ?? false;
 
     switch (item.type) {
-      case "weapon":
-        if (this.actor.type === "monster") {
+      case ITEM_TYPE.WEAPON:
+        if (this.actor.type === ACTOR_TYPE.MONSTER) {
           void item.update({ "system.counter.value": item.system.counter.value - 1 });
         }
         item.rollWeapon({ skipDialog });
         break;
 
-      case "spell":
-        item.spendSpell({ skipDialog });
+      case ITEM_TYPE.SPELL:
+        void item.spendSpell({ skipDialog });
         break;
 
       default:

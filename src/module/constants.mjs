@@ -9,6 +9,11 @@ export const ITEM_TYPE = Object.freeze({
   BUNDLE: "bundle",
 });
 
+export const ACTOR_TYPE = Object.freeze({
+  PC: "character",
+  MONSTER: "monster",
+});
+
 export const CORE_PACK_NAME = Object.freeze({
   CLASS_ABILITIES: "acks.acks-class-abilities",
   PROFICIENCIES: "acks.acks-proficiencies",
@@ -695,4 +700,10 @@ export const DAMAGE_TYPE_ICON = Object.freeze({
 // Handlebars partial names.
 export const HB_PARTIAL_NAME = Object.freeze({
   ITEM_WEAPON_DESC: "descriptionWeapon",
+});
+
+export const ATTACK_TYPE = Object.freeze({
+  MELEE: "melee",
+  MISSILE: "missile",
+  ATTACK: "attack",
 });

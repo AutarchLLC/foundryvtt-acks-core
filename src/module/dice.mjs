@@ -1,7 +1,7 @@
 /* global Roll, game, ChatMessage, foundry, CONFIG */
 import { ACKS } from "./config.mjs";
 import ACKSDialog from "./dialog/dialog.mjs";
-import { ROLL_TYPE } from "./constants.mjs";
+import { ATTACK_TYPE, ROLL_TYPE } from "./constants.mjs";
 
 export default class AcksDice {
   /**
@@ -212,7 +212,7 @@ export default class AcksDice {
     const dmgRoll = new Roll(options.data.roll.dmg.join("+"), options.data);
     await dmgRoll.evaluate();
 
-    // Add minimal damage of 1
+    // Add minimal damage (1 point)
     if (dmgRoll.total < 1) {
       dmgRoll._total = 1;
     }
@@ -241,7 +241,7 @@ export default class AcksDice {
 
     chatData.content = await foundry.applications.handlebars.renderTemplate(template, templateData);
 
-    // 2 Step Dice So Nice
+    // Dice So Nice
     if (game.dice3d) {
       await game.dice3d.showForRoll(roll, game.user, true, chatData.whisper, chatData.blind);
       if (templateData.result.isSuccess) {
@@ -271,10 +271,11 @@ export default class AcksDice {
       flavor: null,
       title: "",
     };
+    /** @type TRollOptions */
     const rollOptions = Object.assign(DEFAULT_OPTIONS, options);
 
     if (rollOptions.skipDialog) {
-      return ["melee", "missile", "attack"].includes(rollOptions.data.roll.type)
+      return [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(rollOptions.data.roll.type)
         ? AcksDice.#sendAttackRoll(rollOptions)
         : AcksDice.#sendRoll(rollOptions);
     }
@@ -290,7 +291,7 @@ export default class AcksDice {
 
     if (rollDetails) {
       rollOptions.rollDetails = rollDetails;
-      return ["melee", "missile", "attack"].includes(rollOptions.data.roll.type)
+      return [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(rollOptions.data.roll.type)
         ? AcksDice.#sendAttackRoll(rollOptions)
         : AcksDice.#sendRoll(rollOptions);
     }

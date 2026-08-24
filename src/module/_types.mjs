@@ -56,3 +56,27 @@
  * @property {string} label
  * @property {string} [icon]
  */
+
+/**
+ * @typedef {Object} TItemRollOptions
+ * @property {boolean} [skipDialog=undefined] - Whether to skip the roll dialog and roll immediately
+ */
+
+/**
+ * @typedef {Object} TRollAttackOptions
+ * @property {boolean} [skipDialog=undefined] - Whether to skip the roll dialog and roll immediately
+ * @property {ATTACK_TYPE} [attackType=undefined] - The type of attack (see ATTACK_TYPE global constant)
+ */
+
+/**
+ * @typedef {Object} TItemRollConfig
+ * @property {SAVING_THROW} save - The type of saving throw (see SAVING_THROW global constant)
+ * @property {Token|null} [target]
+ */
+
+/**
+ * @typedef {Object} TItemRollData
+ * @property {Object} [item] - Used Item, the extracted primitive object from Item's DataModel
+ * @property {Object} actor - Actor who used the Item, the extracted primitive object from Actor's DataModel
+ * @property {TItemRollConfig} roll - roll configuration
+ */

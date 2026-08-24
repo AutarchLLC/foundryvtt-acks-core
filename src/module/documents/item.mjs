@@ -2,7 +2,7 @@
 import AcksDice from "../dice.mjs";
 import { ACKS } from "../config.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
-import { ITEM_TYPE } from "../constants.mjs";
+import { ACTOR_TYPE, ATTACK_TYPE, ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 
 /**
@@ -74,9 +74,16 @@ export default class AcksItem extends Item {
     return data;
   }
 
+  /**
+   *
+   * @param {TItemRollOptions} options
+   * @return {boolean}
+   */
   rollWeapon(options = {}) {
-    const isNPC = this.actor.type !== "character";
-    let type = isNPC ? "attack" : "melee";
+    const isNPC = this.actor.type !== ACTOR_TYPE.PC;
+    /** @type ATTACK_TYPE */
+    let type = isNPC ? ATTACK_TYPE.ATTACK : ATTACK_TYPE.MELEE;
+    /** @type TItemRollData */
     const rollData = {
       item: this.toObject(),
       actor: this.actor.toObject(),
@@ -90,12 +97,17 @@ export default class AcksItem extends Item {
       ACKSDialog.showAttackRangeSelector(this.actor, rollData, options);
       return true;
     } else if (this.system.missile && !isNPC) {
-      type = "missile";
+      type = ATTACK_TYPE.MISSILE;
     }
     this.actor.targetAttack(rollData, type, options);
     return true;
   }
 
+  /**
+   *
+   * @param {TItemRollOptions} options
+   * @return {Promise<*>}
+   */
   async rollFormula(options = {}) {
     if (!this.system.roll) {
       ui.notifications.warn("This Item does not have a formula to roll!");
@@ -128,10 +140,13 @@ export default class AcksItem extends Item {
     });
   }
 
-  spendSpell() {
-    this.update({ "system.cast": this.system.cast + 1 }).then(() => {
-      void this.show();
-    });
+  /**
+   *
+   * @param {TItemRollOptions} _options
+   */
+  async spendSpell(_options = {}) {
+    await this.update({ "system.cast": this.system.cast + 1 });
+    void this.show();
   }
 
   getTags() {
@@ -179,7 +194,7 @@ export default class AcksItem extends Item {
         this.rollWeapon();
         break;
       case ITEM_TYPE.SPELL:
-        this.spendSpell();
+        void this.spendSpell();
         break;
       case ITEM_TYPE.PROFICIENCY:
         if (this.system.roll) {

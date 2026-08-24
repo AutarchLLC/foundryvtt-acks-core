@@ -33,7 +33,7 @@ import hotbarDrop from "./module/hooks/hotbar-drop.mjs";
 import { forceWorldMigration, runMigrations } from "./module/migration/migration.mjs";
 import configureSystemFonts from "./module/fonts.mjs";
 import WeaponSheetV2 from "./module/item/weapon-sheet-v2.mjs";
-import { ITEM_TYPE } from "./module/constants.mjs";
+import { ACTOR_TYPE, ITEM_TYPE } from "./module/constants.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -72,20 +72,20 @@ Hooks.once("init", async function () {
 
   CONFIG.Actor.documentClass = AcksActor;
   CONFIG.Actor.dataModels = {
-    character: CharacterData,
-    monster: MonsterData,
+    [ACTOR_TYPE.PC]: CharacterData,
+    [ACTOR_TYPE.MONSTER]: MonsterData,
   };
 
   CONFIG.Item.documentClass = AcksItem;
   CONFIG.Item.dataModels = {
-    language: LanguageData,
-    money: MoneyData,
-    item: ItemData,
-    weapon: WeaponData,
-    armor: ArmorData,
-    spell: SpellData,
-    ability: AbilityData,
-    bundle: ItemBundleData,
+    [ITEM_TYPE.LANGUAGE]: LanguageData,
+    [ITEM_TYPE.MONEY]: MoneyData,
+    [ITEM_TYPE.ITEM]: ItemData,
+    [ITEM_TYPE.WEAPON]: WeaponData,
+    [ITEM_TYPE.ARMOR]: ArmorData,
+    [ITEM_TYPE.SPELL]: SpellData,
+    [ITEM_TYPE.PROFICIENCY]: AbilityData,
+    [ITEM_TYPE.BUNDLE]: ItemBundleData,
   };
   CONFIG.Combat.documentClass = AcksCombat;
   CONFIG.Token.documentClass = ACKSToken;
@@ -104,11 +104,11 @@ Hooks.once("init", async function () {
   });
 
   foundry.documents.collections.Actors.registerSheet("acks", ACKSCharacterSheetV2, {
-    types: ["character"],
+    types: [ACTOR_TYPE.PC],
     makeDefault: true,
   });
   foundry.documents.collections.Actors.registerSheet("acks", ACKSMonsterSheetV2, {
-    types: ["monster"],
+    types: [ACTOR_TYPE.MONSTER],
     makeDefault: true,
   });
 
