@@ -1,4 +1,4 @@
-/* global Item, foundry, ui, ChatMessage, game, CONST, canvas */
+/* global Item, foundry, ui, ChatMessage, game, CONST */
 import AcksDice from "../dice.mjs";
 import { ACKS } from "../config.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
@@ -37,16 +37,6 @@ export default class AcksItem extends Item {
       default:
         return { img: "systems/acks/assets/default/item.png" };
     }
-  }
-
-  static chatListeners(html) {
-    html.addEventListener("click", (event) => {
-      if (event.target.closest(".card-buttons button")) {
-        this.#onChatCardAction(event);
-      } else if (event.target.closest(".item-name")) {
-        this.#onChatCardToggleContent(event);
-      }
-    });
   }
 
   async getChatData() {
@@ -146,7 +136,7 @@ export default class AcksItem extends Item {
    */
   async spendSpell(_options = {}) {
     await this.update({ "system.cast": this.system.cast + 1 });
-    void this.show();
+    void this.showChatCard();
   }
 
   getTags() {
@@ -200,14 +190,14 @@ export default class AcksItem extends Item {
         if (this.system.roll) {
           void this.rollFormula();
         } else {
-          void this.show();
+          void this.showChatCard();
         }
         break;
       case ITEM_TYPE.ITEM:
       case ITEM_TYPE.ARMOR:
       case ITEM_TYPE.LANGUAGE:
       case ITEM_TYPE.MONEY:
-        void this.show();
+        void this.showChatCard();
         break;
       case ITEM_TYPE.BUNDLE:
       default:
@@ -217,13 +207,13 @@ export default class AcksItem extends Item {
   }
 
   /**
-   * Show the item to Chat, creating a chat card which contains follow-up attack or damage roll options
+   * Show the item to Chat
    * @return {Promise}
    */
-  async show() {
+  async showChatCard() {
     // Basic template rendering data
     const token = this.actor.token;
-    const templateData = {
+    const templateContext = {
       actor: this.actor.toObject(),
       tokenId: token ? `${token.parent.id}.${token.id}` : null,
       item: this.toObject(),
@@ -232,7 +222,7 @@ export default class AcksItem extends Item {
     };
     // Render the chat card template
     const template = `systems/acks/templates/chat/item-card.hbs`;
-    const html = await foundry.applications.handlebars.renderTemplate(template, templateData);
+    const html = await foundry.applications.handlebars.renderTemplate(template, templateContext);
 
     // Basic chat message data
     const chatData = {
@@ -260,113 +250,5 @@ export default class AcksItem extends Item {
 
     // Create the chat message
     return ChatMessage.create(chatData);
-  }
-
-  /**
-   * Handle toggling the visibility of chat card content when the name is clicked
-   * @param {Event} event   The originating click event
-   * @private
-   */
-  static #onChatCardToggleContent(event) {
-    event.preventDefault();
-    const header = event.target;
-    const card = header.closest(".chat-card");
-    const content = card.querySelector(".card-content");
-
-    if (content.classList.contains("expanded")) {
-      content.classList.remove("expanded");
-    } else {
-      content.classList.add("expanded");
-    }
-  }
-
-  static async #onChatCardAction(event) {
-    event.preventDefault();
-
-    // Extract card data
-    const button = event.target;
-    button.disabled = true;
-    const card = button.closest(".chat-card");
-    const messageId = card.closest(".message").dataset.messageId;
-    const message = game.messages.get(messageId);
-    const action = button.dataset.action;
-
-    // Validate permission to proceed with the roll
-    const isTargeted = action === "save";
-    if (!(isTargeted || game.user.isGM || message.isAuthor)) {
-      ui.notifications.warn(`You do not have permission to use this feature for the selected chat card.`);
-      return;
-    }
-    // Get the Actor from a synthetic Token
-    const actor = this._getChatCardActor(card);
-    if (!actor) {
-      ui.notifications.warn("Unable to get the actor");
-      return;
-    }
-    // Get the Item
-    const item = actor.items.get(card.dataset.itemId);
-    if (!item) {
-      return ui.notifications.error(
-        `The requested item ${card.dataset.itemId} no longer exists on Actor ${actor.name}`,
-      );
-    }
-
-    // Get card targets
-    let targets = [];
-    if (isTargeted) {
-      targets = this._getChatCardTargets(card);
-    }
-
-    // Attack and Damage Rolls
-    if (action === "damage") {
-      await item.rollDamage({ event });
-    } else if (action === "formula") {
-      await item.rollFormula({ event });
-    }
-    // Saving Throws for card targets
-    else if (action === "save") {
-      if (!targets.length) {
-        ui.notifications.warn(`You must have one or more controlled Tokens in order to use this option.`);
-        return (button.disabled = false);
-      }
-      for (const t of targets) {
-        await t.rollSave(button.dataset.save, { event });
-      }
-    }
-
-    // Re-enable the button
-    button.disabled = false;
-  }
-
-  static _getChatCardActor(card) {
-    // Case 1 - a synthetic actor from a Token
-    const tokenKey = card.dataset.tokenId;
-    if (tokenKey) {
-      const [sceneId, tokenId] = tokenKey.split(".");
-      const scene = game.scenes.get(sceneId);
-      if (!scene) {
-        return null;
-      }
-      const tokenData = scene.tokens.get(tokenId);
-      if (!tokenData) {
-        return null;
-      }
-      const token = new foundry.canvas.placeables.Token(tokenData);
-      return token.actor;
-    }
-
-    // Case 2 - use Actor ID directory
-    const actorId = card.dataset.actorId;
-    return game.actors.get(actorId) || null;
-  }
-
-  static _getChatCardTargets(_card) {
-    const character = game.user.character;
-    const controlled = canvas.tokens.controlled;
-    const targets = controlled.reduce((arr, t) => (t.actor ? arr.concat([t.actor]) : arr), []);
-    if (character && controlled.length === 0) {
-      targets.push(character);
-    }
-    return targets;
   }
 }

@@ -203,7 +203,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    */
   static #itemShow(event, target) {
     const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
-    void item.show();
+    void item.showChatCard();
   }
 
   /**

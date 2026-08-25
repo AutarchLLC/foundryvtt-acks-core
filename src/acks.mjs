@@ -34,6 +34,7 @@ import { forceWorldMigration, runMigrations } from "./module/migration/migration
 import configureSystemFonts from "./module/fonts.mjs";
 import WeaponSheetV2 from "./module/item/weapon-sheet-v2.mjs";
 import { ACTOR_TYPE, ITEM_TYPE } from "./module/constants.mjs";
+import ACKSChatMessage from "./module/documents/chat-message.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -69,6 +70,8 @@ Hooks.once("init", async function () {
   // Custom Handlebars helpers
   void registerHelpers();
   void registerMainSettings();
+
+  CONFIG.ChatMessage.documentClass = ACKSChatMessage;
 
   CONFIG.Actor.documentClass = AcksActor;
   CONFIG.Actor.dataModels = {
@@ -185,7 +188,6 @@ Hooks.on("getCombatTrackerEntryContext", AcksCombatHelper.addContextEntry);
 Hooks.on("combatTurn", AcksCombatHelper.combatTurn);
 Hooks.on("combatRound", AcksCombatHelper.combatRound);
 
-Hooks.on("renderChatLog", (_app, html, _data) => AcksItem.chatListeners(html));
 Hooks.on("renderChatMessageHTML", chat.addChatMessageButtons);
 
 Hooks.on("renderActorDirectory", (app, html, data) => renderActorDirectory(app, html, data));
