@@ -1,8 +1,8 @@
 /* global foundry */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import BaseDataModel from "../common/base-data-model.mjs";
+import ItemBaseData from "./item-base-data.mjs";
 
-export default class ItemBundleData extends BaseDataModel {
+export default class ItemBundleData extends ItemBaseData {
   /**
    * @override
    */

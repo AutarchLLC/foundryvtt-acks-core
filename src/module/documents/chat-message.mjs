@@ -9,7 +9,7 @@ export default class ACKSChatMessage extends ChatMessage {
   async renderHTML(options = {}) {
     const html = await super.renderHTML(options);
 
-    const itemName = html.querySelector(".item-name");
+    const itemName = html.querySelector(".card-header__name");
     if (itemName) {
       itemName.addEventListener("click", (e) => this.#onChatCardToggleContent(e));
     }
@@ -54,18 +54,21 @@ export default class ACKSChatMessage extends ChatMessage {
     // Validate permission to proceed with the roll
     const isTargeted = action === "save";
     if (!(isTargeted || game.user.isGM || message.isAuthor)) {
+      button.disabled = false;
       ui.notifications.warn(`You do not have permission to use this feature for the selected chat card.`);
       return;
     }
     // Get the Actor from a synthetic Token
-    const actor = this.#getChatCardActor(card);
+    const actor = await this.#getChatCardActor(card);
     if (!actor) {
+      button.disabled = false;
       ui.notifications.warn("Unable to get the actor");
       return;
     }
     // Get the Item
     const item = actor.items.get(card.dataset.itemId);
     if (!item) {
+      button.disabled = false;
       return ui.notifications.error(
         `The requested item ${card.dataset.itemId} no longer exists on Actor ${actor.name}`,
       );
@@ -87,10 +90,11 @@ export default class ACKSChatMessage extends ChatMessage {
     else if (action === "save") {
       if (!targets.length) {
         ui.notifications.warn(`You must have one or more controlled Tokens in order to use this option.`);
-        return (button.disabled = false);
+        button.disabled = false;
+        return;
       }
-      for (const t of targets) {
-        await t.rollSave(button.dataset.save, { event: e });
+      for (const target of targets) {
+        await target.rollSave(button.dataset.actionParam, { event: e });
       }
     }
 
@@ -98,21 +102,12 @@ export default class ACKSChatMessage extends ChatMessage {
     button.disabled = false;
   }
 
-  #getChatCardActor(card) {
+  async #getChatCardActor(card) {
     // Case 1 - a synthetic actor from a Token
-    const tokenKey = card.dataset.tokenId;
-    if (tokenKey) {
-      const [sceneId, tokenId] = tokenKey.split(".");
-      const scene = game.scenes.get(sceneId);
-      if (!scene) {
-        return null;
-      }
-      const tokenData = scene.tokens.get(tokenId);
-      if (!tokenData) {
-        return null;
-      }
-      const token = new foundry.canvas.placeables.Token(tokenData);
-      return token.actor;
+    const tokenUUID = card.dataset.tokenUuid;
+    if (tokenUUID) {
+      const token = await foundry.utils.fromUuid(tokenUUID);
+      return token?.actor ?? null;
     }
 
     // Case 2 - use Actor ID directory

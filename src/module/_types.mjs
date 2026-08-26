@@ -80,3 +80,29 @@
  * @property {Object} actor - Actor who used the Item, the extracted primitive object from Actor's DataModel
  * @property {TItemRollConfig} roll - roll configuration
  */
+
+/**
+ * @typedef {Object} TChatSpeakerData
+ * @property {string} [actor] - The _id of the Actor who generated this message
+ * @property {string} [alias] - An overridden alias name used instead of the Actor or Token name
+ * @property {string} [scene] - The _id of the Scene where this message was created
+ * @property {string} [token] - The _id of the Token who generated this message
+ */
+
+/**
+ * @typedef {Object} TChatMessageData
+ * @property {boolean} [blind=false] - Is this message sent blindly where the creating User cannot see it?
+ * @property {string} [content] - The HTML content of this chat message
+ * @property {boolean} [emote=false] - Is this message styled as an emote?
+ * @property {DocumentFlags} [flags] - An object of optional key/value flags
+ * @property {string} [flavor=""] - An optional flavor text message which summarizes this message
+ * @property {string[]} [rolls=[]] - Serialized content of any Roll instances attached to the ChatMessage
+ * @property {string} [sound=""] - The URL of an audio file which plays when this message is received
+ * @property {TChatSpeakerData} [speaker] - A ChatSpeakerData object which describes the origin of the ChatMessage
+ * @property {ChatMessageStyle} [style] - The message style from CONST.CHAT_MESSAGE_STYLES
+ * @property {Object} [system] - Data for a ChatMessage subtype, defined by a System or Module
+ * @property {string} [title=""] - An optional title used if the message is popped-out
+ * @property {string} [type="base"] - The type of this chat message, in BaseChatMessage.metadata.types
+ * @property {string} [author] - The _id of the User document who generated this message
+ * @property {string[]} [whisper] - An array of User _id values to whom this message is privately whispered
+ */

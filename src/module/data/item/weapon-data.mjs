@@ -1,7 +1,6 @@
 /* global foundry, game */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
-import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
 import {
   HB_PARTIAL_NAME,
@@ -14,6 +13,7 @@ import {
 import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 import WeaponCustomTagsTemplate from "./templates/weapon-custom-tags-template.mjs";
 import DamageField from "./fields/damage-field.mjs";
+import ItemBaseData from "./item-base-data.mjs";
 
 /**
  * Weapon Item Data Model
@@ -21,7 +21,7 @@ import DamageField from "./fields/damage-field.mjs";
  * @see https://foundryvtt.wiki/en/development/api/DataModel
  * @see https://foundryvtt.com/article/system-data-models/
  */
-export default class WeaponData extends BaseDataModel {
+export default class WeaponData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override

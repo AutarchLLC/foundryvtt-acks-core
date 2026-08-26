@@ -1,4 +1,4 @@
-/* global Item, foundry, ui, ChatMessage, game, CONST */
+/* global Item, foundry, ui, ChatMessage, game */
 import AcksDice from "../dice.mjs";
 import { ACKS } from "../config.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
@@ -37,31 +37,6 @@ export default class AcksItem extends Item {
       default:
         return { img: "systems/acks/assets/default/item.png" };
     }
-  }
-
-  async getChatData() {
-    const data = foundry.utils.duplicate(this);
-
-    // Rich text description
-    data.description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description);
-    data.system = this.system;
-
-    // Item properties
-    const props = [];
-
-    if (this.type === "weapon") {
-      this.system.tags.forEach((t) => props.push(t.value));
-    }
-    if (this.type === "spell") {
-      props.push(`${this.system.class} ${this.system.lvl}`, this.system.range, this.system.duration);
-    }
-    if (foundry.utils.hasProperty(this.system, "equipped")) {
-      props.push(this.system.equipped ? "Equipped" : "Not Equipped");
-    }
-
-    // Filter properties and return
-    data.properties = props.filter((p) => !!p);
-    return data;
   }
 
   /**
@@ -214,41 +189,25 @@ export default class AcksItem extends Item {
     // Basic template rendering data
     const token = this.actor.token;
     const templateContext = {
-      actor: this.actor.toObject(),
-      tokenId: token ? `${token.parent.id}.${token.id}` : null,
-      item: this.toObject(),
-      data: await this.getChatData(),
-      config: ACKS,
+      actorId: this.actor.id,
+      tokenUUID: token ? token.uuid : null,
+      item: { id: this.id, img: this.img, name: this.name },
+      data: await this.system.prepareChatCardContext(),
     };
     // Render the chat card template
-    const template = `systems/acks/templates/chat/item-card.hbs`;
-    const html = await foundry.applications.handlebars.renderTemplate(template, templateContext);
+    const templatePath = `systems/acks/templates/chat/item-card.hbs`;
+    const htmlString = await foundry.applications.handlebars.renderTemplate(templatePath, templateContext);
 
     // Basic chat message data
-    const chatData = {
-      user: game.user.id,
-      style: CONST.CHAT_MESSAGE_STYLES.OTHER,
-      content: html,
-      speaker: {
-        actor: this.actor.id,
-        token: this.actor.token,
-        alias: this.actor.name,
-      },
+    /** @type TChatMessageData */
+    const chatMessageData = {
+      content: htmlString,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor, token: this.actor.token }),
+      rollMode: game.settings.get("core", "rollMode"), //TODO: deprecated, remove when v13 support is dropped
+      messageMode: game.settings.get("core", "messageMode"),
     };
 
-    // Toggle default roll mode
-    const rollMode = game.settings.get("core", "rollMode");
-    if (["gmroll", "blindroll"].includes(rollMode)) {
-      chatData.whisper = ChatMessage.getWhisperRecipients("GM");
-    }
-    if (rollMode === "selfroll") {
-      chatData.whisper = [game.user.id];
-    }
-    if (rollMode === "blindroll") {
-      chatData.blind = true;
-    }
-
     // Create the chat message
-    return ChatMessage.create(chatData);
+    return ChatMessage.create(chatMessageData);
   }
 }

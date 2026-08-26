@@ -2722,3 +2722,98 @@
 .acksii.item-v2 .info-card-item__label {
   font-family: "RobotoSlab", sans-serif;
 }
+
+.acksii.chat-card {
+  font-style: normal;
+  font-size: 12px;
+  font-family: "RobotoRegular", sans-serif;
+}
+
+.acksii.chat-card .card-header {
+  padding: 4px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+  gap: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.acksii.chat-card .card-header__img {
+  flex: 0 0 36px;
+}
+
+.acksii.chat-card .card-header__name {
+  flex: 1;
+  margin: 0;
+  line-height: 36px;
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.acksii.chat-card .card-header__name a:hover {
+  text-shadow: none;
+  color: var(--acks-purple);
+}
+
+.acksii.chat-card .card-content {
+  margin: 4px 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.acksii.chat-card .card-content.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.acksii.chat-card .card-content__description {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.acksii.chat-card .card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.acksii.chat-card .card-buttons button {
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.acksii.chat-card .card-buttons button:hover {
+  background: var(--acks-purple);
+  border-color: var(--acks-purple);
+}
+.acksii.chat-card .card-buttons button:focus {
+  border-color: var(--acks-purple);
+  border-width: 2px;
+  outline: none;
+  box-shadow: none;
+}
+.acksii.chat-card .card-buttons button.active {
+  border-color: var(--acks-purple);
+  border-width: 2px;
+  outline: none;
+  box-shadow: none;
+}
+
+.acksii.chat-card .card-footer {
+  padding: 4px 0 0;
+  border-top: 2px groove #fff;
+}
+
+.acksii.chat-card .card-footer span {
+  border-right: 2px groove #fff;
+  padding: 0 4px 0 0;
+  font-size: 10px;
+}
+
+.acksii.chat-card .card-footer span:last-child {
+  border-right: none;
+  padding-right: 0;
+}

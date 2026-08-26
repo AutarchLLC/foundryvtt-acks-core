@@ -2,13 +2,13 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import { ACKS } from "../../config.mjs";
-import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
+import ItemBaseData from "./item-base-data.mjs";
 
 /**
  * Item Item Data Model :D:D:D
  */
-export default class ItemData extends BaseDataModel {
+export default class ItemData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
