@@ -1,12 +1,13 @@
 /* global game, ui, foundry, Macro, Item, CONST */
 
 export async function rollItem(itemUuid, { _event } = {}) {
+  /** @type {AcksItem} */
   const item = await foundry.utils.fromUuid(itemUuid);
   if (!item) {
     ui.notifications.error("Can't find Item.");
     return null;
   }
-  item.use();
+  void item.use();
 }
 
 export async function createACKSMacro(data, slot) {

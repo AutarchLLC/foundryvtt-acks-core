@@ -40,12 +40,18 @@ export default class AcksItem extends Item {
   }
 
   /**
-   *
+   * Uses the weapon item to perform an attack roll.
+   * @protected
    * @param {TItemRollOptions} options
-   * @return {boolean}
+   * @return {Promise<void>}
    */
-  rollWeapon(options = {}) {
+  async _useWeapon(options = {}) {
     const isNPC = this.actor.type !== ACTOR_TYPE.PC;
+
+    if (this.actor.type === ACTOR_TYPE.MONSTER) {
+      await this.update({ "system.counter.value": this.system.counter.value - 1 });
+    }
+
     /** @type ATTACK_TYPE */
     let type = isNPC ? ATTACK_TYPE.ATTACK : ATTACK_TYPE.MELEE;
     /** @type TItemRollData */
@@ -60,12 +66,11 @@ export default class AcksItem extends Item {
 
     if (this.system.missile && this.system.melee && !isNPC) {
       ACKSDialog.showAttackRangeSelector(this.actor, rollData, options);
-      return true;
+      return;
     } else if (this.system.missile && !isNPC) {
       type = ATTACK_TYPE.MISSILE;
     }
     this.actor.targetAttack(rollData, type, options);
-    return true;
   }
 
   /**
@@ -109,7 +114,7 @@ export default class AcksItem extends Item {
    *
    * @param {TItemRollOptions} _options
    */
-  async spendSpell(_options = {}) {
+  async _useSpell(_options = {}) {
     await this.update({ "system.cast": this.system.cast + 1 });
     void this.showChatCard();
   }
@@ -153,17 +158,22 @@ export default class AcksItem extends Item {
     }
   }
 
-  use() {
+  /**
+   * Tries to use the item, which may involve rolling a formula, spending a spell, or showing a chat card.
+   * @param {TItemRollOptions} options
+   * @return {Promise<void>}
+   */
+  async use(options = {}) {
     switch (this.type) {
       case ITEM_TYPE.WEAPON:
-        this.rollWeapon();
+        void this._useWeapon(options);
         break;
       case ITEM_TYPE.SPELL:
-        void this.spendSpell();
+        void this._useSpell(options);
         break;
       case ITEM_TYPE.PROFICIENCY:
         if (this.system.roll) {
-          void this.rollFormula();
+          void this.rollFormula(options);
         } else {
           void this.showChatCard();
         }
