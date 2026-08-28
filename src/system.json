@@ -9,12 +9,12 @@
   "socket": true,
   "relationships": {},
   "compatibility": {
-    "minimum": "13.351",
-    "verified": "14.367"
+    "minimum": "14.359",
+    "verified": "14"
   },
   "flags": {
     "hotReload": {
-      "extensions": ["css", "html", "hbs", "json"],
+      "extensions": ["css", "hbs", "json"],
       "paths": ["acks.css", "templates", "lang"]
     }
   },

@@ -119,9 +119,6 @@ Hooks.once("init", async function () {
 
   ACKSCommands.init();
 
-  // Ensure new effect transfer
-  CONFIG.ActiveEffect.legacyTransferral = false;
-
   Hooks.on("getSceneControlButtons", (controls) => {
     const targetControl = controls?.tokens;
     if (!targetControl) {
