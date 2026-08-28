@@ -213,7 +213,6 @@ export default class AcksItem extends Item {
     const chatMessageData = {
       content: htmlString,
       speaker: ChatMessage.getSpeaker({ actor: this.actor, token: this.actor.token }),
-      rollMode: game.settings.get("core", "rollMode"), //TODO: deprecated, remove when v13 support is dropped
       messageMode: game.settings.get("core", "messageMode"),
     };
 

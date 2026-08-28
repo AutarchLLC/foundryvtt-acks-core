@@ -10,7 +10,7 @@ const { ActorSheetV2 } = foundry.applications.sheets;
 
 /**
  * @see https://foundryvtt.wiki/en/development/api/applicationv2
- * @see https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ActorSheetV2.html
+ * @see https://foundryvtt.com/api/classes/foundry.applications.sheets.ActorSheetV2.html
  */
 export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
