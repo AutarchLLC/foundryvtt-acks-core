@@ -424,8 +424,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @return {Promise<void>}
    */
   static async #toggleEffect(event, target) {
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.toggleEffect(effectId, this.item);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.toggleEffect(effectUuid);
   }
 
   /**
@@ -436,8 +436,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @return {Promise<void>}
    */
   static async #editEffect(event, target) {
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.editEffect(effectId, this.item);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.editEffect(effectUuid);
   }
 
   /**
@@ -451,8 +451,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
       return;
     }
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.deleteEffect(effectId, this.item);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.deleteEffect(effectUuid);
   }
 
   /**

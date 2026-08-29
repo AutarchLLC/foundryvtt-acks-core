@@ -1,42 +1,51 @@
 <div class="effects-list-content">
-  {{#each effects as |section|}}
-    <div class="effect-header flexrow">
-      <div class="effect-name">{{localize section.label}}</div>
-      <div class="effect-source">{{localize "ACKS.Effect.Source"}}</div>
-      <div class="effect-duration">{{localize "EFFECT.TABS.duration"}}</div>
-      <div class="effect-controls flexrow">
-        <button type="button" data-action="createEffect" data-tooltip
-                aria-label="{{localize 'DOCUMENT.Create' type='Effect'}}" data-effect-type="{{section.type}}">
-          <i class="fas fa-plus"></i> {{localize "DOCUMENT.New" type="Effect"}}
-        </button>
+  <div class="item-list-section">
+    {{#each effects as |section|}}
+      <div class="list-header">
+        <div class="item__name">{{localize section.label}}</div>
+        <div class="item__ae-source">{{localize "ACKS.Effect.Source"}}</div>
+        <div class="item__ae-duration">{{localize "EFFECT.TABS.duration"}}</div>
+        <div class="list-header__controls controls__ae">
+          <a class="item-control" data-action="createEffect"
+             data-tooltip="{{localize 'DOCUMENT.Create' type='Effect'}}"
+             data-effect-type="{{section.type}}">
+            <i class="fas fa-plus"></i>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <ol class="effect-list">
-      {{#each section.effects as |effect|}}
-        <li class="effect flexrow">
-          <div class="effect-name flexrow">
-            <img class="effect-image" src="{{effect.img}}"/>
-            <div>{{effect.name}}</div>
-          </div>
-          <div class="effect-source">{{effect.sourceName}}</div>
-          <div class="effect-duration">{{effect.duration.label}}</div>
-          <div class="effect-controls">
-            <a class="effect-control button" data-action="toggleEffect" data-effect-id="{{effect.id}}"
-               title="{{localize 'BOILERPLATE.Effect.Toggle'}}">
-              <i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
-            </a>
-            <a class="effect-control button" data-action="editEffect" data-effect-id="{{effect.id}}"
-               title="{{localize 'DOCUMENT.Update' type="Effect"}}">
-              <i class="fas fa-edit"></i>
-            </a>
-            <a class="effect-control button" data-action="deleteEffect" data-effect-id="{{effect.id}}"
-               title="{{localize 'DOCUMENT.Delete' type="Effect"}}">
-              <i class="fas fa-trash"></i>
-            </a>
-          </div>
-        </li>
-      {{/each}}
-    </ol>
-  {{/each}}
+      <ul class="item-list unlist">
+        {{#each section.effects as |effect|}}
+          <li class="item">
+            <div class="item-row">
+              <div class="item__icon">
+                <img class="item__image" src="{{effect.img}}" alt="{{item.name}}"/>
+              </div>
+              <div class="item__name">{{effect.name}}</div>
+              <div class="item__ae-source">{{effect.sourceName}}</div>
+              <div class="item__ae-duration">{{effect.duration.label}}</div>
+
+              <div class="list-header__controls controls__ae">
+                <a class="item-control" data-action="toggleEffect" data-effect-id="{{effect.id}}"
+                   data-effect-uuid="{{effect.uuid}}"
+                   data-tooltip="{{#if effect.disabled}}Enable{{else}}Disable{{/if}}">
+                  <i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
+                </a>
+                <a class="item-control" data-action="editEffect" data-effect-id="{{effect.id}}"
+                   data-effect-uuid="{{effect.uuid}}" data-tooltip="{{localize 'DOCUMENT.Update' type="Effect"}}">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <a class="item-control" data-action="deleteEffect" data-effect-id="{{effect.id}}"
+                   data-effect-uuid="{{effect.uuid}}" data-tooltip="{{localize 'DOCUMENT.Delete' type="Effect"}}">
+                  <i class="fas fa-trash"></i>
+                </a>
+              </div>
+
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+
+    {{/each}}
+  </div>
 </div>
