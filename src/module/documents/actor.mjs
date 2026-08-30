@@ -46,6 +46,14 @@ export default class AcksActor extends Actor {
     await super._onUpdate(changed, options, userId);
   }
 
+  /**
+   * Post-process a deletion operation for a single Document instance. Post-operation events occur for all connected
+   * clients.
+   *
+   * @param {object} options            Additional options which modify the deletion request
+   * @param {string} userId             The id of the User requesting the document update
+   * @protected
+   */
   _onDelete(options, userId) {
     super._onDelete(options, userId);
     if (this.system.retainer?.enabled && this.system.retainer?.managerid) {
