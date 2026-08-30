@@ -31,6 +31,10 @@ import AcksCombatHelper from "./module/combat-helper.mjs";
 import ACKSToken from "./module/documents/token.mjs";
 import hotbarDrop from "./module/hooks/hotbar-drop.mjs";
 import { forceWorldMigration, runMigrations } from "./module/migration/migration.mjs";
+import configureSystemFonts from "./module/fonts.mjs";
+import WeaponSheetV2 from "./module/item/weapon-sheet-v2.mjs";
+import { ACTOR_TYPE, ITEM_TYPE } from "./module/constants.mjs";
+import ACKSChatMessage from "./module/documents/chat-message.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -67,47 +71,53 @@ Hooks.once("init", async function () {
   void registerHelpers();
   void registerMainSettings();
 
+  CONFIG.ChatMessage.documentClass = ACKSChatMessage;
+
   CONFIG.Actor.documentClass = AcksActor;
   CONFIG.Actor.dataModels = {
-    character: CharacterData,
-    monster: MonsterData,
+    [ACTOR_TYPE.PC]: CharacterData,
+    [ACTOR_TYPE.MONSTER]: MonsterData,
   };
 
   CONFIG.Item.documentClass = AcksItem;
   CONFIG.Item.dataModels = {
-    language: LanguageData,
-    money: MoneyData,
-    item: ItemData,
-    weapon: WeaponData,
-    armor: ArmorData,
-    spell: SpellData,
-    ability: AbilityData,
-    bundle: ItemBundleData,
+    [ITEM_TYPE.LANGUAGE]: LanguageData,
+    [ITEM_TYPE.MONEY]: MoneyData,
+    [ITEM_TYPE.ITEM]: ItemData,
+    [ITEM_TYPE.WEAPON]: WeaponData,
+    [ITEM_TYPE.ARMOR]: ArmorData,
+    [ITEM_TYPE.SPELL]: SpellData,
+    [ITEM_TYPE.PROFICIENCY]: AbilityData,
+    [ITEM_TYPE.BUNDLE]: ItemBundleData,
   };
   CONFIG.Combat.documentClass = AcksCombat;
   CONFIG.Token.documentClass = ACKSToken;
+
+  // set up fonts
+  configureSystemFonts();
 
   // Unregister default sheets
   foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
   foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
 
   foundry.documents.collections.Items.registerSheet("acks", AcksItemSheetV2, { makeDefault: true });
+  foundry.documents.collections.Items.registerSheet("acks", WeaponSheetV2, {
+    types: [ITEM_TYPE.WEAPON],
+    makeDefault: true,
+  });
 
   foundry.documents.collections.Actors.registerSheet("acks", ACKSCharacterSheetV2, {
-    types: ["character"],
+    types: [ACTOR_TYPE.PC],
     makeDefault: true,
   });
   foundry.documents.collections.Actors.registerSheet("acks", ACKSMonsterSheetV2, {
-    types: ["monster"],
+    types: [ACTOR_TYPE.MONSTER],
     makeDefault: true,
   });
 
   await preloadHandlebarsTemplates();
 
   ACKSCommands.init();
-
-  // Ensure new effect transfer
-  CONFIG.ActiveEffect.legacyTransferral = false;
 
   Hooks.on("getSceneControlButtons", (controls) => {
     const targetControl = controls?.tokens;
@@ -175,7 +185,6 @@ Hooks.on("getCombatTrackerEntryContext", AcksCombatHelper.addContextEntry);
 Hooks.on("combatTurn", AcksCombatHelper.combatTurn);
 Hooks.on("combatRound", AcksCombatHelper.combatRound);
 
-Hooks.on("renderChatLog", (_app, html, _data) => AcksItem.chatListeners(html));
 Hooks.on("renderChatMessageHTML", chat.addChatMessageButtons);
 
 Hooks.on("renderActorDirectory", (app, html, data) => renderActorDirectory(app, html, data));

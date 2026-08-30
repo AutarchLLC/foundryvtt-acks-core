@@ -9,6 +9,11 @@ export const ITEM_TYPE = Object.freeze({
   BUNDLE: "bundle",
 });
 
+export const ACTOR_TYPE = Object.freeze({
+  PC: "character",
+  MONSTER: "monster",
+});
+
 export const CORE_PACK_NAME = Object.freeze({
   CLASS_ABILITIES: "acks.acks-class-abilities",
   PROFICIENCIES: "acks.acks-proficiencies",
@@ -588,4 +593,117 @@ export const ROLL_TYPE = Object.freeze({
   HIT_DICE: "hitdice",
   // result will not be less than 2 and contain details from provided table
   TABLE: "table",
+});
+
+export const WEAPON_SIZE = Object.freeze({
+  NA: "na",
+  TINY: "tiny",
+  SMALL: "small",
+  MEDIUM: "medium",
+  LARGE: "large",
+});
+
+export const WEAPON_SIZE_CHOICES = Object.freeze({
+  [WEAPON_SIZE.NA]: "ACKS.weapon.size.na",
+  [WEAPON_SIZE.TINY]: "ACKS.weapon.size.tiny",
+  [WEAPON_SIZE.SMALL]: "ACKS.weapon.size.small",
+  [WEAPON_SIZE.MEDIUM]: "ACKS.weapon.size.medium",
+  [WEAPON_SIZE.LARGE]: "ACKS.weapon.size.large",
+});
+
+export const WEAPON_CATEGORY = Object.freeze({
+  BOWS_CROSSBOWS: "bowsCrossbows",
+  AXES: "axes",
+  BLUDGEONS: "bludgeons",
+  SWORDS_DAGGERS: "swordsDaggers",
+  SPEARS_POLEARMS: "spearsPolearms",
+  OTHER: "other",
+});
+
+export const WEAPON_CATEGORY_CHOICES = Object.freeze({
+  [WEAPON_CATEGORY.BOWS_CROSSBOWS]: "ACKS.weapon.category.bowsCrossbows",
+  [WEAPON_CATEGORY.AXES]: "ACKS.weapon.category.axes",
+  [WEAPON_CATEGORY.BLUDGEONS]: "ACKS.weapon.category.bludgeons",
+  [WEAPON_CATEGORY.SWORDS_DAGGERS]: "ACKS.weapon.category.swordsDaggers",
+  [WEAPON_CATEGORY.SPEARS_POLEARMS]: "ACKS.weapon.category.spearsPolearms",
+  [WEAPON_CATEGORY.OTHER]: "ACKS.weapon.category.other",
+});
+
+export const SAVING_THROW = Object.freeze({
+  DEATH: "death",
+  IMPLEMENTS: "implements",
+  PARALYSIS: "paralysis",
+  BLAST: "blast",
+  SPELL: "spell",
+});
+
+export const SAVING_THROW_CHOICES = Object.freeze({
+  [SAVING_THROW.DEATH]: "ACKS.saves.death.long",
+  [SAVING_THROW.IMPLEMENTS]: "ACKS.saves.implements.long",
+  [SAVING_THROW.PARALYSIS]: "ACKS.saves.paralysis.long",
+  [SAVING_THROW.BLAST]: "ACKS.saves.blast.long",
+  [SAVING_THROW.SPELL]: "ACKS.saves.spell.long",
+});
+
+export const DAMAGE_TYPE = Object.freeze({
+  // physical
+  ACIDIC: "acidic",
+  ARCANE: "arcane",
+  BLUDGEONING: "bludgeoning",
+  PIERCING: "piercing",
+  POISONOUS: "poisonous",
+  SLASHING: "slashing",
+  // energy
+  COLD: "cold",
+  ELECTRICAL: "electrical",
+  FIRE: "fire",
+  LUMINOUS: "luminous",
+  NECROTIC: "necrotic",
+  SEISMIC: "seismic",
+
+  VARIES_BY_WEAPON: "variesByWeapon",
+});
+
+export const DAMAGE_TYPE_CHOICES = Object.freeze({
+  [DAMAGE_TYPE.ACIDIC]: "ACKS.damage.type.acidic",
+  [DAMAGE_TYPE.ARCANE]: "ACKS.damage.type.arcane",
+  [DAMAGE_TYPE.BLUDGEONING]: "ACKS.damage.type.bludgeoning",
+  [DAMAGE_TYPE.COLD]: "ACKS.damage.type.cold",
+  [DAMAGE_TYPE.ELECTRICAL]: "ACKS.damage.type.electrical",
+  [DAMAGE_TYPE.FIRE]: "ACKS.damage.type.fire",
+  [DAMAGE_TYPE.LUMINOUS]: "ACKS.damage.type.luminous",
+  [DAMAGE_TYPE.NECROTIC]: "ACKS.damage.type.necrotic",
+  [DAMAGE_TYPE.PIERCING]: "ACKS.damage.type.piercing",
+  [DAMAGE_TYPE.POISONOUS]: "ACKS.damage.type.poisonous",
+  [DAMAGE_TYPE.SEISMIC]: "ACKS.damage.type.seismic",
+  [DAMAGE_TYPE.SLASHING]: "ACKS.damage.type.slashing",
+  [DAMAGE_TYPE.VARIES_BY_WEAPON]: "ACKS.damage.type.variesByWeapon",
+});
+
+// CSS classes for the AcksSymbols icon font (see src/acks.css), keyed by damage type.
+export const DAMAGE_TYPE_ICON = Object.freeze({
+  [DAMAGE_TYPE.ACIDIC]: "acks-icon acks-icon-acidic",
+  [DAMAGE_TYPE.ARCANE]: "acks-icon acks-icon-arcane",
+  [DAMAGE_TYPE.BLUDGEONING]: "acks-icon acks-icon-bludgeoning",
+  [DAMAGE_TYPE.COLD]: "acks-icon acks-icon-cold",
+  [DAMAGE_TYPE.ELECTRICAL]: "acks-icon acks-icon-electrical",
+  [DAMAGE_TYPE.FIRE]: "acks-icon acks-icon-fire",
+  [DAMAGE_TYPE.LUMINOUS]: "acks-icon acks-icon-luminous",
+  [DAMAGE_TYPE.NECROTIC]: "acks-icon acks-icon-necrotic",
+  [DAMAGE_TYPE.PIERCING]: "acks-icon acks-icon-piercing",
+  [DAMAGE_TYPE.POISONOUS]: "acks-icon acks-icon-poisonous",
+  [DAMAGE_TYPE.SEISMIC]: "acks-icon acks-icon-seismic",
+  [DAMAGE_TYPE.SLASHING]: "acks-icon acks-icon-slashing",
+  [DAMAGE_TYPE.VARIES_BY_WEAPON]: "acks-icon acks-icon-varies-by-weapon",
+});
+
+// Handlebars partial names.
+export const HB_PARTIAL_NAME = Object.freeze({
+  ITEM_WEAPON_DESC: "descriptionWeapon",
+});
+
+export const ATTACK_TYPE = Object.freeze({
+  MELEE: "melee",
+  MISSILE: "missile",
+  ATTACK: "attack",
 });

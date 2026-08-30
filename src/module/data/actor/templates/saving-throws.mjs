@@ -1,4 +1,6 @@
 /* global foundry */
+import { SAVING_THROW } from "../../../constants.mjs";
+
 const { NumberField, SchemaField } = foundry.data.fields;
 
 export default class SavingThrowsTemplate {
@@ -60,6 +62,17 @@ export default class SavingThrowsTemplate {
   static migrateBreathToBlast(source) {
     if (source.saves?.breath !== undefined && source.saves?.blast === undefined) {
       source.saves.blast = source.saves.breath;
+    }
+  }
+
+  /**
+   * @param {object} source  The candidate source data from which the model will be constructed.
+   */
+  static migrateSaveValue(source) {
+    if (source?.save === "wand") {
+      source.save = SAVING_THROW.IMPLEMENTS;
+    } else if (source?.save === "breath") {
+      source.save = SAVING_THROW.BLAST;
     }
   }
 }

@@ -10,7 +10,7 @@ const { ActorSheetV2 } = foundry.applications.sheets;
 
 /**
  * @see https://foundryvtt.wiki/en/development/api/applicationv2
- * @see https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ActorSheetV2.html
+ * @see https://foundryvtt.com/api/classes/foundry.applications.sheets.ActorSheetV2.html
  */
 export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
@@ -132,7 +132,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   *
+   * Handler for rolling a generic attack without item.
    * @param {PointerEvent} event
    * @param {HTMLElement} target
    */
@@ -182,7 +182,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     } else {
       // Expand
       const enrichmentOptions = {
-        secrets: item.isOwner,
+        secrets: game.user.isGM,
         relativeTo: item,
       };
       const enriched = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -203,7 +203,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    */
   static #itemShow(event, target) {
     const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
-    void item.show();
+    void item.showChatCard();
   }
 
   /**
@@ -268,24 +268,9 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   static async #itemUse(event, target) {
     const item = AcksHtmlUtil.getActorItemFromDOM(target, this.actor);
     const skipKey = game.settings.get("acks", "skip-dialog-key");
-    const skipDialog = event[skipKey] || false;
+    const skipDialog = event[skipKey] ?? false;
 
-    switch (item.type) {
-      case "weapon":
-        if (this.actor.type === "monster") {
-          void item.update({ "system.counter.value": item.system.counter.value - 1 });
-        }
-        item.rollWeapon({ skipDialog });
-        break;
-
-      case "spell":
-        item.spendSpell({ skipDialog });
-        break;
-
-      default:
-        void item.rollFormula({ skipDialog });
-        break;
-    }
+    void item.use({ skipDialog });
   }
 
   /**
@@ -350,8 +335,8 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @return {Promise<void>}
    */
   static async #toggleEffect(event, target) {
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.toggleEffect(effectId, this.actor);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.toggleEffect(effectUuid);
   }
 
   /**
@@ -362,8 +347,8 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    * @return {Promise<void>}
    */
   static async #editEffect(event, target) {
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.editEffect(effectId, this.actor);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.editEffect(effectUuid);
   }
 
   /**
@@ -377,8 +362,8 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
       return;
     }
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.deleteEffect(effectId, this.actor);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.deleteEffect(effectUuid);
   }
 
   /**

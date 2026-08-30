@@ -1,12 +1,14 @@
-/* global foundry */
+/* global foundry, game */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import BaseDataModel from "../common/base-data-model.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
+import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
+import ItemBaseData from "./item-base-data.mjs";
+import { SAVING_THROW_CHOICES } from "../../constants.mjs";
 
 /**
  * Spell Item Data Model
  */
-export default class SpellData extends BaseDataModel {
+export default class SpellData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
@@ -41,6 +43,33 @@ export default class SpellData extends BaseDataModel {
   }
 
   /**
+   * @override
+   * @return {Promise<{description: *, buttons: [], tags: []}>}
+   */
+  async prepareChatCardContext() {
+    const context = await super.prepareChatCardContext();
+
+    if (this.save) {
+      context.buttons.push({
+        action: "save",
+        actionParam: this.save,
+        label: `${game.i18n.localize(SAVING_THROW_CHOICES[this.save])} - ${game.i18n.localize("ACKS.spells.Save")}`,
+      });
+    }
+    if (this.roll) {
+      context.buttons.push({
+        action: "formula",
+        actionParam: this.roll,
+        label: `${game.i18n.localize("ACKS.Roll")} ${this.roll}`,
+      });
+    }
+
+    context.tags.push(`${this.class} ${this.lvl}`, this.range, this.duration);
+
+    return context;
+  }
+
+  /**
    * @inheritDoc
    * @override
    */
@@ -49,11 +78,7 @@ export default class SpellData extends BaseDataModel {
       return super.migrateData(source);
     }
 
-    if (source.save === "wand") {
-      source.save = "implements";
-    } else if (source.save === "breath") {
-      source.save = "blast";
-    }
+    SavingThrowsTemplate.migrateSaveValue(source);
 
     return super.migrateData(source);
   }

@@ -1,14 +1,15 @@
-/* global foundry */
+/* global foundry, game */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import { ACKS } from "../../config.mjs";
-import { ROLL_TYPE } from "../../constants.mjs";
-import BaseDataModel from "../common/base-data-model.mjs";
+import { ROLL_TYPE, SAVING_THROW_CHOICES } from "../../constants.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
+import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
+import ItemBaseData from "./item-base-data.mjs";
 
 /**
  * Ability / Proficiency Item Data Model
  */
-export default class AbilityData extends BaseDataModel {
+export default class AbilityData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
@@ -43,6 +44,31 @@ export default class AbilityData extends BaseDataModel {
   }
 
   /**
+   * @override
+   * @return {Promise<{description: *, buttons: [], tags: []}>}
+   */
+  async prepareChatCardContext() {
+    const context = await super.prepareChatCardContext();
+
+    if (this.save) {
+      context.buttons.push({
+        action: "save",
+        actionParam: this.save,
+        label: `${game.i18n.localize(SAVING_THROW_CHOICES[this.save])} - ${game.i18n.localize("ACKS.spells.Save")}`,
+      });
+    }
+    if (this.roll) {
+      context.buttons.push({
+        action: "formula",
+        actionParam: this.roll,
+        label: `${game.i18n.localize("ACKS.Roll")} ${this.roll}${this.blindroll ? ` (${game.i18n.localize("ACKS.items.BlindRoll")})` : ""}`,
+      });
+    }
+
+    return context;
+  }
+
+  /**
    * @inheritDoc
    * @override
    */
@@ -51,11 +77,7 @@ export default class AbilityData extends BaseDataModel {
       return super.migrateData(source);
     }
 
-    if (source.save === "wand") {
-      source.save = "implements";
-    } else if (source.save === "breath") {
-      source.save = "blast";
-    }
+    SavingThrowsTemplate.migrateSaveValue(source);
 
     return super.migrateData(source);
   }

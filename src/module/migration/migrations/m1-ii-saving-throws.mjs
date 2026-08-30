@@ -22,10 +22,6 @@ export class Migration1IISavingThrows extends MigrationBase {
    * @inheritDoc
    */
   async updateItem(source, _actorSource = null) {
-    if (source.system?.save === "wand") {
-      source.system.save = "implements";
-    } else if (source.system?.save === "breath") {
-      source.system.save = "blast";
-    }
+    SavingThrowsTemplate.migrateSaveValue(source.system);
   }
 }

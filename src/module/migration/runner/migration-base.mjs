@@ -34,8 +34,6 @@ export default class MigrationBase {
    *   source.system.saves.implements = source.system.saves.wand;
    *   // v14+: ForcedDeletion permanently removes the key from the DB.
    *   source.system.saves.wand = new foundry.data.operators.ForcedDeletion();
-   *   // v13 equivalent (deprecated in v14, removed in v16):
-   *   // source.system.saves["-=wand"] = null;
    * }
    *
    * @example <caption>B — Restructure a flat value into an object</caption>
@@ -74,8 +72,6 @@ export default class MigrationBase {
    *   source.system.damage = source.system.dmg;
    *   // v14+: ForcedDeletion permanently removes the key from the DB.
    *   source.system.dmg = new foundry.data.operators.ForcedDeletion();
-   *   // v13 equivalent (deprecated in v14, removed in v16):
-   *   // source.system["-=dmg"] = null;
    * }
    *
    * @example <caption>B — Set a new field from actor context</caption>

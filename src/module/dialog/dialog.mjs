@@ -1,5 +1,5 @@
 /* global foundry, game */
-import { DEFAULT_MONSTER_ITEM_OPTIONS, MONSTER_SAVES_OPTIONS } from "../constants.mjs";
+import { ATTACK_TYPE, DEFAULT_MONSTER_ITEM_OPTIONS, MONSTER_SAVES_OPTIONS } from "../constants.mjs";
 
 export default class ACKSDialog {
   /**
@@ -180,8 +180,8 @@ export default class ACKSDialog {
   /**
    *
    * @param {AcksActor} actor
-   * @param rollData
-   * @param options
+   * @param {TItemRollData} rollData
+   * @param {TItemRollOptions} [options={}]
    */
   static showAttackRangeSelector(actor, rollData, options = {}) {
     new foundry.applications.api.DialogV2({
@@ -195,7 +195,7 @@ export default class ACKSDialog {
           icon: "fas fa-fist-raised",
           label: "Melee", // TODO: localize
           callback: () => {
-            void actor.targetAttack(rollData, "melee", options);
+            void actor.targetAttack(rollData, ATTACK_TYPE.MELEE, options);
           },
         },
         {
@@ -203,7 +203,7 @@ export default class ACKSDialog {
           icon: "fas fa-bullseye",
           label: "Missile", // TODO: localize
           callback: () => {
-            void actor.targetAttack(rollData, "missile", options);
+            void actor.targetAttack(rollData, ATTACK_TYPE.MISSILE, options);
           },
         },
       ],

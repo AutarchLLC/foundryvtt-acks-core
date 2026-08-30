@@ -2,7 +2,7 @@
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
-import { ROLL_TYPE } from "../constants.mjs";
+import { ATTACK_TYPE, ROLL_TYPE } from "../constants.mjs";
 import ACKSDialog from "../dialog/dialog.mjs";
 
 export default class AcksActor extends Actor {
@@ -748,67 +748,82 @@ export default class AcksActor extends Actor {
     });
   }
 
-  async targetAttack(data, type, options) {
+  /**
+   *
+   * @param {TItemRollData} rollData
+   * @param {ATTACK_TYPE} attackType
+   * @param {TItemRollOptions} options
+   * @return {Promise<void>}
+   */
+  async targetAttack(rollData, attackType, options) {
     if (game.user.targets.size > 0) {
       for (const t of game.user.targets.values()) {
-        data.roll.target = t;
-        await this.rollAttack(data, {
-          type: type,
+        rollData.roll.target = t;
+        await this.rollAttack(rollData, {
+          attackType,
           skipDialog: options.skipDialog,
         });
       }
     } else {
-      await this.rollAttack(data, { type: type, skipDialog: options.skipDialog });
+      await this.rollAttack(rollData, { attackType, skipDialog: options.skipDialog });
     }
   }
 
-  rollAttack(attData, options = {}) {
-    const data = this.system;
-    let rollParts = ["1d20"];
+  /**
+   *
+   * @param {TItemRollData} attackRollData
+   * @param {TRollAttackOptions} [options={}]
+   * @return {Promise<*>}
+   */
+  rollAttack(attackRollData, options = {}) {
+    const system = this.system;
+    const rollParts = [];
 
     if (game.settings.get("acks", "exploding20s")) {
-      rollParts = ["1d20x"];
+      rollParts.push("1d20x");
+    } else {
+      rollParts.push("1d20");
     }
 
     const dmgParts = [];
     let label = game.i18n.format("ACKS.roll.attacks", { name: this.name });
-    if (!attData.item) {
+    if (!attackRollData.item) {
       dmgParts.push("1d6");
     } else {
-      label = game.i18n.format("ACKS.roll.attacksWith", { name: attData.item.name });
-      dmgParts.push(attData.item.system.damage);
+      label = game.i18n.format("ACKS.roll.attacksWith", { name: attackRollData.item.name });
+      dmgParts.push(attackRollData.item.system.damage.base.formula);
     }
 
-    rollParts.push(data.thac0.bba.toString());
-    if (options.type === "missile") {
-      rollParts.push(data.scores.dex.mod.toString(), data.thac0.mod.missile.toString());
-    } else if (options.type === "melee") {
-      rollParts.push(data.scores.str.mod.toString(), data.thac0.mod.melee.toString());
+    rollParts.push(system.thac0.bba.toString());
+    if (options.attackType === ATTACK_TYPE.MISSILE) {
+      rollParts.push(system.scores.dex.mod.toString(), system.thac0.mod.missile.toString());
+    } else if (options.attackType === ATTACK_TYPE.MELEE) {
+      rollParts.push(system.scores.str.mod.toString(), system.thac0.mod.melee.toString());
     }
-    if (attData?.item?.system.bonus) {
-      rollParts.push(attData.item.system.bonus);
+    if (attackRollData?.item?.system.bonus) {
+      rollParts.push(attackRollData.item.system.bonus);
     }
-    let thac0 = data.thac0.value;
-    if (options.type === "melee") {
-      dmgParts.push(data.scores.str.mod);
+    let thac0 = system.thac0.value;
+    if (options.attackType === ATTACK_TYPE.MELEE) {
+      dmgParts.push(system.scores.str.mod);
     }
     // Add Melee mod to damage
-    if (options.type === "melee") {
-      dmgParts.push(data.damage.mod.melee);
+    if (options.attackType === ATTACK_TYPE.MELEE) {
+      dmgParts.push(system.damage.mod.melee);
     }
     // Add Missile mod to damage
-    if (options.type === "missile") {
-      dmgParts.push(data.damage.mod.missile);
+    if (options.attackType === ATTACK_TYPE.MISSILE) {
+      dmgParts.push(system.damage.mod.missile);
     }
     const rollData = {
       actor: this,
-      item: attData.item,
+      item: attackRollData.item,
       roll: {
-        type: options.type,
+        type: options.attackType,
         thac0: thac0,
         dmg: dmgParts,
-        save: attData.roll.save,
-        target: attData.roll.target,
+        save: attackRollData.roll.save,
+        target: attackRollData.roll.target,
       },
     };
 

@@ -1,3 +1,4 @@
+/* global foundry, game */
 export default class AcksEffectUtil {
   /**
    * Creates new ActiveEffect document and shows its sheet
@@ -7,7 +8,7 @@ export default class AcksEffectUtil {
    */
   static async addEffect(effectType, owner) {
     // Get registered ActiveEffect Document Class (in case we are going to have custom one).
-    const ActiveEffectClass = getDocumentClass("ActiveEffect");
+    const ActiveEffectClass = foundry.utils.getDocumentClass("ActiveEffect");
 
     const effect = await ActiveEffectClass.implementation.create(
       {
@@ -27,12 +28,11 @@ export default class AcksEffectUtil {
 
   /**
    * Toggles Active effect on a document
-   * @param {string} effectId
-   * @param {AcksItem|ClientDocument} owner
+   * @param {string} effectUuid
    * @return {Promise<void>}
    */
-  static async toggleEffect(effectId, owner) {
-    const effect = owner.effects.get(effectId);
+  static async toggleEffect(effectUuid) {
+    const effect = await foundry.utils.fromUuid(effectUuid);
 
     if (effect) {
       return effect.update({ disabled: !effect.disabled });
@@ -41,12 +41,11 @@ export default class AcksEffectUtil {
 
   /**
    * Edits Active effect on a document
-   * @param {string} effectId
-   * @param {AcksItem|ClientDocument} owner
+   * @param {string} effectUuid
    * @return {Promise<void>}
    */
-  static async editEffect(effectId, owner) {
-    const effect = owner.effects.get(effectId);
+  static async editEffect(effectUuid) {
+    const effect = await foundry.utils.fromUuid(effectUuid);
 
     if (effect) {
       return effect.sheet.render(true);
@@ -55,12 +54,11 @@ export default class AcksEffectUtil {
 
   /**
    * Deletes Active effect from a document
-   * @param {string} effectId
-   * @param {AcksItem|ClientDocument} owner
+   * @param {string} effectUuid
    * @return {Promise<void>}
    */
-  static async deleteEffect(effectId, owner) {
-    const effect = owner.effects.get(effectId);
+  static async deleteEffect(effectUuid) {
+    const effect = await foundry.utils.fromUuid(effectUuid);
 
     if (effect) {
       return effect.delete();

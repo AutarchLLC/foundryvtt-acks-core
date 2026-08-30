@@ -1,0 +1,19 @@
+<section class="info-card">
+  <div class="info-card-item">
+    <span class="info-card-item__label" data-tooltip="Attack bonus">ATB:</span>
+    <span>{{mod system.bonus}}</span>
+  </div>
+  <div class="info-card-item">
+    <span class="info-card-item__label" data-tooltip="Damage Formula">DMG:</span>
+    <span>{{system.damage.base.formula}}
+      {{# if system.hasTwoHandedDamage}}
+        / {{system.damage.twoHanded.formula}}
+      {{/if}}
+      {{#if system.damage.base.icons}}
+        {{#each system.damage.base.icons}}
+          <i class="{{this.classes}}" data-tooltip="{{this.tooltip}}"></i>
+        {{/each}}
+      {{/if}}
+      </span>
+  </div>
+</section>

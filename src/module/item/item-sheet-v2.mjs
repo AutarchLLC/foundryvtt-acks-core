@@ -14,7 +14,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     super(...args);
   }
 
-  /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["acks", "acks2", "item-v2"],
     position: {
@@ -35,9 +34,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       toggleEffect: AcksItemSheetV2.#toggleEffect,
       editEffect: AcksItemSheetV2.#editEffect,
       deleteEffect: AcksItemSheetV2.#deleteEffect,
-      toggleMelee: AcksItemSheetV2.#toggleMelee,
-      toggleMissile: AcksItemSheetV2.#toggleMissile,
-      deleteTag: AcksItemSheetV2.#deleteTag,
       viewItemFromBundle: AcksItemSheetV2.#viewItemFromBundle,
       deleteItemFromBundle: AcksItemSheetV2.#deleteItemFromBundle,
       changeQuantityInBundle: AcksItemSheetV2.#changeQuantityInBundle,
@@ -50,6 +46,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     primary: {
       tabs: [
         { id: "description", label: "ACKS.category.description" },
+        { id: "details", label: "ACKS.category.details" },
         { id: "effects", label: "ACKS.category.effects" },
         { id: "contents", label: "ACKS.category.contents" },
       ],
@@ -72,6 +69,10 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     },
     description: {
       template: "systems/acks/templates/items/v2/item/description.hbs",
+      scrollable: [""],
+    },
+    details: {
+      template: "systems/acks/templates/items/v2/item/details.hbs",
       scrollable: [""],
     },
     effects: {
@@ -98,7 +99,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     super._configureRenderOptions(options);
 
     // change initial height of window to accommodate for more details (left "stats" block with configuration)
-    if (options.isFirstRender && [ITEM_TYPE.SPELL, ITEM_TYPE.PROFICIENCY, ITEM_TYPE.WEAPON].includes(this.item.type)) {
+    if (options.isFirstRender && [ITEM_TYPE.SPELL, ITEM_TYPE.PROFICIENCY].includes(this.item.type)) {
       Object.assign(options.position, { height: 530 });
     }
   }
@@ -112,8 +113,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    */
   async _onRender(context, options) {
     await super._onRender(context, options);
-    const tagInput = this.element.querySelector(':scope input[data-action="add-tag"]');
-    tagInput?.addEventListener("keydown", this.#tagInputKeydownHandler.bind(this));
 
     if (this._isItemBundle()) {
       /** @type {DragDropConfiguration} */
@@ -204,6 +203,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     if (!this._hasActiveEffects()) {
       delete parts.effects;
     }
+    if (!this._hasDetails()) {
+      delete parts.details;
+    }
     if (!this._isItemBundle()) {
       delete parts.contents;
     }
@@ -222,6 +224,9 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     if (!this._hasActiveEffects()) {
       delete tabs.effects;
     }
+    if (!this._hasDetails()) {
+      delete tabs.details;
+    }
     if (!this._isItemBundle()) {
       delete tabs.contents;
     }
@@ -237,6 +242,15 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     return [ITEM_TYPE.ITEM, ITEM_TYPE.WEAPON, ITEM_TYPE.ARMOR, ITEM_TYPE.SPELL, ITEM_TYPE.PROFICIENCY].includes(
       this.item.type,
     );
+  }
+
+  /**
+   * Returns true if item has detailed configuration
+   * @return {boolean}
+   * @protected
+   */
+  _hasDetails() {
+    return [ITEM_TYPE.WEAPON].includes(this.item.type);
   }
 
   /**
@@ -259,9 +273,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
       item: this.item,
       config: ACKS,
       system: this.item.system,
+      fields: this.item.system.schema.fields,
       isGM: game.user.isGM,
-      isPhysical: "cost" in this.item.system && "weight6" in this.item.system,
-      hasTags: "tags" in this.item.system && this.item.system.tags.length > 0,
     };
 
     return context;
@@ -285,24 +298,52 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
 
     switch (partId) {
       case "description":
-        context.tab = context.tabs[partId];
         context = await this._prepareDescriptionContext(context);
         break;
 
+      case "details":
+        context = await this._prepareDetailsContext(context);
+        break;
+
       case "effects":
-        context.tab = context.tabs[partId];
         context = await this._prepareEffectsContext(context);
         break;
 
       case "contents":
-        context.tab = context.tabs[partId];
         context = await this._prepareItemBundleContext(context);
+        break;
+
+      case "header":
+        context = await this._prepareHeaderContext(context);
         break;
 
       default:
         break;
     }
 
+    context.tab = context.tabs[partId];
+
+    return context;
+  }
+
+  /**
+   * Prepare context for Header
+   * @param {ApplicationRenderContext} context
+   * @return {Promise<ApplicationRenderContext>}
+   * @protected
+   */
+  async _prepareHeaderContext(context) {
+    context.isPhysical = "cost" in this.item.system && "weight6" in this.item.system;
+    return context;
+  }
+
+  /**
+   * Prepare context for Details Tab
+   * @param {ApplicationRenderContext} context
+   * @return {Promise<ApplicationRenderContext>}
+   * @protected
+   */
+  async _prepareDetailsContext(context) {
     return context;
   }
 
@@ -310,7 +351,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * Prepare context for Effects Tab
    * @param {ApplicationRenderContext} context
    * @return {Promise<ApplicationRenderContext>}
-   * @private
+   * @protected
    */
   async _prepareEffectsContext(context) {
     context.effects = await AcksUtility.prepareActiveEffectCategories(this.item.effects);
@@ -322,7 +363,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * Prepare context for Bundle Contents Tab
    * @param {ApplicationRenderContext} context
    * @return {Promise<ApplicationRenderContext>}
-   * @private
+   * @protected
    */
   async _prepareItemBundleContext(context) {
     context.bundleItems = this.item.system.itemList.reduce((acc, bundleItem) => {
@@ -340,15 +381,17 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * Prepare context for Description Tab
    * @param {ApplicationRenderContext} context
    * @return {Promise<ApplicationRenderContext>}
-   * @private
+   * @protected
    */
   async _prepareDescriptionContext(context) {
     context.getDetailsPartialPath = () => {
       return `systems/acks/templates/items/v2/details/details-${this.item.type}.hbs`;
     };
 
+    context.descriptionPartialName = this.item.system?.descriptionPartialName ?? "";
+
     const enrichmentOptions = {
-      secrets: this.item.isOwner,
+      secrets: game.user.isGM,
       relativeTo: this.item,
     };
 
@@ -381,8 +424,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @return {Promise<void>}
    */
   static async #toggleEffect(event, target) {
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.toggleEffect(effectId, this.item);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.toggleEffect(effectUuid);
   }
 
   /**
@@ -393,8 +436,8 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
    * @return {Promise<void>}
    */
   static async #editEffect(event, target) {
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.editEffect(effectId, this.item);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.editEffect(effectUuid);
   }
 
   /**
@@ -408,50 +451,12 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
     if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
       return;
     }
-    const effectId = target.dataset.effectId;
-    await AcksEffectUtil.deleteEffect(effectId, this.item);
+    const effectUuid = target.dataset.effectUuid;
+    await AcksEffectUtil.deleteEffect(effectUuid);
   }
 
   /**
-   * Handle melee flag toggling for weapon.
-   * @this {AcksItemSheetV2}
-   * @param {Event} _event
-   * @param {HTMLElement} _target
-   * @return {Promise<void>}
-   */
-  static async #toggleMelee(_event, _target) {
-    this.item.update({ "system.melee": !this.item.system.melee });
-  }
-
-  /**
-   * Handle missile flag toggling for weapon.
-   * @this {AcksItemSheetV2}
-   * @param {Event} _event
-   * @param {HTMLElement} _target
-   * @return {Promise<void>}
-   */
-  static async #toggleMissile(_event, _target) {
-    this.item.update({ "system.missile": !this.item.system.missile });
-  }
-
-  /**
-   * Remove tag from item
-   * @param {Event} event
-   * @param {HTMLElement} target
-   * @return {Promise<void>}
-   */
-  static async #deleteTag(event, target) {
-    if (this.isEditable) {
-      if (game.settings.get("acks", "confirmDeletion") && !(await ACKSDialog.confirmDeletion())) {
-        return;
-      }
-      const tag = target.dataset.tag;
-      this.item.popTag(tag);
-    }
-  }
-
-  /**
-   * Remove tag from item
+   * View item in bundle
    * @param {Event} event
    * @param {HTMLElement} target
    * @return {Promise<void>}
@@ -465,7 +470,7 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
-   * Remove tag from item
+   * Remove item form bundle
    * @param {Event} event
    * @param {HTMLElement} target
    * @return {Promise<void>}
@@ -496,20 +501,6 @@ export default class AcksItemSheetV2 extends HandlebarsApplicationMixin(ItemShee
         itemRecord.quantity = quantity;
         const updatedItemList = foundry.utils.deepClone(this.item.system.itemList);
         await this.item.update({ "system.itemList": updatedItemList });
-      }
-    }
-  }
-
-  /**
-   * Handle Enter key press in TAG input of weapon sheet
-   * @param {KeyboardEvent} event
-   */
-  #tagInputKeydownHandler(event) {
-    if (event.code === "Enter" || event.code === "NumpadEnter") {
-      const val = event.target?.value ?? "";
-      if (val.length > 0) {
-        const values = val.split(",");
-        this.item.pushTag(values);
       }
     }
   }

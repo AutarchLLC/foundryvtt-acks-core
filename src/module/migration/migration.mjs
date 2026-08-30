@@ -15,7 +15,7 @@ import MigrationRunner from "./runner/migration-runner.mjs";
  *
  * @type {number}
  */
-export const CURRENT_SCHEMA_VERSION = 3; // bump to highest migration version when you add migrations
+export const CURRENT_SCHEMA_VERSION = 4; // bump to highest migration version when you add migrations
 
 /**
  * Run all pending data migrations.
@@ -33,7 +33,7 @@ export async function runMigrations() {
     return;
   }
 
-  //await MigrationRunner.resetSchemaVersions(2); // FIXME: reset for testing; remove in production
+  //await MigrationRunner.resetSchemaVersions(CURRENT_SCHEMA_VERSION - 1); // FIXME: reset for testing; remove in production
 
   /** @type number */
   const worldSchemaVersion = game.settings.get("acks", "systemSchemaVersion") ?? 0;
