@@ -47,6 +47,22 @@ export default class AcksActor extends Actor {
   }
 
   /**
+   * Post-process a deletion operation for a single Document instance. Post-operation events occur for all connected
+   * clients.
+   *
+   * @param {object} options            Additional options which modify the deletion request
+   * @param {string} userId             The id of the User requesting the document update
+   * @protected
+   */
+  _onDelete(options, userId) {
+    super._onDelete(options, userId);
+    if (this.system.retainer?.enabled && this.system.retainer?.managerid) {
+      const manager = game.actors.get(this.system.retainer.managerid);
+      manager?.delHenchman(this.id);
+    }
+  }
+
+  /**
    * Extends data from base Actor class
    */
   computeAdditionnalData() {
@@ -312,8 +328,10 @@ export default class AcksActor extends Actor {
     }
     this.system.henchmenList.forEach((id) => {
       const henchman = game.actors.get(id);
-      const q = henchman.system.retainer?.quantity || 1;
-      total += Number(henchman.system.retainer.wage) * Number(q);
+      if (henchman) {
+        const q = henchman.system.retainer?.quantity || 1;
+        total += Number(henchman.system.retainer.wage) * Number(q);
+      }
     });
     return total;
   }
