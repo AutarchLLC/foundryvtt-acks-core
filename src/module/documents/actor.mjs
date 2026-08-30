@@ -46,6 +46,14 @@ export default class AcksActor extends Actor {
     await super._onUpdate(changed, options, userId);
   }
 
+  _onDelete(options, userId) {
+    super._onDelete(options, userId);
+    if (this.system.retainer?.enabled && this.system.retainer?.managerid) {
+      const manager = game.actors.get(this.system.retainer.managerid);
+      manager?.delHenchman(this.id);
+    }
+  }
+
   /**
    * Extends data from base Actor class
    */
@@ -312,8 +320,10 @@ export default class AcksActor extends Actor {
     }
     this.system.henchmenList.forEach((id) => {
       const henchman = game.actors.get(id);
-      const q = henchman.system.retainer?.quantity || 1;
-      total += Number(henchman.system.retainer.wage) * Number(q);
+      if (henchman) {
+        const q = henchman.system.retainer?.quantity || 1;
+        total += Number(henchman.system.retainer.wage) * Number(q);
+      }
     });
     return total;
   }
