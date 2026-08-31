@@ -11,7 +11,6 @@ import AcksCombat from "./module/combat.mjs";
 import { AcksUtility } from "./module/util/acks-utility.mjs";
 import AcksPolyglot from "./module/apps/polyglot-support.mjs";
 import ACKSTableManager from "./module/apps/table-manager.mjs";
-import ACKSCommands from "./module/apps/acks-commands.mjs";
 import AcksItemSheetV2 from "./module/item/item-sheet-v2.mjs";
 import LanguageData from "./module/data/item/language-data.mjs";
 import MoneyData from "./module/data/item/money-data.mjs";
@@ -35,6 +34,7 @@ import configureSystemFonts from "./module/fonts.mjs";
 import WeaponSheetV2 from "./module/item/weapon-sheet-v2.mjs";
 import { ACTOR_TYPE, ITEM_TYPE } from "./module/constants.mjs";
 import ACKSChatMessage from "./module/documents/chat-message.mjs";
+import registerACKSCommands from "./module/apps/acks-commands.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -117,7 +117,7 @@ Hooks.once("init", async function () {
 
   await preloadHandlebarsTemplates();
 
-  ACKSCommands.init();
+  registerACKSCommands();
 
   Hooks.on("getSceneControlButtons", (controls) => {
     const targetControl = controls?.tokens;
@@ -152,17 +152,6 @@ Hooks.once("setup", function () {
       return obj;
     }, {});
   }
-});
-
-Hooks.on("chatMessage", (html, content, msg) => {
-  if (content[0] === "/") {
-    let regExp = /(\S+)/g;
-    let commands = content.match(regExp);
-    if (game.acks.commands.processChatCommand(commands, content, msg)) {
-      return false;
-    }
-  }
-  return true;
 });
 
 Hooks.once("ready", async () => {

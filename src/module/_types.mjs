@@ -106,3 +106,31 @@
  * @property {string} [author] - The _id of the User document who generated this message
  * @property {string[]} [whisper] - An array of User _id values to whom this message is privately whispered
  */
+
+/**
+ * @typedef {Object} TChatMessageHookChatData
+ * @property {ChatSpeakerData} speaker - The identified speaker data, see foundry.documents.ChatMessage.getSpeaker
+ * @property {string} user - The id of the User sending the message
+ * @see https://foundryvtt.com/api/classes/foundry.documents.ChatMessage.html#getspeaker
+ * @see https://foundryvtt.com/api/functions/hookEvents.chatMessage.html
+ */
+
+/**
+ * @callback ChatCommandCallback
+ * Called in the context of a ChatLog instance.
+ * @param {string} command - The matched command name.
+ * @param {RegExpMatchArray|RegExpMatchArray[]|string[]} match - The regex match result.
+ * @param {object} chatData - Chat message data.
+ * @param {object} createOptions - Options passed to ChatMessage.create.
+ * @returns {Promise<false|void>} - Return false to prevent message creation.
+ */
+
+/**
+ * @typedef {Object} ChatCommandPattern
+ * @property {RegExp} rgx - The regular expression pattern used to match this command.
+ * @property {ChatCommandCallback} fn - The processing function invoked when this command is matched.
+ * @property {keyof CONFIG.ChatMessage.modes} [mode] - A chat message mode to enforce for this command. Otherwise,
+ * the default message mode is applied.
+ * @property {boolean} [isRoll=false] - Is this command related to rolling dice?
+ * @property {boolean} [isMultiline=false] - Can this command be processed over multiple lines?
+ */
