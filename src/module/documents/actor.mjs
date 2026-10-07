@@ -2,8 +2,9 @@
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
-import { ATTACK_TYPE, ROLL_TYPE } from "../constants.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
+import { ATTACK_RANGE, ATTACK_TYPE, ROLL_TYPE } from "../constants.mjs";
+import * as ACKSDialog from "../dialog/index.mjs";
+import AcksAttackThrow from "../throw/attack-throw.mjs";
 
 export default class AcksActor extends Actor {
   static async create(data, options) {
@@ -777,14 +778,62 @@ export default class AcksActor extends Actor {
     if (game.user.targets.size > 0) {
       for (const t of game.user.targets.values()) {
         rollData.roll.target = t;
-        await this.rollAttack(rollData, {
-          attackType,
-          skipDialog: options.skipDialog,
-        });
+        await this.rollAttack(rollData, { attackType, skipDialog: options.skipDialog });
       }
     } else {
       await this.rollAttack(rollData, { attackType, skipDialog: options.skipDialog });
     }
+  }
+
+  /**
+   *
+   * @param {TAttackThrowData} data
+   * @return {Promise<void>}
+   */
+  async makeAttackThrow(data = {}) {
+    // 1. Gather data for attack dialogue
+    const { item } = data;
+    // Determine attack type based on item properties (melee or missile or thrown)
+    const attackTypes = item?.system?.getAttackTypes() ?? [];
+    const attackType = await ACKSDialog.getWeaponAttackMode(item.name, attackTypes);
+
+    if (attackType === null) {
+      return;
+    }
+
+    // Determine target value for Attack Throw
+    const targets = Array.from(game.user.targets);
+    if (targets.length > 1) {
+      ui.notifications.warn(game.i18n.localize("ACKS.Error.NotImplemented.Cleave"));
+    }
+    const targetAC = targets?.[0]?.actor?.system?.aac?.value ?? 0;
+    const attackThrowTarget = this.system.thac0.throw + targetAC;
+
+    // Create Attack Throw object
+    const attackThrow = new AcksAttackThrow(attackType, attackThrowTarget);
+    // actor's attack modifiers
+    attackThrow.addModifiers(this.getAttackThrowModifiers(attackType));
+    // item's attack modifiers
+    if (item?.system.bonus) {
+      attackThrow.addModifier({ value: `${item.system.bonus}`, label: "Item Attack Bonus" });
+    }
+
+    // 2. Show attack dialogue where player can check attack modifiers, select additional bonuses, etc.
+    const attackThrowDetails = await ACKSDialog.getAttackThrowDetails(attackThrow, this.name, item);
+    // 3. Finalize Attack Throw setup based on dialogue input
+    if (attackThrowDetails.act === ATTACK_RANGE.MEDIUM) {
+      attackThrow.addModifier({ value: "-2", label: "Medium Range Penalty" });
+    } else if (attackThrowDetails.act === ATTACK_RANGE.LONG) {
+      attackThrow.addModifier({ value: "-5", label: "Long Range Penalty" });
+    }
+    if (attackThrowDetails.bonus) {
+      attackThrow.addModifier({ value: attackThrowDetails.bonus, label: "Situational Modifier" });
+    }
+    // 4. Roll attack and damage
+    const attackThrowFormula = attackThrow.getFullFormula();
+    const roll = new Roll(attackThrowFormula);
+    await roll.evaluate();
+    // 5. Show results in chat
   }
 
   /**
@@ -795,6 +844,7 @@ export default class AcksActor extends Actor {
    */
   rollAttack(attackRollData, options = {}) {
     const system = this.system;
+    /** @type {string[]} */
     const rollParts = [];
 
     if (game.settings.get("acks", "exploding20s")) {
@@ -803,6 +853,7 @@ export default class AcksActor extends Actor {
       rollParts.push("1d20");
     }
 
+    /** @type {string[]} */
     const dmgParts = [];
     let label = game.i18n.format("ACKS.roll.attacks", { name: this.name });
     if (!attackRollData.item) {
@@ -833,6 +884,8 @@ export default class AcksActor extends Actor {
     if (options.attackType === ATTACK_TYPE.MISSILE) {
       dmgParts.push(system.damage.mod.missile);
     }
+
+    /** @type {TRollData} */
     const rollData = {
       actor: this,
       item: attackRollData.item,
@@ -845,14 +898,8 @@ export default class AcksActor extends Actor {
       },
     };
 
-    const skipKey = game.settings.get("acks", "skip-dialog-key");
-    if (options.event && options.event[skipKey]) {
-      options.skipDialog = true;
-    }
-
     // Roll and return
     return AcksDice.roll({
-      event: options.event,
       parts: rollParts,
       data: rollData,
       skipDialog: options.skipDialog,
@@ -1007,6 +1054,7 @@ export default class AcksActor extends Actor {
     if (this.type !== "character") {
       return;
     }
+    // TODO: move to Data Model as derived data
     // Compute AC
     let baseAC = 0;
     let shieldAC = 0;
@@ -1118,5 +1166,22 @@ export default class AcksActor extends Actor {
     const data = this.system;
 
     data.thac0.bba = 10 - data.thac0.throw;
+  }
+
+  /**
+   *
+   * @param {ATTACK_TYPE} attackType
+   * @return {TStringValueWithLabel[]}
+   */
+  getAttackThrowModifiers(attackType) {
+    const modifiers = [];
+    if (attackType === ATTACK_TYPE.MELEE) {
+      modifiers.push({ value: `${this.system.scores.str.mod}`, label: "STR Modifier" });
+      modifiers.push({ value: `${this.system.thac0.mod.melee}`, label: "Melee Modifier" });
+    } else if (attackType === ATTACK_TYPE.MISSILE || attackType === ATTACK_TYPE.THROWN) {
+      modifiers.push({ value: `${this.system.scores.dex.mod}`, label: "DEX Modifier" });
+      modifiers.push({ value: `${this.system.thac0.mod.missile}`, label: "Missile Modifier" });
+    }
+    return modifiers;
   }
 }

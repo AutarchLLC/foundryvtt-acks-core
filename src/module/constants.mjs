@@ -702,8 +702,32 @@ export const HB_PARTIAL_NAME = Object.freeze({
   ITEM_WEAPON_DESC: "descriptionWeapon",
 });
 
+/**
+ * @readonly
+ * @enum {string}
+ */
 export const ATTACK_TYPE = Object.freeze({
   MELEE: "melee",
   MISSILE: "missile",
+  THROWN: "thrown",
   ATTACK: "attack",
+});
+
+/**
+ * @readonly
+ * @enum {string}
+ */
+export const ATTACK_RANGE = Object.freeze({
+  SHORT: "range_short",
+  MEDIUM: "range_medium",
+  LONG: "range_long",
+});
+
+/**
+ * @readonly
+ * @enum {string}
+ */
+export const MELEE_ATTACK_MODE = Object.freeze({
+  BASE: "melee_base",
+  ALTERNATE: "melee_alternate",
 });

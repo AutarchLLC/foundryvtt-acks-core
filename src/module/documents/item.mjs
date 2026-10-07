@@ -1,7 +1,6 @@
 /* global Item, foundry, ui, ChatMessage, game */
 import AcksDice from "../dice.mjs";
 import { ACKS } from "../config.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
 import { ACTOR_TYPE, ATTACK_TYPE, ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 
@@ -56,7 +55,7 @@ export default class AcksItem extends Item {
     let type = isNPC ? ATTACK_TYPE.ATTACK : ATTACK_TYPE.MELEE;
     /** @type TItemRollData */
     const rollData = {
-      item: this.toObject(),
+      item: this,
       actor: this.actor.toObject(),
       roll: {
         save: this.system.save,
@@ -64,13 +63,16 @@ export default class AcksItem extends Item {
       },
     };
 
-    if (this.system.missile && this.system.melee && !isNPC) {
-      ACKSDialog.showAttackRangeSelector(this.actor, rollData, options);
-      return;
-    } else if (this.system.missile && !isNPC) {
+    if (this.system.missile && !isNPC) {
       type = ATTACK_TYPE.MISSILE;
     }
-    this.actor.targetAttack(rollData, type, options);
+    //this.actor.targetAttack(rollData, type, options);
+    /** @type TAttackThrowData */
+    const attackThrowData = {
+      item: this,
+      skipDialog: options.skipDialog,
+    };
+    void this.actor.makeAttackThrow(attackThrowData);
   }
 
   /**

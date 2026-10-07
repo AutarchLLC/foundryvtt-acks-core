@@ -60,6 +60,7 @@
   "ACKS.Modifier": "Modifier",
   "ACKS.Modifiers": "Modifiers",
   "ACKS.RollMode": "Roll Mode",
+  "ACKS.MessageMode": "Message Mode",
   "ACKS.RollExample": "e.g. +1d4",
 
   "ACKS.roll.formula": "{label} roll",
@@ -80,6 +81,14 @@
   "ACKS.roll.bhr": "Healing roll",
   "ACKS.roll.details.adventuring": "Roll 1d20 >= {adventuring} for success",
   "ACKS.roll.adventuring": "{adventuring} test",
+
+  "ACKS.throw.attack.title": "Attack Throw",
+  "ACKS.throw.attack.attack": "Attack Throw",
+  "ACKS.throw.attack.melee": "Melee AT",
+  "ACKS.throw.attack.missile": "Missile AT",
+  "ACKS.throw.attack.thrown": "Thrown AT",
+  "ACKS.throw.attack.attacksWith": "{actorName} attacks with {itemName}",
+  "ACKS.throw.attack.attacks": "{actorName} attacks!",
 
   "ACKS.table.treasure.roll": "Roll Treasure",
 
@@ -523,5 +532,7 @@
   "ACKS.damage.type.slashing": "Slashing",
   "ACKS.damage.type.variesByWeapon": "Varies by Weapon",
 
-  "ACKS.damage.label.extraordinary": "Extraordinary"
+  "ACKS.damage.label.extraordinary": "Extraordinary",
+
+  "ACKS.Error.NotImplemented.Cleave": "Cleave is not implemented yet. Attacking first target instead."
 }

@@ -3,6 +3,7 @@ import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
 import {
+  ATTACK_TYPE,
   HB_PARTIAL_NAME,
   SAVING_THROW_CHOICES,
   WEAPON_CATEGORY,
@@ -120,6 +121,14 @@ export default class WeaponData extends ItemBaseData {
   }
 
   /**
+   * Whether this weapon is a thrown weapon.
+   * @return {boolean}
+   */
+  get isThrown() {
+    return this.special?.thrown ?? false;
+  }
+
+  /**
    * Whether this weapon has Two-Handed damage formula.
    * @return {boolean}
    */
@@ -133,6 +142,25 @@ export default class WeaponData extends ItemBaseData {
    */
   get descriptionPartialName() {
     return HB_PARTIAL_NAME.ITEM_WEAPON_DESC;
+  }
+
+  /**
+   * Get the list of attack types for this weapon.
+   * @return {ATTACK_TYPE[]}
+   */
+  getAttackTypes() {
+    /** @type {ATTACK_TYPE[]} */
+    const attackTypes = [];
+    if (this.melee) {
+      attackTypes.push(ATTACK_TYPE.MELEE);
+    }
+    if (this.missile) {
+      attackTypes.push(ATTACK_TYPE.MISSILE);
+    }
+    if (this.isThrown) {
+      attackTypes.push(ATTACK_TYPE.THROWN);
+    }
+    return attackTypes;
   }
 
   /** @override */

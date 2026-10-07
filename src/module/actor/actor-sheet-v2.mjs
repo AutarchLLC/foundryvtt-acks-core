@@ -1,7 +1,7 @@
 /* global foundry, game, ui, Item */
 import { ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
+import * as ACKSDialog from "../dialog/index.mjs";
 import ActorTweaksConfig from "../apps/actor-tweaks-config.mjs";
 import AcksEffectUtil from "../effect/acks-effect-util.mjs";
 

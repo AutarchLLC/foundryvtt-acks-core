@@ -1,6 +1,6 @@
 /* global Roll, game, ChatMessage, foundry, CONFIG */
 import { ACKS } from "./config.mjs";
-import ACKSDialog from "./dialog/dialog.mjs";
+import * as ACKSDialog from "./dialog/index.mjs";
 import { ATTACK_TYPE, ROLL_TYPE } from "./constants.mjs";
 
 export default class AcksDice {
@@ -273,11 +273,12 @@ export default class AcksDice {
     };
     /** @type TRollOptions */
     const rollOptions = Object.assign(DEFAULT_OPTIONS, options);
+    const isAttackRoll = [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(
+      rollOptions.data.roll.type,
+    );
 
     if (rollOptions.skipDialog) {
-      return [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(rollOptions.data.roll.type)
-        ? AcksDice.#sendAttackRoll(rollOptions)
-        : AcksDice.#sendRoll(rollOptions);
+      return isAttackRoll ? AcksDice.#sendAttackRoll(rollOptions) : AcksDice.#sendRoll(rollOptions);
     }
 
     const dialogData = {
@@ -287,13 +288,13 @@ export default class AcksDice {
       rollModes: CONFIG.Dice.rollModes,
     };
 
-    const rollDetails = await ACKSDialog.getRollDetails({ title: rollOptions.title, dialogData });
+    const rollDetails = isAttackRoll
+      ? await ACKSDialog.getAttackRollDetails({ title: rollOptions.title, dialogData })
+      : await ACKSDialog.getRollDetails({ title: rollOptions.title, dialogData });
 
     if (rollDetails) {
       rollOptions.rollDetails = rollDetails;
-      return [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(rollOptions.data.roll.type)
-        ? AcksDice.#sendAttackRoll(rollOptions)
-        : AcksDice.#sendRoll(rollOptions);
+      return isAttackRoll ? AcksDice.#sendAttackRoll(rollOptions) : AcksDice.#sendRoll(rollOptions);
     }
   }
 }
