@@ -787,9 +787,11 @@ export default class AcksActor extends Actor {
 
   /**
    * Make an attack throw against the user's first targeted token. Shows the Attack Throw dialog unless
-   * `skipDialog` is set, in which case the default choices are used.
+   * `skipDialog` is set, in which case the default choices are used. Rolls both the attack throw and the damage
+   * (if any); whether the attack hits is decided by the caller.
    * @param {TAttackThrowData} [data={}]
-   * @return {Promise<?TAttackThrowResult>} the attack throw and damage roll, or null if the dialog was dismissed
+   * @return {Promise<?TAttackThrowRolls>} the attack throw details and evaluated rolls, or null if the dialog was
+   * dismissed
    */
   async makeAttackThrow({ item = null, skipDialog = false } = {}) {
     const targets = Array.from(game.user.targets);
@@ -801,9 +803,15 @@ export default class AcksActor extends Actor {
     const result = skipDialog
       ? buildAttackThrow(this, item, getDefaultChoices(this, item), target)
       : await ACKSDialog.getAttackThrowDetails(this, item, target);
+    if (!result) {
+      return null;
+    }
 
-    // TODO: roll the attack throw and damage and show the result in chat
-    return result;
+    const attackRoll = await new Roll(result.attack.formula, result.attack.data).evaluate();
+    const damageRoll = result.damage ? await new Roll(result.damage.formula, result.damage.data).evaluate() : null;
+
+    // TODO: show the result in a chat card
+    return { result, attackRoll, damageRoll };
   }
 
   /**

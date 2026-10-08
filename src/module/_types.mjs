@@ -102,6 +102,14 @@
  */
 
 /**
+ * An attack throw with its evaluated rolls.
+ * @typedef {Object} TAttackThrowRolls
+ * @property {TAttackThrowResult} result - Attack throw details the rolls were made from
+ * @property {Roll} attackRoll - Evaluated attack throw roll
+ * @property {?Roll} damageRoll - Evaluated damage roll; null without a weapon or damage formula
+ */
+
+/**
  * @typedef {TRollSpec} TDamageRollSpec
  * @property {DAMAGE_TYPE[]} types - Damage types dealt
  * @property {boolean} extraordinary - Whether the damage is extraordinary
