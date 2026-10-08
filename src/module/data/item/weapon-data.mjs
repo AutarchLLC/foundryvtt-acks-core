@@ -65,7 +65,7 @@ export default class WeaponData extends ItemBaseData {
         nullable: false,
         blank: false,
         choices: WEAPON_SIZE_CHOICES,
-        initial: WEAPON_SIZE.MEDIUM,
+        initial: WEAPON_SIZE.NA,
         label: "ACKS.weapon.label.size",
       }),
       category: new StringField({
@@ -211,7 +211,9 @@ export default class WeaponData extends ItemBaseData {
     /** @type {TItemTag[]} */
     const tags = [];
     if (this.melee) {
-      tags.push({ label: game.i18n.localize(WEAPON_SIZE_CHOICES[this.size]) });
+      if (this.size !== WEAPON_SIZE.NA) {
+        tags.push({ label: game.i18n.localize(WEAPON_SIZE_CHOICES[this.size]) });
+      }
       tags.push({ label: game.i18n.localize("ACKS.items.Melee") });
     }
     if (this.missile) {
