@@ -2831,6 +2831,35 @@
 }
 
 /* Attack Throw dialog */
+.acks2.attack-throw-dialog .window-title,
+.acks2.attack-throw-dialog .window-content {
+  font-family: "RobotoRegular", sans-serif;
+}
+
+.acks2.attack-throw-dialog .window-content {
+  --input-height: 1.5rem;
+  font-size: var(--font-size-12);
+}
+
+.acks2.attack-throw-dialog .window-content :is(input, select) {
+  padding: 0 4px;
+}
+
+.acks2.attack-throw-dialog .window-content :is(label, input, select, button) {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.acks2.attack-throw-dialog .attack-throw-header__attacker,
+.acks2.attack-throw-dialog .attack-throw-preview__roll h4,
+.acks2.attack-throw-dialog .attack-throw-preview__formula {
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__modifiers {
+  font-family: "RobotoCondensed", sans-serif;
+}
+
 .acks2.attack-throw-dialog .window-content input[type="text"] {
   text-align: left;
 }
@@ -2942,7 +2971,7 @@
 }
 
 .acks2.attack-throw-dialog .attack-throw-preview__formula {
-  font-size: var(--font-size-20);
+  font-size: var(--font-size-16);
   font-weight: bold;
 }
 
@@ -2954,7 +2983,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: var(--font-size-12);
   text-align: left;
 }
 
