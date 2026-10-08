@@ -98,7 +98,13 @@
  * @typedef {TAttackThrowChoices} TAttackThrowResult
  * @property {?TokenDocument} target - Token being attacked
  * @property {TAttackThrowRollSpec} attack - Attack throw
- * @property {?TRollSpec} damage - Damage roll; null without a weapon or damage formula
+ * @property {?TDamageRollSpec} damage - Damage roll; null without a weapon or damage formula
+ */
+
+/**
+ * @typedef {TRollSpec} TDamageRollSpec
+ * @property {DAMAGE_TYPE[]} types - Damage types dealt
+ * @property {boolean} extraordinary - Whether the damage is extraordinary
  */
 
 /**

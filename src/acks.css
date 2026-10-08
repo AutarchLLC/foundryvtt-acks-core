@@ -2975,6 +2975,12 @@
   font-weight: bold;
 }
 
+.acks2.attack-throw-dialog .attack-throw-preview__damage-types {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-left: 0.25rem;
+}
+
 .acks2.attack-throw-dialog .attack-throw-preview__target {
   color: var(--color-form-hint);
 }

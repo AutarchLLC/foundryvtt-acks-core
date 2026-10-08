@@ -21,7 +21,16 @@
   {{#if result.damage}}
     <div class="attack-throw-preview__roll">
       <h4>{{localize "ACKS.Damage"}}</h4>
-      <div class="attack-throw-preview__formula">{{result.damage.formula}}</div>
+      <div class="attack-throw-preview__formula">
+        <span>{{result.damage.formula}}</span>
+        {{#if damageIcons.length}}
+          <span class="attack-throw-preview__damage-types">
+            {{#each damageIcons}}
+              <i class="{{classes}}" data-tooltip="{{tooltip}}"></i>
+            {{/each}}
+          </span>
+        {{/if}}
+      </div>
       {{> modifierList modifiers=result.damage.modifiers}}
     </div>
   {{/if}}

@@ -115,7 +115,9 @@ export function buildAttackThrow(actor, item, choices, target = null) {
   let damage = null;
   const damageFormula = weapon?.system.getDamageFormula(damageMode)?.trim();
   if (damageFormula) {
-    damage = new AcksDamageRoll(damageFormula)
+    // damage types are only defined on the base damage; they apply to the alternate formula too
+    const { types, extraordinary } = weapon.system.damage.base;
+    damage = new AcksDamageRoll(damageFormula, { types, extraordinary })
       .addModifiers(actor.system.getDamageModifiers(attackType))
       .toRollSpec(rollData);
   }

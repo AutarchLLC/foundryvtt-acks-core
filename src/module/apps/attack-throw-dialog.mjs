@@ -115,6 +115,9 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
     context.item = this.#item;
     context.choices = choices;
     context.result = buildAttackThrow(this.#actor, this.#item, choices, this.#target);
+    // damage type icons (derived from base damage types; already include the extraordinary color class).
+    // `icons` is a Set; convert it so the template can check `length` (an empty Set is truthy in `{{#if}}`).
+    context.damageIcons = context.result.damage ? Array.from(this.#item.system.damage.base.icons ?? []) : [];
 
     context.attackerLabel = this.#item
       ? game.i18n.format("ACKS.throw.attack.attacksWith", { actorName: this.#actor.name, itemName: this.#item.name })
