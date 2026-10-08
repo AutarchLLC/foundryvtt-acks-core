@@ -1,7 +1,7 @@
 /* global Item, foundry, ui, ChatMessage, game */
 import AcksDice from "../dice.mjs";
 import { ACKS } from "../config.mjs";
-import { ACTOR_TYPE, ATTACK_TYPE, ITEM_TYPE } from "../constants.mjs";
+import { ACTOR_TYPE, ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 
 /**
@@ -45,34 +45,14 @@ export default class AcksItem extends Item {
    * @return {Promise<void>}
    */
   async _useWeapon(options = {}) {
-    const isNPC = this.actor.type !== ACTOR_TYPE.PC;
+    const result = await this.actor.makeAttackThrow({ item: this, skipDialog: options.skipDialog });
+    if (!result) {
+      return;
+    }
 
     if (this.actor.type === ACTOR_TYPE.MONSTER) {
       await this.update({ "system.counter.value": this.system.counter.value - 1 });
     }
-
-    /** @type ATTACK_TYPE */
-    let type = isNPC ? ATTACK_TYPE.ATTACK : ATTACK_TYPE.MELEE;
-    /** @type TItemRollData */
-    const rollData = {
-      item: this,
-      actor: this.actor.toObject(),
-      roll: {
-        save: this.system.save,
-        target: null,
-      },
-    };
-
-    if (this.system.missile && !isNPC) {
-      type = ATTACK_TYPE.MISSILE;
-    }
-    //this.actor.targetAttack(rollData, type, options);
-    /** @type TAttackThrowData */
-    const attackThrowData = {
-      item: this,
-      skipDialog: options.skipDialog,
-    };
-    void this.actor.makeAttackThrow(attackThrowData);
   }
 
   /**

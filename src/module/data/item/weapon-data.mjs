@@ -4,6 +4,7 @@ import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
 import {
   ATTACK_TYPE,
+  DAMAGE_MODE,
   HB_PARTIAL_NAME,
   SAVING_THROW_CHOICES,
   WEAPON_CATEGORY,
@@ -103,7 +104,7 @@ export default class WeaponData extends ItemBaseData {
       // weapon damage
       damage: new SchemaField({
         base: new DamageField(),
-        twoHanded: new DamageField(),
+        twoHanded: new DamageField(), //TODO: rename to alternate, initialize formula to empty string
       }),
       // custom tags
       ...WeaponCustomTagsTemplate.schema,
@@ -133,7 +134,7 @@ export default class WeaponData extends ItemBaseData {
    * @return {boolean}
    */
   get hasTwoHandedDamage() {
-    return (this.size === WEAPON_SIZE.MEDIUM || this.size === WEAPON_SIZE.LARGE) && this.melee;
+    return this.size === WEAPON_SIZE.MEDIUM && this.melee;
   }
 
   /**
@@ -161,6 +162,34 @@ export default class WeaponData extends ItemBaseData {
       attackTypes.push(ATTACK_TYPE.THROWN);
     }
     return attackTypes;
+  }
+
+  /**
+   * Damage modes available for the given attack type. The alternate (two-handed) formula is only available for melee
+   * or generic monster attacks, and only for weapons that can be gripped two-handed and have that formula set.
+   * @param {ATTACK_TYPE} attackType
+   * @return {DAMAGE_MODE[]}
+   */
+  getDamageModes(attackType) {
+    const isMeleeAttack = attackType === ATTACK_TYPE.MELEE || attackType === ATTACK_TYPE.ATTACK;
+    const hasAlternate = this.hasTwoHandedDamage && this.damage.twoHanded.formula.trim() !== "";
+    return isMeleeAttack && hasAlternate ? [DAMAGE_MODE.BASE, DAMAGE_MODE.ALTERNATE] : [DAMAGE_MODE.BASE];
+  }
+
+  /**
+   * @param {DAMAGE_MODE} damageMode
+   * @return {string} damage formula for the given mode
+   */
+  getDamageFormula(damageMode) {
+    return damageMode === DAMAGE_MODE.ALTERNATE ? this.damage.twoHanded.formula : this.damage.base.formula;
+  }
+
+  /**
+   * Attack throw modifiers granted by this weapon.
+   * @return {TNumValueWithLabel[]}
+   */
+  getAttackThrowModifiers() {
+    return [{ label: game.i18n.localize("ACKS.throw.modifier.weapon"), value: this.bonus ?? 0 }];
   }
 
   /** @override */

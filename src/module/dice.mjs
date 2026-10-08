@@ -273,7 +273,7 @@ export default class AcksDice {
     };
     /** @type TRollOptions */
     const rollOptions = Object.assign(DEFAULT_OPTIONS, options);
-    const isAttackRoll = [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(
+    const isAttackRoll = [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.THROWN, ATTACK_TYPE.ATTACK].includes(
       rollOptions.data.roll.type,
     );
 

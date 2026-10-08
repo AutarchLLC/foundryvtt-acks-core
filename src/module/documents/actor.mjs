@@ -2,9 +2,9 @@
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
-import { ATTACK_RANGE, ATTACK_TYPE, ROLL_TYPE } from "../constants.mjs";
+import { ATTACK_TYPE, ROLL_TYPE } from "../constants.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
-import AcksAttackThrow from "../throw/attack-throw.mjs";
+import { buildAttackThrow, getDefaultChoices } from "../throw/attack-throw-builder.mjs";
 
 export default class AcksActor extends Actor {
   static async create(data, options) {
@@ -786,54 +786,24 @@ export default class AcksActor extends Actor {
   }
 
   /**
-   *
-   * @param {TAttackThrowData} data
-   * @return {Promise<void>}
+   * Make an attack throw against the user's first targeted token. Shows the Attack Throw dialog unless
+   * `skipDialog` is set, in which case the default choices are used.
+   * @param {TAttackThrowData} [data={}]
+   * @return {Promise<?TAttackThrowResult>} the attack throw and damage roll, or null if the dialog was dismissed
    */
-  async makeAttackThrow(data = {}) {
-    // 1. Gather data for attack dialogue
-    const { item } = data;
-    // Determine attack type based on item properties (melee or missile or thrown)
-    const attackTypes = item?.system?.getAttackTypes() ?? [];
-    const attackType = await ACKSDialog.getWeaponAttackMode(item.name, attackTypes);
-
-    if (attackType === null) {
-      return;
-    }
-
-    // Determine target value for Attack Throw
+  async makeAttackThrow({ item = null, skipDialog = false } = {}) {
     const targets = Array.from(game.user.targets);
     if (targets.length > 1) {
       ui.notifications.warn(game.i18n.localize("ACKS.Error.NotImplemented.Cleave"));
     }
-    const targetAC = targets?.[0]?.actor?.system?.aac?.value ?? 0;
-    const attackThrowTarget = this.system.thac0.throw + targetAC;
+    const target = targets[0]?.document ?? null;
 
-    // Create Attack Throw object
-    const attackThrow = new AcksAttackThrow(attackType, attackThrowTarget);
-    // actor's attack modifiers
-    attackThrow.addModifiers(this.getAttackThrowModifiers(attackType));
-    // item's attack modifiers
-    if (item?.system.bonus) {
-      attackThrow.addModifier({ value: `${item.system.bonus}`, label: "Item Attack Bonus" });
-    }
+    const result = skipDialog
+      ? buildAttackThrow(this, item, getDefaultChoices(this, item), target)
+      : await ACKSDialog.getAttackThrowDetails(this, item, target);
 
-    // 2. Show attack dialogue where player can check attack modifiers, select additional bonuses, etc.
-    const attackThrowDetails = await ACKSDialog.getAttackThrowDetails(attackThrow, this.name, item);
-    // 3. Finalize Attack Throw setup based on dialogue input
-    if (attackThrowDetails.act === ATTACK_RANGE.MEDIUM) {
-      attackThrow.addModifier({ value: "-2", label: "Medium Range Penalty" });
-    } else if (attackThrowDetails.act === ATTACK_RANGE.LONG) {
-      attackThrow.addModifier({ value: "-5", label: "Long Range Penalty" });
-    }
-    if (attackThrowDetails.bonus) {
-      attackThrow.addModifier({ value: attackThrowDetails.bonus, label: "Situational Modifier" });
-    }
-    // 4. Roll attack and damage
-    const attackThrowFormula = attackThrow.getFullFormula();
-    const roll = new Roll(attackThrowFormula);
-    await roll.evaluate();
-    // 5. Show results in chat
+    // TODO: roll the attack throw and damage and show the result in chat
+    return result;
   }
 
   /**
@@ -1166,22 +1136,5 @@ export default class AcksActor extends Actor {
     const data = this.system;
 
     data.thac0.bba = 10 - data.thac0.throw;
-  }
-
-  /**
-   *
-   * @param {ATTACK_TYPE} attackType
-   * @return {TStringValueWithLabel[]}
-   */
-  getAttackThrowModifiers(attackType) {
-    const modifiers = [];
-    if (attackType === ATTACK_TYPE.MELEE) {
-      modifiers.push({ value: `${this.system.scores.str.mod}`, label: "STR Modifier" });
-      modifiers.push({ value: `${this.system.thac0.mod.melee}`, label: "Melee Modifier" });
-    } else if (attackType === ATTACK_TYPE.MISSILE || attackType === ATTACK_TYPE.THROWN) {
-      modifiers.push({ value: `${this.system.scores.dex.mod}`, label: "DEX Modifier" });
-      modifiers.push({ value: `${this.system.thac0.mod.missile}`, label: "Missile Modifier" });
-    }
-    return modifiers;
   }
 }

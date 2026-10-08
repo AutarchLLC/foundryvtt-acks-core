@@ -2,7 +2,6 @@ export { default as confirmDeletion } from "./dialog-confirm-deletion.mjs";
 export { default as confirm } from "./dialog-confirm.mjs";
 export { default as inputIndividualSurpriseModifiers } from "./dialog-input-individual-surprise-modifiers.mjs";
 export { default as confirmCombatActionDeclaration } from "./dialog-confirm-combat-action-declaration.mjs";
-export { default as getWeaponAttackMode } from "./dialog-get-weapon-attack-mode.mjs";
 export { default as getAttackRollDetails } from "./dialog-get-attack-roll-details.mjs";
 export { default as getRollDetails } from "./dialog-get-roll-details.mjs";
 export { default as showWelcomeMessage } from "./dialog-show-welcome-message.mjs";

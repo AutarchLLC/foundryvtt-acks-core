@@ -1,9 +1,11 @@
-/* global foundry, CONST */
+/* global foundry, game, CONST */
 import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
+import AttackTweaks from "./templates/attack-tweaks.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
+import { ATTACK_TYPE, ITEM_TYPE } from "../../constants.mjs";
 
 /**
  * Character Data Model
@@ -190,6 +192,59 @@ export default class CharacterData extends BaseDataModel {
       }),
     };
   }
+
+  //region ATTACKS
+
+  /**
+   * Attack types this character can make with the given item. Without a weapon every attack type is allowed.
+   * @param {?AcksItem} item
+   * @return {ATTACK_TYPE[]}
+   */
+  getAttackTypes(item) {
+    const weaponAttackTypes = item?.type === ITEM_TYPE.WEAPON ? item.system.getAttackTypes() : [];
+    return weaponAttackTypes.length > 0
+      ? weaponAttackTypes
+      : [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.THROWN];
+  }
+
+  /**
+   * Attack throw modifiers from this character: STR for melee, DEX for missile and thrown, plus Actor Tweaks.
+   * @param {ATTACK_TYPE} attackType
+   * @return {TNumValueWithLabel[]}
+   */
+  getAttackThrowModifiers(attackType) {
+    const ability = attackType === ATTACK_TYPE.MELEE ? "str" : "dex";
+    return [this.#getAbilityModifier(ability), AttackTweaks.getAttackThrowModifier(this, attackType)];
+  }
+
+  /**
+   * Damage modifiers from this character: STR for melee and thrown (not missile), plus Actor Tweaks.
+   * @param {ATTACK_TYPE} attackType
+   * @return {TNumValueWithLabel[]}
+   */
+  getDamageModifiers(attackType) {
+    const modifiers = [];
+    if (attackType === ATTACK_TYPE.MELEE || attackType === ATTACK_TYPE.THROWN) {
+      modifiers.push(this.#getAbilityModifier("str"));
+    }
+    modifiers.push(AttackTweaks.getDamageModifier(this, attackType));
+    return modifiers;
+  }
+
+  /**
+   * @param {"str"|"dex"} ability
+   * @return {TNumValueWithLabel}
+   */
+  #getAbilityModifier(ability) {
+    return {
+      label: game.i18n.format("ACKS.throw.modifier.ability", {
+        ability: game.i18n.localize(`ACKS.scores.${ability}.short`),
+      }),
+      value: this.scores[ability].mod,
+    };
+  }
+
+  //endregion ATTACKS
 
   /**
    * @override

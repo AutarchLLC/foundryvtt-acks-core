@@ -1,0 +1,45 @@
+{{#*inline "segmentedGroup"}}
+  <div class="form-group">
+    <label>{{localize label}}</label>
+    <div class="form-fields attack-throw-segmented">
+      {{#each options}}
+        <label class="attack-throw-segmented__option">
+          <input type="radio" name="{{../name}}" value="{{value}}" {{checked selected}}>
+          {{#if icon}}<i class="{{icon}}" inert></i>{{/if}}
+          <span>{{label}}</span>
+        </label>
+      {{/each}}
+    </div>
+  </div>
+{{/inline}}
+
+<section class="attack-throw-options">
+  {{#if attackTypes.[1]}}
+    {{> segmentedGroup name="attackType" label="ACKS.throw.attackType.label" options=attackTypes}}
+  {{/if}}
+
+  {{#if damageModes.[1]}}
+    {{> segmentedGroup name="damageMode" label="ACKS.throw.damageMode.label" options=damageModes}}
+  {{/if}}
+
+  {{#if ranges.length}}
+    {{> segmentedGroup name="range" label="ACKS.throw.range.label" options=ranges}}
+  {{/if}}
+
+  <div class="form-group">
+    <label for="{{partId}}-situational">{{localize "ACKS.SitMod"}}</label>
+    <div class="form-fields">
+      <input type="text" id="{{partId}}-situational" name="situational" value="{{choices.situational}}"
+             placeholder="{{localize 'ACKS.RollExample'}}" autocomplete="off">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="{{partId}}-messageMode">{{localize "ACKS.MessageMode"}}</label>
+    <div class="form-fields">
+      <select id="{{partId}}-messageMode" name="messageMode">
+        {{selectOptions messageModes selected=choices.messageMode localize=true}}
+      </select>
+    </div>
+  </div>
+</section>

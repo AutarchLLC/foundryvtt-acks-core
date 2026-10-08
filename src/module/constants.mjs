@@ -714,20 +714,32 @@ export const ATTACK_TYPE = Object.freeze({
 });
 
 /**
+ * Range band of a missile or thrown attack.
  * @readonly
  * @enum {string}
  */
 export const ATTACK_RANGE = Object.freeze({
-  SHORT: "range_short",
-  MEDIUM: "range_medium",
-  LONG: "range_long",
+  SHORT: "short",
+  MEDIUM: "medium",
+  LONG: "long",
 });
 
 /**
+ * Attack throw modifier for each range band.
+ * @type {Readonly<Record<ATTACK_RANGE, number>>}
+ */
+export const ATTACK_RANGE_PENALTY = Object.freeze({
+  [ATTACK_RANGE.SHORT]: 0,
+  [ATTACK_RANGE.MEDIUM]: -2,
+  [ATTACK_RANGE.LONG]: -5,
+});
+
+/**
+ * Which weapon damage formula an attack uses: base, or alternate (e.g. two-handed grip).
  * @readonly
  * @enum {string}
  */
-export const MELEE_ATTACK_MODE = Object.freeze({
-  BASE: "melee_base",
-  ALTERNATE: "melee_alternate",
+export const DAMAGE_MODE = Object.freeze({
+  BASE: "base",
+  ALTERNATE: "alternate",
 });

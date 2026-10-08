@@ -59,8 +59,53 @@
 
 /**
  * @typedef {Object} TAttackThrowData
- * @property {AcksItem} [item] - The item being used for the attack
- * @property {boolean} [skipDialog] - Whether to skip the roll dialog and roll immediately
+ * @property {?AcksItem} [item=null] - The item being used for the attack
+ * @property {boolean} [skipDialog=false] - Whether to skip the Attack Throw dialog and use the default choices
+ */
+
+/**
+ * A roll formula with its data, ready for `new Roll(spec.formula, spec.data)`.
+ * @typedef {Object} TRollSpec
+ * @property {string} formula - Full roll formula, e.g. "1d20 + 1 - 2"
+ * @property {object} data - Roll data used to resolve `@` references in the formula
+ * @property {TStringValueWithLabel[]} modifiers - Non-zero modifiers included in the formula, for display
+ */
+
+/**
+ * @typedef {TRollSpec} TAttackThrowRollSpec
+ * @property {number} targetValue - The roll must meet or beat this value to hit (attack throw + target's AC)
+ */
+
+/**
+ * Choices the player makes in the Attack Throw dialog.
+ * @typedef {Object} TAttackThrowChoices
+ * @property {ATTACK_TYPE} attackType - Melee, missile or thrown for characters; generic attack for monsters
+ * @property {?DAMAGE_MODE} damageMode - Base or alternate damage formula; null without a weapon
+ * @property {?ATTACK_RANGE} range - Range band for missile and thrown attacks; null otherwise
+ * @property {string} situational - Situational modifier formula, e.g. "+2" or "-1d4"
+ * @property {string} messageMode - Chat message mode, a key of CONFIG.ChatMessage.modes
+ */
+
+/**
+ * Options available to the attacker for a given attack type.
+ * @typedef {Object} TAttackOptions
+ * @property {ATTACK_TYPE[]} attackTypes
+ * @property {DAMAGE_MODE[]} damageModes - Empty without a weapon
+ * @property {ATTACK_RANGE[]} ranges - Empty for melee and generic attacks
+ */
+
+/**
+ * @typedef {TAttackThrowChoices} TAttackThrowResult
+ * @property {?TokenDocument} target - Token being attacked
+ * @property {TAttackThrowRollSpec} attack - Attack throw
+ * @property {?TRollSpec} damage - Damage roll; null without a weapon or damage formula
+ */
+
+/**
+ * @typedef {ApplicationConfiguration} TAttackThrowDialogConfiguration
+ * @property {AcksActor} actor - Attacker
+ * @property {?AcksItem} [item=null] - Item used to attack
+ * @property {?TokenDocument} [target=null] - Token being attacked
  */
 
 /**

@@ -1,0 +1,28 @@
+{{#*inline "modifierList"}}
+  {{#if modifiers.length}}
+    <ul class="attack-throw-preview__modifiers">
+      {{#each modifiers}}
+        <li><span>{{label}}</span><span class="attack-throw-preview__value">{{value}}</span></li>
+      {{/each}}
+    </ul>
+  {{/if}}
+{{/inline}}
+
+<section class="attack-throw-preview">
+  <div class="attack-throw-preview__roll">
+    <h4>{{localize "ACKS.throw.attack.title"}}</h4>
+    <div class="attack-throw-preview__formula">{{result.attack.formula}}</div>
+    <div class="attack-throw-preview__target">
+      {{localize "ACKS.throw.attack.targetValue" value=result.attack.targetValue}}
+    </div>
+    {{> modifierList modifiers=result.attack.modifiers}}
+  </div>
+
+  {{#if result.damage}}
+    <div class="attack-throw-preview__roll">
+      <h4>{{localize "ACKS.Damage"}}</h4>
+      <div class="attack-throw-preview__formula">{{result.damage.formula}}</div>
+      {{> modifierList modifiers=result.damage.modifiers}}
+    </div>
+  {{/if}}
+</section>
