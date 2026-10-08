@@ -104,7 +104,8 @@ export default class WeaponData extends ItemBaseData {
       // weapon damage
       damage: new SchemaField({
         base: new DamageField(),
-        twoHanded: new DamageField(), //TODO: rename to alternate, initialize formula to empty string
+        // alternate damage, e.g. a medium weapon gripped two-handed
+        alternate: new DamageField(), //TODO: initialize formula to empty string
       }),
       // custom tags
       ...WeaponCustomTagsTemplate.schema,
@@ -130,10 +131,10 @@ export default class WeaponData extends ItemBaseData {
   }
 
   /**
-   * Whether this weapon has Two-Handed damage formula.
+   * Whether this weapon can have an alternate damage formula (e.g. a medium melee weapon gripped two-handed).
    * @return {boolean}
    */
-  get hasTwoHandedDamage() {
+  get hasAlternateDamage() {
     return this.size === WEAPON_SIZE.MEDIUM && this.melee;
   }
 
@@ -165,14 +166,14 @@ export default class WeaponData extends ItemBaseData {
   }
 
   /**
-   * Damage modes available for the given attack type. The alternate (two-handed) formula is only available for melee
-   * or generic monster attacks, and only for weapons that can be gripped two-handed and have that formula set.
+   * Damage modes available for the given attack type. The alternate formula is only available for melee
+   * or generic monster attacks, and only for weapons that can have one and have that formula set.
    * @param {ATTACK_TYPE} attackType
    * @return {DAMAGE_MODE[]}
    */
   getDamageModes(attackType) {
     const isMeleeAttack = attackType === ATTACK_TYPE.MELEE || attackType === ATTACK_TYPE.ATTACK;
-    const hasAlternate = this.hasTwoHandedDamage && this.damage.twoHanded.formula.trim() !== "";
+    const hasAlternate = this.hasAlternateDamage && this.damage.alternate.formula.trim() !== "";
     return isMeleeAttack && hasAlternate ? [DAMAGE_MODE.BASE, DAMAGE_MODE.ALTERNATE] : [DAMAGE_MODE.BASE];
   }
 
@@ -181,7 +182,7 @@ export default class WeaponData extends ItemBaseData {
    * @return {string} damage formula for the given mode
    */
   getDamageFormula(damageMode) {
-    return damageMode === DAMAGE_MODE.ALTERNATE ? this.damage.twoHanded.formula : this.damage.base.formula;
+    return damageMode === DAMAGE_MODE.ALTERNATE ? this.damage.alternate.formula : this.damage.base.formula;
   }
 
   /**
@@ -194,7 +195,7 @@ export default class WeaponData extends ItemBaseData {
 
   /** @override */
   prepareDerivedData() {
-    // we don't call prepareDerivedData on `damage.twoHanded` cause we only care about damage formula from it.
+    // we don't call prepareDerivedData on `damage.alternate` cause we only care about damage formula from it.
     this.damage.base.prepareDerivedData();
 
     this.tags = {
@@ -295,7 +296,7 @@ export default class WeaponData extends ItemBaseData {
           types: [],
           extraordinary: false,
         },
-        twoHanded: {
+        alternate: {
           formula: "",
           types: [],
           extraordinary: false,

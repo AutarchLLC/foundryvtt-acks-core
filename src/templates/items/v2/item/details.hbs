@@ -24,8 +24,8 @@
   <fieldset>
     <legend>Damage</legend>
     {{ formGroup fields.damage.fields.base.fields.formula value=system.damage.base.formula localize=true rootId=partId}}
-    {{#if system.hasTwoHandedDamage}}
-      {{ formGroup fields.damage.fields.twoHanded.fields.formula value=system.damage.twoHanded.formula localize=true
+    {{#if system.hasAlternateDamage}}
+      {{ formGroup fields.damage.fields.alternate.fields.formula value=system.damage.alternate.formula localize=true
                    rootId=partId label="Two-Handed Damage Formula"}}
     {{/if}}
     {{ formGroup fields.damage.fields.base.fields.extraordinary value=system.damage.base.extraordinary localize=true
