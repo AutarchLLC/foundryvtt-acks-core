@@ -96,6 +96,16 @@ export const registerMainSettings = async () => {
     config: true,
   });
 
+  game.settings.register("acks", "showTargetACToPlayers", {
+    name: game.i18n.localize("ACKS.Setting.ShowTargetAC"),
+    hint: game.i18n.localize("ACKS.Setting.ShowTargetACHint"),
+    default: false,
+    scope: "world",
+    type: Boolean,
+    requiresReload: false,
+    config: true,
+  });
+
   game.settings.register("acks", "bhr", {
     name: game.i18n.localize("ACKS.Setting.BHR"),
     hint: game.i18n.localize("ACKS.Setting.BHRHint"),

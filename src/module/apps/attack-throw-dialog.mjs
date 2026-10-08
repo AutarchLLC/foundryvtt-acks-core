@@ -122,12 +122,19 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
     context.attackerLabel = this.#item
       ? game.i18n.format("ACKS.throw.attack.attacksWith", { actorName: this.#actor.name, itemName: this.#item.name })
       : game.i18n.format("ACKS.throw.attack.attacks", { actorName: this.#actor.name });
+    // Players don't see the target's AC unless the Judge allows it; the target value then excludes the AC.
+    const showTargetAC = !this.#target || AttackThrowDialog.#canSeeTargetAC();
     context.targetLabel = this.#target
       ? game.i18n.format("ACKS.throw.attack.target", {
           name: this.#target.name,
-          ac: this.#target.actor?.system?.aac?.value ?? 0,
+          ac: showTargetAC
+            ? (this.#target.actor?.system?.aac?.value ?? 0)
+            : game.i18n.localize("ACKS.throw.attack.hiddenAC"),
         })
       : game.i18n.localize("ACKS.throw.attack.noTarget");
+    context.targetValueLabel = showTargetAC
+      ? game.i18n.format("ACKS.throw.attack.targetValue", { value: context.result.attack.targetValue })
+      : game.i18n.format("ACKS.throw.attack.targetValueHiddenAC", { value: this.#actor.system.thac0.throw });
 
     context.attackTypes = attackTypes.map((value) => ({
       value,
@@ -184,6 +191,15 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
       return;
     }
     void this.render({ parts: name === "attackType" ? ["options", "preview"] : ["preview"] });
+  }
+
+  /**
+   * Whether the current user may see a target's Armor Class: always for the Judge, for players only if allowed by
+   * the "Show Target's AC to Players" setting.
+   * @return {boolean}
+   */
+  static #canSeeTargetAC() {
+    return game.user.isGM || game.settings.get("acks", "showTargetACToPlayers");
   }
 
   /**
