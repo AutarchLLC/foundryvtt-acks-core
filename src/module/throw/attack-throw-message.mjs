@@ -69,6 +69,8 @@ async function prepareCardContext(actor, item, outcome) {
     damageIcons: damageRoll && item ? Array.from(item.system.damage.base.icons ?? []) : [],
     damageNotes: damageRoll ? getDamageNotes(resolution, damageRoll, damageTotal) : [],
     damageTotal,
+    // damage is applied to the attack's target, not to whatever the Judge has targeted when clicking
+    targetUuid: result.target?.uuid ?? null,
   };
 }
 

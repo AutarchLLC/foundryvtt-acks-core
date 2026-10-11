@@ -84,7 +84,7 @@ export default class ACKSChatMessage extends ChatMessage {
         button.disabled = false;
         return;
       }
-      await this.#applyDamageToTargets(Number(button.dataset.damage));
+      await this.#applyDamageToTarget(button.dataset.targetUuid, Number(button.dataset.damage));
       button.disabled = false;
       return;
     }
@@ -134,22 +134,20 @@ export default class ACKSChatMessage extends ChatMessage {
   }
 
   /**
-   * Subtract damage from the HP of the user's targeted tokens. HP may become negative.
+   * Subtract damage from the HP of the attack's target token. HP may become negative.
+   * The token's actor is used, so an unlinked token loses its own HP rather than its base actor's.
+   * @param {string} targetUuid - UUID of the target TokenDocument
    * @param {number} damage
    * @return {Promise<void>}
    */
-  async #applyDamageToTargets(damage) {
-    const targets = Array.from(game.user.targets)
-      .map((token) => token.actor)
-      .filter(Boolean);
-    if (!targets.length) {
-      ui.notifications.warn(game.i18n.localize("ACKS.throw.damage.noTarget"));
+  async #applyDamageToTarget(targetUuid, damage) {
+    const target = targetUuid ? await foundry.utils.fromUuid(targetUuid) : null;
+    const actor = target?.actor;
+    if (!actor) {
+      ui.notifications.warn(game.i18n.localize("ACKS.throw.damage.targetMissing"));
       return;
     }
-
-    for (const actor of targets) {
-      await actor.update({ "system.hp.value": actor.system.hp.value - damage });
-    }
+    await actor.update({ "system.hp.value": actor.system.hp.value - damage });
   }
 
   async #getChatCardActor(card) {
