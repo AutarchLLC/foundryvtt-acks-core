@@ -195,10 +195,9 @@ export default class AcksItem extends Item {
     const chatMessageData = {
       content: htmlString,
       speaker: ChatMessage.getSpeaker({ actor: this.actor, token: this.actor.token }),
-      messageMode: game.settings.get("core", "messageMode"),
     };
 
-    // Create the chat message
-    return ChatMessage.create(chatMessageData);
+    // Create the chat message. The message mode is a creation option, not message data.
+    return ChatMessage.create(chatMessageData, { messageMode: game.settings.get("core", "messageMode") });
   }
 }
