@@ -2792,6 +2792,33 @@
 }
 
 /* Attack Throw chat card */
+.acksii.attack-throw-card .card-header {
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background: var(--acks-purple);
+  color: whitesmoke;
+}
+
+.acksii.attack-throw-card .card-header__img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+}
+
+.acksii.attack-throw-card .card-header__name {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.acksii.attack-throw-card .card-header__name a,
+.acksii.attack-throw-card .card-header__name a:hover {
+  color: whitesmoke;
+  text-shadow: none;
+}
+
 .acksii.attack-throw-card .attack-throw-card__summary {
   display: flex;
   flex-wrap: wrap;
@@ -2825,16 +2852,12 @@
   font-weight: bold;
 }
 
-.acksii.attack-throw-card .attack-throw-card__outcome--hit {
-  color: var(--color-level-success);
+.acksii.attack-throw-card :is(.attack-throw-card__outcome--critical, .attack-throw-card__outcome--auto-hit) {
+  color: #18520b;
 }
 
-.acksii.attack-throw-card .attack-throw-card__outcome--critical {
-  color: #b31818;
-}
-
-.acksii.attack-throw-card .attack-throw-card__outcome--miss {
-  color: var(--color-level-error);
+.acksii.attack-throw-card .attack-throw-card__outcome--auto-miss {
+  color: #aa0200;
 }
 
 .acksii.attack-throw-card .attack-throw-card__reason {
@@ -2849,7 +2872,7 @@
   gap: 6px;
 }
 
-.acksii.attack-throw-card .attack-throw-card__roll h4 {
+.acksii.attack-throw-card .attack-throw-card__heading {
   display: flex;
   align-items: baseline;
   gap: 6px;
@@ -2863,6 +2886,10 @@
   margin-left: auto;
   font-family: "RobotoRegular", sans-serif;
   font-weight: normal;
+}
+
+.acksii.attack-throw-card .dice-total {
+  font-size: 20px;
 }
 
 .acksii.attack-throw-card .attack-throw-card__damage-types {

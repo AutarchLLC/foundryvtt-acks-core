@@ -1,13 +1,3 @@
-{{#*inline "modifierList"}}
-  {{#if modifiers.length}}
-    <ul class="attack-throw-card__modifiers">
-      {{#each modifiers}}
-        <li><span>{{label}}</span><span class="attack-throw-card__value">{{value}}</span></li>
-      {{/each}}
-    </ul>
-  {{/if}}
-{{/inline}}
-
 <section class="acksii chat-card attack-throw-card" data-actor-id="{{actor.id}}" data-item-id="{{item.id}}">
 
   <header class="card-header">
@@ -36,7 +26,7 @@
     <div class="card-content__description attack-throw-card__rolls">
 
       <div class="attack-throw-card__roll">
-        <h4>
+        <h4 class="attack-throw-card__heading">
           <span>{{localize "ACKS.throw.attack.title"}}</span>
           <span class="attack-throw-card__target-value" data-acks-visibility="target-ac-shown">
             {{targetLabels.shown.targetValue}}
@@ -46,12 +36,11 @@
           </span>
         </h4>
         {{{attackRollHTML}}}
-        {{> modifierList modifiers=result.attack.modifiers}}
       </div>
 
       {{#if damageRollHTML}}
         <div class="attack-throw-card__roll">
-          <h4>
+          <h4 class="attack-throw-card__heading">
             <span>{{localize "ACKS.Damage"}}</span>
             {{#if damageIcons.length}}
               <span class="attack-throw-card__damage-types">
@@ -67,7 +56,6 @@
               {{#each damageNotes}}<li>{{this}}</li>{{/each}}
             </ul>
           {{/if}}
-          {{> modifierList modifiers=result.damage.modifiers}}
         </div>
       {{/if}}
 
