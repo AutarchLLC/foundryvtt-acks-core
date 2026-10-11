@@ -16,7 +16,6 @@ const ATTACK_TYPE_ICON = Object.freeze({
   [ATTACK_TYPE.MELEE]: "fa-solid fa-sword",
   [ATTACK_TYPE.MISSILE]: "fa-solid fa-bow-arrow",
   [ATTACK_TYPE.THROWN]: "fa-solid fa-dagger",
-  [ATTACK_TYPE.ATTACK]: "fa-solid fa-hand-fist",
 });
 
 /**
@@ -51,7 +50,7 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
     this.#actor = actor;
     this.#item = item;
     this.#target = target;
-    this.#choices = normalizeChoices(actor, item, choices);
+    this.#choices = normalizeChoices(item, choices);
   }
 
   static DEFAULT_OPTIONS = {
@@ -109,7 +108,7 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     const choices = this.#choices;
-    const { attackTypes, damageModes, ranges } = getAttackOptions(this.#actor, this.#item, choices.attackType);
+    const { attackTypes, damageModes, ranges } = getAttackOptions(this.#item, choices.attackType);
 
     context.actor = this.#actor;
     context.item = this.#item;
@@ -192,7 +191,7 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
    */
   #readChoices() {
     const formValues = new FormDataExtended(this.element).object;
-    this.#choices = normalizeChoices(this.#actor, this.#item, { ...this.#choices, ...formValues });
+    this.#choices = normalizeChoices(this.#item, { ...this.#choices, ...formValues });
   }
 
   /**
@@ -229,7 +228,7 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
    * @return {Promise<void>}
    */
   static async #onSubmitForm(_event, _form, formData) {
-    this.#choices = normalizeChoices(this.#actor, this.#item, { ...this.#choices, ...formData.object });
+    this.#choices = normalizeChoices(this.#item, { ...this.#choices, ...formData.object });
     if (!isValidSituationalModifier(this.#choices.situational)) {
       throw new Error(game.i18n.localize("ACKS.throw.error.invalidSituational"));
     }

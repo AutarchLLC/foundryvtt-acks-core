@@ -21,34 +21,45 @@ function asWeapon(item) {
 }
 
 /**
- * Choices available to the attacker for the given attack type.
- * @param {AcksActor} actor - attacker
+ * Attack types available with the given item: the weapon's attack types, or every attack type without a weapon.
+ * Characters and monsters follow the same rules.
+ * @param {?AcksItem} item
+ * @return {ATTACK_TYPE[]}
+ */
+function getAttackTypes(item) {
+  const weaponAttackTypes = asWeapon(item)?.system.getAttackTypes() ?? [];
+  return weaponAttackTypes.length > 0
+    ? weaponAttackTypes
+    : [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.THROWN];
+}
+
+/**
+ * Choices available with the given item and attack type.
  * @param {?AcksItem} item - item used to attack
  * @param {ATTACK_TYPE} attackType - selected attack type
  * @return {TAttackOptions}
  */
-export function getAttackOptions(actor, item, attackType) {
+export function getAttackOptions(item, attackType) {
   const weapon = asWeapon(item);
   return {
-    attackTypes: actor.system.getAttackTypes(item),
+    attackTypes: getAttackTypes(item),
     damageModes: weapon ? weapon.system.getDamageModes(attackType) : [],
     ranges: RANGED_ATTACK_TYPES.includes(attackType) ? Object.values(ATTACK_RANGE) : [],
   };
 }
 
 /**
- * Replace any choice that is not available for this attacker and item with its first valid option.
+ * Replace any choice that is not available with this item with its first valid option.
  * Called with no choices, this gives the defaults: first attack type, base damage, short range, no situational
  * modifier.
- * @param {AcksActor} actor - attacker
  * @param {?AcksItem} item - item used to attack
  * @param {Partial<TAttackThrowChoices>} choices
  * @return {TAttackThrowChoices}
  */
-export function normalizeChoices(actor, item, choices) {
-  const attackTypes = actor.system.getAttackTypes(item);
+export function normalizeChoices(item, choices) {
+  const attackTypes = getAttackTypes(item);
   const attackType = attackTypes.includes(choices.attackType) ? choices.attackType : attackTypes[0];
-  const { damageModes, ranges } = getAttackOptions(actor, item, attackType);
+  const { damageModes, ranges } = getAttackOptions(item, attackType);
   const messageMode =
     choices.messageMode in CONFIG.ChatMessage.modes ? choices.messageMode : game.settings.get("core", "messageMode");
 
@@ -83,7 +94,7 @@ export function isValidSituationalModifier(value) {
  * @return {TAttackThrowResult}
  */
 export function buildAttackThrow(actor, item, choices, target = null) {
-  const { attackType, damageMode, range, situational, messageMode } = normalizeChoices(actor, item, choices);
+  const { attackType, damageMode, range, situational, messageMode } = normalizeChoices(item, choices);
   const weapon = asWeapon(item);
   const rollData = actor.getRollData();
 

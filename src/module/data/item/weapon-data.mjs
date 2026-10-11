@@ -167,12 +167,12 @@ export default class WeaponData extends ItemBaseData {
 
   /**
    * Damage modes available for the given attack type. The alternate formula is only available for melee
-   * or generic monster attacks, and only for weapons that can have one and have that formula set.
+   * attacks, and only for weapons that can have one and have that formula set.
    * @param {ATTACK_TYPE} attackType
    * @return {DAMAGE_MODE[]}
    */
   getDamageModes(attackType) {
-    const isMeleeAttack = attackType === ATTACK_TYPE.MELEE || attackType === ATTACK_TYPE.ATTACK;
+    const isMeleeAttack = attackType === ATTACK_TYPE.MELEE;
     const hasAlternate = this.hasAlternateDamage && this.damage.alternate.formula.trim() !== "";
     return isMeleeAttack && hasAlternate ? [DAMAGE_MODE.BASE, DAMAGE_MODE.ALTERNATE] : [DAMAGE_MODE.BASE];
   }

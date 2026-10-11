@@ -5,7 +5,7 @@ import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackTweaks from "./templates/attack-tweaks.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
-import { ATTACK_TYPE, ITEM_TYPE } from "../../constants.mjs";
+import { ATTACK_TYPE } from "../../constants.mjs";
 
 /**
  * Character Data Model
@@ -194,18 +194,6 @@ export default class CharacterData extends BaseDataModel {
   }
 
   //region ATTACKS
-
-  /**
-   * Attack types this character can make with the given item. Without a weapon every attack type is allowed.
-   * @param {?AcksItem} item
-   * @return {ATTACK_TYPE[]}
-   */
-  getAttackTypes(item) {
-    const weaponAttackTypes = item?.type === ITEM_TYPE.WEAPON ? item.system.getAttackTypes() : [];
-    return weaponAttackTypes.length > 0
-      ? weaponAttackTypes
-      : [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.THROWN];
-  }
 
   /**
    * Attack throw modifiers from this character: STR for melee, DEX for missile and thrown, plus Actor Tweaks.

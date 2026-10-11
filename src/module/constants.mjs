@@ -710,7 +710,6 @@ export const ATTACK_TYPE = Object.freeze({
   MELEE: "melee",
   MISSILE: "missile",
   THROWN: "thrown",
-  ATTACK: "attack",
 });
 
 /**

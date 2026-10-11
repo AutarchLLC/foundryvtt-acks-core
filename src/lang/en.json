@@ -92,7 +92,6 @@
   "ACKS.throw.attackType.melee": "Melee",
   "ACKS.throw.attackType.missile": "Missile",
   "ACKS.throw.attackType.thrown": "Thrown",
-  "ACKS.throw.attackType.attack": "Attack",
   "ACKS.throw.damageMode.label": "Grip",
   "ACKS.throw.damageMode.base": "One-Handed",
   "ACKS.throw.damageMode.alternate": "Two-Handed",

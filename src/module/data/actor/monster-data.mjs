@@ -5,7 +5,6 @@ import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackTweaks from "./templates/attack-tweaks.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
-import { ATTACK_TYPE } from "../../constants.mjs";
 
 /**
  * Monster Data Model
@@ -66,16 +65,6 @@ export default class MonsterData extends BaseDataModel {
   }
 
   //region ATTACKS
-
-  /**
-   * Monster attacks with an item are generic: no distinction between melee, missile and thrown.
-   * A generic attack throw without an item may use any attack type.
-   * @param {?AcksItem} item
-   * @return {ATTACK_TYPE[]}
-   */
-  getAttackTypes(item) {
-    return item ? [ATTACK_TYPE.ATTACK] : [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.THROWN];
-  }
 
   /**
    * Attack throw modifiers from this monster. Monsters have no ability scores, so only Actor Tweaks apply.

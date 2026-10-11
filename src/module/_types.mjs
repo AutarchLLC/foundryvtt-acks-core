@@ -74,7 +74,7 @@
 /**
  * Choices the player makes in the Attack Throw dialog.
  * @typedef {Object} TAttackThrowChoices
- * @property {ATTACK_TYPE} attackType - Melee, missile or thrown for characters; generic attack for monsters
+ * @property {ATTACK_TYPE} attackType - Melee, missile or thrown
  * @property {?DAMAGE_MODE} damageMode - Base or alternate damage formula; null without a weapon
  * @property {?ATTACK_RANGE} range - Range band for missile and thrown attacks; null otherwise
  * @property {string} situational - Situational modifier formula, e.g. "+2" or "-1d4"
@@ -86,7 +86,7 @@
  * @typedef {Object} TAttackOptions
  * @property {ATTACK_TYPE[]} attackTypes
  * @property {DAMAGE_MODE[]} damageModes - Empty without a weapon
- * @property {ATTACK_RANGE[]} ranges - Empty for melee and generic attacks
+ * @property {ATTACK_RANGE[]} ranges - Empty for melee attacks
  */
 
 /**

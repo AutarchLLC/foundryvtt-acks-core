@@ -3,7 +3,7 @@ import { ATTACK_TYPE } from "../../../constants.mjs";
 
 /**
  * Attack throw and damage bonuses configured via Actor Tweaks (`thac0.mod` and `damage.mod`).
- * Missile and thrown attacks use the missile bonuses; melee and generic (monster) attacks use the melee ones.
+ * Missile and thrown attacks use the missile bonuses; melee attacks use the melee ones.
  */
 export default class AttackTweaks {
   /**

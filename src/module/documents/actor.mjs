@@ -786,7 +786,7 @@ export default class AcksActor extends Actor {
     }
     const target = targets[0]?.document ?? null;
 
-    const choices = normalizeChoices(this, item, { attackType });
+    const choices = normalizeChoices(item, { attackType });
     const result = skipDialog
       ? buildAttackThrow(this, item, choices, target)
       : await ACKSDialog.getAttackThrowDetails(this, item, target, choices);
