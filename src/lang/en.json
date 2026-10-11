@@ -113,6 +113,8 @@
   "ACKS.throw.outcome.natural1": "Natural 1",
   "ACKS.throw.damage.criticalDice": "Critical hit: damage dice doubled",
   "ACKS.throw.damage.minimum": "Damage cannot be reduced below 1: deals {value}",
+  "ACKS.throw.damage.apply": "Apply {value} Damage",
+  "ACKS.throw.damage.noTarget": "Select a target to apply damage to.",
 
   "ACKS.table.treasure.roll": "Roll Treasure",
 

@@ -62,4 +62,13 @@
     </div>
   </div>
 
+  {{#if damageTotal}}
+    <div class="card-buttons">
+      <button type="button" data-action="applyDamage" data-damage="{{damageTotal}}">
+        <i class="fa-solid fa-droplet" inert></i>
+        <span>{{localize "ACKS.throw.damage.apply" value=damageTotal}}</span>
+      </button>
+    </div>
+  {{/if}}
+
 </section>

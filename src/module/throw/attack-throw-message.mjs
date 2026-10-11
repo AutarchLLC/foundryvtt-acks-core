@@ -68,6 +68,7 @@ async function prepareCardContext(actor, item, outcome) {
     damageRollHTML: damageRoll ? await renderRollWithModifiers(damageRoll, result.damage.modifiers) : null,
     damageIcons: damageRoll && item ? Array.from(item.system.damage.base.icons ?? []) : [],
     damageNotes: damageRoll ? getDamageNotes(resolution, damageRoll, damageTotal) : [],
+    damageTotal,
   };
 }
 

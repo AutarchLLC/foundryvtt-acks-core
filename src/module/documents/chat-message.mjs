@@ -17,6 +17,17 @@ export default class ACKSChatMessage extends ChatMessage {
       element.remove();
     }
 
+    // Only the Judge applies damage: players don't own the monsters they attack
+    if (!game.user.isGM) {
+      for (const button of html.querySelectorAll('[data-action="applyDamage"]')) {
+        const buttonGroup = button.closest(".card-buttons");
+        button.remove();
+        if (buttonGroup && !buttonGroup.childElementCount) {
+          buttonGroup.remove();
+        }
+      }
+    }
+
     const itemName = html.querySelector(".card-header__name");
     if (itemName) {
       itemName.addEventListener("click", (e) => this.#onChatCardToggleContent(e));
@@ -51,8 +62,8 @@ export default class ACKSChatMessage extends ChatMessage {
   async #onChatCardAction(e) {
     e.preventDefault();
 
-    // Extract card data
-    const button = e.target;
+    // Extract card data. The listener is on the button; `target` may be an element inside it.
+    const button = e.currentTarget;
     button.disabled = true;
     const card = button.closest(".chat-card");
     const messageId = card.closest(".message").dataset.messageId;
@@ -66,6 +77,18 @@ export default class ACKSChatMessage extends ChatMessage {
       ui.notifications.warn(`You do not have permission to use this feature for the selected chat card.`);
       return;
     }
+
+    // Applying damage only needs the damage value, not the item. Only the Judge sees this button.
+    if (action === "applyDamage") {
+      if (!game.user.isGM) {
+        button.disabled = false;
+        return;
+      }
+      await this.#applyDamageToTargets(Number(button.dataset.damage));
+      button.disabled = false;
+      return;
+    }
+
     // Get the Actor from a synthetic Token
     const actor = await this.#getChatCardActor(card);
     if (!actor) {
@@ -108,6 +131,25 @@ export default class ACKSChatMessage extends ChatMessage {
 
     // Re-enable the button
     button.disabled = false;
+  }
+
+  /**
+   * Subtract damage from the HP of the user's targeted tokens. HP may become negative.
+   * @param {number} damage
+   * @return {Promise<void>}
+   */
+  async #applyDamageToTargets(damage) {
+    const targets = Array.from(game.user.targets)
+      .map((token) => token.actor)
+      .filter(Boolean);
+    if (!targets.length) {
+      ui.notifications.warn(game.i18n.localize("ACKS.throw.damage.noTarget"));
+      return;
+    }
+
+    for (const actor of targets) {
+      await actor.update({ "system.hp.value": actor.system.hp.value - damage });
+    }
   }
 
   async #getChatCardActor(card) {
