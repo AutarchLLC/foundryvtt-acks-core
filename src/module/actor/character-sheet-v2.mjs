@@ -1,4 +1,7 @@
+/* global game */
 import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
+import ModifiedFormula from "../throw/modified-formula.mjs";
+import { ATTACK_TYPE } from "../constants.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import CharacterModifiersInfo from "../apps/character-modifiers-info.mjs";
@@ -111,6 +114,9 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     context.tab = context.tabs[partId];
 
     switch (partId) {
+      case "attributes":
+        context.attackThrows = this.#prepareAttackThrows();
+        break;
       case "effects":
         context = await this._prepareEffectsContext(context);
         break;
@@ -127,6 +133,25 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
       totalWages: this.actor.getTotalWages(),
     };
     return context;
+  }
+
+  /**
+   * Melee and missile attack throws shown on the Attributes tab: the number needed to hit AC 0 after the character's
+   * own modifiers (the same ones the Attack Throw dialog applies), with a breakdown for the tooltip.
+   * @return {{melee: {value: string, tooltip: string}, missile: {value: string, tooltip: string}}}
+   */
+  #prepareAttackThrows() {
+    const baseThrow = this.actor.system.thac0.throw;
+    const baseLabel = `${game.i18n.localize("ACKS.ABShort")} ${baseThrow}+`;
+
+    const prepare = (attackType) => {
+      const modifiers = this.actor.system.getAttackThrowModifiers(attackType);
+      const total = modifiers.reduce((sum, { value }) => sum + (Number(value) || 0), 0);
+      const breakdown = modifiers.map(({ label, value }) => `${label} ${ModifiedFormula.toSignedValue(value)}`);
+      return { value: `${baseThrow - total}+`, tooltip: [baseLabel, ...breakdown].join(", ") };
+    };
+
+    return { melee: prepare(ATTACK_TYPE.MELEE), missile: prepare(ATTACK_TYPE.MISSILE) };
   }
 
   /**
