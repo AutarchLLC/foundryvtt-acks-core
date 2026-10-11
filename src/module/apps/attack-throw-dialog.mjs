@@ -7,6 +7,7 @@ import {
   isValidSituationalModifier,
   normalizeChoices,
 } from "../throw/attack-throw-builder.mjs";
+import { canSeeTargetAC, getTargetLabels } from "../throw/target-visibility.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const { FormDataExtended } = foundry.applications.ux;
@@ -123,18 +124,12 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
       ? game.i18n.format("ACKS.throw.attack.attacksWith", { actorName: this.#actor.name, itemName: this.#item.name })
       : game.i18n.format("ACKS.throw.attack.attacks", { actorName: this.#actor.name });
     // Players don't see the target's AC unless the Judge allows it; the target value then excludes the AC.
-    const showTargetAC = !this.#target || AttackThrowDialog.#canSeeTargetAC();
-    context.targetLabel = this.#target
-      ? game.i18n.format("ACKS.throw.attack.target", {
-          name: this.#target.name,
-          ac: showTargetAC
-            ? (this.#target.actor?.system?.aac?.value ?? 0)
-            : game.i18n.localize("ACKS.throw.attack.hiddenAC"),
-        })
-      : game.i18n.localize("ACKS.throw.attack.noTarget");
-    context.targetValueLabel = showTargetAC
-      ? game.i18n.format("ACKS.throw.attack.targetValue", { value: context.result.attack.targetValue })
-      : game.i18n.format("ACKS.throw.attack.targetValueHiddenAC", { value: this.#actor.system.thac0.throw });
+    const targetLabels = getTargetLabels(this.#actor, this.#target, context.result.attack.targetValue);
+    const { target: targetLabel, targetValue: targetValueLabel } = canSeeTargetAC()
+      ? targetLabels.shown
+      : targetLabels.hidden;
+    context.targetLabel = targetLabel;
+    context.targetValueLabel = targetValueLabel;
 
     context.attackTypes = attackTypes.map((value) => ({
       value,
@@ -191,15 +186,6 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
       return;
     }
     void this.render({ parts: name === "attackType" ? ["options", "preview"] : ["preview"] });
-  }
-
-  /**
-   * Whether the current user may see a target's Armor Class: always for the Judge, for players only if allowed by
-   * the "Show Target's AC to Players" setting.
-   * @return {boolean}
-   */
-  static #canSeeTargetAC() {
-    return game.user.isGM || game.settings.get("acks", "showTargetACToPlayers");
   }
 
   /**

@@ -5,6 +5,9 @@ import { ACKS } from "../config.mjs";
 import { ATTACK_TYPE, ROLL_TYPE } from "../constants.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 import { buildAttackThrow, getDefaultChoices } from "../throw/attack-throw-builder.mjs";
+import { getDamageTotal, resolveAttackThrow, rollDamage } from "../throw/attack-throw-resolution.mjs";
+import { getTargetLabels } from "../throw/target-visibility.mjs";
+import { createAttackThrowMessage } from "../throw/attack-throw-message.mjs";
 
 export default class AcksActor extends Actor {
   static async create(data, options) {
@@ -787,10 +790,10 @@ export default class AcksActor extends Actor {
 
   /**
    * Make an attack throw against the user's first targeted token. Shows the Attack Throw dialog unless
-   * `skipDialog` is set, in which case the default choices are used. Rolls both the attack throw and the damage
-   * (if any); whether the attack hits is decided by the caller.
+   * `skipDialog` is set, in which case the default choices are used. Rolls the attack throw, resolves hit, miss or
+   * critical hit, rolls damage on a hit, and posts the result to chat.
    * @param {TAttackThrowData} [data={}]
-   * @return {Promise<?TAttackThrowRolls>} the attack throw details and evaluated rolls, or null if the dialog was
+   * @return {Promise<?TAttackThrowOutcome>} the attack throw details, rolls and resolution, or null if the dialog was
    * dismissed
    */
   async makeAttackThrow({ item = null, skipDialog = false } = {}) {
@@ -808,10 +811,21 @@ export default class AcksActor extends Actor {
     }
 
     const attackRoll = await new Roll(result.attack.formula, result.attack.data).evaluate();
-    const damageRoll = result.damage ? await new Roll(result.damage.formula, result.damage.data).evaluate() : null;
+    const resolution = resolveAttackThrow(attackRoll, result.attack.targetValue);
+    const damageRoll =
+      resolution.isHit && result.damage ? await rollDamage(result.damage, { isCritical: resolution.isCritical }) : null;
 
-    // TODO: show the result in a chat card
-    return { result, attackRoll, damageRoll };
+    /** @type {TAttackThrowOutcome} */
+    const outcome = {
+      result,
+      attackRoll,
+      resolution,
+      damageRoll,
+      damageTotal: damageRoll ? getDamageTotal(damageRoll) : null,
+      targetLabels: getTargetLabels(this, target, result.attack.targetValue),
+    };
+    await createAttackThrowMessage(this, item, outcome);
+    return outcome;
   }
 
   /**

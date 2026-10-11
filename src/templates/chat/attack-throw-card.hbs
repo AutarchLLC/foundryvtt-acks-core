@@ -1,0 +1,77 @@
+{{#*inline "modifierList"}}
+  {{#if modifiers.length}}
+    <ul class="attack-throw-card__modifiers">
+      {{#each modifiers}}
+        <li><span>{{label}}</span><span class="attack-throw-card__value">{{value}}</span></li>
+      {{/each}}
+    </ul>
+  {{/if}}
+{{/inline}}
+
+<section class="acksii chat-card attack-throw-card" data-actor-id="{{actor.id}}" data-item-id="{{item.id}}">
+
+  <header class="card-header">
+    <img class="card-header__img" src="{{img}}" alt="{{imgAlt}}" width="36" height="36"/>
+    <h3 class="card-header__name"><a>{{title}}</a></h3>
+  </header>
+
+  <div class="attack-throw-card__summary">
+    <div class="attack-throw-card__target">
+      <span data-acks-visibility="target-ac-shown">{{targetLabels.shown.target}}</span>
+      <span data-acks-visibility="target-ac-hidden">{{targetLabels.hidden.target}}</span>
+    </div>
+    {{#if choiceLabels.length}}
+      <div class="attack-throw-card__choices">
+        {{#each choiceLabels}}<span>{{this}}</span>{{/each}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="attack-throw-card__outcome attack-throw-card__outcome--{{outcome.status}}">
+    <span>{{outcome.label}}</span>
+    {{#if outcome.reason}}<span class="attack-throw-card__reason">{{outcome.reason}}</span>{{/if}}
+  </div>
+
+  <div class="card-content expanded">
+    <div class="card-content__description attack-throw-card__rolls">
+
+      <div class="attack-throw-card__roll">
+        <h4>
+          <span>{{localize "ACKS.throw.attack.title"}}</span>
+          <span class="attack-throw-card__target-value" data-acks-visibility="target-ac-shown">
+            {{targetLabels.shown.targetValue}}
+          </span>
+          <span class="attack-throw-card__target-value" data-acks-visibility="target-ac-hidden">
+            {{targetLabels.hidden.targetValue}}
+          </span>
+        </h4>
+        {{{attackRollHTML}}}
+        {{> modifierList modifiers=result.attack.modifiers}}
+      </div>
+
+      {{#if damageRollHTML}}
+        <div class="attack-throw-card__roll">
+          <h4>
+            <span>{{localize "ACKS.Damage"}}</span>
+            {{#if damageIcons.length}}
+              <span class="attack-throw-card__damage-types">
+                {{#each damageIcons}}
+                  <i class="{{classes}}" data-tooltip="{{tooltip}}"></i>
+                {{/each}}
+              </span>
+            {{/if}}
+          </h4>
+          {{{damageRollHTML}}}
+          {{#if damageNotes.length}}
+            <ul class="attack-throw-card__notes">
+              {{#each damageNotes}}<li>{{this}}</li>{{/each}}
+            </ul>
+          {{/if}}
+          {{> modifierList modifiers=result.damage.modifiers}}
+        </div>
+      {{/if}}
+
+    </div>
+  </div>
+
+</section>

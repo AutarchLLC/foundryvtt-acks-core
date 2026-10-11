@@ -1,4 +1,6 @@
 /* global canvas, ChatMessage, foundry, game, ui */
+import { canSeeTargetAC, TARGET_AC_HIDDEN, TARGET_AC_SHOWN } from "../throw/target-visibility.mjs";
+
 export default class ACKSChatMessage extends ChatMessage {
   /**
    * Render the HTML for the ChatMessage which should be added to the log
@@ -8,6 +10,12 @@ export default class ACKSChatMessage extends ChatMessage {
    */
   async renderHTML(options = {}) {
     const html = await super.renderHTML(options);
+
+    // Show either the target's AC or its hidden replacement, depending on who is viewing the message
+    const removedVisibility = canSeeTargetAC() ? TARGET_AC_HIDDEN : TARGET_AC_SHOWN;
+    for (const element of html.querySelectorAll(`[data-acks-visibility="${removedVisibility}"]`)) {
+      element.remove();
+    }
 
     const itemName = html.querySelector(".card-header__name");
     if (itemName) {

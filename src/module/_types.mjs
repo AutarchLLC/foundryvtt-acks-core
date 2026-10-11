@@ -102,11 +102,33 @@
  */
 
 /**
- * An attack throw with its evaluated rolls.
- * @typedef {Object} TAttackThrowRolls
+ * How an attack throw resolved.
+ * @typedef {Object} TAttackThrowResolution
+ * @property {?number} naturalRoll - Unmodified d20 result
+ * @property {number} total - Attack throw total
+ * @property {number} targetValue - Value the total had to meet or beat
+ * @property {boolean} isHit - Whether the attack hit
+ * @property {boolean} isCritical - Whether the hit is a critical hit (doubles damage dice)
+ * @property {boolean} isAutomaticHit - Hit because of an unmodified 20 (not with Exploding 20s)
+ * @property {boolean} isAutomaticMiss - Missed because of an unmodified 1
+ */
+
+/**
+ * An attack throw with its rolls and resolution: everything needed for the chat card.
+ * @typedef {Object} TAttackThrowOutcome
  * @property {TAttackThrowResult} result - Attack throw details the rolls were made from
  * @property {Roll} attackRoll - Evaluated attack throw roll
- * @property {?Roll} damageRoll - Evaluated damage roll; null without a weapon or damage formula
+ * @property {TAttackThrowResolution} resolution - Hit, miss or critical hit
+ * @property {?Roll} damageRoll - Evaluated damage roll; null on a miss, or without a weapon or damage formula
+ * @property {?number} damageTotal - Damage dealt: the damage roll total, but at least 1; null without a damage roll
+ * @property {{shown: TTargetLabels, hidden: TTargetLabels}} targetLabels - Target and target value labels revealing
+ * and hiding the target's AC; show one or the other with `data-acks-visibility`
+ */
+
+/**
+ * @typedef {Object} TTargetLabels
+ * @property {string} target - e.g. "Target: Goblin (AC 4)" or "No target (AC 0)"
+ * @property {string} targetValue - e.g. "Hits on 14+" or "Hits on 10 + AC"
  */
 
 /**

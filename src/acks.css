@@ -2791,6 +2791,106 @@
   padding-right: 0;
 }
 
+/* Attack Throw chat card */
+.acksii.attack-throw-card .attack-throw-card__summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.acksii.attack-throw-card .attack-throw-card__choices {
+  display: flex;
+  gap: 4px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__choices span {
+  padding: 0 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: "RobotoCondensed", sans-serif;
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome--hit {
+  color: var(--color-level-success);
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome--critical {
+  color: #b31818;
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome--miss {
+  color: var(--color-level-error);
+}
+
+.acksii.attack-throw-card .attack-throw-card__reason {
+  font-family: "RobotoRegular", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.acksii.attack-throw-card .attack-throw-card__rolls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__roll h4 {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 0 2px;
+  border: none;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 12px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__target-value {
+  margin-left: auto;
+  font-family: "RobotoRegular", sans-serif;
+  font-weight: normal;
+}
+
+.acksii.attack-throw-card .attack-throw-card__damage-types {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.acksii.attack-throw-card :is(.attack-throw-card__modifiers, .attack-throw-card__notes) {
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: "RobotoCondensed", sans-serif;
+}
+
+.acksii.attack-throw-card .attack-throw-card__modifiers li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__value {
+  font-weight: bold;
+}
+
+.acksii.attack-throw-card .attack-throw-card__notes {
+  font-style: italic;
+}
+
 .acksii.attack-dialog .window-content {
   padding: var(--spacer-16);
 }
