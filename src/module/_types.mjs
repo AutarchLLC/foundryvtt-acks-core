@@ -36,15 +36,9 @@
  */
 
 /**
- * @typedef {TRollResult} TAttackRollResult
- * @augments TRollResult
- * @property {string} [victim] - The name of the target of the attack
- */
-
-/**
  * @typedef {Object} TRollOptions
  * @property {string[]} parts - The formula parts to be rolled (e.g. ["1d20", "3"])
- * @property {TRollData} data - The data context for the roll (e.g. {roll: {type: "check", target: 15}})
+ * @property {object} data - The data context for the roll (e.g. {roll: {type: "check", target: 15}})
  * @property {boolean} skipDialog - Whether to skip the roll dialog and roll immediately
  * @property {string} title - The title to be displayed in the roll dialog
  * @property {string|null} flavor - Optional flavor text to include in the chat message
@@ -59,7 +53,8 @@
 
 /**
  * @typedef {Object} TAttackThrowData
- * @property {?AcksItem} [item=null] - The item being used for the attack
+ * @property {?AcksItem} [item=null] - The item being used for the attack; without one no damage is rolled
+ * @property {?ATTACK_TYPE} [attackType=null] - Initially selected attack type; the first available one if not set
  * @property {boolean} [skipDialog=false] - Whether to skip the Attack Throw dialog and use the default choices
  */
 
@@ -142,46 +137,12 @@
  * @property {AcksActor} actor - Attacker
  * @property {?AcksItem} [item=null] - Item used to attack
  * @property {?TokenDocument} [target=null] - Token being attacked
+ * @property {Partial<TAttackThrowChoices>} [choices={}] - Initially selected choices
  */
 
 /**
  * @typedef {Object} TItemRollOptions
  * @property {boolean} [skipDialog=undefined] - Whether to skip the roll dialog and roll immediately
- */
-
-/**
- * @typedef {Object} TRollAttackOptions
- * @property {boolean} [skipDialog=undefined] - Whether to skip the roll dialog and roll immediately
- * @property {ATTACK_TYPE} [attackType=undefined] - The type of attack (see ATTACK_TYPE global constant)
- */
-
-/**
- * @typedef {Object} TItemRollConfig
- * @property {SAVING_THROW} save - The type of saving throw (see SAVING_THROW global constant)
- * @property {Token|null} [target]
- */
-
-/**
- * @typedef {Object} TItemRollData
- * @property {AcksItem} [item] - Used Item Document
- * @property {Object} actor - Actor who used the Item, the extracted primitive object from Actor's DataModel
- * @property {TItemRollConfig} roll - roll configuration
- */
-
-/**
- * @typedef {Object} TRollDataDetails
- * @property {ATTACK_TYPE} type
- * @property {number} thac0
- * @property {string[]} dmg
- * @property {SAVING_THROW} save
- * @property {Token|null} target
- */
-
-/**
- * @typedef {Object} TRollData
- * @property {AcksActor} actor
- * @property {AcksItem} item
- * @property {TRollDataDetails} roll
  */
 
 /**

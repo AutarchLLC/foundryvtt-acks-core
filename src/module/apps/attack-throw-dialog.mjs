@@ -3,7 +3,6 @@ import { ATTACK_RANGE_PENALTY, ATTACK_TYPE } from "../constants.mjs";
 import {
   buildAttackThrow,
   getAttackOptions,
-  getDefaultChoices,
   isValidSituationalModifier,
   normalizeChoices,
 } from "../throw/attack-throw-builder.mjs";
@@ -47,12 +46,12 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
   /**
    * @param {TAttackThrowDialogConfiguration} options
    */
-  constructor({ actor, item = null, target = null, ...options } = {}) {
+  constructor({ actor, item = null, target = null, choices = {}, ...options } = {}) {
     super(options);
     this.#actor = actor;
     this.#item = item;
     this.#target = target;
-    this.#choices = getDefaultChoices(actor, item);
+    this.#choices = normalizeChoices(actor, item, choices);
   }
 
   static DEFAULT_OPTIONS = {

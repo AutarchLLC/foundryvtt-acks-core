@@ -6,8 +6,9 @@ import AttackThrowDialog from "../apps/attack-throw-dialog.mjs";
  * @param {AcksActor} actor - attacker
  * @param {?AcksItem} [item=null] - item used to attack, usually a weapon
  * @param {?TokenDocument} [target=null] - token being attacked
+ * @param {Partial<TAttackThrowChoices>} [choices={}] - initially selected choices, e.g. the attack type
  * @return {Promise<?TAttackThrowResult>} the attack throw and damage roll, or null if the dialog was dismissed
  */
-export default async function getAttackThrowDetails(actor, item = null, target = null) {
-  return AttackThrowDialog.wait({ actor, item, target });
+export default async function getAttackThrowDetails(actor, item = null, target = null, choices = {}) {
+  return AttackThrowDialog.wait({ actor, item, target, choices });
 }

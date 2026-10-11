@@ -68,12 +68,13 @@ export default class MonsterData extends BaseDataModel {
   //region ATTACKS
 
   /**
-   * Monsters make generic attacks: no distinction between melee, missile and thrown.
-   * @param {?AcksItem} _item
+   * Monster attacks with an item are generic: no distinction between melee, missile and thrown.
+   * A generic attack throw without an item may use any attack type.
+   * @param {?AcksItem} item
    * @return {ATTACK_TYPE[]}
    */
-  getAttackTypes(_item) {
-    return [ATTACK_TYPE.ATTACK];
+  getAttackTypes(item) {
+    return item ? [ATTACK_TYPE.ATTACK] : [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.THROWN];
   }
 
   /**

@@ -38,6 +38,8 @@ export function getAttackOptions(actor, item, attackType) {
 
 /**
  * Replace any choice that is not available for this attacker and item with its first valid option.
+ * Called with no choices, this gives the defaults: first attack type, base damage, short range, no situational
+ * modifier.
  * @param {AcksActor} actor - attacker
  * @param {?AcksItem} item - item used to attack
  * @param {Partial<TAttackThrowChoices>} choices
@@ -57,16 +59,6 @@ export function normalizeChoices(actor, item, choices) {
     situational: String(choices.situational ?? "").trim(),
     messageMode,
   };
-}
-
-/**
- * Default choices: first attack type, base damage, short range, no situational modifier.
- * @param {AcksActor} actor - attacker
- * @param {?AcksItem} item - item used to attack
- * @return {TAttackThrowChoices}
- */
-export function getDefaultChoices(actor, item) {
-  return normalizeChoices(actor, item, {});
 }
 
 /**

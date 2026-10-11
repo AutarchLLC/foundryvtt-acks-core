@@ -2,9 +2,9 @@
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
-import { ATTACK_TYPE, ROLL_TYPE } from "../constants.mjs";
+import { ROLL_TYPE } from "../constants.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
-import { buildAttackThrow, getDefaultChoices } from "../throw/attack-throw-builder.mjs";
+import { buildAttackThrow, normalizeChoices } from "../throw/attack-throw-builder.mjs";
 import { getDamageTotal, resolveAttackThrow, rollDamage } from "../throw/attack-throw-resolution.mjs";
 import { getTargetLabels } from "../throw/target-visibility.mjs";
 import { createAttackThrowMessage } from "../throw/attack-throw-message.mjs";
@@ -771,41 +771,25 @@ export default class AcksActor extends Actor {
   }
 
   /**
-   *
-   * @param {TItemRollData} rollData
-   * @param {ATTACK_TYPE} attackType
-   * @param {TItemRollOptions} options
-   * @return {Promise<void>}
-   */
-  async targetAttack(rollData, attackType, options) {
-    if (game.user.targets.size > 0) {
-      for (const t of game.user.targets.values()) {
-        rollData.roll.target = t;
-        await this.rollAttack(rollData, { attackType, skipDialog: options.skipDialog });
-      }
-    } else {
-      await this.rollAttack(rollData, { attackType, skipDialog: options.skipDialog });
-    }
-  }
-
-  /**
    * Make an attack throw against the user's first targeted token. Shows the Attack Throw dialog unless
    * `skipDialog` is set, in which case the default choices are used. Rolls the attack throw, resolves hit, miss or
    * critical hit, rolls damage on a hit, and posts the result to chat.
+   * Without an item this is a generic attack throw: any attack type can be chosen and no damage is rolled.
    * @param {TAttackThrowData} [data={}]
    * @return {Promise<?TAttackThrowOutcome>} the attack throw details, rolls and resolution, or null if the dialog was
    * dismissed
    */
-  async makeAttackThrow({ item = null, skipDialog = false } = {}) {
+  async makeAttackThrow({ item = null, attackType = null, skipDialog = false } = {}) {
     const targets = Array.from(game.user.targets);
     if (targets.length > 1) {
       ui.notifications.warn(game.i18n.localize("ACKS.Error.NotImplemented.Cleave"));
     }
     const target = targets[0]?.document ?? null;
 
+    const choices = normalizeChoices(this, item, { attackType });
     const result = skipDialog
-      ? buildAttackThrow(this, item, getDefaultChoices(this, item), target)
-      : await ACKSDialog.getAttackThrowDetails(this, item, target);
+      ? buildAttackThrow(this, item, choices, target)
+      : await ACKSDialog.getAttackThrowDetails(this, item, target, choices);
     if (!result) {
       return null;
     }
@@ -826,79 +810,6 @@ export default class AcksActor extends Actor {
     };
     await createAttackThrowMessage(this, item, outcome);
     return outcome;
-  }
-
-  /**
-   *
-   * @param {TItemRollData} attackRollData
-   * @param {TRollAttackOptions} [options={}]
-   * @return {Promise<*>}
-   */
-  rollAttack(attackRollData, options = {}) {
-    const system = this.system;
-    /** @type {string[]} */
-    const rollParts = [];
-
-    if (game.settings.get("acks", "exploding20s")) {
-      rollParts.push("1d20x");
-    } else {
-      rollParts.push("1d20");
-    }
-
-    /** @type {string[]} */
-    const dmgParts = [];
-    let label = game.i18n.format("ACKS.roll.attacks", { name: this.name });
-    if (!attackRollData.item) {
-      dmgParts.push("1d6");
-    } else {
-      label = game.i18n.format("ACKS.roll.attacksWith", { name: attackRollData.item.name });
-      dmgParts.push(attackRollData.item.system.damage.base.formula);
-    }
-
-    rollParts.push(system.thac0.bba.toString());
-    if (options.attackType === ATTACK_TYPE.MISSILE) {
-      rollParts.push(system.scores.dex.mod.toString(), system.thac0.mod.missile.toString());
-    } else if (options.attackType === ATTACK_TYPE.MELEE) {
-      rollParts.push(system.scores.str.mod.toString(), system.thac0.mod.melee.toString());
-    }
-    if (attackRollData?.item?.system.bonus) {
-      rollParts.push(attackRollData.item.system.bonus);
-    }
-    let thac0 = system.thac0.value;
-    if (options.attackType === ATTACK_TYPE.MELEE) {
-      dmgParts.push(system.scores.str.mod);
-    }
-    // Add Melee mod to damage
-    if (options.attackType === ATTACK_TYPE.MELEE) {
-      dmgParts.push(system.damage.mod.melee);
-    }
-    // Add Missile mod to damage
-    if (options.attackType === ATTACK_TYPE.MISSILE) {
-      dmgParts.push(system.damage.mod.missile);
-    }
-
-    /** @type {TRollData} */
-    const rollData = {
-      actor: this,
-      item: attackRollData.item,
-      roll: {
-        type: options.attackType,
-        thac0: thac0,
-        dmg: dmgParts,
-        save: attackRollData.roll.save,
-        target: attackRollData.roll.target,
-      },
-    };
-
-    // Roll and return
-    return AcksDice.roll({
-      parts: rollParts,
-      data: rollData,
-      skipDialog: options.skipDialog,
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      flavor: label,
-      title: label,
-    });
   }
 
   async applyDamage(amount = 0, multiplier = 1) {

@@ -2918,45 +2918,6 @@
   font-style: italic;
 }
 
-.acksii.attack-dialog .window-content {
-  padding: var(--spacer-16);
-}
-
-.acksii.attack-dialog .form-footer {
-  display: grid;
-  gap: 0.5rem;
-}
-
-/* 2 buttons: 2-col grid */
-.acksii.attack-dialog .form-footer:has(> :nth-child(2):last-child) {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* 3 buttons: 3-col grid */
-.acksii.attack-dialog .form-footer:has(> :nth-child(3):last-child) {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* 5 buttons: first 2 on row 1, last 3 on row 2 */
-.acksii.attack-dialog .form-footer:has(> :nth-child(5):last-child) {
-  grid-template-columns: repeat(6, 1fr);
-}
-
-.acksii.attack-dialog .form-footer:has(> :nth-child(5):last-child) > :nth-child(1),
-.acksii.attack-dialog .form-footer:has(> :nth-child(5):last-child) > :nth-child(2) {
-  grid-column: span 3; /* each takes 3 of 6 cols = 2 equal cols */
-}
-
-.acksii.attack-dialog .form-footer:has(> :nth-child(5):last-child) > :nth-child(3),
-.acksii.attack-dialog .form-footer:has(> :nth-child(5):last-child) > :nth-child(4),
-.acksii.attack-dialog .form-footer:has(> :nth-child(5):last-child) > :nth-child(5) {
-  grid-column: span 2; /* each takes 2 of 6 cols = 3 equal cols */
-}
-
-.application.dialog.acksii .window-content {
-  padding: revert-layer;
-}
-
 /* Attack Throw dialog */
 .acks2.attack-throw-dialog .window-title,
 .acks2.attack-throw-dialog .window-content {
