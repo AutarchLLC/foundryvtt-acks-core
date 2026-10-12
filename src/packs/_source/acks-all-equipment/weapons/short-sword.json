@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>The short sword includes straight and curved slashing and thrusting blades, generally less than 30\" in length, meant to be used with one hand. Historical examples include the Egyptian khopesh, Greek xiphos, Roman gladius, Japanese wakizashi, Arab scimitar, Persian shamshir, Turkish yatagan, and Indian talwar.</p>",
     "damage": "1d6",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

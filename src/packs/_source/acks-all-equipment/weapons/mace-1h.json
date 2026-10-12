@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>A mace is a bludgeoning weapon consisting of a 2' to 3' wood or metal shaft and a heavy stone or metal head, useable with one or two hands. Historical examples include the Egyptian bronze-headed mace, medieval flanged mace, Persian horseman's mace, Russian pernach, and Slavic bulawa.</p>",
     "damage": "1d6",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

@@ -73,7 +73,10 @@
         "pattern": "red",
         "description": "",
         "damage": "1d4",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [
           {
             "title": "Melee",
@@ -128,7 +131,10 @@
         "pattern": "red",
         "description": "",
         "damage": "1d6",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [
           {
             "title": "Melee",

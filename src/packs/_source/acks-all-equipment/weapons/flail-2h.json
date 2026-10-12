@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>This is a bludgeoning weapon derived from the agricultural flail with a striking head connected to the haft by a flexible chain. Flails are useable with one or two hands. Historical examples include the medieval ball-and-chain, Japanese rentsuru and nunchaku, and Chinese meteor hammer.</p>",
     "damage": "1d8",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

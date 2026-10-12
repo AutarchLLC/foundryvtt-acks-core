@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>This is a single-bitted axe, with a 12\" to 24\" haft, balanced for throwing. Historical examples include the Frankish francisca, American tomahawk, and African mambele and kasuyu.</p>",
     "damage": "1d6",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

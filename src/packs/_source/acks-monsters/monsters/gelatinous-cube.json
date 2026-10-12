@@ -35,7 +35,10 @@
         "pattern": "red",
         "description": "<p>Save versus Paralysis or be paralyzed for [[/gmr 2d4 #Paralyzed for this many Turns]] Turns. This paralysis may be cured with <em>cure light wounds</em>. Those paralyzed are hit automatically on subsequent rounds.</p>",
         "damage": "2d4",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [],
         "slow": false,
         "missile": false,

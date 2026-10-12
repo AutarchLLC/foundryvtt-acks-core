@@ -26,7 +26,10 @@
     "pattern": "red",
     "description": "<p>Giant rats are disease carriers, and any time a character is bitten by a giant rat there is a [[/r 1d100ms&gt;5 #5% of Disease]] chance the character contracts a disease. A saving throw versus Poison is permitted, and should it fail the character dies of the disease [[/r 1d6 #Dies this many days later]] days later. A successful saving throw indicates that the character gets ill and is bedridden for 30 days, but the disease does not prove fatal. The spell cure disease will cure this infection. </p>",
     "damage": "1d3",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [],
     "slow": false,
     "missile": false,

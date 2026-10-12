@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>These are throwing weapons made of weights on the ends of interconnected cords, designed to capture animals by entangling their legs. A character can use a bola to make a knock down or wrestling maneuver (as described in special maneuvers in Chapter 6) with a thrown attack.</p>",
     "damage": "1d2",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Missile",

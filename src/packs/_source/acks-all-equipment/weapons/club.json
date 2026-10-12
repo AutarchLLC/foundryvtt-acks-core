@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>A club is any simple bludgeon used to batter opponents.</p>",
     "damage": "1d4",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

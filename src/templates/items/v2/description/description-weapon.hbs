@@ -1,13 +1,15 @@
 <section class="info-card">
   <div class="info-card-item">
     <span class="info-card-item__label" data-tooltip="Attack bonus">ATB:</span>
-    <span>{{mod system.bonus}}</span>
+    <span>{{mod system.bonus.attack}}</span>
   </div>
   <div class="info-card-item">
     <span class="info-card-item__label" data-tooltip="Damage Formula">DMG:</span>
-    <span>{{system.damage.base.formula}}
+    <span>
+      {{system.damage.base.formula}}
+      {{mod system.bonus.damage}}
       {{# if system.hasAlternateDamage}}
-        / {{system.damage.alternate.formula}}
+        / {{system.damage.alternate.formula}}{{mod system.bonus.damage}}
       {{/if}}
       {{#if system.damage.base.icons}}
         {{#each system.damage.base.icons}}

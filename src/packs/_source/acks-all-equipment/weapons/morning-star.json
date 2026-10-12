@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>This is any type of large mace-liked weapon with a spiked metal head. Historical examples include the medieval morning star, German chain-morning star, English holy water sprinkler, Flemish goedendag, and Japanese tetsubo. Any flails and maces too large to be used one-handed can also be treated as morning stars. Morning stars impose a -1 penalty on initiative rolls.</p>",
     "damage": "1d10",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

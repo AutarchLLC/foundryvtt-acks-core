@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>This is a single- or double-bitted axe with a 24\" to 48\" haft, designed for battle and useable with one or two hands. Historical examples include the Scythian sagaris, Viking bearded and skeg axe, Celtic war axe, medieval battle axe, and Persian tabarzin.</p>",
     "damage": "1d8",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

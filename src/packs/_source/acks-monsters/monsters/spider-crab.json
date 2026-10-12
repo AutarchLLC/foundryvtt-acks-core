@@ -35,7 +35,10 @@
         "pattern": "red",
         "description": "<p>The bite of the giant crab spider is venomous, and a victim will die in [[/r 1d4 #Die from poison in this many Turns!]] turns unless a saving throw versus Poison is made. The saving throw receives a bonus of +2, due to the less potent nature of the crab spider's venom.</p>",
         "damage": "1d8",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [],
         "slow": false,
         "missile": false,
