@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "foundry",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["e2e/scripts/start-foundry.mjs", "--keep"],
+      "port": 30001
+    }
+  ]
+}
