@@ -162,11 +162,13 @@ check by hand with `npm run foundry:test`.
 
 Migrations are permanent, one-time DB writes run on the `ready` hook (GM only), gated by the
 `systemSchemaVersion` world setting (an integer). Each actor and item also stores `_schemaVersion`
-(from `BaseDataModel`). Documents already at `CURRENT_SCHEMA_VERSION` are skipped.
+(from `BaseDataModel`). Documents already at `CURRENT_SCHEMA_VERSION` are skipped. New documents are
+stamped with it in `BaseDataModel._preCreate` unless their creation data already names a version.
 
 ```
 src/module/migration/
-  migration.mjs           ← runMigrations(), CURRENT_SCHEMA_VERSION, isCurrentSchema()
+  migration.mjs           ← runMigrations(); re-exports CURRENT_SCHEMA_VERSION, isCurrentSchema()
+  schema-version.mjs      ← CURRENT_SCHEMA_VERSION, isCurrentSchema() (no imports, safe for data models)
   migration-util.mjs      ← helpers (e.g. field deletion via ForcedDeletion)
   runner/                 ← MigrationBase, MigrationList, MigrationRunner
   migrations/             ← one file per migration (m1 … mN); index.mjs is the barrel
@@ -176,7 +178,7 @@ src/module/migration/
 
 1. Create `migrations/mN-description.mjs` extending `MigrationBase` with `static version = N`.
 2. Export it from `migrations/index.mjs`.
-3. Bump `CURRENT_SCHEMA_VERSION` in `migration.mjs` to `N`.
+3. Bump `CURRENT_SCHEMA_VERSION` in `schema-version.mjs` to `N`.
 4. Add the in-memory equivalent to the affected model's `static migrateData(source)`, after the
    `if (isCurrentSchema(source)) return super.migrateData(source);` guard. This covers read-only
    system and module compendiums the runner cannot write to.
