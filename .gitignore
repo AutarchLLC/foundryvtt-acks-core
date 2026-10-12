@@ -1,7 +1,6 @@
 src/packs/*
 !src/packs/_source/
 foundry
-AGENTS.md
 
 .history/
 .vscode/settings.json
@@ -137,3 +136,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+
+# End-to-end tests
+.foundry-test/
+e2e/foundry.config.json
+test-results/
+playwright-report/
