@@ -21,7 +21,9 @@
     "packs:sourceToDatabase": "node scripts/packs-pack.mjs",
     "packs:cleanupSource": "node scripts/packs-clean.mjs",
     "link": "node scripts/link-foundry.mjs",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "foundry:test": "node e2e/scripts/start-foundry.mjs",
+    "test:e2e": "playwright test -c e2e"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@foundryvtt/foundryvtt-cli": "^3.0.4",
+    "@playwright/test": "^1.64.0",
     "@rollup/plugin-terser": "^1.0.0",
     "autoprefixer": "^10.5.4",
     "eslint": "^10.8.1",
