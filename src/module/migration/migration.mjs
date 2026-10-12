@@ -2,20 +2,10 @@
 
 import MigrationList from "./runner/migration-list.mjs";
 import MigrationRunner from "./runner/migration-runner.mjs";
+import { CURRENT_SCHEMA_VERSION, isCurrentSchema } from "./schema-version.mjs";
 
-/**
- * The current data schema version.
- * Bump this to the highest *MigrationBase.version* number whenever you add a
- * new migration class. Must be a plain integer — matches the version numbers
- * used on individual MigrationBase subclasses in migration/migrations/.
- *
- * Documents whose system._schemaVersion === CURRENT_SCHEMA_VERSION are
- * considered fully migrated and are skipped by both the bulk migrator and
- * the migrateData() safety-net.
- *
- * @type {number}
- */
-export const CURRENT_SCHEMA_VERSION = 4; // bump to highest migration version when you add migrations
+// CURRENT_SCHEMA_VERSION lives in schema-version.mjs (bump it there).
+export { CURRENT_SCHEMA_VERSION, isCurrentSchema };
 
 /**
  * Run all pending data migrations.
@@ -62,25 +52,6 @@ export async function runMigrations() {
       ui.notifications.remove?.(notice);
     }
   }
-}
-
-/**
- * True when the given raw system data object is already at the current schema.
- * Call this at the top of every migrateData() override for a fast exit.
- *
- * @example
- * ```js
- * static migrateData(source) {
- *   if (isCurrentSchema(source)) return super.migrateData(source);
- *   // … field renames, type coercions …
- *   return super.migrateData(source);
- * }
- * ```
- * @param {object} source  Raw system data (the `source` arg of migrateData)
- * @returns {boolean}
- */
-export function isCurrentSchema(source) {
-  return (source?._schemaVersion ?? 0) >= CURRENT_SCHEMA_VERSION;
 }
 
 /**

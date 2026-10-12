@@ -41,7 +41,8 @@ Migrations run automatically on the `ready` hook, **GM-only**, once per schema v
 
 ```
 src/module/migration/
-  migration.mjs               ← Public API: runMigrations(), CURRENT_SCHEMA_VERSION, isCurrentSchema()
+  migration.mjs               ← Public API: runMigrations(); re-exports CURRENT_SCHEMA_VERSION, isCurrentSchema()
+  schema-version.mjs          ← CURRENT_SCHEMA_VERSION, isCurrentSchema() (no imports, safe for data models)
   migration-util.mjs          ← MigrationUtil: cross-version helpers (e.g., markPropertyForDeletion)
   runner/
     migration-base.mjs        ← MigrationBase: base class for all migrations
@@ -58,7 +59,8 @@ src/module/migration/
 
 | File | Responsibility |
 |------|---------------|
-| `migration.mjs` | Entry point; holds `CURRENT_SCHEMA_VERSION`; called from `acks.mjs` `ready` hook |
+| `migration.mjs` | Entry point; called from `acks.mjs` `ready` hook; re-exports `CURRENT_SCHEMA_VERSION` and `isCurrentSchema()` |
+| `schema-version.mjs` | Holds `CURRENT_SCHEMA_VERSION` and `isCurrentSchema()`. Has no imports, so data models can import it without joining the migration ↔ data model import cycle |
 | `migration-util.mjs` | `MigrationUtil.markPropertyForDeletion()` — abstracts v13/v14 deletion syntax |
 | `migration-base.mjs` | `MigrationBase` — base class; override `updateActor()` and/or `updateItem()` |
 | `migration-list.mjs` | `MigrationList.fromVersionTo(from, to)` — filters and instantiates pending migrations |
@@ -89,7 +91,7 @@ The world setting `acks.systemSchemaVersion` (registered in `settings.mjs`) stor
 
 ```
 worldSchemaVersion = game.settings.get("acks", "systemSchemaVersion")  // e.g. 0
-CURRENT_SCHEMA_VERSION = 2 (defined in migration.mjs)
+CURRENT_SCHEMA_VERSION = 2 (defined in schema-version.mjs)
 
 If worldSchemaVersion < CURRENT_SCHEMA_VERSION  →  migration runs
 After successful migration  →  worldSchemaVersion is updated to CURRENT_SCHEMA_VERSION
@@ -148,17 +150,25 @@ static defineSchema() {
 
 This field is **internal** — never display or edit it in sheets. It tracks the migration state per-document:
 
-- `0` — never migrated (default for new and legacy documents).
+- `0` — never migrated (legacy documents, and anything stored without the field).
 - `N` — migrated up to version N.
 - `=== CURRENT_SCHEMA_VERSION` — fully up-to-date, skip by both the runner and `migrateData()`.
 
-The runner stamps `system._schemaVersion = CURRENT_SCHEMA_VERSION` at the end of every actor/item migration. `isCurrentSchema(source)` in `migration.mjs` is a guard used to skip already-migrated documents:
+The runner stamps `system._schemaVersion = CURRENT_SCHEMA_VERSION` at the end of every actor/item migration. `isCurrentSchema(source)` in `schema-version.mjs` is a guard used to skip already-migrated documents:
 
 ```js
 export function isCurrentSchema(source) {
   return (source?._schemaVersion ?? 0) >= CURRENT_SCHEMA_VERSION;
 }
 ```
+
+### New documents
+
+`BaseDataModel._preCreate()` stamps `CURRENT_SCHEMA_VERSION` on documents created from scratch (`Actor.create({ name, type })`, the sidebar's Create dialog, `createEmbeddedDocuments()`), including items passed inline in a new actor's `items` array. Without it they would be stored at `0` and `migrateData()` would re-run every migration on them at every load.
+
+Only creation data **without** a `_schemaVersion` is stamped. Compendium imports, duplicates and JSON imports are built with `toObject()`, which always includes the field, so a document created from old data keeps its old version and `migrateData()` keeps migrating it on load.
+
+> **Do not** change the field's `initial` to `CURRENT_SCHEMA_VERSION`. Foundry fills a missing field with `initial` whenever it loads a document, so legacy world documents without the field would read as current and the runner would skip them.
 
 ---
 
@@ -192,6 +202,8 @@ static migrateData(source) {
 ```
 
 > **Pattern:** Put the transformation logic in a static method on the relevant template class (e.g. `SavingThrowsTemplate`, `ItemPhysicalTemplate`). Call it from both the migration `updateActor`/`updateItem` **and** the data model's `migrateData()`.
+
+> **Keep `migrateData()` transforms idempotent and safe on partial data.** Foundry also runs `migrateData()` on the partial `system` diff of every update, which never contains `_schemaVersion`, so the `isCurrentSchema()` guard does not skip it there. Only act when the old shape is actually present (e.g. `typeof damage === "string"`), never unconditionally.
 
 ---
 
@@ -313,7 +325,7 @@ export { MigrationNDescription } from "./mN-description.mjs"; // ← add this li
 
 ### 3. Bump `CURRENT_SCHEMA_VERSION`
 
-In `src/module/migration/migration.mjs`, update the constant to the new version number:
+In `src/module/migration/schema-version.mjs`, update the constant to the new version number:
 
 ```js
 export const CURRENT_SCHEMA_VERSION = N; // bump to highest migration version when you add migrations
@@ -357,7 +369,7 @@ npm run packs:sourceToDatabase
 
 - [ ] `mN-description.mjs` created with `static version = N`
 - [ ] Class exported from `migrations/index.mjs`
-- [ ] `CURRENT_SCHEMA_VERSION` bumped to `N` in `migration.mjs`
+- [ ] `CURRENT_SCHEMA_VERSION` bumped to `N` in `schema-version.mjs`
 - [ ] `defineSchema()` updated in the affected data model(s)
 - [ ] `migrateData()` updated with in-memory equivalent
 - [ ] Compendium `_source` JSON updated + `npm run packs:sourceToDatabase`
