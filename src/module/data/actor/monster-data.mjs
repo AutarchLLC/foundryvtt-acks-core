@@ -3,6 +3,7 @@ import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
+import AttackTweaks from "./templates/attack-tweaks.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
 
 /**
@@ -62,6 +63,28 @@ export default class MonsterData extends BaseDataModel {
       attacks: new StringField({ blank: true, initial: "" }),
     };
   }
+
+  //region ATTACKS
+
+  /**
+   * Attack throw modifiers from this monster. Monsters have no ability scores, so only Actor Tweaks apply.
+   * @param {ATTACK_TYPE} attackType
+   * @return {TNumValueWithLabel[]}
+   */
+  getAttackThrowModifiers(attackType) {
+    return [AttackTweaks.getAttackThrowModifier(this, attackType)];
+  }
+
+  /**
+   * Damage modifiers from this monster. Monsters have no ability scores, so only Actor Tweaks apply.
+   * @param {ATTACK_TYPE} attackType
+   * @return {TNumValueWithLabel[]}
+   */
+  getDamageModifiers(attackType) {
+    return [AttackTweaks.getDamageModifier(this, attackType)];
+  }
+
+  //endregion ATTACKS
 
   /**
    * @override

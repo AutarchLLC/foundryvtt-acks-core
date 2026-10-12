@@ -1,4 +1,6 @@
 /* global canvas, ChatMessage, foundry, game, ui */
+import { canSeeTargetAC, TARGET_AC_HIDDEN, TARGET_AC_SHOWN } from "../throw/target-visibility.mjs";
+
 export default class ACKSChatMessage extends ChatMessage {
   /**
    * Render the HTML for the ChatMessage which should be added to the log
@@ -8,6 +10,23 @@ export default class ACKSChatMessage extends ChatMessage {
    */
   async renderHTML(options = {}) {
     const html = await super.renderHTML(options);
+
+    // Show either the target's AC or its hidden replacement, depending on who is viewing the message
+    const removedVisibility = canSeeTargetAC() ? TARGET_AC_HIDDEN : TARGET_AC_SHOWN;
+    for (const element of html.querySelectorAll(`[data-acks-visibility="${removedVisibility}"]`)) {
+      element.remove();
+    }
+
+    // Only the Judge applies damage: players don't own the monsters they attack
+    if (!game.user.isGM) {
+      for (const button of html.querySelectorAll('[data-action="applyDamage"]')) {
+        const buttonGroup = button.closest(".card-buttons");
+        button.remove();
+        if (buttonGroup && !buttonGroup.childElementCount) {
+          buttonGroup.remove();
+        }
+      }
+    }
 
     const itemName = html.querySelector(".card-header__name");
     if (itemName) {
@@ -43,8 +62,8 @@ export default class ACKSChatMessage extends ChatMessage {
   async #onChatCardAction(e) {
     e.preventDefault();
 
-    // Extract card data
-    const button = e.target;
+    // Extract card data. The listener is on the button; `target` may be an element inside it.
+    const button = e.currentTarget;
     button.disabled = true;
     const card = button.closest(".chat-card");
     const messageId = card.closest(".message").dataset.messageId;
@@ -58,6 +77,18 @@ export default class ACKSChatMessage extends ChatMessage {
       ui.notifications.warn(`You do not have permission to use this feature for the selected chat card.`);
       return;
     }
+
+    // Applying damage only needs the damage value, not the item. Only the Judge sees this button.
+    if (action === "applyDamage") {
+      if (!game.user.isGM) {
+        button.disabled = false;
+        return;
+      }
+      await this.#applyDamageToTarget(button.dataset.targetUuid, Number(button.dataset.damage));
+      button.disabled = false;
+      return;
+    }
+
     // Get the Actor from a synthetic Token
     const actor = await this.#getChatCardActor(card);
     if (!actor) {
@@ -100,6 +131,23 @@ export default class ACKSChatMessage extends ChatMessage {
 
     // Re-enable the button
     button.disabled = false;
+  }
+
+  /**
+   * Subtract damage from the HP of the attack's target token. HP may become negative.
+   * The token's actor is used, so an unlinked token loses its own HP rather than its base actor's.
+   * @param {string} targetUuid - UUID of the target TokenDocument
+   * @param {number} damage
+   * @return {Promise<void>}
+   */
+  async #applyDamageToTarget(targetUuid, damage) {
+    const target = targetUuid ? await foundry.utils.fromUuid(targetUuid) : null;
+    const actor = target?.actor;
+    if (!actor) {
+      ui.notifications.warn(game.i18n.localize("ACKS.throw.damage.targetMissing"));
+      return;
+    }
+    await actor.update({ "system.hp.value": actor.system.hp.value - damage });
   }
 
   async #getChatCardActor(card) {

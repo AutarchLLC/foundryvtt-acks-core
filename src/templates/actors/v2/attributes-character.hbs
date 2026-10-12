@@ -281,10 +281,8 @@
             <label class="rollable-header__label">Melee</label>
           </a>
           <div class="form-fields">
-            <input type="text"
-                   data-tooltip="{{localize 'ACKS.scores.str.long'}}({{system.scores.str.mod}}) + {{localize
-                     'ACKS.Modifier'}}({{system.thac0.mod.melee}})"
-                   value="{{add system.scores.str.mod system.thac0.mod.melee}}" disabled data-dtype="Number"/>
+            <input type="text" data-tooltip="{{attackThrows.melee.tooltip}}" value="{{attackThrows.melee.value}}"
+                   disabled/>
           </div>
         </div>
 
@@ -296,10 +294,8 @@
             <label class="rollable-header__label">Ranged</label>
           </a>
           <div class="form-fields">
-            <input type="text"
-                   data-tooltip="{{localize 'ACKS.scores.dex.long'}}({{system.scores.dex.mod}}) + {{localize
-                     'ACKS.Modifier'}}({{system.thac0.mod.missile}})"
-                   value="{{add system.scores.dex.mod system.thac0.mod.missile}}" disabled data-dtype="Number"/>
+            <input type="text" data-tooltip="{{attackThrows.missile.tooltip}}" value="{{attackThrows.missile.value}}"
+                   disabled/>
           </div>
         </div>
 

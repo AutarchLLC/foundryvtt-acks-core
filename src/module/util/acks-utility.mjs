@@ -1,6 +1,6 @@
 /* global game, foundry */
 import { ACKS } from "../config.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
+import * as ACKSDialog from "../dialog/index.mjs";
 
 export class AcksUtility {
   /**

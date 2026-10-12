@@ -1,7 +1,7 @@
 /* global foundry, game, ui, Item */
 import { ITEM_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
+import * as ACKSDialog from "../dialog/index.mjs";
 import ActorTweaksConfig from "../apps/actor-tweaks-config.mjs";
 import AcksEffectUtil from "../effect/acks-effect-util.mjs";
 
@@ -132,28 +132,16 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   * Handler for rolling a generic attack without item.
+   * Handler for a generic attack throw without an item: any attack type can be chosen and no damage is rolled.
+   * The clicked button's `data-attack` preselects the attack type.
    * @param {PointerEvent} event
    * @param {HTMLElement} target
    */
   static #rollAttack(event, target) {
-    const attack = target.dataset.attack;
-
-    // TODO: why do we create rollData here?
-    const rollData = {
-      actor: this.actor,
-      roll: {},
-    };
-
-    let skip = false;
     const skipKey = game.settings.get("acks", "skip-dialog-key");
-    if (event[skipKey]) {
-      skip = true;
-    }
-
-    this.actor.targetAttack(rollData, attack, {
-      type: attack,
-      skipDialog: skip,
+    void this.actor.makeAttackThrow({
+      attackType: target.dataset.attack ?? null,
+      skipDialog: Boolean(event[skipKey]),
     });
   }
 

@@ -6,8 +6,8 @@
   <div class="info-card-item">
     <span class="info-card-item__label" data-tooltip="Damage Formula">DMG:</span>
     <span>{{system.damage.base.formula}}
-      {{# if system.hasTwoHandedDamage}}
-        / {{system.damage.twoHanded.formula}}
+      {{# if system.hasAlternateDamage}}
+        / {{system.damage.alternate.formula}}
       {{/if}}
       {{#if system.damage.base.icons}}
         {{#each system.damage.base.icons}}

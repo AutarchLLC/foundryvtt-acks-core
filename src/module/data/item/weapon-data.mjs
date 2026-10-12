@@ -3,6 +3,8 @@ import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import { isCurrentSchema } from "../../migration/migration.mjs";
 import {
+  ATTACK_TYPE,
+  DAMAGE_MODE,
   HB_PARTIAL_NAME,
   SAVING_THROW_CHOICES,
   WEAPON_CATEGORY,
@@ -63,7 +65,7 @@ export default class WeaponData extends ItemBaseData {
         nullable: false,
         blank: false,
         choices: WEAPON_SIZE_CHOICES,
-        initial: WEAPON_SIZE.MEDIUM,
+        initial: WEAPON_SIZE.NA,
         label: "ACKS.weapon.label.size",
       }),
       category: new StringField({
@@ -102,7 +104,8 @@ export default class WeaponData extends ItemBaseData {
       // weapon damage
       damage: new SchemaField({
         base: new DamageField(),
-        twoHanded: new DamageField(),
+        // alternate damage, e.g. a medium weapon gripped two-handed
+        alternate: new DamageField(), //TODO: initialize formula to empty string
       }),
       // custom tags
       ...WeaponCustomTagsTemplate.schema,
@@ -120,11 +123,19 @@ export default class WeaponData extends ItemBaseData {
   }
 
   /**
-   * Whether this weapon has Two-Handed damage formula.
+   * Whether this weapon is a thrown weapon.
    * @return {boolean}
    */
-  get hasTwoHandedDamage() {
-    return (this.size === WEAPON_SIZE.MEDIUM || this.size === WEAPON_SIZE.LARGE) && this.melee;
+  get isThrown() {
+    return this.special?.thrown ?? false;
+  }
+
+  /**
+   * Whether this weapon can have an alternate damage formula (e.g. a medium melee weapon gripped two-handed).
+   * @return {boolean}
+   */
+  get hasAlternateDamage() {
+    return this.size === WEAPON_SIZE.MEDIUM && this.melee;
   }
 
   /**
@@ -135,9 +146,56 @@ export default class WeaponData extends ItemBaseData {
     return HB_PARTIAL_NAME.ITEM_WEAPON_DESC;
   }
 
+  /**
+   * Get the list of attack types for this weapon.
+   * @return {ATTACK_TYPE[]}
+   */
+  getAttackTypes() {
+    /** @type {ATTACK_TYPE[]} */
+    const attackTypes = [];
+    if (this.melee) {
+      attackTypes.push(ATTACK_TYPE.MELEE);
+    }
+    if (this.missile) {
+      attackTypes.push(ATTACK_TYPE.MISSILE);
+    }
+    if (this.isThrown) {
+      attackTypes.push(ATTACK_TYPE.THROWN);
+    }
+    return attackTypes;
+  }
+
+  /**
+   * Damage modes available for the given attack type. The alternate formula is only available for melee
+   * attacks, and only for weapons that can have one and have that formula set.
+   * @param {ATTACK_TYPE} attackType
+   * @return {DAMAGE_MODE[]}
+   */
+  getDamageModes(attackType) {
+    const isMeleeAttack = attackType === ATTACK_TYPE.MELEE;
+    const hasAlternate = this.hasAlternateDamage && this.damage.alternate.formula.trim() !== "";
+    return isMeleeAttack && hasAlternate ? [DAMAGE_MODE.BASE, DAMAGE_MODE.ALTERNATE] : [DAMAGE_MODE.BASE];
+  }
+
+  /**
+   * @param {DAMAGE_MODE} damageMode
+   * @return {string} damage formula for the given mode
+   */
+  getDamageFormula(damageMode) {
+    return damageMode === DAMAGE_MODE.ALTERNATE ? this.damage.alternate.formula : this.damage.base.formula;
+  }
+
+  /**
+   * Attack throw modifiers granted by this weapon.
+   * @return {TNumValueWithLabel[]}
+   */
+  getAttackThrowModifiers() {
+    return [{ label: game.i18n.localize("ACKS.throw.modifier.weapon"), value: this.bonus ?? 0 }];
+  }
+
   /** @override */
   prepareDerivedData() {
-    // we don't call prepareDerivedData on `damage.twoHanded` cause we only care about damage formula from it.
+    // we don't call prepareDerivedData on `damage.alternate` cause we only care about damage formula from it.
     this.damage.base.prepareDerivedData();
 
     this.tags = {
@@ -153,7 +211,9 @@ export default class WeaponData extends ItemBaseData {
     /** @type {TItemTag[]} */
     const tags = [];
     if (this.melee) {
-      tags.push({ label: game.i18n.localize(WEAPON_SIZE_CHOICES[this.size]) });
+      if (this.size !== WEAPON_SIZE.NA) {
+        tags.push({ label: game.i18n.localize(WEAPON_SIZE_CHOICES[this.size]) });
+      }
       tags.push({ label: game.i18n.localize("ACKS.items.Melee") });
     }
     if (this.missile) {
@@ -238,7 +298,7 @@ export default class WeaponData extends ItemBaseData {
           types: [],
           extraordinary: false,
         },
-        twoHanded: {
+        alternate: {
           formula: "",
           types: [],
           extraordinary: false,

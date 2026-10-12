@@ -2,7 +2,7 @@
 import { AcksUtility } from "./util/acks-utility.mjs";
 import SurpriseMatrix from "./apps/surprise-matrix.mjs";
 import AcksCombatHelper from "./combat-helper.mjs";
-import ACKSDialog from "./dialog/dialog.mjs";
+import * as ACKSDialog from "./dialog/index.mjs";
 
 export default class AcksCombat extends Combat {
   /*******************************************************/

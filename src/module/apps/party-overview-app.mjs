@@ -1,7 +1,7 @@
 /* global foundry, game, ui */
 import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
+import * as ACKSDialog from "../dialog/index.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 

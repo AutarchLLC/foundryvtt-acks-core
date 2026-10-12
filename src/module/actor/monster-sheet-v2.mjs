@@ -3,7 +3,7 @@ import ACKSActorSheetV2 from "./actor-sheet-v2.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
+import * as ACKSDialog from "../dialog/index.mjs";
 import { MONSTER_SAVING_THROW_LUT } from "../constants.mjs";
 
 export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {

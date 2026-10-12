@@ -2790,3 +2790,310 @@
   border-right: none;
   padding-right: 0;
 }
+
+/* Attack Throw chat card */
+.acksii.attack-throw-card .card-header {
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background: var(--acks-purple);
+  color: whitesmoke;
+}
+
+.acksii.attack-throw-card .card-header__img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+}
+
+.acksii.attack-throw-card .card-header__name {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.acksii.attack-throw-card .card-header__name a,
+.acksii.attack-throw-card .card-header__name a:hover {
+  color: whitesmoke;
+  text-shadow: none;
+}
+
+.acksii.attack-throw-card .attack-throw-card__summary {
+  margin: 4px 0;
+}
+
+.acksii.attack-throw-card .attack-throw-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__footer span {
+  padding: 0 4px;
+  border: 1px solid var(--acks-purple);
+  border-radius: 4px;
+  background-color: var(--acks-purple);
+  color: whitesmoke;
+  font-family: "RobotoCondensed", sans-serif;
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.acksii.attack-throw-card :is(.attack-throw-card__outcome--critical, .attack-throw-card__outcome--auto-hit) {
+  color: #18520b;
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome--auto-miss {
+  color: #aa0200;
+}
+
+.acksii.attack-throw-card .attack-throw-card__reason {
+  font-family: "RobotoRegular", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.acksii.attack-throw-card .attack-throw-card__rolls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 0 2px;
+  border: none;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 12px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__target-value {
+  margin-left: auto;
+  font-family: "RobotoRegular", sans-serif;
+  font-weight: normal;
+}
+
+.acksii.attack-throw-card .dice-total {
+  font-size: 20px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__damage-types {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.acksii.attack-throw-card :is(.attack-throw-card__modifiers, .attack-throw-card__notes) {
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: "RobotoCondensed", sans-serif;
+}
+
+.acksii.attack-throw-card .attack-throw-card__modifiers li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__value {
+  font-weight: bold;
+}
+
+.acksii.attack-throw-card .attack-throw-card__notes {
+  font-style: italic;
+}
+
+/* Attack Throw dialog */
+.acks2.attack-throw-dialog .window-title,
+.acks2.attack-throw-dialog .window-content {
+  font-family: "RobotoRegular", sans-serif;
+}
+
+.acks2.attack-throw-dialog .window-content {
+  --input-height: 1.5rem;
+  font-size: var(--font-size-12);
+}
+
+.acks2.attack-throw-dialog .window-content :is(input, select) {
+  padding: 0 4px;
+}
+
+.acks2.attack-throw-dialog .window-content :is(label, input, select, button) {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.acks2.attack-throw-dialog .attack-throw-header__attacker,
+.acks2.attack-throw-dialog .attack-throw-preview__roll h4,
+.acks2.attack-throw-dialog .attack-throw-preview__formula {
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__modifiers {
+  font-family: "RobotoCondensed", sans-serif;
+}
+
+.acks2.attack-throw-dialog .window-content input[type="text"] {
+  text-align: left;
+}
+
+.acks2.attack-throw-dialog .window-content input:invalid {
+  outline: 2px solid var(--color-level-error-border);
+}
+
+.acks2.attack-throw-dialog .attack-throw-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.acks2.attack-throw-dialog .attack-throw-header__img {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  object-fit: contain;
+  border: none;
+}
+
+.acks2.attack-throw-dialog .attack-throw-header__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.acks2.attack-throw-dialog .attack-throw-header__attacker {
+  font-size: var(--font-size-16);
+  font-weight: bold;
+}
+
+.acks2.attack-throw-dialog .attack-throw-header__target {
+  color: var(--color-form-hint);
+}
+
+.acks2.attack-throw-dialog .attack-throw-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option + .attack-throw-segmented__option {
+  border-left: none;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option:has(input:checked) {
+  background: var(--color-bg-btn-minor-active);
+  color: var(--color-text-emphatic);
+  font-weight: bold;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.acks2.attack-throw-dialog .attack-throw-segmented__option:has(input:focus-visible) {
+  outline: 2px solid var(--color-border-highlight);
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__roll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-fieldset-border);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__roll h4 {
+  margin: 0;
+  border: none;
+  color: var(--color-form-label);
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__formula {
+  font-size: var(--font-size-16);
+  font-weight: bold;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__damage-types {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__target {
+  color: var(--color-form-hint);
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__modifiers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__modifiers li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.acks2.attack-throw-dialog .attack-throw-preview__value {
+  font-weight: bold;
+}

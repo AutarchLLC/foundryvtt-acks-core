@@ -1,0 +1,10 @@
+<header class="attack-throw-header">
+  <img class="attack-throw-header__img" src="{{actor.img}}" alt="{{actor.name}}">
+  <div class="attack-throw-header__text">
+    <div class="attack-throw-header__attacker">{{attackerLabel}}</div>
+    <div class="attack-throw-header__target">{{targetLabel}}</div>
+  </div>
+  {{#if item}}
+    <img class="attack-throw-header__img" src="{{item.img}}" alt="{{item.name}}">
+  {{/if}}
+</header>

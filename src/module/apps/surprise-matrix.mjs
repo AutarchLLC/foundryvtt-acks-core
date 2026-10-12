@@ -1,7 +1,7 @@
 /* global foundry, game, Roll, ChatMessage */
 import { SURPRISE_MATRIX } from "../constants.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
-import ACKSDialog from "../dialog/dialog.mjs";
+import * as ACKSDialog from "../dialog/index.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 

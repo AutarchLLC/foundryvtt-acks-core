@@ -85,10 +85,29 @@ export const registerMainSettings = async () => {
     requiresReload: false,
   });
 
-  // TODO: separate exploding 20s and Critical Hits Custom Rules
   game.settings.register("acks", "exploding20s", {
     name: game.i18n.localize("ACKS.Setting.Explode20"),
     hint: game.i18n.localize("ACKS.Setting.Explode20Hint"),
+    default: false,
+    scope: "world",
+    type: Boolean,
+    requiresReload: false,
+    config: true,
+  });
+
+  game.settings.register("acks", "criticalHits", {
+    name: game.i18n.localize("ACKS.Setting.CriticalHits"),
+    hint: game.i18n.localize("ACKS.Setting.CriticalHitsHint"),
+    default: false,
+    scope: "world",
+    type: Boolean,
+    requiresReload: false,
+    config: true,
+  });
+
+  game.settings.register("acks", "showTargetACToPlayers", {
+    name: game.i18n.localize("ACKS.Setting.ShowTargetAC"),
+    hint: game.i18n.localize("ACKS.Setting.ShowTargetACHint"),
     default: false,
     scope: "world",
     type: Boolean,

@@ -1,7 +1,6 @@
 /* global Roll, game, ChatMessage, foundry, CONFIG */
-import { ACKS } from "./config.mjs";
-import ACKSDialog from "./dialog/dialog.mjs";
-import { ATTACK_TYPE, ROLL_TYPE } from "./constants.mjs";
+import * as ACKSDialog from "./dialog/index.mjs";
+import { ROLL_TYPE } from "./constants.mjs";
 
 export default class AcksDice {
   /**
@@ -71,56 +70,6 @@ export default class AcksDice {
   }
 
   /**
-   * Digest the attack roll result based on the attack rules and return a structured result object
-   * @param data
-   * @param {Roll} roll - Foundry Roll instance
-   * @return {TAttackRollResult}
-   */
-  static #digestAttackResult(data, roll) {
-    /** @type TAttackRollResult */
-    const result = {
-      isSuccess: false,
-      isFailure: false,
-      target: 20,
-      total: roll.total,
-    };
-    result.target = data.roll.thac0;
-
-    // TODO: rework this
-
-    const targetAC = data.roll.target ? data.roll.target.actor.system.aac.value : 0;
-    result.victim = data.roll.target ? data.roll.target.name : null;
-
-    const hfh = game.settings.get("acks", "exploding20s");
-    const die = roll.dice[0].total;
-
-    if (die === 1 && !hfh) {
-      result.details = game.i18n.format("ACKS.messages.Fumble", {
-        result: roll.total,
-        bonus: result.target,
-      });
-      return result;
-    } else if (roll.total < targetAC + 10 && (die < 20 || hfh)) {
-      result.details = game.i18n.format("ACKS.messages.AttackAscendingFailure", {
-        result: roll.total - 10,
-        bonus: result.target,
-      });
-      return result;
-    }
-    if (!hfh && die === 20) {
-      result.details = game.i18n.format("ACKS.messages.Critical", {
-        result: roll.total,
-      });
-    } else {
-      result.details = game.i18n.format("ACKS.messages.AttackAscendingSuccess", {
-        result: roll.total - 10,
-      });
-    }
-    result.isSuccess = true;
-    return result;
-  }
-
-  /**
    *
    * @param {TRollOptions} options
    * @return {Promise<Roll>}
@@ -183,81 +132,6 @@ export default class AcksDice {
 
   /**
    *
-   * @param {TRollOptions} options
-   * @return {Promise<Roll>}
-   */
-  static async #sendAttackRoll(options) {
-    const template = "systems/acks/templates/chat/roll-attack.hbs";
-
-    const chatData = {
-      user: game.user.id,
-      speaker: options.speaker,
-    };
-
-    const templateData = {
-      title: options.title,
-      flavor: options.flavor,
-      data: options.data,
-      config: ACKS,
-    };
-
-    // Optionally include a situational bonus
-    if (options.rollDetails?.bonus) {
-      options.parts.push(options.rollDetails?.bonus);
-    }
-
-    const roll = new Roll(options.parts.join("+"), options.data);
-    await roll.evaluate();
-
-    const dmgRoll = new Roll(options.data.roll.dmg.join("+"), options.data);
-    await dmgRoll.evaluate();
-
-    // Add minimal damage (1 point)
-    if (dmgRoll.total < 1) {
-      dmgRoll._total = 1;
-    }
-
-    // Determine roll mode
-    let rollMode = options.form?.rollMode.value ?? game.settings.get("core", "rollMode");
-
-    // Force blind roll (ability formulas)
-    if (options.data.roll.blindroll) {
-      rollMode = game.user.isGM ? "selfroll" : "blindroll";
-    }
-
-    if (["gmroll", "blindroll"].includes(rollMode)) {
-      chatData.whisper = ChatMessage.getWhisperRecipients("GM");
-    }
-    if (rollMode === "selfroll") {
-      chatData.whisper = [game.user.id];
-    } else if (rollMode === "blindroll") {
-      chatData.blind = true;
-      options.data.roll.blindroll = true;
-    }
-
-    templateData.result = AcksDice.#digestAttackResult(options.data, roll);
-    templateData.rollACKS = await roll.render();
-    templateData.rollDamage = await dmgRoll.render();
-
-    chatData.content = await foundry.applications.handlebars.renderTemplate(template, templateData);
-
-    // Dice So Nice
-    if (game.dice3d) {
-      await game.dice3d.showForRoll(roll, game.user, true, chatData.whisper, chatData.blind);
-      if (templateData.result.isSuccess) {
-        templateData.result.dmg = dmgRoll.total;
-        await game.dice3d.showForRoll(dmgRoll, game.user, true, chatData.whisper, chatData.blind);
-      }
-    } else {
-      chatData.sound = CONFIG.sounds.dice;
-    }
-
-    ChatMessage.create(chatData);
-    return roll;
-  }
-
-  /**
-   *
    * @param {TRollOptions}[options={}] - roll options
    * @return {Promise<unknown>}
    */
@@ -275,9 +149,7 @@ export default class AcksDice {
     const rollOptions = Object.assign(DEFAULT_OPTIONS, options);
 
     if (rollOptions.skipDialog) {
-      return [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(rollOptions.data.roll.type)
-        ? AcksDice.#sendAttackRoll(rollOptions)
-        : AcksDice.#sendRoll(rollOptions);
+      return AcksDice.#sendRoll(rollOptions);
     }
 
     const dialogData = {
@@ -291,9 +163,7 @@ export default class AcksDice {
 
     if (rollDetails) {
       rollOptions.rollDetails = rollDetails;
-      return [ATTACK_TYPE.MELEE, ATTACK_TYPE.MISSILE, ATTACK_TYPE.ATTACK].includes(rollOptions.data.roll.type)
-        ? AcksDice.#sendAttackRoll(rollOptions)
-        : AcksDice.#sendRoll(rollOptions);
+      return AcksDice.#sendRoll(rollOptions);
     }
   }
 }
