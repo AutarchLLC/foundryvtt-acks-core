@@ -137,3 +137,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+
+# End-to-end tests
+.foundry-test/
+e2e/foundry.config.json
+test-results/
+playwright-report/
