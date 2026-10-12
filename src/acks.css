@@ -2820,22 +2820,22 @@
 }
 
 .acksii.attack-throw-card .attack-throw-card__summary {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 4px;
   margin: 4px 0;
 }
 
-.acksii.attack-throw-card .attack-throw-card__choices {
+.acksii.attack-throw-card .attack-throw-card__footer {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
+  margin-top: 4px;
 }
 
-.acksii.attack-throw-card .attack-throw-card__choices span {
+.acksii.attack-throw-card .attack-throw-card__footer span {
   padding: 0 4px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--acks-purple);
   border-radius: 4px;
+  background-color: var(--acks-purple);
+  color: whitesmoke;
   font-family: "RobotoCondensed", sans-serif;
 }
 
