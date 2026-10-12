@@ -89,6 +89,7 @@
  * @property {ATTACK_TYPE[]} attackTypes
  * @property {DAMAGE_MODE[]} damageModes - Empty without a weapon
  * @property {ATTACK_RANGE[]} ranges - Empty for melee attacks
+ * @property {ATTACK_DIRECTION[]} directions - Backstab / ambush only in melee or at short range
  */
 
 /**

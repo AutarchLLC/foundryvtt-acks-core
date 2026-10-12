@@ -42,17 +42,44 @@ function getAttackTypes(item) {
 }
 
 /**
- * Choices available with the given item and attack type.
+ * Attack directions available for the given attack type and range. A backstab or ambush is only possible in melee
+ * or at short range.
+ * @param {ATTACK_TYPE} attackType
+ * @param {?ATTACK_RANGE} range
+ * @return {ATTACK_DIRECTION[]}
+ */
+function getAttackDirections(attackType, range) {
+  const canBackstab = attackType === ATTACK_TYPE.MELEE || range === ATTACK_RANGE.SHORT;
+  return Object.values(ATTACK_DIRECTION).filter((direction) => canBackstab || direction !== ATTACK_DIRECTION.BACKSTAB);
+}
+
+/**
+ * @param {ATTACK_DIRECTION|undefined} direction - chosen direction
+ * @param {ATTACK_DIRECTION[]} directions - available directions
+ * @return {ATTACK_DIRECTION} the chosen direction if available; a backstab that is no longer possible becomes an
+ * attack from the rear (flank / rear); anything else becomes a frontal attack
+ */
+function normalizeDirection(direction, directions) {
+  if (directions.includes(direction)) {
+    return direction;
+  }
+  return direction === ATTACK_DIRECTION.BACKSTAB ? ATTACK_DIRECTION.FLANK : ATTACK_DIRECTION.FRONT;
+}
+
+/**
+ * Choices available with the given item, attack type and range.
  * @param {?AcksItem} item - item used to attack
  * @param {ATTACK_TYPE} attackType - selected attack type
+ * @param {?ATTACK_RANGE} [range=null] - selected range band
  * @return {TAttackOptions}
  */
-export function getAttackOptions(item, attackType) {
+export function getAttackOptions(item, attackType, range = null) {
   const weapon = asWeapon(item);
   return {
     attackTypes: getAttackTypes(item),
     damageModes: weapon ? weapon.system.getDamageModes(attackType) : [],
     ranges: RANGED_ATTACK_TYPES.includes(attackType) ? Object.values(ATTACK_RANGE) : [],
+    directions: getAttackDirections(attackType, range),
   };
 }
 
@@ -68,14 +95,16 @@ export function normalizeChoices(item, choices) {
   const attackTypes = getAttackTypes(item);
   const attackType = attackTypes.includes(choices.attackType) ? choices.attackType : attackTypes[0];
   const { damageModes, ranges } = getAttackOptions(item, attackType);
+  const range = ranges.includes(choices.range) ? choices.range : (ranges[0] ?? null);
+  const directions = getAttackDirections(attackType, range);
   const messageMode =
     choices.messageMode in CONFIG.ChatMessage.modes ? choices.messageMode : game.settings.get("core", "messageMode");
 
   return {
     attackType,
     damageMode: damageModes.includes(choices.damageMode) ? choices.damageMode : (damageModes[0] ?? null),
-    range: ranges.includes(choices.range) ? choices.range : (ranges[0] ?? null),
-    direction: Object.values(ATTACK_DIRECTION).includes(choices.direction) ? choices.direction : ATTACK_DIRECTION.FRONT,
+    range,
+    direction: normalizeDirection(choices.direction, directions),
     subjacent: Boolean(choices.subjacent),
     situational: String(choices.situational ?? "").trim(),
     messageMode,

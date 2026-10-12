@@ -114,7 +114,11 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     const choices = this.#choices;
-    const { attackTypes, damageModes, ranges } = getAttackOptions(this.#item, choices.attackType);
+    const { attackTypes, damageModes, ranges, directions } = getAttackOptions(
+      this.#item,
+      choices.attackType,
+      choices.range,
+    );
 
     context.actor = this.#actor;
     context.item = this.#item;
@@ -154,7 +158,12 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
     context.directions = Object.values(ATTACK_DIRECTION).map((value) => {
       const modifier = ATTACK_DIRECTION_MODIFIER[value];
       const label = game.i18n.localize(`ACKS.throw.direction.${value}`);
-      return { value, label: modifier ? `${label} (+${modifier})` : label, selected: value === choices.direction };
+      return {
+        value,
+        label: modifier ? `${label} (+${modifier})` : label,
+        selected: value === choices.direction,
+        disabled: !directions.includes(value),
+      };
     });
     context.subjacentLabel = `${game.i18n.localize("ACKS.throw.modifier.subjacent")} (+${SUBJACENT_TARGET_MODIFIER})`;
 
@@ -185,7 +194,7 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
   }
 
   /**
-   * Re-render the parts affected by the changed input. The attack type changes which options are available.
+   * Re-render the parts affected by the changed input.
    * @override
    */
   _onChangeForm(formConfig, event) {
@@ -195,7 +204,9 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
     if (name === "messageMode") {
       return;
     }
-    void this.render({ parts: name === "attackType" ? ["options", "preview"] : ["preview"] });
+    // attack type and range change which options are available
+    const changesOptions = name === "attackType" || name === "range";
+    void this.render({ parts: changesOptions ? ["options", "preview"] : ["preview"] });
   }
 
   /**

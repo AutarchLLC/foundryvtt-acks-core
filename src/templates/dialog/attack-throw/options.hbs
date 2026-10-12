@@ -4,7 +4,7 @@
     <div class="form-fields attack-throw-segmented">
       {{#each options}}
         <label class="attack-throw-segmented__option">
-          <input type="radio" name="{{../name}}" value="{{value}}" {{checked selected}}>
+          <input type="radio" name="{{../name}}" value="{{value}}" {{checked selected}} {{disabled disabled}}>
           {{#if icon}}<i class="{{icon}}" inert></i>{{/if}}
           <span>{{label}}</span>
         </label>
