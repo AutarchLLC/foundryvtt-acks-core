@@ -29,6 +29,24 @@ export default class AcksActor extends Actor {
     return super.create(data, options);
   }
 
+  async _preUpdate(changes, options, user) {
+    const allowed = await super._preUpdate(changes, options, user);
+    if (allowed === false) return false;
+
+    // Rolling or editing scores (characters) or saves (monsters) ends the "new actor" state.
+    // Sheets submit every field, so compare against the source to catch real changes only.
+    const key = { character: "scores", monster: "saves" }[this.type];
+    const incoming = key && changes.system?.[key];
+    if (
+      this.system.isNew &&
+      incoming &&
+      !foundry.utils.isEmpty(foundry.utils.diffObject(this._source.system[key], incoming))
+    ) {
+      foundry.utils.setProperty(changes, "system.isNew", false);
+    }
+    return allowed;
+  }
+
   async _onUpdate(changed, options, userId) {
     if (this.type === "character" && this.system.retainer?.enabled && this.system.retainer?.managerid !== "") {
       let manager = game.actors.get(this.system.retainer.managerid);
@@ -37,17 +55,22 @@ export default class AcksActor extends Actor {
       }
     }
     if (changed.system?.retainer?.enabled === false && this.system.retainer.managerid !== "") {
-      let manager = game.actors.get(this.system.retainer.managerid);
-      setTimeout(() => {
-        manager.delHenchman(this.id);
-      }, 200);
-    }
-    if ((this.type === "character" && changed.system?.scores) || (this.type === "monster" && changed.system?.saves)) {
-      setTimeout(() => {
-        this.update({ "system.isNew": false });
-      }, 200);
+      this.#releaseFromManager(userId);
     }
     await super._onUpdate(changed, options, userId);
+  }
+
+  /**
+   * Remove this actor from its manager's henchmen list. Document events fire on every client, so only one
+   * client acts: the user who made the change if they own the manager, otherwise the active GM.
+   * @param {string} userId  The user who triggered the change
+   */
+  #releaseFromManager(userId) {
+    const manager = game.actors.get(this.system.retainer.managerid);
+    if (!manager) return;
+    const requester = game.users.get(userId);
+    const handler = manager.testUserPermission(requester, "OWNER") ? requester : game.users.activeGM;
+    if (handler?.isSelf) manager.delHenchman(this.id);
   }
 
   /**
@@ -61,8 +84,7 @@ export default class AcksActor extends Actor {
   _onDelete(options, userId) {
     super._onDelete(options, userId);
     if (this.system.retainer?.enabled && this.system.retainer?.managerid) {
-      const manager = game.actors.get(this.system.retainer.managerid);
-      manager?.delHenchman(this.id);
+      this.#releaseFromManager(userId);
     }
   }
 
