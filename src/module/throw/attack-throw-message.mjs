@@ -1,5 +1,11 @@
 /* global foundry, game, ChatMessage */
-import { ATTACK_RANGE_PENALTY, DAMAGE_MODE } from "../constants.mjs";
+import {
+  ATTACK_DIRECTION,
+  ATTACK_DIRECTION_MODIFIER,
+  ATTACK_RANGE_PENALTY,
+  DAMAGE_MODE,
+  SUBJACENT_TARGET_MODIFIER,
+} from "../constants.mjs";
 
 const TEMPLATE = "systems/acks/templates/chat/attack-throw-card.hbs";
 
@@ -123,7 +129,8 @@ function createModifierList(modifiers) {
 }
 
 /**
- * Short labels for the choices made in the Attack Throw dialog, e.g. ["Missile", "Medium Range (-2)"].
+ * Short labels for the choices made in the Attack Throw dialog, e.g. ["Missile", "Medium Range (-2)"]. Default
+ * choices (front attack, target not subjacent) are left out.
  * @param {TAttackThrowResult} result
  * @return {string[]}
  */
@@ -138,6 +145,13 @@ function getChoiceLabels(result) {
       range: game.i18n.localize(`ACKS.throw.range.${result.range}`),
     });
     labels.push(penalty ? `${range} (${penalty})` : range);
+  }
+  if (result.direction !== ATTACK_DIRECTION.FRONT) {
+    const direction = game.i18n.localize(`ACKS.throw.direction.${result.direction}`);
+    labels.push(`${direction} (+${ATTACK_DIRECTION_MODIFIER[result.direction]})`);
+  }
+  if (result.subjacent) {
+    labels.push(`${game.i18n.localize("ACKS.throw.modifier.subjacent")} (+${SUBJACENT_TARGET_MODIFIER})`);
   }
   return labels;
 }

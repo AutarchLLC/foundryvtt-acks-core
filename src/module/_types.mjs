@@ -77,6 +77,8 @@
  * @property {ATTACK_TYPE} attackType - Melee, missile or thrown
  * @property {?DAMAGE_MODE} damageMode - Base or alternate damage formula; null without a weapon
  * @property {?ATTACK_RANGE} range - Range band for missile and thrown attacks; null otherwise
+ * @property {ATTACK_DIRECTION} direction - Direction the attack comes from (front, flank / rear, backstab / ambush)
+ * @property {boolean} subjacent - Whether the target is subjacent (below the attacker)
  * @property {string} situational - Situational modifier formula, e.g. "+2" or "-1d4"
  * @property {string} messageMode - Chat message mode, a key of CONFIG.ChatMessage.modes
  */

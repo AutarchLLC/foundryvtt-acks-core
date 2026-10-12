@@ -2992,6 +2992,7 @@
 
 .acks2.attack-throw-dialog .attack-throw-segmented {
   display: flex;
+  align-items: stretch;
   gap: 0;
 }
 
@@ -3003,9 +3004,11 @@
   justify-content: center;
   gap: 0.35rem;
   padding: 0.25rem 0.5rem;
+  min-width: 0;
   border: 1px solid var(--color-border);
   cursor: pointer;
-  white-space: nowrap;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .acks2.attack-throw-dialog .attack-throw-segmented__option + .attack-throw-segmented__option {

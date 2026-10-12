@@ -26,6 +26,15 @@
     {{> segmentedGroup name="range" label="ACKS.throw.range.label" options=ranges}}
   {{/if}}
 
+  {{> segmentedGroup name="direction" label="ACKS.throw.direction.label" options=directions}}
+
+  <div class="form-group">
+    <label for="{{partId}}-subjacent">{{subjacentLabel}}</label>
+    <div class="form-fields">
+      <input type="checkbox" id="{{partId}}-subjacent" name="subjacent" {{checked choices.subjacent}}>
+    </div>
+  </div>
+
   <div class="form-group">
     <label for="{{partId}}-situational">{{localize "ACKS.SitMod"}}</label>
     <div class="form-fields">

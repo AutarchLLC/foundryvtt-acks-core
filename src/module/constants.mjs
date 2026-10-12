@@ -734,6 +734,30 @@ export const ATTACK_RANGE_PENALTY = Object.freeze({
 });
 
 /**
+ * Direction an attack comes from, relative to the target's facing.
+ * @readonly
+ * @enum {string}
+ */
+export const ATTACK_DIRECTION = Object.freeze({
+  FRONT: "front",
+  FLANK: "flank",
+  BACKSTAB: "backstab",
+});
+
+/**
+ * Attack throw modifier for each attack direction.
+ * @type {Readonly<Record<ATTACK_DIRECTION, number>>}
+ */
+export const ATTACK_DIRECTION_MODIFIER = Object.freeze({
+  [ATTACK_DIRECTION.FRONT]: 0,
+  [ATTACK_DIRECTION.FLANK]: 2,
+  [ATTACK_DIRECTION.BACKSTAB]: 4,
+});
+
+/** Attack throw modifier against a subjacent target (one below the attacker). */
+export const SUBJACENT_TARGET_MODIFIER = 1;
+
+/**
  * Which weapon damage formula an attack uses: base, or alternate (e.g. two-handed grip).
  * @readonly
  * @enum {string}

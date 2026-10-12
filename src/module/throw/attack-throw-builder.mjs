@@ -1,5 +1,13 @@
 /* global game, CONFIG, Roll */
-import { ATTACK_RANGE, ATTACK_RANGE_PENALTY, ATTACK_TYPE, ITEM_TYPE } from "../constants.mjs";
+import {
+  ATTACK_DIRECTION,
+  ATTACK_DIRECTION_MODIFIER,
+  ATTACK_RANGE,
+  ATTACK_RANGE_PENALTY,
+  ATTACK_TYPE,
+  ITEM_TYPE,
+  SUBJACENT_TARGET_MODIFIER,
+} from "../constants.mjs";
 import AcksAttackThrow from "./attack-throw.mjs";
 import AcksDamageRoll from "./damage-roll.mjs";
 import ModifiedFormula from "./modified-formula.mjs";
@@ -50,8 +58,8 @@ export function getAttackOptions(item, attackType) {
 
 /**
  * Replace any choice that is not available with this item with its first valid option.
- * Called with no choices, this gives the defaults: first attack type, base damage, short range, no situational
- * modifier.
+ * Called with no choices, this gives the defaults: first attack type, base damage, short range, frontal attack on a
+ * target that is not subjacent, no situational modifier.
  * @param {?AcksItem} item - item used to attack
  * @param {Partial<TAttackThrowChoices>} choices
  * @return {TAttackThrowChoices}
@@ -67,6 +75,8 @@ export function normalizeChoices(item, choices) {
     attackType,
     damageMode: damageModes.includes(choices.damageMode) ? choices.damageMode : (damageModes[0] ?? null),
     range: ranges.includes(choices.range) ? choices.range : (ranges[0] ?? null),
+    direction: Object.values(ATTACK_DIRECTION).includes(choices.direction) ? choices.direction : ATTACK_DIRECTION.FRONT,
+    subjacent: Boolean(choices.subjacent),
     situational: String(choices.situational ?? "").trim(),
     messageMode,
   };
@@ -94,7 +104,8 @@ export function isValidSituationalModifier(value) {
  * @return {TAttackThrowResult}
  */
 export function buildAttackThrow(actor, item, choices, target = null) {
-  const { attackType, damageMode, range, situational, messageMode } = normalizeChoices(item, choices);
+  const normalized = normalizeChoices(item, choices);
+  const { attackType, damageMode, range, direction, subjacent, situational } = normalized;
   const weapon = asWeapon(item);
   const rollData = actor.getRollData();
 
@@ -111,6 +122,13 @@ export function buildAttackThrow(actor, item, choices, target = null) {
       ATTACK_RANGE_PENALTY[range],
     );
   }
+  attackThrow.addModifier(
+    game.i18n.localize(`ACKS.throw.direction.${direction}`),
+    ATTACK_DIRECTION_MODIFIER[direction],
+  );
+  if (subjacent) {
+    attackThrow.addModifier(game.i18n.localize("ACKS.throw.modifier.subjacent"), SUBJACENT_TARGET_MODIFIER);
+  }
   if (isValidSituationalModifier(situational)) {
     attackThrow.addModifier(game.i18n.localize("ACKS.SitMod"), situational);
   }
@@ -126,11 +144,7 @@ export function buildAttackThrow(actor, item, choices, target = null) {
   }
 
   return {
-    attackType,
-    damageMode,
-    range,
-    situational,
-    messageMode,
+    ...normalized,
     target,
     attack: attackThrow.toRollSpec(rollData),
     damage,

@@ -1,5 +1,11 @@
 /* global foundry, game, CONFIG */
-import { ATTACK_RANGE_PENALTY, ATTACK_TYPE } from "../constants.mjs";
+import {
+  ATTACK_DIRECTION,
+  ATTACK_DIRECTION_MODIFIER,
+  ATTACK_RANGE_PENALTY,
+  ATTACK_TYPE,
+  SUBJACENT_TARGET_MODIFIER,
+} from "../constants.mjs";
 import {
   buildAttackThrow,
   getAttackOptions,
@@ -145,6 +151,12 @@ export default class AttackThrowDialog extends HandlebarsApplicationMixin(Applic
       const label = game.i18n.localize(`ACKS.throw.range.${value}`);
       return { value, label: penalty ? `${label} (${penalty})` : label, selected: value === choices.range };
     });
+    context.directions = Object.values(ATTACK_DIRECTION).map((value) => {
+      const modifier = ATTACK_DIRECTION_MODIFIER[value];
+      const label = game.i18n.localize(`ACKS.throw.direction.${value}`);
+      return { value, label: modifier ? `${label} (+${modifier})` : label, selected: value === choices.direction };
+    });
+    context.subjacentLabel = `${game.i18n.localize("ACKS.throw.modifier.subjacent")} (+${SUBJACENT_TARGET_MODIFIER})`;
 
     context.messageModes = Object.fromEntries(
       Object.entries(CONFIG.ChatMessage.modes).map(([mode, { label }]) => [mode, label]),
