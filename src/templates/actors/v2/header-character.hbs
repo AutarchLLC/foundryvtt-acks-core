@@ -13,8 +13,10 @@
                   rootId=@root.partId localize=true classes="flex-2"}}
       {{formGroup actorFields.details.fields.age label="ACKS.details.age" value=system.details.age
                   rootId=@root.partId localize=true classes="flex-1"}}
-      {{formGroup actorFields.details.fields.fatepoints label="ACKS.details.fate" value=system.details.fatepoints
-                  rootId=@root.partId localize=true classes="flex-1"}}
+      {{#if showFatePoints}}
+        {{formGroup actorFields.details.fields.fatepoints label="ACKS.details.fate" value=system.details.fatepoints
+                    rootId=@root.partId localize=true classes="flex-1"}}
+      {{/if}}
 
       {{#if system.retainer.enabled}}
         {{formGroup actorFields.retainer.fields.wage label="ACKS.RetainerWage" value=system.retainer.wage

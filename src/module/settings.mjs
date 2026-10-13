@@ -144,4 +144,14 @@ export const registerMainSettings = async () => {
     config: true,
     requiresReload: false,
   });
+
+  game.settings.register("acks", "heroicFate", {
+    name: "ACKS.Setting.HeroicFate.Name",
+    hint: "ACKS.Setting.HeroicFate.Hint",
+    type: Boolean,
+    default: true,
+    scope: "world",
+    config: true,
+    requiresReload: false,
+  });
 };
