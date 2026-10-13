@@ -58,40 +58,51 @@ export default class WeaponCustomTagsTemplate {
       foundry.utils.setProperty(source, "missile", true);
     }
 
-    // damage types
-    const damageTypes = new Set(foundry.utils.getProperty(source, "damage.types") ?? []);
-    if (/\bacid/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.ACIDIC);
-    } else if (/\barcan/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.ARCANE);
-    } else if (/\bbludg/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.BLUDGEONING);
-    } else if (/\bpierc/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.PIERCING);
-    } else if (/\bpoison/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.POISONOUS);
-    } else if (/\bslash/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.SLASHING);
-    } else if (/\bcold/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.COLD);
-    } else if (/\belectr/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.ELECTRICAL);
-    } else if (/\bfire/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.FIRE);
-    } else if (/\blumin/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.LUMINOUS);
-    } else if (/\bnecro/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.NECROTIC);
-    } else if (/\bseism/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.SEISMIC);
-    } else if (/\bvarie/i.test(tag)) {
-      damageTypes.add(DAMAGE_TYPE.VARIES_BY_WEAPON);
+    // damage types and extraordinary damage live on the base damage only (they apply to the alternate formula too)
+    const damageType = this.#damageTypeFromTag(tag);
+    if (damageType) {
+      const damageTypes = new Set(foundry.utils.getProperty(source, "damage.base.types") ?? []);
+      damageTypes.add(damageType);
+      foundry.utils.setProperty(source, "damage.base.types", Array.from(damageTypes));
     }
-    foundry.utils.setProperty(source, "damage.types", Array.from(damageTypes));
 
-    // extraordinary damage
     if (/\b(extrao|magic)/i.test(tag)) {
-      foundry.utils.setProperty(source, "damage.extraordinary", true);
+      foundry.utils.setProperty(source, "damage.base.extraordinary", true);
     }
+  }
+
+  /**
+   * @param {string} tag  Lower-cased legacy tag.
+   * @return {DAMAGE_TYPE|null} damage type the tag names, if any
+   */
+  static #damageTypeFromTag(tag) {
+    if (/\bacid/i.test(tag)) {
+      return DAMAGE_TYPE.ACIDIC;
+    } else if (/\barcan/i.test(tag)) {
+      return DAMAGE_TYPE.ARCANE;
+    } else if (/\bbludg/i.test(tag)) {
+      return DAMAGE_TYPE.BLUDGEONING;
+    } else if (/\bpierc/i.test(tag)) {
+      return DAMAGE_TYPE.PIERCING;
+    } else if (/\bpoison/i.test(tag)) {
+      return DAMAGE_TYPE.POISONOUS;
+    } else if (/\bslash/i.test(tag)) {
+      return DAMAGE_TYPE.SLASHING;
+    } else if (/\bcold/i.test(tag)) {
+      return DAMAGE_TYPE.COLD;
+    } else if (/\belectr/i.test(tag)) {
+      return DAMAGE_TYPE.ELECTRICAL;
+    } else if (/\bfire/i.test(tag)) {
+      return DAMAGE_TYPE.FIRE;
+    } else if (/\blumin/i.test(tag)) {
+      return DAMAGE_TYPE.LUMINOUS;
+    } else if (/\bnecro/i.test(tag)) {
+      return DAMAGE_TYPE.NECROTIC;
+    } else if (/\bseism/i.test(tag)) {
+      return DAMAGE_TYPE.SEISMIC;
+    } else if (/\bvarie/i.test(tag)) {
+      return DAMAGE_TYPE.VARIES_BY_WEAPON;
+    }
+    return null;
   }
 }

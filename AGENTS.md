@@ -195,3 +195,5 @@ src/module/migration/
   committed DB state (see `m3-languages-to-items.mjs`).
 - The runner migrates world actors, world items, scene token deltas and world-owned compendiums.
 - Leave the `resetSchemaVersions()` dev call in `migration.mjs` commented out in committed code.
+- Data models and the runner import `CURRENT_SCHEMA_VERSION` / `isCurrentSchema` from
+  `schema-version.mjs`, never from `migration.mjs` (that would create a circular import through the migrations).

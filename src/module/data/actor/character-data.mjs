@@ -4,7 +4,7 @@ import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackTweaks from "./templates/attack-tweaks.mjs";
-import { isCurrentSchema } from "../../migration/migration.mjs";
+import { isCurrentSchema } from "../../migration/schema-version.mjs";
 import { ATTACK_TYPE } from "../../constants.mjs";
 
 /**

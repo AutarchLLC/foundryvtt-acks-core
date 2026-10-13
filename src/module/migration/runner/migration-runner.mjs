@@ -1,5 +1,5 @@
 /* global foundry, game, Actor, Item, ui */
-import { CURRENT_SCHEMA_VERSION, isCurrentSchema } from "../migration.mjs";
+import { CURRENT_SCHEMA_VERSION, isCurrentSchema } from "../schema-version.mjs";
 
 export default class MigrationRunner {
   /** @type {MigrationBase[]} */

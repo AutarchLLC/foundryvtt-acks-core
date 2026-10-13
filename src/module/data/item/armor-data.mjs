@@ -2,7 +2,7 @@
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
 import { ACKS } from "../../config.mjs";
-import { isCurrentSchema } from "../../migration/migration.mjs";
+import { isCurrentSchema } from "../../migration/schema-version.mjs";
 import ItemBaseData from "./item-base-data.mjs";
 
 /**

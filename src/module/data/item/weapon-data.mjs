@@ -1,7 +1,7 @@
 /* global foundry, game */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import ItemPhysicalTemplate from "./templates/item-physical-template.mjs";
-import { isCurrentSchema } from "../../migration/migration.mjs";
+import { isCurrentSchema } from "../../migration/schema-version.mjs";
 import {
   ATTACK_TYPE,
   DAMAGE_MODE,
