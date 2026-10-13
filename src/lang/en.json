@@ -334,6 +334,8 @@
   "ACKS.Setting.AutoRollMonsterHP.Hint": "Automatically rolls HP for unlinked monsters when they are created",
   "ACKS.Setting.ConfirmDeletion.Name": "Confirm Item Deletion",
   "ACKS.Setting.ConfirmDeletion.Hint": "Ask for confirmation before deleting an item from actor sheet",
+  "ACKS.Setting.HeroicFate.Name": "Heroic Fate",
+  "ACKS.Setting.HeroicFate.Hint": "Show Fate points on Character Sheet",
 
   "ACKS.items.Equip": "Equip",
   "ACKS.items.Unequip": "Unequip",

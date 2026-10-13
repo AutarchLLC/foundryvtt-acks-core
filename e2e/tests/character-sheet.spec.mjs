@@ -14,6 +14,22 @@ test.describe("character sheet", () => {
     await expect(sheet.locator('.tab[data-tab="attributes"]')).not.toHaveClass(/active/);
   });
 
+  test("the Heroic Fate setting controls the Fate points field", async ({ page }) => {
+    const actorId = await createActor(page, { name: "Fated Fighter", type: "character" });
+    const fatePoints = (sheet) => sheet.locator('[name="system.details.fatepoints"]');
+
+    try {
+      let sheet = await openActorSheet(page, actorId);
+      await expect(fatePoints(sheet)).toBeVisible();
+
+      await page.evaluate(() => game.settings.set("acks", "heroicFate", false));
+      sheet = await openActorSheet(page, actorId);
+      await expect(fatePoints(sheet)).toHaveCount(0);
+    } finally {
+      await page.evaluate(() => game.settings.set("acks", "heroicFate", true));
+    }
+  });
+
   test("rolling a save from the sheet posts a result card to chat", async ({ page }) => {
     const actorId = await createActor(page, { name: "Saving Fighter", type: "character" });
     const sheet = await openActorSheet(page, actorId);

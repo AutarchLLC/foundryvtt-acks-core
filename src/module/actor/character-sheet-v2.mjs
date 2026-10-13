@@ -131,6 +131,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     const context = {
       ...(await super._prepareContext(options)),
       totalWages: this.actor.getTotalWages(),
+      showFatePoints: game.settings.get("acks", "heroicFate"),
     };
     return context;
   }
