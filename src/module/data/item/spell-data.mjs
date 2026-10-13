@@ -1,6 +1,6 @@
 /* global foundry, game */
 import itemDescriptionSchema from "./templates/item-description-schema.mjs";
-import { isCurrentSchema } from "../../migration/migration.mjs";
+import { isCurrentSchema } from "../../migration/schema-version.mjs";
 import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 import ItemBaseData from "./item-base-data.mjs";
 import { SAVING_THROW_CHOICES } from "../../constants.mjs";

@@ -354,8 +354,10 @@ static migrateData(source) {
 
 Import `isCurrentSchema` at the top of the file:
 ```js
-import { isCurrentSchema } from "../../migration/migration.mjs";
+import { isCurrentSchema } from "../../migration/schema-version.mjs";
 ```
+
+> **Never import `migration.mjs` from data models or the runner.** It imports every migration class, and migrations import data models, so doing so creates a circular import. Use `schema-version.mjs`, which has no imports.
 
 ### 6. Update compendium source JSON
 
