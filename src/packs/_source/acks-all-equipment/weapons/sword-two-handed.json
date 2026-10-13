@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>The two-handed sword includes straight and curved slashing and thrusting blades, 40\" or more in length, requiring two hands to use effectively. Historical examples include the medieval longsword, the Renaissance zweihänder, Scottish claymore, Japanese no-dachi, and Chinese zhanmadao. Two-handed swords impose a -1 penalty on initiative rolls.</p>",
     "damage": "1d10",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

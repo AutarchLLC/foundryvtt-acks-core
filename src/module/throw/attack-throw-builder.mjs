@@ -169,6 +169,7 @@ export function buildAttackThrow(actor, item, choices, target = null) {
     const { types, extraordinary } = weapon.system.damage.base;
     damage = new AcksDamageRoll(damageFormula, { types, extraordinary })
       .addModifiers(actor.system.getDamageModifiers(attackType))
+      .addModifiers(weapon.system.getDamageModifiers())
       .toRollSpec(rollData);
   }
 

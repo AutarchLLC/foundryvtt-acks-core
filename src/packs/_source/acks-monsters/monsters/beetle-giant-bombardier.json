@@ -35,7 +35,10 @@
         "pattern": "red",
         "description": "",
         "damage": "1d6",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [
           {
             "title": "Melee",
@@ -128,7 +131,10 @@
         "pattern": "yellow",
         "description": "<p>These beetles have a toxic spray that can squirt an opponent within 5' of the beetle. When the toxic fluid successfully strikes an opponent, it is extremely painful and causes chemical burns and blisters. This effect makes the opponent suffer a -2 penalty to attack throws for 1 day, or until the spell cure light wounds is used.</p>",
         "damage": "",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [
           {
             "title": "Missile",

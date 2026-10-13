@@ -73,7 +73,10 @@
         "pattern": "red",
         "description": "<p>An ochre jelly constantly oozes an <strong>acidic slime that can eat through cloth, wood, and leather after 1 round</strong>, but cannot affect stone or metal. The acid inflicts 2d6 points of damage to bare flesh.</p>",
         "damage": "2d6",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [
           {
             "title": "Melee",

@@ -47,8 +47,11 @@ export default class WeaponData extends ItemBaseData {
       favorite: new BooleanField({ initial: false }),
       // attack pattern marker (currently used for monsters only)
       pattern: new StringField({ required: true, initial: "transparent" }),
-      // attack throw bonus?
-      bonus: new NumberField({ initial: 0 }),
+      // attack throw and damage bonuses granted by the weapon
+      bonus: new SchemaField({
+        attack: new NumberField({ initial: 0, label: "ACKS.items.AtkBonus" }),
+        damage: new NumberField({ initial: 0, label: "ACKS.items.DmgBonus" }),
+      }),
       // Is weapon equipped
       equipped: new BooleanField({ initial: false }),
       // counter?
@@ -190,7 +193,15 @@ export default class WeaponData extends ItemBaseData {
    * @return {TNumValueWithLabel[]}
    */
   getAttackThrowModifiers() {
-    return [{ label: game.i18n.localize("ACKS.throw.modifier.weapon"), value: this.bonus ?? 0 }];
+    return [{ label: game.i18n.localize("ACKS.throw.modifier.weapon"), value: this.bonus.attack }];
+  }
+
+  /**
+   * Damage modifiers granted by this weapon.
+   * @return {TNumValueWithLabel[]}
+   */
+  getDamageModifiers() {
+    return [{ label: game.i18n.localize("ACKS.throw.modifier.weapon"), value: this.bonus.damage }];
   }
 
   /** @override */
@@ -280,6 +291,7 @@ export default class WeaponData extends ItemBaseData {
     SavingThrowsTemplate.migrateSaveValue(source);
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
     this.migrateDamageStringToObject(source);
+    this.migrateBonusNumberToObject(source);
     WeaponCustomTagsTemplate.migrateTags(source);
 
     return super.migrateData(source);
@@ -303,6 +315,19 @@ export default class WeaponData extends ItemBaseData {
           types: [],
           extraordinary: false,
         },
+      };
+    }
+  }
+
+  /**
+   * Converts the legacy numeric attack bonus into the `{ attack, damage }` object.
+   * @param {object} source  The candidate source data from which the model will be constructed.
+   */
+  static migrateBonusNumberToObject(source) {
+    if (Object.hasOwn(source, "bonus") && foundry.utils.getType(source.bonus) !== "Object") {
+      source.bonus = {
+        attack: Number(source.bonus) || 0,
+        damage: 0,
       };
     }
   }

@@ -5,6 +5,8 @@
     {{ formGroup fields.category value=system.category localize=true rootId=partId}}
     {{ formGroup fields.melee value=system.melee localize=true rootId=partId}}
     {{ formGroup fields.missile value=system.missile localize=true rootId=partId}}
+    {{ formGroup fields.bonus.fields.attack value=system.bonus.attack localize=true rootId=partId}}
+    {{ formGroup fields.bonus.fields.damage value=system.bonus.damage localize=true rootId=partId}}
   </fieldset>
   <fieldset class="input-grid">
     <legend>Special</legend>
@@ -31,7 +33,6 @@
     {{ formGroup fields.damage.fields.base.fields.extraordinary value=system.damage.base.extraordinary localize=true
                  rootId=partId}}
     {{ formGroup fields.damage.fields.base.fields.types value=system.damage.base.types localize=true rootId=partId}}
-    {{ formGroup fields.bonus value=system.bonus localize=true label="ACKS.items.AtkBonus" rootId=partId}}
   </fieldset>
   {{#if system.isRanged}}
     <fieldset>

@@ -35,7 +35,10 @@
         "pattern": "red",
         "description": "<p>A phase spider's bite is venomous. Creatures bitten by a phase spider must succeed in a <strong>saving throw versus Poison or die instantly</strong>.</p>",
         "damage": "1d6",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [
           {
             "title": "Melee",

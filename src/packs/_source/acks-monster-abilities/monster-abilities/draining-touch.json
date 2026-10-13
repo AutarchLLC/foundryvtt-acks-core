@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>When a shadow successfully attacks an opponent, the victim suffers 1d4 points of damage, and [[1d1 #Lose STR]] point of STR is drained for 8 turns. Should a being be drained to STR 2, it collapses and becomes unable to move. At 0, it permanently transforms into a shadow.</p>",
     "damage": "1d4",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

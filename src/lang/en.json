@@ -359,6 +359,7 @@
   "ACKS.items.ArmorAAC": "AC",
   "ACKS.items.Bonus": "Bonus",
   "ACKS.items.AtkBonus": "Attack Bonus",
+  "ACKS.items.DmgBonus": "Damage Bonus",
   "ACKS.items.roundAttacks": "Attacks Spent this Round",
   "ACKS.items.roundAttacksMax": "Maximum Attacks per Round",
   "ACKS.items.resetAttacks": "Reset all Attacks per Round",

@@ -35,7 +35,10 @@
         "pattern": "red",
         "description": "<p>Throghrin have the same paralyzing touch as a ghoul. Any successful attack requires the opponent to attempt a saving throw versus Paralysis, or become paralyzed for [[/r 2d4 #Paralyzed for this many Turns]] turns. This paralysis may be cured with <em>cure light wounds</em>. Elves are immune to the paralysis of ghouls, and the paralysis cannot take effect on humanoids larger than ogres.</p>",
         "damage": "1d3",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [],
         "slow": false,
         "missile": false,

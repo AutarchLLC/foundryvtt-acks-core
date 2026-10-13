@@ -26,7 +26,10 @@
     "pattern": "red",
     "description": "<p>Any non-magical armor or clothing is destroyed immediately after a successful hit from the ooze, as the acid eats through it viciously. A non-magical metal or wooden weapon that strikes gray ooze also dissolves immediately after dealing damage. Magical weapons, armor, and clothing are allowed a saving throw using the wearer's save versus Death, adding any magical bonus to the roll if applicable. Once it has hit, the ooze clings to an opponent and deals [[/r 2d8 #Acid damage from the clinging ooze!]] points of damage every round until it can be neutralized.</p>",
     "damage": "2d8",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [],
     "slow": false,
     "missile": false,

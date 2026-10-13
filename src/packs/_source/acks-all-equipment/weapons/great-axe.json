@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>This is a double-bitted axe or long-shafted singlebitted axe, with a 48\" or longer haft, requiring two hands to use. Historical examples included the Greek double-bitted labrys, Viking long bearded axe, and the English longaxe. Great axes impose a -1 penalty on initiative rolls.</p>",
     "damage": "1d10",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>A sap consists of a heavyweight material wrapped inside a leather sack. Used as a weapon, it provides a +2 bonus to attack throws made to incapacitate opponents (as described in Special Maneuvers in Chapter 6).</p>",
     "damage": "1d4",
-    "bonus": 2,
+    "bonus": {
+      "attack": 2,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",

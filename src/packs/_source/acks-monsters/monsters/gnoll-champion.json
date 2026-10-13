@@ -35,7 +35,10 @@
         "pattern": "purple",
         "description": "",
         "damage": "1d8+2",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [],
         "slow": false,
         "missile": false,
@@ -85,7 +88,10 @@
         "pattern": "green",
         "description": "",
         "damage": "1d8+2",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [],
         "slow": false,
         "missile": false,
@@ -135,7 +141,10 @@
         "pattern": "red",
         "description": "",
         "damage": "1d6",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [],
         "slow": false,
         "missile": true,
@@ -185,7 +194,10 @@
         "pattern": "yellow",
         "description": "",
         "damage": "1d6+2",
-        "bonus": 0,
+        "bonus": {
+          "attack": 0,
+          "damage": 0
+        },
         "tags": [],
         "slow": false,
         "missile": false,

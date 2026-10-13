@@ -26,7 +26,10 @@
     "pattern": "white",
     "description": "<p>Pole arms are two-handed slashing and piercing weapons with a metal head and a long wooden shaft. Pole arms range in length from 6' to 21'. Historical examples include the Thracian rhomphaia, Dacian falx, and Macedonian sarissa; the medieval bill, fauchard, glaive, guisarme, halberd, partisan, pike, ranseur, spetum, and voulge; the Chinese gun dao; and the Japanese bisento, nagamaki, and naginata. Pole arms can be used to attack from the second rank in melee, and inflict double damage when used in or against a charge, but impose a -1 penalty on initiative rolls.</p>",
     "damage": "1d10",
-    "bonus": 0,
+    "bonus": {
+      "attack": 0,
+      "damage": 0
+    },
     "tags": [
       {
         "title": "Melee",
