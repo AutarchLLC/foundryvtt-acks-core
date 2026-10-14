@@ -558,5 +558,11 @@
 
   "ACKS.damage.label.extraordinary": "Extraordinary",
 
-  "ACKS.Error.NotImplemented.Cleave": "Cleave is not implemented yet. Attacking first target instead."
+  "ACKS.Error.NotImplemented.Cleave": "Cleave is not implemented yet. Attacking first target instead.",
+
+  "ACKS.Macro.ForceMigration.Title": "Force World Migration",
+  "ACKS.Macro.ForceMigration.Hint": "Resets the schema version of the world and all its actors and items, then re-runs every migration above it. Back up your world first.",
+  "ACKS.Macro.ForceMigration.From": "Starting schema version",
+  "ACKS.Macro.ForceMigration.Execute": "Execute",
+  "ACKS.Macro.ForceMigration.GMOnly": "Only the Judge can force a world migration."
 }
