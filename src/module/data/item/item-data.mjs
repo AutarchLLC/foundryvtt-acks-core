@@ -30,7 +30,7 @@ export default class ItemData extends ItemBaseData {
         // current value
         value: new NumberField({ initial: 1, min: 0 }),
         // max value
-        max: new NumberField({ initial: 0, min: 0 }),
+        max: new NumberField({ initial: 1, min: 0 }),
       }),
       //TODO: not used? remove?
       treasure: new BooleanField({ initial: false }),
