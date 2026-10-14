@@ -1,0 +1,26 @@
+{
+  "name": "Macro",
+  "type": "chat",
+  "command": "/r 1d20",
+  "img": "icons/svg/dice-target.svg",
+  "_id": "TNqeIkcou7LuJJBK",
+  "author": "92ln2e9hCGDNYeB3",
+  "scope": "global",
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1791905455182,
+    "modifiedTime": 1791905455182,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "sort": 0,
+  "_key": "!macros!TNqeIkcou7LuJJBK"
+}

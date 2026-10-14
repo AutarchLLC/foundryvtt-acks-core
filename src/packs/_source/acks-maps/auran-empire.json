@@ -39,7 +39,7 @@
   "drawings": [],
   "regions": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
     "createdTime": 1779122123282,
@@ -114,8 +114,7 @@
         "alphaThreshold": 0.75
       },
       "fog": {
-        "src": null,
-        "tint": "#ffffff"
+        "src": null
       },
       "textures": {
         "anchorX": 0.5,
