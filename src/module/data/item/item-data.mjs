@@ -12,7 +12,7 @@ export default class ItemData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, subtype, quantity}}
+   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, subtype, quantity, charges}}
    */
   static defineSchema() {
     const { NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -29,6 +29,14 @@ export default class ItemData extends ItemBaseData {
       quantity: new SchemaField({
         // current value
         value: new NumberField({ initial: 1, min: 0 }),
+      }),
+      // item charges
+      // TODO: not used yet. Hook it up to the item sheet and inventory.
+      charges: new SchemaField({
+        // current value
+        value: new NumberField({ initial: 0, min: 0 }),
+        // max value
+        max: new NumberField({ initial: 0, min: 0 }),
       }),
     };
   }
