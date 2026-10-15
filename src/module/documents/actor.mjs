@@ -983,7 +983,7 @@ export default class AcksActor extends Actor {
     let baseAC = 0;
     let shieldAC = 0;
     const data = this.system;
-    data.aac.naked = baseAC + data.scores.dex.mod;
+    data.ac.naked = baseAC + data.scores.dex.mod;
     const armors = this.items.filter((i) => i.type === "armor");
     armors.forEach((a) => {
       if (a.system.equipped && a.system.type !== "shield") {
@@ -992,8 +992,8 @@ export default class AcksActor extends Actor {
         shieldAC = a.system.ac.value;
       }
     });
-    data.aac.value = baseAC + data.scores.dex.mod + shieldAC + data.aac.mod;
-    data.aac.shield = shieldAC;
+    data.ac.value = baseAC + data.scores.dex.mod + shieldAC + data.ac.mod;
+    data.ac.shield = shieldAC;
   }
 
   computeModifiers() {

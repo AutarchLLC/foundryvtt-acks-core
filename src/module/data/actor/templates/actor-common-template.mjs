@@ -59,17 +59,27 @@ export default class ActorCommonTemplate {
 
   /**
    * Ascending Armor Class
-   * @return {{aac: *}}
+   * @return {{ac: *}}
    */
-  static get aac() {
+  static get ac() {
     return {
-      aac: new SchemaField({
+      ac: new SchemaField({
         // AC Value
         value: new NumberField({ initial: 0 }),
         // AC bonus modifier, currently only set via Actor Tweaks
         mod: new NumberField({ initial: 0 }),
       }),
     };
+  }
+
+  /**
+   * Copy the old `aac` (ascending AC) field to `ac`.
+   * @param {object} source  The candidate source data from which the model will be constructed.
+   */
+  static migrateAacToAc(source) {
+    if (source.aac !== undefined && source.ac === undefined) {
+      source.ac = source.aac;
+    }
   }
 
   /**

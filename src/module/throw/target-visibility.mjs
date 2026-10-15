@@ -45,7 +45,7 @@ export function getTargetLabels(attacker, target, targetValue) {
     shown: {
       target: game.i18n.format("ACKS.throw.attack.target", {
         name: target.name,
-        ac: target.actor?.system?.aac?.value ?? 0,
+        ac: target.actor?.system?.ac?.value ?? 0,
       }),
       targetValue: game.i18n.format("ACKS.throw.attack.targetValue", { value: targetValue }),
     },

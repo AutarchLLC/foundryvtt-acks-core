@@ -13,7 +13,7 @@ export default class MonsterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{isNew, retainer, hp, aac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
+   * @return {{isNew, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
    */
   static defineSchema() {
     const { NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -24,7 +24,7 @@ export default class MonsterData extends BaseDataModel {
       ...ActorCommonTemplate.isNew,
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
-      ...ActorCommonTemplate.aac,
+      ...ActorCommonTemplate.ac,
       ...ActorCommonTemplate.damage,
       ...ActorCommonTemplate.attack,
       ...ActorCommonTemplate.movement,
@@ -107,6 +107,7 @@ export default class MonsterData extends BaseDataModel {
     SavingThrowsTemplate.migrateWandToImplements(source);
     SavingThrowsTemplate.migrateBreathToBlast(source);
     ActorCommonTemplate.migrateThac0ToAttack(source);
+    ActorCommonTemplate.migrateAacToAc(source);
 
     return super.migrateData(source);
   }

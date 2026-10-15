@@ -76,9 +76,9 @@ test.describe("armor aac to ac", () => {
       const armor = actor.items.getName("Old Plate");
       return {
         armor: armor.system.toObject(),
-        actorAc: actor.system.aac.value,
+        actorAc: actor.system.ac.value,
         dexMod: actor.system.scores.dex.mod,
-        acMod: actor.system.aac.mod,
+        acMod: actor.system.ac.mod,
       };
     }, LEGACY_ARMOR);
 
@@ -127,6 +127,46 @@ test.describe("actor thac0 to attack", () => {
 
       expect(system.attack).toEqual(ATTACK);
       expect(system).not.toHaveProperty("thac0");
+    });
+  }
+});
+
+/** Legacy (schema v4) actor AC data stored as `aac`. */
+const LEGACY_AAC = { value: 5, mod: 1 };
+
+test.describe("actor aac to ac", () => {
+  test("the data cleanup migration moves aac to ac", async ({ page }) => {
+    const result = await page.evaluate(async (aac) => {
+      const { Migration5DataCleanup } = await import("/systems/acks/module/migration/migrations/index.mjs");
+      const source = { type: "monster", system: { _schemaVersion: 4, aac: foundry.utils.deepClone(aac) } };
+      await new Migration5DataCleanup().updateActor(source);
+      return {
+        ac: source.system.ac,
+        aacDeleted: source.system.aac instanceof foundry.data.operators.ForcedDeletion,
+      };
+    }, LEGACY_AAC);
+
+    expect(result).toEqual({ ac: LEGACY_AAC, aacDeleted: true });
+  });
+
+  for (const type of ["character", "monster"]) {
+    test(`legacy ${type} data loads aac as ac`, async ({ page }) => {
+      const system = await page.evaluate(
+        async ({ type, aac }) => {
+          const actor = await Actor.implementation.create({
+            name: `Old ${type}`,
+            type,
+            system: { _schemaVersion: 4, aac },
+            // AcksActor.create replaces the system data of item-less actors with new actor defaults
+            items: [],
+          });
+          return actor.system.toObject();
+        },
+        { type, aac: LEGACY_AAC },
+      );
+
+      expect(system.ac).toEqual(LEGACY_AAC);
+      expect(system).not.toHaveProperty("aac");
     });
   }
 });
