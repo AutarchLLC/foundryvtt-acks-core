@@ -71,8 +71,6 @@
   "ACKS.roll.details.save": "Roll 1d20 >= {save} for success",
   "ACKS.roll.attribute": "{attribute} check",
   "ACKS.roll.details.attribute": "Roll 1d20 <= {score} for success",
-  "ACKS.roll.exploration": "{exploration} test",
-  "ACKS.roll.details.exploration": "Roll 1d20 >= {expl} for success",
   "ACKS.roll.reaction": "Reaction roll",
   "ACKS.roll.initiative": "Group {group} rolls for Initiative!",
   "ACKS.roll.individualInit": "{name} rolls for Initiative!",
@@ -431,19 +429,6 @@
   "ACKS.spells.ResetSlots": "Reset Spell slots",
 
   "ACKS.abilities.Requirements": "Requirements",
-
-  "ACKS.exploration.ld.long": "Listen for noises",
-  "ACKS.exploration.ld.short": "Hear Noise",
-  "ACKS.exploration.ld.abrev": "HN",
-  "ACKS.exploration.od.long": "Open Stuck Door",
-  "ACKS.exploration.od.short": "Open Door",
-  "ACKS.exploration.od.abrev": "OD",
-  "ACKS.exploration.sd.long": "Find Secret Door",
-  "ACKS.exploration.sd.short": "Secret Door",
-  "ACKS.exploration.sd.abrev": "SD",
-  "ACKS.exploration.ft.long": "Find Room Trap",
-  "ACKS.exploration.ft.short": "Find Trap",
-  "ACKS.exploration.ft.abrev": "FT",
 
   "ACKS.adventuring.trapbreaking": "Trapbreak",
   "ACKS.adventuring.searching": "Search",
