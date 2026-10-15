@@ -1,5 +1,6 @@
 import MigrationBase from "../runner/migration-base.mjs";
 import MigrationUtil from "../migration-util.mjs";
+import ArmorData from "../../data/item/armor-data.mjs";
 import { ITEM_TYPE } from "../../constants.mjs";
 
 export class Migration5DataCleanup extends MigrationBase {
@@ -15,6 +16,10 @@ export class Migration5DataCleanup extends MigrationBase {
       MigrationUtil.markPropertyForDeletion(source.system, "treasure");
       MigrationUtil.markPropertyForDeletion(source.system, "iconsource");
       MigrationUtil.markPropertyForDeletion(source.system, "iconlicense");
+    }
+    if (source.type === ITEM_TYPE.ARMOR) {
+      ArmorData.migrateAacToAc(source.system);
+      MigrationUtil.markPropertyForDeletion(source.system, "aac");
     }
   }
 }

@@ -988,9 +988,9 @@ export default class AcksActor extends Actor {
     const armors = this.items.filter((i) => i.type === "armor");
     armors.forEach((a) => {
       if (a.system.equipped && a.system.type !== "shield") {
-        baseAC = a.system.aac.value;
+        baseAC = a.system.ac.value;
       } else if (a.system.equipped && a.system.type === "shield") {
-        shieldAC = a.system.aac.value;
+        shieldAC = a.system.ac.value;
       }
     });
     data.aac.value = baseAC + data.scores.dex.mod + shieldAC + data.aac.mod;
