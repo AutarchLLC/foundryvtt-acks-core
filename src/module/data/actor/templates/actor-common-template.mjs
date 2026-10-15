@@ -163,8 +163,6 @@ export default class ActorCommonTemplate {
   static get surprise() {
     return {
       surprise: new SchemaField({
-        // mod can be set only for monsters.
-        mod: new NumberField({ initial: 0 }), // TODO: not used, remove
         surpriseothers: new NumberField({ initial: 0 }),
         avoidsurprise: new NumberField({ initial: 0 }),
       }),

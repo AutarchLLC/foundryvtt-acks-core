@@ -170,3 +170,21 @@ test.describe("actor aac to ac", () => {
     });
   }
 });
+
+test.describe("actor surprise.mod", () => {
+  test("the data cleanup migration deletes surprise.mod", async ({ page }) => {
+    const result = await page.evaluate(async () => {
+      const { Migration5DataCleanup } = await import("/systems/acks/module/migration/migrations/index.mjs");
+      const surprise = { mod: 1, surpriseothers: -2, avoidsurprise: 1 };
+      const source = { type: "monster", system: { _schemaVersion: 4, surprise } };
+      await new Migration5DataCleanup().updateActor(source);
+      return {
+        modDeleted: source.system.surprise.mod instanceof foundry.data.operators.ForcedDeletion,
+        surpriseothers: source.system.surprise.surpriseothers,
+        avoidsurprise: source.system.surprise.avoidsurprise,
+      };
+    });
+
+    expect(result).toEqual({ modDeleted: true, surpriseothers: -2, avoidsurprise: 1 });
+  });
+});
