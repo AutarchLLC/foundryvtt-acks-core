@@ -188,3 +188,17 @@ test.describe("actor surprise.mod", () => {
     expect(result).toEqual({ modDeleted: true, surpriseothers: -2, avoidsurprise: 1 });
   });
 });
+
+test.describe("character exploration", () => {
+  test("the data cleanup migration deletes exploration", async ({ page }) => {
+    const deleted = await page.evaluate(async () => {
+      const { Migration5DataCleanup } = await import("/systems/acks/module/migration/migrations/index.mjs");
+      const exploration = { ld: 18, od: 18, odMod: 14, sd: 18, ft: 18 };
+      const source = { type: "character", system: { _schemaVersion: 4, exploration } };
+      await new Migration5DataCleanup().updateActor(source);
+      return source.system.exploration instanceof foundry.data.operators.ForcedDeletion;
+    });
+
+    expect(deleted).toBe(true);
+  });
+});

@@ -14,7 +14,7 @@ export default class CharacterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{isNew, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, exploration, scores, encumbrance}}
+   * @return {{isNew, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, scores, encumbrance}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -114,14 +114,6 @@ export default class CharacterData extends BaseDataModel {
         mortalwounds: new NumberField({ initial: 0 }),
         // number of cleaves
         cleaves: new NumberField({ initial: 0 }),
-      }),
-      // TODO: OSE exploration skills??? Not used, remove?
-      exploration: new SchemaField({
-        ld: new NumberField({ initial: 18 }), // listen door?
-        od: new NumberField({ initial: 18 }), // open door?
-        odMod: new NumberField({ initial: 0 }), // open door mod?
-        sd: new NumberField({ initial: 18 }), // find secret door?
-        ft: new NumberField({ initial: 18 }), // find trap?
       }),
       // CHARACTER ATTRIBUTES
       scores: new SchemaField({

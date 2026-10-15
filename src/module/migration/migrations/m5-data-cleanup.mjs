@@ -19,6 +19,7 @@ export class Migration5DataCleanup extends MigrationBase {
     ActorCommonTemplate.migrateAacToAc(source.system);
     MigrationUtil.markPropertyForDeletion(source.system, "aac");
     MigrationUtil.markPropertyForDeletion(source.system, "surprise.mod");
+    MigrationUtil.markPropertyForDeletion(source.system, "exploration");
   }
 
   /**
