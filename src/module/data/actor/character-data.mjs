@@ -120,59 +120,38 @@ export default class CharacterData extends BaseDataModel {
         // Strength (STR)
         str: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
           // standard modifier
           mod: new NumberField({ initial: 0 }),
         }),
         // Intellect (INT)
         int: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
           // standard modifier
           mod: new NumberField({ initial: 0 }),
         }),
         // Will (WIL)
         wis: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
           // standard modifier
           mod: new NumberField({ initial: 0 }),
         }),
         // Dexterity (DEX)
         dex: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
           // standard modifier
           mod: new NumberField({ initial: 0 }),
-          // TODO: same as mod. remove?
-          init: new NumberField({ initial: 0 }),
         }),
         // Constitution (CON)
         con: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
           // standard modifier
           mod: new NumberField({ initial: 0 }),
         }),
         // Charisma (CHA)
         cha: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
           // standard modifier
           mod: new NumberField({ initial: 0 }),
-          // TODO: same as mod. remove?
-          npc: new NumberField({ initial: 0 }),
-          // retainer number? mod + 4
-          // TODO: not used, remove?
-          retain: new NumberField({ initial: 0 }),
-          // TODO: same as mod. not used. remove?
-          loyalty: new NumberField({ initial: 0 }),
         }),
       }),
       // Encumbrance related

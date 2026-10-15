@@ -1,4 +1,4 @@
-/* global Actor, Item, foundry */
+/* global Actor, Item, foundry, game */
 import { expect, test } from "../support/foundry.mjs";
 
 /** Legacy (schema v4) generic item data with the fields removed in schema v5. */
@@ -200,5 +200,63 @@ test.describe("character exploration", () => {
     });
 
     expect(deleted).toBe(true);
+  });
+});
+
+test.describe("character scores", () => {
+  test("the data cleanup migration deletes the unused score fields", async ({ page }) => {
+    const scores = await page.evaluate(async () => {
+      const { Migration5DataCleanup } = await import("/systems/acks/module/migration/migrations/index.mjs");
+      const score = (value) => ({ value, bonus: 0, mod: 0 });
+      const scores = {
+        str: score(13),
+        int: score(9),
+        wis: score(10),
+        dex: { ...score(16), init: 2 },
+        con: score(12),
+        cha: { ...score(8), npc: -1, retain: 3, loyalty: -1 },
+      };
+      const source = { type: "character", system: { _schemaVersion: 4, scores } };
+      await new Migration5DataCleanup().updateActor(source);
+      const { ForcedDeletion } = foundry.data.operators;
+      return Object.fromEntries(
+        Object.entries(source.system.scores).map(([key, fields]) => [
+          key,
+          Object.fromEntries(
+            Object.entries(fields).map(([field, value]) => [
+              field,
+              value instanceof ForcedDeletion ? "deleted" : value,
+            ]),
+          ),
+        ]),
+      );
+    });
+
+    const kept = (value) => ({ value, bonus: "deleted", mod: 0 });
+    expect(scores).toEqual({
+      str: kept(13),
+      int: kept(9),
+      wis: kept(10),
+      dex: { ...kept(16), init: "deleted" },
+      con: kept(12),
+      cha: { ...kept(8), npc: "deleted", retain: "deleted", loyalty: "deleted" },
+    });
+  });
+
+  test("the initiative box shows the dexterity modifier", async ({ page }) => {
+    const shown = await page.evaluate(async () => {
+      const actor = await Actor.implementation.create({ name: "Quick Fighter", type: "character" });
+      await actor.update({ "system.scores.dex.value": 16, "system.initiative.mod": 1 });
+      await actor.sheet.render({ force: true });
+      // the initiative box is the one whose tooltip breaks it down into DEX + modifier
+      const value = [...actor.sheet.element.querySelectorAll(".form-fields")]
+        .find((el) => el.dataset.tooltip?.startsWith(game.i18n.localize("ACKS.scores.dex.long")))
+        ?.querySelector("input")?.value;
+      await actor.sheet.close();
+      return { value, dexMod: actor.system.scores.dex.mod };
+    });
+
+    expect(shown.dexMod).toBe(2);
+    expect(shown.value).toBe("3");
   });
 });

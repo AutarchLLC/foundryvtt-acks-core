@@ -1025,11 +1025,6 @@ export default class AcksActor extends Actor {
     data.scores.cha.mod = AcksActor._valueFromTable(standard, data.scores.cha.value);
     data.scores.wis.mod = AcksActor._valueFromTable(standard, data.scores.wis.value);
     data.scores.con.mod = AcksActor._valueFromTable(standard, data.scores.con.value);
-
-    data.scores.dex.init = AcksActor._valueFromTable(standard, data.scores.dex.value);
-    data.scores.cha.npc = AcksActor._valueFromTable(standard, data.scores.cha.value);
-    data.scores.cha.retain = data.scores.cha.mod + 4;
-    data.scores.cha.loyalty = data.scores.cha.mod;
   }
 
   computeBHR() {

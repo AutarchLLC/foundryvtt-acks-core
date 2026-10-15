@@ -3,6 +3,7 @@ import MigrationUtil from "../migration-util.mjs";
 import ActorCommonTemplate from "../../data/actor/templates/actor-common-template.mjs";
 import ArmorData from "../../data/item/armor-data.mjs";
 import { ITEM_TYPE } from "../../constants.mjs";
+import { ACKS } from "../../config.mjs";
 
 export class Migration5DataCleanup extends MigrationBase {
   static version = 5;
@@ -20,6 +21,13 @@ export class Migration5DataCleanup extends MigrationBase {
     MigrationUtil.markPropertyForDeletion(source.system, "aac");
     MigrationUtil.markPropertyForDeletion(source.system, "surprise.mod");
     MigrationUtil.markPropertyForDeletion(source.system, "exploration");
+    for (const score of Object.keys(ACKS.scores)) {
+      MigrationUtil.markPropertyForDeletion(source.system, `scores.${score}.bonus`);
+    }
+    MigrationUtil.markPropertyForDeletion(source.system, "scores.dex.init");
+    MigrationUtil.markPropertyForDeletion(source.system, "scores.cha.npc");
+    MigrationUtil.markPropertyForDeletion(source.system, "scores.cha.retain");
+    MigrationUtil.markPropertyForDeletion(source.system, "scores.cha.loyalty");
   }
 
   /**
