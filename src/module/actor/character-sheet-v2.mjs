@@ -142,7 +142,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
    * @return {{melee: {value: string, tooltip: string}, missile: {value: string, tooltip: string}}}
    */
   #prepareAttackThrows() {
-    const baseThrow = this.actor.system.thac0.throw;
+    const baseThrow = this.actor.system.attack.throw;
     const baseLabel = `${game.i18n.localize("ACKS.ABShort")} ${baseThrow}+`;
 
     const prepare = (attackType) => {

@@ -2,7 +2,7 @@
 import { ATTACK_TYPE } from "../../../constants.mjs";
 
 /**
- * Attack throw and damage bonuses configured via Actor Tweaks (`thac0.mod` and `damage.mod`).
+ * Attack throw and damage bonuses configured via Actor Tweaks (`attack.mod` and `damage.mod`).
  * Missile and thrown attacks use the missile bonuses; melee attacks use the melee ones.
  */
 export default class AttackTweaks {
@@ -21,8 +21,8 @@ export default class AttackTweaks {
    */
   static getAttackThrowModifier(system, attackType) {
     return AttackTweaks.#isMissile(attackType)
-      ? { label: game.i18n.localize("ACKS.MissileBonus"), value: system.thac0.mod.missile }
-      : { label: game.i18n.localize("ACKS.MeleeBonus"), value: system.thac0.mod.melee };
+      ? { label: game.i18n.localize("ACKS.MissileBonus"), value: system.attack.mod.missile }
+      : { label: game.i18n.localize("ACKS.MeleeBonus"), value: system.attack.mod.melee };
   }
 
   /**

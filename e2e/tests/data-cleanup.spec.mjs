@@ -87,3 +87,46 @@ test.describe("armor aac to ac", () => {
     expect(result.actorAc).toBe(4 + result.dexMod + result.acMod);
   });
 });
+
+/** Legacy (schema v4) actor attack data stored as `thac0`. */
+const LEGACY_THAC0 = { value: 19, bba: 3, throw: 7, mod: { melee: 2, missile: 1 } };
+
+/** The same data as `attack`, without the unused `value` and `bba`. */
+const ATTACK = { throw: 7, mod: { melee: 2, missile: 1 } };
+
+test.describe("actor thac0 to attack", () => {
+  test("the data cleanup migration moves thac0 to attack", async ({ page }) => {
+    const result = await page.evaluate(async (thac0) => {
+      const { Migration5DataCleanup } = await import("/systems/acks/module/migration/migrations/index.mjs");
+      const source = { type: "character", system: { _schemaVersion: 4, thac0: foundry.utils.deepClone(thac0) } };
+      await new Migration5DataCleanup().updateActor(source);
+      return {
+        attack: source.system.attack,
+        thac0Deleted: source.system.thac0 instanceof foundry.data.operators.ForcedDeletion,
+      };
+    }, LEGACY_THAC0);
+
+    expect(result).toEqual({ attack: ATTACK, thac0Deleted: true });
+  });
+
+  for (const type of ["character", "monster"]) {
+    test(`legacy ${type} data loads thac0 as attack`, async ({ page }) => {
+      const system = await page.evaluate(
+        async ({ type, thac0 }) => {
+          const actor = await Actor.implementation.create({
+            name: `Old ${type}`,
+            type,
+            system: { _schemaVersion: 4, thac0 },
+            // AcksActor.create replaces the system data of item-less actors with new actor defaults
+            items: [],
+          });
+          return actor.system.toObject();
+        },
+        { type, thac0: LEGACY_THAC0 },
+      );
+
+      expect(system.attack).toEqual(ATTACK);
+      expect(system).not.toHaveProperty("thac0");
+    });
+  }
+});

@@ -14,7 +14,7 @@ export default class CharacterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, exploration, scores, encumbrance}}
+   * @return {{isNew, retainer, hp, aac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, exploration, scores, encumbrance}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -27,7 +27,7 @@ export default class CharacterData extends BaseDataModel {
       ...ActorCommonTemplate.hp,
       ...ActorCommonTemplate.aac,
       ...ActorCommonTemplate.damage,
-      ...ActorCommonTemplate.thac0,
+      ...ActorCommonTemplate.attack,
       ...ActorCommonTemplate.movement,
       ...ActorCommonTemplate.initiative,
       ...ActorCommonTemplate.surprise,
@@ -246,6 +246,9 @@ export default class CharacterData extends BaseDataModel {
     // Migration 1: saves.wand → saves.implements, saves.breath → saves.blast
     SavingThrowsTemplate.migrateWandToImplements(source);
     SavingThrowsTemplate.migrateBreathToBlast(source);
+
+    // Migration 5: thac0 → attack
+    ActorCommonTemplate.migrateThac0ToAttack(source);
 
     return super.migrateData(source);
   }

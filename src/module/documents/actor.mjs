@@ -98,7 +98,6 @@ export default class AcksActor extends Actor {
     this.computeModifiers();
     this._isSlow();
     this.computeAC();
-    this.computeAAB();
 
     // Compute modifiers from actor scores
     if (this.isOwner || game.user.isGM) {
@@ -1085,11 +1084,5 @@ export default class AcksActor extends Actor {
       this.update({ "system.hp.bhr": newBHR });
       this.update({ "system.fight.healingrate": newBHR });
     }
-  }
-
-  computeAAB() {
-    const data = this.system;
-
-    data.thac0.bba = 10 - data.thac0.throw;
   }
 }

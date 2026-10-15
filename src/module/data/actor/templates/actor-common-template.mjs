@@ -90,16 +90,10 @@ export default class ActorCommonTemplate {
   /**
    * Attack values
    */
-  static get thac0() {
+  static get attack() {
     return {
-      thac0: new SchemaField({
-        // To Hit AC 0 value.
-        // TODO: It never changes and is always 19. I think this is just a remnant of OSE attack handling
-        value: new NumberField({ initial: 19 }),
-        // no idea what this means. Base Attack Bonus maybe? (BAB)
-        // TODO: no way to change this via UI. It is calculated as 10 - throw so move to derived data?
-        bba: new NumberField({ initial: 0 }),
-        // attack throw. currently only used to calculate bba
+      attack: new SchemaField({
+        // attack throw
         throw: new NumberField({ required: true, initial: 10 }),
         // attack modifiers, configured via Actor Tweaks
         mod: new SchemaField({
@@ -108,6 +102,17 @@ export default class ActorCommonTemplate {
         }),
       }),
     };
+  }
+
+  /**
+   * Copy the old `thac0` field to `attack`, leaving out its unused `value` and `bba`.
+   * @param {object} source  The candidate source data from which the model will be constructed.
+   */
+  static migrateThac0ToAttack(source) {
+    if (source.thac0 !== undefined && source.attack === undefined) {
+      const { value: _value, bba: _bba, ...attack } = source.thac0;
+      source.attack = attack;
+    }
   }
 
   /**
