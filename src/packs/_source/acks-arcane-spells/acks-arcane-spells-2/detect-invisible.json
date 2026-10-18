@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/detect-invisible.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122850793,
-    "modifiedTime": 1779122850797,
+    "createdTime": 1792360247796,
+    "modifiedTime": 1792360247800,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "favorite": false,
@@ -26,7 +26,7 @@
     "memorized": 0,
     "cast": 0,
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "RUa7ELuvVbuK8ABs",
   "ownership": {

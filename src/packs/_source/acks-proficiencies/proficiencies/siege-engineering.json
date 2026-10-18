@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/siege-engineering.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703816,
-    "modifiedTime": 1779122703827,
+    "createdTime": 1792360116269,
+    "modifiedTime": 1792360116280,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character is highly skilled in the construction and placement of temporary defensive works such as ditches, pits, fields of stakes, and simple wooden and earthen barricades. He also knows how to operate heavy war machines and siege engines such as ballistae, catapults, rams, bores, and siege towers. If the proficiency is taken a second time, then the character has the knowledge to construct heavy war machines, siege engines, and siege towers as well as use them.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

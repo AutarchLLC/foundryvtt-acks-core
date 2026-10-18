@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/disguise.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703815,
-    "modifiedTime": 1779122703827,
+    "createdTime": 1792360116268,
+    "modifiedTime": 1792360116280,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character can make someone look like someone else through make-up and clothing. A successful Disguise requires a proficiency throw of 11+. Someone who is intimately familiar with the subject of the disguise may throw 14+ to see through it, adding their Wisdom modifier to their die roll.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

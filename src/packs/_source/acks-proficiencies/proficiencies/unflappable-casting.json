@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/internal-injury.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703820,
-    "modifiedTime": 1779122703830,
+    "createdTime": 1792360116275,
+    "modifiedTime": 1792360116282,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>When the character loses a spell by being interrupted or taking damage during the round, he does not lose his action for the round. While he still loses the spell, he may now move and attack normally. Characters without this proficiency lose the opportunity to act at all if they are interrupted while casting a spell. </p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

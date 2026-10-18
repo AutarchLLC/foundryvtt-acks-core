@@ -14,15 +14,15 @@
       "sort": 100000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119136,
-        "modifiedTime": 1779123119136,
+        "createdTime": 1792360396578,
+        "modifiedTime": 1792360396578,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -34,13 +34,22 @@
         "save": "paralysis",
         "pattern": "red",
         "description": "<p>Save versus Paralysis or be paralyzed for [[/r 2d4]] turns. This paralysis may be cured with <em>cure light wounds</em>. Elves are immune to the paralysis of ghouls, and the paralysis cannot take effect on humanoids larger than ogres. </p>",
-        "damage": "1d3",
+        "damage": {
+          "base": {
+            "formula": "1d3",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -50,7 +59,27 @@
           "value": 2,
           "max": 2
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -67,15 +96,15 @@
       "sort": 200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119136,
-        "modifiedTime": 1779123119136,
+        "createdTime": 1792360396578,
+        "modifiedTime": 1792360396578,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -87,13 +116,22 @@
         "save": "paralysis",
         "pattern": "red",
         "description": "<p>Save versus Paralysis or be paralyzed for [[/r 2d4]] turns. This paralysis may be cured with <em>cure light wounds</em>. Elves are immune to the paralysis of ghouls, and the paralysis cannot take effect on humanoids larger than ogres. </p>",
-        "damage": "1d3",
+        "damage": {
+          "base": {
+            "formula": "1d3",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -103,7 +141,27 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -120,15 +178,15 @@
       "sort": 500001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119136,
-        "modifiedTime": 1779123119136,
+        "createdTime": 1792360396578,
+        "modifiedTime": 1792360396578,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -141,7 +199,7 @@
         "blindroll": false,
         "description": "<p>Undead are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. They can Turned by Clerics and Priests, and take damage from <em>healing </em>spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -152,14 +210,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119136,
-    "modifiedTime": 1779123119162,
+    "createdTime": 1792360396578,
+    "modifiedTime": 1792360396625,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -177,20 +235,7 @@
       "max": 8,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 3,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 18,
-      "bba": 1,
-      "throw": 9,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -226,7 +271,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -266,7 +310,18 @@
       "morale": 1
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 9,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 3,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {

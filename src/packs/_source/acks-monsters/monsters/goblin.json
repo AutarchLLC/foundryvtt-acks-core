@@ -14,15 +14,15 @@
       "sort": 2500000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119148,
-        "modifiedTime": 1779123119148,
+        "createdTime": 1792360396598,
+        "modifiedTime": 1792360396598,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -34,18 +34,22 @@
         "save": "",
         "pattern": "white",
         "description": "",
-        "damage": "1d6",
+        "damage": {
+          "base": {
+            "formula": "1d6",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 7,
@@ -55,7 +59,29 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -72,15 +98,15 @@
       "sort": 2600000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119148,
-        "modifiedTime": 1779123119148,
+        "createdTime": 1792360396598,
+        "modifiedTime": 1792360396598,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -92,22 +118,22 @@
         "save": "",
         "pattern": "white",
         "description": "",
-        "damage": "1d6",
+        "damage": {
+          "base": {
+            "formula": "1d6",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Missile",
-            "value": "Missile"
-          },
-          {
-            "title": "Two-handed",
-            "value": "Two-handed"
-          }
-        ],
-        "slow": false,
         "missile": true,
         "melee": false,
         "cost": 3,
@@ -117,7 +143,30 @@
           "value": 0,
           "max": 0
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Missile",
+          "Two-handed"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -134,26 +183,26 @@
       "sort": 1200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119148,
-        "modifiedTime": 1779123119148,
+        "createdTime": 1792360396598,
+        "modifiedTime": 1792360396598,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "description": "",
-        "aac": {
-          "value": 1
-        },
         "type": "shield",
         "cost": 10,
         "equipped": false,
         "weight6": 7,
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "ac": {
+          "value": 1
+        }
       },
       "folder": null,
       "ownership": {
@@ -170,26 +219,26 @@
       "sort": 800000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119148,
-        "modifiedTime": 1779123119148,
+        "createdTime": 1792360396598,
+        "modifiedTime": 1792360396598,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "description": "",
-        "aac": {
-          "value": 2
-        },
         "type": "light",
         "cost": 20,
         "equipped": false,
         "weight6": 13,
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "ac": {
+          "value": 2
+        }
       },
       "folder": null,
       "ownership": {
@@ -206,15 +255,15 @@
       "sort": 1500000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119148,
-        "modifiedTime": 1779123119148,
+        "createdTime": 1792360396598,
+        "modifiedTime": 1792360396598,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -227,7 +276,7 @@
         "blindroll": false,
         "description": "<p>They spend most of their days underground, and as such suffer a <strong>-1 penalty to all attack throws</strong> when in full sunlight.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -238,14 +287,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119148,
-    "modifiedTime": 1779123119166,
+    "createdTime": 1792360396598,
+    "modifiedTime": 1792360396628,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -263,20 +312,7 @@
       "max": 3,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 3,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 19,
-      "bba": 0,
-      "throw": 10,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -312,7 +348,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -352,7 +387,18 @@
       "morale": -1
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 3,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {

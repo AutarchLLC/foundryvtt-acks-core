@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/crossed-swords.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703810,
-    "modifiedTime": 1779122703825,
+    "createdTime": 1792360116262,
+    "modifiedTime": 1792360116278,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>As a crusader of the faith, the character has had training that supersedes the normal religious strictures of his order. Select one of the following types of weapons and add these to the list of weapons permitted to the character:</p>\n<ol>\n<li>axes;</li>\n<li>bows/crossbows;</li>\n<li>flails/hammers/maces;</li>\n<li>swords/ daggers;</li>\n<li>spears/pole arms;</li>\n<li>bolas/nets/slings/saps/staffs.</li>\n</ol>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

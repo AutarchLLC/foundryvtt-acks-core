@@ -6,14 +6,14 @@
   "_id": "RHz0YGcg6pqyQ0p1",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122493275,
-    "modifiedTime": 1779122493280,
+    "createdTime": 1792360067040,
+    "modifiedTime": 1792360067046,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>Nightblades are adept at scaling sheer surfaces, including walls or steep cliffs. They require a proficiency throw for each 100' they intend to climb. If the roll fails, they fall a distance equal to half the attempted distance, plus the distance covered by any previous throws, taking 1d6 points of damage per 10 feet. Nightblades climb at ¼ their standard combat movement rate.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "sFB1mhQrNkHDlaUi",
   "ownership": {

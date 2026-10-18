@@ -14,15 +14,15 @@
       "sort": 800000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119149,
-        "modifiedTime": 1779123119149,
+        "createdTime": 1792360396599,
+        "modifiedTime": 1792360396599,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -35,7 +35,7 @@
         "blindroll": false,
         "description": "<p>Rats fear fire, and must make a morale roll if burned with torches or oil. </p>\n<p>Trolls' morale drops to 0 when confronted by fire or acid.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -52,15 +52,15 @@
       "sort": 700000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119149,
-        "modifiedTime": 1779123119149,
+        "createdTime": 1792360396599,
+        "modifiedTime": 1792360396599,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -73,7 +73,7 @@
         "blindroll": false,
         "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -90,15 +90,15 @@
       "sort": 2200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119149,
-        "modifiedTime": 1779123119149,
+        "createdTime": 1792360396599,
+        "modifiedTime": 1792360396599,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -111,7 +111,7 @@
         "blindroll": false,
         "description": "<p>Trolls are very hard to kill, for they regenerate [[/r 3 #The Troll's wounds close, healing this many hp...]] points of damage each round, unless the damage is from fire or acid. If a troll loses a limb or body part, these parts will attempt to crawl or squirm back toward the main portion of the body to reattach. A troll can reattach a severed member instantly by holding it to the stump. Due to this powerful ability to regenerate, trolls cannot be permanently destroyed except by fire or acid. If a troll is damaged enough to be killed (reaches 0 or fewer hit points) the troll will continue to regenerate and stand again to fight when it regenerates to 1 or more hp. When confronted by fire or acid, a troll's morale drops to 0.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -128,15 +128,15 @@
       "sort": 2300000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119149,
-        "modifiedTime": 1779123119149,
+        "createdTime": 1792360396599,
+        "modifiedTime": 1792360396599,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -148,18 +148,22 @@
         "save": "",
         "pattern": "red",
         "description": "",
-        "damage": "1d6",
+        "damage": {
+          "base": {
+            "formula": "1d6",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -169,7 +173,29 @@
           "value": 2,
           "max": 2
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -186,15 +212,15 @@
       "sort": 2400000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119149,
-        "modifiedTime": 1779123119149,
+        "createdTime": 1792360396599,
+        "modifiedTime": 1792360396599,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -206,18 +232,22 @@
         "save": "",
         "pattern": "red",
         "description": "",
-        "damage": "1d10",
+        "damage": {
+          "base": {
+            "formula": "1d10",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -227,7 +257,29 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -238,14 +290,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119149,
-    "modifiedTime": 1779123119166,
+    "createdTime": 1792360396599,
+    "modifiedTime": 1792360396628,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -263,20 +315,7 @@
       "max": 30,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 5,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 19,
-      "bba": 7,
-      "throw": 3,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -312,7 +351,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -352,7 +390,18 @@
       "morale": 2
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 3,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 5,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {},

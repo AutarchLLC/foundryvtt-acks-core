@@ -14,15 +14,15 @@
       "sort": 100000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119154,
-        "modifiedTime": 1779123119154,
+        "createdTime": 1792360396614,
+        "modifiedTime": 1792360396614,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -34,18 +34,22 @@
         "save": "death",
         "pattern": "red",
         "description": "<p>A phase spider's bite is venomous. Creatures bitten by a phase spider must succeed in a <strong>saving throw versus Poison or die instantly</strong>.</p>",
-        "damage": "1d6",
+        "damage": {
+          "base": {
+            "formula": "1d6",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -55,7 +59,29 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -72,15 +98,15 @@
       "sort": 900001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119154,
-        "modifiedTime": 1779123119154,
+        "createdTime": 1792360396614,
+        "modifiedTime": 1792360396614,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -93,7 +119,7 @@
         "blindroll": false,
         "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -110,15 +136,15 @@
       "sort": 1050001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119154,
-        "modifiedTime": 1779123119154,
+        "createdTime": 1792360396614,
+        "modifiedTime": 1792360396614,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -131,7 +157,7 @@
         "blindroll": false,
         "description": "<p>Phase Spiders create a many-layered mass of strong, sticky strands covering an area. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p>Entangled creatures can't move, but can break loose depending on their strength:</p>\n<ul>\n<li>Creatures of normal human strength or less will take <a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\"> 2d4</a> <strong>turns </strong>to break through the web.</li>\n<li>Strong humans (with ability scores 13-17) can break through the web in <strong>1 turn</strong>.</li>\n<li>Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in <strong>4 rounds</strong>.</li>\n<li>Giants or creatures of similar great strength can break through the web in <strong>2 rounds</strong>.</li>\n</ul>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take <a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\">1d6</a> points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -148,15 +174,15 @@
       "sort": 950001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119154,
-        "modifiedTime": 1779123119154,
+        "createdTime": 1792360396614,
+        "modifiedTime": 1792360396614,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -169,7 +195,7 @@
         "blindroll": false,
         "description": "<p>Phase Spiders possess the uncanny ability to shift in and out of phase with the material plane at will.</p>\n<p>When out of phase, Phase Spiders are <strong>invulnerable to attack by any means</strong>. When in phase, they can be harmed by ordinary means.</p>\n<p>In combat, phase spiders are in phase only when they attack. In order to attack a phase spider, its opponent must <strong>equal or exceed its initiative roll and then act simultaneously with the phase spider</strong>.</p>\n<p>If the spell phase door is cast on a phase spider while it is in phase, it cannot phase out again for 7 rounds. </p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -180,14 +206,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119154,
-    "modifiedTime": 1779123119168,
+    "createdTime": 1792360396614,
+    "modifiedTime": 1792360396629,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -205,20 +231,7 @@
       "max": 27,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 2,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 18,
-      "bba": 5,
-      "throw": 5,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -254,7 +267,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -294,7 +306,18 @@
       "morale": 0
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 5,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 2,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {

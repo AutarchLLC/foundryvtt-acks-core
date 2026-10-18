@@ -6,14 +6,14 @@
   "_id": "sjHLukvR08MLWzpy",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122999783,
-    "modifiedTime": 1779122999786,
+    "createdTime": 1792360339205,
+    "modifiedTime": 1792360339207,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "range": {
@@ -25,13 +25,22 @@
     "save": "paralysis",
     "pattern": "red",
     "description": "<p>Save versus Paralysis or be paralyzed for [[/r 2d4]] turns. This paralysis may be cured with <em>cure light wounds</em>. Elves are immune to the paralysis of ghouls, and the paralysis cannot take effect on humanoids larger than ogres. </p>",
-    "damage": "1d3",
+    "damage": {
+      "base": {
+        "formula": "1d3",
+        "types": [],
+        "extraordinary": false
+      },
+      "alternate": {
+        "formula": "",
+        "types": [],
+        "extraordinary": false
+      }
+    },
     "bonus": {
       "attack": 0,
       "damage": 0
     },
-    "tags": [],
-    "slow": false,
     "missile": false,
     "melee": true,
     "cost": 0,
@@ -41,7 +50,27 @@
       "value": 1,
       "max": 1
     },
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "customTags": [],
+    "size": "na",
+    "category": "other",
+    "special": {
+      "cleave": false,
+      "entangling": false,
+      "flexible": false,
+      "handy": false,
+      "impact": false,
+      "incapacitating": false,
+      "long": false,
+      "mounted": false,
+      "silver": false,
+      "slow": false,
+      "thrown": false
+    },
+    "cleaveLimit": {
+      "numeric": 2,
+      "addStrMod": false
+    }
   },
   "folder": "1aw85lzuAfTBazRX",
   "ownership": {

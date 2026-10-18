@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/net.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122770657,
-    "modifiedTime": 1779122770660,
+    "createdTime": 1792360182950,
+    "modifiedTime": 1792360182956,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "range": {
@@ -25,22 +25,22 @@
     "save": "paralysis",
     "pattern": "white",
     "description": "<p>This is a round, weighted cast net designed to entangle and entrap opponents. The chief historical example is the net of the Roman retiarius. A character using a net gets a +2 bonus on attack throws to wrestle opponents (as explained under special maneuvers in Chapter 6).</p>",
-    "damage": "",
+    "damage": {
+      "base": {
+        "formula": "",
+        "types": [],
+        "extraordinary": false
+      },
+      "alternate": {
+        "formula": "",
+        "types": [],
+        "extraordinary": false
+      }
+    },
     "bonus": {
       "attack": 2,
       "damage": 0
     },
-    "tags": [
-      {
-        "title": "Melee",
-        "value": "Melee"
-      },
-      {
-        "title": "Missile",
-        "value": "Missile"
-      }
-    ],
-    "slow": false,
     "missile": true,
     "melee": true,
     "cost": 1,
@@ -50,7 +50,30 @@
       "value": 0,
       "max": 0
     },
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "customTags": [
+      "Melee",
+      "Missile"
+    ],
+    "size": "na",
+    "category": "other",
+    "special": {
+      "cleave": false,
+      "entangling": false,
+      "flexible": false,
+      "handy": false,
+      "impact": false,
+      "incapacitating": false,
+      "long": false,
+      "mounted": false,
+      "silver": false,
+      "slow": false,
+      "thrown": false
+    },
+    "cleaveLimit": {
+      "numeric": 2,
+      "addStrMod": false
+    }
   },
   "folder": "9gTquBoiBlWRuTrh",
   "ownership": {

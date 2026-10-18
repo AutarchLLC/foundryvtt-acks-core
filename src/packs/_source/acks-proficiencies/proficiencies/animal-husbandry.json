@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/animal-husbandry.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703818,
-    "modifiedTime": 1779122703828,
+    "createdTime": 1792360116273,
+    "modifiedTime": 1792360116281,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character has the ability to treat wounds and diagnose illnesses in animals. A proficiency throw of 11+ enables the character to identify whether a disease is magical or mundane, and if mundane, diagnose it. With clean, sanitary conditions and bed rest, an animal under treatment of the character automatically regains an extra 1d3 hit points per day. If the character selects Animal Husbandry twice, he can neutralize poison or cure disease, or cure light wounds with a proficiency throw of 18+, attempting once per day per animal. If the character selects Animal Husbandry three times, he can neutralize poison, cure disease, or cure serious wounds with a proficiency throw of 14+, once per day per animal, and can cure mortal wounds with a proficiency throw of 18+, once per day per animal. At any one time, a character can treat three animals, plus an additional one each time Animal Husbandry is selected.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

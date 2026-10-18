@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/crossbow2.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122770657,
-    "modifiedTime": 1779122770661,
+    "createdTime": 1792360182951,
+    "modifiedTime": 1792360182956,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "range": {
@@ -25,22 +25,22 @@
     "save": "",
     "pattern": "white",
     "description": "<p>A crossbow is a bow mounted cross-wise on a stock with a trigger. It fires squat projectiles called bolts. Crossbows are light enough to pull by hand or with a quick drawing lever and are much easier to use than bows. Historical examples are the Greek gastraphetes, Roman arcuballista, Chinese handheld crossbow, and medieval crossbow and cavalry cranequin.</p>\n<p>Limited to 2 cleave attacks. (Core rules p. 105)</p>",
-    "damage": "1d6",
+    "damage": {
+      "base": {
+        "formula": "1d6",
+        "types": [],
+        "extraordinary": false
+      },
+      "alternate": {
+        "formula": "",
+        "types": [],
+        "extraordinary": false
+      }
+    },
     "bonus": {
       "attack": 0,
       "damage": 0
     },
-    "tags": [
-      {
-        "title": "Missile",
-        "value": "Missile"
-      },
-      {
-        "title": "Two-handed",
-        "value": "Two-handed"
-      }
-    ],
-    "slow": false,
     "missile": true,
     "melee": false,
     "cost": 30,
@@ -50,7 +50,30 @@
       "value": 0,
       "max": 0
     },
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "customTags": [
+      "Missile",
+      "Two-handed"
+    ],
+    "size": "na",
+    "category": "other",
+    "special": {
+      "cleave": false,
+      "entangling": false,
+      "flexible": false,
+      "handy": false,
+      "impact": false,
+      "incapacitating": false,
+      "long": false,
+      "mounted": false,
+      "silver": false,
+      "slow": false,
+      "thrown": false
+    },
+    "cleaveLimit": {
+      "numeric": 2,
+      "addStrMod": false
+    }
   },
   "folder": "9gTquBoiBlWRuTrh",
   "ownership": {

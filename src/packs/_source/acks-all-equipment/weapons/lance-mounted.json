@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/mounted-knight.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122770656,
-    "modifiedTime": 1779122770660,
+    "createdTime": 1792360182947,
+    "modifiedTime": 1792360182955,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "range": {
@@ -25,22 +25,22 @@
     "save": "",
     "pattern": "transparent",
     "description": "<p>Lances are long spears, 12' to 16' in length, designed for mounted warriors. Despite their length, they are used onehanded. Historical examples include the Greek xyston, Persian and Byzantine kontos, and medieval lance. Lances do double damage when used to charge, but impose a -1 penalty on initiative rolls.</p>",
-    "damage": "1d10",
+    "damage": {
+      "base": {
+        "formula": "1d10",
+        "types": [],
+        "extraordinary": false
+      },
+      "alternate": {
+        "formula": "",
+        "types": [],
+        "extraordinary": false
+      }
+    },
     "bonus": {
       "attack": 0,
       "damage": 0
     },
-    "tags": [
-      {
-        "title": "Melee",
-        "value": "Melee"
-      },
-      {
-        "title": "Charge",
-        "value": "Charge"
-      }
-    ],
-    "slow": true,
     "missile": false,
     "melee": true,
     "cost": 1,
@@ -50,7 +50,30 @@
       "value": 0,
       "max": 0
     },
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "customTags": [
+      "Melee",
+      "Charge"
+    ],
+    "size": "na",
+    "category": "other",
+    "special": {
+      "cleave": false,
+      "entangling": false,
+      "flexible": false,
+      "handy": false,
+      "impact": false,
+      "incapacitating": false,
+      "long": false,
+      "mounted": false,
+      "silver": false,
+      "slow": false,
+      "thrown": false
+    },
+    "cleaveLimit": {
+      "numeric": 2,
+      "addStrMod": false
+    }
   },
   "folder": "9gTquBoiBlWRuTrh",
   "ownership": {

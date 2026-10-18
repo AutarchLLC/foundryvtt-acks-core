@@ -6,14 +6,14 @@
   "_id": "ovjKh2QRTQ7o2eWb",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122999782,
-    "modifiedTime": 1779122999786,
+    "createdTime": 1792360339204,
+    "modifiedTime": 1792360339207,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>Thouls can regenerate as a troll for [[/r 1 #The Thoul's wounds close, healing this many hp...]] hp per round. Hit points are gained at the start of each combat round, unless the damage is from fire or acid. </p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "1aw85lzuAfTBazRX",
   "ownership": {

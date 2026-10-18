@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/endurance.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703811,
-    "modifiedTime": 1779122703825,
+    "createdTime": 1792360116263,
+    "modifiedTime": 1792360116278,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character is nearly tireless. He does not need to rest every 6 turns. He can force march for one day without penalty, plus one additional day for each point of Constitution bonus. Characters with Endurance may also run (3x Movement per Round) for a number of Rounds equal to <em>three </em>times their Constitution score (Characters without the Proficiency may only run for a number of Rounds equal to twice their Constitution score). </p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

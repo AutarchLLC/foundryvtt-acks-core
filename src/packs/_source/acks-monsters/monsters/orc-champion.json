@@ -14,15 +14,15 @@
       "sort": 100000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119145,
-        "modifiedTime": 1779123119145,
+        "createdTime": 1792360396593,
+        "modifiedTime": 1792360396593,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -34,13 +34,22 @@
         "save": "",
         "pattern": "white",
         "description": "<p>This is a long, single-tailed whip of the sort used to herd cattle. Used as a weapon, it provides a +2 bonus to attack throws made to disarm or knock down opponents (as described in Special Maneuvers in Chapter 6).</p>",
-        "damage": "1d2+1",
+        "damage": {
+          "base": {
+            "formula": "1d2+1",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 2,
           "damage": 0
         },
-        "tags": [],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 5,
@@ -50,7 +59,27 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -67,15 +96,15 @@
       "sort": 1100001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119145,
-        "modifiedTime": 1779123119145,
+        "createdTime": 1792360396593,
+        "modifiedTime": 1792360396593,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -88,7 +117,7 @@
         "blindroll": false,
         "description": "<p>Humanoids are a type of monster that includes bugbears, dryads, dwarves, elves, gnolls, gnomes, goblins, hobgoblins, kobolds, lizardmen, men, mermen, morlocks, neanderthals, naiads, ogres, pixies, sprites, and troglodytes, and other creatures no larger than an ogre and possessing 4 or fewer Hit Dice.</p>\n<p>Humanoids (other than humans) with character classes are called demi-humans. Humans and demi-humans do not cease to be humanoids even if they achieve 5th level or higher. All humanoids are vulnerable to <em>charm person</em> and <em>hold person</em> spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -105,15 +134,15 @@
       "sort": 1300001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119145,
-        "modifiedTime": 1779123119145,
+        "createdTime": 1792360396593,
+        "modifiedTime": 1792360396593,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -126,7 +155,7 @@
         "blindroll": false,
         "description": "<p>Beastmen are a special type of monster that were created through ancient magic by blending a humanoid with an animal or fantastic creature. Beastmen include bugbears, centaurs, gnolls, goblins, hobgoblins, kobolds, lizardmen, lycanthropes, mermen, minotaurs, ogres, orcs, trolls, and troglodytes.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -143,15 +172,15 @@
       "sort": 300000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119145,
-        "modifiedTime": 1779123119145,
+        "createdTime": 1792360396593,
+        "modifiedTime": 1792360396593,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -163,22 +192,22 @@
         "save": "",
         "pattern": "white",
         "description": "",
-        "damage": "1d8+1",
+        "damage": {
+          "base": {
+            "formula": "1d8+1",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          },
-          {
-            "title": "Two-handed",
-            "value": "Two-handed"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 7,
@@ -188,7 +217,30 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee",
+          "Two-handed"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -205,15 +257,15 @@
       "sort": 200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119145,
-        "modifiedTime": 1779123119145,
+        "createdTime": 1792360396593,
+        "modifiedTime": 1792360396593,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -226,7 +278,7 @@
         "blindroll": false,
         "description": "<p>They spend most of their days underground, and as such suffer a <strong>-1 penalty to all attack throws</strong> when in full sunlight.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -237,14 +289,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119145,
-    "modifiedTime": 1779123119164,
+    "createdTime": 1792360396593,
+    "modifiedTime": 1792360396627,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -262,20 +314,7 @@
       "max": 8,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 4,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 18,
-      "bba": 1,
-      "throw": 9,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -311,7 +350,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -351,7 +389,18 @@
       "morale": 0
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 9,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 4,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {

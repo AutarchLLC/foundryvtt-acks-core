@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/survival.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703816,
-    "modifiedTime": 1779122703827,
+    "createdTime": 1792360116270,
+    "modifiedTime": 1792360116280,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character is an expert at hunting small game, gathering fruits and vegetables, and finding water and shelter. The character forages enough food to feed himself automatically, even when on the move, so long as he is in a fairly fertile area. If he is trying to supply more than one person, he must make a proficiency throw (as described in Wilderness Adventures), but gains a +4 bonus on the roll.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

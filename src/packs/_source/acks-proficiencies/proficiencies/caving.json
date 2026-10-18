@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/stalagtite.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703811,
-    "modifiedTime": 1779122703825,
+    "createdTime": 1792360116263,
+    "modifiedTime": 1792360116279,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character has learned to keep a map in his head of where he is when exploring underground caves, cavern complexes, and rivers. On a proficiency throw of 11+, the character with this proficiency will be able to automatically know the route he has taken to get where he is, if he was conscious at the time.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

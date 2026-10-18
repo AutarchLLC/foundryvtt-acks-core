@@ -6,14 +6,14 @@
   "_id": "vM2rpl9MwaFFH8bb",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122493280,
-    "modifiedTime": 1779122493281,
+    "createdTime": 1792360067045,
+    "modifiedTime": 1792360067046,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>True warriors never hesitate in combat. The character gains a +1 bonus on surprise rolls and initiative rolls. This bonus does not apply when casting spells.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "sFB1mhQrNkHDlaUi",
   "ownership": {

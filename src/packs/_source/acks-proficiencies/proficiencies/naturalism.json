@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/naturalism.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703810,
-    "modifiedTime": 1779122703825,
+    "createdTime": 1792360116261,
+    "modifiedTime": 1792360116278,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character is knowledgeable of common plant and animal life forms in terrain typical to his background. The character is familiar with edible and poison foods, healing herbs, and signs of unnatural danger (such as unusual quiet, atypical animal behavior, etc.) in his known terrain with a proficiency throw of 11+. This proficiency can be selected multiple times.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

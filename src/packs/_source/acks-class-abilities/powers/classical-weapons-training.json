@@ -6,14 +6,14 @@
   "_id": "PjQZTvrv8ujG7Cm5",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122493275,
-    "modifiedTime": 1779122493280,
+    "createdTime": 1792360067040,
+    "modifiedTime": 1792360067046,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<h3 style=\"text-align:center\"><strong>Melee</strong></h3>\n<p>All courtiers receive classical weapons training giving them a bonus of +1 to attack throws with their choice of melee or missile attacks. The courtier must choose which type of attack will receive the bonus at 1st level, and may not change the choice as he advances.</p>\n<p> </p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "sFB1mhQrNkHDlaUi",
   "ownership": {

@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/open-treasure-chest.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703820,
-    "modifiedTime": 1779122703829,
+    "createdTime": 1792360116275,
+    "modifiedTime": 1792360116282,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character is well-equipped for a life of adventure. He knows how to clean and sharpen weapons, saddle and ride a horse, set up a camp, and search for a secret door. He has a rough idea of the value of common coins, trade goods, gems, and jewelry. All player characters are assumed to have Adventuring for the purposes of the proficiency throws of standard adventuring tasks.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

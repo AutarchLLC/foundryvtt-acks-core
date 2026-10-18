@@ -14,15 +14,15 @@
       "sort": 500001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119139,
-        "modifiedTime": 1779123119139,
+        "createdTime": 1792360396581,
+        "modifiedTime": 1792360396581,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -35,7 +35,7 @@
         "blindroll": false,
         "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -52,15 +52,15 @@
       "sort": 600001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119139,
-        "modifiedTime": 1779123119139,
+        "createdTime": 1792360396581,
+        "modifiedTime": 1792360396581,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -73,7 +73,7 @@
         "blindroll": false,
         "description": "<p>Mindless creatures are unaffected by <em>sleep</em>, <em>hold</em>, <em>charm</em>,<em> ESP</em>, or other mind-affecting spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -84,14 +84,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119139,
-    "modifiedTime": 1779123119163,
+    "createdTime": 1792360396581,
+    "modifiedTime": 1792360396625,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -109,20 +109,7 @@
       "max": 13,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 2,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": null,
-      "bba": -10,
-      "throw": 20,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -158,7 +145,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -198,7 +184,18 @@
       "morale": 0
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 20,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 2,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {

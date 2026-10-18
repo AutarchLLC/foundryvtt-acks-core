@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/fizzing-flask.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703819,
-    "modifiedTime": 1779122703829,
+    "createdTime": 1792360116274,
+    "modifiedTime": 1792360116282,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character can identify common alchemical substances, potions, and poisons with a proficiency throw of 11+. If the character takes this proficiency twice, he can work as an apothecary or alchemical assistant. If the character takes this proficiency three times, he is an alchemist himself, as described under Hiring Specialists.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

@@ -14,15 +14,15 @@
       "sort": 100000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119143,
-        "modifiedTime": 1779123119143,
+        "createdTime": 1792360396589,
+        "modifiedTime": 1792360396589,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -34,13 +34,22 @@
         "save": "death",
         "pattern": "red",
         "description": "<p>Any opponent bitten by the giant black widow must make a saving throw versus Poison; failure indicates death after 1 turn.</p>",
-        "damage": "2d6",
+        "damage": {
+          "base": {
+            "formula": "2d6",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -50,7 +59,27 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -67,15 +96,15 @@
       "sort": 2000001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119143,
-        "modifiedTime": 1779123119143,
+        "createdTime": 1792360396589,
+        "modifiedTime": 1792360396589,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "favorite": false,
@@ -88,7 +117,7 @@
         "memorized": 0,
         "cast": 0,
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -105,15 +134,15 @@
       "sort": 1000001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119143,
-        "modifiedTime": 1779123119143,
+        "createdTime": 1792360396589,
+        "modifiedTime": 1792360396589,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -126,7 +155,7 @@
         "blindroll": false,
         "description": "<p>Giant Black Widows create a many-layered mass of strong, sticky strands covering an area. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web does not cause the attacker to become entangled, but moving through the affected area will.</p>\n<p>Entangled creatures can't move, but can break loose depending on their strength. Creatures of normal human strength or less will take <a class=\"inline-roll roll\" title=\"Turns to break free!\" data-mode=\"roll\" data-flavor=\"Turns to break free!\" data-formula=\"2d4\"> 2d4</a> turns to break through the web. Strong humans (with ability scores 13-17) can break through the web in 1 turn. Creatures as strong as or stronger than ogres (18 Strength) can break free of a web in 4 rounds. Giants or creatures of similar great strength can break through the web in 2 rounds.</p>\n<p>The strands of a web spell are flammable. All creatures within flaming webs take <a class=\"inline-roll roll\" title=\"Burning webs!\" data-mode=\"roll\" data-flavor=\"Burning webs!\" data-formula=\"1d6\">1d6</a> points of fire damage from the flames for 2 rounds, after which surviving creatures become free.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -143,15 +172,15 @@
       "sort": 900001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119143,
-        "modifiedTime": 1779123119143,
+        "createdTime": 1792360396589,
+        "modifiedTime": 1792360396589,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -164,7 +193,7 @@
         "blindroll": false,
         "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -175,14 +204,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119143,
-    "modifiedTime": 1779123119164,
+    "createdTime": 1792360396589,
+    "modifiedTime": 1792360396626,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -200,20 +229,7 @@
       "max": 13,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 3,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 17,
-      "bba": 2,
-      "throw": 8,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -249,7 +265,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -289,7 +304,18 @@
       "morale": 0
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 8,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 3,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {

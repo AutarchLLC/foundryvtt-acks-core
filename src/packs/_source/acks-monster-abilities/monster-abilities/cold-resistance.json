@@ -6,14 +6,14 @@
   "_id": "xpY7AlhZ5qhvaSAb",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122999783,
-    "modifiedTime": 1779122999786,
+    "createdTime": 1792360339205,
+    "modifiedTime": 1792360339207,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p><span style=\"color:#191813\">This monster only takes 1/2 damage, rounded down, from attacks that inflict cold damage, including spells.</span></p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "1aw85lzuAfTBazRX",
   "ownership": {

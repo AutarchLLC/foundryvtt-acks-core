@@ -14,15 +14,15 @@
       "sort": 500001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119138,
-        "modifiedTime": 1779123119138,
+        "createdTime": 1792360396579,
+        "modifiedTime": 1792360396579,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "favorite": false,
@@ -35,7 +35,7 @@
         "memorized": 0,
         "cast": 0,
         "save": "death",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -52,15 +52,15 @@
       "sort": 500001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119138,
-        "modifiedTime": 1779123119138,
+        "createdTime": 1792360396579,
+        "modifiedTime": 1792360396579,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "favorite": false,
@@ -73,7 +73,7 @@
         "memorized": 0,
         "cast": 0,
         "save": "death",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -90,15 +90,15 @@
       "sort": 500001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119138,
-        "modifiedTime": 1779123119138,
+        "createdTime": 1792360396579,
+        "modifiedTime": 1792360396579,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "favorite": false,
@@ -111,7 +111,7 @@
         "memorized": 0,
         "cast": 0,
         "save": "death",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -128,15 +128,15 @@
       "sort": 600001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119138,
-        "modifiedTime": 1779123119138,
+        "createdTime": 1792360396579,
+        "modifiedTime": 1792360396579,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -148,13 +148,22 @@
         "save": "death",
         "pattern": "red",
         "description": "<p>Giant centipedes attack with a poisonous bite. No damage is inflicted by the bite, but anyone bitten must make a saving throw versus Poison. Failure indicates that the victim is horribly sick for a period of 10 days. While sick, poisoned characters can only move at ½ speed, and no other physical activity is possible.</p>",
-        "damage": "0",
+        "damage": {
+          "base": {
+            "formula": "0",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -164,7 +173,27 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -181,15 +210,15 @@
       "sort": 1100001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119138,
-        "modifiedTime": 1779123119138,
+        "createdTime": 1792360396579,
+        "modifiedTime": 1792360396579,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -202,7 +231,7 @@
         "blindroll": false,
         "description": "<p>Vermin are a type of mindless monster that includes caecilian, cavern locusts, giant ants, giant killer bees, giant beetles, giant crabs, carcass scavengers, giant centipedes, insect swarms, giant leeches, purple worms, rhagodessa, rot grubs, giant scorpions, shriekers, spiders, and other lower life forms.</p>\n<p>Vermin have such minimal intelligence that they cannot be affected by spells that affect animals. They are usually vulnerable to <em>charm monster</em> and <em>hold monster</em> spells.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -213,14 +242,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119138,
-    "modifiedTime": 1779123119162,
+    "createdTime": 1792360396579,
+    "modifiedTime": 1792360396625,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -238,20 +267,7 @@
       "max": 2,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 0,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 19,
-      "bba": 0,
-      "throw": 10,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -287,7 +303,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -327,7 +342,18 @@
       "morale": -1
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 10,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 0,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {
