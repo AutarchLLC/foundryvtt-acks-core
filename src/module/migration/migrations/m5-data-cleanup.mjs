@@ -23,6 +23,7 @@ export class Migration5DataCleanup extends MigrationBase {
     MigrationUtil.markPropertyForDeletion(source.system, "exploration");
     for (const score of Object.keys(ACKS.scores)) {
       MigrationUtil.markPropertyForDeletion(source.system, `scores.${score}.bonus`);
+      MigrationUtil.markPropertyForDeletion(source.system, `scores.${score}.mod`);
     }
     MigrationUtil.markPropertyForDeletion(source.system, "scores.dex.init");
     MigrationUtil.markPropertyForDeletion(source.system, "scores.cha.npc");

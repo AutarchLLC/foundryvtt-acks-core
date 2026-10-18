@@ -232,18 +232,18 @@ test.describe("character scores", () => {
       );
     });
 
-    const kept = (value) => ({ value, bonus: "deleted", mod: 0 });
+    const cleaned = (value) => ({ value, bonus: "deleted", mod: "deleted" });
     expect(scores).toEqual({
-      str: kept(13),
-      int: kept(9),
-      wis: kept(10),
-      dex: { ...kept(16), init: "deleted" },
-      con: kept(12),
-      cha: { ...kept(8), npc: "deleted", retain: "deleted", loyalty: "deleted" },
+      str: cleaned(13),
+      int: cleaned(9),
+      wis: cleaned(10),
+      dex: { ...cleaned(16), init: "deleted" },
+      con: cleaned(12),
+      cha: { ...cleaned(8), npc: "deleted", retain: "deleted", loyalty: "deleted" },
     });
   });
 
-  test("the initiative box shows the dexterity modifier", async ({ page }) => {
+  test("the initiative box shows the rolled initiative bonus", async ({ page }) => {
     const shown = await page.evaluate(async () => {
       const actor = await Actor.implementation.create({ name: "Quick Fighter", type: "character" });
       await actor.update({ "system.scores.dex.value": 16, "system.initiative.mod": 1 });
@@ -253,10 +253,11 @@ test.describe("character scores", () => {
         .find((el) => el.dataset.tooltip?.startsWith(game.i18n.localize("ACKS.scores.dex.long")))
         ?.querySelector("input")?.value;
       await actor.sheet.close();
-      return { value, dexMod: actor.system.scores.dex.mod };
+      return { value, dexMod: actor.system.scores.dex.mod, initiative: actor.system.initiative.value };
     });
 
     expect(shown.dexMod).toBe(2);
+    expect(shown.initiative).toBe(3);
     expect(shown.value).toBe("3");
   });
 });

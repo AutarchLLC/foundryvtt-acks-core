@@ -1,5 +1,5 @@
 /* global foundry */
-import { ATTRIBUTE_MODIFIERS_LUT } from "../constants.mjs";
+import CharacterData from "../data/actor/character-data.mjs";
 import { ACKS } from "../config.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -45,7 +45,7 @@ export default class CharacterModifiersInfo extends HandlebarsApplicationMixin(A
     for (const attr of attrs) {
       context.attributes[attr] = {
         value: this.options.attributes[attr].value,
-        modifier: ATTRIBUTE_MODIFIERS_LUT[this.options.attributes[attr].value] ?? "N/A",
+        modifier: CharacterData.getAttributeModifier(this.options.attributes[attr].value),
       };
     }
 

@@ -94,9 +94,6 @@ export default class AcksActor extends Actor {
   computeAdditionnalData() {
     const data = this.system;
 
-    // Compute modifiers from actor scores
-    this.computeModifiers();
-    this._isSlow();
     this.computeAC();
 
     // Compute modifiers from actor scores
@@ -109,9 +106,6 @@ export default class AcksActor extends Actor {
     data.initiative.value = data.initiative.mod || 0;
     if (this.type === "character") {
       data.initiative.value += data.scores.dex.mod;
-      if (data.isSlow) {
-        data.initiative.value -= 1;
-      }
     }
 
     data.movement.encounter = Math.floor((data.movement.base / 3) * 10) / 10;
@@ -863,19 +857,6 @@ export default class AcksActor extends Actor {
     return output;
   }
 
-  _isSlow() {
-    // TODO: remove slow
-    this.system.isSlow = false;
-    if (this.type !== "character") {
-      return;
-    }
-    this.items.forEach((item) => {
-      if (item.type === "weapon" && item.system.slow && item.system.equipped) {
-        this.system.isSlow = true;
-      }
-    });
-  }
-
   computeEncumbrance() {
     if (this.type !== "character") {
       return;
@@ -960,20 +941,6 @@ export default class AcksActor extends Actor {
     return this.getFavorites();
   }
 
-  buildRollList() {
-    const rolls = [];
-    for (const key in this.system.scores) {
-      const attr = this.system.scores[key];
-      rolls.push({
-        key: key,
-        value: attr.value,
-        name: game.i18n.localize("ACKS.scores." + key + ".short"),
-        type: "score",
-      });
-    }
-    return rolls;
-  }
-
   computeAC() {
     if (this.type !== "character") {
       return;
@@ -994,37 +961,6 @@ export default class AcksActor extends Actor {
     });
     data.ac.value = baseAC + data.scores.dex.mod + shieldAC + data.ac.mod;
     data.ac.shield = shieldAC;
-  }
-
-  computeModifiers() {
-    if (this.type !== "character") {
-      return;
-    }
-    const data = this.system;
-
-    const standard = {
-      0: -3,
-      3: -3,
-      4: -2,
-      6: -1,
-      9: 0,
-      13: 1,
-      16: 2,
-      18: 3,
-      19: 4,
-      20: 5,
-      21: 6,
-      22: 7,
-      23: 8,
-      24: 9,
-      25: 10,
-    };
-    data.scores.str.mod = AcksActor._valueFromTable(standard, data.scores.str.value);
-    data.scores.int.mod = AcksActor._valueFromTable(standard, data.scores.int.value);
-    data.scores.dex.mod = AcksActor._valueFromTable(standard, data.scores.dex.value);
-    data.scores.cha.mod = AcksActor._valueFromTable(standard, data.scores.cha.value);
-    data.scores.wis.mod = AcksActor._valueFromTable(standard, data.scores.wis.value);
-    data.scores.con.mod = AcksActor._valueFromTable(standard, data.scores.con.value);
   }
 
   computeBHR() {

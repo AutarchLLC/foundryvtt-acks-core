@@ -5,7 +5,7 @@ import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackTweaks from "./templates/attack-tweaks.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
-import { ATTACK_TYPE } from "../../constants.mjs";
+import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS } from "../../constants.mjs";
 
 /**
  * Character Data Model
@@ -120,38 +120,26 @@ export default class CharacterData extends BaseDataModel {
         // Strength (STR)
         str: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Intellect (INT)
         int: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Will (WIL)
         wis: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Dexterity (DEX)
         dex: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Constitution (CON)
         con: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Charisma (CHA)
         cha: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
       }),
       // Encumbrance related
@@ -165,6 +153,32 @@ export default class CharacterData extends BaseDataModel {
   }
 
   //region ATTACKS
+
+  /**
+   * Derive each attribute score's modifier (`scores.*.mod`) from its value, after Active Effects are applied.
+   * @override
+   */
+  prepareDerivedData() {
+    super.prepareDerivedData();
+    for (const score of Object.values(this.scores)) {
+      score.mod = CharacterData.getAttributeModifier(score.value);
+    }
+  }
+
+  /**
+   * Modifier granted by an attribute score (STR, INT, WIL, DEX, CON, CHA).
+   * @param {number} score  Attribute score value
+   * @return {number} Modifier from {@link ATTRIBUTE_MODIFIERS}; -3 below the table, +10 above it
+   */
+  static getAttributeModifier(score) {
+    let modifier = ATTRIBUTE_MODIFIERS[3];
+    for (const [threshold, value] of Object.entries(ATTRIBUTE_MODIFIERS)) {
+      if (score >= Number(threshold)) {
+        modifier = value;
+      }
+    }
+    return modifier;
+  }
 
   /**
    * Attack throw modifiers from this character: STR for melee, DEX for missile and thrown, plus Actor Tweaks.

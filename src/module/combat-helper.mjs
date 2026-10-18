@@ -32,13 +32,8 @@ export default class AcksCombatHelper {
         return;
       }
 
-      let initiative = groups[combatant.flags.acks.group].initiative;
-      if (combatant.actor.system.isSlow) {
-        initiative -= 1;
-      }
-
       await combatant.update({
-        initiative: initiative,
+        initiative: groups[combatant.flags.acks.group].initiative,
       });
     }
     //combat.setupTurns();
@@ -226,11 +221,6 @@ export default class AcksCombatHelper {
   static updateCombatant(combat, combatant, data) {
     let init = "individual"; //UNUSED game.settings.get("acks", "initiative");
     // Why do you reroll ?
-    // Legacy Slowness code from OSE
-    //    if (combatant.actor.data.data.isSlow) {
-    //      data.initiative = -789;
-    //      return;
-    //    }
     if (data.initiative && init == "group") {
       let groupInit = data.initiative;
       // Check if there are any members of the group with init
