@@ -148,7 +148,7 @@ export default class ActorCommonTemplate {
   static get initiative() {
     return {
       initiative: new SchemaField({
-        // Initiative bonus (1d6 + value)
+        // Initiative bonus (1d6 + value) TODO: move to derived data, no need to store in DB
         value: new NumberField({ initial: 0 }),
         // Initiative bonus modifier, configured via Actor Tweaks
         mod: new NumberField({ initial: 0 }),
