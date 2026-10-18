@@ -150,7 +150,7 @@
 
           <div class="item__name">{{localize "ACKS.items.Armors"}}</div>
 
-          <div class="item__ac">{{localize "ACKS.items.ArmorAAC"}}</div>
+          <div class="item__ac">{{localize "ACKS.items.ArmorAC"}}</div>
 
           <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
 
@@ -183,7 +183,7 @@
                   </div>
 
                   <!-- Armor Class -->
-                  <div class="item__ac">{{item.system.aac.value}}</div>
+                  <div class="item__ac">{{item.system.ac.value}}</div>
 
                   <!-- Armor Weight in 1/6th stones -->
                   <div class="item__weight">{{stoneWeight item.system.weight6}}</div>
@@ -273,10 +273,6 @@
                   <div class="item__count">
                     <input class="item-input small" type="number" data-name="system.quantity.value" data-kind="item"
                            value="{{item.system.quantity.value}}" data-dtype="Number"/>
-                    {{#if item.system.quantity.max}}
-                      <span>/</span>
-                      <span>{{item.system.quantity.max}}</span>
-                    {{/if}}
                   </div>
 
                   <!-- Item Weight in 1/6th stones -->
@@ -355,10 +351,6 @@
                   <div class="item__count">
                     <input class="item-input small" type="number" data-name="system.quantity.value" data-kind="item"
                            value="{{item.system.quantity.value}}" data-dtype="Number"/>
-                    {{#if item.system.quantity.max}}
-                      <span>/</span>
-                      <span>{{item.system.quantity.max}}</span>
-                    {{/if}}
                   </div>
 
                   <!-- Item Weight in 1/6th stones -->

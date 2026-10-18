@@ -144,7 +144,7 @@
       </div>
 
       <!-- AC -->
-      {{formGroup actorFields.aac.fields.value label="ACKS.AscArmorClassShort" value=system.aac.value
+      {{formGroup actorFields.ac.fields.value label="ACKS.AscArmorClassShort" value=system.ac.value
                   rootId=@root.partId localize=true}}
 
       <!-- Attack Throw -->
@@ -156,7 +156,7 @@
           </label>
         </a>
         <div class="form-fields">
-          <input type="number" name="system.thac0.throw" value="{{system.thac0.throw}}"
+          <input type="number" name="system.attack.throw" value="{{system.attack.throw}}"
                  id="{{@root.partId}}--attackThrow" data-dtype="Number"/>
         </div>
       </div>

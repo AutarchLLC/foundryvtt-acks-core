@@ -71,8 +71,6 @@
   "ACKS.roll.details.save": "Roll 1d20 >= {save} for success",
   "ACKS.roll.attribute": "{attribute} check",
   "ACKS.roll.details.attribute": "Roll 1d20 <= {score} for success",
-  "ACKS.roll.exploration": "{exploration} test",
-  "ACKS.roll.details.exploration": "Roll 1d20 >= {expl} for success",
   "ACKS.roll.reaction": "Reaction roll",
   "ACKS.roll.initiative": "Group {group} rolls for Initiative!",
   "ACKS.roll.individualInit": "{name} rolls for Initiative!",
@@ -358,7 +356,6 @@
   "ACKS.items.RollType": "Type",
   "ACKS.items.Damage": "Damage",
   "ACKS.items.ArmorAC": "AC",
-  "ACKS.items.ArmorAAC": "AC",
   "ACKS.items.Bonus": "Bonus",
   "ACKS.items.AtkBonus": "Attack Bonus",
   "ACKS.items.DmgBonus": "Damage Bonus",
@@ -432,19 +429,6 @@
   "ACKS.spells.ResetSlots": "Reset Spell slots",
 
   "ACKS.abilities.Requirements": "Requirements",
-
-  "ACKS.exploration.ld.long": "Listen for noises",
-  "ACKS.exploration.ld.short": "Hear Noise",
-  "ACKS.exploration.ld.abrev": "HN",
-  "ACKS.exploration.od.long": "Open Stuck Door",
-  "ACKS.exploration.od.short": "Open Door",
-  "ACKS.exploration.od.abrev": "OD",
-  "ACKS.exploration.sd.long": "Find Secret Door",
-  "ACKS.exploration.sd.short": "Secret Door",
-  "ACKS.exploration.sd.abrev": "SD",
-  "ACKS.exploration.ft.long": "Find Room Trap",
-  "ACKS.exploration.ft.short": "Find Trap",
-  "ACKS.exploration.ft.abrev": "FT",
 
   "ACKS.adventuring.trapbreaking": "Trapbreak",
   "ACKS.adventuring.searching": "Search",
@@ -558,5 +542,11 @@
 
   "ACKS.damage.label.extraordinary": "Extraordinary",
 
-  "ACKS.Error.NotImplemented.Cleave": "Cleave is not implemented yet. Attacking first target instead."
+  "ACKS.Error.NotImplemented.Cleave": "Cleave is not implemented yet. Attacking first target instead.",
+
+  "ACKS.Macro.ForceMigration.Title": "Force World Migration",
+  "ACKS.Macro.ForceMigration.Hint": "Resets the schema version of the world and all its actors and items, then re-runs every migration above it. Back up your world first.",
+  "ACKS.Macro.ForceMigration.From": "Starting schema version",
+  "ACKS.Macro.ForceMigration.Execute": "Execute",
+  "ACKS.Macro.ForceMigration.GMOnly": "Only the Judge can force a world migration."
 }

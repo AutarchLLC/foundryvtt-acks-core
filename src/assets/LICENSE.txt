@@ -1,0 +1,104 @@
+ICON ATTRIBUTION
+================
+
+Item icons used by the compendiums of this system come from the sources below.
+Each source is listed once, with the compendium items that use it.
+
+
+game-icons.net
+--------------
+
+License: Creative Commons Attribution 3.0 (CC BY 3.0)
+         http://creativecommons.org/licenses/by/3.0/
+
+https://game-icons.net/1x1/caro-asercion/froe-and-mallet.html  Craftsman's Tools (any)
+https://game-icons.net/1x1/delapouite/amphora.html             Metamphora
+https://game-icons.net/1x1/delapouite/arm.html                 Prosthesis, Arm
+https://game-icons.net/1x1/delapouite/barracks-tent.html       Tent, Large
+https://game-icons.net/1x1/delapouite/barrel.html              Barrel (20 gallon)
+https://game-icons.net/1x1/delapouite/black-belt.html          Belt/Sash, Silk
+https://game-icons.net/1x1/delapouite/camping-tent.html        Tent, Small
+https://game-icons.net/1x1/delapouite/clothes.html             Tunic and Pants (all)
+https://game-icons.net/1x1/delapouite/conway-life-glider.html  Boardgame
+https://game-icons.net/1x1/delapouite/eating.html              Mess Kit
+https://game-icons.net/1x1/delapouite/flute.html               Musical Instrument, Musical Instrument, Superior
+https://game-icons.net/1x1/delapouite/gloves.html              Gloves, Leather or Wool, Short
+https://game-icons.net/1x1/delapouite/half-log.html            Firewood Bundle (5 logs)
+https://game-icons.net/1x1/delapouite/hand-saw.html            Surgical Saw, Large / Small
+https://game-icons.net/1x1/delapouite/hanging-sign.html        Craftsman's Workshop (any)
+https://game-icons.net/1x1/delapouite/large-dress.html         Gown, Lady-in-Waiting/Noble
+https://game-icons.net/1x1/delapouite/leg.html                 Prosthesis, Leg
+https://game-icons.net/1x1/delapouite/light-backpack.html      Rucksack (holds 2 stone)
+https://game-icons.net/1x1/delapouite/lock-picking.html        Thieves' Tools
+https://game-icons.net/1x1/delapouite/lockpicks.html           Thieves' Tools, Expanded / Superior
+https://game-icons.net/1x1/delapouite/loincloth.html           Loincloth
+https://game-icons.net/1x1/delapouite/medieval-pavilion.html   Pavilion (20 men)
+https://game-icons.net/1x1/delapouite/rolled-cloth.html        Linen, Silk and Wool bolts (1 lb)
+https://game-icons.net/1x1/delapouite/rolling-dices.html       Dice
+https://game-icons.net/1x1/delapouite/saddle.html              Saddle and Tack (all)
+https://game-icons.net/1x1/delapouite/sandal.html              Sandals/Shoes, Leather, High
+https://game-icons.net/1x1/delapouite/scabbard.html            Scabbard
+https://game-icons.net/1x1/delapouite/stone-pile.html          30 Sling Stones
+https://game-icons.net/1x1/delapouite/travel-dress.html        Dress, Armiger / Crafter/Freeholder
+https://game-icons.net/1x1/delapouite/trowel.html              Laborer's Tools
+https://game-icons.net/1x1/lorc/archery-target.html            Archery Target
+https://game-icons.net/1x1/lorc/arrowhead.html                 1 Silver Arrow
+https://game-icons.net/1x1/lorc/condor-emblem.html             Army Emblem, Silver (1 lb)
+https://game-icons.net/1x1/lorc/eagle-emblem.html              Army Emblem, Gold (1 lb)
+https://game-icons.net/1x1/lorc/flying-flag.html               Flag, Banner / Standard
+https://game-icons.net/1x1/lorc/knapsack.html                  Saddlebag (holds 3 stone)
+https://game-icons.net/1x1/lorc/leather-boot.html              Boots, Leather, High / Low
+https://game-icons.net/1x1/lorc/manacles.html                  Manacles
+https://game-icons.net/1x1/lorc/padlock.html                   Lock
+https://game-icons.net/1x1/lorc/rally-the-troops.html          Flag, Pennant (3' x 1')
+https://game-icons.net/1x1/lorc/ribbon.html                    Breastwrap (all)
+https://game-icons.net/1x1/lorc/robe.html                      Robe, Linen or Wool
+https://game-icons.net/1x1/lucasms/belt.html                   Belt/Sash, Leather / Embossed Leather
+https://game-icons.net/1x1/lucasms/cloak.html                  Cloak, Fur-lined
+https://game-icons.net/1x1/quoting/lost-limb.html              Prosthesis, Foot
+https://game-icons.net/1x1/sbed/hand.html                      Prosthesis, Hand
+https://game-icons.net/1x1/skoll/pestle-mortar.html            Special Components, Miscellaneous
+https://game-icons.net/1x1/zajkonur/violin.html                Musical Instrument, Masterwork
+
+
+Flaticon
+--------
+
+License: Flaticon free license, attribution required
+         https://www.flaticon.com/legal
+
+https://www.flaticon.com/free-icon/blouse_1882420         Chiton (all)
+  Blouse icons created by Freepik - Flaticon (https://www.flaticon.com/free-icons/blouse)
+https://www.flaticon.com/free-icon/dress_1596198          Gown, Duchess
+  Dress icons created by Smashicons - Flaticon (https://www.flaticon.com/free-icons/dress)
+https://www.flaticon.com/free-icon/hand-gloves_4221643    Gloves, Leather or Wool, Long
+  Gloves icons created by iconixar - Flaticon (https://www.flaticon.com/free-icons/gloves)
+https://www.flaticon.com/free-icon/hat_10513510           Hat, Armiger
+  Felt icons created by popo2021 - Flaticon (https://www.flaticon.com/free-icons/felt)
+https://www.flaticon.com/free-icon/kaftan_3189782         Cassock, Linen or Wool
+  Tunic icons created by Freepik - Flaticon (https://www.flaticon.com/free-icons/tunic)
+https://www.flaticon.com/free-icon/muslimah_10002744      Veil, Silk
+  Veil icons created by iconfield - Flaticon (https://www.flaticon.com/free-icons/veil)
+https://www.flaticon.com/free-icon/saddle_6970064         Caparison, Linen or Wool
+  Horse riding icons created by Freepik - Flaticon (https://www.flaticon.com/free-icons/horse-riding)
+https://www.flaticon.com/free-icon/sandals_7398026        Sandals/Shoes, Leather, Low
+  Footwear icons created by Freepik - Flaticon (https://www.flaticon.com/free-icons/footwear)
+https://www.flaticon.com/free-icon/skullcap_15719608      Skullcap
+  Skullcap icons created by IconBaandar - Flaticon (https://www.flaticon.com/free-icons/skullcap)
+
+
+Legacy ACKS / OSE
+-----------------
+
+License: Assumed Creative Commons Attribution 3.0 (CC BY 3.0)
+         http://creativecommons.org/licenses/by/3.0/
+
+Icons inherited from the earlier ACKS and OSE Foundry systems. Used by 47 items
+in the Adventuring Equipment compendium.
+
+
+Unknown source
+--------------
+
+Source and license unknown: Cloak, Leather, Hooded; Cloak, Linen or Wool, Hooded;
+Cloak, Silk, Hooded.

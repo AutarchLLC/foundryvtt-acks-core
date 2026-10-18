@@ -1,0 +1,26 @@
+{
+  "name": "Force World Migration",
+  "type": "script",
+  "_id": "bnjPfV4WXXKRVjYz",
+  "author": "92ln2e9hCGDNYeB3",
+  "img": "icons/svg/upgrade.svg",
+  "scope": "global",
+  "command": "// Force World Migration — Judge only.\n// Resets the schema version of all world documents to the chosen value and re-runs ACKS migrations.\n\nif (!game.user.isGM) {\n  return ui.notifications.warn(game.i18n.localize(\"ACKS.Macro.ForceMigration.GMOnly\"));\n}\n\nconst { DialogV2 } = foundry.applications.api;\n\nconst data = await DialogV2.input({\n  window: { title: \"ACKS.Macro.ForceMigration.Title\", icon: \"fa-solid fa-database\" },\n  content: `\n    <p>${game.i18n.localize(\"ACKS.Macro.ForceMigration.Hint\")}</p>\n    <div class=\"form-group\">\n      <label for=\"acks-migration-from\">${game.i18n.localize(\"ACKS.Macro.ForceMigration.From\")}</label>\n      <div class=\"form-fields\">\n        <input id=\"acks-migration-from\" type=\"number\" name=\"from\" value=\"0\" min=\"0\" step=\"1\" required autofocus>\n      </div>\n    </div>`,\n  ok: { label: \"ACKS.Macro.ForceMigration.Execute\", icon: \"fa-solid fa-play\" },\n  buttons: [{ action: \"cancel\", label: \"Cancel\", icon: \"fa-solid fa-xmark\", callback: () => null }],\n});\n\nif (!data) return; // Cancel pressed or dialog closed\n\nconst from = Math.max(0, Math.floor(Number(data.from) || 0));\nawait game.acks.debug.forceWorldMigration(from);\n",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1791969689856,
+    "modifiedTime": 1791969689856,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!macros!bnjPfV4WXXKRVjYz"
+}

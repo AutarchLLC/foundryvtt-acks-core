@@ -1,7 +1,8 @@
 /* global foundry, game, ChatMessage */
 import { ACKS } from "../config.mjs";
 import AcksDice from "../dice.mjs";
-import { ATTRIBUTE_MODIFIERS_LUT, ROLL_TYPE } from "../constants.mjs";
+import { ROLL_TYPE } from "../constants.mjs";
+import CharacterData from "../data/actor/character-data.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -95,7 +96,7 @@ export default class CharacterStatGenerator extends HandlebarsApplicationMixin(A
     const result = await this.#roll(label, formula, event);
 
     this.#renderScore(target, scoreKey, result.total);
-    this.#renderScoreModifier(target, scoreKey, ATTRIBUTE_MODIFIERS_LUT[result.total]);
+    this.#renderScoreModifier(target, scoreKey, CharacterData.getAttributeModifier(result.total));
     this.#updateStats();
   }
 

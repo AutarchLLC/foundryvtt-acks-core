@@ -162,16 +162,16 @@
       <div class="form-group">
         <label class="ac-label">
           <span>AC</span>
-          {{#if system.aac.shield}}
-            <span class="shield" data-tooltip="{{localize 'ACKS.items.hasShield'}} ({{system.aac.shield}})">
+          {{#if system.ac.shield}}
+            <span class="shield" data-tooltip="{{localize 'ACKS.items.hasShield'}} ({{system.ac.shield}})">
               <i class="fas fa-shield-alt"></i>
             </span>
           {{/if}}
         </label>
         <div class="form-fields">
-          <input type="text" value="{{system.aac.value}}" data-tooltip="{{localize 'ACKS.ArmorClass'}}"
+          <input type="text" value="{{system.ac.value}}" data-tooltip="{{localize 'ACKS.ArmorClass'}}"
                  data-dtype="Number" disabled/>
-          <input type="text" value="{{system.aac.naked}}" data-tooltip="{{localize 'ACKS.ArmorClassNaked'}}"
+          <input type="text" value="{{system.ac.naked}}" data-tooltip="{{localize 'ACKS.ArmorClassNaked'}}"
                  data-dtype="Number" disabled/>
         </div>
       </div>

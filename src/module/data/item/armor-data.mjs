@@ -12,7 +12,7 @@ export default class ArmorData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, aac, type, equipped}}
+   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, ac, type, equipped}}
    */
   static defineSchema() {
     const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -23,8 +23,8 @@ export default class ArmorData extends ItemBaseData {
       ...itemDescriptionSchema(),
       // cost and weight
       ...ItemPhysicalTemplate.schema,
-      // Ascending AC value
-      aac: new SchemaField({
+      // AC value
+      ac: new SchemaField({
         value: new NumberField({ initial: 0 }),
       }),
       // Armor type
@@ -44,7 +44,18 @@ export default class ArmorData extends ItemBaseData {
     }
 
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
+    this.migrateAacToAc(source);
 
     return super.migrateData(source);
+  }
+
+  /**
+   * Copy the old `aac` (ascending AC) field to `ac`.
+   * @param {object} source  The candidate source data from which the model will be constructed.
+   */
+  static migrateAacToAc(source) {
+    if (Object.hasOwn(source, "aac") && !Object.hasOwn(source, "ac")) {
+      source.ac = source.aac;
+    }
   }
 }

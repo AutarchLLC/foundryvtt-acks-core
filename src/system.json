@@ -199,6 +199,15 @@
       "path": "packs/acks-journals",
       "type": "JournalEntry",
       "module": "acks-packs"
+    },
+    {
+      "name": "acks-macros",
+      "banner": "systems/acks/assets/ui/banners/p108_proficiency_treatises2.webp",
+      "label": "Judge Macros",
+      "system": "acks",
+      "path": "packs/acks-macros",
+      "type": "Macro",
+      "module": "acks-packs"
     }
   ],
   "packFolders": [
@@ -277,7 +286,7 @@
       "sorting": "m",
       "color": "#620630",
       "folders": [],
-      "packs": ["acks-journals"]
+      "packs": ["acks-journals", "acks-macros"]
     }
   ],
   "languages": [

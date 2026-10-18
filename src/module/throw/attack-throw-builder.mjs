@@ -138,8 +138,8 @@ export function buildAttackThrow(actor, item, choices, target = null) {
   const weapon = asWeapon(item);
   const rollData = actor.getRollData();
 
-  const targetAC = target?.actor?.system?.aac?.value ?? 0;
-  const attackThrow = new AcksAttackThrow(actor.system.thac0.throw + targetAC);
+  const targetAC = target?.actor?.system?.ac?.value ?? 0;
+  const attackThrow = new AcksAttackThrow(actor.system.attack.throw + targetAC);
   attackThrow.addModifiers(actor.system.getAttackThrowModifiers(attackType));
   if (weapon) {
     attackThrow.addModifiers(weapon.system.getAttackThrowModifiers());

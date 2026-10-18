@@ -1,0 +1,4 @@
+# Keep LF in the working tree on every platform. Foundry's pack extractor
+# (npm run packs:databaseToSource) writes LF, so CRLF checkouts show every
+# _source JSON file as modified.
+* text=auto eol=lf

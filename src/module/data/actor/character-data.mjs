@@ -5,7 +5,7 @@ import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackTweaks from "./templates/attack-tweaks.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
-import { ATTACK_TYPE } from "../../constants.mjs";
+import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS } from "../../constants.mjs";
 
 /**
  * Character Data Model
@@ -14,7 +14,7 @@ export default class CharacterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{isNew, retainer, hp, aac, damage, thac0, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, exploration, scores, encumbrance}}
+   * @return {{isNew, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, scores, encumbrance}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -25,9 +25,9 @@ export default class CharacterData extends BaseDataModel {
       ...ActorCommonTemplate.isNew,
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
-      ...ActorCommonTemplate.aac,
+      ...ActorCommonTemplate.ac,
       ...ActorCommonTemplate.damage,
-      ...ActorCommonTemplate.thac0,
+      ...ActorCommonTemplate.attack,
       ...ActorCommonTemplate.movement,
       ...ActorCommonTemplate.initiative,
       ...ActorCommonTemplate.surprise,
@@ -115,72 +115,31 @@ export default class CharacterData extends BaseDataModel {
         // number of cleaves
         cleaves: new NumberField({ initial: 0 }),
       }),
-      // TODO: OSE exploration skills??? Not used, remove?
-      exploration: new SchemaField({
-        ld: new NumberField({ initial: 18 }), // listen door?
-        od: new NumberField({ initial: 18 }), // open door?
-        odMod: new NumberField({ initial: 0 }), // open door mod?
-        sd: new NumberField({ initial: 18 }), // find secret door?
-        ft: new NumberField({ initial: 18 }), // find trap?
-      }),
       // CHARACTER ATTRIBUTES
       scores: new SchemaField({
         // Strength (STR)
         str: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Intellect (INT)
         int: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Will (WIL)
         wis: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Dexterity (DEX)
         dex: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
-          // TODO: same as mod. remove?
-          init: new NumberField({ initial: 0 }),
         }),
         // Constitution (CON)
         con: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
         }),
         // Charisma (CHA)
         cha: new SchemaField({
           value: new NumberField({ required: true, initial: 10 }),
-          // TODO: seems not used
-          bonus: new NumberField({ initial: 0 }),
-          // standard modifier
-          mod: new NumberField({ initial: 0 }),
-          // TODO: same as mod. remove?
-          npc: new NumberField({ initial: 0 }),
-          // retainer number? mod + 4
-          // TODO: not used, remove?
-          retain: new NumberField({ initial: 0 }),
-          // TODO: same as mod. not used. remove?
-          loyalty: new NumberField({ initial: 0 }),
         }),
       }),
       // Encumbrance related
@@ -194,6 +153,32 @@ export default class CharacterData extends BaseDataModel {
   }
 
   //region ATTACKS
+
+  /**
+   * Derive each attribute score's modifier (`scores.*.mod`) from its value, after Active Effects are applied.
+   * @override
+   */
+  prepareDerivedData() {
+    super.prepareDerivedData();
+    for (const score of Object.values(this.scores)) {
+      score.mod = CharacterData.getAttributeModifier(score.value);
+    }
+  }
+
+  /**
+   * Modifier granted by an attribute score (STR, INT, WIL, DEX, CON, CHA).
+   * @param {number} score  Attribute score value
+   * @return {number} Modifier from {@link ATTRIBUTE_MODIFIERS}; -3 below the table, +10 above it
+   */
+  static getAttributeModifier(score) {
+    let modifier = ATTRIBUTE_MODIFIERS[3];
+    for (const [threshold, value] of Object.entries(ATTRIBUTE_MODIFIERS)) {
+      if (score >= Number(threshold)) {
+        modifier = value;
+      }
+    }
+    return modifier;
+  }
 
   /**
    * Attack throw modifiers from this character: STR for melee, DEX for missile and thrown, plus Actor Tweaks.
@@ -246,6 +231,10 @@ export default class CharacterData extends BaseDataModel {
     // Migration 1: saves.wand → saves.implements, saves.breath → saves.blast
     SavingThrowsTemplate.migrateWandToImplements(source);
     SavingThrowsTemplate.migrateBreathToBlast(source);
+
+    // Migration 5: thac0 → attack, aac → ac
+    ActorCommonTemplate.migrateThac0ToAttack(source);
+    ActorCommonTemplate.migrateAacToAc(source);
 
     return super.migrateData(source);
   }

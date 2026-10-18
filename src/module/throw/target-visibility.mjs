@@ -45,7 +45,7 @@ export function getTargetLabels(attacker, target, targetValue) {
     shown: {
       target: game.i18n.format("ACKS.throw.attack.target", {
         name: target.name,
-        ac: target.actor?.system?.aac?.value ?? 0,
+        ac: target.actor?.system?.ac?.value ?? 0,
       }),
       targetValue: game.i18n.format("ACKS.throw.attack.targetValue", { value: targetValue }),
     },
@@ -54,7 +54,7 @@ export function getTargetLabels(attacker, target, targetValue) {
         name: target.name,
         ac: game.i18n.localize("ACKS.throw.attack.hiddenAC"),
       }),
-      targetValue: game.i18n.format("ACKS.throw.attack.targetValueHiddenAC", { value: attacker.system.thac0.throw }),
+      targetValue: game.i18n.format("ACKS.throw.attack.targetValueHiddenAC", { value: attacker.system.attack.throw }),
     },
   };
 }
