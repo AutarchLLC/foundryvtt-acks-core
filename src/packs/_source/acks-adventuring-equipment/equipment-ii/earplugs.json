@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "Made of clay, cotton, or wax, these protect the wearer from loud sounds. Commanders may issue these to troops that will face harpies on the field of battle. Adventurers can wear earplugs loosely to reduce earshot by half or tightly to become deafened.",
+    "description": "<p>Made of clay, cotton, or wax, these protect the wearer from loud sounds. Commanders may issue these to troops that will face harpies on the field of battle. Adventurers can wear earplugs loosely to reduce earshot by half or tightly to become <strong>deafened</strong>.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 0.1,
     "weight6": 1,
-    "iconsource": "",
-    "iconlicense": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581849,
-    "modifiedTime": 1779120581855,
+    "createdTime": 1792359315789,
+    "modifiedTime": 1792359315805,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

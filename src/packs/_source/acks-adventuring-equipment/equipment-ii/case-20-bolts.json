@@ -8,26 +8,26 @@
     "subtype": "item",
     "description": "A case containing 20 crossbow bolts.",
     "quantity": {
-      "value": 1,
-      "max": 20
+      "value": 1
     },
-    "treasure": false,
     "cost": 2,
     "weight6": 1,
-    "iconsource": "Legacy ACKS / OSE",
-    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
     "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581842,
-    "modifiedTime": 1792351999022,
+    "createdTime": 1792359315787,
+    "modifiedTime": 1792359315805,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

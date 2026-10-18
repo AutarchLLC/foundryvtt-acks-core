@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "Wolfsbane (dried aconite flowers) may drive off werewolves and other lycanthropes if a character strikes the monster in hand-to-hand combat with the sprig. If the lycanthrope fails a Death saving throw, it must flee as if rebuked. Wolfsbane can be used to make a plant poison (p. XX). A character foolish enough to eat a pound of fresh wolfsbane must make a Death saving throw or die after one turn.",
+    "description": "<p>Wolfsbane (dried aconite flowers) may drive off werewolves and other lycanthropes if a character strikes the monster in hand-to-hand combat with the sprig. If the lycanthrope fails a Death saving throw, it must flee as if rebuked. Wolfsbane can be used to make a plant poison (p. 131). A character foolish enough to eat a pound of fresh wolfsbane must make a Death saving throw or die after one turn.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 10,
     "weight6": 1,
-    "iconsource": "Legacy ACKS / OSE",
-    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581845,
-    "modifiedTime": 1779120581854,
+    "createdTime": 1792359315792,
+    "modifiedTime": 1792359315806,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

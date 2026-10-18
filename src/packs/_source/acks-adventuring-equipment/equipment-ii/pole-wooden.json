@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "This pole is a shaft of wood 10' long and 2' thick. Adventurers often carry 10' poles to prod and poke areas that might be trapped, test the strength of ledges or floors, or measure the depth of pools. Although not heavy, wooden poles are cumbersome; they count as 1 stone for encumbrance.",
+    "description": "<p>This pole is a shaft of wood 10' long and 2\" thick. Adventurers often carry 10' poles to prod and poke areas that might be trapped, test the strength of ledges or floors, or measure the depth of pools. Although not heavy, wooden poles are cumbersome; they count as 1 stone for encumbrance.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 0.01,
     "weight6": 6,
-    "iconsource": "",
-    "iconlicense": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581845,
-    "modifiedTime": 1779120581853,
+    "createdTime": 1792359315796,
+    "modifiedTime": 1792359315807,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "A funnel-shaped tube of silver, wood, shell, or horn that, when placed in its wearers ear canal, raises the apparent volume of sound. A character using an ear trumpet when listening at a door or wooden wall can ignore the 5 penalty to his earshot range from the door or wall. While using the ear trumpet, the character cannot wear a helmet and must hold it in his ear with one hand.",
+    "description": "<p>A funnel-shaped tube of silver, wood, shell, or horn that, when placed in its wearer's ear canal, raises the apparent volume of sound. A character using an ear trumpet when listening at a door or wooden wall can ignore the 5' penalty to his earshot range from the door or wall. While using the ear trumpet, the character cannot wear a helmet and must hold it in his ear with one hand.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 15,
     "weight6": 1,
-    "iconsource": "",
-    "iconlicense": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581849,
-    "modifiedTime": 1779120581855,
+    "createdTime": 1792359315789,
+    "modifiedTime": 1792359315805,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

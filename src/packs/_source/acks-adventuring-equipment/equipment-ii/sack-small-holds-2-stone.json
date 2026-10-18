@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "This is a 1 x 2 burlap, cloth, or leather bag that can contain 2 stone (20 lbs). It is often tied to a belt or spearhead.",
+    "description": "<p>This is a 1' × 2' burlap, cloth, or leather bag that can contain 2 stone (20 lbs). It is often tied to a belt or spearhead.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 0.3,
     "weight6": 1,
-    "iconsource": "Legacy ACKS / OSE",
-    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581844,
-    "modifiedTime": 1779120581853,
+    "createdTime": 1792359315799,
+    "modifiedTime": 1792359315808,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

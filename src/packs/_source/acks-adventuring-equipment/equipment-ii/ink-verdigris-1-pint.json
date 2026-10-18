@@ -1,0 +1,38 @@
+{
+  "name": "Ink, Verdigris (1 pint)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/quill-ink2.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "<p>This is a small pot of black ink. Cinnabar, red ochre, sepia, and verdigris ink cost twice as much. Purple ink costs ten times as much. Regardless of color, a pint of ink can be used to write or illustrate up to 2,500 pages.</p>",
+    "quantity": {
+      "value": 1
+    },
+    "cost": 14,
+    "weight6": 1,
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1792359315794,
+    "modifiedTime": 1792359315807,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "wLNRoUQ7lat9jNjR",
+  "sort": 0,
+  "_key": "!items!wLNRoUQ7lat9jNjR"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Purse (holds 1/2 stone)",
+  "type": "item",
+  "img": "systems/acks/assets/icons/sack.webp",
+  "effects": [],
+  "system": {
+    "subtype": "item",
+    "description": "<p>These are 6\" × 1' bags of cloth or leather that can contain half a stone (5 lbs). They can be carried on a shoulder strap or on a belt.</p>",
+    "quantity": {
+      "value": 1
+    },
+    "cost": 0.5,
+    "weight6": 1,
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1792359315797,
+    "modifiedTime": 1792359315808,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "04ETGKe7ejKtPVS9",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "7UX814Mw3w3rXjEJ",
+  "sort": 0,
+  "_key": "!items!7UX814Mw3w3rXjEJ"
+}

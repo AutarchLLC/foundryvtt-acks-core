@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "Symbols and signaling devices used by armies. Pennants are 2 square and are carried as insignia by company- sized units or individual heroes. A pennant with pole weighs 1/4 stone. Banners are 6 long by 2 wide, and are carried as insignia by batta lion- or regiment-sized units. A banner with pole weighs 1 stone. Standards are 12 long by 4 tall or more, and are carried as insignia for brigade-sized units, divisions and armies. A standard with pole weighs 4 stone. Standards may be topped by emblems (see above). If a unit or division is not provided with a flag of the appropriate size, its morale score is reduced by 1. Loss of a units flag reduces its morale score by 1 and counts as a calamity.",
+    "description": "<p>Symbols and signaling devices used by armies. Pennants are 2' square and are carried as insignia by company- sized units or individual heroes. A pennant with pole weighs 1/4 stone. Banners are 6' long by 2' wide, and are carried as insignia by battalion- or regiment-sized units. A banner with pole weighs 1 stone. Standards are 12' long by 4' tall or more, and are carried as insignia for brigade-sized units, divisions and armies. A standard with pole weighs 4 stone. Standards may be topped by emblems (see above). If a unit or division is not provided with a flag of the appropriate size, its morale score is reduced by 1. Loss of a unit's flag reduces its morale score by 1 and counts as a calamity.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 50,
     "weight6": 24,
-    "iconsource": "https://game-icons.net/1x1/lorc/flying-flag.html",
-    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581846,
-    "modifiedTime": 1779120581854,
+    "createdTime": 1792359315789,
+    "modifiedTime": 1792359315806,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

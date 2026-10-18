@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "A lantern is a portable container that holds a wick in oil. Lanterns consume one flask of common oil for each 4 hours (24 turns) of light. They shed bright light to a radius of 15 and dim light to a radius of 30. Lanterns can be closed to conceal the light or protect it from wind.",
+    "description": "<p>A lantern is a portable container that holds a wick in oil. Lanterns consume one flask of common oil for each 4 hours (24 turns) of light. They shed bright light to a radius of 15' and dim light to a radius of 30'. Lanterns can be closed to conceal the light or protect it from wind.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 10,
     "weight6": 6,
-    "iconsource": "Legacy ACKS / OSE",
-    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581841,
-    "modifiedTime": 1779120581850,
+    "createdTime": 1792359315794,
+    "modifiedTime": 1792359315807,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {
