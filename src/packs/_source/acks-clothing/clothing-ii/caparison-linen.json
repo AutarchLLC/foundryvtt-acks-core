@@ -1,33 +1,33 @@
 {
   "_id": "XAJDGFezVi5FwfPn",
   "type": "item",
-  "name": "Caparison, Linen or Wool",
+  "name": "Caparison, Linen",
   "img": "systems/acks/assets/icons/flaticon/saddle.webp",
   "system": {
     "subtype": "clothing",
     "description": "The often ornamental coverings for an animal, eecially a horse or an elephant.",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 10,
     "weight6": 0,
-    "iconsource": "https://www.flaticon.com/free-icon/saddle_6970064",
-    "iconlicense": "<a href=\\\"https://www.flaticon.com/free-icons/horse-riding\\\" title=\\\"horse riding icons\\\">Horse riding icons created by Freepik - Flaticon</a>",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "effects": [],
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120312014,
-    "modifiedTime": 1779120312019,
+    "createdTime": 1792355411842,
+    "modifiedTime": 1792355411842,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "qoFMNY0h05JztOaR",
   "ownership": {

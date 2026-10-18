@@ -1,0 +1,38 @@
+{
+  "type": "item",
+  "name": "Cassock, Wool",
+  "img": "systems/acks/assets/icons/flaticon/kaftan.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A cassock is an ankle-length close-fitting outer garment, buttoned up the front, often worn by crusaders, mages, and priestesses. Cassocks of fine make might include piping, sashes, and other decorations.",
+    "quantity": {
+      "value": 1
+    },
+    "cost": 5,
+    "weight6": 0,
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1792355411843,
+    "modifiedTime": 1792355411843,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "Xk5spTGN7dkiavo8",
+  "sort": 0,
+  "_key": "!items!Xk5spTGN7dkiavo8"
+}

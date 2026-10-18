@@ -1,0 +1,38 @@
+{
+  "_id": "szOOffP7wmhVSVYl",
+  "type": "item",
+  "name": "Belt, Silk",
+  "img": "systems/acks/assets/icons/game-icons/black-belt.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "Embossed leather or silk belts are worn as a sign of wealth and status.",
+    "quantity": {
+      "value": 1
+    },
+    "cost": 8,
+    "weight6": 0,
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1792355411842,
+    "modifiedTime": 1792355411842,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!szOOffP7wmhVSVYl"
+}

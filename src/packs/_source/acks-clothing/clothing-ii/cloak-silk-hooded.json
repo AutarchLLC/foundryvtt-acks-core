@@ -7,27 +7,27 @@
     "subtype": "clothing",
     "description": "A cloak is a cloth, fur, or leather garment of knee to ankle length, worn outdoors like an overcoat. Cloaks usually include a hood. Adventurers often favor military cloaks, generally worn pinned on one shoulder for ease of movement and access to a sword.",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 90,
     "weight6": 0,
-    "iconsource": "unknown",
-    "iconlicense": "unknown",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "effects": [],
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120312016,
-    "modifiedTime": 1779120312020,
+    "createdTime": 1792355411843,
+    "modifiedTime": 1792355411843,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "qoFMNY0h05JztOaR",
   "ownership": {

@@ -1,0 +1,38 @@
+{
+  "type": "item",
+  "name": "Shoes, Leather, High",
+  "img": "systems/acks/assets/icons/game-icons/sandal.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "Simple leather shoes or sandals are suitable for walking long distances.",
+    "quantity": {
+      "value": 1
+    },
+    "cost": 0.3,
+    "weight6": 0,
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1792355411844,
+    "modifiedTime": 1792355411844,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "2UkW57csxIaucogD",
+  "sort": 0,
+  "_key": "!items!2UkW57csxIaucogD"
+}

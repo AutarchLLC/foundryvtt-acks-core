@@ -7,27 +7,27 @@
     "subtype": "clothing",
     "description": "A tunic is a loose-fitting linen, silk or wool garment that covers the body between the shoulders and the knees. Depending on their quality, tunics can be simple and plain or dyed, decorated, and embroidered. They are available in sleeveless, short-sleeved, or long-sleeved variants. In cool temperatures, tunics are usually worn with matching trousers. Historical examples include the Greek exomis, Roman tunica, and Byzantine dalmatica.",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 100,
     "weight6": 0,
-    "iconsource": "https://game-icons.net/1x1/delapouite/clothes.html",
-    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "effects": [],
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120312016,
-    "modifiedTime": 1779120312020,
+    "createdTime": 1792355411845,
+    "modifiedTime": 1792355411845,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "qoFMNY0h05JztOaR",
   "ownership": {
