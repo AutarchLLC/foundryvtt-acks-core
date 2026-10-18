@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "Tents are made of animal skin, stitched together over a frame and staked with ropes. A small tent is 6 x 4 and can sleep two men. A small tent weighs 1 stone (10 lbs). A large tent sleeps eight men. It may be round (12 in diameter) or square (10 on a side), and weighs 4 stone (40 lbs). Characters inside tents can ignore the effects of drizzly, flurry, rainy, or snowy precipitation (p. XX). However, tents are automatically blown down in stormy winds. Historical examples include the Roman legionary tent and the Mongol yurt.",
+    "description": "<p>Tents are made of animal skin, stitched together over a frame and staked with ropes. A small tent is 6' × 4' and can sleep two men. A small tent weighs 1 stone (10 lbs). A large tent sleeps eight men. It may be round (12' in diameter) or square (10' on a side), and weighs 4 stone (40 lbs). Characters inside tents can ignore the effects of drizzly, flurry, rainy, or snowy precipitation (p. 278). However, tents are automatically blown down in stormy winds. Historical examples include the Roman legionary tent and the Mongol yurt.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 20,
     "weight6": 24,
-    "iconsource": "https://game-icons.net/1x1/delapouite/barracks-tent.html",
-    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581849,
-    "modifiedTime": 1779120581855,
+    "createdTime": 1792359315801,
+    "modifiedTime": 1792359315809,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

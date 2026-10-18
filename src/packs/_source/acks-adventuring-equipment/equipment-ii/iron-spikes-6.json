@@ -8,26 +8,26 @@
     "subtype": "item",
     "description": "These sturdy pitons can be used to wedge doors open or spike them shut or to provide belaying points for ropes. A set of six iron spikes counts as one item.",
     "quantity": {
-      "value": 6,
-      "max": 6
+      "value": 6
     },
-    "treasure": false,
     "cost": 1,
     "weight6": 1,
-    "iconsource": "Legacy ACKS / OSE",
-    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581846,
-    "modifiedTime": 1779120581854,
+    "createdTime": 1792359315794,
+    "modifiedTime": 1792359315807,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

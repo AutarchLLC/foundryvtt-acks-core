@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/transmogrification.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703821,
-    "modifiedTime": 1779122703830,
+    "createdTime": 1792360116276,
+    "modifiedTime": 1792360116282,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character has mastered grotesque arts of transformation. When the character casts polymorph spells (such as polymorph other), the spell effects are calculated as if he were two class levels higher than his actual level of experience. He may also create magical crossbreeds (see Crossbreeds in Chapter 7) as if he were two class levels higher than actual. Targets of his polymorph other spells suffer a -2 penalty to their saving throw.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

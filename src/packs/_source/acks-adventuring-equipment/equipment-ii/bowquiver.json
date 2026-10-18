@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "This all-in-one leather case is designed to carry both a bow and its arrows. The bow can be placed in the bowquiver already strung, and will rest securely with about half of its length extending out of the case. A special pocket on the front of the bowquiver can hold up to 20 arrows. The bowquiver can be hung from a belt hook at the waist or from a strap over the shoulder. An empty bowquiver counts as 1 item for encumbrance purposes, while a bowquiver with composite bow and 20 arrows counts as 2 items. In the Auran Empire setting, bowquivers are only available in Skysostan.",
+    "description": "<p>This all-in-one leather case is designed to carry both a bow and its arrows. The bow can be placed in the bowquiver already strung, and will rest securely with about half of its length extending out of the case. A special pocket on the front of the bowquiver can hold up to 20 arrows. The bowquiver can be hung from a belt hook at the waist or from a strap over the shoulder. An empty bowquiver counts as 1 item for encumbrance purposes, while a bowquiver with composite bow and 20 arrows counts as 2 items. In the Auran Empire setting, bowquivers are only available in Skysostan.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 10,
     "weight6": 1,
-    "iconsource": "",
-    "iconlicense": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581848,
-    "modifiedTime": 1779120581855,
+    "createdTime": 1792359315787,
+    "modifiedTime": 1792359315805,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

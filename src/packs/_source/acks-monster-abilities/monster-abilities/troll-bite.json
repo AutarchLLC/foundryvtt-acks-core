@@ -6,14 +6,14 @@
   "_id": "6DMsfsVDtOJT2ppv",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122999779,
-    "modifiedTime": 1779122999784,
+    "createdTime": 1792360339200,
+    "modifiedTime": 1792360339206,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "range": {
@@ -25,18 +25,22 @@
     "save": "",
     "pattern": "red",
     "description": "",
-    "damage": "1d10",
+    "damage": {
+      "base": {
+        "formula": "1d10",
+        "types": [],
+        "extraordinary": false
+      },
+      "alternate": {
+        "formula": "",
+        "types": [],
+        "extraordinary": false
+      }
+    },
     "bonus": {
       "attack": 0,
       "damage": 0
     },
-    "tags": [
-      {
-        "title": "Melee",
-        "value": "Melee"
-      }
-    ],
-    "slow": false,
     "missile": false,
     "melee": true,
     "cost": 0,
@@ -46,7 +50,29 @@
       "value": 1,
       "max": 1
     },
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "customTags": [
+      "Melee"
+    ],
+    "size": "na",
+    "category": "other",
+    "special": {
+      "cleave": false,
+      "entangling": false,
+      "flexible": false,
+      "handy": false,
+      "impact": false,
+      "incapacitating": false,
+      "long": false,
+      "mounted": false,
+      "silver": false,
+      "slow": false,
+      "thrown": false
+    },
+    "cleaveLimit": {
+      "numeric": 2,
+      "addStrMod": false
+    }
   },
   "folder": "1aw85lzuAfTBazRX",
   "ownership": {

@@ -1,0 +1,38 @@
+{
+  "type": "item",
+  "name": "Robe, Wool",
+  "img": "systems/acks/assets/icons/robe.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A robe is an ankle-length loose-fitting outer garment, open or closed at the front, sometimes worn with a belt or sash. In the Auran Empire they are worn by mages of the Tower of Knowledge, but in the Sunset Kingdoms, they are widely worn. Historical examples include the jellabiya, kaftan, and thawb.",
+    "quantity": {
+      "value": 1
+    },
+    "cost": 5,
+    "weight6": 0,
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1792355411844,
+    "modifiedTime": 1792355411844,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "zJzveK9RfLeZD7K8",
+  "sort": 0,
+  "_key": "!items!zJzveK9RfLeZD7K8"
+}

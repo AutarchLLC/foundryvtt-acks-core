@@ -14,15 +14,15 @@
       "sort": 100000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119142,
-        "modifiedTime": 1779123119142,
+        "createdTime": 1792360396587,
+        "modifiedTime": 1792360396587,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -35,7 +35,7 @@
         "blindroll": false,
         "description": "<p>Demons are creatures summoned from the Great Void. Demons take 1/2 damage from attacks based on cold, electricity, fire, and gas. All demons possess infravision (90 feet) and telepathy, which allows them to communicate with any creatures they encounter. Demons are unholy beings that can be held at bay by <em>Protection from Evil</em>, dispelled with <em>Dispel Evil </em>and Turned by clerics as Infernal.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -52,15 +52,15 @@
       "sort": 200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119142,
-        "modifiedTime": 1779123119142,
+        "createdTime": 1792360396587,
+        "modifiedTime": 1792360396587,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -72,18 +72,22 @@
         "save": "",
         "pattern": "red",
         "description": "",
-        "damage": "1d4",
+        "damage": {
+          "base": {
+            "formula": "1d4",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -93,7 +97,29 @@
           "value": 2,
           "max": 2
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -110,15 +136,15 @@
       "sort": 300000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119142,
-        "modifiedTime": 1779123119142,
+        "createdTime": 1792360396587,
+        "modifiedTime": 1792360396587,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -130,18 +156,22 @@
         "save": "",
         "pattern": "red",
         "description": "",
-        "damage": "1d6",
+        "damage": {
+          "base": {
+            "formula": "1d6",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -151,7 +181,29 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -168,15 +220,15 @@
       "sort": 1700001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119142,
-        "modifiedTime": 1779123119142,
+        "createdTime": 1792360396587,
+        "modifiedTime": 1792360396587,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "favorite": false,
@@ -189,7 +241,7 @@
         "memorized": 0,
         "cast": 0,
         "save": "death",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -206,15 +258,15 @@
       "sort": 400000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119142,
-        "modifiedTime": 1779123119142,
+        "createdTime": 1792360396587,
+        "modifiedTime": 1792360396587,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "favorite": false,
@@ -227,7 +279,7 @@
         "memorized": 0,
         "cast": 0,
         "save": "spell",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -244,15 +296,15 @@
       "sort": 200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119142,
-        "modifiedTime": 1779123119142,
+        "createdTime": 1792360396587,
+        "modifiedTime": 1792360396587,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -265,7 +317,7 @@
         "blindroll": false,
         "description": "<p>Once per day, a Dretch can summon [[/r 1d4 #The Dretch summons this many Giant Rats]] @Actor[pkYwhwgwDD5eiS6z]{Giant Rat}s.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -276,14 +328,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119142,
-    "modifiedTime": 1779123119163,
+    "createdTime": 1792360396587,
+    "modifiedTime": 1792360396626,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -301,20 +353,7 @@
       "max": 18,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 7,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 19,
-      "bba": 3,
-      "throw": 7,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -350,7 +389,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -390,7 +428,18 @@
       "morale": 2
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 7,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 7,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {},

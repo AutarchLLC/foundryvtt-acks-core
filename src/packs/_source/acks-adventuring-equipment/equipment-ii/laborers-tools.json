@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "A collection of tools useful to the unskilled laborer, including an axe, mattock, saw, shovel, and sickle. Laborers tools are required for troops to assist in construction projects. Laborers tools weigh 1 stone (10 lbs).",
+    "description": "<p>A collection of tools useful to the unskilled laborer, including an axe, mattock, saw, shovel, and sickle. Laborer's tools are required for troops to assist in construction projects. Laborer's tools weigh 1 stone (10 lbs).</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 10,
     "weight6": 6,
-    "iconsource": "https://game-icons.net/1x1/delapouite/trowel.html",
-    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581846,
-    "modifiedTime": 1779120581854,
+    "createdTime": 1792359315794,
+    "modifiedTime": 1792359315807,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

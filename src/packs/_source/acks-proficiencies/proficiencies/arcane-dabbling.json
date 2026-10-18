@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/arcane-dabbling.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703824,
-    "modifiedTime": 1779122703830,
+    "createdTime": 1792360116277,
+    "modifiedTime": 1792360116283,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character may attempt to use wands, staffs, and other magic items only useable by mages. At level 1, the character must make a proficiency throw of 18+ or the attempt backfires. The proficiency throw required reduces by 2 per level, to a minimum of 3+. </p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

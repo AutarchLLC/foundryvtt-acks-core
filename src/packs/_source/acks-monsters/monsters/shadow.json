@@ -14,15 +14,15 @@
       "sort": 100000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119156,
-        "modifiedTime": 1779123119156,
+        "createdTime": 1792360396618,
+        "modifiedTime": 1792360396618,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -34,18 +34,22 @@
         "save": "",
         "pattern": "white",
         "description": "<p>When a shadow successfully attacks an opponent, the victim suffers 1d4 points of damage, and [[1d1 #Lose STR]] point of STR is drained for 8 turns. Should a being be drained to STR 2, it collapses and becomes unable to move. At 0, it permanently transforms into a shadow.</p>",
-        "damage": "1d4",
+        "damage": {
+          "base": {
+            "formula": "1d4",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [
-          {
-            "title": "Melee",
-            "value": "Melee"
-          }
-        ],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -55,7 +59,29 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [
+          "Melee"
+        ],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -72,15 +98,15 @@
       "sort": 675001,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119156,
-        "modifiedTime": 1779123119156,
+        "createdTime": 1792360396618,
+        "modifiedTime": 1792360396618,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -93,7 +119,7 @@
         "blindroll": false,
         "description": "<p>Shadows are unaffected by <em>sleep</em>, <em>hold</em>, or <em>charm </em>spells, and are immune to poison. Unlike undead, Shadows <em>cannot </em>be Turned by Clerics and Priests.</p>\n<p>Shadows can only be struck by magical weapons.</p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -110,15 +136,15 @@
       "sort": 1200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119156,
-        "modifiedTime": 1779123119156,
+        "createdTime": 1792360396618,
+        "modifiedTime": 1792360396618,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -131,7 +157,7 @@
         "blindroll": false,
         "description": "<p>Shadows are very silent and difficult to observe, so characters encountering Shadows suffer a -3 penalty to Surprise rolls. </p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -142,14 +168,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119156,
-    "modifiedTime": 1779123119169,
+    "createdTime": 1792360396618,
+    "modifiedTime": 1792360396630,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -167,20 +193,7 @@
       "max": 11,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 2,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 17,
-      "bba": 2,
-      "throw": 8,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -216,7 +229,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -256,7 +268,18 @@
       "morale": 3
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 8,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 2,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {

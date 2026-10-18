@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/contortionism.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703813,
-    "modifiedTime": 1779122703826,
+    "createdTime": 1792360116265,
+    "modifiedTime": 1792360116279,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character is extremely flexible, able to squeeze or fold his body in ways that seem humanly impossible, including squeezing between bars and escaping chains and restraints. He may make a proficiency throw of 18+ each round to escape from bonds or to slip between the bars of a portcullis.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

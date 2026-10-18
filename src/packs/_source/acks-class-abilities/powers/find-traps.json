@@ -6,14 +6,14 @@
   "_id": "Vf26H7uIjYT6pYZU",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122493276,
-    "modifiedTime": 1779122493281,
+    "createdTime": 1792360067040,
+    "modifiedTime": 1792360067046,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": true,
     "description": "",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "sFB1mhQrNkHDlaUi",
   "ownership": {

@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/spear-feather.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122770659,
-    "modifiedTime": 1779122770661,
+    "createdTime": 1792360182952,
+    "modifiedTime": 1792360182957,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "range": {
@@ -25,18 +25,22 @@
     "save": "",
     "pattern": "white",
     "description": "<p>A dart is any small projectile designed to be thrown. Most darts are fletched wooden shafts, ranging in length from 6\" to 2' long, but they may also be metal spikes or stars. Historical examples include the Roman plumbata, Macedonian kestros, and Japanese shuriken.</p>\n<p><span style=\"color:#191813\">Up to 4 darts may be thrown when cleaving. </span>(Core rules p. 105)</p>",
-    "damage": "1d4",
+    "damage": {
+      "base": {
+        "formula": "1d4",
+        "types": [],
+        "extraordinary": false
+      },
+      "alternate": {
+        "formula": "",
+        "types": [],
+        "extraordinary": false
+      }
+    },
     "bonus": {
       "attack": 0,
       "damage": 0
     },
-    "tags": [
-      {
-        "title": "Missile",
-        "value": "Missile"
-      }
-    ],
-    "slow": false,
     "missile": true,
     "melee": false,
     "cost": 2,
@@ -46,7 +50,29 @@
       "value": 0,
       "max": 0
     },
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "customTags": [
+      "Missile"
+    ],
+    "size": "na",
+    "category": "other",
+    "special": {
+      "cleave": false,
+      "entangling": false,
+      "flexible": false,
+      "handy": false,
+      "impact": false,
+      "incapacitating": false,
+      "long": false,
+      "mounted": false,
+      "silver": false,
+      "slow": false,
+      "thrown": false
+    },
+    "cleaveLimit": {
+      "numeric": 2,
+      "addStrMod": false
+    }
   },
   "folder": "9gTquBoiBlWRuTrh",
   "ownership": {

@@ -14,15 +14,15 @@
       "sort": 100000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119127,
-        "modifiedTime": 1779123119127,
+        "createdTime": 1792360396563,
+        "modifiedTime": 1792360396563,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -35,7 +35,7 @@
         "blindroll": false,
         "description": "<p>This monster is immune to the effects of all non-magical fire. </p>",
         "save": "",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -52,15 +52,15 @@
       "sort": 200000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119127,
-        "modifiedTime": 1779123119127,
+        "createdTime": 1792360396563,
+        "modifiedTime": 1792360396563,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "proficiencytype": "general",
@@ -73,7 +73,7 @@
         "blindroll": false,
         "description": "<p>Hellhounds fiery breath affects one target within 15' and deals 1d6 points of damage per Hit Die the attacking hell hound possesses. A successful saving throw versus Breath reduces the damage by half. </p>",
         "save": "blast",
-        "_schemaVersion": 3
+        "_schemaVersion": 5
       },
       "folder": null,
       "ownership": {
@@ -90,15 +90,15 @@
       "sort": 300000,
       "effects": [],
       "_stats": {
-        "coreVersion": "14.361",
+        "coreVersion": "14.369",
         "systemId": "acks",
         "systemVersion": "14.0.1",
-        "createdTime": 1779123119127,
-        "modifiedTime": 1779123119127,
+        "createdTime": 1792360396563,
+        "modifiedTime": 1792360396563,
         "lastModifiedBy": "acksiiammonar000",
-        "exportSource": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "system": {
         "range": {
@@ -110,13 +110,22 @@
         "save": "",
         "pattern": "red",
         "description": "",
-        "damage": "1d6",
+        "damage": {
+          "base": {
+            "formula": "1d6",
+            "types": [],
+            "extraordinary": false
+          },
+          "alternate": {
+            "formula": "",
+            "types": [],
+            "extraordinary": false
+          }
+        },
         "bonus": {
           "attack": 0,
           "damage": 0
         },
-        "tags": [],
-        "slow": false,
         "missile": false,
         "melee": true,
         "cost": 0,
@@ -126,7 +135,27 @@
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 3
+        "_schemaVersion": 5,
+        "customTags": [],
+        "size": "na",
+        "category": "other",
+        "special": {
+          "cleave": false,
+          "entangling": false,
+          "flexible": false,
+          "handy": false,
+          "impact": false,
+          "incapacitating": false,
+          "long": false,
+          "mounted": false,
+          "silver": false,
+          "slow": false,
+          "thrown": false
+        },
+        "cleaveLimit": {
+          "numeric": 2,
+          "addStrMod": false
+        }
       },
       "folder": null,
       "ownership": {
@@ -137,14 +166,14 @@
   ],
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779123119127,
-    "modifiedTime": 1779123119160,
+    "createdTime": 1792360396563,
+    "modifiedTime": 1792360396623,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "isNew": false,
@@ -162,20 +191,7 @@
       "max": 13,
       "bhr": "1d3"
     },
-    "aac": {
-      "value": 5,
-      "mod": 0
-    },
     "damage": {
-      "mod": {
-        "missile": 0,
-        "melee": 0
-      }
-    },
-    "thac0": {
-      "value": 19,
-      "bba": 2,
-      "throw": 8,
       "mod": {
         "missile": 0,
         "melee": 0
@@ -211,7 +227,6 @@
       "mod": 0
     },
     "surprise": {
-      "mod": 0,
       "surpriseothers": 0,
       "avoidsurprise": 0
     },
@@ -251,7 +266,18 @@
       "morale": 1
     },
     "attacks": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "attack": {
+      "throw": 8,
+      "mod": {
+        "missile": 0,
+        "melee": 0
+      }
+    },
+    "ac": {
+      "value": 5,
+      "mod": 0
+    }
   },
   "prototypeToken": {
     "flags": {},

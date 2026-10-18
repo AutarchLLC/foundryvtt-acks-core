@@ -8,26 +8,26 @@
     "subtype": "item",
     "description": "A set of cosmetics, dyes, pigments, and wigs that can be used by a skilled practitioner to disguise his appearance.",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 25,
     "weight6": 6,
-    "iconsource": "",
-    "iconlicense": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581849,
-    "modifiedTime": 1779120581855,
+    "createdTime": 1792359315788,
+    "modifiedTime": 1792359315805,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

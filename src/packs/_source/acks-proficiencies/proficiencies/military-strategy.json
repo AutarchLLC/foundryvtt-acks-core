@@ -6,14 +6,14 @@
   "img": "systems/acks/assets/icons/rally-the-troops.webp",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122703811,
-    "modifiedTime": 1779122703825,
+    "createdTime": 1792360116262,
+    "modifiedTime": 1792360116278,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>The character has studied the art of war and the methods of the great captains. He can recognize famous historical battles, generals, and weapons with a proficiency throw of 11+. Forces under his command receive a +1 bonus to initiative rolls in mass combat. This proficiency may be selected multiple times, each time adding an additional +1 bonus to mass combat initiative, to a maximum of +3.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "ackso0XoIXnAEcH9",
   "ownership": {

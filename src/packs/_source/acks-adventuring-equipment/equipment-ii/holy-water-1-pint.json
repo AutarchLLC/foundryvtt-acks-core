@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "Holy water is water that has been sanctified by a divine caster of 7th caster level or higher. It is used in certain religious rites. Crusaders often carry vials of holy water to use as weapons against the undead. A chaotic enchanted creature splashed with holy water suffers 1d8 {L!} damage for 2 rounds. Holy water cannot retain its holy power if it is stored in any other container than the special vials it is placed in when blessed.",
+    "description": "<p>Holy water is water that has been sanctified by a divine caster of 7th caster level or higher. It is used in certain religious rites. Crusaders often carry vials of holy water to use as weapons against the undead. A chaotic enchanted creature directly struck with holy water suffers [[/r 1d8]] Extraordinary Luminous damage for 2 rounds. Holy water cannot retain its holy power if it is stored in any other container than the special vials it is placed in when blessed.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 25,
     "weight6": 1,
-    "iconsource": "Legacy ACKS / OSE",
-    "iconlicense": "Assume http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581848,
-    "modifiedTime": 1779120581855,
+    "createdTime": 1792359315792,
+    "modifiedTime": 1792359315806,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

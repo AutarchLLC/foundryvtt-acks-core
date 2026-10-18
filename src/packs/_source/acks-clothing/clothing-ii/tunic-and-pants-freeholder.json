@@ -1,0 +1,38 @@
+{
+  "type": "item",
+  "name": "Tunic and Pants, Freeholder",
+  "img": "systems/acks/assets/icons/game-icons/clothes.webp",
+  "system": {
+    "subtype": "clothing",
+    "description": "A tunic is a loose-fitting linen, silk or wool garment that covers the body between the shoulders and the knees. Depending on their quality, tunics can be simple and plain or dyed, decorated, and embroidered. They are available in sleeveless, short-sleeved, or long-sleeved variants. In cool temperatures, tunics are usually worn with matching trousers. Historical examples include the Greek exomis, Roman tunica, and Byzantine dalmatica.",
+    "quantity": {
+      "value": 1
+    },
+    "cost": 2,
+    "weight6": 0,
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "acks",
+    "systemVersion": "14.0.1",
+    "createdTime": 1792355411845,
+    "modifiedTime": 1792355411845,
+    "lastModifiedBy": "acksiiammonar000",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "qoFMNY0h05JztOaR",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "D7rrSyiDqGmpBkto",
+  "sort": 0,
+  "_key": "!items!D7rrSyiDqGmpBkto"
+}

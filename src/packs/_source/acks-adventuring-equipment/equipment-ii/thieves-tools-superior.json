@@ -6,28 +6,28 @@
   "effects": [],
   "system": {
     "subtype": "item",
-    "description": "Thieves tools include long metal picks and probes, fine wires, tiny saws, miniature hammers, and an assortment of skeleton keys. Thieves tools are required to make Lockpicking and Trapbreaking proficiency throws.",
+    "description": "<p>Superior thieves' tools have the same components as expanded thieves' tools but are crafted with incredible precision. They grant a +4 to proficiency throws to Lockpicking and Trapbreaking proficiency throws. If the thief rolls a natural 1 while attempting to pick a lock, the tools can make a Death saving throw (at the thief 's level) to resist breaking (see the Adventuring chapter, p. 266). The bonus does not apply to hijinks.</p>",
     "quantity": {
-      "value": 1,
-      "max": 0
+      "value": 1
     },
-    "treasure": false,
     "cost": 1600,
     "weight6": 1,
-    "iconsource": "https://game-icons.net/1x1/delapouite/lockpicks.html",
-    "iconlicense": "http://creativecommons.org/licenses/by/3.0/",
-    "_schemaVersion": 3
+    "_schemaVersion": 5,
+    "charges": {
+      "value": 0,
+      "max": 0
+    }
   },
   "flags": {},
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779120581844,
-    "modifiedTime": 1779120581853,
+    "createdTime": 1792359315802,
+    "modifiedTime": 1792359315809,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "folder": "04ETGKe7ejKtPVS9",
   "ownership": {

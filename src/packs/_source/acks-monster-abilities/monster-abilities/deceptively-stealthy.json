@@ -6,14 +6,14 @@
   "_id": "Wtxw2uKTpEtzoVDZ",
   "effects": [],
   "_stats": {
-    "coreVersion": "14.361",
+    "coreVersion": "14.369",
     "systemId": "acks",
     "systemVersion": "14.0.1",
-    "createdTime": 1779122999781,
-    "modifiedTime": 1779122999785,
+    "createdTime": 1792360339202,
+    "modifiedTime": 1792360339206,
     "lastModifiedBy": "acksiiammonar000",
-    "exportSource": null,
-    "duplicateSource": null
+    "duplicateSource": null,
+    "exportSource": null
   },
   "system": {
     "proficiencytype": "general",
@@ -26,7 +26,7 @@
     "blindroll": false,
     "description": "<p>Despite their bulk, they are deceptively stealthy, so characters encountering bugbears suffer a -1 penalty to surprise rolls.</p>",
     "save": "",
-    "_schemaVersion": 3
+    "_schemaVersion": 5
   },
   "folder": "1aw85lzuAfTBazRX",
   "ownership": {
