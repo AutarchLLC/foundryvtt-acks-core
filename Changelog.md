@@ -2,6 +2,46 @@
 
 This is the change history for the FoundryVTT ACKS II core system module (search for *acks* in the Foundry installer).
 
+## Release 14.1.0
+
+> ⚠️ This release requires **Foundry v14** (build 14.359 or later). Foundry v13 is no longer supported.
+> Your world's data is updated automatically the first time a GM loads it. **Back up your world before upgrading.**
+
+### New Attack Throw dialog and chat card
+- All attacks now open one **Attack Throw dialog**. You pick the attack type, grip, range, direction (flank/rear,
+  backstab/ambush) and situational modifiers, and see a live preview of the throw and damage.
+- Results post to a new **Attack Throw chat card** with a hit / miss / critical result. GMs get an **Apply Damage**
+  button that subtracts the damage from the targeted token.
+- Monster weapon attacks now follow the same rules as character attacks.
+
+### Weapon rework
+- Weapons now have damage types, shown as icons, and an alternate damage formula (for example, two-handed use).
+- The weapon bonus is split into a separate **attack bonus** and **damage bonus**.
+- Weapon tags and the weapon sheet have been reworked.
+- The **Secret** tag is now visible only to the GM.
+
+### New settings
+- **Critical Hits**: optional rule (JJ 391). If you beat the target by 10 or more, the damage dice are doubled. It is
+  separate from **Exploding 20s**.
+- **Show Target's AC to Players**: off by default. While it is off, players see "??" instead of the target's AC.
+- **Heroic Fate**: shows or hides Fate points on the character sheet.
+
+### Data and compendium updates
+- Saving throws now use their ACKS II names: Wands → **Implements**, Breath → **Blast**.
+- Attribute modifiers are now calculated automatically, including for scores above 18, and they take Active Effects
+  into account.
+- Removed leftover fields from older rules (for example, exploration skills and the slow weapon initiative penalty).
+- The Adventuring Equipment compendium has been refreshed, and clothing has been split into separate variants.
+- New **Judge Macros** compendium, with a **Force World Migration** macro.
+
+### Fixes
+- Active Effect controls on actor sheets work again, and the Active Effects tab has been restyled.
+- A sheet now opens even if one of its hirelings has been deleted.
+- Bolt cases and quivers now have the correct encumbrance.
+- Fixed formatting on the monster sheet.
+
+Various other internal changes, fixes and improvements.
+
 ## Release 14.0.1
 1. FIX: fixed a bug with spell chat card's buttons not working.
 2. FIX: now opening and updating values in Tweaks dialog will not increase changed values indefinitely if same value is also modified by Active Effects.
