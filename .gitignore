@@ -142,3 +142,6 @@ dist
 e2e/foundry.config.json
 test-results/
 playwright-report/
+
+# CSS usage reports (scripts/css-usage.mjs)
+css-usage/

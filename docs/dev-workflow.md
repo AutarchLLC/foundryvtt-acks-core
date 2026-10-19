@@ -28,6 +28,7 @@ Please note:
   - [Getting the ACKS Sourcecode and Configuring FoundryVTT](#getting-the-acks-sourcecode-and-configuring-foundryvtt)
     - [Example Shell Scripts](#example-shell-scripts)
     - [Workaround for "Chrome Sandbox" issue](#workaround-for-chrome-sandbox-issue)
+  - [Checking CSS usage](#checking-css-usage)
 
 
 ## Getting the ACKS Sourcecode and Configuring FoundryVTT
@@ -146,3 +147,43 @@ sudo chmod 4755 /home/arcanistwill/11foundryvtt/chrome-sandbox
 sudo chown root:$(whoami) /home/arcanistwill/12foundry/chrome-sandbox
 sudo chmod 4755 /home/arcanistwill/12foundry/chrome-sandbox
 ```
+
+## Checking CSS usage
+
+Two tools help find rules in `src/acks.css` that nothing uses any more. Their output goes to
+`css-usage/` (gitignored).
+
+**Static scan.** `scripts/css-usage.mjs` looks up every class and id a selector needs in the system
+templates, modules and compendium HTML, and in Foundry core (`foundry/`, see `AGENTS.md`). A rule
+whose selector needs a token found nowhere is reported as dead. It also lists unused `@keyframes`,
+`@font-face` and custom properties, and selectors declared in more than one block.
+
+```shell
+node scripts/css-usage.mjs
+```
+
+The report is `css-usage/report.md`. The scan can't tell whether a rule built from common names
+(`.sheet`, `.item`, `.tab`) still matches the current markup; that needs runtime data.
+
+**Runtime coverage.** `scripts/css-usage-tracker.js` records which selectors match the live DOM.
+The coverage tour in `e2e/tests/css-coverage.spec.mjs` injects it and opens every sheet and tab,
+item sheet, app, dialog, chat card, the combat tracker and the token HUD, in light and dark theme.
+It is skipped in the normal `npm run test:e2e` run:
+
+```shell
+ACKS_CSS_COVERAGE=1 npx playwright test -c e2e css-coverage
+```
+
+It writes `css-usage/runtime.json`; run `node scripts/css-usage.mjs` afterwards and the report lists
+rules that never matched. The tour doesn't reach every state (critical hits, expanded summaries, an
+empty party), so check each rule against the templates before deleting it.
+
+At every step the tour also compares the computed style of every element under `acks.css` from git
+ref `ACKS_CSS_BASE` (default `master`) and under the working copy, and fails on any difference
+(details in `css-usage/style-diff.json`). Use it to confirm a cleanup changes nothing visible.
+
+To record a real world instead, paste `scripts/css-usage-tracker.js` into the browser console, use
+the game, then run `acksCssUsage.download()` and pass the saved file to `node scripts/css-usage.mjs`.
+
+Chat card rules are kept even when no template uses their classes any more: chat messages store
+their rendered HTML, so old messages in existing worlds still use them.
