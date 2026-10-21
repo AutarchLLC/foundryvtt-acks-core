@@ -133,8 +133,10 @@ check by hand with `npm run foundry:test`.
   Attack throws are modelled by `AcksAttackThrow` (`throw/attack-throw.mjs`).
 - **Styles**: plain CSS in `src/styles/`, one file per feature (sheet, app, chat, …), no preprocessor.
   Foundry imports every `styles` entry of `system.json` into the `system` cascade layer, in list order,
-  so a new file must be added there (and the Foundry server restarted to pick it up). Scope rules
-  under the component's root class (`.sheet.acks.actor-v2`, `.acks2.attack-throw-dialog`, …).
+  so a new file must be added there (and the Foundry server restarted to pick it up). Nest rules
+  with native CSS nesting under the component's root class (`.sheet.acks.actor-v2 { … }`,
+  `.acks2.attack-throw-dialog { … }`). Native nesting does not join names: `&__name` is not
+  `.root__name`, so write BEM classes out in full.
 - **Localisation**: every user-facing string goes in `src/lang/en.json` under `ACKS.` and is read
   with `game.i18n.localize()` / `game.i18n.format()`. Several `CONFIG.ACKS` sub-objects are
   localised automatically in the `setup` hook.

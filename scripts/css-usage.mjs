@@ -38,6 +38,27 @@ function location(node) {
 }
 
 /**
+ * Resolve nested selectors against their parent rule's selectors: `&` stands for the parent, and a
+ * selector without `&` is a descendant of it. Same as `nestSelectors()` in css-usage-tracker.js.
+ * @param {string[]} selectors
+ * @param {string[]} parents  The parent rule's resolved selectors.
+ * @returns {string[]}
+ */
+function nestSelectors(selectors, parents) {
+  return parents.flatMap((p) => selectors.map((s) => (s.includes("&") ? s : `& ${s}`).replaceAll("&", p)));
+}
+
+/**
+ * A rule's selectors with any nesting resolved.
+ * @param {postcss.Rule} rule
+ * @returns {string[]}
+ */
+function resolvedSelectors(rule) {
+  const parent = rule.parent?.type === "rule" ? rule.parent : null;
+  return parent ? nestSelectors(rule.selectors, resolvedSelectors(parent)) : rule.selectors;
+}
+
+/**
  * Recursively list files under a directory whose names match a filter.
  * @param {string} dir
  * @param {(name: string) => boolean} filter
@@ -176,7 +197,9 @@ function analyse(root, corpus, runtimeHits) {
 
   root.walkRules((rule) => {
     if (rule.parent?.type === "atrule" && rule.parent.name === "keyframes") return;
-    const selectors = rule.selectors.map((selector) => {
+    // A rule that only groups nested rules declares nothing itself.
+    if (!rule.nodes.some((node) => node.type === "decl")) return;
+    const selectors = resolvedSelectors(rule).map((selector) => {
       const { classes, ids } = requiredTokens(selector);
       const missing = [...classes, ...ids.map((id) => `#${id}`)].filter(
         (t) => tokenStatus(t.replace(/^#/, "")) === "dead",

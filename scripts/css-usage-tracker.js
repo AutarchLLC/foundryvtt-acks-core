@@ -65,16 +65,33 @@
   }
 
   /**
-   * Collect the selectors of every style rule, including rules inside grouping rules
-   * (`@layer`, `@media`, `@supports`, ...).
-   * @param {CSSRuleList} rules
-   * @param {string[]} out
+   * Resolve nested selectors against their parent rule's selectors. Same as `nestSelectors()` in
+   * scripts/css-usage.mjs, so runtime and source selectors compare equal.
+   * @param {string[]} selectors  A nested rule's selectors; Chrome serializes them with `&`.
+   * @param {string[]} parents    The parent rule's resolved selectors.
    * @returns {string[]}
    */
-  function collectSelectors(rules, out = []) {
+  function nestSelectors(selectors, parents) {
+    return parents.flatMap((p) => selectors.map((s) => (s.includes("&") ? s : `& ${s}`).replaceAll("&", p)));
+  }
+
+  /**
+   * Collect the selectors of every style rule, including nested rules and rules inside grouping
+   * rules (`@layer`, `@media`, `@supports`, ...).
+   * @param {CSSRuleList} rules
+   * @param {string[]} out
+   * @param {string[]|null} parents  Resolved selectors of the enclosing style rule.
+   * @returns {string[]}
+   */
+  function collectSelectors(rules, out = [], parents = null) {
     for (const rule of rules) {
-      if (rule instanceof CSSStyleRule) out.push(...splitSelectorList(rule.selectorText));
-      if (rule.cssRules?.length && !(rule instanceof CSSKeyframesRule)) collectSelectors(rule.cssRules, out);
+      let inner = parents;
+      if (rule instanceof CSSStyleRule) {
+        const own = splitSelectorList(rule.selectorText);
+        inner = parents ? nestSelectors(own, parents) : own;
+        out.push(...inner);
+      }
+      if (rule.cssRules?.length && !(rule instanceof CSSKeyframesRule)) collectSelectors(rule.cssRules, out, inner);
     }
     return out;
   }
