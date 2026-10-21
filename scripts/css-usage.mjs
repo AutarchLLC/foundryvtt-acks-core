@@ -1,5 +1,5 @@
 /**
- * Report which rules in src/acks.css are still used.
+ * Report which rules in the system stylesheets (`styles` in src/system.json) are still used.
  *
  * Static scan: every class and id a selector requires is looked up in the system sources
  * (templates, modules, compendium HTML) and in Foundry core (`foundry/`, when present). A selector
@@ -17,16 +17,25 @@ import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import process from "node:process";
-import { CSS_MAIN_NAME, SRC_NAME } from "./common.mjs";
+import { MODULE_PATH, SRC_NAME, styleSources } from "./common.mjs";
 
 const ROOT = process.cwd();
-const CSS_PATH = path.join(ROOT, SRC_NAME, CSS_MAIN_NAME);
 const OUT_DIR = path.join(ROOT, "css-usage");
 const DEFAULT_RUNTIME = path.join(OUT_DIR, "runtime.json");
 
 const TOKEN_RE = /[A-Za-z_][\w-]*/g;
 const STRING_RE = /"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*'|`(?:[^`\\]|\\.)*`/g;
 const CLASS_ATTR_RE = /class=\\?"([^"\\]*)\\?"/g;
+
+/**
+ * Where a node is declared: stylesheet path relative to src/, and line.
+ * @param {postcss.Node} node
+ * @returns {string}
+ */
+function location(node) {
+  const file = path.relative(path.join(ROOT, SRC_NAME), node.source.input.file).replaceAll("\\", "/");
+  return `${file}:${node.source.start.line}`;
+}
 
 /**
  * Recursively list files under a directory whose names match a filter.
@@ -148,8 +157,8 @@ async function loadRuntimeHits(files) {
 }
 
 /**
- * Analyse the stylesheet.
- * @param {postcss.Root} root
+ * Analyse the stylesheets.
+ * @param {postcss.Root} root  All system stylesheets, in load order.
  * @param {{tokens: Set<string>, prefixes: Set<string>}} corpus
  * @param {Set<string>|null} runtimeHits
  */
@@ -178,7 +187,7 @@ function analyse(root, corpus, runtimeHits) {
       const hit = runtimeHits ? runtimeHits.has(normalized) : null;
       if (hit) status = "used";
       if (!bySelector.has(normalized)) bySelector.set(normalized, []);
-      bySelector.get(normalized).push(rule.source.start.line);
+      bySelector.get(normalized).push(location(rule));
       return { selector, status, missing, hit };
     });
 
@@ -190,7 +199,7 @@ function analyse(root, corpus, runtimeHits) {
     else status = "keep";
 
     rules.push({
-      line: rule.source.start.line,
+      location: location(rule),
       endLine: rule.source.end.line,
       status,
       selectors,
@@ -202,7 +211,7 @@ function analyse(root, corpus, runtimeHits) {
   root.walkAtRules("keyframes", (at) => {
     // Keyframe names are common words, so only an `animation` declaration counts as a use.
     const used = new RegExp(`animation(-name)?\\s*:[^;]*\\b${at.params}\\b`).test(cssText);
-    if (!used) unusedAtRules.push({ line: at.source.start.line, name: `@keyframes ${at.params}` });
+    if (!used) unusedAtRules.push({ location: location(at), name: `@keyframes ${at.params}` });
   });
   root.walkAtRules("font-face", (at) => {
     let family = "";
@@ -210,20 +219,20 @@ function analyse(root, corpus, runtimeHits) {
     const usedInCss = new RegExp(`font-family\\s*:[^;]*["']?${family}["']?`, "i");
     const declarations = cssText.replace(/@font-face\s*\{[^}]*\}/g, "");
     if (!usedInCss.test(declarations) && !corpus.tokens.has(family)) {
-      unusedAtRules.push({ line: at.source.start.line, name: `@font-face ${family}` });
+      unusedAtRules.push({ location: location(at), name: `@font-face ${family}` });
     }
   });
 
   const unusedVariables = [];
   root.walkDecls(/^--/, (decl) => {
     if (!cssText.includes(`var(${decl.prop}`) && !corpus.tokens.has(decl.prop.slice(2))) {
-      unusedVariables.push({ line: decl.source.start.line, name: decl.prop });
+      unusedVariables.push({ location: location(decl), name: decl.prop });
     }
   });
 
   const duplicates = [...bySelector.entries()]
     .filter(([, lines]) => lines.length > 1)
-    .map(([selector, lines]) => ({ selector, lines }));
+    .map(([selector, locations]) => ({ selector, locations }));
 
   return { rules, unusedAtRules, unusedVariables, duplicates };
 }
@@ -238,7 +247,7 @@ function renderMarkdown(result, hasRuntime) {
   const { rules, unusedAtRules, unusedVariables, duplicates } = result;
   const count = (status) => rules.filter((r) => r.status === status).length;
   const lines = [
-    "# acks.css usage report",
+    "# Stylesheet usage report",
     "",
     `Rules: ${rules.length} total, ${count("dead")} dead, ${count("partial")} with dead selectors, ` +
       (hasRuntime ? `${count("unmatched")} referenced but never matched at runtime, ` : "") +
@@ -252,7 +261,7 @@ function renderMarkdown(result, hasRuntime) {
     for (const item of list) lines.push(render(item));
     lines.push("");
   };
-  const ruleLine = (r) => `- L${r.line}–${r.endLine}: \`${r.selectors.map((s) => s.selector).join(", ")}\``;
+  const ruleLine = (r) => `- ${r.location}–${r.endLine}: \`${r.selectors.map((s) => s.selector).join(", ")}\``;
 
   section(
     "Dead rules",
@@ -265,7 +274,7 @@ function renderMarkdown(result, hasRuntime) {
     rules.filter((r) => r.status === "partial"),
     (r) =>
       [
-        `- L${r.line}:`,
+        `- ${r.location}:`,
         ...r.selectors
           .filter((s) => s.status === "dead")
           .map((s) => `  - \`${s.selector}\` — missing ${s.missing.map((t) => `\`${t}\``).join(", ")}`),
@@ -277,17 +286,21 @@ function renderMarkdown(result, hasRuntime) {
       rules.filter((r) => r.status === "unmatched"),
       ruleLine,
     );
-  section("Unused at-rules", unusedAtRules, (a) => `- L${a.line}: \`${a.name}\``);
-  section("Unused custom properties", unusedVariables, (v) => `- L${v.line}: \`${v.name}\``);
-  section("Selectors declared more than once", duplicates, (d) => `- \`${d.selector}\` — lines ${d.lines.join(", ")}`);
+  section("Unused at-rules", unusedAtRules, (a) => `- ${a.location}: \`${a.name}\``);
+  section("Unused custom properties", unusedVariables, (v) => `- ${v.location}: \`${v.name}\``);
+  section("Selectors declared more than once", duplicates, (d) => `- \`${d.selector}\` — ${d.locations.join(", ")}`);
   return lines.join("\n");
 }
 
 const runtimeFiles = process.argv.slice(2).map((f) => path.resolve(f));
 if (!runtimeFiles.length && existsSync(DEFAULT_RUNTIME)) runtimeFiles.push(DEFAULT_RUNTIME);
 
-const css = await fs.readFile(CSS_PATH, "utf8");
-const root = postcss.parse(css, { from: CSS_PATH });
+const manifest = JSON.parse(await fs.readFile(path.join(ROOT, MODULE_PATH), "utf8"));
+const root = postcss.root();
+for (const src of styleSources(manifest)) {
+  const file = path.join(ROOT, SRC_NAME, src);
+  root.append(postcss.parse(await fs.readFile(file, "utf8"), { from: file }).nodes);
+}
 const corpus = await buildCorpus();
 if (!existsSync(path.join(ROOT, "foundry"))) {
   console.warn("foundry/ not found: core Foundry classes will be reported as dead. See AGENTS.md.");

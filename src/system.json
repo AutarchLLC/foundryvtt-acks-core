@@ -15,7 +15,7 @@
   "flags": {
     "hotReload": {
       "extensions": ["css", "hbs", "json"],
-      "paths": ["acks.css", "templates", "lang"]
+      "paths": ["styles", "templates", "lang"]
     }
   },
   "authors": [
@@ -42,7 +42,18 @@
     }
   ],
   "esmodules": ["acks.mjs"],
-  "styles": ["acks.css"],
+  "styles": [
+    "styles/tokens.css",
+    "styles/icons.css",
+    "styles/foundry-ui.css",
+    "styles/chat-legacy.css",
+    "styles/sheet-common.css",
+    "styles/item-sheet.css",
+    "styles/actor-sheet.css",
+    "styles/apps.css",
+    "styles/chat.css",
+    "styles/attack-throw-dialog.css"
+  ],
   "documentTypes": {
     "Actor": {
       "character": {

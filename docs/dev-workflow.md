@@ -150,7 +150,7 @@ sudo chmod 4755 /home/arcanistwill/12foundry/chrome-sandbox
 
 ## Checking CSS usage
 
-Two tools help find rules in `src/acks.css` that nothing uses any more. Their output goes to
+Two tools help find rules in the system stylesheets (`src/styles/`) that nothing uses any more. Their output goes to
 `css-usage/` (gitignored).
 
 **Static scan.** `scripts/css-usage.mjs` looks up every class and id a selector needs in the system
@@ -178,8 +178,8 @@ It writes `css-usage/runtime.json`; run `node scripts/css-usage.mjs` afterwards 
 rules that never matched. The tour doesn't reach every state (critical hits, expanded summaries, an
 empty party), so check each rule against the templates before deleting it.
 
-At every step the tour also compares the computed style of every element under `acks.css` from git
-ref `ACKS_CSS_BASE` (default `master`) and under the working copy, and fails on any difference
+At every step the tour also compares the computed style of every element under the stylesheets from
+git ref `ACKS_CSS_BASE` (default `master`) and under the working copy, and fails on any difference
 (details in `css-usage/style-diff.json`). Use it to confirm a cleanup changes nothing visible.
 
 To record a real world instead, paste `scripts/css-usage-tracker.js` into the browser console, use

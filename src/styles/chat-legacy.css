@@ -1,0 +1,222 @@
+/*
+ * Legacy chat markup: .acks.chat-block (roll, tampering and mortal wounds results) and the
+ * AppV1 .acks.chat-card, kept so old chat messages still render.
+ */
+
+.acks.chat-block {
+  margin: 0;
+}
+
+.acks.chat-block .chat-header {
+  height: 46px;
+  margin: 4px 0;
+  background: var(--acks-purple);
+  border: 1px solid black;
+  border-radius: 3px;
+  color: white;
+  padding: 2px;
+  box-shadow: 0 0 2px #fff inset;
+}
+
+.acks.chat-block .chat-header .chat-title {
+  margin: 4px 0;
+  height: 30px;
+  overflow: hidden;
+}
+
+.acks.chat-block .chat-header .chat-title h2 {
+  border: none;
+  line-height: 34px;
+  margin: 0;
+  color: whitesmoke;
+  text-indent: 2px;
+  font-size: 16px;
+  word-break: break-all;
+}
+
+.acks.chat-block .chat-header .chat-img {
+  flex: 0 0 42px;
+  background-size: cover;
+  height: 42px;
+}
+
+.acks.chat-block .chat-target {
+  text-align: right;
+  font-style: italic;
+  padding: 2px;
+}
+
+.acks.chat-block .chat-details {
+  padding: 4px;
+  font-size: 13px;
+}
+
+.acks.chat-block .roll-result {
+  font-size: 13px;
+  text-align: center;
+}
+
+.acks.chat-block .roll-result.roll-success {
+  color: #18520b;
+}
+
+.acks.chat-block .roll-result.roll-fail {
+  color: #aa0200;
+}
+
+.acks.chat-block .damage-roll {
+  position: relative;
+}
+
+.acks.chat-block .damage-roll .dice-damage {
+  display: none;
+  position: absolute;
+  line-height: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  box-shadow: 0 0 2px #fff inset;
+  bottom: 1px;
+  right: 10px;
+}
+
+.acks.chat-block .damage-roll .dice-damage button {
+  padding: 2px 5px;
+  width: 22px;
+  line-height: 14px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.acks.chat-block .damage-roll:hover .dice-damage {
+  display: block;
+}
+
+.acks.chat-card {
+  font-style: normal;
+  font-size: 12px;
+}
+
+.acks.chat-card .card-header {
+  padding: 3px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+}
+
+.acks.chat-card .card-header img {
+  flex: 0 0 36px;
+  margin-right: 5px;
+  border: none;
+}
+
+.acks.chat-card .card-header h3 {
+  flex: 1;
+  margin: 0;
+  line-height: 36px;
+  color: #4b4a44;
+}
+
+.acks.chat-card .card-header h3:hover {
+  color: #111;
+}
+
+.acks.chat-card .card-content {
+  margin: 5px 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.acks.chat-card .card-content.expanded {
+  grid-template-rows: 1fr; /* expanded */
+  opacity: 1;
+}
+
+.acks.chat-card .card-content__description {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.acks.chat-card .card-content .treasure-list {
+  padding: 0;
+  list-style: none;
+}
+
+.acks.chat-card .card-content .treasure-list .treasure {
+  line-height: 36px;
+}
+
+.acks.chat-card .card-content .treasure-list .treasure img {
+  flex: 0 0 36px;
+  border: none;
+}
+
+.acks.chat-card .card-content .treasure-list .treasure div {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.acks.chat-card .card-content .treasure-list .sub {
+  padding-left: 25px;
+  line-height: 28px;
+}
+
+.acks.chat-card .card-content .treasure-list .sub img {
+  flex: 0 0 28px;
+  border: none;
+}
+
+.acks.chat-card .card-content .treasure-list .sub div {
+  text-indent: 10px;
+  font-size: 14px;
+}
+
+.acks.chat-card .card-content h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.acks.chat-card .card-content > * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.acks.chat-card .card-buttons {
+  margin: 5px 0;
+}
+
+.acks.chat-card .card-buttons span {
+  display: block;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #7a7971;
+}
+
+.acks.chat-card .card-buttons button {
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  margin: 2px 0;
+}
+
+.acks.chat-card .card-footer {
+  padding: 3px 0 0;
+  border-top: 2px groove #fff;
+}
+
+.acks.chat-card .card-footer span {
+  border-right: 2px groove #fff;
+  padding: 0 5px 0 0;
+  font-size: 10px;
+}
+
+.acks.chat-card .card-footer span:last-child {
+  border-right: none;
+  padding-right: 0;
+}

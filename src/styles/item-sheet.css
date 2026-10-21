@@ -1,0 +1,170 @@
+/* Item sheet (.item-v2) and weapon sheet (.acksii). Templates: templates/items/v2/. */
+
+.application.acksii {
+  font-family: "RobotoRegular", sans-serif;
+}
+
+.standard-form.acksii {
+  gap: 0;
+}
+
+.acksii .window-content {
+  padding: 0;
+}
+
+.standard-form.acksii .tab {
+  gap: 0.5rem;
+  font-size: var(--font-size-12);
+}
+
+.standard-form.acksii fieldset {
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.standard-form.acksii fieldset legend {
+  font-size: var(--font-size-12);
+  font-weight: normal;
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.standard-form.acksii fieldset.input-grid {
+  --grid-cols: 3;
+  column-gap: 2rem;
+}
+
+.sheet.acks.item-v2.acksii .form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  --input-height: 1.5rem;
+}
+
+.standard-form.acksii .form-group > label,
+.standard-form.acksii .form-group > span.label {
+  font-weight: normal;
+}
+
+.acksii select {
+  padding: 0 4px;
+}
+
+.sheet.acks.item-v2 .sheet-header__image {
+  width: 84px;
+  height: 84px;
+  min-width: 84px;
+  min-height: 84px;
+  cursor: var(--cursor-pointer);
+}
+
+.sheet.acks.item-v2 .sheet-header__middle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.sheet.acks.item-v2 .sheet-header__middle input[type="text"] {
+  font-size: var(--font-size-28);
+  line-height: var(--font-size-28);
+}
+
+.sheet.acks.item-v2 .description .content {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.sheet.acks.item-v2 .field-set {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  font-size: var(--font-size-13);
+}
+
+.sheet.acks.item-v2 .field-set--narrow {
+  flex: 0 0 84px;
+}
+
+.sheet.acks.item-v2 .field-set--center {
+  justify-content: center;
+}
+
+.sheet.acks.item-v2 .field-set select,
+.sheet.acks.item-v2 .field-set input[type="text"] {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  padding: 0 0.2rem;
+}
+
+.sheet.acks.item-v2 .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sheet.acks.item-v2 .form-group--row {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sheet.acks.item-v2 .form-group__label {
+  height: 20px;
+  line-height: 20px;
+  flex: 1;
+}
+
+.sheet.acks.item-v2 .form-group__fields {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sheet.acks.item-v2 .description .item-description {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.sheet.acks.item-v2 .description .item-description prose-mirror {
+  flex: 1;
+}
+
+.sheet.acks.item-v2 a.button:hover,
+.sheet.acks.item-v2 button:hover {
+  background: var(--acks-purple);
+}
+
+.sheet.acks.item-v2 a.button:focus,
+.sheet.acks.item-v2 button:focus {
+  outline: 1px solid var(--acks-purple);
+  box-shadow: 0 0 4px var(--acks-purple);
+}
+
+.acks2 .item__quantity {
+  width: 6rem;
+  text-align: left;
+}
+
+.acksii.item-v2 .info-card {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.acksii.item-v2 .info-card-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.acksii.item-v2 .info-card-item__label {
+  font-family: "RobotoSlab", sans-serif;
+}

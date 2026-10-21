@@ -1,0 +1,76 @@
+/*
+ * AcksSymbols icon font (damage type icons, Font Awesome-style usage), see DAMAGE_TYPE_ICON in
+ * module/constants.mjs. The font family itself is registered via CONFIG.fontDefinitions in fonts.mjs.
+ */
+
+.acks-icon {
+  font-family: "AcksSymbols" !important;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-feature-settings: normal;
+  font-synthesis: none;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.acks-icon-extraordinary {
+  color: #b31818;
+}
+
+.acks-icon-acidic::before {
+  content: "\0041";
+}
+
+.acks-icon-arcane::before {
+  content: "\0061";
+}
+
+.acks-icon-bludgeoning::before {
+  content: "\0042";
+}
+
+.acks-icon-cold::before {
+  content: "\0043";
+}
+
+.acks-icon-electrical::before {
+  content: "\0045";
+}
+
+.acks-icon-fire::before {
+  content: "\0046";
+}
+
+.acks-icon-luminous::before {
+  content: "\004C";
+}
+
+.acks-icon-necrotic::before {
+  content: "\004E";
+}
+
+.acks-icon-piercing::before {
+  content: "\0070";
+}
+
+.acks-icon-poisonous::before {
+  content: "\0050";
+}
+
+.acks-icon-seismic::before {
+  content: "\0053";
+}
+
+.acks-icon-slashing::before {
+  content: "\0073";
+}
+
+.acks-icon-varies-by-weapon::before {
+  content: "\0057";
+}

@@ -1,5 +1,5 @@
 /**
- * Record which selectors of the ACKS stylesheet match the live DOM.
+ * Record which selectors of the ACKS stylesheets match the live DOM.
  *
  * Self-contained browser script: injected by the Playwright coverage tour
  * (e2e/tests/css-coverage.spec.mjs), or pasted into the console of a running game.
@@ -15,37 +15,31 @@
  */
 (() => {
   /* global document, MutationObserver, CSSImportRule, CSSStyleRule, CSSKeyframesRule */
-  const SHEET_PATH = "systems/acks/acks.css";
+  const SHEET_PATH = "/systems/acks/";
   const PSEUDO_ELEMENT = /::[\w-]+(\([^)]*\))?|:(before|after|first-line|first-letter)\b/g;
   const USER_ACTION = /:(hover|focus-within|focus-visible|focus|active|visited)\b/g;
 
   /**
-   * Find the system stylesheet. Foundry v14 loads it with `@import ... layer(system)` from an
-   * inline style element, older versions with a link element.
-   * @returns {CSSStyleSheet|null}
+   * Find the system stylesheets. Foundry v14 loads each with `@import ... layer(system)` from an
+   * inline style element.
+   * @returns {CSSStyleSheet[]}
    */
-  function findSheet() {
+  function findSheets() {
+    const found = [];
     const visit = (sheet) => {
-      if (sheet.href?.endsWith(SHEET_PATH)) return sheet;
+      if (new URL(sheet.href ?? "about:blank").pathname.startsWith(SHEET_PATH)) found.push(sheet);
       let rules;
       try {
         rules = sheet.cssRules;
       } catch {
-        return null;
+        return;
       }
       for (const rule of rules) {
-        if (rule instanceof CSSImportRule && rule.styleSheet) {
-          const found = visit(rule.styleSheet);
-          if (found) return found;
-        }
+        if (rule instanceof CSSImportRule && rule.styleSheet) visit(rule.styleSheet);
       }
-      return null;
     };
-    for (const sheet of document.styleSheets) {
-      const found = visit(sheet);
-      if (found) return found;
-    }
-    return null;
+    for (const sheet of document.styleSheets) visit(sheet);
+    return found;
   }
 
   /**
@@ -119,9 +113,9 @@
      * @returns {number} Number of selectors tracked.
      */
     start() {
-      const sheet = findSheet();
-      if (!sheet) throw new Error(`Stylesheet ${SHEET_PATH} not found`);
-      state.selectors = [...new Set(collectSelectors(sheet.cssRules))];
+      const sheets = findSheets();
+      if (!sheets.length) throw new Error(`No stylesheets under ${SHEET_PATH} found`);
+      state.selectors = [...new Set(sheets.flatMap((sheet) => collectSelectors(sheet.cssRules)))];
       api.check();
       state.observer?.disconnect();
       state.observer = new MutationObserver(() => {

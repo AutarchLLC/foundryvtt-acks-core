@@ -1,0 +1,31 @@
+/* Overrides of Foundry core UI: window headers, combat tracker, token HUD. */
+
+/* Combat tracker specific overloads */
+/* TODO: change colors of icons so they look nice on both dark and light themes */
+.combat-sidebar li.combatant .roll {
+  background: url(../assets/icons/perspective-dice-five.svg) no-repeat 50% 50%;
+}
+
+.combat-sidebar li.combatant .roll:hover {
+  background: url(../assets/icons/perspective-dice-five-hover.svg) no-repeat 50% 50%;
+}
+
+.window-header {
+  background: var(--acks-purple);
+}
+
+.application .window-header {
+  background: var(--acks-purple);
+}
+
+/** HUD SECTION */
+#token-hud .status-effects.active {
+  z-index: 2;
+}
+
+/*------------------------------------*\
+  #TODO: Temporary v13 style fixes
+\*------------------------------------*/
+.combat-tracker .combatant-controls {
+  flex-wrap: wrap;
+}

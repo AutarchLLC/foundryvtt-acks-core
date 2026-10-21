@@ -8,7 +8,6 @@ export const PACK_SRC = "src/packs/_source";
 export const MODULE_PATH = "src/system.json";
 export const DIST_NAME = "dist";
 export const SRC_NAME = "src";
-export const CSS_MAIN_NAME = "acks.css";
 export const INCLUDES = [
   path.join(process.cwd(), SRC_NAME, "assets"),
   path.join(process.cwd(), SRC_NAME, "templates"),
@@ -16,6 +15,15 @@ export const INCLUDES = [
   path.join(process.cwd(), SRC_NAME, "LICENSE.txt"),
   path.join(process.cwd(), SRC_NAME, "system.json"),
 ];
+
+/**
+ * Paths of the system stylesheets, relative to src/, in load order.
+ * @param {{styles?: (string|{src: string})[]}} manifest  Parsed system.json.
+ * @returns {string[]}
+ */
+export function styleSources(manifest) {
+  return (manifest.styles ?? []).map((entry) => (typeof entry === "string" ? entry : entry.src));
+}
 
 /**
  * Standardize name format.

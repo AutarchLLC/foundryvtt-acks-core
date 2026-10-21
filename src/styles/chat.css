@@ -1,0 +1,245 @@
+/* Chat: dice roll results, item cards and attack throw cards. Templates: templates/chat/. */
+
+.dice-roll .dice-total.success {
+  color: inherit;
+  background: #c7d0c0;
+  border: 1px solid #006c00;
+}
+
+.dice-roll .dice-total.failure {
+  color: inherit;
+  background: #ffdddd;
+  border: 1px solid #6e0000;
+}
+
+.dice-roll .dice-total.critical {
+  color: green;
+}
+
+.dice-roll .dice-total.fumble {
+  color: red;
+}
+
+.acksii.chat-card {
+  font-style: normal;
+  font-size: 12px;
+  font-family: "RobotoRegular", sans-serif;
+}
+
+.acksii.chat-card .card-header {
+  padding: 4px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+  gap: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.acksii.chat-card .card-header__img {
+  flex: 0 0 36px;
+}
+
+.acksii.chat-card .card-header__name {
+  flex: 1;
+  margin: 0;
+  line-height: 36px;
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.acksii.chat-card .card-header__name a:hover {
+  text-shadow: none;
+  color: var(--acks-purple);
+}
+
+.acksii.chat-card .card-content {
+  margin: 4px 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.acksii.chat-card .card-content.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.acksii.chat-card .card-content__description {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.acksii.chat-card .card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.acksii.chat-card .card-buttons button {
+  font-family: "RobotoSlab", sans-serif;
+}
+
+.acksii.chat-card .card-buttons button:hover {
+  background: var(--acks-purple);
+  border-color: var(--acks-purple);
+}
+
+.acksii.chat-card .card-buttons button:focus {
+  border-color: var(--acks-purple);
+  border-width: 2px;
+  outline: none;
+  box-shadow: none;
+}
+
+.acksii.chat-card .card-buttons button.active {
+  border-color: var(--acks-purple);
+  border-width: 2px;
+  outline: none;
+  box-shadow: none;
+}
+
+.acksii.chat-card .card-footer {
+  padding: 4px 0 0;
+  border-top: 2px groove #fff;
+}
+
+.acksii.chat-card .card-footer span {
+  border-right: 2px groove #fff;
+  padding: 0 4px 0 0;
+  font-size: 10px;
+}
+
+.acksii.chat-card .card-footer span:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* Attack Throw chat card */
+.acksii.attack-throw-card .card-header {
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background: var(--acks-purple);
+  color: whitesmoke;
+}
+
+.acksii.attack-throw-card .card-header__img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+}
+
+.acksii.attack-throw-card .card-header__name {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.acksii.attack-throw-card .card-header__name a,
+.acksii.attack-throw-card .card-header__name a:hover {
+  color: whitesmoke;
+  text-shadow: none;
+}
+
+.acksii.attack-throw-card .attack-throw-card__summary {
+  margin: 4px 0;
+}
+
+.acksii.attack-throw-card .attack-throw-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__footer span {
+  padding: 0 4px;
+  border: 1px solid var(--acks-purple);
+  border-radius: 4px;
+  background-color: var(--acks-purple);
+  color: whitesmoke;
+  font-family: "RobotoCondensed", sans-serif;
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.acksii.attack-throw-card :is(.attack-throw-card__outcome--critical, .attack-throw-card__outcome--auto-hit) {
+  color: #18520b;
+}
+
+.acksii.attack-throw-card .attack-throw-card__outcome--auto-miss {
+  color: #aa0200;
+}
+
+.acksii.attack-throw-card .attack-throw-card__reason {
+  font-family: "RobotoRegular", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.acksii.attack-throw-card .attack-throw-card__rolls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 0 2px;
+  border: none;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 12px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__target-value {
+  margin-left: auto;
+  font-family: "RobotoRegular", sans-serif;
+  font-weight: normal;
+}
+
+.acksii.attack-throw-card .dice-total {
+  font-size: 20px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__damage-types {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.acksii.attack-throw-card :is(.attack-throw-card__modifiers, .attack-throw-card__notes) {
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: "RobotoCondensed", sans-serif;
+}
+
+.acksii.attack-throw-card .attack-throw-card__modifiers li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.acksii.attack-throw-card .attack-throw-card__value {
+  font-weight: bold;
+}
+
+.acksii.attack-throw-card .attack-throw-card__notes {
+  font-style: italic;
+}

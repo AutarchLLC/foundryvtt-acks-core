@@ -1,19 +1,20 @@
-/* global acksCssStyleDiff, acksCssUsage, canvas, document, fetch, foundry, game, getComputedStyle, ui */
+/* global acksCssStyleDiff, acksCssUsage, canvas, document, foundry, game, getComputedStyle, ui */
 /**
- * CSS coverage tour. Not a regular test: run it by hand when cleaning up src/acks.css.
+ * CSS coverage tour. Not a regular test: run it by hand when cleaning up the system stylesheets.
  *
  *   ACKS_CSS_COVERAGE=1 npx playwright test -c e2e css-coverage
  *
- * It opens every sheet, tab, app, dialog and chat card and records which selectors of acks.css
- * matched the live DOM (scripts/css-usage-tracker.js), written to css-usage/runtime.json for
- * `node scripts/css-usage.mjs`. At every step it also compares the computed style of every element
- * under acks.css from git ref ACKS_CSS_BASE (default `master`) and under the working copy; any
- * difference is written to css-usage/style-diff.json and fails the test.
+ * It opens every sheet, tab, app, dialog and chat card and records which selectors of the system
+ * stylesheets matched the live DOM (scripts/css-usage-tracker.js), written to css-usage/runtime.json
+ * for `node scripts/css-usage.mjs`. At every step it also compares the computed style of every
+ * element under the stylesheets from git ref ACKS_CSS_BASE (default `master`) and under the working
+ * copy; any difference is written to css-usage/style-diff.json and fails the test.
  */
 import { execFileSync } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { MODULE_PATH, SRC_NAME, styleSources } from "../../scripts/common.mjs";
 import { ROOT } from "../scripts/foundry-env.mjs";
 import { createActor, expect, openActorSheet, test } from "../support/foundry.mjs";
 
@@ -25,19 +26,40 @@ const TRACKER = path.join(ROOT, "scripts", "css-usage-tracker.js");
 const SETTLE_MS = 400;
 
 /**
- * Install `acksCssStyleDiff` in the page: swaps the system stylesheet between the base and the
- * current acks.css and compares the computed style of every element under both.
- * Runs in the browser.
- * @param {string} baseCss  acks.css at the base ref
+ * The system stylesheets listed in system.json, concatenated in load order, with relative `url()`s
+ * made absolute so the text can be applied from an inline style element.
+ * @param {string} [ref]  Git ref to read from; the working copy when omitted.
+ * @returns {Promise<string>}
  */
-function installStyleDiff(baseCss) {
-  // Foundry v14 loads system CSS with `@import "systems/acks/acks.css" layer(system)`.
-  const node = [...document.querySelectorAll("style")].find((s) => s.textContent.includes("systems/acks/acks.css"));
-  if (!node) throw new Error("System stylesheet import not found");
+async function readSystemCss(ref) {
+  const read = async (file) =>
+    ref
+      ? execFileSync("git", ["show", `${ref}:${file}`], { cwd: ROOT, encoding: "utf8" })
+      : fs.readFile(path.join(ROOT, file), "utf8");
+  const manifest = JSON.parse(await read(MODULE_PATH));
+  const sheets = [];
+  for (const src of styleSources(manifest)) {
+    const dir = path.posix.join("/systems/acks", path.posix.dirname(src));
+    const css = await read(`${SRC_NAME}/${src}`);
+    sheets.push(
+      css.replace(/url\((["']?)(\.{1,2}\/[^)"']+)\1\)/g, (_, q, url) => `url(${q}${path.posix.join(dir, url)}${q})`),
+    );
+  }
+  return sheets.join("\n");
+}
+
+/**
+ * Install `acksCssStyleDiff` in the page: swaps the system stylesheets between the base and the
+ * current ones and compares the computed style of every element under both.
+ * Runs in the browser.
+ * @param {{baseCss: string, currentCss: string}} css  Stylesheets at the base ref and in the working copy
+ */
+function installStyleDiff({ baseCss, currentCss }) {
+  // Foundry v14 loads each system stylesheet with `@import "systems/acks/…" layer(system)`.
+  const node = [...document.querySelectorAll("style")].find((s) => s.textContent.includes("systems/acks/"));
+  if (!node) throw new Error("System stylesheet imports not found");
   const original = node.textContent;
-  const absolute = (css) => css.replaceAll("./assets/", "/systems/acks/assets/");
   const props = [...getComputedStyle(document.body)].filter((p) => !/^(transition|animation)/.test(p));
-  let currentCss = null;
 
   const use = (css) => {
     node.textContent = `@layer system {\n${css}\n}`;
@@ -63,12 +85,11 @@ function installStyleDiff(baseCss) {
 
   globalThis.acksCssStyleDiff = {
     /**
-     * @returns {Promise<string[]>}  One line per element whose computed style differs.
+     * @returns {string[]}  One line per element whose computed style differs.
      */
-    async compare() {
-      currentCss ??= absolute(await (await fetch("/systems/acks/acks.css", { cache: "no-store" })).text());
+    compare() {
       const elements = [...document.querySelectorAll("body *")];
-      use(absolute(baseCss));
+      use(baseCss);
       const base = snapshot(elements);
       use(currentCss);
       const current = snapshot(elements);
@@ -134,12 +155,12 @@ test.describe("CSS coverage tour", () => {
 
   test("visits every sheet, app, dialog and chat card", async ({ page }) => {
     test.setTimeout(10 * 60_000);
-    const baseCss = execFileSync("git", ["show", `${BASE_REF}:src/acks.css`], { cwd: ROOT, encoding: "utf8" });
+    const css = { baseCss: await readSystemCss(BASE_REF), currentCss: await readSystemCss() };
     const styleDiffs = {};
     const visited = [];
 
     await page.addScriptTag({ path: TRACKER });
-    await page.evaluate(installStyleDiff, baseCss);
+    await page.evaluate(installStyleDiff, css);
 
     /**
      * Run an action, let the UI settle, then record selector hits and style differences.
@@ -424,6 +445,6 @@ test.describe("CSS coverage tour", () => {
       );
     }
 
-    expect(styleDiffs, `computed styles differ from acks.css at ${BASE_REF}`).toEqual({});
+    expect(styleDiffs, `computed styles differ from the stylesheets at ${BASE_REF}`).toEqual({});
   });
 });

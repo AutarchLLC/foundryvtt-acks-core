@@ -683,7 +683,7 @@ export const DAMAGE_TYPE_CHOICES = Object.freeze({
   [DAMAGE_TYPE.VARIES_BY_WEAPON]: "ACKS.damage.type.variesByWeapon",
 });
 
-// CSS classes for the AcksSymbols icon font (see src/acks.css), keyed by damage type.
+// CSS classes for the AcksSymbols icon font (see src/styles/icons.css), keyed by damage type.
 export const DAMAGE_TYPE_ICON = Object.freeze({
   [DAMAGE_TYPE.ACIDIC]: "acks-icon acks-icon-acidic",
   [DAMAGE_TYPE.ARCANE]: "acks-icon acks-icon-arcane",
