@@ -43,7 +43,7 @@
   ],
   "esmodules": ["acks.mjs"],
   "styles": [
-    "styles/tokens.css",
+    "styles/base.css",
     "styles/icons.css",
     "styles/foundry-ui.css",
     "styles/chat-legacy.css",

@@ -1,4 +1,4 @@
-/* Design tokens: ACKS custom properties. */
+/* Base: ACKS custom properties shared by every stylesheet. */
 
 :root {
   --acks-purple: #620630;
