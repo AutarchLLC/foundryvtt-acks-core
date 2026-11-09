@@ -30,7 +30,7 @@ from memory. Never edit them. They may be missing on other machines; recreate wi
 ```
 src/acks.mjs              ← entry point; init/setup/ready hooks, document classes, data models, sheet registration
 src/system.json           ← system manifest
-src/acks.css              ← single stylesheet
+src/styles/               ← stylesheets, one per feature; loaded in the order listed in system.json `styles`
 src/module/
   config.mjs              ← ACKS config object (CONFIG.ACKS), incl. statusEffects
   constants.mjs           ← frozen enums (ACTOR_TYPE, ITEM_TYPE, ROLL_TYPE, ATTACK_TYPE, …)
@@ -78,7 +78,7 @@ Always refer to them via `ACTOR_TYPE` / `ITEM_TYPE` from `constants.mjs`, not st
 
 ```bash
 npm install
-npm run build          # clean → rollup+terser (dist/acks.mjs) → postcss/autoprefixer (dist/acks.css)
+npm run build          # clean → rollup+terser (dist/acks.mjs) → postcss/autoprefixer (dist/styles/)
 npm run lint           # eslint ./src
 npm run format:check   # prettier, whole repo
 npm run format:fix
@@ -131,6 +131,12 @@ check by hand with `npm run foundry:test`.
   from `foundry.data.fields.*`. Shared schema pieces live in `data/*/templates/`.
 - **Rolls**: roll types are centralised in `ROLL_TYPE`; general roll logic belongs in `dice.mjs`.
   Attack throws are modelled by `AcksAttackThrow` (`throw/attack-throw.mjs`).
+- **Styles**: plain CSS in `src/styles/`, one file per feature (sheet, app, chat, …), no preprocessor.
+  Foundry imports every `styles` entry of `system.json` into the `system` cascade layer, in list order,
+  so a new file must be added there (and the Foundry server restarted to pick it up). Nest rules
+  with native CSS nesting under the component's root class (`.sheet.acks.actor-v2 { … }`,
+  `.acks2.attack-throw-dialog { … }`). Native nesting does not join names: `&__name` is not
+  `.root__name`, so write BEM classes out in full.
 - **Localisation**: every user-facing string goes in `src/lang/en.json` under `ACKS.` and is read
   with `game.i18n.localize()` / `game.i18n.format()`. Several `CONFIG.ACKS` sub-objects are
   localised automatically in the `setup` hook.
@@ -152,6 +158,7 @@ check by hand with `npm run foundry:test`.
 | Change attack throws | `src/module/throw/attack-throw.mjs`, `dialog/dialog-get-attack-throw-details.mjs` |
 | Add a dialog | new file in `src/module/dialog/`, export from `dialog/index.mjs` |
 | Add a combat hook | `src/module/combat-helper.mjs`, wire it in `acks.mjs` |
+| Change styles | the feature's file in `src/styles/`; a new file goes into `styles` in `src/system.json` |
 | Add a status effect | `statusEffects` in `src/module/config.mjs` |
 | Add / change a compendium entry | JSON under `src/packs/_source/`, then `npm run packs:sourceToDatabase` |
 | Rename / remove / restructure stored fields | add a migration, see below and `docs/MIGRATION.md` |

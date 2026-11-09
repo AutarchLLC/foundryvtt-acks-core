@@ -1,0 +1,7 @@
+/* Base: ACKS custom properties shared by every stylesheet. */
+
+:root {
+  --acks-purple: #620630;
+  --input-text-color: #4b4a44;
+  --icon-size: 2rem;
+}
