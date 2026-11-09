@@ -1,4 +1,4 @@
-/* global Actor, foundry, game */
+/* global Actor, fetch, foundry, game, localStorage */
 import { test as base, expect } from "@playwright/test";
 import { TEST_USER } from "../scripts/foundry-env.mjs";
 
@@ -9,6 +9,7 @@ import { TEST_USER } from "../scripts/foundry-env.mjs";
  */
 export async function joinWorld(page, userName) {
   await page.goto("/join");
+  await skipTours(page);
   await page.locator("select[name=userId]").selectOption({ label: userName });
   await page.locator("button[name=join]").click();
   await page.waitForURL("**/game");
@@ -19,6 +20,42 @@ export async function joinWorld(page, userName) {
     const uiConfig = game.settings.get("core", "uiConfig");
     await game.settings.set("core", "uiConfig", { ...uiConfig, chatNotifications: "pip" });
   });
+}
+
+/**
+ * JSON files of the tours Foundry core registers (`registerTours()` in `client/nue/_module.mjs`).
+ */
+const CORE_TOURS = {
+  welcome: "welcome",
+  installingASystem: "installing-a-system",
+  creatingAWorld: "creating-a-world",
+  backupsOverview: "backups-overview",
+  compatOverview: "compatibility-preview-overview",
+  uiOverview: "ui-overview",
+  sidebar: "sidebar",
+  canvasControls: "canvas-controls",
+};
+
+/**
+ * Mark every core onboarding tour as completed for this browser, so none starts by itself.
+ * In a new world Foundry starts the welcome tour a few seconds after `ready` (then offers a
+ * follow-up tour), and its overlay intercepts clicks on whatever a test has open. Tour progress
+ * is the client setting `core.tourProgress`, kept in localStorage and read when the tours are
+ * registered before `ready`, so it must be written before joining. Call on the `/join` page.
+ * @param {import("@playwright/test").Page} page
+ */
+async function skipTours(page) {
+  await page.evaluate(async (tours) => {
+    const core = {};
+    for (const [id, file] of Object.entries(tours)) {
+      // Relative to /join, so it honours a route prefix.
+      const response = await fetch(`tours/${file}.json`);
+      if (!response.ok) throw new Error(`Cannot load tour ${file}: ${response.status}`);
+      // A tour is completed when its step index equals its step count.
+      core[id] = (await response.json()).steps.length;
+    }
+    localStorage.setItem("core.tourProgress", JSON.stringify({ core }));
+  }, CORE_TOURS);
 }
 
 /**
