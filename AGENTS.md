@@ -204,3 +204,17 @@ src/module/migration/
 - Leave the `resetSchemaVersions()` dev call in `migration.mjs` commented out in committed code.
 - Data models and the runner import `CURRENT_SCHEMA_VERSION` / `isCurrentSchema` from
   `schema-version.mjs`, never from `migration.mjs` (that would create a circular import through the migrations).
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues on `AutarchLLC/foundryvtt-acks-core` via `gh` (always pass `--repo`; never target the `thehappyanarchist/foundryacks` parent). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `GLOSSARY.md` and `docs/adr/` at the repo root (created lazily). See `docs/agents/domain.md`.
