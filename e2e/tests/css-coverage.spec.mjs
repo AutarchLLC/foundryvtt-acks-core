@@ -109,20 +109,6 @@ function installStyleDiff({ baseCss, currentCss }) {
 }
 
 /**
- * Close Foundry's onboarding tours; they pop up over the UI and intercept clicks.
- * @param {import("@playwright/test").Page} page
- */
-function dismissTours(page) {
-  return page.evaluate(async () => {
-    foundry.nue.Tour.activeTour?.exit();
-    for (const app of [...foundry.applications.instances.values()]) {
-      if (app instanceof foundry.applications.api.DialogV2 && /tour/i.test(app.title))
-        await app.close({ animate: false });
-    }
-  });
-}
-
-/**
  * Close every document sheet, app and dialog opened by the tour.
  * @param {import("@playwright/test").Page} page
  */
@@ -168,7 +154,6 @@ test.describe("CSS coverage tour", () => {
      * @param {() => Promise<unknown>} [action]
      */
     const step = async (label, action) => {
-      await dismissTours(page);
       if (action) await action();
       await page.waitForTimeout(SETTLE_MS);
       const diffs = await page.evaluate(async () => {
