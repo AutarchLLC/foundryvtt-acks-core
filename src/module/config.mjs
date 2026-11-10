@@ -1,19 +1,130 @@
 import { ROLL_TYPE } from "./constants.mjs";
 
 export const ACKS = {
-  statusEffects: [
+  /**
+   * ACKS II Conditions offered in the token HUD. Name and icon only: the rules text is not reproduced.
+   * Registered into CONFIG.statusEffects by configureStatusEffects() (status-effects.mjs).
+   * @type {StatusEffectConfig[]}
+   */
+  conditions: [
+    { id: "beholding", name: "ACKS.conditions.beholding", img: "systems/acks/assets/icons/conditions/beholding.svg" },
+    { id: "berserk", name: "ACKS.conditions.berserk", img: "systems/acks/assets/icons/conditions/berserk.svg" },
+    { id: "bewitched", name: "ACKS.conditions.bewitched", img: "systems/acks/assets/icons/conditions/bewitched.svg" },
+    { id: "blessed", name: "ACKS.conditions.blessed", img: "icons/svg/angel.svg" },
+    { id: "blinded", name: "ACKS.conditions.blinded", img: "icons/svg/blind.svg" },
+    { id: "burning", name: "ACKS.conditions.burning", img: "icons/svg/fire.svg" },
+    { id: "charging", name: "ACKS.conditions.charging", img: "systems/acks/assets/icons/conditions/charging.svg" },
+    { id: "choking", name: "ACKS.conditions.choking", img: "systems/acks/assets/icons/conditions/choking.svg" },
     {
-      acks: true,
-      id: "surprised",
-      name: "Surprised",
-      img: "systems/acks/assets/icons/surprised.svg",
-      duration: { rounds: 1 },
+      id: "clambering",
+      name: "ACKS.conditions.clambering",
+      img: "systems/acks/assets/icons/conditions/clambering.svg",
     },
-    { acks: true, id: "overnumbering", name: "OverNumbered", img: "icons/svg/regen.svg" },
-    { acks: true, id: "done", name: "Done", img: "icons/svg/cancel.svg" },
-    { acks: true, id: "readied", name: "Readied", img: "icons/svg/ice-aura.svg" },
-    { acks: true, id: "delayed", name: "Delayed", img: "icons/svg/clockwork.svg" },
-    { acks: true, id: "slumbering", name: "Slumbering", img: "icons/svg/stoned.svg" },
+    {
+      id: "concentrating",
+      name: "ACKS.conditions.concentrating",
+      img: "systems/acks/assets/icons/conditions/concentrating.svg",
+    },
+    {
+      id: "concentrating-and-stationary",
+      name: "ACKS.conditions.concentrating-and-stationary",
+      img: "systems/acks/assets/icons/conditions/concentrating-and-stationary.svg",
+    },
+    { id: "cowering", name: "ACKS.conditions.cowering", img: "systems/acks/assets/icons/conditions/cowering.svg" },
+    { id: "deafened", name: "ACKS.conditions.deafened", img: "icons/svg/deaf.svg" },
+    {
+      id: "dehydrated",
+      name: "ACKS.conditions.dehydrated",
+      img: "systems/acks/assets/icons/conditions/dehydrated.svg",
+    },
+    {
+      id: "disfavored",
+      name: "ACKS.conditions.disfavored",
+      img: "systems/acks/assets/icons/conditions/disfavored.svg",
+    },
+    {
+      id: "disordered",
+      name: "ACKS.conditions.disordered",
+      img: "systems/acks/assets/icons/conditions/disordered.svg",
+    },
+    { id: "dominated", name: "ACKS.conditions.dominated", img: "systems/acks/assets/icons/conditions/dominated.svg" },
+    { id: "drowning", name: "ACKS.conditions.drowning", img: "systems/acks/assets/icons/conditions/drowning.svg" },
+    { id: "enervated", name: "ACKS.conditions.enervated", img: "systems/acks/assets/icons/conditions/enervated.svg" },
+    { id: "engaged", name: "ACKS.conditions.engaged", img: "systems/acks/assets/icons/conditions/engaged.svg" },
+    { id: "enlarged", name: "ACKS.conditions.enlarged", img: "systems/acks/assets/icons/conditions/enlarged.svg" },
+    { id: "enslaved", name: "ACKS.conditions.enslaved", img: "systems/acks/assets/icons/conditions/enslaved.svg" },
+    {
+      id: "enthralled",
+      name: "ACKS.conditions.enthralled",
+      img: "systems/acks/assets/icons/conditions/enthralled.svg",
+    },
+    { id: "faltering", name: "ACKS.conditions.faltering", img: "systems/acks/assets/icons/conditions/faltering.svg" },
+    { id: "fatigued", name: "ACKS.conditions.fatigued", img: "systems/acks/assets/icons/conditions/fatigued.svg" },
+    { id: "flanked", name: "ACKS.conditions.flanked", img: "systems/acks/assets/icons/conditions/flanked.svg" },
+    { id: "forgetful", name: "ACKS.conditions.forgetful", img: "systems/acks/assets/icons/conditions/forgetful.svg" },
+    { id: "frightened", name: "ACKS.conditions.frightened", img: "icons/svg/terror.svg" },
+    { id: "grabbed", name: "ACKS.conditions.grabbed", img: "systems/acks/assets/icons/conditions/grabbed.svg" },
+    { id: "helpless", name: "ACKS.conditions.helpless", img: "systems/acks/assets/icons/conditions/helpless.svg" },
+    { id: "hidden", name: "ACKS.conditions.hidden", img: "icons/svg/cowled.svg" },
+    { id: "hungry", name: "ACKS.conditions.hungry", img: "systems/acks/assets/icons/conditions/hungry.svg" },
+    {
+      id: "hypothermic",
+      name: "ACKS.conditions.hypothermic",
+      img: "systems/acks/assets/icons/conditions/hypothermic.svg",
+    },
+    {
+      id: "incapacitated",
+      name: "ACKS.conditions.incapacitated",
+      img: "systems/acks/assets/icons/conditions/incapacitated.svg",
+    },
+    {
+      id: "infuriated",
+      name: "ACKS.conditions.infuriated",
+      img: "systems/acks/assets/icons/conditions/infuriated.svg",
+    },
+    { id: "inspired", name: "ACKS.conditions.inspired", img: "systems/acks/assets/icons/conditions/inspired.svg" },
+    { id: "mad", name: "ACKS.conditions.mad", img: "systems/acks/assets/icons/conditions/mad.svg" },
+    {
+      id: "mesmerized",
+      name: "ACKS.conditions.mesmerized",
+      img: "systems/acks/assets/icons/conditions/mesmerized.svg",
+    },
+    { id: "mute", name: "ACKS.conditions.mute", img: "icons/svg/silenced.svg" },
+    { id: "paralyzed", name: "ACKS.conditions.paralyzed", img: "icons/svg/paralysis.svg" },
+    { id: "petrified", name: "ACKS.conditions.petrified", img: "icons/svg/statue.svg" },
+    { id: "prone", name: "ACKS.conditions.prone", img: "icons/svg/falling.svg" },
+    { id: "queasy", name: "ACKS.conditions.queasy", img: "systems/acks/assets/icons/conditions/queasy.svg" },
+    { id: "restrained", name: "ACKS.conditions.restrained", img: "icons/svg/net.svg" },
+    { id: "shaken", name: "ACKS.conditions.shaken", img: "systems/acks/assets/icons/conditions/shaken.svg" },
+    { id: "shrunk", name: "ACKS.conditions.shrunk", img: "systems/acks/assets/icons/conditions/shrunk.svg" },
+    { id: "slumbering", name: "ACKS.conditions.slumbering", img: "icons/svg/sleep.svg" },
+    { id: "sneaking", name: "ACKS.conditions.sneaking", img: "systems/acks/assets/icons/conditions/sneaking.svg" },
+    { id: "starving", name: "ACKS.conditions.starving", img: "systems/acks/assets/icons/conditions/starving.svg" },
+    { id: "stuck", name: "ACKS.conditions.stuck", img: "systems/acks/assets/icons/conditions/stuck.svg" },
+    { id: "subjacent", name: "ACKS.conditions.subjacent", img: "icons/svg/down.svg" },
+    { id: "surprised", name: "ACKS.conditions.surprised", img: "systems/acks/assets/icons/conditions/surprised.svg" },
+    { id: "unconscious", name: "ACKS.conditions.unconscious", img: "icons/svg/unconscious.svg" },
+    { id: "underfed", name: "ACKS.conditions.underfed", img: "systems/acks/assets/icons/conditions/underfed.svg" },
+    { id: "vexed", name: "ACKS.conditions.vexed", img: "systems/acks/assets/icons/conditions/vexed.svg" },
+    { id: "vomiting", name: "ACKS.conditions.vomiting", img: "systems/acks/assets/icons/conditions/vomiting.svg" },
+    {
+      id: "vulnerable",
+      name: "ACKS.conditions.vulnerable",
+      img: "systems/acks/assets/icons/conditions/vulnerable.svg",
+    },
+    { id: "webbed", name: "ACKS.conditions.webbed", img: "systems/acks/assets/icons/conditions/webbed.svg" },
+    { id: "winded", name: "ACKS.conditions.winded", img: "systems/acks/assets/icons/conditions/winded.svg" },
+    { id: "wrestled", name: "ACKS.conditions.wrestled", img: "systems/acks/assets/icons/conditions/wrestled.svg" },
+  ],
+  /**
+   * Combat States: initiative bookkeeping managed by the combat tracker, hidden from the token HUD.
+   * @type {StatusEffectConfig[]}
+   */
+  combatStates: [
+    { id: "overnumbering", name: "ACKS.combatStates.overnumbering", img: "icons/svg/regen.svg", hud: false },
+    { id: "done", name: "ACKS.combatStates.done", img: "icons/svg/cancel.svg", hud: false },
+    { id: "readied", name: "ACKS.combatStates.readied", img: "icons/svg/ice-aura.svg", hud: false },
+    { id: "delayed", name: "ACKS.combatStates.delayed", img: "icons/svg/clockwork.svg", hud: false },
   ],
   scores: {
     str: "ACKS.scores.str.long",

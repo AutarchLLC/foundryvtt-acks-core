@@ -10,6 +10,16 @@ export const registerMainSettings = async () => {
     requiresReload: true,
   });
 
+  game.settings.register("acks", "core-status-effects", {
+    name: game.i18n.localize("ACKS.Setting.coreStatusEffects"),
+    hint: game.i18n.localize("ACKS.Setting.coreStatusEffectsHint"),
+    default: false,
+    scope: "world",
+    type: Boolean,
+    config: true,
+    requiresReload: true,
+  });
+
   game.settings.register("acks", "welcomeMessageVersion", {
     name: "Last system version welcome message was shown for",
     scope: "world",
