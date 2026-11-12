@@ -63,7 +63,11 @@ export const ACKS = {
       name: "ACKS.conditions.enthralled",
       img: "systems/acks/assets/icons/conditions/paranoia.svg",
     },
-    { id: "faltering", name: "ACKS.conditions.faltering", img: "systems/acks/assets/icons/conditions/liar.svg" },
+    {
+      id: "faltering",
+      name: "ACKS.conditions.faltering",
+      img: "systems/acks/assets/icons/conditions/liar-no-nose.svg",
+    },
     { id: "fatigued", name: "ACKS.conditions.fatigued", img: "systems/acks/assets/icons/conditions/tired-eye.svg" },
     { id: "flanked", name: "ACKS.conditions.flanked", img: "systems/acks/assets/icons/conditions/encirclement.svg" },
     { id: "forgetful", name: "ACKS.conditions.forgetful", img: "systems/acks/assets/icons/conditions/brain-dump.svg" },
