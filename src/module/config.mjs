@@ -108,7 +108,11 @@ export const ACKS = {
     { id: "prone", name: "ACKS.conditions.prone", img: "icons/svg/falling.svg" },
     { id: "queasy", name: "ACKS.conditions.queasy", img: "systems/acks/assets/icons/conditions/dead-head.svg" },
     { id: "restrained", name: "ACKS.conditions.restrained", img: "icons/svg/net.svg" },
-    { id: "shaken", name: "ACKS.conditions.shaken", img: "systems/acks/assets/icons/conditions/shaking-hands.svg" },
+    {
+      id: "shaken",
+      name: "ACKS.conditions.shaken",
+      img: "systems/acks/assets/icons/conditions/dead-head-wavy-mouth.svg",
+    },
     { id: "shrunk", name: "ACKS.conditions.shrunk", img: "systems/acks/assets/icons/conditions/contract.svg" },
     { id: "slumbering", name: "ACKS.conditions.slumbering", img: "icons/svg/sleep.svg" },
     { id: "sneaking", name: "ACKS.conditions.sneaking", img: "systems/acks/assets/icons/conditions/hood.svg" },
