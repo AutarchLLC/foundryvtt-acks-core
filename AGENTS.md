@@ -8,7 +8,9 @@ Vanilla ES modules (`.mjs`), no TypeScript, no framework.
 **Targets Foundry v14 and later only** (`system.json` → `compatibility.minimum: "14.359"`).
 Use current v14 APIs directly: namespaced classes (`foundry.applications.*`, `foundry.documents.*`,
 `foundry.data.fields.*`), ApplicationV2 / DialogV2, `renderChatMessageHTML`, `ForcedDeletion`.
-No compatibility shims for v13 or earlier, and avoid APIs Foundry has deprecated.
+No compatibility code for older Foundry versions, and avoid APIs Foundry has deprecated. A deprecation
+shim for one of the system's own breaking data changes is allowed when it logs
+`foundry.utils.logCompatibilityWarning` with `since`/`until` versions and is removed at `until`.
 
 ## Foundry Core Source (reference only)
 
