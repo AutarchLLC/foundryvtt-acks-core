@@ -54,7 +54,7 @@ test.describe("status effects", () => {
       combatStates: CONFIG.ACKS.combatStates.map((c) => c.id),
     }));
 
-    expect(conditions).toHaveLength(60);
+    expect(conditions).toHaveLength(59);
     expect(hudIds.toSorted()).toEqual([...conditions, ...KEPT_CORE].toSorted());
     for (const id of [...combatStates, ...DROPPED_CORE]) expect(hudIds).not.toContain(id);
   });

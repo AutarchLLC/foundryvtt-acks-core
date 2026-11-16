@@ -122,7 +122,6 @@ export const ACKS = {
     { id: "sneaking", name: "ACKS.conditions.sneaking", img: "systems/acks/assets/icons/conditions/hood.svg" },
     { id: "starving", name: "ACKS.conditions.starving", img: "systems/acks/assets/icons/conditions/ribcage.svg" },
     { id: "stuck", name: "ACKS.conditions.stuck", img: "systems/acks/assets/icons/conditions/sticky-boot.svg" },
-    { id: "subjacent", name: "ACKS.conditions.subjacent", img: "icons/svg/down.svg" },
     { id: "surprised", name: "ACKS.conditions.surprised", img: "systems/acks/assets/icons/conditions/surprised.svg" },
     { id: "unconscious", name: "ACKS.conditions.unconscious", img: "icons/svg/unconscious.svg" },
     { id: "underfed", name: "ACKS.conditions.underfed", img: "systems/acks/assets/icons/conditions/hot-meal.svg" },
