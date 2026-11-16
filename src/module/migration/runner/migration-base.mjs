@@ -23,6 +23,11 @@ export default class MigrationBase {
    *   - Original _id missing from result → deleteEmbeddedDocuments
    *   - Do NOT copy an existing item with its _id to "duplicate" it — that updates the original.
    *
+   * Embedded active effects follow the same rules through source.effects: edit an entry in place,
+   * push one without an _id to create it, filter one out to delete it. Only effects whose data
+   * changed are written. For an unlinked token, source.effects is the synthetic actor's full list
+   * (base actor plus delta), and changes land in the delta.
+   *
    * To delete a field from the DB use foundry.data.operators.ForcedDeletion (v14+).
    * The old "-=fieldName": null syntax still works in v14 but is deprecated (removed in v16).
    *

@@ -8,5 +8,5 @@ Conditions carry only a name and an icon, never a description. The Condition rul
 
 ## Consequences
 
-- Core status effects already on actors in existing worlds are left untouched. Whether and how to convert them is tracked in #231.
+- Schema migration 6 converts core status effects already on actors in existing worlds (#231). The eight core ids with a clear ACKS match (`blind`, `deaf`, `sleep`, `restrain`, `paralysis`, `silence`, `fear`, `bless`) become the ACKS Condition; a plain status effect also takes its name and icon, and is dropped if the actor already has that Condition. Core ids without a match are left alone: GMs can delete them or turn on the world setting to toggle them again. Effects inside items and in read-only compendiums are not converted.
 - Combat States (Done, Readied, Delayed, Overnumbered) are registered as status effects but hidden from the token HUD; the combat tracker manages them.

@@ -64,7 +64,7 @@ export default class MigrationRunner {
             const raw = actor.toObject();
             const actorUpdate = await this.#buildActorUpdate(raw, migrations);
             if (actorUpdate) {
-              await this.#commitActorItems(actor, raw.items, actorUpdate);
+              await this.#commitActorEmbedded(actor, raw, actorUpdate);
               actorUpdates.push({ _id: actor.id, ...actorUpdate });
             }
           }
@@ -128,7 +128,7 @@ export default class MigrationRunner {
       const raw = actor.toObject();
       const actorUpdate = await this.#buildActorUpdate(raw, migrations);
       if (actorUpdate) {
-        await this.#commitActorItems(actor, raw.items, actorUpdate);
+        await this.#commitActorEmbedded(actor, raw, actorUpdate);
         actorUpdates.push({ _id: actor.id, ...actorUpdate });
       }
     }
@@ -160,6 +160,12 @@ export default class MigrationRunner {
   /**
    * Migrate unlinked token deltas on all scenes. Linked tokens are skipped since they derive their data
    * from the world actor, which is migrated before.
+   *
+   * A delta whose system data is overridden and behind the current schema is migrated in full.
+   * A delta that only adds or overrides effects is migrated for its effects alone: migrations see the
+   * synthetic actor's system data for context, but only effect changes are written.
+   * Migrations see the synthetic actor's full effect list (base actor plus delta), and only the
+   * effects that change end up in the delta.
    * @param {MigrationBase[]} migrations
    * @return {Promise<void>}
    */
@@ -172,30 +178,40 @@ export default class MigrationRunner {
         }
 
         const deltaObj = token.delta.toObject();
-        if (!deltaObj.system || Object.keys(deltaObj.system).length === 0) {
-          continue;
-        }
-        if (isCurrentSchema(deltaObj.system)) {
+        const hasSystem = deltaObj.system && Object.keys(deltaObj.system).length > 0;
+        const migrateSystem = hasSystem && !isCurrentSchema(deltaObj.system);
+        const hasEffects = (deltaObj.effects ?? []).some((e) => !e._tombstone);
+        const syntheticActor = token.actor;
+        if (!migrateSystem && !(hasEffects && syntheticActor)) {
           continue;
         }
 
         // Build a filtered clone — exclude tombstone records before migrating.
         // deltaObj.items contains only overridden/added items + tombstone markers.
         const originalItems = (deltaObj.items ?? []).filter((i) => !i._tombstone);
+        const originalEffects = syntheticActor ? syntheticActor.effects.map((e) => e.toObject()) : [];
         const source = foundry.utils.deepClone(deltaObj);
         source.items = foundry.utils.deepClone(originalItems);
+        source.effects = foundry.utils.deepClone(originalEffects);
+        if (!migrateSystem) {
+          source.system = syntheticActor.system.toObject();
+        }
 
         // Shared migration core — same loop as world actors.
         await this.#applyActorMigrations(source, migrations);
 
-        // Sync item roster changes through the synthetic actor.
-        const syntheticActor = token.actor;
+        // Sync embedded changes through the synthetic actor.
         if (syntheticActor) {
-          await this.#commitActorItems(syntheticActor, originalItems, source);
+          await this.#commitEmbedded(syntheticActor, "ActiveEffect", originalEffects, source.effects);
+          if (migrateSystem) {
+            await this.#commitEmbedded(syntheticActor, "Item", originalItems, source.items);
+          }
         }
 
         // Write migrated system data back via the ActorDelta path on the TokenDocument.
-        await scene.updateEmbeddedDocuments("Token", [{ _id: token.id, "delta.system": source.system }]);
+        if (migrateSystem) {
+          await scene.updateEmbeddedDocuments("Token", [{ _id: token.id, "delta.system": source.system }]);
+        }
       }
     }
   }
@@ -260,34 +276,52 @@ export default class MigrationRunner {
   }
 
   /**
-   * Diff items before/after migration and write creates/deletes/updates to the DB.
-   * Removes the `.items` key from actorUpdate (embedded docs are managed separately).
+   * Write an actor's migrated items and effects to the DB, then remove them from actorUpdate
+   * (embedded docs are managed separately from the actor update).
    *
-   * @param {Actor} actor            Live Actor (or synthetic token actor) document.
-   * @param {object[]} originalItems Array of item plain objects before migration.
-   * @param {object} actorUpdate     Migrated actor plain object. Mutated: .items deleted.
+   * @param {Actor} actor        Live Actor document.
+   * @param {object} raw         Actor plain object before migration.
+   * @param {object} actorUpdate Migrated actor plain object. Mutated: .items and .effects deleted.
    */
-  async #commitActorItems(actor, originalItems, actorUpdate) {
-    const originalIds = new Set((originalItems ?? []).map((i) => i._id));
-    const updatedItems = actorUpdate.items ?? [];
-    const updatedIds = new Set(updatedItems.filter((i) => i._id).map((i) => i._id));
-
-    const deletedIds = [...originalIds].filter((id) => !updatedIds.has(id));
-    if (deletedIds.length) {
-      await actor.deleteEmbeddedDocuments("Item", deletedIds);
-    }
-
-    const createdItems = updatedItems.filter((i) => !i._id);
-    if (createdItems.length) {
-      await actor.createEmbeddedDocuments("Item", createdItems);
-    }
-
-    const itemUpdates = updatedItems.filter((i) => i._id && originalIds.has(i._id));
-    if (itemUpdates.length) {
-      await actor.updateEmbeddedDocuments("Item", itemUpdates);
-    }
-
+  async #commitActorEmbedded(actor, raw, actorUpdate) {
+    await this.#commitEmbedded(actor, "Item", raw.items, actorUpdate.items);
+    await this.#commitEmbedded(actor, "ActiveEffect", raw.effects, actorUpdate.effects);
     delete actorUpdate.items;
+    delete actorUpdate.effects;
+  }
+
+  /**
+   * Diff embedded documents before/after migration by _id and write creates/deletes/updates to the DB:
+   *   - Entry without _id → created
+   *   - Original _id missing from the result → deleted
+   *   - Entry whose data changed → updated. Unchanged entries are not written, so a token delta
+   *     gains no needless overrides of its base actor's documents.
+   *
+   * @param {Actor} actor           Live Actor (or synthetic token actor) document.
+   * @param {string} documentName   Embedded document name, "Item" or "ActiveEffect".
+   * @param {object[]} originals    Plain objects before migration.
+   * @param {object[]} migrated     Plain objects after migration.
+   */
+  async #commitEmbedded(actor, documentName, originals = [], migrated = []) {
+    const originalById = new Map(originals.map((d) => [d._id, d]));
+    const migratedIds = new Set(migrated.filter((d) => d._id).map((d) => d._id));
+
+    const deletedIds = [...originalById.keys()].filter((id) => !migratedIds.has(id));
+    if (deletedIds.length) {
+      await actor.deleteEmbeddedDocuments(documentName, deletedIds);
+    }
+
+    const created = migrated.filter((d) => !d._id);
+    if (created.length) {
+      await actor.createEmbeddedDocuments(documentName, created);
+    }
+
+    const updated = migrated.filter(
+      (d) => originalById.has(d._id) && !foundry.utils.equals(originalById.get(d._id), d),
+    );
+    if (updated.length) {
+      await actor.updateEmbeddedDocuments(documentName, updated);
+    }
   }
 
   /**

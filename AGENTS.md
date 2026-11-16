@@ -195,7 +195,8 @@ src/module/migration/
 
 ### Rules
 
-- `updateActor(source)`: mutate `source.system.*` and manage the `source.items` roster (add/remove).
+- `updateActor(source)`: mutate `source.system.*`, manage the `source.items` roster (add/remove) and edit
+  `source.effects` (embedded active effects, diffed by `_id` like items).
 - `updateItem(source, actorSource)`: mutate item fields only; never touch `source.items`.
 - Delete a stored field with `new foundry.data.operators.ForcedDeletion()`. Do not use the
   deprecated `"-=field": null` syntax.

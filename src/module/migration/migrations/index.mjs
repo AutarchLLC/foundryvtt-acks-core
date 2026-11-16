@@ -3,3 +3,4 @@ export { Migration2ItemWeightToStone } from "./m2-item-weight.mjs";
 export { Migration3LanguagesToItems } from "./m3-languages-to-items.mjs";
 export { Migration4WeaponsRework } from "./m4-weapons-rework.mjs";
 export { Migration5DataCleanup } from "./m5-data-cleanup.mjs";
+export { Migration6CoreStatusEffects } from "./m6-core-status-effects.mjs";
