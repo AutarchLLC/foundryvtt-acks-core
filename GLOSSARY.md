@@ -17,3 +17,29 @@ _Avoid_: Condition, combat status
 **Status Effect**:
 Foundry's umbrella term for any toggleable marker on a token. Both Conditions and Combat States are Status Effects.
 _Avoid_: Using it to mean only Conditions
+
+### Inventory
+
+**Physical Item**:
+Equipment a character can own, carry and weigh: gear, clothing, weapons and armour. Money is not a Physical Item.
+_Avoid_: Gear (gear is one kind of Physical Item)
+
+**Quantity**:
+How many identical objects one inventory entry stands for, such as 20 arrows or 6 torches. Every Physical Item and every Money entry has one. Weight and value scale with it. It can be zero, as when the last torch is used up, and the entry stays in the inventory. For Money, Quantity is the Carried coins only; the Money total is Carried plus Banked.
+_Avoid_: Count, amount, stack size
+
+**Money**:
+Coins of one denomination, such as gold or copper pieces. Each kind has a value in copper pieces and is split into a Carried part and a Banked part.
+_Avoid_: Treasure (treasure includes things that are not coins)
+
+**Carried**:
+The part of a Money entry the character has on them. Only Carried coins add encumbrance.
+_Avoid_: On hand, on person
+
+**Banked**:
+The part of a Money entry held at a bank or in storage, away from the character. It adds no encumbrance.
+_Avoid_: Stored, saved
+
+**Bundle**:
+A ready-made package of Physical Items and Money with a Quantity for each, such as a starting kit. Dropping it on a character gives them its contents.
+_Avoid_: Kit, pack
