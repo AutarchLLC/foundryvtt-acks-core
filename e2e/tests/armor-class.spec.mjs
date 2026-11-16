@@ -7,11 +7,8 @@ import { createActor, expect, test } from "../support/foundry.mjs";
  * @param {string} name
  * @returns {Promise<string>}
  */
-async function createDexterousCharacter(page, name) {
-  // AcksActor.create drops system creation data, so DEX is set by an update.
-  const actorId = await createActor(page, { name, type: "character" });
-  await page.evaluate((id) => game.actors.get(id).update({ "system.scores.dex.value": 16 }), actorId);
-  return actorId;
+function createDexterousCharacter(page, name) {
+  return createActor(page, { name, type: "character", system: { scores: { dex: { value: 16 } } } });
 }
 
 /**
