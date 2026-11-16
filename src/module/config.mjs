@@ -19,7 +19,7 @@ export const ACKS = {
     { id: "blinded", name: "ACKS.conditions.blinded", img: "icons/svg/blind.svg" },
     { id: "burning", name: "ACKS.conditions.burning", img: "icons/svg/fire.svg" },
     { id: "charging", name: "ACKS.conditions.charging", img: "systems/acks/assets/icons/conditions/charging-bull.svg" },
-    { id: "choking", name: "ACKS.conditions.choking", img: "systems/acks/assets/icons/conditions/dead-head.svg" },
+    { id: "choking", name: "ACKS.conditions.choking", img: "systems/acks/assets/icons/conditions/dead-head-mute.svg" },
     {
       id: "clambering",
       name: "ACKS.conditions.clambering",
