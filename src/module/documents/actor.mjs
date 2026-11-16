@@ -20,7 +20,8 @@ export default class AcksActor extends Actor {
       return super.create(data, options);
     }
 
-    data.system = { isNew: true }; // Flag the actor as new
+    // Flag the actor as new, keeping any system data the caller passed
+    data.system = { isNew: true, ...data.system };
     if (data.type === "character") {
       const skills = await AcksUtility.loadCompendium("acks.acks-all-equipment");
       data.items = skills.map((i) => i.toObject()).filter((i) => i.type === "money");
