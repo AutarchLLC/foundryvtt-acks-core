@@ -124,7 +124,7 @@ export const ACKS = {
     { id: "stuck", name: "ACKS.conditions.stuck", img: "systems/acks/assets/icons/conditions/sticky-boot.svg" },
     { id: "surprised", name: "ACKS.conditions.surprised", img: "systems/acks/assets/icons/conditions/surprised.svg" },
     { id: "unconscious", name: "ACKS.conditions.unconscious", img: "icons/svg/unconscious.svg" },
-    { id: "underfed", name: "ACKS.conditions.underfed", img: "systems/acks/assets/icons/conditions/hot-meal.svg" },
+    { id: "underfed", name: "ACKS.conditions.underfed", img: "systems/acks/assets/icons/conditions/pig-face.svg" },
     { id: "vexed", name: "ACKS.conditions.vexed", img: "systems/acks/assets/icons/conditions/imp-laugh.svg" },
     { id: "vomiting", name: "ACKS.conditions.vomiting", img: "systems/acks/assets/icons/conditions/vomiting.svg" },
     {
@@ -134,7 +134,7 @@ export const ACKS = {
     },
     { id: "webbed", name: "ACKS.conditions.webbed", img: "systems/acks/assets/icons/conditions/spider-web.svg" },
     { id: "winded", name: "ACKS.conditions.winded", img: "systems/acks/assets/icons/conditions/lungs.svg" },
-    { id: "wrestled", name: "ACKS.conditions.wrestled", img: "systems/acks/assets/icons/conditions/grapple.svg" },
+    { id: "wrestled", name: "ACKS.conditions.wrestled", img: "systems/acks/assets/icons/conditions/pin.svg" },
   ],
   /**
    * Combat States: initiative bookkeeping managed by the combat tracker, hidden from the token HUD.
