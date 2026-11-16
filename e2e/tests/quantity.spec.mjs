@@ -1,4 +1,4 @@
-/* global Actor, DragEvent, Item, foundry, game */
+/* global Actor, DataTransfer, DragEvent, Item, foundry, game */
 import { createActor, expect, openActorSheet, test } from "../support/foundry.mjs";
 import { migrateWorldFrom, readStored, reloadWorld, storeRaw } from "../support/stored-data.mjs";
 
@@ -219,18 +219,65 @@ test.describe("system compendiums", () => {
           badQuantity.push(item.uuid);
         }
       };
-      for (const pack of game.packs.filter((p) => p.metadata.packageName === "acks")) {
-        if (!["Item", "Actor"].includes(pack.documentName)) continue;
+      const missing = [];
+      let checked = 0;
+      for (const { name, type } of game.system.packs) {
+        if (!["Item", "Actor"].includes(type)) continue;
+        // a pack whose database failed to open is left out of game.packs
+        const pack = game.packs.get(`acks.${name}`);
+        if (!pack) {
+          missing.push(name);
+          continue;
+        }
         const documents = await pack.getDocuments();
+        checked += documents.length;
         invalid.push(...[...pack.invalidDocumentIds].map((id) => `${pack.collection}.${id}`));
         for (const document of documents) {
           if (pack.documentName === "Item") check(document);
           else document.items.forEach(check);
         }
       }
-      return { invalid, badQuantity };
+      return { missing, invalid, badQuantity, checked };
     });
 
-    expect(result).toEqual({ invalid: [], badQuantity: [] });
+    expect(result).toMatchObject({ missing: [], invalid: [], badQuantity: [] });
+    expect(result.checked).toBeGreaterThan(0);
+  });
+});
+
+test.describe("inventory drag", () => {
+  test("rows drag by their name, so the quantity input can be selected", async ({ page }) => {
+    const actorId = await createActor(page, {
+      name: "Hauler",
+      type: "character",
+      items: [
+        { name: "Pitons", type: "item" },
+        { name: "Clubs", type: "weapon" },
+        { name: "Shields", type: "armor" },
+        { name: "Boots", type: "item", system: { subtype: "clothing" } },
+      ],
+    });
+    const sheet = await openActorSheet(page, actorId);
+    await page.evaluate((id) => game.actors.get(id).sheet.changeTab("inventory", "primary"), actorId);
+
+    for (const name of ["Pitons", "Clubs", "Shields", "Boots"]) {
+      const row = sheet.locator(".tab[data-tab='inventory'] li[data-item-id]", { hasText: name });
+      await expect(row).not.toHaveAttribute("draggable", "true");
+      await expect(row.locator("input[data-name='system.quantity']")).not.toHaveAttribute("draggable", "true");
+      const handle = row.locator("[draggable='true']");
+      await expect(handle).toHaveCount(1);
+      await expect(handle).toContainText(name);
+
+      const dragData = await handle.evaluate((element) => {
+        const dataTransfer = new DataTransfer();
+        element.dispatchEvent(new DragEvent("dragstart", { dataTransfer, bubbles: true }));
+        return JSON.parse(dataTransfer.getData("text/plain"));
+      });
+      const uuid = await page.evaluate(({ id, name }) => game.actors.get(id).items.getName(name).uuid, {
+        id: actorId,
+        name,
+      });
+      expect(dragData).toMatchObject({ type: "Item", uuid });
+    }
   });
 });

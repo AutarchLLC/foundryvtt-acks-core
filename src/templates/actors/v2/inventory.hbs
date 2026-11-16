@@ -52,7 +52,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.weapons as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -62,7 +62,8 @@
                   </div>
 
                   <!-- Weapon Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
@@ -178,7 +179,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.armors as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -188,7 +189,8 @@
                   </div>
 
                   <!-- Armor Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
@@ -271,7 +273,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.items as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -281,7 +283,8 @@
                   </div>
 
                   <!-- Item Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
@@ -349,7 +352,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.clothes as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -359,7 +362,8 @@
                   </div>
 
                   <!-- Item Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
