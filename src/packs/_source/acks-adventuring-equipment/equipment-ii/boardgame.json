@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Rulers and officers enjoy the intellectual stimulation of a variety of strategic boardgames. The listed price is for a basic wooden board with bone or stone pieces. Vastly more expensive boardgames may feature inlaid woods, precious metals, and gemcarved pieces. Historical examples include the Egyptian senet (\"passing\"), Germanic hnefatafl (\"king's table\"), Indian chaturanga (\"game of four divisions\"), Roman latrones (\"game of brigands\"), and Sumerian ur (\"game of twenty squares\"). In the Auran Empire, the most popular boardgame is kyrpeges (\"wargame\").</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 5,
     "weight6": 6,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

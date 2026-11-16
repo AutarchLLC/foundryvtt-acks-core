@@ -169,11 +169,12 @@
         "cost": 0,
         "equipped": false,
         "weight6": 0,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [],
         "size": "na",
         "category": "other",

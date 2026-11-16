@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A crusader must have a holy symbol in order to rebuke undead and maintain their code of behavior. These symbols will be different for each religion, but they are often worn as a necklace. In the Auran Empire, the holy symbol of Ammonar is the winged sun.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 25,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

@@ -56,6 +56,8 @@ Tests live in `e2e/tests/*.spec.mjs` and import `test` / `expect` from `e2e/supp
   sheets or dialogs. The login is shared by all tests, because joining takes a few seconds.
 - A test fails if the page throws an uncaught exception, even when its own assertions pass.
 - Helpers: `createActor`, `openActorSheet`, `dialog(page, title)`, `latestChatMessage`.
+- `support/stored-data.mjs` seeds and reads documents in their stored (raw) form for migration specs:
+  `storeRaw`, `readStored`, `migrateWorldFrom`, `reloadWorld`.
 
 Prefer `page.evaluate` against the Foundry API (`game.actors`, `actor.update`, …) for setup and data
 assertions, and real clicks for the behaviour under test (sheet actions, dialogs, chat cards).

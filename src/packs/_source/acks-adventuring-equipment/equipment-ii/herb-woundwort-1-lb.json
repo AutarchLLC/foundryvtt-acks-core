@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Woundwort, also known as heal-all or lamb's ear, is a herbal medicine with curative properties. An adventurer with Healing proficiency can use 1 lb of woundwort to make a tincture to treat injured characters. Used in this manner, it provides a +2 bonus on proficiency throws to <em>cure light injury</em> and <em>cure serious injury</em>.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

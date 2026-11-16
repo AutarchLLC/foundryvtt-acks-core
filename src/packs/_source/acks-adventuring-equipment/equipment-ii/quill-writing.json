@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A writing implement made from the flight feather of a large bird such as an eagle, goose, or swan. A carefully-maintained quill can write 50 pages before replacement is required.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 1,
     "weight6": 0,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "30 stones for slinging.",
-    "quantity": {
-      "value": 30
-    },
+    "quantity": 30,
     "cost": 0,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

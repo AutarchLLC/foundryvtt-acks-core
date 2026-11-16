@@ -46,11 +46,12 @@
     "cost": 2,
     "equipped": false,
     "weight6": 1,
+    "quantity": 1,
     "counter": {
       "value": 0,
       "max": 0
     },
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "customTags": [
       "Missile"
     ],

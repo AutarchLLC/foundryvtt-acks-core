@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A round wooden container. A 20-gallon barrel weighs 2 st if empty or 15 st if full.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 0.3,
     "weight6": 12,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

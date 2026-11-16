@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Goldenrod is a healing herb used to treat diseases such as rheumatism, gout, and consumption. An adventurer with Healing proficiency can use a tincture made from 1 lb of goldenrod to treat sick characters. Used in this manner, it provides a +2 bonus on the Healing proficiency throw to <em>cure disease</em>.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

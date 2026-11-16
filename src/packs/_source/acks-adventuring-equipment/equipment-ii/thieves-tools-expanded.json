@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Expanded thieves' tools includes drills, pliers, scissors, rods, blocks, pads, tweezers, shims, and a magnifying glass. They grant a +2 bonus to Lockpicking and Trapbreaking proficiency throws. If the thief rolls a natural 1 while attempting to pick a lock, the tools may make a Death saving throw (at half the thief 's level of experience) to resist breaking (see the Adventuring chapter, p. 91). The bonus does not apply to hijinks.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 200,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

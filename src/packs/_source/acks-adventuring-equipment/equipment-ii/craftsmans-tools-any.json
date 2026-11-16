@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Craftsman's tools include the various implements used by tradesman in their craft. Craftsman's tools are required to make Craft proficiency throws. Each craft has its own specific type of craftsman's tools. Craftsman's tools weigh 1 stone.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 25,
     "weight6": 6,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

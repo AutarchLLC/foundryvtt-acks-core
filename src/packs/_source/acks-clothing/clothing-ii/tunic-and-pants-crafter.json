@@ -6,12 +6,10 @@
   "system": {
     "subtype": "clothing",
     "description": "A tunic is a loose-fitting linen, silk or wool garment that covers the body between the shoulders and the knees. Depending on their quality, tunics can be simple and plain or dyed, decorated, and embroidered. They are available in sleeveless, short-sleeved, or long-sleeved variants. In cool temperatures, tunics are usually worn with matching trousers. Historical examples include the Greek exomis, Roman tunica, and Byzantine dalmatica.",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 2,
     "weight6": 0,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

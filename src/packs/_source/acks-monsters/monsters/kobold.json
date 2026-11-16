@@ -55,11 +55,12 @@
         "cost": 7,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [],
         "size": "na",
         "category": "other",
@@ -137,11 +138,12 @@
         "cost": 3,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [],
         "size": "na",
         "category": "other",
@@ -191,12 +193,10 @@
       "system": {
         "subtype": "item",
         "description": "<p>Military oil is a weapon made of naphtha, and cannot be easily doused with water. Military oil may be thrown at monsters, dealing <a class=\"inline-roll roll\" data-mode=\"roll\" data-flavor=\"Flaming oil!\" data-formula=\"1d8\" title=\"Flaming oil!\"><i class=\"fas fa-dice-d20\"></i> 1d8</a> points of damage for 2 rounds to the creature struck, or poured on the floor and ignited to delay pursuit.</p>",
-        "quantity": {
-          "value": 1
-        },
+        "quantity": 1,
         "cost": 2,
         "weight6": 1,
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "charges": {
           "value": 0,
           "max": 0

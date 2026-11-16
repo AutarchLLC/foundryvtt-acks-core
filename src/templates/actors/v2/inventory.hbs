@@ -34,6 +34,8 @@
 
           <div class="item__special">{{localize "ACKS.items.Special"}}</div>
 
+          <div class="item__count"><i class="fas fa-hashtag"></i></div>
+
           <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
 
           {{#if owner}}
@@ -50,7 +52,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.weapons as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -60,7 +62,8 @@
                   </div>
 
                   <!-- Weapon Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
@@ -85,8 +88,14 @@
                     {{ tagList item.system.tags.special }}
                   </div>
 
-                  <!-- Item Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight item.system.weight6}}</div>
+                  <!-- Weapon Quantity -->
+                  <div class="item__count">
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
+                  </div>
+
+                  <!-- Weapon Weight in 1/6th stones -->
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Weapon Controls -->
                   {{#if ../owner}}
@@ -152,6 +161,8 @@
 
           <div class="item__ac">{{localize "ACKS.items.ArmorAC"}}</div>
 
+          <div class="item__count"><i class="fas fa-hashtag"></i></div>
+
           <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
 
           {{#if owner}}
@@ -168,7 +179,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.armors as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -178,15 +189,22 @@
                   </div>
 
                   <!-- Armor Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
                   <!-- Armor Class -->
                   <div class="item__ac">{{item.system.ac.value}}</div>
 
+                  <!-- Armor Quantity -->
+                  <div class="item__count">
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
+                  </div>
+
                   <!-- Armor Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight item.system.weight6}}</div>
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Armor Controls -->
                   {{#if ../owner}}
@@ -255,7 +273,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.items as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -265,18 +283,19 @@
                   </div>
 
                   <!-- Item Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
                   <!-- Item Count -->
                   <div class="item__count">
-                    <input class="item-input small" type="number" data-name="system.quantity.value" data-kind="item"
-                           value="{{item.system.quantity.value}}" data-dtype="Number"/>
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
                   </div>
 
                   <!-- Item Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity.value)}}</div>
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Item Controls -->
                   {{#if ../owner}}
@@ -333,7 +352,7 @@
         <div class="item-list-wrapper expanded">
           <ul class="item-list unlist">
             {{#each owned.clothes as |item|}}
-              <li class="item draggable" data-item-id="{{item._id}}">
+              <li class="item" data-item-id="{{item._id}}">
 
                 <div class="item-row">
 
@@ -343,18 +362,19 @@
                   </div>
 
                   <!-- Item Name -->
-                  <div class="item__name">
+                  <!-- the name is the drag handle, so the row's inputs stay selectable -->
+                  <div class="item__name draggable" data-item-id="{{item._id}}">
                     <a data-action="toggleSummary">{{item.name}}</a>
                   </div>
 
                   <!-- Item Count -->
                   <div class="item__count">
-                    <input class="item-input small" type="number" data-name="system.quantity.value" data-kind="item"
-                           value="{{item.system.quantity.value}}" data-dtype="Number"/>
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
                   </div>
 
                   <!-- Item Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity.value)}}</div>
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Item Controls -->
                   {{#if ../owner}}

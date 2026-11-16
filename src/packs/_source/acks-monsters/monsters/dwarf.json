@@ -93,11 +93,12 @@
         "cost": 10,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [],
         "size": "na",
         "category": "other",
@@ -175,11 +176,12 @@
         "cost": 5,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [],
         "size": "na",
         "category": "other",
@@ -257,11 +259,12 @@
         "cost": 5,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [],
         "size": "na",
         "category": "other",
@@ -339,11 +342,12 @@
         "cost": 4,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [],
         "size": "na",
         "category": "other",
@@ -396,7 +400,8 @@
         "cost": 10,
         "equipped": false,
         "weight6": 1,
-        "_schemaVersion": 5,
+        "quantity": 1,
+        "_schemaVersion": 8,
         "ac": {
           "value": null
         }
@@ -457,11 +462,12 @@
         "cost": 0,
         "equipped": false,
         "weight6": 0,
+        "quantity": 1,
         "counter": {
           "value": 0,
           "max": 0
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "special": {
           "cleave": true,
           "entangling": false,
@@ -517,7 +523,8 @@
         "cost": 40,
         "equipped": false,
         "weight6": 3,
-        "_schemaVersion": 5,
+        "quantity": 1,
+        "_schemaVersion": 8,
         "ac": {
           "value": 4
         }

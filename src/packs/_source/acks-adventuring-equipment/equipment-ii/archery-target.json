@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A device for training troops in marksmanship. An archery target is a 2' diameter board of soft wood, usually covered by thick cloth or cork. Trainees practice shooting at the target at various ranges, aiming to land the highest possible number of arrows into the target within a given time. The cost of archery targets is already included in the training costs for missile troops. An archery target weighs 2 stone (20 lbs).</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 0.3,
     "weight6": 12,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

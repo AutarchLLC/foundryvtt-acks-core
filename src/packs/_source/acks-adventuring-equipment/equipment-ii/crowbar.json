@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A crowbar is a long, slender bar of solid iron with a curved hook on one end, used to lever against objects to apply force. 2' to 3' long and made of solid iron. A crowbar grants a +2 bonus to Dungeonbashing proficiency throws to open doors, smash crates, and so on. If used in melee, a crowbar counts as a club.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 1,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

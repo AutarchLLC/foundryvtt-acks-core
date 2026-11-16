@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A journal is a folded parchment or papyrus notebook used for writing ship's logs, maps, illustrations, and book-keeping entries. A journal has 50 pages and is considerably less sturdy than a spell book. A historical example is the Roman pugillares membrane.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

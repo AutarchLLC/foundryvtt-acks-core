@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Superior thieves' tools have the same components as expanded thieves' tools but are crafted with incredible precision. They grant a +4 to proficiency throws to Lockpicking and Trapbreaking proficiency throws. If the thief rolls a natural 1 while attempting to pick a lock, the tools can make a Death saving throw (at the thief 's level) to resist breaking (see the Adventuring chapter, p. 266). The bonus does not apply to hijinks.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 1600,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

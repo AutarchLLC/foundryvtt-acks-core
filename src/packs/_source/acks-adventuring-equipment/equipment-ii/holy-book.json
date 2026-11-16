@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A holy book is a parchment, papyrus, or vellum codex or scroll of religious writings. Access to a relevant holy book grants a +2 bonus on Theology proficiency throws. A typical holy book is 12\"-13\" tall, 9\"-10\" wide, and about 1.5\" thick. It counts as 1/2 stone or three items for encumbrance purposes. Historical examples include the Egyptian Book of the Dead, the Ancient Greek Theogony, and the Chinese Tao Te Ching. In the Auran Empire, the Seven Radiant Scrolls are the most widely-read holy books.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 20,
     "weight6": 3,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

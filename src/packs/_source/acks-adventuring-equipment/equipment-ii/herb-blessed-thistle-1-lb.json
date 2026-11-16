@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Blessed thistle, also known as spotted thistle, is a healing herb that helps wounds heal more quickly. A character with the Healing proficiency can use a poultice made from 1 lb of blessed thistle to treat a wounded patient at any time. If the patient rests, the number of hp he recovers from resting that day is doubled. If the patient does not rest, he recovers one-half the hit points he would have recovered if he had rested. Applying the poultice takes 1 round.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

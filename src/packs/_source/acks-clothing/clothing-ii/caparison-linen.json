@@ -6,12 +6,10 @@
   "system": {
     "subtype": "clothing",
     "description": "The often ornamental coverings for an animal, eecially a horse or an elephant.",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 0,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0
