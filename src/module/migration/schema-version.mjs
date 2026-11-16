@@ -18,7 +18,7 @@
  *
  * @type {number}
  */
-export const CURRENT_SCHEMA_VERSION = 6; // bump to highest migration version when you add migrations
+export const CURRENT_SCHEMA_VERSION = 7; // bump to highest migration version when you add migrations
 
 /**
  * True when the given raw system data object is already at the current schema.

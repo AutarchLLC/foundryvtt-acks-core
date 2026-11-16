@@ -1,6 +1,20 @@
 /* global foundry, game, Actor, Item, ui */
-import { CURRENT_SCHEMA_VERSION, isCurrentSchema } from "../schema-version.mjs";
+import MigrationUtil from "../migration-util.mjs";
 
+/**
+ * Runs migrations over everything the GM can write: world actors and their embedded documents, world
+ * items, unlinked token deltas and world-owned compendium packs.
+ *
+ * Migrations work on the stored data, read straight from the server (see
+ * {@link MigrationUtil.fetchStoredSources}), never on loaded documents. By the time the runner starts,
+ * `migrateData()` has already converted a loaded document's legacy fields in memory and schema cleaning
+ * has dropped the keys the schema does not know, so a loaded document shows neither the legacy data a
+ * migration reads nor the keys it deletes.
+ *
+ * For the same reason, the migrated `system` data is written as a whole: as a
+ * `ForcedReplacement` with `diff: false`. Foundry's usual update diff compares against the loaded
+ * document, which already looks migrated, and would drop the very values the migration set.
+ */
 export default class MigrationRunner {
   /** @type {MigrationBase[]} */
   #migrations;
@@ -33,6 +47,154 @@ export default class MigrationRunner {
   }
 
   /**
+   * Split #migrations into ordered phases at every requiresFlush boundary.
+   * For example, if a migration creates an item, we need to push it to the database in order to get its id.
+   * This way if a later migration depends on the item actually being created, it will work.
+   */
+  #buildPhases() {
+    const phases = [];
+    const current = [];
+    for (const migration of this.#migrations) {
+      current.push(migration);
+      if (migration.requiresFlush) {
+        phases.push([...current]);
+        current.length = 0;
+      }
+    }
+    if (current.length) {
+      phases.push(current);
+    }
+    return phases;
+  }
+
+  /**
+   * The schema version a document reaches once all the given migrations have run on it.
+   * @param {MigrationBase[]} migrations
+   * @returns {number}
+   */
+  static #targetVersion(migrations) {
+    return Math.max(...migrations.map((migration) => migration.version));
+  }
+
+  /**
+   * The schema version stored on a document's system data, 0 when there is none.
+   * @param {object} source  Stored document data
+   * @returns {number}
+   */
+  static #storedVersion(source) {
+    return source?.system?._schemaVersion ?? 0;
+  }
+
+  /**
+   * Migrate all world actors, including their embedded items and effects.
+   * @param {MigrationBase[]} migrations
+   * @return {Promise<void>}
+   */
+  async #migrateWorldActors(migrations) {
+    const stored = await MigrationUtil.fetchStoredSources("Actor");
+    const actorUpdates = [];
+    for (const actor of game.actors) {
+      const source = stored.get(actor.id);
+      if (source && (await this.#migrateActor(actor, source, migrations))) {
+        actorUpdates.push(MigrationRunner.#systemReplacement(source));
+      }
+    }
+    if (actorUpdates.length) {
+      console.log(`ACKS | Migrating ${actorUpdates.length} world actor(s)…`);
+      await Actor.implementation.updateDocuments(actorUpdates, { diff: false });
+    }
+  }
+
+  /**
+   * Migrate all world items.
+   * @param {MigrationBase[]} migrations
+   * @return {Promise<void>}
+   */
+  async #migrateWorldItems(migrations) {
+    const stored = await MigrationUtil.fetchStoredSources("Item");
+    const itemUpdates = [];
+    for (const item of game.items) {
+      const source = stored.get(item.id);
+      if (source && (await this.#applyItemMigrations(source, migrations))) {
+        itemUpdates.push(MigrationRunner.#systemReplacement(source));
+      }
+    }
+    if (itemUpdates.length) {
+      console.log(`ACKS | Migrating ${itemUpdates.length} world item(s)…`);
+      await Item.implementation.updateDocuments(itemUpdates, { diff: false });
+    }
+  }
+
+  /**
+   * Migrate unlinked token deltas on all scenes. Linked tokens are skipped since they derive their data
+   * from the world actor, which is migrated before.
+   *
+   * A delta whose system data is overridden and behind the target version is migrated in full.
+   * A delta that only adds or overrides effects is migrated for its effects alone: migrations see the
+   * synthetic actor's system data for context, but only effect changes are written.
+   * Migrations see the synthetic actor's full effect list (base actor plus delta), and only the
+   * effects that change end up in the delta.
+   * @param {MigrationBase[]} migrations
+   * @return {Promise<void>}
+   */
+  async #migrateSceneTokens(migrations) {
+    const scenes = game.scenes.filter((scene) => scene.tokens.some((token) => !token.actorLink && token.delta));
+    if (!scenes.length) {
+      return;
+    }
+    const storedScenes = await MigrationUtil.fetchStoredSources("Scene");
+    const targetVersion = MigrationRunner.#targetVersion(migrations);
+
+    for (const scene of scenes) {
+      const storedTokens = new Map((storedScenes.get(scene.id)?.tokens ?? []).map((token) => [token._id, token]));
+      for (const token of scene.tokens) {
+        // Linked tokens derive their data from the world actor (migrated above).
+        const deltaObj = storedTokens.get(token.id)?.delta;
+        if (token.actorLink || !token.delta || !deltaObj) {
+          continue;
+        }
+
+        const hasSystem = deltaObj.system && Object.keys(deltaObj.system).length > 0;
+        const migrateSystem = hasSystem && MigrationRunner.#storedVersion(deltaObj) < targetVersion;
+        const hasEffects = (deltaObj.effects ?? []).some((e) => !e._tombstone);
+        const syntheticActor = token.actor;
+        if (!migrateSystem && !(hasEffects && syntheticActor)) {
+          continue;
+        }
+
+        // Build a filtered clone — exclude tombstone records before migrating.
+        // deltaObj.items contains only overridden/added items + tombstone markers.
+        const originalItems = (deltaObj.items ?? []).filter((i) => !i._tombstone);
+        const originalEffects = syntheticActor ? syntheticActor.effects.map((e) => e.toObject()) : [];
+        const source = foundry.utils.deepClone(deltaObj);
+        source.items = foundry.utils.deepClone(originalItems);
+        source.effects = foundry.utils.deepClone(originalEffects);
+        if (!migrateSystem) {
+          // Context only: this system data is not written. Effect migrations run whatever its version.
+          source.system = { ...syntheticActor.system.toObject(), _schemaVersion: 0 };
+        }
+
+        // Shared migration core — same loop as world actors.
+        await this.#applyActorMigrations(source, migrations);
+
+        // Sync embedded changes through the synthetic actor.
+        if (syntheticActor) {
+          await this.#commitEmbedded(syntheticActor, "ActiveEffect", originalEffects, source.effects);
+          if (migrateSystem) {
+            await this.#commitEmbedded(syntheticActor, "Item", originalItems, source.items);
+          }
+        }
+
+        // Write migrated system data back via the ActorDelta path on the TokenDocument.
+        if (migrateSystem) {
+          const { system } = MigrationRunner.#systemReplacement(source);
+          await scene.updateEmbeddedDocuments("Token", [{ _id: token.id, delta: { system } }], { diff: false });
+        }
+      }
+    }
+  }
+
+  /**
    * Migrate all world-owned (unlockable) compendium packs.
    * System and module compendium packs are read-only at runtime and are skipped —
    * those rely on migrateData() as a safety net instead.
@@ -57,33 +219,25 @@ export default class MigrationRunner {
       }
 
       try {
+        const stored = await MigrationUtil.fetchStoredSources(documentName, pack.collection);
         const documents = await pack.getDocuments();
-        if (documentName === "Actor") {
-          const actorUpdates = [];
-          for (const actor of documents) {
-            const raw = actor.toObject();
-            const actorUpdate = await this.#buildActorUpdate(raw, migrations);
-            if (actorUpdate) {
-              await this.#commitActorEmbedded(actor, raw, actorUpdate);
-              actorUpdates.push({ _id: actor.id, ...actorUpdate });
-            }
+        const updates = [];
+        for (const document of documents) {
+          const source = stored.get(document.id);
+          if (!source) {
+            continue;
           }
-          if (actorUpdates.length) {
-            console.log(`ACKS | Migrating ${actorUpdates.length} actor(s) in compendium "${pack.metadata.label}"…`);
-            await pack.documentClass.updateDocuments(actorUpdates, { pack: pack.collection });
+          const migrated =
+            documentName === "Actor"
+              ? await this.#migrateActor(document, source, migrations)
+              : await this.#applyItemMigrations(source, migrations);
+          if (migrated) {
+            updates.push(MigrationRunner.#systemReplacement(source));
           }
-        } else {
-          const itemUpdates = [];
-          for (const item of documents) {
-            const update = await this.#buildItemUpdate(item.toObject(), migrations);
-            if (update) {
-              itemUpdates.push({ _id: item.id, ...update });
-            }
-          }
-          if (itemUpdates.length) {
-            console.log(`ACKS | Migrating ${itemUpdates.length} item(s) in compendium "${pack.metadata.label}"…`);
-            await pack.documentClass.updateDocuments(itemUpdates, { pack: pack.collection });
-          }
+        }
+        if (updates.length) {
+          console.log(`ACKS | Migrating ${updates.length} document(s) in compendium "${pack.metadata.label}"…`);
+          await pack.documentClass.updateDocuments(updates, { pack: pack.collection, diff: false });
         }
       } catch (err) {
         ui.notifications.error(`ACKS | Failed to migrate compendium "${pack.metadata.label}": ${err.message}`);
@@ -97,197 +251,98 @@ export default class MigrationRunner {
   }
 
   /**
-   * Split #migrations into ordered phases at every requiresFlush boundary.
-   * For example, if a migration creates an item, we need to push it to the database in order to get its id.
-   * This way if a later migration depends on the item actually being created, it will work.
-   */
-  #buildPhases() {
-    const phases = [];
-    const current = [];
-    for (const migration of this.#migrations) {
-      current.push(migration);
-      if (migration.requiresFlush) {
-        phases.push([...current]);
-        current.length = 0;
-      }
-    }
-    if (current.length) {
-      phases.push(current);
-    }
-    return phases;
-  }
-
-  /**
-   * Migrate all world actors, including their embedded items.
-   * @param {MigrationBase[]} migrations
-   * @return {Promise<void>}
-   */
-  async #migrateWorldActors(migrations) {
-    const actorUpdates = [];
-    for (const actor of game.actors) {
-      const raw = actor.toObject();
-      const actorUpdate = await this.#buildActorUpdate(raw, migrations);
-      if (actorUpdate) {
-        await this.#commitActorEmbedded(actor, raw, actorUpdate);
-        actorUpdates.push({ _id: actor.id, ...actorUpdate });
-      }
-    }
-    if (actorUpdates.length) {
-      console.log(`ACKS | Migrating ${actorUpdates.length} world actor(s)…`);
-      await Actor.implementation.updateDocuments(actorUpdates);
-    }
-  }
-
-  /**
-   * Migrate all world items.
-   * @param {MigrationBase[]} migrations
-   * @return {Promise<void>}
-   */
-  async #migrateWorldItems(migrations) {
-    const itemUpdates = [];
-    for (const item of game.items) {
-      const update = await this.#buildItemUpdate(item.toObject(), migrations);
-      if (update) {
-        itemUpdates.push({ _id: item.id, ...update });
-      }
-    }
-    if (itemUpdates.length) {
-      console.log(`ACKS | Migrating ${itemUpdates.length} world item(s)…`);
-      await Item.implementation.updateDocuments(itemUpdates);
-    }
-  }
-
-  /**
-   * Migrate unlinked token deltas on all scenes. Linked tokens are skipped since they derive their data
-   * from the world actor, which is migrated before.
+   * Run the migrations on an actor's stored data and write its migrated items and effects.
+   * The caller writes the actor's own system data.
    *
-   * A delta whose system data is overridden and behind the current schema is migrated in full.
-   * A delta that only adds or overrides effects is migrated for its effects alone: migrations see the
-   * synthetic actor's system data for context, but only effect changes are written.
-   * Migrations see the synthetic actor's full effect list (base actor plus delta), and only the
-   * effects that change end up in the delta.
+   * @param {Actor} actor      Loaded Actor document.
+   * @param {object} source    The actor's stored data. Mutated in place.
    * @param {MigrationBase[]} migrations
-   * @return {Promise<void>}
+   * @returns {Promise<boolean>}  Whether the actor was behind and has been migrated.
    */
-  async #migrateSceneTokens(migrations) {
-    for (const scene of game.scenes) {
-      for (const token of scene.tokens) {
-        // Linked tokens derive their data from the world actor (migrated above).
-        if (token.actorLink || !token.delta) {
-          continue;
-        }
-
-        const deltaObj = token.delta.toObject();
-        const hasSystem = deltaObj.system && Object.keys(deltaObj.system).length > 0;
-        const migrateSystem = hasSystem && !isCurrentSchema(deltaObj.system);
-        const hasEffects = (deltaObj.effects ?? []).some((e) => !e._tombstone);
-        const syntheticActor = token.actor;
-        if (!migrateSystem && !(hasEffects && syntheticActor)) {
-          continue;
-        }
-
-        // Build a filtered clone — exclude tombstone records before migrating.
-        // deltaObj.items contains only overridden/added items + tombstone markers.
-        const originalItems = (deltaObj.items ?? []).filter((i) => !i._tombstone);
-        const originalEffects = syntheticActor ? syntheticActor.effects.map((e) => e.toObject()) : [];
-        const source = foundry.utils.deepClone(deltaObj);
-        source.items = foundry.utils.deepClone(originalItems);
-        source.effects = foundry.utils.deepClone(originalEffects);
-        if (!migrateSystem) {
-          source.system = syntheticActor.system.toObject();
-        }
-
-        // Shared migration core — same loop as world actors.
-        await this.#applyActorMigrations(source, migrations);
-
-        // Sync embedded changes through the synthetic actor.
-        if (syntheticActor) {
-          await this.#commitEmbedded(syntheticActor, "ActiveEffect", originalEffects, source.effects);
-          if (migrateSystem) {
-            await this.#commitEmbedded(syntheticActor, "Item", originalItems, source.items);
-          }
-        }
-
-        // Write migrated system data back via the ActorDelta path on the TokenDocument.
-        if (migrateSystem) {
-          await scene.updateEmbeddedDocuments("Token", [{ _id: token.id, "delta.system": source.system }]);
-        }
-      }
+  async #migrateActor(actor, source, migrations) {
+    const original = foundry.utils.deepClone(source);
+    if (!(await this.#applyActorMigrations(source, migrations))) {
+      return false;
     }
+    await this.#commitEmbedded(actor, "Item", original.items, source.items);
+    await this.#commitEmbedded(actor, "ActiveEffect", original.effects, source.effects);
+    return true;
   }
 
   /**
-   * Deep-clone actorData, apply all migrations, stamp _schemaVersion on actor + items.
-   * Returns null if already at current schema.
+   * Run the actor and item migrations newer than each document's schema version on stored actor data,
+   * then stamp the actor and its items with the version these migrations reach.
    *
-   * @param {object} actorData
+   * @param {object} source  Stored actor data (already deep-cloned). Mutated in place.
    * @param {MigrationBase[]} migrations
-   * @returns {Promise<object|null>}
-   */
-  async #buildActorUpdate(actorData, migrations) {
-    if (isCurrentSchema(actorData.system ?? {})) {
-      return null;
-    }
-    const update = foundry.utils.deepClone(actorData);
-    return this.#applyActorMigrations(update, migrations);
-  }
-
-  /**
-   * Deep-clone itemData, apply all item migrations, stamp _schemaVersion.
-   * Returns null if already at current schema.
-   *
-   * @param {object} itemData  item.toObject() result
-   * @param {MigrationBase[]} migrations
-   * @returns {Promise<object|null>}
-   */
-  async #buildItemUpdate(itemData, migrations) {
-    if (isCurrentSchema(itemData.system ?? {})) {
-      return null;
-    }
-    const update = foundry.utils.deepClone(itemData);
-    for (const migration of migrations) {
-      await migration.updateItem(update, null);
-    }
-    foundry.utils.setProperty(update, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
-    return update;
-  }
-
-  /**
-   * Run all actor + item migrations on an already-cloned source object.
-   * Stamps _schemaVersion on the actor and every embedded item.
-   * Mutates and returns source.
-   *
-   * @param {object} source      Actor plain object (already deep-cloned). Mutated in place.
-   * @param {MigrationBase[]} migrations
-   * @returns {Promise<object>}
+   * @returns {Promise<boolean>}  False if the actor was already at that version (nothing ran).
    */
   async #applyActorMigrations(source, migrations) {
+    const targetVersion = MigrationRunner.#targetVersion(migrations);
+    const actorVersion = MigrationRunner.#storedVersion(source);
+    if (actorVersion >= targetVersion) {
+      return false;
+    }
+
     for (const migration of migrations) {
+      if (migration.version <= actorVersion) {
+        continue;
+      }
       await migration.updateActor(source);
       for (const item of source.items ?? []) {
-        await migration.updateItem(item, source);
+        if (migration.version > MigrationRunner.#storedVersion(item)) {
+          await migration.updateItem(item, source);
+        }
       }
     }
-    foundry.utils.setProperty(source, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
+
+    foundry.utils.setProperty(source, "system._schemaVersion", targetVersion);
     for (const item of source.items ?? []) {
-      foundry.utils.setProperty(item, "system._schemaVersion", CURRENT_SCHEMA_VERSION);
+      if (MigrationRunner.#storedVersion(item) < targetVersion) {
+        foundry.utils.setProperty(item, "system._schemaVersion", targetVersion);
+      }
     }
-    return source;
+    return true;
   }
 
   /**
-   * Write an actor's migrated items and effects to the DB, then remove them from actorUpdate
-   * (embedded docs are managed separately from the actor update).
+   * Run the item migrations newer than its schema version on stored item data with no parent actor,
+   * then stamp it with the version these migrations reach.
    *
-   * @param {Actor} actor        Live Actor document.
-   * @param {object} raw         Actor plain object before migration.
-   * @param {object} actorUpdate Migrated actor plain object. Mutated: .items and .effects deleted.
+   * @param {object} source  Stored item data. Mutated in place.
+   * @param {MigrationBase[]} migrations
+   * @returns {Promise<boolean>}  False if the item was already at that version (nothing ran).
    */
-  async #commitActorEmbedded(actor, raw, actorUpdate) {
-    await this.#commitEmbedded(actor, "Item", raw.items, actorUpdate.items);
-    await this.#commitEmbedded(actor, "ActiveEffect", raw.effects, actorUpdate.effects);
-    delete actorUpdate.items;
-    delete actorUpdate.effects;
+  async #applyItemMigrations(source, migrations) {
+    const targetVersion = MigrationRunner.#targetVersion(migrations);
+    const itemVersion = MigrationRunner.#storedVersion(source);
+    if (itemVersion >= targetVersion) {
+      return false;
+    }
+    for (const migration of migrations) {
+      if (migration.version > itemVersion) {
+        await migration.updateItem(source, null);
+      }
+    }
+    foundry.utils.setProperty(source, "system._schemaVersion", targetVersion);
+    return true;
+  }
+
+  /**
+   * The update that writes a migrated document's system data as a whole, without the keys its
+   * migrations deleted. Send it with `diff: false`.
+   *
+   * Replacing `system` is what removes legacy keys from the database: they are not in the schema, so
+   * client-side cleaning would drop a `ForcedDeletion` of them before it reached the server.
+   *
+   * @param {object} source  Migrated document data
+   * @returns {{_id: string, system: object}}
+   */
+  static #systemReplacement(source) {
+    return {
+      _id: source._id,
+      system: foundry.data.operators.ForcedReplacement.create(MigrationUtil.withoutDeletions(source.system)),
+    };
   }
 
   /**
@@ -296,6 +351,9 @@ export default class MigrationRunner {
    *   - Original _id missing from the result → deleted
    *   - Entry whose data changed → updated. Unchanged entries are not written, so a token delta
    *     gains no needless overrides of its base actor's documents.
+   *
+   * Items are updated by replacing their system data, like actors. Effects are updated as a whole with
+   * the usual diff: no `migrateData()` converts them in memory, so the diff keeps their changes.
    *
    * @param {Actor} actor           Live Actor (or synthetic token actor) document.
    * @param {string} documentName   Embedded document name, "Item" or "ActiveEffect".
@@ -319,7 +377,16 @@ export default class MigrationRunner {
     const updated = migrated.filter(
       (d) => originalById.has(d._id) && !foundry.utils.equals(originalById.get(d._id), d),
     );
-    if (updated.length) {
+    if (!updated.length) {
+      return;
+    }
+    if (documentName === "Item") {
+      await actor.updateEmbeddedDocuments(
+        documentName,
+        updated.map((d) => MigrationRunner.#systemReplacement(d)),
+        { diff: false },
+      );
+    } else {
       await actor.updateEmbeddedDocuments(documentName, updated);
     }
   }
