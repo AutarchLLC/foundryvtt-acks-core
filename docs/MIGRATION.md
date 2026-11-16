@@ -32,6 +32,7 @@ The migration system handles **one-time, permanent database writes** that update
 - Remove a field permanently
 - Add a derived or denormalised field that must be back-filled from existing data
 - Add or remove embedded items from actors wholesale
+- Change or remove embedded active effects on actors (e.g. status ids)
 
 Migrations run automatically on the `ready` hook, **GM-only**, once per schema version bump. Players are unaffected — they simply see a UI notification while the GM's browser runs the migration in the background.
 
@@ -122,13 +123,13 @@ For each phase, the runner processes these targets in order:
 
 1. **World Actors** — including all their embedded items.
 2. **World Items** — standalone items in the Items sidebar.
-3. **Unlinked Token Deltas** — `ActorDelta` data for unlinked tokens in every scene. Linked tokens are skipped because they derive their data from the world actor.
+3. **Unlinked Token Deltas** — `ActorDelta` data for unlinked tokens in every scene. Linked tokens are skipped because they derive their data from the world actor. A delta that only adds or overrides effects (no `system` overrides behind the current schema) is migrated for its effects alone: migrations see the synthetic actor's `system` for context, but only effect changes are written.
 4. **World-owned Compendium Packs** — packs whose `packageType === "world"`. System and module packs are **read-only** at runtime and are not touched here; they rely on `migrateData()` instead.
 
 For actors, the runner:
-1. Calls `migration.updateActor(actorSource)` — you can mutate actor fields and the `items` array.
+1. Calls `migration.updateActor(actorSource)` — you can mutate actor fields and the `items` and `effects` arrays.
 2. Calls `migration.updateItem(itemSource, actorSource)` for every embedded item.
-3. Diffs the `items` array before/after by `_id` to determine creates, updates, and deletes.
+3. Diffs the `items` and `effects` arrays before/after by `_id` to determine creates, updates, and deletes. Only effects whose data changed are updated. For a token delta, `effects` holds the synthetic actor's full list (base actor plus delta), so changes land in the delta.
 4. Stamps `system._schemaVersion = CURRENT_SCHEMA_VERSION` on the actor and all its items.
 
 For standalone world items, the runner calls `migration.updateItem(itemSource, null)` only.
@@ -273,6 +274,7 @@ export class MigrationNDescription extends MigrationBase {
 - To **add** an embedded item: push to `source.items` **without** an `_id`.
 - To **remove** an embedded item: filter `source.items` by `_id`.
 - Do NOT copy an existing item with its `_id` to "duplicate" it — the runner treats existing `_id`s as updates to the original.
+- Embedded active effects follow the same rules through `source.effects`: edit an entry in place, push one without an `_id` to create it, filter one out to delete it.
 
 **Rules for `updateItem`:**
 - Mutate `source.system.*` item fields only.
