@@ -945,19 +945,17 @@ export default class AcksActor extends Actor {
       return;
     }
     // TODO: move to Data Model as derived data
-    // Compute AC
+    // Every equipped armor adds its AC; an armor without an AC value (e.g. a helmet) adds 0.
     let baseAC = 0;
     let shieldAC = 0;
     const data = this.system;
-    data.ac.naked = baseAC + data.scores.dex.mod;
-    const armors = this.items.filter((i) => i.type === "armor");
-    armors.forEach((a) => {
-      if (a.system.equipped && a.system.type !== "shield") {
-        baseAC = a.system.ac.value;
-      } else if (a.system.equipped && a.system.type === "shield") {
-        shieldAC = a.system.ac.value;
-      }
-    });
+    data.ac.naked = data.scores.dex.mod;
+    for (const item of this.items) {
+      if (item.type !== ITEM_TYPE.ARMOR || !item.system.equipped) continue;
+      const ac = item.system.ac.value ?? 0;
+      if (item.system.type === "shield") shieldAC += ac;
+      else baseAC += ac;
+    }
     data.ac.value = baseAC + data.scores.dex.mod + shieldAC + data.ac.mod;
     data.ac.shield = shieldAC;
   }
