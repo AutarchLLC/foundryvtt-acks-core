@@ -35,6 +35,7 @@ import WeaponSheetV2 from "./module/item/weapon-sheet-v2.mjs";
 import { ACTOR_TYPE, ITEM_TYPE } from "./module/constants.mjs";
 import ACKSChatMessage from "./module/documents/chat-message.mjs";
 import registerACKSCommands from "./module/apps/acks-commands.mjs";
+import configureStatusEffects from "./module/status-effects.mjs";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -70,6 +71,7 @@ Hooks.once("init", async function () {
   // Custom Handlebars helpers
   void registerHelpers();
   void registerMainSettings();
+  configureStatusEffects();
 
   CONFIG.ChatMessage.documentClass = ACKSChatMessage;
 

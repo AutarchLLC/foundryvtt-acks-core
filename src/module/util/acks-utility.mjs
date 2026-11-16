@@ -1,5 +1,4 @@
 /* global game, foundry */
-import { ACKS } from "../config.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 
 export class AcksUtility {
@@ -56,27 +55,26 @@ export class AcksUtility {
     return compendiumData.filter(filter);
   }
 
-  static prepareActiveEffect(effectId) {
-    let status = ACKS.statusEffects.find((it) => it.id.includes(effectId));
-    if (status) {
-      status = foundry.utils.duplicate(status);
-      status.statuses = [effectId];
-    }
-    return status;
-  }
-
+  /**
+   * Apply a status effect registered in CONFIG.statusEffects, unless the actor already has it.
+   * @param {Actor} actor
+   * @param {string} statusId
+   * @returns {Promise<unknown>}
+   */
   static addUniqueStatus(actor, statusId) {
-    const status = actor.effects.find((it) => it.statuses.has(statusId));
-    if (!status) {
-      const effect = this.prepareActiveEffect(statusId);
-      actor.createEmbeddedDocuments("ActiveEffect", [effect]);
-    }
+    return actor.toggleStatusEffect(statusId, { active: true });
   }
 
+  /**
+   * Remove every effect carrying the given status from the actor.
+   * @param {Actor} actor
+   * @param {string} statusId
+   * @returns {Promise<void>}
+   */
   static async removeEffect(actor, statusId) {
-    const effect = actor.effects.find((it) => it.statuses.has(statusId));
-    if (effect) {
-      await actor.deleteEmbeddedDocuments("ActiveEffect", [effect.id]);
+    const ids = actor.effects.filter((it) => it.statuses.has(statusId)).map((it) => it.id);
+    if (ids.length) {
+      await actor.deleteEmbeddedDocuments("ActiveEffect", ids);
     }
   }
 

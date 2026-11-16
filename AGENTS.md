@@ -32,7 +32,8 @@ src/acks.mjs              ← entry point; init/setup/ready hooks, document clas
 src/system.json           ← system manifest
 src/styles/               ← stylesheets, one per feature; loaded in the order listed in system.json `styles`
 src/module/
-  config.mjs              ← ACKS config object (CONFIG.ACKS), incl. statusEffects
+  config.mjs              ← ACKS config object (CONFIG.ACKS), incl. conditions and combatStates
+  status-effects.mjs      ← replaces CONFIG.statusEffects with the ACKS Conditions (init hook)
   constants.mjs           ← frozen enums (ACTOR_TYPE, ITEM_TYPE, ROLL_TYPE, ATTACK_TYPE, …)
   _types.mjs              ← JSDoc @typedef declarations only (no runtime code)
   settings.mjs            ← game settings
@@ -159,7 +160,7 @@ check by hand with `npm run foundry:test`.
 | Add a dialog | new file in `src/module/dialog/`, export from `dialog/index.mjs` |
 | Add a combat hook | `src/module/combat-helper.mjs`, wire it in `acks.mjs` |
 | Change styles | the feature's file in `src/styles/`; a new file goes into `styles` in `src/system.json` |
-| Add a status effect | `statusEffects` in `src/module/config.mjs` |
+| Add a Condition or Combat State | `conditions` / `combatStates` in `src/module/config.mjs` (registered by `status-effects.mjs`); see `GLOSSARY.md`, `docs/adr/0001-*` |
 | Add / change a compendium entry | JSON under `src/packs/_source/`, then `npm run packs:sourceToDatabase` |
 | Rename / remove / restructure stored fields | add a migration, see below and `docs/MIGRATION.md` |
 
