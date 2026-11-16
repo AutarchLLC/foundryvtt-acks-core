@@ -125,7 +125,7 @@ export const ACKS = {
     { id: "surprised", name: "ACKS.conditions.surprised", img: "systems/acks/assets/icons/conditions/surprised.svg" },
     { id: "unconscious", name: "ACKS.conditions.unconscious", img: "icons/svg/unconscious.svg" },
     { id: "underfed", name: "ACKS.conditions.underfed", img: "systems/acks/assets/icons/conditions/pig-face.svg" },
-    { id: "vexed", name: "ACKS.conditions.vexed", img: "systems/acks/assets/icons/conditions/imp-laugh.svg" },
+    { id: "vexed", name: "ACKS.conditions.vexed", img: "systems/acks/assets/icons/conditions/dead-head-bitten.svg" },
     { id: "vomiting", name: "ACKS.conditions.vomiting", img: "systems/acks/assets/icons/conditions/vomiting.svg" },
     {
       id: "vulnerable",
