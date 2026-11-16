@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>This is a long, pocketed leather sack that can contain 3 stone (30 lbs). It is designed to be slung over a mount or pack animal.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 5,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

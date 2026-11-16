@@ -12,7 +12,7 @@ export default class ItemData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, subtype, quantity, charges}}
+   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, quantity: NumberField, subtype, charges}}
    */
   static defineSchema() {
     const { NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -25,11 +25,6 @@ export default class ItemData extends ItemBaseData {
       ...ItemPhysicalTemplate.schema,
       // Item subtype. For now, it can be "item" or "clothing"
       subtype: new StringField({ choices: ACKS.item_subtypes, required: true, initial: "item" }),
-      // item quantity
-      quantity: new SchemaField({
-        // current value
-        value: new NumberField({ initial: 1, min: 0 }),
-      }),
       // item charges
       // TODO: not used yet. Hook it up to the item sheet and inventory.
       charges: new SchemaField({
@@ -51,6 +46,7 @@ export default class ItemData extends ItemBaseData {
     }
 
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
+    ItemPhysicalTemplate.migrateQuantityToNumber(source);
 
     return super.migrateData(source);
   }

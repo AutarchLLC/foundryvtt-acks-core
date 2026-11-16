@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>This is a 2' × 4' burlap, cloth, or leather bag that can contain 6 stone (60 lbs). It is normally carried over the shoulder and dropped when combat begins.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 0.8,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

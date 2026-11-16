@@ -12,7 +12,7 @@ export default class ArmorData extends ItemBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, ac, type, equipped}}
+   * @return {{description: HTMLField, cost: NumberField, weight: NumberField, weight6: NumberField, quantity: NumberField, ac, type, equipped}}
    */
   static defineSchema() {
     const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -44,6 +44,7 @@ export default class ArmorData extends ItemBaseData {
     }
 
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
+    ItemPhysicalTemplate.migrateQuantityToNumber(source);
     this.migrateAacToAc(source);
 
     return super.migrateData(source);

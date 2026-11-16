@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A craftsman's workshop has a full complement of craftsman's tools and furnishings sufficient to allow up to 8 craftsmen to work together. A master craftsman must have access to a craftsman's workshop in order to increase the productivity of journeymen and apprentices. Each craft has its own specific type of craftsman's workshop. When set up, a workshop takes up 20' × 20' space.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 350,
     "weight6": 90,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

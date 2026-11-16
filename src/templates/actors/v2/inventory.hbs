@@ -34,6 +34,8 @@
 
           <div class="item__special">{{localize "ACKS.items.Special"}}</div>
 
+          <div class="item__count"><i class="fas fa-hashtag"></i></div>
+
           <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
 
           {{#if owner}}
@@ -85,8 +87,14 @@
                     {{ tagList item.system.tags.special }}
                   </div>
 
-                  <!-- Item Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight item.system.weight6}}</div>
+                  <!-- Weapon Quantity -->
+                  <div class="item__count">
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
+                  </div>
+
+                  <!-- Weapon Weight in 1/6th stones -->
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Weapon Controls -->
                   {{#if ../owner}}
@@ -152,6 +160,8 @@
 
           <div class="item__ac">{{localize "ACKS.items.ArmorAC"}}</div>
 
+          <div class="item__count"><i class="fas fa-hashtag"></i></div>
+
           <div class="item__weight"><i class="fas fa-weight-hanging"></i></div>
 
           {{#if owner}}
@@ -185,8 +195,14 @@
                   <!-- Armor Class -->
                   <div class="item__ac">{{item.system.ac.value}}</div>
 
+                  <!-- Armor Quantity -->
+                  <div class="item__count">
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
+                  </div>
+
                   <!-- Armor Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight item.system.weight6}}</div>
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Armor Controls -->
                   {{#if ../owner}}
@@ -271,12 +287,12 @@
 
                   <!-- Item Count -->
                   <div class="item__count">
-                    <input class="item-input small" type="number" data-name="system.quantity.value" data-kind="item"
-                           value="{{item.system.quantity.value}}" data-dtype="Number"/>
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
                   </div>
 
                   <!-- Item Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity.value)}}</div>
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Item Controls -->
                   {{#if ../owner}}
@@ -349,12 +365,12 @@
 
                   <!-- Item Count -->
                   <div class="item__count">
-                    <input class="item-input small" type="number" data-name="system.quantity.value" data-kind="item"
-                           value="{{item.system.quantity.value}}" data-dtype="Number"/>
+                    <input class="item-input small" type="number" data-name="system.quantity" data-kind="item"
+                           value="{{item.system.quantity}}" data-dtype="Number" min="0" step="1"/>
                   </div>
 
                   <!-- Item Weight in 1/6th stones -->
-                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity.value)}}</div>
+                  <div class="item__weight">{{stoneWeight (mult item.system.weight6 item.system.quantity)}}</div>
 
                   <!-- Item Controls -->
                   {{#if ../owner}}

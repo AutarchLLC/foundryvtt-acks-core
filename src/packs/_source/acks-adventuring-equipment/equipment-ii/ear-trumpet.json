@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A funnel-shaped tube of silver, wood, shell, or horn that, when placed in its wearer's ear canal, raises the apparent volume of sound. A character using an ear trumpet when listening at a door or wooden wall can ignore the 5' penalty to his earshot range from the door or wall. While using the ear trumpet, the character cannot wear a helmet and must hold it in his ear with one hand.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 15,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

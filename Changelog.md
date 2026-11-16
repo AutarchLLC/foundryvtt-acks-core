@@ -2,6 +2,22 @@
 
 This is the change history for the FoundryVTT ACKS II core system module (search for *acks* in the Foundry installer).
 
+## Next release
+
+> Your world's data is updated automatically the first time a GM loads it. **Back up your world before upgrading.**
+
+### Quantity for every item
+- Weapons and armour now have a **Quantity**, like other equipment. Edit it in the inventory or in the item sheet.
+  Encumbrance multiplies an item's weight by its Quantity for equipment, weapons and armour.
+- Quantities and coins are whole numbers. Fractional values are rounded down when your world is updated.
+- Dropping an Item Bundle now adds one item per entry with the entry's Quantity ("Torch ×6" gives one Torch with
+  Quantity 6), instead of one copy per unit.
+
+> ⚠️ **Breaking change for macros and modules:** an item's Quantity moved from `system.quantity.value` to
+> `system.quantity`, a plain whole number, on equipment, clothing, weapons and armour. Money already used
+> `system.quantity` (Carried coins) and `system.quantitybank` (Banked coins). Reading `system.quantity.value` now
+> returns `undefined`.
+
 ## Release 14.1.0
 
 > ⚠️ This release requires **Foundry v14** (build 14.359 or later). Foundry v13 is no longer supported.

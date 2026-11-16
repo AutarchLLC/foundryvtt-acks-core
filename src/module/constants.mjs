@@ -9,6 +9,13 @@ export const ITEM_TYPE = Object.freeze({
   BUNDLE: "bundle",
 });
 
+/**
+ * Item types that are Physical Items: things a character can own, carry and weigh, each with a Quantity.
+ * Money is not a Physical Item (see GLOSSARY.md).
+ * @type {ReadonlyArray<string>}
+ */
+export const PHYSICAL_ITEM_TYPES = Object.freeze([ITEM_TYPE.ITEM, ITEM_TYPE.WEAPON, ITEM_TYPE.ARMOR]);
+
 export const ACTOR_TYPE = Object.freeze({
   PC: "character",
   MONSTER: "monster",

@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Wolfsbane (dried aconite flowers) may drive off werewolves and other lycanthropes if a character strikes the monster in hand-to-hand combat with the sprig. If the lycanthrope fails a Death saving throw, it must flee as if rebuked. Wolfsbane can be used to make a plant poison (p. 131). A character foolish enough to eat a pound of fresh wolfsbane must make a Death saving throw or die after one turn.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

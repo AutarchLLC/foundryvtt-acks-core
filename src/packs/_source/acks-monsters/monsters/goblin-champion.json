@@ -55,11 +55,12 @@
         "cost": 7,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [
           "Melee"
         ],
@@ -139,11 +140,12 @@
         "cost": 3,
         "equipped": false,
         "weight6": 1,
+        "quantity": 1,
         "counter": {
           "value": 1,
           "max": 1
         },
-        "_schemaVersion": 5,
+        "_schemaVersion": 8,
         "customTags": [
           "Missile",
           "Two-handed"
@@ -199,7 +201,8 @@
         "cost": 10,
         "equipped": false,
         "weight6": 7,
-        "_schemaVersion": 5,
+        "quantity": 1,
+        "_schemaVersion": 8,
         "ac": {
           "value": 1
         }
@@ -235,7 +238,8 @@
         "cost": 20,
         "equipped": false,
         "weight6": 13,
-        "_schemaVersion": 5,
+        "quantity": 1,
+        "_schemaVersion": 8,
         "ac": {
           "value": 2
         }

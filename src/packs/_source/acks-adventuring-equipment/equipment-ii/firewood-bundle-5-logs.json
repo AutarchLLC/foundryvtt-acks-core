@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A bundle of pre-cut dried logs about 5 lbs in weight, 12\" in length and 6\" in diameter. One firewood bundle will maintain a campfire for 1 hour. Note that firewood is not the construction-quality timber bought and sold in mercantile ventures. A full cord of firewood costs between 2sp and 1gp depending on the proximity to forests.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 0.01,
     "weight6": 15,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

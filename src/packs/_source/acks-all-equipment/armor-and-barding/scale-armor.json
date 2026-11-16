@@ -21,7 +21,8 @@
     "cost": 30,
     "equipped": false,
     "weight6": 18,
-    "_schemaVersion": 5,
+    "quantity": 1,
+    "_schemaVersion": 8,
     "ac": {
       "value": 3
     }

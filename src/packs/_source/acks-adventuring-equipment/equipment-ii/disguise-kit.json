@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "A set of cosmetics, dyes, pigments, and wigs that can be used by a skilled practitioner to disguise his appearance.",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 25,
     "weight6": 6,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

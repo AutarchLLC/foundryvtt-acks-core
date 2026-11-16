@@ -2,7 +2,7 @@
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
-import { ROLL_TYPE } from "../constants.mjs";
+import { ITEM_TYPE, PHYSICAL_ITEM_TYPES, ROLL_TYPE } from "../constants.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 import { buildAttackThrow, normalizeChoices } from "../throw/attack-throw-builder.mjs";
 import { getDamageTotal, resolveAttackThrow, rollDamage } from "../throw/attack-throw-resolution.mjs";
@@ -865,10 +865,9 @@ export default class AcksActor extends Actor {
     let totalEncumbrance6 = 0;
 
     this.items.forEach((item) => {
-      if (item.type === "item" && item.system.subtype !== "clothing") {
-        totalEncumbrance6 += item.system.weight6 * item.system.quantity.value;
-      } else if (["weapon", "armor"].includes(item.type)) {
-        totalEncumbrance6 += item.system.weight6;
+      const isClothing = item.type === ITEM_TYPE.ITEM && item.system.subtype === "clothing";
+      if (PHYSICAL_ITEM_TYPES.includes(item.type) && !isClothing) {
+        totalEncumbrance6 += item.system.weight6 * item.system.quantity;
       }
     });
 

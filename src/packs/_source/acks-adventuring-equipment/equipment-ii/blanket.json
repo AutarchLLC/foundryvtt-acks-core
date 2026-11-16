@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A large woven covering that provides warmth and comfort. A character resting under a blanket is considered to have protection from frigid weather (p. 277) unless there is flurry or snowy precipitation. In this case, a tent is also required.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 2,
     "weight6": 6,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>This food is dried, pickled, salted, smoked, or otherwise preserved from spoilage. Iron rations will remain digestible for two months in the wilderness and a week in the foul conditions of a dungeon. The cost for iron rations will vary depending on quality. The cheapest iron rations consist of hard, dried salted biscuits. Better rations include salted or pickled meat and dried, pickled, or preserved fruit and vegetables. A day's iron rations counts as 1/6 stone (one item) for encumbrance purposes, while a week's iron rations count as one stone.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 1,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A collection of portable eating and cooking utensils designed for troops on extended military campaigns. An Auran legionnaire's mess kit includes a mess tin, cooking pot, skewer, and knife.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 3,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

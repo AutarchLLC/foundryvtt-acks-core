@@ -5,12 +5,10 @@
   "system": {
     "subtype": "clothing",
     "description": "Embossed leather or silk belts are worn as a sign of wealth and status.",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 8,
     "weight6": 0,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

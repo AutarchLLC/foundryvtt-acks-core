@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A mirror can be used to check around corners, defend or reflect monstrous gaze attacks, and repel certain creatures. A character using a mirror to see his target suffers a -2 penalty to attack throws, and cannot use a shield, second weapon, or twohanded weapon. However, he is immune to effects that require him to <strong>behold</strong> the target (see p. 507).</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 5,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

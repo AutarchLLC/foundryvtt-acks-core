@@ -290,6 +290,7 @@ export default class WeaponData extends ItemBaseData {
 
     SavingThrowsTemplate.migrateSaveValue(source);
     ItemPhysicalTemplate.migrateWeightToWeight6(source);
+    ItemPhysicalTemplate.migrateQuantityToNumber(source);
     this.migrateDamageStringToObject(source);
     this.migrateBonusNumberToObject(source);
     WeaponCustomTagsTemplate.migrateTags(source);

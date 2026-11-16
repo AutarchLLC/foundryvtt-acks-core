@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Bitterwood, also known as quassia, is a healing herb used to induce vomiting. A character with Healing proficiency can treat a patient who has ingested poison within 1 turn (10 minutes) with an emetic made from 1lb of bitterwood. Upon consuming the emetic, the patient must make a Death saving throw. If the save succeeds, the patient spends the next [[/r 1d3]] turns purging himself of the poison, gaining the benefits of <em>neutralize poison</em>. If the save fails, the character still loses [[/r 1d3]] turns purging himself, but it does not neutralize the poison. Administering the emetic takes 1 round.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

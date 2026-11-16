@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Sharp, sturdy saws are used to saw through bone and tissue when amputation of the limbs is required. Use of a surgical saw gives a bonus on Healing proficiency throws to <em>cure light injury</em> or <em>cure serious injury</em> in mortally, grievously, or critically wounded characters who need healing to survive one of these permanent wounds. The bonus is +2 from a small saw and +4 from a large saw. See <strong>Mortal Wounds</strong> (p. 517) for more information. A large surgical saw weighs 1 stone (10 lbs).</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 6,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

@@ -5,12 +5,10 @@
   "system": {
     "subtype": "clothing",
     "description": "Simple leather shoes or sandals are suitable for walking long distances.",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 0.3,
     "weight6": 0,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

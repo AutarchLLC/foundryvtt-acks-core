@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>A silver or gold figurine mounted on a pole above the army's standard. The emblem is treasured by the army as the symbol of its strength, honor, and glory. If an army's standard is not provided with an emblem, its morale score is reduced by 1. Loss of an army's standard and/or emblem reduces its morale score by 1 and counts as a calamity (p. 166). In the Auran Empire, the emblem of its armies is the winged sun.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Aloe, also known as burn plant, is a healing herb used to treat burns. A character with Healing proficiency can use 1 lb of aloe in a liniment to treat a patient with acid, cold, electric, or fire damage. The patient is healed [[/r 1d3]] damage, or up to the amount of acid, cold, electric, or fire damage suffered, whichever is less. A patient cannot be treated with a liniment of aloe more than once per day. Applying the liniment takes 1 turn (10 minutes).</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 10,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

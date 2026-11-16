@@ -1,5 +1,5 @@
 /* global foundry, game, ui, Item */
-import { ITEM_TYPE } from "../constants.mjs";
+import { ITEM_TYPE, PHYSICAL_ITEM_TYPES } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 import ActorTweaksConfig from "../apps/actor-tweaks-config.mjs";
@@ -590,6 +590,8 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
   /**
    * Handle a dropped Item Bundle on the Actor Sheet.
+   * Each money entry adds its quantity to the actor's coins. Every other entry becomes one new item holding
+   * the entry's quantity; it is never merged into an item the actor already has.
    * @param {DragEvent} event The initiating drop event
    * @param {Item} item The dropped Item document
    * @protected
@@ -599,16 +601,32 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     for (const bundleItemData of item.system.itemList) {
       /** @type Item */
       const bundleItem = await foundry.utils.fromUuid(bundleItemData.uuid);
+      const quantity = bundleItemData.quantity ?? 1;
       if (bundleItem.type === ITEM_TYPE.MONEY) {
-        await this._onDropItemMoney(event, bundleItem, bundleItemData.quantity ?? 1);
+        await this._onDropItemMoney(event, bundleItem, quantity);
       } else {
-        const count = bundleItemData.quantity ?? 1;
-        for (let i = 0; i < count; i++) {
-          result.push(await this._onDropItem(event, bundleItem));
-        }
+        result.push(await this._createBundleEntryItem(bundleItem, quantity));
       }
     }
     return result;
+  }
+
+  /**
+   * Create one owned copy of a Bundle entry's item, holding the entry's quantity.
+   * @param {Item} item The entry's item
+   * @param {number} quantity The entry's quantity
+   * @returns {Promise<Item|null>}
+   * @protected
+   */
+  async _createBundleEntryItem(item, quantity) {
+    const keepId = !this.actor.items.has(item.id);
+    const data = item.inCompendium ? game.items.fromCompendium(item, { clearFolder: true, keepId }) : item.toObject();
+    // items that are not Physical Items (e.g. spells) have no quantity
+    if (PHYSICAL_ITEM_TYPES.includes(item.type)) {
+      data.system.quantity = quantity;
+    }
+    const result = await Item.implementation.create(data, { parent: this.actor, keepId });
+    return result ?? null;
   }
 
   /**

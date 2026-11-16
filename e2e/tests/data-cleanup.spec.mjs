@@ -41,7 +41,7 @@ test.describe("item data cleanup", () => {
       return item.system.toObject();
     }, LEGACY_ITEM);
 
-    expect(system.quantity).toEqual({ value: 3 });
+    expect(system.quantity).toBe(3);
     expect(system).not.toHaveProperty("treasure");
     expect(system).not.toHaveProperty("iconsource");
     expect(system).not.toHaveProperty("iconlicense");

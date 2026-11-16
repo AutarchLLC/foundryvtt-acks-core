@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Holy water is water that has been sanctified by a divine caster of 7th caster level or higher. It is used in certain religious rites. Crusaders often carry vials of holy water to use as weapons against the undead. A chaotic enchanted creature directly struck with holy water suffers [[/r 1d8]] Extraordinary Luminous damage for 2 rounds. Holy water cannot retain its holy power if it is stored in any other container than the special vials it is placed in when blessed.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 25,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0

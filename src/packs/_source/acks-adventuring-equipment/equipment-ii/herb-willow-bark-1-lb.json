@@ -7,12 +7,10 @@
   "system": {
     "subtype": "item",
     "description": "<p>Willow-bark is a healing herb that relieves aches, pain, and rheumatism. A character with Healing proficiency can brew a tincture from 1 lb of willow-bark to relieve a patient of the initiative penalty from permanent wounds (e.g. \"stiff and scarred wounds\" and \"lasting wounds that ache in bad weather\"), from inability to force march due to permanent wounds (\"damage to hips and lower back\" \"damage to knee,\" \"lungs and heart damaged\"), or from the attack throw and damage roll penalty from force marching. Brewing the tincture takes 1 turn (10 minutes) and the relief lasts for 4 hours.</p>",
-    "quantity": {
-      "value": 1
-    },
+    "quantity": 1,
     "cost": 5,
     "weight6": 1,
-    "_schemaVersion": 5,
+    "_schemaVersion": 8,
     "charges": {
       "value": 0,
       "max": 0
