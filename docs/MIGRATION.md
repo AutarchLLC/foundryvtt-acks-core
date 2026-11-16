@@ -130,9 +130,32 @@ For actors, the runner:
 1. Calls `migration.updateActor(actorSource)` — you can mutate actor fields and the `items` and `effects` arrays.
 2. Calls `migration.updateItem(itemSource, actorSource)` for every embedded item.
 3. Diffs the `items` and `effects` arrays before/after by `_id` to determine creates, updates, and deletes. Only effects whose data changed are updated. For a token delta, `effects` holds the synthetic actor's full list (base actor plus delta), so changes land in the delta.
-4. Stamps `system._schemaVersion = CURRENT_SCHEMA_VERSION` on the actor and all its items.
+4. Stamps `system._schemaVersion` on the actor and its items with the highest version in the phase (`CURRENT_SCHEMA_VERSION` after the last phase).
 
 For standalone world items, the runner calls `migration.updateItem(itemSource, null)` only.
+
+Each document only gets the migrations newer than its own `_schemaVersion`, and so does each embedded item.
+
+### Stored data, not loaded documents
+
+Migrations receive each document's **stored** data, read straight from the server with
+`MigrationUtil.fetchStoredSources()`, embedded items and effects included. They never see a loaded document's
+`toObject()`: by the time the `ready` hook fires, `migrateData()` has already converted the legacy fields in memory,
+and schema cleaning has dropped every key the schema does not know. A loaded document holds neither the legacy data
+a migration reads nor the keys it deletes.
+
+The runner writes the result as a whole: the update replaces `system` with a `ForcedReplacement`, minus the keys
+marked for deletion, and is sent with `diff: false`. Foundry's usual update diff compares against the loaded document,
+which already looks migrated, and would drop exactly the values the migration set. A plain `ForcedDeletion` of a key
+outside the schema would not survive client-side cleaning either.
+
+So, for actors and items, **only `system` is written** (plus the `items` and `effects` rosters of an actor). Effects
+are written as whole objects with the usual diff, since no `migrateData()` converts them in memory.
+
+> ACKS 14.1.0 shipped a runner that migrated loaded documents. It wrote nothing but `_schemaVersion`, so every
+> migrated field fell back to its schema default on the next load. Migration 7 re-runs migrations 1–5 to repair those
+> worlds. The `migration-runner` e2e spec guards against this: it seeds raw legacy data, migrates, reloads, and checks
+> both the stored data and the loaded documents.
 
 ---
 
@@ -155,7 +178,7 @@ This field is **internal** — never display or edit it in sheets. It tracks the
 - `N` — migrated up to version N.
 - `=== CURRENT_SCHEMA_VERSION` — fully up-to-date, skip by both the runner and `migrateData()`.
 
-The runner stamps `system._schemaVersion = CURRENT_SCHEMA_VERSION` at the end of every actor/item migration. `isCurrentSchema(source)` in `schema-version.mjs` is a guard used to skip already-migrated documents:
+The runner stamps `system._schemaVersion` at the end of every actor/item migration (see [What Gets Migrated](#what-gets-migrated)). `isCurrentSchema(source)` in `schema-version.mjs` is a guard used to skip already-migrated documents:
 
 ```js
 export function isCurrentSchema(source) {
@@ -276,8 +299,10 @@ export class MigrationNDescription extends MigrationBase {
 - Do NOT copy an existing item with its `_id` to "duplicate" it — the runner treats existing `_id`s as updates to the original.
 - Embedded active effects follow the same rules through `source.effects`: edit an entry in place, push one without an `_id` to create it, filter one out to delete it.
 
+- Changes outside `system`, `items` and `effects` are not written.
+
 **Rules for `updateItem`:**
-- Mutate `source.system.*` item fields only.
+- Mutate `source.system.*` item fields only. Nothing outside `system` is written.
 - Do NOT add or remove items here — that belongs in `updateActor`.
 - `actorSource` is `null` when migrating a standalone world item.
 
@@ -406,6 +431,8 @@ src/module/migration/migration-util.mjs
 | Method | Description |
 |--------|-------------|
 | `static markPropertyForDeletion(obj, key)` | Marks a property for DB deletion, using `ForcedDeletion` on Foundry v14+ and the `"-="` prefix on v13. Supports dot-notation keys. No-op if the property does not exist. |
+| `static withoutDeletions(data)` | Deep copy of `data` without the keys marked for deletion. The runner uses it to build the `system` it writes. |
+| `static async fetchStoredSources(documentName, pack)` | Stored data of every document in a world collection (or compendium pack), read from the server, by id. |
 
 ### `MigrationList`
 
@@ -445,6 +472,14 @@ await MigrationRunner.resetSchemaVersions(); // FIXME: reset for testing; remove
 This resets `_schemaVersion` on all actors, items, token deltas, and the `systemSchemaVersion` world setting to `0`, causing all pending migrations to re-run on the next page reload.
 
 **Always remove this line before committing or releasing.**
+
+### Testing a migration end to end
+
+Unit-style checks of `updateActor()` / `updateItem()` on plain objects do not prove that anything reaches the
+database. `e2e/tests/migration-runner.spec.mjs` shows the full check: write raw legacy documents straight through the
+socket (`SocketInterface.dispatch("modifyDocument", …)`, which skips client-side cleaning and migration), set the
+`systemSchemaVersion` setting back, reload so the migration runs, reload again, then assert on both the stored data
+(a raw socket `get`) and the loaded documents.
 
 ### Console logging
 
