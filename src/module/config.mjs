@@ -56,7 +56,11 @@ export const ACKS = {
     { id: "drowning", name: "ACKS.conditions.drowning", img: "systems/acks/assets/icons/conditions/drowning.svg" },
     { id: "enervated", name: "ACKS.conditions.enervated", img: "systems/acks/assets/icons/conditions/voodoo-doll.svg" },
     { id: "engaged", name: "ACKS.conditions.engaged", img: "systems/acks/assets/icons/conditions/crossed-swords.svg" },
-    { id: "enlarged", name: "ACKS.conditions.enlarged", img: "systems/acks/assets/icons/conditions/giant.svg" },
+    {
+      id: "enlarged",
+      name: "ACKS.conditions.enlarged",
+      img: "systems/acks/assets/icons/conditions/body-height-up.svg",
+    },
     { id: "enslaved", name: "ACKS.conditions.enslaved", img: "systems/acks/assets/icons/conditions/slavery-whip.svg" },
     {
       id: "enthralled",
@@ -113,7 +117,7 @@ export const ACKS = {
       name: "ACKS.conditions.shaken",
       img: "systems/acks/assets/icons/conditions/dead-head-wavy-mouth.svg",
     },
-    { id: "shrunk", name: "ACKS.conditions.shrunk", img: "systems/acks/assets/icons/conditions/contract.svg" },
+    { id: "shrunk", name: "ACKS.conditions.shrunk", img: "systems/acks/assets/icons/conditions/body-height-down.svg" },
     { id: "slumbering", name: "ACKS.conditions.slumbering", img: "icons/svg/sleep.svg" },
     { id: "sneaking", name: "ACKS.conditions.sneaking", img: "systems/acks/assets/icons/conditions/hood.svg" },
     { id: "starving", name: "ACKS.conditions.starving", img: "systems/acks/assets/icons/conditions/ribcage.svg" },
