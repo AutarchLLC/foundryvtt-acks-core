@@ -181,17 +181,17 @@ export default class CharacterData extends BaseDataModel {
   }
 
   /**
-   * Attack throw modifiers from this character: STR for melee, DEX for missile and thrown, plus Actor Tweaks.
+   * Attack throw modifiers from this character: STR for melee, DEX for missile and thrown, plus Actor Tweaks and Active Effects.
    * @param {ATTACK_TYPE} attackType
    * @return {TNumValueWithLabel[]}
    */
   getAttackThrowModifiers(attackType) {
     const ability = attackType === ATTACK_TYPE.MELEE ? "str" : "dex";
-    return [this.#getAbilityModifier(ability), AttackTweaks.getAttackThrowModifier(this, attackType)];
+    return [this.#getAbilityModifier(ability), ...AttackTweaks.getAttackThrowModifiers(this, attackType)];
   }
 
   /**
-   * Damage modifiers from this character: STR for melee and thrown (not missile), plus Actor Tweaks.
+   * Damage modifiers from this character: STR for melee and thrown (not missile), plus Actor Tweaks and Active Effects.
    * @param {ATTACK_TYPE} attackType
    * @return {TNumValueWithLabel[]}
    */
@@ -200,7 +200,7 @@ export default class CharacterData extends BaseDataModel {
     if (attackType === ATTACK_TYPE.MELEE || attackType === ATTACK_TYPE.THROWN) {
       modifiers.push(this.#getAbilityModifier("str"));
     }
-    modifiers.push(AttackTweaks.getDamageModifier(this, attackType));
+    modifiers.push(...AttackTweaks.getDamageModifiers(this, attackType));
     return modifiers;
   }
 

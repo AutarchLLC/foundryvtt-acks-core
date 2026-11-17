@@ -72,7 +72,7 @@ export default class MonsterData extends BaseDataModel {
    * @return {TNumValueWithLabel[]}
    */
   getAttackThrowModifiers(attackType) {
-    return [AttackTweaks.getAttackThrowModifier(this, attackType)];
+    return AttackTweaks.getAttackThrowModifiers(this, attackType);
   }
 
   /**
@@ -81,7 +81,7 @@ export default class MonsterData extends BaseDataModel {
    * @return {TNumValueWithLabel[]}
    */
   getDamageModifiers(attackType) {
-    return [AttackTweaks.getDamageModifier(this, attackType)];
+    return AttackTweaks.getDamageModifiers(this, attackType);
   }
 
   //endregion ATTACKS

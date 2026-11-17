@@ -101,6 +101,7 @@
   "ACKS.throw.modifier.weapon": "Weapon Bonus",
   "ACKS.throw.modifier.range": "{range} Range",
   "ACKS.throw.modifier.subjacent": "Target is Subjacent",
+  "ACKS.throw.modifier.otherEffects": "Other Effects",
   "ACKS.throw.direction.label": "Direction",
   "ACKS.throw.direction.front": "Front",
   "ACKS.throw.direction.flank": "Flank / Rear",
