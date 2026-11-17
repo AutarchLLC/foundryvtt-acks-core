@@ -18,6 +18,10 @@ _Avoid_: Condition, combat status
 Foundry's umbrella term for any toggleable marker on a token. Both Conditions and Combat States are Status Effects.
 _Avoid_: Using it to mean only Conditions
 
+**Condition Modifier**:
+A number a Condition adds to one of the affected creature's own rolls or scores, such as its attack throws, Armor Class or saving throws, for as long as the creature has that Condition. Several Condition Modifiers on the same roll or score add together.
+_Avoid_: Penalty, debuff, condition bonus
+
 ### Inventory
 
 **Physical Item**:

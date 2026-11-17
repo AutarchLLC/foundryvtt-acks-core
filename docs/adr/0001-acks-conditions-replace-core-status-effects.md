@@ -4,7 +4,7 @@ The token HUD offers the ACKS II Conditions instead of Foundry's core status eff
 
 Five core ids are kept alongside the Conditions: `dead`, `invisible`, `fly`, `burrow` and `hover`. Foundry core gives them special treatment through `CONFIG.specialStatusEffects`: defeated combatants, vision and detection, light sources, and the invisibility filter. ACKS has no Condition that means the same thing. The `BLIND` slot points at the ACKS `blinded` Condition instead of core `blind`.
 
-Conditions carry only a name and an icon, never a description. The Condition rules text is copyrighted, so it stays in the rulebook. Mechanical automation of a Condition, such as attack penalties, is out of scope here; each automation gets its own issue.
+Conditions carry only a name and an icon, never a description. The Condition rules text is copyrighted, so it stays in the rulebook. Mechanical automation of a Condition, such as attack penalties, is out of scope here; see ADR 0003 for Condition Modifiers.
 
 ## Consequences
 
