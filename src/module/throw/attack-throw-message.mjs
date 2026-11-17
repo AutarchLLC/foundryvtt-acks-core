@@ -1,5 +1,6 @@
 /* global foundry, game, ChatMessage */
 import { ATTACK_DIRECTION, DAMAGE_MODE } from "../constants.mjs";
+import createSaveChatButton from "../data/item/templates/save-chat-button.mjs";
 
 const TEMPLATE = "systems/acks/templates/chat/attack-throw-card.hbs";
 
@@ -71,6 +72,8 @@ async function prepareCardContext(actor, item, outcome) {
     damageTotal,
     // damage is applied to the attack's target, not to whatever the Judge has targeted when clicking
     targetUuid: result.target?.uuid ?? null,
+    // a hit calls for the weapon's saving throw, if it has one
+    saveButton: resolution.isHit ? createSaveChatButton(item?.system.save) : null,
   };
 }
 

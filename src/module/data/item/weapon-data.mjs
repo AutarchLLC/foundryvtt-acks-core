@@ -16,6 +16,7 @@ import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 import WeaponCustomTagsTemplate from "./templates/weapon-custom-tags-template.mjs";
 import DamageField from "./fields/damage-field.mjs";
 import ItemBaseData from "./item-base-data.mjs";
+import createSaveChatButton from "./templates/save-chat-button.mjs";
 
 /**
  * Weapon Item Data Model
@@ -277,6 +278,22 @@ export default class WeaponData extends ItemBaseData {
   }
 
   //endregion DERIVED PROPERTIES
+
+  /**
+   * @override
+   * @return {Promise<{description: string, buttons: object[], tags: string[]}>}
+   */
+  async prepareChatCardContext() {
+    const context = await super.prepareChatCardContext();
+
+    const saveButton = createSaveChatButton(this.save);
+    if (saveButton) {
+      context.buttons.push(saveButton);
+    }
+
+    return context;
+  }
+
   //region DATA MIGRATION
 
   /**

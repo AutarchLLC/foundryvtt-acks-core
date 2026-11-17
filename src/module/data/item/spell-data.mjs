@@ -3,7 +3,7 @@ import itemDescriptionSchema from "./templates/item-description-schema.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
 import SavingThrowsTemplate from "../actor/templates/saving-throws.mjs";
 import ItemBaseData from "./item-base-data.mjs";
-import { SAVING_THROW_CHOICES } from "../../constants.mjs";
+import createSaveChatButton from "./templates/save-chat-button.mjs";
 
 /**
  * Spell Item Data Model
@@ -49,12 +49,9 @@ export default class SpellData extends ItemBaseData {
   async prepareChatCardContext() {
     const context = await super.prepareChatCardContext();
 
-    if (this.save) {
-      context.buttons.push({
-        action: "save",
-        actionParam: this.save,
-        label: `${game.i18n.localize(SAVING_THROW_CHOICES[this.save])} - ${game.i18n.localize("ACKS.spells.Save")}`,
-      });
+    const saveButton = createSaveChatButton(this.save);
+    if (saveButton) {
+      context.buttons.push(saveButton);
     }
     if (this.roll) {
       context.buttons.push({

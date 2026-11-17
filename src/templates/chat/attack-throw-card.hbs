@@ -57,12 +57,17 @@
     </div>
   </div>
 
-  {{#if (and damageTotal targetUuid)}}
+  {{#if (or saveButton (and damageTotal targetUuid))}}
     <div class="card-buttons">
-      <button type="button" data-action="applyDamage" data-damage="{{damageTotal}}" data-target-uuid="{{targetUuid}}">
-        <i class="fa-solid fa-droplet" inert></i>
-        <span>{{localize "ACKS.throw.damage.apply" value=damageTotal}}</span>
-      </button>
+      {{#if (and damageTotal targetUuid)}}
+        <button type="button" data-action="applyDamage" data-damage="{{damageTotal}}" data-target-uuid="{{targetUuid}}">
+          <i class="fa-solid fa-droplet" inert></i>
+          <span>{{localize "ACKS.throw.damage.apply" value=damageTotal}}</span>
+        </button>
+      {{/if}}
+      {{#if saveButton}}
+        <button type="button" data-action="{{saveButton.action}}" data-action-param="{{saveButton.actionParam}}">{{saveButton.label}}</button>
+      {{/if}}
     </div>
   {{/if}}
 
