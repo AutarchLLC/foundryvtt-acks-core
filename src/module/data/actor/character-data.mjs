@@ -3,7 +3,7 @@ import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
-import AttackTweaks from "./templates/attack-tweaks.mjs";
+import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
 import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS } from "../../constants.mjs";
 
@@ -187,7 +187,7 @@ export default class CharacterData extends BaseDataModel {
    */
   getAttackThrowModifiers(attackType) {
     const ability = attackType === ATTACK_TYPE.MELEE ? "str" : "dex";
-    return [this.#getAbilityModifier(ability), ...AttackTweaks.getAttackThrowModifiers(this, attackType)];
+    return [this.#getAbilityModifier(ability), ...AttackModifiers.getAttackThrowModifiers(this, attackType)];
   }
 
   /**
@@ -200,7 +200,7 @@ export default class CharacterData extends BaseDataModel {
     if (attackType === ATTACK_TYPE.MELEE || attackType === ATTACK_TYPE.THROWN) {
       modifiers.push(this.#getAbilityModifier("str"));
     }
-    modifiers.push(...AttackTweaks.getDamageModifiers(this, attackType));
+    modifiers.push(...AttackModifiers.getDamageModifiers(this, attackType));
     return modifiers;
   }
 

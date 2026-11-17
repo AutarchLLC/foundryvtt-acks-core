@@ -3,11 +3,11 @@ import { ATTACK_TYPE } from "../../../constants.mjs";
 import { getEffectModifierBreakdown } from "../../../effect/effect-modifiers.mjs";
 
 /**
- * Attack throw and damage bonuses configured via Actor Tweaks (`attack.mod` and `damage.mod`),
- * plus what Active Effects such as Conditions add to them.
- * Missile and thrown attacks use the missile bonuses; melee attacks use the melee ones.
+ * Labelled attack throw and damage modifiers from an actor's `attack.mod` and `damage.mod` fields: the bonus set in
+ * Actor Tweaks, then what Active Effects such as Conditions add to it.
+ * Missile and thrown attacks use the missile fields; melee attacks use the melee ones.
  */
-export default class AttackTweaks {
+export default class AttackModifiers {
   /**
    * @param {ATTACK_TYPE} attackType
    * @return {boolean}
@@ -23,7 +23,7 @@ export default class AttackTweaks {
    * @return {TNumValueWithLabel[]}
    */
   static getAttackThrowModifiers(system, attackType) {
-    return AttackTweaks.#isMissile(attackType)
+    return AttackModifiers.#isMissile(attackType)
       ? getEffectModifierBreakdown(system, "attack.mod.missile", game.i18n.localize("ACKS.MissileBonus"))
       : getEffectModifierBreakdown(system, "attack.mod.melee", game.i18n.localize("ACKS.MeleeBonus"));
   }
@@ -35,7 +35,7 @@ export default class AttackTweaks {
    * @return {TNumValueWithLabel[]}
    */
   static getDamageModifiers(system, attackType) {
-    return AttackTweaks.#isMissile(attackType)
+    return AttackModifiers.#isMissile(attackType)
       ? getEffectModifierBreakdown(system, "damage.mod.missile", game.i18n.localize("ACKS.MissileDamageBonus"))
       : getEffectModifierBreakdown(system, "damage.mod.melee", game.i18n.localize("ACKS.MeleeDamageBonus"));
   }
