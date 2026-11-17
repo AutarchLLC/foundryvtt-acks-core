@@ -2,9 +2,20 @@
 
 This is the change history for the FoundryVTT ACKS II core system module (search for *acks* in the Foundry installer).
 
-## Next release
+## Release 14.2.0
 
 > Your world's data is updated automatically the first time a GM loads it. **Back up your world before upgrading.**
+
+### ACKS II Conditions
+- The token HUD now offers the **ACKS II Conditions** instead of Foundry's core status effects, each with its own
+  icon. Foundry's special effects (dead, invisible, fly, burrow, hover) are still available.
+- A small subset of Conditions (eleven of them) now apply their **Condition Modifiers** while they are on, changing
+  the creature's attack throws, damage, AC or saving throws. The other Conditions are markers only and do not change
+  any numbers yet. Attack throw and damage breakdowns list each effect that contributes.
+- Core status effects already on actors and tokens (blind, deaf, sleep, restrain, paralysis, silence, fear, bless)
+  are converted to the matching ACKS Condition when your world is updated.
+- New setting **Include Foundry core status effects** (off by default) adds Foundry's core status effects back to the
+  token HUD after the ACKS Conditions.
 
 ### Quantity for every item
 - Weapons and armour now have a **Quantity**, like other equipment. Edit it in the inventory or in the item sheet.
@@ -17,6 +28,19 @@ This is the change history for the FoundryVTT ACKS II core system module (search
 > `system.quantity`, a plain whole number, on equipment, clothing, weapons and armour. Money already used
 > `system.quantity` (Carried coins) and `system.quantitybank` (Banked coins). Reading `system.quantity.value` now
 > returns `undefined`.
+
+### Fixes
+- **Repairs characters and monsters from worlds upgraded to 14.1.0.** That update did not save some converted values,
+  so after reloading the world some actors showed default numbers instead of their own: AC 0, attack throw 10, Blast 15,
+  Implements 16, weapon damage 1d6, and missing languages. This release restores the original values automatically
+  when a GM loads the world. Anything you have entered by hand since then is kept.
+- A weapon with a saving throw shows its **Save** button again, on the Attack Throw card (on a hit) and on the
+  weapon's item card.
+- AC now adds up every piece of equipped armour, so equipping a helmet no longer resets the armour's AC.
+- Inventory rows are dragged by the item name, so the quantity fields can be selected and edited.
+- Creating an actor from a macro or module keeps the system data passed in (for example, ability scores).
+
+Various other internal changes, fixes and improvements.
 
 ## Release 14.1.0
 
