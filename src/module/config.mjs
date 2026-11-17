@@ -1,24 +1,59 @@
 import { ROLL_TYPE } from "./constants.mjs";
 
+/**
+ * Condition Modifiers as Active Effect changes on a status effect entry. Toggling the Condition copies them
+ * into the Active Effect it creates, so they apply while the Condition is on (ADR 0003).
+ * @param {Record<string, number>} modifiers  amount to add, keyed by path under `system` (e.g. `"ac.mod"`)
+ * @returns {{system: {changes: {key: string, type: "add", value: number}[]}}}
+ */
+function conditionModifiers(modifiers) {
+  return {
+    system: {
+      changes: Object.entries(modifiers).map(([path, value]) => ({ key: `system.${path}`, type: "add", value })),
+    },
+  };
+}
+
 export const ACKS = {
   /**
    * ACKS II Conditions offered in the token HUD. Name and icon only: the rules text is not reproduced.
+   * Some carry Condition Modifiers, plain numbers added while the Condition is on.
    * Registered into CONFIG.statusEffects by configureStatusEffects() (status-effects.mjs).
    * Icons in assets/icons/conditions/ keep their game-icons.net file name, so the source is easy to find.
    * @type {StatusEffectConfig[]}
    */
   conditions: [
     { id: "beholding", name: "ACKS.conditions.beholding", img: "systems/acks/assets/icons/conditions/look-at.svg" },
-    { id: "berserk", name: "ACKS.conditions.berserk", img: "systems/acks/assets/icons/conditions/enrage.svg" },
+    {
+      id: "berserk",
+      name: "ACKS.conditions.berserk",
+      img: "systems/acks/assets/icons/conditions/enrage.svg",
+      ...conditionModifiers({ "attack.mod.melee": 2, "ac.mod": -2 }),
+    },
     {
       id: "bewitched",
       name: "ACKS.conditions.bewitched",
       img: "systems/acks/assets/icons/conditions/smitten.svg",
     },
-    { id: "blessed", name: "ACKS.conditions.blessed", img: "icons/svg/angel.svg" },
-    { id: "blinded", name: "ACKS.conditions.blinded", img: "icons/svg/blind.svg" },
+    {
+      id: "blessed",
+      name: "ACKS.conditions.blessed",
+      img: "icons/svg/angel.svg",
+      ...conditionModifiers({ "attack.mod.melee": 1, "attack.mod.missile": 1, "ac.mod": 1 }),
+    },
+    {
+      id: "blinded",
+      name: "ACKS.conditions.blinded",
+      img: "icons/svg/blind.svg",
+      ...conditionModifiers({ "attack.mod.melee": -4 }),
+    },
     { id: "burning", name: "ACKS.conditions.burning", img: "icons/svg/fire.svg" },
-    { id: "charging", name: "ACKS.conditions.charging", img: "systems/acks/assets/icons/conditions/charging-bull.svg" },
+    {
+      id: "charging",
+      name: "ACKS.conditions.charging",
+      img: "systems/acks/assets/icons/conditions/charging-bull.svg",
+      ...conditionModifiers({ "attack.mod.melee": 2 }),
+    },
     { id: "choking", name: "ACKS.conditions.choking", img: "systems/acks/assets/icons/conditions/dead-head-mute.svg" },
     {
       id: "clambering",
@@ -51,6 +86,7 @@ export const ACKS = {
       id: "disordered",
       name: "ACKS.conditions.disordered",
       img: "systems/acks/assets/icons/conditions/misdirection.svg",
+      ...conditionModifiers({ "ac.mod": -2 }),
     },
     { id: "dominated", name: "ACKS.conditions.dominated", img: "systems/acks/assets/icons/conditions/puppet.svg" },
     { id: "drowning", name: "ACKS.conditions.drowning", img: "systems/acks/assets/icons/conditions/drowning.svg" },
@@ -79,7 +115,12 @@ export const ACKS = {
     { id: "grabbed", name: "ACKS.conditions.grabbed", img: "systems/acks/assets/icons/conditions/grab.svg" },
     { id: "helpless", name: "ACKS.conditions.helpless", img: "systems/acks/assets/icons/conditions/kneeling.svg" },
     { id: "hidden", name: "ACKS.conditions.hidden", img: "systems/acks/assets/icons/conditions/hidden.svg" },
-    { id: "hungry", name: "ACKS.conditions.hungry", img: "systems/acks/assets/icons/conditions/stomach.svg" },
+    {
+      id: "hungry",
+      name: "ACKS.conditions.hungry",
+      img: "systems/acks/assets/icons/conditions/stomach.svg",
+      ...conditionModifiers({ "attack.mod.melee": -1, "attack.mod.missile": -1, "save.mod": -1 }),
+    },
     {
       id: "hypothermic",
       name: "ACKS.conditions.hypothermic",
@@ -94,8 +135,14 @@ export const ACKS = {
       id: "infuriated",
       name: "ACKS.conditions.infuriated",
       img: "systems/acks/assets/icons/conditions/angry-eyes.svg",
+      ...conditionModifiers({ "attack.mod.melee": 2, "attack.mod.missile": 2, "ac.mod": -2 }),
     },
-    { id: "inspired", name: "ACKS.conditions.inspired", img: "systems/acks/assets/icons/conditions/inspiration.svg" },
+    {
+      id: "inspired",
+      name: "ACKS.conditions.inspired",
+      img: "systems/acks/assets/icons/conditions/inspiration.svg",
+      ...conditionModifiers({ "attack.mod.melee": 1, "attack.mod.missile": 1, "ac.mod": 1 }),
+    },
     { id: "mad", name: "ACKS.conditions.mad", img: "systems/acks/assets/icons/conditions/screaming.svg" },
     {
       id: "mesmerized",
@@ -109,13 +156,29 @@ export const ACKS = {
       img: "systems/acks/assets/icons/conditions/egyptian-walk.svg",
     },
     { id: "petrified", name: "ACKS.conditions.petrified", img: "icons/svg/statue.svg" },
-    { id: "prone", name: "ACKS.conditions.prone", img: "icons/svg/falling.svg" },
-    { id: "queasy", name: "ACKS.conditions.queasy", img: "systems/acks/assets/icons/conditions/dead-head.svg" },
+    {
+      id: "prone",
+      name: "ACKS.conditions.prone",
+      img: "icons/svg/falling.svg",
+      ...conditionModifiers({ "attack.mod.melee": -4, "attack.mod.missile": -4 }),
+    },
+    {
+      id: "queasy",
+      name: "ACKS.conditions.queasy",
+      img: "systems/acks/assets/icons/conditions/dead-head.svg",
+      ...conditionModifiers({
+        "attack.mod.melee": -3,
+        "attack.mod.missile": -3,
+        "damage.mod.melee": -3,
+        "damage.mod.missile": -3,
+      }),
+    },
     { id: "restrained", name: "ACKS.conditions.restrained", img: "icons/svg/net.svg" },
     {
       id: "shaken",
       name: "ACKS.conditions.shaken",
       img: "systems/acks/assets/icons/conditions/dead-head-wavy-mouth.svg",
+      ...conditionModifiers({ "attack.mod.melee": -1, "attack.mod.missile": -1, "ac.mod": -1 }),
     },
     { id: "shrunk", name: "ACKS.conditions.shrunk", img: "systems/acks/assets/icons/conditions/body-height-down.svg" },
     { id: "slumbering", name: "ACKS.conditions.slumbering", img: "icons/svg/sleep.svg" },

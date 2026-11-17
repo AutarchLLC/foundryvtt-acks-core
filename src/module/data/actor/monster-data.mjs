@@ -3,7 +3,7 @@ import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import BaseDataModel from "../common/base-data-model.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
-import AttackTweaks from "./templates/attack-tweaks.mjs";
+import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
 
 /**
@@ -72,7 +72,7 @@ export default class MonsterData extends BaseDataModel {
    * @return {TNumValueWithLabel[]}
    */
   getAttackThrowModifiers(attackType) {
-    return [AttackTweaks.getAttackThrowModifier(this, attackType)];
+    return AttackModifiers.getAttackThrowModifiers(this, attackType);
   }
 
   /**
@@ -81,7 +81,7 @@ export default class MonsterData extends BaseDataModel {
    * @return {TNumValueWithLabel[]}
    */
   getDamageModifiers(attackType) {
-    return [AttackTweaks.getDamageModifier(this, attackType)];
+    return AttackModifiers.getDamageModifiers(this, attackType);
   }
 
   //endregion ATTACKS
