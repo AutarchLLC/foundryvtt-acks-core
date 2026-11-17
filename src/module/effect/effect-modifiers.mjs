@@ -5,7 +5,7 @@ const SIGN_BY_CHANGE_TYPE = Object.freeze({ add: 1, subtract: -1 });
 
 /**
  * Break an actor modifier field into labelled roll modifiers: the stored value (set in Actor Tweaks), one line for
- * each active Active Effect that adds to the field (a Condition, for example), and an "Other effects" line for
+ * each active Active Effect that adds to the field (a Condition, for example), and an "Other Effects" line for
  * whatever effects changed that cannot be listed, such as multiplied or overridden values (ADR 0003).
  * Together the lines always add up to the field's prepared value.
  * @param {CharacterData|MonsterData} system - actor system data

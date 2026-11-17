@@ -27,20 +27,20 @@ test.describe("condition modifiers", () => {
     const actorId = await createActor(page, { name: "Disordered Fighter", type: "character" });
     const before = await toggleConditions(page, actorId, {});
 
-    const disordered = await toggleConditions(page, actorId, { disordered: true });
-    expect(disordered.ac).toBe(before.ac - 2);
+    const on = await toggleConditions(page, actorId, { disordered: true, queasy: true });
+    expect(on).toEqual({ ...before, ac: before.ac - 2, meleeAttack: -3, missileAttack: -3 });
 
-    const cleared = await toggleConditions(page, actorId, { disordered: false });
-    expect(cleared.ac).toBe(before.ac);
+    const off = await toggleConditions(page, actorId, { disordered: false, queasy: false });
+    expect(off).toEqual(before);
   });
 
   test("Conditions that modify the same value add together", async ({ page }) => {
     const actorId = await createActor(page, { name: "Blessed Bard", type: "character" });
+    const before = await toggleConditions(page, actorId, {});
 
     const values = await toggleConditions(page, actorId, { blessed: true, inspired: true, hungry: true });
 
-    expect(values).toMatchObject({ meleeAttack: 1, missileAttack: 1, save: -1 });
-    expect(values.ac).toBe(2);
+    expect(values).toEqual({ ac: before.ac + 2, meleeAttack: 1, missileAttack: 1, save: -1 });
   });
 
   test("the attack throw lists each Condition next to the Actor Tweaks bonus", async ({ page }) => {
