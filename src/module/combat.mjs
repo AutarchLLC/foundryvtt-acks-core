@@ -1,4 +1,4 @@
-/* global Combat, game, Roll, foundry, canvas, CONFIG, ui, Hooks, CONST */
+/* global Combat, game, Roll, foundry, canvas, CONFIG, ui, Hooks, CONST, ChatMessage */
 import { AcksUtility } from "./util/acks-utility.mjs";
 import SurpriseMatrix from "./apps/surprise-matrix.mjs";
 import AcksCombatHelper from "./combat-helper.mjs";
@@ -55,7 +55,7 @@ export default class AcksCombat extends Combat {
       let tokenId = c.token.id;
       // Check if the current token ID is in a group
       let groupData = groups.find((groupData) => groupData.tokens.includes(tokenId));
-      let initValue = -1;
+      let initValue;
       let showMessage = true;
       let roll;
       if (groupData) {
@@ -379,7 +379,7 @@ export default class AcksCombat extends Combat {
     });
 
     // Then get the worst initiative value
-    groups.forEach(function (groupData, id) {
+    groups.forEach(function (groupData, _id) {
       groupData.initiativeBonus = 10000;
       groupTokens.forEach((t) => {
         let combatant = combatants.find((cb) => cb.token.id == t.id);

@@ -5,10 +5,11 @@
  * This hook allows for final customization of the message HTML before it is added to the log.
  * @param message {ChatMessage} The ChatMessage document being rendered.
  * @param html {HTMLElement} The pending HTML
- * @param context {object} The rendering context.
+ * @param _context {object} The rendering context.
  * @return {Promise<void>}
  */
-export const addChatMessageButtons = async function (message, html, context) {
+export const addChatMessageButtons = async function (message, html, _context) {
+  // TODO: check if this is still needed.
   // Hide blind rolls
   const blindableEl = html.querySelector(".blindable");
   if (message.blind && !game.user.isGM && blindableEl?.dataset.blind === "true") {

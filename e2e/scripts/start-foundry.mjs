@@ -1,3 +1,4 @@
+/* global console */
 /**
  * Start a throwaway Foundry server for testing the system.
  *

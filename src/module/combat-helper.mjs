@@ -1,4 +1,4 @@
-/* global Roll, game, foundry, canvas, CONFIG, ui */
+/* global Roll, game, foundry, canvas, CONFIG, ui, $ */
 import { ACKS } from "./config.mjs";
 import { AcksUtility } from "./util/acks-utility.mjs";
 
