@@ -46,15 +46,15 @@
   "homepage": "https://github.com/AutarchLLC/foundryvtt-acks-core#readme",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@foundryvtt/foundryvtt-cli": "^3.0.4",
-    "@playwright/test": "^1.64.0",
-    "@rollup/plugin-terser": "^1.0.0",
-    "autoprefixer": "^10.5.4",
-    "eslint": "^10.8.1",
-    "globals": "^17.11.0",
-    "postcss": "^8.5.26",
-    "prettier": "3.9.6",
+    "@foundryvtt/foundryvtt-cli": "^3.0.5",
+    "@playwright/test": "^1.65.1",
+    "@rollup/plugin-terser": "^1.0.2",
+    "autoprefixer": "^10.6.2",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
+    "postcss": "^8.5.33",
+    "prettier": "3.10.1",
     "prompts": "^2.4.2",
-    "rollup": "^4.62.4"
+    "rollup": "^4.68.7"
   }
 }
