@@ -1,3 +1,4 @@
+/* global $ */
 import CharacterMortalWoundsApp from "../apps/character-mortal-wounds-app.mjs";
 import CharacterTamperingMortalityApp from "../apps/character-tampering-mortality-app.mjs";
 
