@@ -1,7 +1,7 @@
 /* global foundry, CONST */
 import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
-import BaseDataModel from "../common/base-data-model.mjs";
+import ActorBaseData from "./actor-base-data.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
@@ -9,7 +9,7 @@ import { isCurrentSchema } from "../../migration/schema-version.mjs";
 /**
  * Monster Data Model
  */
-export default class MonsterData extends BaseDataModel {
+export default class MonsterData extends ActorBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override

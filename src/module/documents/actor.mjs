@@ -1,8 +1,7 @@
 /* global Actor, game, ChatMessage, foundry, ui, Roll */
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
-import { ACKS } from "../config.mjs";
-import { ITEM_TYPE, PHYSICAL_ITEM_TYPES, ROLL_TYPE } from "../constants.mjs";
+import { ROLL_TYPE } from "../constants.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 import { buildAttackThrow, normalizeChoices } from "../throw/attack-throw-builder.mjs";
 import { getDamageTotal, resolveAttackThrow, rollDamage } from "../throw/attack-throw-resolution.mjs";
@@ -116,42 +115,6 @@ export default class AcksActor extends Actor {
     if (this.system.retainer?.enabled && this.system.retainer?.managerid) {
       this.#releaseFromManager(userId);
     }
-  }
-
-  /**
-   * Extends data from base Actor class
-   */
-  computeAdditionnalData() {
-    const data = this.system;
-
-    this.computeAC();
-
-    // Compute modifiers from actor scores
-    if (this.isOwner || game.user.isGM) {
-      this.computeEncumbrance();
-      this.computeBHR();
-    }
-
-    // Determine Initiative
-    data.initiative.value = data.initiative.mod || 0;
-    if (this.type === "character") {
-      data.initiative.value += data.scores.dex.mod;
-    }
-
-    data.movement.encounter = Math.floor((data.movement.base / 3) * 10) / 10;
-    if (this.type === "character" && this.system.config.movementAuto) {
-      data.movementacks.stealth = Math.floor((data.movementacks.combat / 2) * 10) / 10;
-      data.movementacks.climb = Math.floor((data.movementacks.combat / 3) * 10) / 10;
-    }
-  }
-
-  prepareData() {
-    super.prepareData();
-  }
-
-  prepareDerivedData() {
-    super.prepareDerivedData();
-    this.computeAdditionnalData();
   }
 
   async getExperience(value) {
@@ -431,18 +394,6 @@ export default class AcksActor extends Actor {
       }
     });
     return total / 100;
-  }
-
-  getTotalMoneyEncumbrance() {
-    let total = 0;
-    this.items.forEach((item) => {
-      if (item.type === "money") {
-        total += item.system.quantity;
-      }
-    });
-    let nbStone = Math.floor(total / 1000);
-    let nbItems = Math.ceil((total - nbStone * 1000) / 166);
-    return { stone: nbStone, item: nbItems };
   }
 
   /**
@@ -875,164 +826,11 @@ export default class AcksActor extends Actor {
     });
   }
 
-  static _valueFromTable(table, val) {
-    let output;
-    for (let i = 0; i <= val; i++) {
-      if (table[i] !== undefined) {
-        output = table[i];
-      }
-    }
-    if (output === undefined) {
-      // Take the first key/value of the table object, whatever it is
-      for (const key in table) {
-        output = table[key];
-        break;
-      }
-    }
-    return output;
-  }
-
-  computeEncumbrance() {
-    if (this.type !== "character") {
-      return;
-    }
-
-    let totalEncumbrance6 = 0;
-
-    this.items.forEach((item) => {
-      const isClothing = item.type === ITEM_TYPE.ITEM && item.system.subtype === "clothing";
-      if (PHYSICAL_ITEM_TYPES.includes(item.type) && !isClothing) {
-        totalEncumbrance6 += item.system.weight6 * item.system.quantity;
-      }
-    });
-
-    const moneyEncumbrance = this.getTotalMoneyEncumbrance();
-    // encumbrance in 1/6 stones
-    const value6 = totalEncumbrance6 + moneyEncumbrance.stone * 6;
-
-    totalEncumbrance6 /= 6; // Get the weight in stones
-    totalEncumbrance6 += moneyEncumbrance.stone;
-
-    // Select the max encumbrance value
-    const maxEncumbrance =
-      this.system.encumbrance.forcemax > 0 ? this.system.encumbrance.forcemax : 20 + this.system.scores.str.mod;
-    if (this.system.encumbrance.max !== maxEncumbrance && this._id) {
-      this.update({ "system.encumbrance.max": maxEncumbrance });
-    }
-
-    // max encumbrance in 1/6 stones
-    const max6 = maxEncumbrance * 6;
-
-    this.system.encumbrance = {
-      pct: Math.clamp((totalEncumbrance6 / maxEncumbrance) * 100, 0, 100),
-      max: maxEncumbrance,
-      encumbered: totalEncumbrance6 > maxEncumbrance,
-      value: Math.round(totalEncumbrance6),
-      max6,
-      value6,
-      breakpoints: {
-        low: Math.clamp((5 / maxEncumbrance) * 100, 0, 100),
-        mid: Math.clamp((7 / maxEncumbrance) * 100, 0, 100),
-        high: Math.clamp((10 / maxEncumbrance) * 100, 0, 100),
-      },
-    };
-
-    if (this.system.config.movementAuto) {
-      this._calculateMovement();
-    }
-  }
-
-  _calculateMovement() {
-    let baseSpeed;
-    if (this.system.encumbrance.value > this.system.encumbrance.max) {
-      baseSpeed = ACKS.base_speed.overburdened; // 0
-    } else if (this.system.encumbrance.value > 10) {
-      baseSpeed = ACKS.base_speed.high_encumbrance; // 30
-    } else if (this.system.encumbrance.value > 7) {
-      baseSpeed = ACKS.base_speed.mid_encumbrance; // 60
-    } else if (this.system.encumbrance.value > 5) {
-      baseSpeed = ACKS.base_speed.low_encumbrance; // 90
-    } else {
-      baseSpeed = ACKS.base_speed.unencumbered; // 120
-    }
-
-    // apply movement mod but make sure speed can't be less than 0
-    baseSpeed = Math.max(baseSpeed + this.system.movement.mod, 0);
-
-    // Formulas from ACKS Revised Rulebook page 17
-    this.system.movementacks.exploration = baseSpeed;
-    this.system.movementacks.combat = Math.floor((baseSpeed / 3) * 10) / 10;
-    this.system.movementacks.chargerun = baseSpeed;
-    this.system.movementacks.expedition = Math.floor((baseSpeed / 5) * 10) / 10;
-    this.system.movement.base = baseSpeed;
-  }
-
   getFavorites() {
     return this.items.filter((i) => i.system.favorite);
   }
 
   buildFavoriteActions() {
     return this.getFavorites();
-  }
-
-  computeAC() {
-    if (this.type !== "character") {
-      return;
-    }
-    // TODO: move to Data Model as derived data
-    // Every equipped armor adds its AC; an armor without an AC value (e.g. a helmet) adds 0.
-    let baseAC = 0;
-    let shieldAC = 0;
-    const data = this.system;
-    data.ac.naked = data.scores.dex.mod;
-    for (const item of this.items) {
-      if (item.type !== ITEM_TYPE.ARMOR || !item.system.equipped) continue;
-      const ac = item.system.ac.value ?? 0;
-      if (item.system.type === "shield") shieldAC += ac;
-      else baseAC += ac;
-    }
-    data.ac.value = baseAC + data.scores.dex.mod + shieldAC + data.ac.mod;
-    data.ac.shield = shieldAC;
-  }
-
-  computeBHR() {
-    if (this.type !== "character") {
-      return;
-    }
-    const data = this.system;
-
-    const bhrcalc = {
-      0: "1d2",
-      4: "1d3",
-      10: "1d4",
-      17: "1d6",
-      24: "1d8",
-      30: "1d10",
-      37: "2d6",
-      50: "2d8",
-      64: "2d10",
-      77: "2d12",
-      90: "3d10",
-      111: "4d10",
-      141: "5d10",
-      171: "6d10",
-    };
-
-    let newBHR;
-    const value = data.hp.max;
-    if (value > 171) {
-      const diceNumber = Math.floor((value - 171) / 30) + 6;
-      newBHR = diceNumber + "d10";
-    } else {
-      newBHR = AcksActor._valueFromTable(bhrcalc, Number(data.hp.max));
-    }
-    if (!newBHR) {
-      newBHR = "1d2";
-    }
-    if (newBHR !== data.hp.bhr) {
-      data.hp.bhr = newBHR;
-      this.update({ "system.hp.bhr": newBHR });
-      this.update({ "system.fight.healingrate": newBHR });
-    }
   }
 }

@@ -403,7 +403,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     await this._prepareItems(context);
 
     context.totalMoneyGC = this.actor.getTotalMoneyGC();
-    context.moneyEncumbrance = this.actor.getTotalMoneyEncumbrance();
+    context.moneyEncumbrance = this.actor.system.getTotalMoneyEncumbrance();
 
     context.isNew = this.actor.isNew();
 

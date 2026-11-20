@@ -1,16 +1,46 @@
 /* global foundry, game, CONST */
 import ActorCommonTemplate from "./templates/actor-common-template.mjs";
 import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
-import BaseDataModel from "../common/base-data-model.mjs";
+import ActorBaseData from "./actor-base-data.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
-import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS } from "../../constants.mjs";
+import { ACKS } from "../../config.mjs";
+import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS, ITEM_TYPE, PHYSICAL_ITEM_TYPES } from "../../constants.mjs";
+
+/**
+ * Base Healing Rate by maximum hit points (RR 301): the entry with the highest threshold not above max HP applies.
+ * Above the last threshold, every further 30 HP adds a d10.
+ */
+const BHR_TABLE = Object.freeze({
+  0: "1d2",
+  4: "1d3",
+  10: "1d4",
+  17: "1d6",
+  24: "1d8",
+  30: "1d10",
+  37: "2d6",
+  50: "2d8",
+  64: "2d10",
+  77: "2d12",
+  90: "3d10",
+  111: "4d10",
+  141: "5d10",
+  171: "6d10",
+});
 
 /**
  * Character Data Model
+ *
+ * Derived properties (not part of the stored schema, or overwritten in memory):
+ * @property {number} ac.value  Armor Class: equipped armor and shields, DEX modifier and `ac.mod`
+ * @property {number} ac.naked  Armor Class without armor or shield (the DEX modifier)
+ * @property {number} ac.shield  Armor Class from equipped shields
+ * @property {TEncumbrance} encumbrance  Carried weight against the maximum
+ * @property {string} hp.bhr  Base Healing Rate formula, from max HP
+ * @property {string} fight.healingrate  Same as `hp.bhr`, shown on the sheet
  */
-export default class CharacterData extends BaseDataModel {
+export default class CharacterData extends ActorBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
@@ -153,16 +183,159 @@ export default class CharacterData extends BaseDataModel {
 
   //region ATTACKS
 
+  //region DERIVED DATA
+
   /**
-   * Derive each attribute score's modifier (`scores.*.mod`) from its value, after Active Effects are applied.
+   * Derive the character's stats, after Active Effects are applied. Order matters: AC and initiative need the
+   * score modifiers, movement needs encumbrance.
    * @override
+   * @protected
    */
-  prepareDerivedData() {
-    super.prepareDerivedData();
+  _prepareTypeData() {
     for (const score of Object.values(this.scores)) {
       score.mod = CharacterData.getAttributeModifier(score.value);
     }
+    this.#prepareAC();
+    this.#prepareEncumbrance();
+    if (this.config.movementAuto) {
+      this.#prepareMovement();
+    }
+    this.#prepareBHR();
   }
+
+  /**
+   * The DEX modifier adds to initiative.
+   * @override
+   * @protected
+   */
+  get _initiativeBonus() {
+    return this.scores.dex.mod;
+  }
+
+  /**
+   * Armor Class from equipped armor and shields. An armor without an AC value (e.g. a helmet) adds 0.
+   */
+  #prepareAC() {
+    let baseAC = 0;
+    let shieldAC = 0;
+    this.ac.naked = this.scores.dex.mod;
+    for (const item of this.parent.items) {
+      if (item.type !== ITEM_TYPE.ARMOR || !item.system.equipped) continue;
+      const ac = item.system.ac.value ?? 0;
+      if (item.system.type === "shield") shieldAC += ac;
+      else baseAC += ac;
+    }
+    this.ac.value = baseAC + this.scores.dex.mod + shieldAC + this.ac.mod;
+    this.ac.shield = shieldAC;
+  }
+
+  /**
+   * Carried weight of physical items (clothing excluded) and coins against the maximum encumbrance.
+   */
+  #prepareEncumbrance() {
+    let totalEncumbrance6 = 0;
+    for (const item of this.parent.items) {
+      const isClothing = item.type === ITEM_TYPE.ITEM && item.system.subtype === "clothing";
+      if (PHYSICAL_ITEM_TYPES.includes(item.type) && !isClothing) {
+        totalEncumbrance6 += item.system.weight6 * item.system.quantity;
+      }
+    }
+
+    const moneyEncumbrance = this.getTotalMoneyEncumbrance();
+    // encumbrance in 1/6 stones
+    const value6 = totalEncumbrance6 + moneyEncumbrance.stone * 6;
+
+    totalEncumbrance6 /= 6; // Get the weight in stones
+    totalEncumbrance6 += moneyEncumbrance.stone;
+
+    const maxEncumbrance = this.encumbrance.forcemax > 0 ? this.encumbrance.forcemax : 20 + this.scores.str.mod;
+    // max encumbrance in 1/6 stones
+    const max6 = maxEncumbrance * 6;
+
+    this.encumbrance = {
+      pct: Math.clamp((totalEncumbrance6 / maxEncumbrance) * 100, 0, 100),
+      max: maxEncumbrance,
+      encumbered: totalEncumbrance6 > maxEncumbrance,
+      value: Math.round(totalEncumbrance6),
+      max6,
+      value6,
+      breakpoints: {
+        low: Math.clamp((5 / maxEncumbrance) * 100, 0, 100),
+        mid: Math.clamp((7 / maxEncumbrance) * 100, 0, 100),
+        high: Math.clamp((10 / maxEncumbrance) * 100, 0, 100),
+      },
+    };
+  }
+
+  /**
+   * Movement speeds from encumbrance and `movement.mod` (ACKS Revised Rulebook page 17).
+   */
+  #prepareMovement() {
+    let baseSpeed;
+    if (this.encumbrance.value > this.encumbrance.max) {
+      baseSpeed = ACKS.base_speed.overburdened; // 0
+    } else if (this.encumbrance.value > 10) {
+      baseSpeed = ACKS.base_speed.high_encumbrance; // 30
+    } else if (this.encumbrance.value > 7) {
+      baseSpeed = ACKS.base_speed.mid_encumbrance; // 60
+    } else if (this.encumbrance.value > 5) {
+      baseSpeed = ACKS.base_speed.low_encumbrance; // 90
+    } else {
+      baseSpeed = ACKS.base_speed.unencumbered; // 120
+    }
+
+    // apply movement mod but make sure speed can't be less than 0
+    baseSpeed = Math.max(baseSpeed + this.movement.mod, 0);
+
+    this.movementacks.exploration = baseSpeed;
+    this.movementacks.combat = Math.floor((baseSpeed / 3) * 10) / 10;
+    this.movementacks.chargerun = baseSpeed;
+    this.movementacks.expedition = Math.floor((baseSpeed / 5) * 10) / 10;
+    this.movementacks.stealth = Math.floor((this.movementacks.combat / 2) * 10) / 10;
+    this.movementacks.climb = Math.floor((this.movementacks.combat / 3) * 10) / 10;
+    this.movement.base = baseSpeed;
+  }
+
+  /**
+   * Base Healing Rate from max HP, see {@link BHR_TABLE}.
+   */
+  #prepareBHR() {
+    const maxHP = Number(this.hp.max);
+    let bhr;
+    if (maxHP > 171) {
+      bhr = Math.floor((maxHP - 171) / 30) + 6 + "d10";
+    } else {
+      bhr = CharacterData.#valueFromTable(BHR_TABLE, maxHP);
+    }
+    bhr ||= "1d2";
+    this.hp.bhr = bhr;
+    this.fight.healingrate = bhr;
+  }
+
+  /**
+   * Value of the entry with the highest numeric key not above `value`; the first entry when none is.
+   * @param {Record<number, string>} table
+   * @param {number} value
+   * @return {string|undefined}
+   */
+  static #valueFromTable(table, value) {
+    let output;
+    for (let i = 0; i <= value; i++) {
+      if (table[i] !== undefined) {
+        output = table[i];
+      }
+    }
+    if (output === undefined) {
+      // Take the first key/value of the table object, whatever it is
+      for (const key in table) {
+        output = table[key];
+        break;
+      }
+    }
+    return output;
+  }
+
+  //endregion DERIVED DATA
 
   /**
    * Modifier granted by an attribute score (STR, INT, WIL, DEX, CON, CHA).
