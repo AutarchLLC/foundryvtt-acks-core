@@ -197,12 +197,12 @@ src/module/migration/
 
 ### Rules
 
-- `updateActor(source)`: mutate `source.system.*`, manage the `source.items` roster (add/remove) and edit
+- `updateActor(source)`: mutate `source.system.*`, set or change `source.flags` (removals are not written), manage the `source.items` roster (add/remove) and edit
   `source.effects` (embedded active effects, diffed by `_id` like items).
 - `updateItem(source, actorSource)`: mutate item fields only; never touch `source.items`.
 - Migrations receive the **stored** data, read raw from the server, not a loaded document's `toObject()`
   (which `migrateData()` has already converted and schema cleaning has stripped of legacy keys). Only `system`
-  (and an actor's `items` / `effects` rosters) is written, as a whole `system` replacement.
+  is written, as a whole replacement, plus an actor's flags (set or changed, never removed) and its `items` / `effects` rosters.
 - Prove a migration with an e2e spec that seeds raw legacy data, migrates, **reloads**, and checks the stored
   data (see `e2e/tests/migration-runner.spec.mjs`).
 - Delete a stored field with `new foundry.data.operators.ForcedDeletion()`. Do not use the

@@ -14,9 +14,11 @@ export default class MigrationBase {
    * Migrate a single actor. Mutate `source` in place.
    *
    * `source` is the actor's stored data as the server holds it, legacy keys included. Only
-   * `source.system` and the `source.items` / `source.effects` rosters are written back.
+   * `source.system`, `source.flags` and the `source.items` / `source.effects` rosters are written back.
+   * Flags are written as a change: set or change one, but removing one is not written.
    *
    * Modify actor fields:  source.system.foo = newValue
+   * Set a flag:           foundry.utils.setProperty(source, "flags.acks.foo", value)
    * Add an item:          push to source.items WITHOUT an _id
    * Remove an item:       splice/filter source.items by _id
    *

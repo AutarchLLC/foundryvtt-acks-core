@@ -5,16 +5,6 @@ const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fie
 
 export default class ActorCommonTemplate {
   /**
-   * Used to indicate new actor.
-   * TODO: move to derived data, no need to store in DB
-   * @return {{isNew: *}}
-   */
-  static get isNew() {
-    return {
-      isNew: new BooleanField({ initial: false }),
-    };
-  }
-  /**
    * Retainer Data
    * @return {{retainer: *}}
    */

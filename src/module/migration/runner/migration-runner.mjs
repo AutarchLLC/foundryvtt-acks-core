@@ -14,6 +14,7 @@ import MigrationUtil from "../migration-util.mjs";
  * For the same reason, the migrated `system` data is written as a whole: as a
  * `ForcedReplacement` with `diff: false`. Foundry's usual update diff compares against the loaded
  * document, which already looks migrated, and would drop the very values the migration set.
+ * Flags an actor migration sets or changes are written alongside it.
  */
 export default class MigrationRunner {
   /** @type {MigrationBase[]} */
@@ -95,8 +96,9 @@ export default class MigrationRunner {
     const actorUpdates = [];
     for (const actor of game.actors) {
       const source = stored.get(actor.id);
-      if (source && (await this.#migrateActor(actor, source, migrations))) {
-        actorUpdates.push(MigrationRunner.#systemReplacement(source));
+      const update = source && (await this.#migrateActor(actor, source, migrations));
+      if (update) {
+        actorUpdates.push(update);
       }
     }
     if (actorUpdates.length) {
@@ -115,8 +117,9 @@ export default class MigrationRunner {
     const itemUpdates = [];
     for (const item of game.items) {
       const source = stored.get(item.id);
-      if (source && (await this.#applyItemMigrations(source, migrations))) {
-        itemUpdates.push(MigrationRunner.#systemReplacement(source));
+      const update = source && (await this.#migrateItem(source, migrations));
+      if (update) {
+        itemUpdates.push(update);
       }
     }
     if (itemUpdates.length) {
@@ -185,10 +188,10 @@ export default class MigrationRunner {
           }
         }
 
-        // Write migrated system data back via the ActorDelta path on the TokenDocument.
+        // Write migrated system data and flags back via the ActorDelta path on the TokenDocument.
         if (migrateSystem) {
-          const { system } = MigrationRunner.#systemReplacement(source);
-          await scene.updateEmbeddedDocuments("Token", [{ _id: token.id, delta: { system } }], { diff: false });
+          const { _id, ...delta } = MigrationRunner.#actorUpdate(deltaObj, source);
+          await scene.updateEmbeddedDocuments("Token", [{ _id: token.id, delta }], { diff: false });
         }
       }
     }
@@ -227,12 +230,12 @@ export default class MigrationRunner {
           if (!source) {
             continue;
           }
-          const migrated =
+          const update =
             documentName === "Actor"
               ? await this.#migrateActor(document, source, migrations)
-              : await this.#applyItemMigrations(source, migrations);
-          if (migrated) {
-            updates.push(MigrationRunner.#systemReplacement(source));
+              : await this.#migrateItem(source, migrations);
+          if (update) {
+            updates.push(update);
           }
         }
         if (updates.length) {
@@ -252,21 +255,34 @@ export default class MigrationRunner {
 
   /**
    * Run the migrations on an actor's stored data and write its migrated items and effects.
-   * The caller writes the actor's own system data.
+   * The caller writes the actor's own data with the returned update.
    *
    * @param {Actor} actor      Loaded Actor document.
    * @param {object} source    The actor's stored data. Mutated in place.
    * @param {MigrationBase[]} migrations
-   * @returns {Promise<boolean>}  Whether the actor was behind and has been migrated.
+   * @returns {Promise<object|null>}  The actor's update (see {@link MigrationRunner.#actorUpdate}),
+   *                                  or null if the actor was already at the target version.
    */
   async #migrateActor(actor, source, migrations) {
     const original = foundry.utils.deepClone(source);
     if (!(await this.#applyActorMigrations(source, migrations))) {
-      return false;
+      return null;
     }
     await this.#commitEmbedded(actor, "Item", original.items, source.items);
     await this.#commitEmbedded(actor, "ActiveEffect", original.effects, source.effects);
-    return true;
+    return MigrationRunner.#actorUpdate(original, source);
+  }
+
+  /**
+   * Run the migrations on a standalone item's stored data.
+   *
+   * @param {object} source  The item's stored data. Mutated in place.
+   * @param {MigrationBase[]} migrations
+   * @returns {Promise<object|null>}  The item's update (see {@link MigrationRunner.#systemReplacement}),
+   *                                  or null if the item was already at the target version.
+   */
+  async #migrateItem(source, migrations) {
+    return (await this.#applyItemMigrations(source, migrations)) ? MigrationRunner.#systemReplacement(source) : null;
   }
 
   /**
@@ -343,6 +359,24 @@ export default class MigrationRunner {
       _id: source._id,
       system: foundry.data.operators.ForcedReplacement.create(MigrationUtil.withoutDeletions(source.system)),
     };
+  }
+
+  /**
+   * The update that writes a migrated actor: its system data as a whole (see
+   * {@link MigrationRunner.#systemReplacement}), plus the flags its migrations set or changed.
+   * Send it with `diff: false`.
+   *
+   * @param {object} original  The actor's stored data before migration
+   * @param {object} source    Migrated actor data
+   * @returns {{_id: string, system: object, flags?: object}}
+   */
+  static #actorUpdate(original, source) {
+    const update = MigrationRunner.#systemReplacement(source);
+    const flags = foundry.utils.diffObject(original.flags ?? {}, source.flags ?? {});
+    if (!foundry.utils.isEmpty(flags)) {
+      update.flags = flags;
+    }
+    return update;
   }
 
   /**

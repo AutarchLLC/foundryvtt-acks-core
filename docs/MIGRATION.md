@@ -127,7 +127,7 @@ For each phase, the runner processes these targets in order:
 4. **World-owned Compendium Packs** — packs whose `packageType === "world"`. System and module packs are **read-only** at runtime and are not touched here; they rely on `migrateData()` instead.
 
 For actors, the runner:
-1. Calls `migration.updateActor(actorSource)` — you can mutate actor fields and the `items` and `effects` arrays.
+1. Calls `migration.updateActor(actorSource)` — you can mutate actor fields, set flags, and the `items` and `effects` arrays.
 2. Calls `migration.updateItem(itemSource, actorSource)` for every embedded item.
 3. Diffs the `items` and `effects` arrays before/after by `_id` to determine creates, updates, and deletes. Only effects whose data changed are updated. For a token delta, `effects` holds the synthetic actor's full list (base actor plus delta), so changes land in the delta.
 4. Stamps `system._schemaVersion` on the actor and its items with the highest version in the phase (`CURRENT_SCHEMA_VERSION` after the last phase).
@@ -149,8 +149,10 @@ marked for deletion, and is sent with `diff: false`. Foundry's usual update diff
 which already looks migrated, and would drop exactly the values the migration set. A plain `ForcedDeletion` of a key
 outside the schema would not survive client-side cleaning either.
 
-So, for actors and items, **only `system` is written** (plus the `items` and `effects` rosters of an actor). Effects
-are written as whole objects with the usual diff, since no `migrateData()` converts them in memory.
+So, for items, **only `system` is written**; for actors, **only `system`, flags and the `items` and `effects`
+rosters**. Effects are written as whole objects with the usual diff, since no `migrateData()` converts them in memory.
+An actor's flags are written as the change from its stored flags, merged into them: a migration can set or change a
+flag, but removing one is not written.
 
 > ACKS 14.1.0 shipped a runner that migrated loaded documents. It wrote nothing but `_schemaVersion`, so every
 > migrated field fell back to its schema default on the next load. Migration 7 re-runs migrations 1–5 to repair those
@@ -294,12 +296,14 @@ export class MigrationNDescription extends MigrationBase {
 
 **Rules for `updateActor`:**
 - Mutate `source.system.*` to change actor fields.
+- Set or change a flag with `foundry.utils.setProperty(source, "flags.acks.<name>", value)` (see `m9-new-actor-flag.mjs`).
+  Removing a flag is not written.
 - To **add** an embedded item: push to `source.items` **without** an `_id`.
 - To **remove** an embedded item: filter `source.items` by `_id`.
 - Do NOT copy an existing item with its `_id` to "duplicate" it — the runner treats existing `_id`s as updates to the original.
 - Embedded active effects follow the same rules through `source.effects`: edit an entry in place, push one without an `_id` to create it, filter one out to delete it.
 
-- Changes outside `system`, `items` and `effects` are not written.
+- Changes outside `system`, `flags`, `items` and `effects` are not written.
 
 **Rules for `updateItem`:**
 - Mutate `source.system.*` item fields only. Nothing outside `system` is written.

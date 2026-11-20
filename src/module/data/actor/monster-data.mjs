@@ -13,7 +13,7 @@ export default class MonsterData extends BaseDataModel {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{isNew, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
+   * @return {{retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
    */
   static defineSchema() {
     const { NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -21,7 +21,6 @@ export default class MonsterData extends BaseDataModel {
     return {
       ...super.defineSchema(),
       // common actor template
-      ...ActorCommonTemplate.isNew,
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
       ...ActorCommonTemplate.ac,
