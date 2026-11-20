@@ -238,3 +238,16 @@
  * @property {string} [tooltip] - The tooltip of the button.
  * @property {string} [type] - The button type.
  */
+
+/**
+ * A character's derived encumbrance (`system.encumbrance`), replacing the stored fields in memory.
+ * @typedef {Object} TEncumbrance
+ * @property {number} value - Carried weight in stone, rounded
+ * @property {number} value6 - Carried weight in 1/6 stone
+ * @property {number} max - Maximum encumbrance in stone: `forcemax` when set, else 20 + STR modifier
+ * @property {number} max6 - Maximum encumbrance in 1/6 stone
+ * @property {number} pct - Carried weight as a percentage of the maximum, 0–100
+ * @property {boolean} encumbered - Whether the carried weight is above the maximum
+ * @property {{low: number, mid: number, high: number}} breakpoints - Encumbrance band thresholds (5, 7, 10 stone) as
+ *   percentages of the maximum
+ */
