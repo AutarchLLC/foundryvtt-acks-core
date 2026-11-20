@@ -177,7 +177,6 @@
     "exportSource": null
   },
   "system": {
-    "isNew": false,
     "retainer": {
       "enabled": false,
       "loyalty": 0,

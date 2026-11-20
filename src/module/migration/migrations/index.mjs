@@ -6,3 +6,4 @@ export { Migration5DataCleanup } from "./m5-data-cleanup.mjs";
 export { Migration6CoreStatusEffects } from "./m6-core-status-effects.mjs";
 export { Migration7RepairLostMigrations } from "./m7-repair-lost-migrations.mjs";
 export { Migration8QuantityAsNumber } from "./m8-quantity-as-number.mjs";
+export { Migration9NewActorFlag } from "./m9-new-actor-flag.mjs";

@@ -15,19 +15,48 @@ export default class AcksActor extends Actor {
     if (data instanceof Array) {
       return super.create(data, options);
     }
+    AcksActor.#moveDeprecatedIsNew(data);
     // If the created actor has items (only applicable to foundry.utils.duplicated actors) bypass the new actor creation logic
     if (data.items) {
       return super.create(data, options);
     }
 
-    // Flag the actor as new, keeping any system data the caller passed
-    data.system = { isNew: true, ...data.system };
+    // Flag the actor as new, unless the caller says otherwise
+    AcksActor.#defaultIsNewFlag(data, true);
     if (data.type === "character") {
       const skills = await AcksUtility.loadCompendium("acks.acks-all-equipment");
       data.items = skills.map((i) => i.toObject()).filter((i) => i.type === "money");
     }
 
     return super.create(data, options);
+  }
+
+  /**
+   * Move a `system.isNew` passed in creation data to the `flags.acks.isNew` flag, which replaced it.
+   * A flag passed alongside it wins.
+   * TODO: remove in 15.0.0, together with the compatibility warning.
+   * @param {object} data  Actor creation data. Mutated in place.
+   */
+  static #moveDeprecatedIsNew(data) {
+    if (data.system?.isNew === undefined) {
+      return;
+    }
+    foundry.utils.logCompatibilityWarning(
+      "ACKS | Actor creation data system.isNew is deprecated. Pass flags.acks.isNew instead.",
+      { since: "14.3.0", until: "15.0.0" },
+    );
+    const { isNew, ...system } = data.system;
+    data.system = system;
+    AcksActor.#defaultIsNewFlag(data, isNew);
+  }
+
+  /**
+   * Set the `flags.acks.isNew` flag in creation data, unless the data already gives it.
+   * @param {object} data  Actor creation data. Mutated in place.
+   * @param {boolean} isNew
+   */
+  static #defaultIsNewFlag(data, isNew) {
+    data.flags = foundry.utils.mergeObject({ acks: { isNew } }, data.flags ?? {}, { inplace: false });
   }
 
   async _preUpdate(changes, options, user) {
@@ -39,11 +68,11 @@ export default class AcksActor extends Actor {
     const key = { character: "scores", monster: "saves" }[this.type];
     const incoming = key && changes.system?.[key];
     if (
-      this.system.isNew &&
+      this.isNew() &&
       incoming &&
       !foundry.utils.isEmpty(foundry.utils.diffObject(this._source.system[key], incoming))
     ) {
-      foundry.utils.setProperty(changes, "system.isNew", false);
+      foundry.utils.setProperty(changes, "flags.acks.isNew", false);
     }
     return allowed;
   }
@@ -416,8 +445,13 @@ export default class AcksActor extends Actor {
     return { stone: nbStone, item: nbItems };
   }
 
+  /**
+   * Whether the actor is new: freshly created, with scores (character) or saves (monster) not yet set.
+   * The sheet prompts to roll them while this is true.
+   * @returns {boolean}
+   */
   isNew() {
-    return this.system.isNew;
+    return this.getFlag("acks", "isNew") ?? false;
   }
 
   async updateSavingThrows(savingThrows) {

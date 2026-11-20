@@ -52,11 +52,11 @@ test.describe("character sheet", () => {
 
     const result = await page.evaluate(async (id) => {
       const actor = game.actors.get(id);
-      const wasNew = actor.system.isNew;
+      const wasNew = actor.isNew();
       await actor.update({ "system.scores.str.value": 18 });
       const high = actor.system.scores.str.mod;
-      // Changing scores clears `isNew` within the same update (AcksActor#_preUpdate).
-      const isNew = actor.system.isNew;
+      // Changing scores clears the new-actor flag within the same update (AcksActor#_preUpdate).
+      const isNew = actor.isNew();
       await actor.update({ "system.scores.str.value": 3 });
       return { wasNew, high, isNew, low: actor.system.scores.str.mod };
     }, actorId);
@@ -71,7 +71,7 @@ test.describe("character sheet", () => {
     const isNew = await page.evaluate(async (id) => {
       const actor = game.actors.get(id);
       await actor.update({ name: "Renamed Fighter II", "system.scores": actor.system.toObject().scores });
-      return actor.system.isNew;
+      return actor.isNew();
     }, actorId);
 
     expect(isNew).toBe(true);
