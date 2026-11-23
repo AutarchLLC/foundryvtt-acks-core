@@ -1,4 +1,6 @@
 /* global TokenDocument, game */
+import { ACTOR_TYPE } from "../constants.mjs";
+
 export default class ACKSToken extends TokenDocument {
   /**
    * Pre-process a creation operation for a single Document instance. Pre-operation events only occur for the client
@@ -18,16 +20,12 @@ export default class ACKSToken extends TokenDocument {
     if (allowed === false) {
       return false;
     }
-    // Auto roll HP for synthetic monsters (not linked)
-    if (this.actor.type === "monster" && !this.actorLink && game.settings.get("acks", "autoRollMonsterHP")) {
+    // Auto roll HP for synthetic monsters (not linked). Write through the token's own source:
+    // the pending token's `delta` object is not backed by `_source.delta`, so changes made to it are lost.
+    if (this.actor.type === ACTOR_TYPE.MONSTER && !this.actorLink && game.settings.get("acks", "autoRollMonsterHP")) {
       /** @type Roll */
       const hpRoll = await this.actor.rollHP(false);
-      this.delta.updateSource({
-        "system.hp": {
-          max: hpRoll.total,
-          value: hpRoll.total,
-        },
-      });
+      this.updateSource({ delta: { system: { hp: { max: hpRoll.total, value: hpRoll.total } } } });
     }
   }
 }
