@@ -5,6 +5,8 @@ const env = resolveFoundryEnv();
 
 export default defineConfig({
   testDir: "./tests",
+  // Stops the run when the server failed to open a system compendium.
+  globalSetup: "./support/global-setup.mjs",
   outputDir: "../test-results",
   // All tests share one world and one GM login, so they run one at a time.
   workers: 1,
