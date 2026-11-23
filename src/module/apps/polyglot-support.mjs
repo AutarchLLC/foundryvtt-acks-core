@@ -1,4 +1,6 @@
 /* global Hooks, game */
+import { ITEM_TYPE } from "../constants.mjs";
+
 // Apps hooks
 // https://github.com/mclemente/fvtt-module-polyglot/wiki/API
 // TODO: check if this still works
@@ -34,7 +36,7 @@ export default class AcksPolyglot {
           const knownLanguages = new Set();
           const literateLanguages = new Set();
           for (const item of actor.items) {
-            if (item.type === "language") {
+            if (item.type === ITEM_TYPE.LANGUAGE) {
               const name = item?.flags?.babele?.originalName || item.name;
               knownLanguages.add(name);
               if (actor.system.scores.int.value >= 9) {

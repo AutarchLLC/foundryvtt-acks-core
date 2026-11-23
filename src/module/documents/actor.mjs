@@ -1,7 +1,7 @@
 /* global Actor, game, ChatMessage, foundry, ui, Roll */
 import AcksDice from "../dice.mjs";
 import { AcksUtility } from "../util/acks-utility.mjs";
-import { ROLL_TYPE } from "../constants.mjs";
+import { ACTOR_TYPE, ITEM_TYPE, ROLL_TYPE } from "../constants.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 import { buildAttackThrow, normalizeChoices } from "../throw/attack-throw-builder.mjs";
 import { getDamageTotal, resolveAttackThrow, rollDamage } from "../throw/attack-throw-resolution.mjs";
@@ -22,9 +22,9 @@ export default class AcksActor extends Actor {
 
     // Flag the actor as new, unless the caller says otherwise
     AcksActor.#defaultIsNewFlag(data, true);
-    if (data.type === "character") {
+    if (data.type === ACTOR_TYPE.PC) {
       const skills = await AcksUtility.loadCompendium("acks.acks-all-equipment");
-      data.items = skills.map((i) => i.toObject()).filter((i) => i.type === "money");
+      data.items = skills.map((i) => i.toObject()).filter((i) => i.type === ITEM_TYPE.MONEY);
     }
 
     return super.create(data, options);
@@ -77,7 +77,7 @@ export default class AcksActor extends Actor {
   }
 
   async _onUpdate(changed, options, userId) {
-    if (this.type === "character" && this.system.retainer?.enabled && this.system.retainer?.managerid !== "") {
+    if (this.type === ACTOR_TYPE.PC && this.system.retainer?.enabled && this.system.retainer?.managerid !== "") {
       let manager = game.actors.get(this.system.retainer.managerid);
       if (manager && manager.sheet.rendered) {
         manager.sheet.render();
@@ -118,7 +118,7 @@ export default class AcksActor extends Actor {
   }
 
   async getExperience(value) {
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       return;
     }
 
@@ -155,13 +155,13 @@ export default class AcksActor extends Actor {
    * @return {boolean}
    */
   hasHeavyHelm() {
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       return false;
     }
     let hasHeavyHelm = false;
     this.items.forEach((item) => {
       if (
-        item.type === "armor" &&
+        item.type === ITEM_TYPE.ARMOR &&
         item.system.equipped &&
         item.name.toLowerCase().includes("heavy") &&
         item.name.toLowerCase().includes("helmet")
@@ -187,14 +187,14 @@ export default class AcksActor extends Actor {
   }
 
   getConModifier() {
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       return 0;
     }
     return this.system.scores.con.mod;
   }
 
   getWillModifier() {
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       return 0;
     }
     return this.system.scores.wis.mod;
@@ -202,7 +202,7 @@ export default class AcksActor extends Actor {
 
   getHenchmen() {
     //TODO: remake so we are working with DocumentUUIDField
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       return [];
     }
 
@@ -262,12 +262,12 @@ export default class AcksActor extends Actor {
   }
 
   async addHenchman(subActorId) {
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       ui.notifications.error(game.i18n.localize("ACKS.error.HenchmanCharacter"));
       return;
     }
     const npc = game.actors.get(subActorId);
-    if (npc?.type !== "character") {
+    if (npc?.type !== ACTOR_TYPE.PC) {
       ui.notifications.error(game.i18n.localize("ACKS.error.HenchmanMonster"));
       return;
     }
@@ -286,7 +286,7 @@ export default class AcksActor extends Actor {
       return;
     }
     // Check if the henchman is already in another actor
-    const henchmen = game.actors.filter((a) => a.type === "character" && a.system.henchmenList.includes(subActorId));
+    const henchmen = game.actors.filter((a) => a.type === ACTOR_TYPE.PC && a.system.henchmenList.includes(subActorId));
     if (henchmen.length > 0) {
       ui.notifications.error(game.i18n.localize("ACKS.error.HenchmanAlready"));
       return;
@@ -326,7 +326,7 @@ export default class AcksActor extends Actor {
    * @return {string}
    */
   getManagerName() {
-    if (this.type !== "character" || this.system.retainer?.managerid === "") {
+    if (this.type !== ACTOR_TYPE.PC || this.system.retainer?.managerid === "") {
       return "";
     }
     let manager = game.actors.get(this.system.retainer.managerid);
@@ -335,7 +335,7 @@ export default class AcksActor extends Actor {
 
   getTotalWages() {
     let total = 0;
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       return 0;
     }
     this.system.henchmenList.forEach((id) => {
@@ -349,7 +349,7 @@ export default class AcksActor extends Actor {
   }
 
   payWages() {
-    if (this.type !== "character") {
+    if (this.type !== ACTOR_TYPE.PC) {
       return;
     }
 
@@ -360,7 +360,7 @@ export default class AcksActor extends Actor {
       return;
     }
     // Get GC item
-    const moneyItems = this.items.filter((i) => i.type === "money");
+    const moneyItems = this.items.filter((i) => i.type === ITEM_TYPE.MONEY);
     // Sort money items per coppervalue, descending order
     moneyItems.sort((a, b) => a.system.coppervalue - b.system.coppervalue);
     // Loop through money items and decrement the totalWages value (expressed in copper)
@@ -389,7 +389,7 @@ export default class AcksActor extends Actor {
   getTotalMoneyGC() {
     let total = 0;
     this.items.forEach((item) => {
-      if (item.type === "money") {
+      if (item.type === ITEM_TYPE.MONEY) {
         total += item.system.quantity * item.system.coppervalue;
       }
     });
@@ -475,7 +475,7 @@ export default class AcksActor extends Actor {
   rollSave(save, options = {}) {
     const label = game.i18n.localize(`ACKS.saves.${save}.long`);
     const rollParts = ["1d20"];
-    if (this.type === "character") {
+    if (this.type === ACTOR_TYPE.PC) {
       rollParts.push(this.system.save.mod);
       rollParts.push(this.system.scores.wis.mod);
     }
@@ -646,7 +646,7 @@ export default class AcksActor extends Actor {
   rollHitDice(options = {}) {
     const label = game.i18n.localize(`ACKS.roll.hd`);
     const rollParts = [this.system.hp.hd];
-    if (this.type === "character") {
+    if (this.type === ACTOR_TYPE.PC) {
       rollParts.push(this.system.scores.con.mod * this.system.details.level);
     }
 
@@ -672,7 +672,7 @@ export default class AcksActor extends Actor {
   rollBHR(options = {}) {
     const label = game.i18n.localize(`ACKS.roll.bhr`);
     const rollParts = [this.system.hp.bhr];
-    if (this.type === "character") {
+    if (this.type === ACTOR_TYPE.PC) {
       rollParts.push();
     }
 

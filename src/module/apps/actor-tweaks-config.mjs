@@ -1,4 +1,6 @@
 /* global foundry, game */
+import { ACTOR_TYPE } from "../constants.mjs";
+
 const { DocumentSheetV2 } = foundry.applications.api;
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -42,7 +44,7 @@ export default class ActorTweaksConfig extends HandlebarsApplicationMixin(Docume
     context.system = this.document._source.system;
     context.isGM = game.user.isGM;
 
-    context.isCharacter = this.document.type === "character";
+    context.isCharacter = this.document.type === ACTOR_TYPE.PC;
 
     return context;
   }
