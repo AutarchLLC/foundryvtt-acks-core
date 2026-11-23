@@ -4,6 +4,7 @@ import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import ActorBaseData from "./actor-base-data.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
+import { creatureTypesField } from "./templates/creature-types.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
 
 /**
@@ -21,6 +22,8 @@ export default class MonsterData extends ActorBaseData {
     return {
       ...super.defineSchema(),
       // common actor template
+      // Creature Types, set on the sheet
+      ...creatureTypesField(),
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
       ...ActorCommonTemplate.ac,

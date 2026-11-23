@@ -1,0 +1,29 @@
+{{!--
+  Creature Types of an actor, as chips.
+  Context: creatureTypes { entries: [{ index, label }], editable, canAdd }
+--}}
+<div class="creature-types">
+  <span class="creature-types__label">{{localize "ACKS.creatureType.label"}}</span>
+  <ul class="creature-types__list tag-list">
+    {{#each creatureTypes.entries}}
+      <li class="tag creature-type" data-index="{{index}}">
+        {{#if ../creatureTypes.editable}}
+          <a class="creature-type__label" data-action="editCreatureType"
+             data-tooltip="{{localize 'ACKS.creatureType.edit'}}">{{label}}</a>
+          <a class="creature-type__delete" data-action="deleteCreatureType"
+             data-tooltip="{{localize 'ACKS.creatureType.delete'}}"
+             aria-label="{{localize 'ACKS.creatureType.delete'}}"><i class="fa-solid fa-xmark"></i></a>
+        {{else}}
+          <span class="creature-type__label">{{label}}</span>
+        {{/if}}
+      </li>
+    {{else}}
+      <li class="creature-types__empty">{{localize "ACKS.creatureType.none"}}</li>
+    {{/each}}
+  </ul>
+  {{#if creatureTypes.canAdd}}
+    <button type="button" class="creature-types__add plain icon fa-solid fa-plus" data-action="addCreatureType"
+            data-tooltip="{{localize 'ACKS.creatureType.add'}}"
+            aria-label="{{localize 'ACKS.creatureType.add'}}"></button>
+  {{/if}}
+</div>

@@ -22,6 +22,7 @@ export const preloadHandlebarsTemplates = async function () {
     proficiencyItem: "systems/acks/templates/actors/v2/partials/proficiency-item.hbs",
     hirelingList: "systems/acks/templates/actors/v2/partials/hireling-list.hbs",
     bundleItemList: "systems/acks/templates/items/v2/partials/bundle-item-list.hbs",
+    [HB_PARTIAL_NAME.CREATURE_TYPES]: "systems/acks/templates/actors/v2/partials/creature-types.hbs",
     [HB_PARTIAL_NAME.ITEM_WEAPON_DESC]: "systems/acks/templates/items/v2/description/description-weapon.hbs",
   });
 };

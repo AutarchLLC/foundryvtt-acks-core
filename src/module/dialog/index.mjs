@@ -9,3 +9,4 @@ export { default as inputXPAmount } from "./dialog-input-xp-amount.mjs";
 export { default as chooseMonsterHitDice } from "./dialog-choose-monster-hit-dice.mjs";
 export { default as chooseItemNameAndType } from "./dialog-choose-item-name-and-type.mjs";
 export { default as getAttackThrowDetails } from "./dialog-get-attack-throw-details.mjs";
+export { default as inputCreatureType } from "./dialog-input-creature-type.mjs";
