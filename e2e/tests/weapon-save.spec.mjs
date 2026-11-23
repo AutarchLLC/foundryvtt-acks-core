@@ -1,7 +1,5 @@
-/* global Actor, canvas, CONFIG, document, game, Scene, ui */
-import { createActor, dialog, expect, latestChatMessage, test } from "../support/foundry.mjs";
-
-const SCENE_NAME = "Weapon Save Scene";
+/* global canvas, CONFIG, document, game, ui */
+import { createActor, dialog, expect, latestChatMessage, placeToken, test } from "../support/foundry.mjs";
 
 /**
  * Add a weapon to an actor and return the weapon's id.
@@ -146,25 +144,11 @@ test.describe("weapon saving throw button", () => {
   });
 
   test.describe("on a scene", () => {
-    test.afterEach(async ({ page }) => {
-      await page.evaluate(async (name) => {
-        const ids = game.scenes.filter((s) => s.name === name).map((s) => s.id);
-        if (ids.length) await Scene.implementation.deleteDocuments(ids);
-      }, SCENE_NAME);
-    });
-
     test("clicking the attack card's save button rolls that save for the controlled token", async ({ page }) => {
       const actorId = await createActor(page, { name: "Assassin", type: "character" });
       const weaponId = await addWeapon(page, actorId, { save: "paralysis" });
-      const tokenId = await page.evaluate(async (name) => {
-        const scene = await Scene.implementation.create({ name, width: 1000, height: 1000 });
-        await scene.view();
-        const victim = await Actor.implementation.create({ name: "Orc", type: "monster" });
-        const tokenData = await victim.getTokenDocument({ x: 300, y: 300 });
-        const [token] = await scene.createEmbeddedDocuments("Token", [tokenData.toObject()]);
-        return token.id;
-      }, SCENE_NAME);
-      await page.waitForFunction((id) => canvas.ready && !!canvas.tokens.get(id), tokenId);
+      const victimId = await createActor(page, { name: "Orc", type: "monster" });
+      const tokenId = await placeToken(page, victimId);
       await page.evaluate((id) => {
         canvas.tokens.get(id).control({ releaseOthers: true });
         ui.sidebar.expand();

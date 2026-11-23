@@ -1,4 +1,4 @@
-/* global Actor, fetch, foundry, game, localStorage */
+/* global Actor, Scene, canvas, fetch, foundry, game, localStorage */
 import { test as base, expect } from "@playwright/test";
 import { TEST_USER } from "../scripts/foundry-env.mjs";
 
@@ -14,11 +14,12 @@ export async function joinWorld(page, userName) {
   await page.locator("button[name=join]").click();
   await page.waitForURL("**/game");
   await page.waitForFunction(() => globalThis.game?.ready === true, null, { timeout: 60_000 });
-  // Chat pop-up notifications render asynchronously and throw if their message is deleted
-  // mid-render (as resetWorld does), so only show the chat tab pip. This is a client setting.
+  // Both are client settings for UI that runs asynchronously and throws when resetWorld deletes what it
+  // shows: chat pop-ups (only show the chat tab pip) and the text a status change floats over a token.
   await page.evaluate(async () => {
     const uiConfig = game.settings.get("core", "uiConfig");
     await game.settings.set("core", "uiConfig", { ...uiConfig, chatNotifications: "pip" });
+    await game.settings.set("core", "scrollingStatusText", false);
   });
 }
 
@@ -59,22 +60,28 @@ async function skipTours(page) {
 }
 
 /**
- * Bring the world back to a known state between tests: no world actors, items, chat
- * messages or combats, no open sheets or dialogs, and the game unpaused.
+ * Bring the world back to a known state between tests: no scenes, world actors, items, chat
+ * messages or combats, no open sheets, dialogs or token HUD, and the game unpaused.
  * @param {import("@playwright/test").Page} page
  */
 export async function resetWorld(page) {
+  // Tearing a scene down mid-animation throws.
+  await page.waitForFunction(() => !Object.keys(foundry.canvas.animation.CanvasAnimation.animations).length);
   await page.evaluate(async () => {
     const { DialogV2, DocumentSheetV2 } = foundry.applications.api;
     for (const app of [...foundry.applications.instances.values()]) {
       if (app instanceof DialogV2 || app instanceof DocumentSheetV2) await app.close({ animate: false });
     }
-    for (const collection of [game.combats, game.messages, game.actors, game.items]) {
+    if (canvas.hud?.token?.rendered) await canvas.hud.token.close();
+    // Combats before the scenes their combatants' tokens live on, scenes before the actors their tokens show.
+    for (const collection of [game.combats, game.scenes, game.messages, game.actors, game.items]) {
       const ids = collection.map((d) => d.id);
       if (ids.length) await collection.documentClass.deleteDocuments(ids);
     }
     if (game.paused) game.togglePause(false, { broadcast: true });
   });
+  // Deleting the viewed scene makes the canvas draw a blank one, asynchronously.
+  await page.waitForFunction(() => !canvas.scene && !canvas.loading);
 }
 
 /**
@@ -127,6 +134,35 @@ export { expect };
  */
 export function createActor(page, data) {
   return page.evaluate(async (data) => (await Actor.implementation.create(data)).id, data);
+}
+
+/**
+ * Place a token of a world actor on the viewed scene and wait until the canvas draws it. The first
+ * call in a test creates and views a scene; `resetWorld` deletes it before the next test.
+ * @param {import("@playwright/test").Page} page
+ * @param {string} actorId
+ * @param {object} [options]
+ * @param {object} [options.token]  Token data merged over the actor's prototype token (default position 300, 300)
+ * @param {object} [options.scene]  Scene creation data, used only when this call creates the scene
+ * @returns {Promise<string>} the token id
+ */
+export async function placeToken(page, actorId, { token = {}, scene = {} } = {}) {
+  const tokenId = await page.evaluate(
+    async ({ actorId, token, scene }) => {
+      let viewed = canvas.scene;
+      if (!viewed) {
+        viewed = await Scene.implementation.create({ name: "Test Scene", width: 1000, height: 1000, ...scene });
+        await viewed.view();
+      }
+      const tokenData = await game.actors.get(actorId).getTokenDocument({ x: 300, y: 300, ...token });
+      const [created] = await viewed.createEmbeddedDocuments("Token", [tokenData.toObject()]);
+      return created.id;
+    },
+    { actorId, token, scene },
+  );
+  // `canvas.loading` stays true until the whole draw is done; `ready` turns true part way through it.
+  await page.waitForFunction((id) => canvas.ready && !canvas.loading && !!canvas.tokens.get(id), tokenId);
+  return tokenId;
 }
 
 /**

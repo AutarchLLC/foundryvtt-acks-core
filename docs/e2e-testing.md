@@ -56,10 +56,13 @@ JS changes need a page reload (Foundry serves files with `no-store`). CSS, templ
 
 Tests live in `e2e/tests/*.spec.mjs` and import `test` / `expect` from `e2e/support/foundry.mjs`:
 
-- `page` is a GM page in a freshly reset world: no world actors, items, chat messages or combats, no open
-  sheets or dialogs. The login is shared by all tests, because joining takes a few seconds.
+- `page` is a GM page in a freshly reset world: no scenes, world actors, items, chat messages or combats,
+  no open sheets, dialogs or token HUD. World settings are not reset: a test that changes one restores it. The login is shared by all tests, because joining takes a few seconds.
 - A test fails if the page throws an uncaught exception, even when its own assertions pass.
 - Helpers: `createActor`, `openActorSheet`, `dialog(page, title)`, `latestChatMessage`.
+- `placeToken(page, actorId, { token, scene })` puts a token on the viewed scene and waits for the canvas
+  to draw it. The first call in a test creates and views a scene. Use it instead of creating scenes by hand:
+  the next reset deletes the scene, after any canvas animation has finished.
 - `support/stored-data.mjs` seeds and reads documents in their stored (raw) form for migration specs:
   `storeRaw`, `readStored`, `migrateWorldFrom`, `reloadWorld`.
 
