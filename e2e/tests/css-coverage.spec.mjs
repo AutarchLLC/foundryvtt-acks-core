@@ -16,7 +16,7 @@ import path from "node:path";
 import process from "node:process";
 import { MODULE_PATH, SRC_NAME, styleSources } from "../../scripts/common.mjs";
 import { ROOT } from "../scripts/foundry-env.mjs";
-import { createActor, expect, openActorSheet, test } from "../support/foundry.mjs";
+import { createActor, expect, openActorSheet, placeToken, test } from "../support/foundry.mjs";
 
 const ENABLED = process.env.ACKS_CSS_COVERAGE === "1";
 const BASE_REF = process.env.ACKS_CSS_BASE || "master";
@@ -323,17 +323,8 @@ test.describe("CSS coverage tour", () => {
       );
 
       // --- Scene: tokens, attack throws, combat, HUD ---------------------------------------------
-      const [fighterToken, orcToken] = await page.evaluate(
-        async (ids) => {
-          const data = [];
-          for (const [i, id] of ids.entries()) {
-            const token = await game.actors.get(id).getTokenDocument({ x: 400 + i * 200, y: 400 });
-            data.push(token.toObject());
-          }
-          return (await canvas.scene.createEmbeddedDocuments("Token", data)).map((t) => t.id);
-        },
-        [fighterId, orcId],
-      );
+      const fighterToken = await placeToken(page, fighterId, { token: { x: 400, y: 400 } });
+      const orcToken = await placeToken(page, orcId, { token: { x: 600, y: 400 } });
 
       for (const [label, weapon] of [
         ["melee", "Sword"],
@@ -412,11 +403,6 @@ test.describe("CSS coverage tour", () => {
         acksCssUsage.stop();
         acksCssStyleDiff.restore();
         return acksCssUsage.report();
-      });
-      await page.evaluate(async () => {
-        if (canvas.hud.token.rendered) await canvas.hud.token.close();
-        const ids = canvas.scene?.tokens.map((t) => t.id) ?? [];
-        if (ids.length) await canvas.scene.deleteEmbeddedDocuments("Token", ids);
       });
       await fs.mkdir(OUT_DIR, { recursive: true });
       await fs.writeFile(path.join(OUT_DIR, "runtime.json"), JSON.stringify(report, null, 2));
