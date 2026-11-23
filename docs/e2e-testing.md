@@ -45,6 +45,10 @@ screenshot in `test-results/` (`npx playwright show-trace <trace.zip>`).
   Foundry allows one session per user, so join as Gamemaster at `http://localhost:30001` to watch while
   tests run. Expect the tests to delete world actors, items and chat messages between tests.
 - If the server is already running, Playwright reuses it instead of starting another.
+- Before any test runs, `e2e/support/global-setup.mjs` checks that every compendium in `system.json` is open,
+  and stops the run if one is not. Foundry cannot open a pack that another Foundry instance holds: close any
+  instance that loads this checkout's `src/` (for example through `npm run link`), then run the tests again.
+  The server's log is in `.foundry-test/Logs/`.
 
 JS changes need a page reload (Foundry serves files with `no-store`). CSS, templates and lang files hot-reload.
 
