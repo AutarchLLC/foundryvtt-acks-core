@@ -251,3 +251,10 @@
  * @property {{low: number, mid: number, high: number}} breakpoints - Encumbrance band thresholds (5, 7, 10 stone) as
  *   percentages of the maximum
  */
+
+/**
+ * One Creature Type of an actor (`system.creatureTypes[]`), such as "Monstrosity (bestial)".
+ * @typedef {Object} TCreatureType
+ * @property {CREATURE_TYPE} type - Creature Type key
+ * @property {string} subtype - Free-text subtype shown in parentheses, case kept; blank when there is none
+ */

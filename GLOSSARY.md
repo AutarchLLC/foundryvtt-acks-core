@@ -22,6 +22,12 @@ _Avoid_: Using it to mean only Conditions
 A number a Condition adds to one of the affected creature's own rolls or scores, such as its attack throws, Armor Class or saving throws, for as long as the creature has that Condition. Several Condition Modifiers on the same roll or score add together.
 _Avoid_: Penalty, debuff, condition bonus
 
+### Creatures
+
+**Creature Type**:
+The ACKS II category a creature belongs to, such as Animal, Humanoid, Monstrosity or Undead. A creature can have several, each at most once. Each can carry a free-text **Subtype**, written in parentheses after it, such as "Monstrosity (bestial)" or "Incarnation (Demon)". Characters are always Humanoid. Rules such as Encumbrance depend on it.
+_Avoid_: Monster type, race, kind
+
 ### Inventory
 
 **Physical Item**:

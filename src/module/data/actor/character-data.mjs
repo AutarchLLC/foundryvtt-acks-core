@@ -4,9 +4,10 @@ import actorSpellcasterSchema from "./templates/actor-spellcaster-schema.mjs";
 import ActorBaseData from "./actor-base-data.mjs";
 import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
+import { creatureTypesField } from "./templates/creature-types.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
 import { ACKS } from "../../config.mjs";
-import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS, ITEM_TYPE, PHYSICAL_ITEM_TYPES } from "../../constants.mjs";
+import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS, CREATURE_TYPE, ITEM_TYPE, PHYSICAL_ITEM_TYPES } from "../../constants.mjs";
 
 /**
  * Base Healing Rate by maximum hit points (RR 301): the entry with the highest threshold not above max HP applies.
@@ -39,6 +40,7 @@ const BHR_TABLE = Object.freeze({
  * @property {TEncumbrance} encumbrance  Carried weight against the maximum
  * @property {string} hp.bhr  Base Healing Rate formula, from max HP
  * @property {string} fight.healingrate  Same as `hp.bhr`, shown on the sheet
+ * @property {TCreatureType[]} creatureTypes  Always Humanoid; not stored, but Active Effects can change it
  */
 export default class CharacterData extends ActorBaseData {
   /**
@@ -52,6 +54,8 @@ export default class CharacterData extends ActorBaseData {
     return {
       ...super.defineSchema(),
       // common actor template
+      // Creature Types: always Humanoid, never stored
+      ...creatureTypesField({ persisted: false, initial: [{ type: CREATURE_TYPE.HUMANOID }] }),
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
       ...ActorCommonTemplate.ac,

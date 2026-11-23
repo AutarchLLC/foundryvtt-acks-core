@@ -1,5 +1,6 @@
 /* global foundry, game, ui, Item */
-import { ITEM_TYPE, PHYSICAL_ITEM_TYPES } from "../constants.mjs";
+import { CREATURE_TYPE_CHOICES, ITEM_TYPE, PHYSICAL_ITEM_TYPES } from "../constants.mjs";
+import { creatureTypeLabel } from "../data/actor/templates/creature-types.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 import ActorTweaksConfig from "../apps/actor-tweaks-config.mjs";
@@ -406,6 +407,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     context.moneyEncumbrance = this.actor.system.getTotalMoneyEncumbrance();
 
     context.isNew = this.actor.isNew();
+    context.creatureTypes = this._prepareCreatureTypes();
 
     context.enriched = {
       biography: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -415,6 +417,30 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     };
 
     return context;
+  }
+
+  /**
+   * Can the Creature Types be edited on this sheet? Characters are always Humanoid.
+   * @return {boolean}
+   * @protected
+   */
+  get _canEditCreatureTypes() {
+    return false;
+  }
+
+  /**
+   * Prepare the Creature Type chips shown in the sheet header.
+   * @return {{entries: {index: number, label: string}[], editable: boolean, canAdd: boolean}}
+   * @protected
+   */
+  _prepareCreatureTypes() {
+    const creatureTypes = this.actor.system.creatureTypes;
+    const editable = this._canEditCreatureTypes;
+    return {
+      entries: creatureTypes.map((entry, index) => ({ index, label: creatureTypeLabel(entry) })),
+      editable,
+      canAdd: editable && creatureTypes.length < Object.keys(CREATURE_TYPE_CHOICES).length,
+    };
   }
 
   /**

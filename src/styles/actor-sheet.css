@@ -402,6 +402,42 @@
   button.blink {
     animation: blink 1s ease-in-out infinite;
   }
+
+  /* Creature Type chips under the name (partials/creature-types.hbs) */
+  .creature-types {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 1.5rem;
+  }
+
+  .creature-types__label {
+    font-size: var(--font-size-12);
+    text-wrap: nowrap;
+  }
+
+  .creature-types__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .creature-types__empty {
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  .creature-type__label,
+  .creature-type__delete {
+    color: inherit;
+  }
+
+  .creature-types__add {
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 .acks2 .actor-portrait > img,

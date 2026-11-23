@@ -707,9 +707,34 @@ export const DAMAGE_TYPE_ICON = Object.freeze({
   [DAMAGE_TYPE.VARIES_BY_WEAPON]: "acks-icon acks-icon-varies-by-weapon",
 });
 
+/**
+ * ACKS II Creature Types. An actor can have several, each at most once.
+ * @readonly
+ * @enum {string}
+ */
+export const CREATURE_TYPE = Object.freeze({
+  ANIMAL: "animal",
+  BEASTMAN: "beastman",
+  CONSTRUCT: "construct",
+  ENCHANTED_CREATURE: "enchantedCreature",
+  GIANT: "giant",
+  HUMANOID: "humanoid",
+  INCARNATION: "incarnation",
+  MONSTROSITY: "monstrosity",
+  OOZE: "ooze",
+  PLANT: "plant",
+  UNDEAD: "undead",
+  VERMIN: "vermin",
+});
+
+export const CREATURE_TYPE_CHOICES = Object.freeze(
+  Object.fromEntries(Object.values(CREATURE_TYPE).map((type) => [type, `ACKS.creatureType.${type}`])),
+);
+
 // Handlebars partial names.
 export const HB_PARTIAL_NAME = Object.freeze({
   ITEM_WEAPON_DESC: "descriptionWeapon",
+  CREATURE_TYPES: "creatureTypes",
 });
 
 /**

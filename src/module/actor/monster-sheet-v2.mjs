@@ -19,6 +19,9 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       rollReaction: ACKSMonsterSheetV2.#rollReaction,
       generateSaves: ACKSMonsterSheetV2.#generateSaves,
       treasureLinkDelete: ACKSMonsterSheetV2.#treasureLinkDelete,
+      addCreatureType: ACKSMonsterSheetV2.#addCreatureType,
+      editCreatureType: ACKSMonsterSheetV2.#editCreatureType,
+      deleteCreatureType: ACKSMonsterSheetV2.#deleteCreatureType,
     },
   };
 
@@ -77,6 +80,11 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       templates: ["systems/acks/templates/items/v2/common/item-active-effects.hbs"],
     },
   };
+
+  /** @override */
+  get _canEditCreatureTypes() {
+    return this.isEditable;
+  }
 
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
@@ -223,6 +231,64 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
       "system.details.treasure.table": "",
       "system.details.treasure.type": "",
     });
+  }
+
+  /**
+   * Current Creature Types as plain objects, safe to change and write back.
+   * @return {TCreatureType[]}
+   */
+  #creatureTypesSource() {
+    return this.actor.system.toObject().creatureTypes;
+  }
+
+  /**
+   * Index of the Creature Type chip that was clicked.
+   * @param {HTMLElement} target
+   * @return {number}
+   */
+  static #creatureTypeIndex(target) {
+    return Number(target.closest("[data-index]").dataset.index);
+  }
+
+  /**
+   * Add a Creature Type.
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} _target
+   */
+  static async #addCreatureType(_event, _target) {
+    const creatureTypes = this.#creatureTypesSource();
+    const entry = await ACKSDialog.inputCreatureType({ takenTypes: creatureTypes.map((t) => t.type) });
+    if (!entry) return;
+    creatureTypes.push(entry);
+    await this.actor.update({ "system.creatureTypes": creatureTypes });
+  }
+
+  /**
+   * Edit the clicked Creature Type.
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} target
+   */
+  static async #editCreatureType(_event, target) {
+    const index = ACKSMonsterSheetV2.#creatureTypeIndex(target);
+    const creatureTypes = this.#creatureTypesSource();
+    const current = creatureTypes[index];
+    if (!current) return;
+    const entry = await ACKSDialog.inputCreatureType({ current, takenTypes: creatureTypes.map((t) => t.type) });
+    if (!entry) return;
+    creatureTypes[index] = entry;
+    await this.actor.update({ "system.creatureTypes": creatureTypes });
+  }
+
+  /**
+   * Remove the clicked Creature Type.
+   * @param {PointerEvent} _event
+   * @param {HTMLElement} target
+   */
+  static async #deleteCreatureType(_event, target) {
+    const index = ACKSMonsterSheetV2.#creatureTypeIndex(target);
+    const creatureTypes = this.#creatureTypesSource();
+    creatureTypes.splice(index, 1);
+    await this.actor.update({ "system.creatureTypes": creatureTypes });
   }
 
   /**
