@@ -15,7 +15,7 @@ This document explains how the ACKS data migration system works and how to add n
    - [What Gets Migrated](#what-gets-migrated)
 4. [The `_schemaVersion` Field](#the-_schemaversion-field)
 5. [The `migrateData()` Safety Net](#the-migratedata-safety-net)
-6. [Deleting DB Fields (v13 vs v14)](#deleting-db-fields-v13-vs-v14)
+6. [Deleting DB Fields](#deleting-db-fields)
 7. [Step-by-Step: Adding a New Migration](#step-by-step-adding-a-new-migration)
 8. [Migration File Reference](#migration-file-reference)
 9. [Development Tips](#development-tips)
@@ -62,7 +62,7 @@ src/module/migration/
 |------|---------------|
 | `migration.mjs` | Entry point; called from `acks.mjs` `ready` hook; re-exports `CURRENT_SCHEMA_VERSION` and `isCurrentSchema()` |
 | `schema-version.mjs` | Holds `CURRENT_SCHEMA_VERSION` and `isCurrentSchema()`. Has no imports, so data models can import it without joining the migration ↔ data model import cycle |
-| `migration-util.mjs` | `MigrationUtil.markPropertyForDeletion()` — abstracts v13/v14 deletion syntax |
+| `migration-util.mjs` | `MigrationUtil.markPropertyForDeletion()` — marks a stored field for deletion |
 | `migration-base.mjs` | `MigrationBase` — base class; override `updateActor()` and/or `updateItem()` |
 | `migration-list.mjs` | `MigrationList.fromVersionTo(from, to)` — filters and instantiates pending migrations |
 | `migration-runner.mjs` | `MigrationRunner` — runs phases; handles world actors, items, token deltas, compendiums |
@@ -233,18 +233,16 @@ static migrateData(source) {
 
 ---
 
-## Deleting DB Fields (v13 vs v14)
+## Deleting DB Fields
 
-Foundry v13 uses a deprecated `"-=fieldName": null` prefix convention for deletions.  
-Foundry v14 introduces `foundry.data.operators.ForcedDeletion` as the proper mechanism (the old syntax is removed in v16).
+Foundry v14 deletes a stored key through `foundry.data.operators.ForcedDeletion`.
 
-**Always use `MigrationUtil.markPropertyForDeletion()`** — it abstracts both versions:
+**Always use `MigrationUtil.markPropertyForDeletion()`**, which sets the key to a `ForcedDeletion`:
 
 ```js
 import MigrationUtil from "../migration-util.mjs";
 
-// Deletes source.system.saves.wand from the DB, using ForcedDeletion on v14
-// and the "-=" prefix on v13.
+// Deletes source.system.saves.wand from the DB.
 MigrationUtil.markPropertyForDeletion(source.system, "saves.wand");
 
 // Supports dot-notation for nested keys:
@@ -253,7 +251,7 @@ MigrationUtil.markPropertyForDeletion(source.system, "movement.old");
 
 The key must actually exist on the object or the call is a no-op. Always copy the value to its new name **before** marking the old key for deletion.
 
-> **Do not** manually write `source.system["-=fieldName"] = null` or `new foundry.data.operators.ForcedDeletion()` in migration files. Use `MigrationUtil.markPropertyForDeletion()` instead.
+> Call `MigrationUtil.markPropertyForDeletion()` rather than assigning `ForcedDeletion` yourself. The runner strips the marked keys before it writes `system` (see [Stored data, not loaded documents](#stored-data-not-loaded-documents)).
 
 ---
 
@@ -434,7 +432,7 @@ src/module/migration/migration-util.mjs
 
 | Method | Description |
 |--------|-------------|
-| `static markPropertyForDeletion(obj, key)` | Marks a property for DB deletion, using `ForcedDeletion` on Foundry v14+ and the `"-="` prefix on v13. Supports dot-notation keys. No-op if the property does not exist. |
+| `static markPropertyForDeletion(obj, key)` | Marks a property for DB deletion with a `ForcedDeletion`. Supports dot-notation keys. No-op if the property does not exist. |
 | `static withoutDeletions(data)` | Deep copy of `data` without the keys marked for deletion. The runner uses it to build the `system` it writes. |
 | `static async fetchStoredSources(documentName, pack)` | Stored data of every document in a world collection (or compendium pack), read from the server, by id. |
 
