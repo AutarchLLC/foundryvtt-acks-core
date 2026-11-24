@@ -33,8 +33,7 @@ export default class MigrationBase {
    * changed are written. For an unlinked token, source.effects is the synthetic actor's full list
    * (base actor plus delta), and changes land in the delta.
    *
-   * To delete a field from the DB use foundry.data.operators.ForcedDeletion (v14+).
-   * The old "-=fieldName": null syntax still works in v14 but is deprecated (removed in v16).
+   * To delete a field from the DB use MigrationUtil.markPropertyForDeletion().
    *
    * @param {object} source  Actor plain object. Mutate in place.
    * @return {Promise<void>}
@@ -42,8 +41,8 @@ export default class MigrationBase {
    * @example <caption>A — Rename a field</caption>
    * if (source.system.saves?.wand !== undefined && source.system.saves?.implements === undefined) {
    *   source.system.saves.implements = source.system.saves.wand;
-   *   // v14+: ForcedDeletion permanently removes the key from the DB.
-   *   source.system.saves.wand = new foundry.data.operators.ForcedDeletion();
+   *   // Copy first, then mark the old key: the runner removes it from the DB.
+   *   MigrationUtil.markPropertyForDeletion(source.system, "saves.wand");
    * }
    *
    * @example <caption>B — Restructure a flat value into an object</caption>
