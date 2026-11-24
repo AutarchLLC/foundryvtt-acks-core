@@ -26,8 +26,13 @@ npm run test:e2e                      # headless
 npm run test:e2e -- --headed          # watch the browser
 npm run test:e2e -- --ui              # Playwright UI: pick tests, time-travel through steps
 npm run test:e2e -- -g "save"         # tests whose title matches
+npm run test:e2e -- e2e/tests/boot.spec.mjs   # one spec file (several paths work too)
+npm run test:e2e -- --reporter=line   # compact output: a progress line, then only the failures
 npx playwright show-report playwright-report
 ```
+
+`--reporter=line` replaces the default list and HTML reporters for that run, so it also skips writing the
+HTML report. Use it when the output is read by a script or an agent.
 
 Playwright starts the test server itself and stops it at the end. Failed tests keep a trace and a
 screenshot in `test-results/` (`npx playwright show-trace <trace.zip>`).
