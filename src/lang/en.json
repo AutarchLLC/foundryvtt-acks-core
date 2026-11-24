@@ -275,6 +275,7 @@
 
   "ACKS.category.saves": "Saves",
   "ACKS.category.attributes": "Attributes",
+  "ACKS.category.primaryCharacteristics": "Primary Characteristics",
   "ACKS.category.inventory": "Inventory",
   "ACKS.category.abilities": "Proficiencies",
   "ACKS.category.spells": "Spells",
@@ -410,6 +411,19 @@
   "ACKS.creatureType.plant": "Plant",
   "ACKS.creatureType.undead": "Undead",
   "ACKS.creatureType.vermin": "Vermin",
+
+  "ACKS.creatureSize.label": "Size",
+  "ACKS.creatureSize.small": "Small",
+  "ACKS.creatureSize.manSized": "Man-Sized",
+  "ACKS.creatureSize.large": "Large",
+  "ACKS.creatureSize.huge": "Huge",
+  "ACKS.creatureSize.gigantic": "Gigantic",
+  "ACKS.creatureSize.colossal": "Colossal",
+
+  "ACKS.bodyWeight.label": "Body Weight",
+  "ACKS.bodyWeight.stones": "Stone",
+  "ACKS.bodyWeight.sixths": "Sixths of a stone",
+  "ACKS.bodyWeight.stoneUnit": "st",
 
   "ACKS.weapon.size.na": "-",
   "ACKS.weapon.size.tiny": "Tiny",

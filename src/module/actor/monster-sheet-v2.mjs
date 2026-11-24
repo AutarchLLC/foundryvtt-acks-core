@@ -30,6 +30,7 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
     primary: {
       tabs: [
         { id: "attributes", label: "ACKS.category.attributes" },
+        { id: "primaryCharacteristics", label: "ACKS.category.primaryCharacteristics" },
         { id: "spells", label: "ACKS.category.spells" },
         { id: "notes", label: "ACKS.category.notes" },
         { id: "effects", label: "ACKS.category.effects" },
@@ -68,6 +69,9 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
     },
     attributes: {
       template: "systems/acks/templates/actors/v2/attributes-monster.hbs",
+    },
+    primaryCharacteristics: {
+      template: "systems/acks/templates/actors/v2/primary-characteristics.hbs",
     },
     spells: {
       template: "systems/acks/templates/actors/v2/spells.hbs",

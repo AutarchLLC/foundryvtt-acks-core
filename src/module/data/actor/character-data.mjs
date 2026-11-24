@@ -46,7 +46,7 @@ export default class CharacterData extends ActorBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, scores, encumbrance}}
+   * @return {{size, bodyWeight6, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, scores, encumbrance}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -56,6 +56,8 @@ export default class CharacterData extends ActorBaseData {
       // common actor template
       // Creature Types: always Humanoid, never stored
       ...creatureTypesField({ persisted: false, initial: [{ type: CREATURE_TYPE.HUMANOID }] }),
+      ...ActorCommonTemplate.size,
+      ...ActorCommonTemplate.bodyWeight6,
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
       ...ActorCommonTemplate.ac,

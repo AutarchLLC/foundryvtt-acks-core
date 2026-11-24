@@ -731,6 +731,24 @@ export const CREATURE_TYPE_CHOICES = Object.freeze(
   Object.fromEntries(Object.values(CREATURE_TYPE).map((type) => [type, `ACKS.creatureType.${type}`])),
 );
 
+/**
+ * Size of a creature, smallest to largest. Separate from {@link WEAPON_SIZE}.
+ * @readonly
+ * @enum {string}
+ */
+export const CREATURE_SIZE = Object.freeze({
+  SMALL: "small",
+  MAN_SIZED: "manSized",
+  LARGE: "large",
+  HUGE: "huge",
+  GIGANTIC: "gigantic",
+  COLOSSAL: "colossal",
+});
+
+export const CREATURE_SIZE_CHOICES = Object.freeze(
+  Object.fromEntries(Object.values(CREATURE_SIZE).map((size) => [size, `ACKS.creatureSize.${size}`])),
+);
+
 // Handlebars partial names.
 export const HB_PARTIAL_NAME = Object.freeze({
   ITEM_WEAPON_DESC: "descriptionWeapon",

@@ -28,6 +28,14 @@ _Avoid_: Penalty, debuff, condition bonus
 The ACKS II category a creature belongs to, such as Animal, Humanoid, Monstrosity or Undead. A creature can have several, each at most once. Each can carry a free-text **Subtype**, written in parentheses after it, such as "Monstrosity (bestial)" or "Incarnation (Demon)". Characters are always Humanoid. Rules such as Encumbrance depend on it.
 _Avoid_: Monster type, race, kind
 
+**Size**:
+How big a creature is, one of six steps from smallest to largest: Small, Man-Sized, Large, Huge, Gigantic, Colossal. Every creature has exactly one; a new creature is Man-Sized. It does not follow from Body Weight.
+_Avoid_: Size class, scale; Weapon Size (a separate scale for weapons)
+
+**Body Weight**:
+How much a creature itself weighs, in stone, counted in sixths of a stone like every other weight. A new creature weighs 15 stone. It is not what the creature carries and adds nothing to its encumbrance.
+_Avoid_: Weight (on its own it means carried weight), mass
+
 ### Inventory
 
 **Physical Item**:

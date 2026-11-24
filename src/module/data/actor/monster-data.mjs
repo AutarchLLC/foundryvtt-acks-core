@@ -14,7 +14,7 @@ export default class MonsterData extends ActorBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
+   * @return {{size, bodyWeight6, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
    */
   static defineSchema() {
     const { NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -24,6 +24,8 @@ export default class MonsterData extends ActorBaseData {
       // common actor template
       // Creature Types, set on the sheet
       ...creatureTypesField(),
+      ...ActorCommonTemplate.size,
+      ...ActorCommonTemplate.bodyWeight6,
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
       ...ActorCommonTemplate.ac,
