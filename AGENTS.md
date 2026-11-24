@@ -59,7 +59,7 @@ src/module/
   combat.mjs, combat-helper.mjs ← ACKS combat / initiative rules
   chat.mjs                ← chat message buttons and handlers
   party.mjs               ← party sheet entry point
-  migration/              ← schema migrations (see below)
+  migration/              ← schema migrations (see docs/MIGRATION.md)
 src/templates/            ← Handlebars templates: actors/, items/, apps/, dialog/, chat/
 src/lang/en.json          ← localisation strings (all keys under ACKS.)
 src/ruledata/             ← static rule tables loaded at runtime (internal_tables.json)
@@ -115,6 +115,7 @@ They need a local licensed Foundry install configured in `e2e/foundry.config.jso
 
 ```bash
 npm run test:e2e        # starts a throwaway Foundry server (.foundry-test/, world acks-e2e) and runs e2e/tests
+npm run test:e2e -- e2e/tests/<name>.spec.mjs --reporter=line   # one spec, compact output
 npm run foundry:test    # start that server by hand (http://localhost:30001; join as Gamemaster, no password)
 ```
 
@@ -164,55 +165,16 @@ check by hand with `npm run foundry:test`.
 | Change styles | the feature's file in `src/styles/`; a new file goes into `styles` in `src/system.json` |
 | Add a Condition or Combat State | `conditions` / `combatStates` in `src/module/config.mjs` (registered by `status-effects.mjs`); see `GLOSSARY.md`, `docs/adr/0001-*` |
 | Add / change a compendium entry | JSON under `src/packs/_source/`, then `npm run packs:sourceToDatabase` |
-| Rename / remove / restructure stored fields | add a migration, see below and `docs/MIGRATION.md` |
+| Rename / remove / restructure stored fields | add a migration: read `docs/MIGRATION.md` first |
 
 ## Data Model Migration
 
-> **Full guide:** `docs/MIGRATION.md`
+Stored actor and item data changes through one-time migrations gated by `_schemaVersion`. Read
+`docs/MIGRATION.md` before adding one: it covers the steps, what the runner writes, deleting fields, and the
+e2e proof a migration needs.
 
-Migrations are permanent, one-time DB writes run on the `ready` hook (GM only), gated by the
-`systemSchemaVersion` world setting (an integer). Each actor and item also stores `_schemaVersion`
-(from `BaseDataModel`). Documents already at `CURRENT_SCHEMA_VERSION` are skipped. New documents are
-stamped with it in `BaseDataModel._preCreate` unless their creation data already names a version.
-
-```
-src/module/migration/
-  migration.mjs           ← runMigrations(); re-exports CURRENT_SCHEMA_VERSION, isCurrentSchema()
-  schema-version.mjs      ← CURRENT_SCHEMA_VERSION, isCurrentSchema() (no imports, safe for data models)
-  migration-util.mjs      ← helpers (e.g. field deletion via ForcedDeletion)
-  runner/                 ← MigrationBase, MigrationList, MigrationRunner
-  migrations/             ← one file per migration (m1 … mN); index.mjs is the barrel
-```
-
-### Adding a migration
-
-1. Create `migrations/mN-description.mjs` extending `MigrationBase` with `static version = N`.
-2. Export it from `migrations/index.mjs`.
-3. Bump `CURRENT_SCHEMA_VERSION` in `schema-version.mjs` to `N`.
-4. Add the in-memory equivalent to the affected model's `static migrateData(source)`, after the
-   `if (isCurrentSchema(source)) return super.migrateData(source);` guard. This covers read-only
-   system and module compendiums the runner cannot write to.
-5. Update `defineSchema()` in the affected data model.
-6. Update compendium JSON under `src/packs/_source/`, then `npm run packs:sourceToDatabase`.
-
-### Rules
-
-- `updateActor(source)`: mutate `source.system.*`, set or change `source.flags` (removals are not written), manage the `source.items` roster (add/remove) and edit
-  `source.effects` (embedded active effects, diffed by `_id` like items).
-- `updateItem(source, actorSource)`: mutate item fields only; never touch `source.items`.
-- Migrations receive the **stored** data, read raw from the server, not a loaded document's `toObject()`
-  (which `migrateData()` has already converted and schema cleaning has stripped of legacy keys). Only `system`
-  is written, as a whole replacement, plus an actor's flags (set or changed, never removed) and its `items` / `effects` rosters.
-- Prove a migration with an e2e spec that seeds raw legacy data, migrates, **reloads**, and checks the stored
-  data (see `e2e/tests/migration-runner.spec.mjs`).
-- Delete a stored field with `new foundry.data.operators.ForcedDeletion()`. Do not use the
-  deprecated `"-=field": null` syntax.
-- Set `requiresFlush = true` when a later migration in the same release depends on this one's
-  committed DB state (see `m3-languages-to-items.mjs`).
-- The runner migrates world actors, world items, scene token deltas and world-owned compendiums.
-- Leave the `resetSchemaVersions()` dev call in `migration.mjs` commented out in committed code.
-- Data models and the runner import `CURRENT_SCHEMA_VERSION` / `isCurrentSchema` from
-  `schema-version.mjs`, never from `migration.mjs` (that would create a circular import through the migrations).
+Data models import `CURRENT_SCHEMA_VERSION` / `isCurrentSchema` from `migration/schema-version.mjs`, never
+from `migration.mjs`, which imports every migration and so creates a circular import.
 
 ## Agent skills
 
