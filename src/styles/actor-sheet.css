@@ -403,7 +403,7 @@
     animation: blink 1s ease-in-out infinite;
   }
 
-  /* Creature Type chips under the name (partials/creature-types.hbs) */
+  /* Creature Type chips on the Primary Characteristics tab (partials/creature-types.hbs) */
   .creature-types {
     display: flex;
     flex: 1;
@@ -437,6 +437,30 @@
     flex: 0 0 auto;
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  /* Primary Characteristics tab (primary-characteristics.hbs) */
+  .primary-characteristics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 24rem;
+  }
+
+  .body-weight .form-fields {
+    align-items: center;
+  }
+
+  .body-weight__stones {
+    flex: 0 0 4rem;
+  }
+
+  .body-weight__unit {
+    flex: 0 0 auto;
+  }
+
+  .body-weight__sixths {
+    flex: 0 0 5rem;
   }
 }
 

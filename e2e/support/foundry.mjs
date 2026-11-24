@@ -183,6 +183,21 @@ export async function openActorSheet(page, actorId) {
 }
 
 /**
+ * Render an actor's sheet, switch it to one tab and return a locator for that tab.
+ * @param {import("@playwright/test").Page} page
+ * @param {string} actorId
+ * @param {string} tabId  The tab's `data-tab` id, e.g. "primaryCharacteristics"
+ * @returns {Promise<import("@playwright/test").Locator>}
+ */
+export async function openActorSheetTab(page, actorId, tabId) {
+  const sheet = await openActorSheet(page, actorId);
+  await sheet.locator(`nav [data-tab="${tabId}"]`).click();
+  const tab = sheet.locator(`.tab[data-tab="${tabId}"]`);
+  await expect(tab).toHaveClass(/active/);
+  return tab;
+}
+
+/**
  * Locator for an open DialogV2 window by its title.
  * @param {import("@playwright/test").Page} page
  * @param {string} title

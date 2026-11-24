@@ -1,5 +1,5 @@
 /* global game */
-import { createActor, dialog, expect, openActorSheet, test } from "../support/foundry.mjs";
+import { createActor, dialog, expect, openActorSheetTab, test } from "../support/foundry.mjs";
 import { readStored, reloadWorld } from "../support/stored-data.mjs";
 
 /**
@@ -19,7 +19,7 @@ async function submitCreatureType(page, title, { type, subtype }) {
 test.describe("creature types", () => {
   test("a monster's Creature Types are added, edited and removed on the sheet and stored", async ({ page }) => {
     const actorId = await createActor(page, { name: "Typed Monster", type: "monster" });
-    let sheet = await openActorSheet(page, actorId);
+    let sheet = await openActorSheetTab(page, actorId, "primaryCharacteristics");
     const chips = (s) => s.locator(".creature-types .creature-type");
 
     await expect(sheet.locator(".creature-types__empty")).toBeVisible();
@@ -43,7 +43,7 @@ test.describe("creature types", () => {
     ]);
 
     // Edit keeps the entry's place and the subtype's case.
-    sheet = await openActorSheet(page, actorId);
+    sheet = await openActorSheetTab(page, actorId, "primaryCharacteristics");
     await chips(sheet).nth(1).locator('[data-action="editCreatureType"]').click();
     await submitCreatureType(page, "Edit Creature Type", { type: "incarnation", subtype: "Demon" });
     await expect(chips(sheet)).toHaveText(["Monstrosity (bestial)", "Incarnation (Demon)"]);
@@ -84,7 +84,7 @@ test.describe("creature types", () => {
     const stored = await readStored(page, "Actor", actorId);
     expect(stored.system).not.toHaveProperty("creatureTypes");
 
-    const sheet = await openActorSheet(page, actorId);
+    const sheet = await openActorSheetTab(page, actorId, "primaryCharacteristics");
     await expect(sheet.locator(".creature-types .creature-type")).toHaveText(["Humanoid"]);
     await expect(sheet.locator('[data-action="addCreatureType"]')).toHaveCount(0);
     await expect(sheet.locator('[data-action="deleteCreatureType"]')).toHaveCount(0);

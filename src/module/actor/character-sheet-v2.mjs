@@ -32,6 +32,7 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     primary: {
       tabs: [
         { id: "attributes", label: "ACKS.category.attributes" },
+        { id: "primaryCharacteristics", label: "ACKS.category.primaryCharacteristics" },
         { id: "abilities", label: "ACKS.category.abilities" },
         { id: "spells", label: "ACKS.category.spells" },
         { id: "inventory", label: "ACKS.category.inventory" },
@@ -73,6 +74,9 @@ export default class ACKSCharacterSheetV2 extends ACKSActorSheetV2 {
     },
     attributes: {
       template: "systems/acks/templates/actors/v2/attributes-character.hbs",
+    },
+    primaryCharacteristics: {
+      template: "systems/acks/templates/actors/v2/primary-characteristics.hbs",
     },
     abilities: {
       template: "systems/acks/templates/actors/v2/abilities.hbs",

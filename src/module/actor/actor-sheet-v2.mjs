@@ -369,6 +369,11 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
     for (const input of itemInputs) {
       input.addEventListener("change", this._onInputChange.bind(this));
     }
+
+    const bodyWeightControls = this.element.querySelectorAll(".body-weight__stones, .body-weight__sixths");
+    for (const control of bodyWeightControls) {
+      control.addEventListener("change", this._onBodyWeightChange.bind(this));
+    }
   }
 
   _onInputChange(event) {
@@ -408,6 +413,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
     context.isNew = this.actor.isNew();
     context.creatureTypes = this._prepareCreatureTypes();
+    context.bodyWeight = this._prepareBodyWeight();
 
     context.enriched = {
       biography: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -429,7 +435,37 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   * Prepare the Creature Type chips shown in the sheet header.
+   * Prepare the Body Weight controls of the Primary Characteristics tab: whole stones plus a sixths dropdown.
+   * @return {{stones: number, sixths: string, bodyWeight6: number, sixthsChoices: Record<string, string>}}
+   * @protected
+   */
+  _prepareBodyWeight() {
+    const bodyWeight6 = this.actor.system.bodyWeight6;
+    return {
+      stones: Math.floor(bodyWeight6 / 6),
+      sixths: String(bodyWeight6 % 6),
+      bodyWeight6,
+      sixthsChoices: Object.fromEntries(
+        Array.from({ length: 6 }, (_, sixths) => [sixths, sixths ? `${sixths}/6` : "0"]),
+      ),
+    };
+  }
+
+  /**
+   * Write the Body Weight stones and sixths controls into the hidden `system.bodyWeight6` input. Runs before the
+   * form's own change handler, which then saves it like any other field.
+   * @param {Event} event
+   * @protected
+   */
+  _onBodyWeightChange(event) {
+    const group = event.currentTarget.closest(".body-weight");
+    const stones = Math.max(0, Math.floor(group.querySelector(".body-weight__stones").valueAsNumber || 0));
+    const sixths = Number(group.querySelector(".body-weight__sixths").value);
+    group.querySelector('input[name="system.bodyWeight6"]').value = stones * 6 + sixths;
+  }
+
+  /**
+   * Prepare the Creature Type chips shown on the Primary Characteristics tab.
    * @return {{entries: {index: number, label: string}[], editable: boolean, canAdd: boolean}}
    * @protected
    */

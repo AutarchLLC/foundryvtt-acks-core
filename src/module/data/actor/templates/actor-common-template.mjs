@@ -1,5 +1,6 @@
 /* global foundry */
 import { ACKS } from "../../../config.mjs";
+import { CREATURE_SIZE, CREATURE_SIZE_CHOICES } from "../../../constants.mjs";
 
 const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
@@ -26,6 +27,32 @@ export default class ActorCommonTemplate {
         // number of hirelings of this type?
         quantity: new NumberField({ initial: 1 }),
       }),
+    };
+  }
+
+  /**
+   * Size of the creature, Man-Sized unless set otherwise. Independent of Body Weight.
+   * @return {{size: StringField}}
+   */
+  static get size() {
+    return {
+      size: new StringField({
+        required: true,
+        blank: false,
+        choices: CREATURE_SIZE_CHOICES,
+        initial: CREATURE_SIZE.MAN_SIZED,
+      }),
+    };
+  }
+
+  /**
+   * Body Weight: what the creature itself weighs, in sixths of a stone like item `weight6`; 15 stone by default.
+   * Not carried weight: it adds nothing to encumbrance.
+   * @return {{bodyWeight6: NumberField}}
+   */
+  static get bodyWeight6() {
+    return {
+      bodyWeight6: new NumberField({ required: true, nullable: false, integer: true, min: 0, initial: 90 }),
     };
   }
 

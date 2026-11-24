@@ -1,0 +1,30 @@
+{{!--
+  Primary Characteristics tab, shared by the character and monster sheets.
+  Context: creatureTypes (see partials/creature-types.hbs), bodyWeight { stones, sixths, bodyWeight6, sixthsChoices }
+--}}
+<section class="tab {{ tab.cssClass }} sheet-primary-characteristics" data-group="primary"
+         data-tab="primaryCharacteristics">
+  <div class="content primary-characteristics">
+
+    <!-- Creature Types -->
+    {{>creatureTypes}}
+
+    <!-- Size -->
+    {{formGroup actorFields.size label="ACKS.creatureSize.label" value=system.size rootId=@root.partId localize=true}}
+
+    <!-- Body Weight: whole stones plus sixths, saved together as system.bodyWeight6 -->
+    <div class="form-group body-weight">
+      <label for="{{@root.partId}}-bodyWeightStones">{{localize "ACKS.bodyWeight.label"}}</label>
+      <div class="form-fields">
+        <input type="number" class="body-weight__stones" id="{{@root.partId}}-bodyWeightStones" min="0" step="1"
+               value="{{bodyWeight.stones}}" aria-label="{{localize 'ACKS.bodyWeight.stones'}}"/>
+        <span class="body-weight__unit">{{localize "ACKS.bodyWeight.stoneUnit"}}</span>
+        <select class="body-weight__sixths" aria-label="{{localize 'ACKS.bodyWeight.sixths'}}">
+          {{selectOptions bodyWeight.sixthsChoices selected=bodyWeight.sixths}}
+        </select>
+        <input type="hidden" name="system.bodyWeight6" value="{{bodyWeight.bodyWeight6}}"/>
+      </div>
+    </div>
+
+  </div>
+</section>
