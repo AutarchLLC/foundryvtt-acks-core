@@ -4,7 +4,7 @@ import { AcksUtility } from "../util/acks-utility.mjs";
 import { ACKS } from "../config.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
-import { MONSTER_SAVING_THROW_LUT } from "../constants.mjs";
+import { ITEM_TYPE, MONSTER_SAVING_THROW_LUT } from "../constants.mjs";
 
 export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
   /** @override */
@@ -170,7 +170,7 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
    * @param {HTMLElement} _target
    */
   static #resetAttacks(_event, _target) {
-    const weapons = this.actor.items.filter((i) => i.type === "weapon");
+    const weapons = this.actor.items.filter((i) => i.type === ITEM_TYPE.WEAPON);
     for (const weapon of weapons) {
       weapon.update({
         "system.counter.value": weapon.system.counter.max,

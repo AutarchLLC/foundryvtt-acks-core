@@ -21,17 +21,17 @@ export default class AcksItem extends Item {
   static getDefaultArtwork(itemData) {
     const { type } = itemData;
     switch (type) {
-      case "spell":
+      case ITEM_TYPE.SPELL:
         return { img: "systems/acks/assets/default/spell.png" };
-      case "ability":
+      case ITEM_TYPE.PROFICIENCY:
         return { img: "systems/acks/assets/default/ability.png" };
-      case "armor":
+      case ITEM_TYPE.ARMOR:
         return { img: "systems/acks/assets/default/armor.png" };
-      case "weapon":
+      case ITEM_TYPE.WEAPON:
         return { img: "systems/acks/assets/default/weapon.png" };
-      case "money":
+      case ITEM_TYPE.MONEY:
         return { img: "systems/acks/assets/gold.png" };
-      case "language":
+      case ITEM_TYPE.LANGUAGE:
         return { img: "systems/acks/assets/icons/language.png" };
       default:
         return { img: "systems/acks/assets/default/item.png" };

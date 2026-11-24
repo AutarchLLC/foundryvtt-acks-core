@@ -1,5 +1,6 @@
 /* global foundry, game, ui */
 import { ACKS } from "../config.mjs";
+import { ACTOR_TYPE } from "../constants.mjs";
 import { AcksHtmlUtil } from "../util/html-util.mjs";
 import * as ACKSDialog from "../dialog/index.mjs";
 
@@ -87,7 +88,7 @@ export default class AcksPartyOverviewApp extends HandlebarsApplicationMixin(App
 
     if (total) {
       const pcs = game.actors.contents.filter((actor) => {
-        return actor.getFlag("acks", "party") && actor.type === "character";
+        return actor.getFlag("acks", "party") && actor.type === ACTOR_TYPE.PC;
       });
       let shares = 0;
       pcs.forEach((c) => {
