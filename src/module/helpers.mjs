@@ -1,5 +1,6 @@
 /* global Handlebars, game */
 import { ACKS } from "./config.mjs";
+import { ENCUMBRANCE_LEVEL_CHOICES } from "./constants.mjs";
 
 export const registerHelpers = async function () {
   Handlebars.registerHelper("readonly", function (value) {
@@ -33,32 +34,8 @@ export const registerHelpers = async function () {
     return parseFloat(lh) * parseFloat(rh);
   });
 
-  Handlebars.registerHelper("getWeightTooltip", function (weight, maxWeight) {
-    if (weight > maxWeight) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Overburdened");
-    } else if (weight > 10) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.High");
-    } else if (weight > 7) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Medium");
-    } else if (weight > 5) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Low");
-    } else {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Unencumbered");
-    }
-  });
-
-  Handlebars.registerHelper("getWeight6Tooltip", function (weight, maxWeight) {
-    if (weight > maxWeight) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Overburdened");
-    } else if (weight > 60) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.High");
-    } else if (weight > 42) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Medium");
-    } else if (weight > 30) {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Low");
-    } else {
-      return game.i18n.localize("ACKS.EncumbranceTitle.Unencumbered");
-    }
+  Handlebars.registerHelper("encumbranceLevelLabel", function (level) {
+    return game.i18n.localize(ENCUMBRANCE_LEVEL_CHOICES[level] ?? "");
   });
 
   Handlebars.registerHelper("generateTags", function (tagList) {

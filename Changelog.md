@@ -2,6 +2,24 @@
 
 This is the change history for the FoundryVTT ACKS II core system module (search for *acks* in the Foundry installer).
 
+## Unreleased
+
+### Encumbrance by Normal Load
+- Every creature has a **Normal Load**, shown on the Primary Characteristics tab: the most it carries at full speed.
+  A monster's is edited there; a character's is always 5 stone, and a house rule can change it with an Active Effect
+  on `system.encumbrance.normalLoad6`.
+- A character's **Encumbrance Level** (Unencumbered, Low, Medium, High Encumbrance, Overburdened) now follows from its
+  Normal Load: 5, 7, 10 and 20 stone plus the STR modifier for the usual 5 stone. The sheet header shows the level as
+  a tooltip and marks an Overburdened character.
+- Actor Tweaks' movement bonus now changes full speed before the level's share is taken, rounded down to whole feet:
+  a character with +30' carrying 8 stone moves 75', not 90'.
+- Actor Tweaks no longer has a forced maximum encumbrance. Any forced value is removed when your world is updated; use
+  an Active Effect on Normal Load instead.
+
+> ⚠️ **Breaking change for macros and modules:** `system.encumbrance.forcemax` is gone and `system.encumbrance.max`
+> is no longer stored. `system.encumbrance.level` holds the Encumbrance Level as a number from 0 (Unencumbered) to
+> 4 (Overburdened).
+
 ## Release 14.2.0
 
 > Your world's data is updated automatically the first time a GM loads it. **Back up your world before upgrading.**

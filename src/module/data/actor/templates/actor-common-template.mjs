@@ -57,6 +57,29 @@ export default class ActorCommonTemplate {
   }
 
   /**
+   * Encumbrance: the creature's Normal Load, in sixths of a stone like item `weight6`; 5 stone by default.
+   * The carried weight and Encumbrance Level are derived from it.
+   * @param {object} [options]
+   * @param {boolean} [options.persisted=true]  Store the Normal Load; a non-persisted one is rebuilt from its initial
+   *   value on every data preparation and can still be changed by Active Effects
+   * @return {{encumbrance: SchemaField}}
+   */
+  static encumbrance({ persisted = true } = {}) {
+    return {
+      encumbrance: new SchemaField({
+        normalLoad6: new NumberField({
+          required: true,
+          nullable: false,
+          integer: true,
+          min: 0,
+          initial: 30,
+          persisted,
+        }),
+      }),
+    };
+  }
+
+  /**
    * Hit Points
    */
   static get hp() {

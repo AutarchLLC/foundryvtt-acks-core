@@ -9,7 +9,7 @@ const PLAYER_USER = "Player";
  * - STR 13 (+1), DEX 16 (+2), initiative mod +1, AC mod +1, 20 max HP (BHR band 17+ → 1d6)
  * - equipped chain (AC 4, 4 stone) and shield (AC 1, 1 stone), 4 ropes (½ stone each),
  *   clothing (ignored by encumbrance) and 1,500 coins (1 stone)
- * - 8 stone carried out of 21 → 60' exploration speed
+ * - 8 stone carried out of 21 → Medium Encumbrance, 60' exploration speed
  */
 const CHARACTER = {
   name: "Derived Stats",
@@ -56,6 +56,8 @@ test.describe("actor derived stats", () => {
 
     expect(derived.ac).toEqual({ value: 8, naked: 2, shield: 1 });
     expect(derived.encumbrance).toEqual({
+      normalLoad6: 30,
+      level: 2,
       pct: expect.closeTo((8 / 21) * 100, 6),
       max: 21,
       encumbered: false,

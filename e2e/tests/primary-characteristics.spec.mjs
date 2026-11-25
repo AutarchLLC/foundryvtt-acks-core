@@ -12,7 +12,7 @@ for (const type of ["character", "monster"]) {
       expect(stored.system.bodyWeight6).toBe(90);
     });
 
-    test("the tab comes second and holds Creature Types, Size and Body Weight", async ({ page }) => {
+    test("the tab comes second and holds Creature Types, Size, Body Weight and Normal Load", async ({ page }) => {
       const actorId = await createActor(page, { name: `Tabbed ${type}`, type });
       const sheet = await openActorSheet(page, actorId);
 
@@ -28,9 +28,10 @@ for (const type of ["character", "monster"]) {
       await expect(rows.nth(0)).toHaveClass(/creature-types/);
       await expect(rows.nth(1)).toContainText("Size");
       await expect(rows.nth(2)).toContainText("Body Weight");
+      await expect(rows.nth(3)).toContainText("Normal Load");
       await expect(tab.locator('select[name="system.size"]')).toHaveValue("manSized");
-      await expect(tab.locator(".body-weight__stones")).toHaveValue("15");
-      await expect(tab.locator(".body-weight__sixths")).toHaveValue("0");
+      await expect(tab.locator(".body-weight .stone-weight__stones")).toHaveValue("15");
+      await expect(tab.locator(".body-weight .stone-weight__sixths")).toHaveValue("0");
     });
 
     test("Size and Body Weight are saved inline and shown again after reopening", async ({ page }) => {
@@ -40,10 +41,10 @@ for (const type of ["character", "monster"]) {
       await tab.locator('select[name="system.size"]').selectOption("huge");
       await expect.poll(() => page.evaluate((id) => game.actors.get(id).system.size, actorId)).toBe("huge");
 
-      await tab.locator(".body-weight__stones").fill("0");
-      await tab.locator(".body-weight__stones").press("Tab");
+      await tab.locator(".body-weight .stone-weight__stones").fill("0");
+      await tab.locator(".body-weight .stone-weight__stones").press("Tab");
       await expect.poll(() => page.evaluate((id) => game.actors.get(id).system.bodyWeight6, actorId)).toBe(0);
-      await tab.locator(".body-weight__sixths").selectOption("3");
+      await tab.locator(".body-weight .stone-weight__sixths").selectOption("3");
       await expect.poll(() => page.evaluate((id) => game.actors.get(id).system.bodyWeight6, actorId)).toBe(3);
 
       await page.evaluate((id) => game.actors.get(id).sheet.close(), actorId);
@@ -54,8 +55,8 @@ for (const type of ["character", "monster"]) {
 
       tab = await openActorSheetTab(page, actorId, "primaryCharacteristics");
       await expect(tab.locator('select[name="system.size"]')).toHaveValue("huge");
-      await expect(tab.locator(".body-weight__stones")).toHaveValue("0");
-      await expect(tab.locator(".body-weight__sixths")).toHaveValue("3");
+      await expect(tab.locator(".body-weight .stone-weight__stones")).toHaveValue("0");
+      await expect(tab.locator(".body-weight .stone-weight__sixths")).toHaveValue("3");
     });
 
     test("Body Weight rejects negative and fractional values", async ({ page }) => {

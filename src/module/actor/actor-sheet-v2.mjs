@@ -370,9 +370,9 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       input.addEventListener("change", this._onInputChange.bind(this));
     }
 
-    const bodyWeightControls = this.element.querySelectorAll(".body-weight__stones, .body-weight__sixths");
-    for (const control of bodyWeightControls) {
-      control.addEventListener("change", this._onBodyWeightChange.bind(this));
+    const stoneWeightControls = this.element.querySelectorAll(".stone-weight__stones, .stone-weight__sixths");
+    for (const control of stoneWeightControls) {
+      control.addEventListener("change", this._onStoneWeightChange.bind(this));
     }
   }
 
@@ -413,7 +413,11 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
 
     context.isNew = this.actor.isNew();
     context.creatureTypes = this._prepareCreatureTypes();
-    context.bodyWeight = this._prepareBodyWeight();
+    context.bodyWeight = { ...this._prepareStoneWeight(this.actor.system.bodyWeight6), editable: true };
+    context.normalLoad = {
+      ...this._prepareStoneWeight(this.actor.system.encumbrance.normalLoad6),
+      editable: this._canEditNormalLoad,
+    };
 
     context.enriched = {
       biography: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -435,16 +439,27 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   * Prepare the Body Weight controls of the Primary Characteristics tab: whole stones plus a sixths dropdown.
-   * @return {{stones: number, sixths: string, bodyWeight6: number, sixthsChoices: Record<string, string>}}
+   * Can the Normal Load be edited on this sheet? A character's is never stored: house rules change it with Active
+   * Effects.
+   * @return {boolean}
    * @protected
    */
-  _prepareBodyWeight() {
-    const bodyWeight6 = this.actor.system.bodyWeight6;
+  get _canEditNormalLoad() {
+    return false;
+  }
+
+  /**
+   * Prepare a weight control of the Primary Characteristics tab (Body Weight, Normal Load): whole stones plus a
+   * sixths dropdown.
+   * @param {number} weight6  Weight in sixths of a stone
+   * @return {{stones: number, sixths: string, weight6: number, sixthsChoices: Record<string, string>}}
+   * @protected
+   */
+  _prepareStoneWeight(weight6) {
     return {
-      stones: Math.floor(bodyWeight6 / 6),
-      sixths: String(bodyWeight6 % 6),
-      bodyWeight6,
+      stones: Math.floor(weight6 / 6),
+      sixths: String(weight6 % 6),
+      weight6,
       sixthsChoices: Object.fromEntries(
         Array.from({ length: 6 }, (_, sixths) => [sixths, sixths ? `${sixths}/6` : "0"]),
       ),
@@ -452,16 +467,18 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
   }
 
   /**
-   * Write the Body Weight stones and sixths controls into the hidden `system.bodyWeight6` input. Runs before the
-   * form's own change handler, which then saves it like any other field.
+   * Write a weight control's stones and sixths into its hidden input (e.g. `system.bodyWeight6`). Runs before the
+   * form's own change handler, which then saves it like any other field. A read-only control has no hidden input.
    * @param {Event} event
    * @protected
    */
-  _onBodyWeightChange(event) {
-    const group = event.currentTarget.closest(".body-weight");
-    const stones = Math.max(0, Math.floor(group.querySelector(".body-weight__stones").valueAsNumber || 0));
-    const sixths = Number(group.querySelector(".body-weight__sixths").value);
-    group.querySelector('input[name="system.bodyWeight6"]').value = stones * 6 + sixths;
+  _onStoneWeightChange(event) {
+    const group = event.currentTarget.closest(".stone-weight");
+    const hidden = group.querySelector("input[type=hidden]");
+    if (!hidden) return;
+    const stones = Math.max(0, Math.floor(group.querySelector(".stone-weight__stones").valueAsNumber || 0));
+    const sixths = Number(group.querySelector(".stone-weight__sixths").value);
+    hidden.value = stones * 6 + sixths;
   }
 
   /**

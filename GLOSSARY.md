@@ -36,6 +36,24 @@ _Avoid_: Size class, scale; Weapon Size (a separate scale for weapons)
 How much a creature itself weighs, in stone, counted in sixths of a stone like every other weight. A new creature weighs 15 stone. It is not what the creature carries and adds nothing to its encumbrance.
 _Avoid_: Weight (on its own it means carried weight), mass
 
+### Encumbrance
+
+**Encumbrance**:
+How much a creature is carrying, in stone, counted in sixths of a stone. It is the weight of its Physical Items and its Carried Money. The more it carries, the slower it moves.
+_Avoid_: Load (on its own), carried weight
+
+**Normal Load**:
+The most Encumbrance a creature can carry at full speed. Every creature has one. A character's is 5 stone unless a house rule changes it. It is a property of the creature itself, not of anything it carries.
+_Avoid_: Base load, carrying capacity
+
+**Maximum Load**:
+The most Encumbrance a creature can carry and still move. Most creatures can carry twice their Normal Load; Humanoids four times, and a character adds its Strength modifier to that. Above it the creature cannot move.
+_Avoid_: Max encumbrance, overload
+
+**Encumbrance Level**:
+How weighed down a creature is, which sets how fast it moves: Unencumbered (full speed), Low Encumbrance (three-quarters), Medium Encumbrance (half), High Encumbrance (one-quarter) or Overburdened (cannot move). Only Humanoids pass through all five; other creatures go straight from Unencumbered to Medium Encumbrance to Overburdened. Characters reach Low Encumbrance at 1.4 times their Normal Load rather than one and a half times, which with the usual 5 stone gives 5, 7, 10 and 20 stone plus their Strength modifier.
+_Avoid_: Encumbrance band, load band, encumbrance (on its own it means the weight carried)
+
 ### Inventory
 
 **Physical Item**:

@@ -1,0 +1,22 @@
+{{!--
+  A weight in stone, entered as whole stones plus a sixths dropdown and saved together as one field in sixths of a
+  stone (see _onStoneWeightChange). Read-only when not editable: nothing is saved.
+  Parameters: name (the field, e.g. "system.bodyWeight6"), id (unique within the sheet), label, cssClass,
+  weight { stones, sixths, weight6, sixthsChoices, editable }
+--}}
+<div class="form-group stone-weight {{cssClass}}">
+  <label for="{{@root.partId}}-{{id}}">{{localize label}}</label>
+  <div class="form-fields">
+    <input type="number" class="stone-weight__stones" id="{{@root.partId}}-{{id}}" min="0" step="1"
+           value="{{weight.stones}}" aria-label="{{localize 'ACKS.bodyWeight.stones'}}"
+           {{disabled (not weight.editable)}}/>
+    <span class="stone-weight__unit">{{localize "ACKS.bodyWeight.stoneUnit"}}</span>
+    <select class="stone-weight__sixths" aria-label="{{localize 'ACKS.bodyWeight.sixths'}}"
+            {{disabled (not weight.editable)}}>
+      {{selectOptions weight.sixthsChoices selected=weight.sixths}}
+    </select>
+    {{#if weight.editable}}
+      <input type="hidden" name="{{name}}" value="{{weight.weight6}}"/>
+    {{/if}}
+  </div>
+</div>

@@ -301,6 +301,11 @@
     overflow: hidden;
   }
 
+  .encumbrance-value.overburdened {
+    color: var(--color-level-error);
+    font-weight: bold;
+  }
+
   .encumbrance-panel {
     width: 100%;
   }
@@ -447,19 +452,19 @@
     max-width: 24rem;
   }
 
-  .body-weight .form-fields {
+  .stone-weight .form-fields {
     align-items: center;
   }
 
-  .body-weight__stones {
+  .stone-weight__stones {
     flex: 0 0 4rem;
   }
 
-  .body-weight__unit {
+  .stone-weight__unit {
     flex: 0 0 auto;
   }
 
-  .body-weight__sixths {
+  .stone-weight__sixths {
     flex: 0 0 5rem;
   }
 }

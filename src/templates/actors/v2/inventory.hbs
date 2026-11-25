@@ -7,7 +7,7 @@
         <div class="encumbrance-bar">
           <div class="encumbrance-fill" style="--enc-percent: {{system.encumbrance.pct}}%"></div>
           <div class="encumbrance-label">
-            {{getWeight6Tooltip system.encumbrance.value6 system.encumbrance.max6}}
+            {{encumbranceLevelLabel system.encumbrance.level}}
           </div>
           <div class="encumbrance-breakpoint" style="--left-offset:{{system.encumbrance.breakpoints.low}}%"></div>
           <div class="encumbrance-breakpoint" style="--left-offset:{{system.encumbrance.breakpoints.mid}}%"></div>

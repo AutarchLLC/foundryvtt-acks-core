@@ -1,6 +1,6 @@
 {{!--
   Primary Characteristics tab, shared by the character and monster sheets.
-  Context: creatureTypes (see partials/creature-types.hbs), bodyWeight { stones, sixths, bodyWeight6, sixthsChoices }
+  Context: creatureTypes (see partials/creature-types.hbs), bodyWeight and normalLoad (see partials/stone-weight-input.hbs)
 --}}
 <section class="tab {{ tab.cssClass }} sheet-primary-characteristics" data-group="primary"
          data-tab="primaryCharacteristics">
@@ -12,19 +12,13 @@
     <!-- Size -->
     {{formGroup actorFields.size label="ACKS.creatureSize.label" value=system.size rootId=@root.partId localize=true}}
 
-    <!-- Body Weight: whole stones plus sixths, saved together as system.bodyWeight6 -->
-    <div class="form-group body-weight">
-      <label for="{{@root.partId}}-bodyWeightStones">{{localize "ACKS.bodyWeight.label"}}</label>
-      <div class="form-fields">
-        <input type="number" class="body-weight__stones" id="{{@root.partId}}-bodyWeightStones" min="0" step="1"
-               value="{{bodyWeight.stones}}" aria-label="{{localize 'ACKS.bodyWeight.stones'}}"/>
-        <span class="body-weight__unit">{{localize "ACKS.bodyWeight.stoneUnit"}}</span>
-        <select class="body-weight__sixths" aria-label="{{localize 'ACKS.bodyWeight.sixths'}}">
-          {{selectOptions bodyWeight.sixthsChoices selected=bodyWeight.sixths}}
-        </select>
-        <input type="hidden" name="system.bodyWeight6" value="{{bodyWeight.bodyWeight6}}"/>
-      </div>
-    </div>
+    <!-- Body Weight -->
+    {{>stoneWeightInput name="system.bodyWeight6" id="bodyWeight" label="ACKS.bodyWeight.label" cssClass="body-weight"
+                        weight=bodyWeight}}
+
+    <!-- Normal Load: read-only for characters, whose Normal Load only Active Effects change -->
+    {{>stoneWeightInput name="system.encumbrance.normalLoad6" id="normalLoad" label="ACKS.normalLoad.label"
+                        cssClass="normal-load" weight=normalLoad}}
 
   </div>
 </section>

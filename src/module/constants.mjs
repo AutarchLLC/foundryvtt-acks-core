@@ -749,10 +749,45 @@ export const CREATURE_SIZE_CHOICES = Object.freeze(
   Object.fromEntries(Object.values(CREATURE_SIZE).map((size) => [size, `ACKS.creatureSize.${size}`])),
 );
 
+/**
+ * Encumbrance Level: how weighed down a creature is, lightest to heaviest. The values are ordered, so rules can
+ * compare them: `level >= ENCUMBRANCE_LEVEL.MEDIUM`.
+ * @readonly
+ * @enum {number}
+ */
+export const ENCUMBRANCE_LEVEL = Object.freeze({
+  UNENCUMBERED: 0,
+  LOW: 1,
+  MEDIUM: 2,
+  HIGH: 3,
+  OVERBURDENED: 4,
+});
+
+export const ENCUMBRANCE_LEVEL_CHOICES = Object.freeze({
+  [ENCUMBRANCE_LEVEL.UNENCUMBERED]: "ACKS.EncumbranceTitle.Unencumbered",
+  [ENCUMBRANCE_LEVEL.LOW]: "ACKS.EncumbranceTitle.Low",
+  [ENCUMBRANCE_LEVEL.MEDIUM]: "ACKS.EncumbranceTitle.Medium",
+  [ENCUMBRANCE_LEVEL.HIGH]: "ACKS.EncumbranceTitle.High",
+  [ENCUMBRANCE_LEVEL.OVERBURDENED]: "ACKS.EncumbranceTitle.Overburdened",
+});
+
+/**
+ * Share of its full speed a creature keeps at each Encumbrance Level.
+ * @type {Readonly<Record<ENCUMBRANCE_LEVEL, number>>}
+ */
+export const ENCUMBRANCE_LEVEL_SPEED = Object.freeze({
+  [ENCUMBRANCE_LEVEL.UNENCUMBERED]: 1,
+  [ENCUMBRANCE_LEVEL.LOW]: 0.75,
+  [ENCUMBRANCE_LEVEL.MEDIUM]: 0.5,
+  [ENCUMBRANCE_LEVEL.HIGH]: 0.25,
+  [ENCUMBRANCE_LEVEL.OVERBURDENED]: 0,
+});
+
 // Handlebars partial names.
 export const HB_PARTIAL_NAME = Object.freeze({
   ITEM_WEAPON_DESC: "descriptionWeapon",
   CREATURE_TYPES: "creatureTypes",
+  STONE_WEIGHT_INPUT: "stoneWeightInput",
 });
 
 /**
