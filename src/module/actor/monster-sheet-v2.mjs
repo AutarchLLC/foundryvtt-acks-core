@@ -90,6 +90,11 @@ export default class ACKSMonsterSheetV2 extends ACKSActorSheetV2 {
     return this.isEditable;
   }
 
+  /** @override */
+  get _canEditNormalLoad() {
+    return this.isEditable;
+  }
+
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
 

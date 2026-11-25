@@ -105,4 +105,9 @@
 
 .acks2.party-overview-app {
   min-height: 160px;
+
+  .encumbrance-value.overburdened {
+    color: var(--color-level-error);
+    font-weight: bold;
+  }
 }

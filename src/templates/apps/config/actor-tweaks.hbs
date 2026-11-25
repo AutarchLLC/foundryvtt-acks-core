@@ -37,10 +37,6 @@
     {{formGroup docFields.save.fields.mod label="ACKS.SaveBonus"
                 value=system.save.mod rootId=@root.partId localize=true}}
 
-    {{formGroup docFields.encumbrance.fields.forcemax label="ACKS.EncumbranceStone"
-                value=system.encumbrance.forcemax rootId=@root.partId localize=true
-                hint="Force a value for the max encumbrance" disabled=(not isGM) }}
-
     {{formGroup docFields.movement.fields.mod label="ACKS.movement.bonus"
                 value=system.movement.mod rootId=@root.partId localize=true}}
 

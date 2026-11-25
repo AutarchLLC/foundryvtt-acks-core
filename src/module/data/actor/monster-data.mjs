@@ -6,15 +6,19 @@ import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { creatureTypesField } from "./templates/creature-types.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
+import { ENCUMBRANCE_LEVEL } from "../../constants.mjs";
 
 /**
  * Monster Data Model
+ *
+ * Derived properties (not part of the stored schema):
+ * @property {ENCUMBRANCE_LEVEL} encumbrance.level  Always Unencumbered: monsters carry nothing yet (#288)
  */
 export default class MonsterData extends ActorBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{size, bodyWeight6, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
+   * @return {{size, bodyWeight6, encumbrance, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, details, attacks}}
    */
   static defineSchema() {
     const { NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -26,6 +30,7 @@ export default class MonsterData extends ActorBaseData {
       ...creatureTypesField(),
       ...ActorCommonTemplate.size,
       ...ActorCommonTemplate.bodyWeight6,
+      ...ActorCommonTemplate.encumbrance(),
       ...ActorCommonTemplate.retainer,
       ...ActorCommonTemplate.hp,
       ...ActorCommonTemplate.ac,
@@ -66,6 +71,15 @@ export default class MonsterData extends ActorBaseData {
       // TODO: not used, remove?
       attacks: new StringField({ blank: true, initial: "" }),
     };
+  }
+
+  /**
+   * Monsters carry nothing yet, so they are always Unencumbered.
+   * @override
+   * @protected
+   */
+  _prepareTypeData() {
+    this.encumbrance.level = ENCUMBRANCE_LEVEL.UNENCUMBERED;
   }
 
   //region ATTACKS

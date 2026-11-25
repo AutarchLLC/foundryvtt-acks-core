@@ -6,8 +6,27 @@ import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { creatureTypesField } from "./templates/creature-types.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
-import { ACKS } from "../../config.mjs";
-import { ATTACK_TYPE, ATTRIBUTE_MODIFIERS, CREATURE_TYPE, ITEM_TYPE, PHYSICAL_ITEM_TYPES } from "../../constants.mjs";
+import {
+  ATTACK_TYPE,
+  ATTRIBUTE_MODIFIERS,
+  CREATURE_TYPE,
+  ENCUMBRANCE_LEVEL,
+  ENCUMBRANCE_LEVEL_SPEED,
+  ITEM_TYPE,
+  PHYSICAL_ITEM_TYPES,
+} from "../../constants.mjs";
+
+/** A character's speed in feet per turn when Unencumbered, before `movement.mod`. */
+const CHARACTER_FULL_SPEED = 120;
+
+/**
+ * Multiples of its Normal Load at which a character leaves Unencumbered, Low and Medium Encumbrance. Low Encumbrance
+ * ends at 1.4 times rather than the Humanoid 1.5 times, to keep the 7-stone breakpoint (docs/adr/0004).
+ */
+const CHARACTER_LOAD_FACTORS = Object.freeze([1, 1.4, 2]);
+
+/** Maximum Load as a multiple of Normal Load, before the STR modifier. */
+const CHARACTER_MAX_LOAD_FACTOR = 4;
 
 /**
  * Base Healing Rate by maximum hit points (RR 301): the entry with the highest threshold not above max HP applies.
@@ -37,7 +56,8 @@ const BHR_TABLE = Object.freeze({
  * @property {number} ac.value  Armor Class: equipped armor and shields, DEX modifier and `ac.mod`
  * @property {number} ac.naked  Armor Class without armor or shield (the DEX modifier)
  * @property {number} ac.shield  Armor Class from equipped shields
- * @property {TEncumbrance} encumbrance  Carried weight against the maximum
+ * @property {TEncumbrance} encumbrance  Carried weight, Maximum Load and Encumbrance Level; the Normal Load is
+ *   never stored, but Active Effects can change it
  * @property {string} hp.bhr  Base Healing Rate formula, from max HP
  * @property {string} fight.healingrate  Same as `hp.bhr`, shown on the sheet
  * @property {TCreatureType[]} creatureTypes  Always Humanoid; not stored, but Active Effects can change it
@@ -46,7 +66,7 @@ export default class CharacterData extends ActorBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{size, bodyWeight6, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, scores, encumbrance}}
+   * @return {{size, bodyWeight6, encumbrance, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, scores}}
    */
   static defineSchema() {
     const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
@@ -177,13 +197,8 @@ export default class CharacterData extends ActorBaseData {
           value: new NumberField({ required: true, initial: 10 }),
         }),
       }),
-      // Encumbrance related
-      encumbrance: new SchemaField({
-        // maximum encumbrance value
-        max: new NumberField({ initial: 20 }),
-        // forced maximum encumbrance value via Actor Tweaks
-        forcemax: new NumberField({ initial: -1 }),
-      }),
+      // Normal Load: always 5 stone, never stored; house rules change it with Active Effects
+      ...ActorCommonTemplate.encumbrance({ persisted: false }),
     };
   }
 
@@ -236,62 +251,56 @@ export default class CharacterData extends ActorBaseData {
   }
 
   /**
-   * Carried weight of physical items (clothing excluded) and coins against the maximum encumbrance.
+   * Encumbrance: carried weight of physical items (clothing excluded) and coins, and the Encumbrance Level it
+   * reaches. A character reaches each level at a multiple of its Normal Load, see {@link CHARACTER_LOAD_FACTORS};
+   * its Maximum Load is four times its Normal Load plus its STR modifier in stone.
    */
   #prepareEncumbrance() {
-    let totalEncumbrance6 = 0;
+    let value6 = 0;
     for (const item of this.parent.items) {
       const isClothing = item.type === ITEM_TYPE.ITEM && item.system.subtype === "clothing";
       if (PHYSICAL_ITEM_TYPES.includes(item.type) && !isClothing) {
-        totalEncumbrance6 += item.system.weight6 * item.system.quantity;
+        value6 += item.system.weight6 * item.system.quantity;
       }
     }
+    value6 += this.getTotalMoneyEncumbrance().stone * 6;
 
-    const moneyEncumbrance = this.getTotalMoneyEncumbrance();
-    // encumbrance in 1/6 stones
-    const value6 = totalEncumbrance6 + moneyEncumbrance.stone * 6;
+    const normalLoad6 = this.encumbrance.normalLoad6;
+    const max6 = Math.max(0, CHARACTER_MAX_LOAD_FACTOR * normalLoad6 + this.scores.str.mod * 6);
+    const breakpoints6 = CHARACTER_LOAD_FACTORS.map((factor) => factor * normalLoad6);
+    const percentOfMax = (weight6) => (max6 > 0 ? Math.clamp((weight6 / max6) * 100, 0, 100) : 100);
 
-    totalEncumbrance6 /= 6; // Get the weight in stones
-    totalEncumbrance6 += moneyEncumbrance.stone;
+    let level;
+    if (value6 > max6) {
+      level = ENCUMBRANCE_LEVEL.OVERBURDENED;
+    } else {
+      const index = breakpoints6.findIndex((breakpoint6) => value6 <= breakpoint6);
+      level = index === -1 ? ENCUMBRANCE_LEVEL.HIGH : index;
+    }
 
-    const maxEncumbrance = this.encumbrance.forcemax > 0 ? this.encumbrance.forcemax : 20 + this.scores.str.mod;
-    // max encumbrance in 1/6 stones
-    const max6 = maxEncumbrance * 6;
-
-    this.encumbrance = {
-      pct: Math.clamp((totalEncumbrance6 / maxEncumbrance) * 100, 0, 100),
-      max: maxEncumbrance,
-      encumbered: totalEncumbrance6 > maxEncumbrance,
-      value: Math.round(totalEncumbrance6),
-      max6,
+    Object.assign(this.encumbrance, {
+      level,
       value6,
+      max6,
+      value: Math.round(value6 / 6),
+      max: max6 / 6,
+      pct: percentOfMax(value6),
+      encumbered: level === ENCUMBRANCE_LEVEL.OVERBURDENED,
       breakpoints: {
-        low: Math.clamp((5 / maxEncumbrance) * 100, 0, 100),
-        mid: Math.clamp((7 / maxEncumbrance) * 100, 0, 100),
-        high: Math.clamp((10 / maxEncumbrance) * 100, 0, 100),
+        low: percentOfMax(breakpoints6[0]),
+        mid: percentOfMax(breakpoints6[1]),
+        high: percentOfMax(breakpoints6[2]),
       },
-    };
+    });
   }
 
   /**
-   * Movement speeds from encumbrance and `movement.mod` (ACKS Revised Rulebook page 17).
+   * Movement speeds from the Encumbrance Level: full speed (120' plus `movement.mod`) times the level's share,
+   * rounded down to whole feet.
    */
   #prepareMovement() {
-    let baseSpeed;
-    if (this.encumbrance.value > this.encumbrance.max) {
-      baseSpeed = ACKS.base_speed.overburdened; // 0
-    } else if (this.encumbrance.value > 10) {
-      baseSpeed = ACKS.base_speed.high_encumbrance; // 30
-    } else if (this.encumbrance.value > 7) {
-      baseSpeed = ACKS.base_speed.mid_encumbrance; // 60
-    } else if (this.encumbrance.value > 5) {
-      baseSpeed = ACKS.base_speed.low_encumbrance; // 90
-    } else {
-      baseSpeed = ACKS.base_speed.unencumbered; // 120
-    }
-
-    // apply movement mod but make sure speed can't be less than 0
-    baseSpeed = Math.max(baseSpeed + this.movement.mod, 0);
+    const fullSpeed = CHARACTER_FULL_SPEED + this.movement.mod;
+    const baseSpeed = Math.max(0, Math.floor(fullSpeed * ENCUMBRANCE_LEVEL_SPEED[this.encumbrance.level]));
 
     this.movementacks.exploration = baseSpeed;
     this.movementacks.combat = Math.floor((baseSpeed / 3) * 10) / 10;

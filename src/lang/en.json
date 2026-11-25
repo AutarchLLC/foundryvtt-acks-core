@@ -142,7 +142,6 @@
 
   "ACKS.Attack": "Attack",
   "ACKS.Encumbrance": "Encumbrance",
-  "ACKS.EncumbranceStone": "Encumbrance (st)",
   "ACKS.EncumbranceTitle.Overburdened": "Overburdened",
   "ACKS.EncumbranceTitle.High": "High Encumbrance",
   "ACKS.EncumbranceTitle.Medium": "Medium Encumbrance",
@@ -424,6 +423,7 @@
   "ACKS.bodyWeight.stones": "Stone",
   "ACKS.bodyWeight.sixths": "Sixths of a stone",
   "ACKS.bodyWeight.stoneUnit": "st",
+  "ACKS.normalLoad.label": "Normal Load",
 
   "ACKS.weapon.size.na": "-",
   "ACKS.weapon.size.tiny": "Tiny",

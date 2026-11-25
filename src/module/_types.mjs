@@ -240,16 +240,18 @@
  */
 
 /**
- * A character's derived encumbrance (`system.encumbrance`), replacing the stored fields in memory.
+ * A character's encumbrance (`system.encumbrance`): the Normal Load plus the values derived from it.
  * @typedef {Object} TEncumbrance
+ * @property {number} normalLoad6 - Normal Load in 1/6 stone: 5 stone unless an Active Effect changes it
+ * @property {ENCUMBRANCE_LEVEL} level - Encumbrance Level reached by the carried weight
  * @property {number} value - Carried weight in stone, rounded
  * @property {number} value6 - Carried weight in 1/6 stone
- * @property {number} max - Maximum encumbrance in stone: `forcemax` when set, else 20 + STR modifier
- * @property {number} max6 - Maximum encumbrance in 1/6 stone
- * @property {number} pct - Carried weight as a percentage of the maximum, 0–100
- * @property {boolean} encumbered - Whether the carried weight is above the maximum
- * @property {{low: number, mid: number, high: number}} breakpoints - Encumbrance band thresholds (5, 7, 10 stone) as
- *   percentages of the maximum
+ * @property {number} max - Maximum Load in stone: 4 × Normal Load + STR modifier
+ * @property {number} max6 - Maximum Load in 1/6 stone
+ * @property {number} pct - Carried weight as a percentage of the Maximum Load, 0–100
+ * @property {boolean} encumbered - Whether the character is Overburdened (above the Maximum Load)
+ * @property {{low: number, mid: number, high: number}} breakpoints - Where Low, Medium and High Encumbrance begin,
+ *   as percentages of the Maximum Load
  */
 
 /**

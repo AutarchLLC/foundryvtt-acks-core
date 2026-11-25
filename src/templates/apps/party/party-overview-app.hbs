@@ -68,10 +68,9 @@
               {{#if (eq type "character")}}
                 <div>
                   <i class="fas fa-weight-hanging" data-tooltip="{{localize 'ACKS.Encumbrance'}}"></i>
-                  <span data-tooltip="{{getWeightTooltip system.encumbrance.value system.encumbrance.max}}">
-                    {{system.encumbrance.value}}
-                    /
-                    {{system.encumbrance.max}}
+                  <span class="encumbrance-value {{#if system.encumbrance.encumbered}}overburdened{{/if}}"
+                        data-tooltip="{{encumbranceLevelLabel system.encumbrance.level}}">
+                    {{stoneWeight system.encumbrance.value6}} / {{stoneWeight system.encumbrance.max6}}
                   </span>
                 </div>
               {{/if}}
