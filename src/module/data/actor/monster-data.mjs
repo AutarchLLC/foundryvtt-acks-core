@@ -6,6 +6,7 @@ import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { creatureTypesField } from "./templates/creature-types.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
+import { MovementData } from "./fields/movement-field.mjs";
 import { ENCUMBRANCE_LEVEL } from "../../constants.mjs";
 
 /**
@@ -126,6 +127,8 @@ export default class MonsterData extends ActorBaseData {
     SavingThrowsTemplate.migrateBreathToBlast(source);
     ActorCommonTemplate.migrateThac0ToAttack(source);
     ActorCommonTemplate.migrateAacToAc(source);
+    // Migration 11: old movement fields → Speeds by Movement Mode
+    MovementData.migrateInMemory(source, MovementData.migrateMonsterMovement);
 
     return super.migrateData(source);
   }

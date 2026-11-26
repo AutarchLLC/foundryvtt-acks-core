@@ -162,8 +162,14 @@
       </div>
 
       <!-- Movement -->
-      {{formGroup actorFields.movement.fields.base label="ACKS.movement.short" value=system.movement.base
-                  rootId=@root.partId localize=true dataset=(object tooltip=(localize "ACKS.movement.base"))}}
+      <div class="form-group header-movement" data-tooltip="{{localize 'ACKS.movement.walkingHint'}}">
+        <label for="{{@root.partId}}-headerMovement">{{localize "ACKS.movement.short"}}</label>
+        <div class="form-fields">
+          {{!-- Read-only: Speeds are edited on the Primary Characteristics tab. No name, so nothing is submitted. --}}
+          <input type="text" class="header-movement__value" id="{{@root.partId}}-headerMovement" readonly
+                 value="{{system.movement.walking.combat}}' / {{system.movement.walking.exploration}}'"/>
+        </div>
+      </div>
 
       <!-- Initiative Bonus -->
       {{formGroup actorFields.initiative.fields.mod label="I.B." value=system.initiative.mod

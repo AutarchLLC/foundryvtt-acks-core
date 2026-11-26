@@ -9,7 +9,7 @@ import { ITEM_TYPE } from "../../constants.mjs";
  *
  * Derived properties (not part of the stored schema):
  * @property {number} initiative.value  Initiative bonus rolled as `1d6 + @initiative.value`
- * @property {number} movement.encounter  Encounter (combat) speed, a third of `movement.base`
+ * @property {MovementData} movement  Every speed, derived from the stored Speeds and the Encumbrance Level
  */
 export default class ActorBaseData extends BaseDataModel {
   /**
@@ -22,12 +22,12 @@ export default class ActorBaseData extends BaseDataModel {
     super.prepareDerivedData();
     this._prepareTypeData();
     this.initiative.value = (this.initiative.mod || 0) + this._initiativeBonus;
-    this.movement.encounter = Math.floor((this.movement.base / 3) * 10) / 10;
+    this.movement.prepareDerivedData(this.encumbrance.level);
   }
 
   /**
    * Derive the stats specific to this actor type. Runs before the shared stats, which may depend on it
-   * (`movement.base`, the initiative bonus).
+   * (`encumbrance.level` for movement, the initiative bonus).
    * @protected
    */
   _prepareTypeData() {}

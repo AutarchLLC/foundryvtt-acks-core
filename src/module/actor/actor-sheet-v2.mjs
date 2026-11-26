@@ -418,6 +418,7 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
       ...this._prepareStoneWeight(this.actor.system.encumbrance.normalLoad6),
       editable: this._canEditNormalLoad,
     };
+    context.movement = this._prepareMovement();
 
     context.enriched = {
       biography: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -446,6 +447,31 @@ export default class ACKSActorSheetV2 extends HandlebarsApplicationMixin(ActorSh
    */
   get _canEditNormalLoad() {
     return false;
+  }
+
+  /**
+   * Prepare the Movement table of the Primary Characteristics tab: a row per Movement Mode with the stored Speed
+   * (what the input edits) and the speeds derived after Active Effects and encumbrance.
+   * @return {{modes: object[], spelunking: number, sneaking: number}}
+   * @protected
+   */
+  _prepareMovement() {
+    const movement = this.actor.system.movement;
+    const stored = this.actor._source.system.movement ?? {};
+    return {
+      modes: movement.modes.map((row) => {
+        const storedSpeed = stored[row.mode]?.speed ?? row.speed;
+        return {
+          ...row,
+          name: `system.movement.${row.mode}.speed`,
+          storedSpeed,
+          changed: row.exploration !== storedSpeed,
+          unused: row.speed === 0,
+        };
+      }),
+      spelunking: movement.spelunking,
+      sneaking: movement.sneaking,
+    };
   }
 
   /**

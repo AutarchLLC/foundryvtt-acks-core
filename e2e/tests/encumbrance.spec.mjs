@@ -24,7 +24,11 @@ function levelsAt(page, data, weights6) {
       const levels = [];
       for (const weight6 of weights6) {
         await sand.update({ "system.quantity": weight6 });
-        levels.push({ weight6, level: actor.system.encumbrance.level, speed: actor.system.movement.base });
+        levels.push({
+          weight6,
+          level: actor.system.encumbrance.level,
+          speed: actor.system.movement.walking.exploration,
+        });
       }
       return { actorId: actor.id, levels };
     },
@@ -55,8 +59,12 @@ test.describe("character encumbrance", () => {
     expect(levels.map(({ level }) => level)).toEqual([2, 3, 4]);
   });
 
-  test("the movement modifier changes full speed before the level's share, rounded down", async ({ page }) => {
-    const { levels } = await levelsAt(page, { system: { movement: { mod: 30 } } }, [30, 31, 43, 61, 121]);
+  test("a character's Walking Speed is slowed by the level's share, rounded down", async ({ page }) => {
+    const { levels } = await levelsAt(
+      page,
+      { system: { movement: { walking: { speed: 150 } } } },
+      [30, 31, 43, 61, 121],
+    );
 
     expect(levels.map(({ speed }) => speed)).toEqual([150, 112, 75, 37, 0]);
   });
@@ -137,7 +145,7 @@ test.describe("encumbrance migration", () => {
     await reloadWorld(page);
 
     const stored = await readStored(page, "Actor", id);
-    expect(stored.system._schemaVersion).toBe(10);
+    expect(stored.system._schemaVersion).toBeGreaterThanOrEqual(10);
     expect(stored.system.encumbrance ?? {}).not.toHaveProperty("max");
     expect(stored.system.encumbrance ?? {}).not.toHaveProperty("forcemax");
     expect(await page.evaluate((id) => game.actors.get(id).system.encumbrance.max, id)).toBe(20);

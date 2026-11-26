@@ -170,6 +170,8 @@ export default class MigrationRunner {
         const originalItems = (deltaObj.items ?? []).filter((i) => !i._tombstone);
         const originalEffects = syntheticActor ? syntheticActor.effects.map((e) => e.toObject()) : [];
         const source = foundry.utils.deepClone(deltaObj);
+        // A delta stores no actor type; migrations may need it. Not written back.
+        source.type ??= token.actor?.type;
         source.items = foundry.utils.deepClone(originalItems);
         source.effects = foundry.utils.deepClone(originalEffects);
         if (!migrateSystem) {

@@ -36,12 +36,14 @@ const CHARACTER = {
  */
 function readDerived(page, actorId) {
   return page.evaluate((id) => {
-    const { ac, encumbrance, movement, movementacks, initiative, hp, fight } = game.actors.get(id).system;
+    const { ac, encumbrance, movement, initiative, hp, fight } = game.actors.get(id).system;
+    const { speed, exploration, combat, running, expedition } = movement.walking;
     return {
       ac: { value: ac.value, naked: ac.naked, shield: ac.shield },
       encumbrance: { ...encumbrance },
-      movement: { base: movement.base, encounter: movement.encounter },
-      movementacks: movementacks && { ...movementacks },
+      walking: { speed, exploration, combat, running, expedition },
+      spelunking: movement.spelunking,
+      sneaking: movement.sneaking,
       initiative: initiative.value,
       bhr: hp.bhr,
       healingrate: fight?.healingrate,
@@ -70,54 +72,37 @@ test.describe("actor derived stats", () => {
         high: expect.closeTo((10 / 21) * 100, 6),
       },
     });
-    expect(derived.movement).toEqual({ base: 60, encounter: 20 });
-    expect(derived.movementacks).toEqual({
-      exploration: 60,
-      combat: 20,
-      chargerun: 60,
-      expedition: 12,
-      stealth: 10,
-      climb: 6.6,
-    });
+    expect(derived.walking).toEqual({ speed: 120, exploration: 60, combat: 20, running: 60, expedition: 12 });
+    expect(derived.spelunking).toBe(6);
+    expect(derived.sneaking).toBe(10);
     expect(derived.initiative).toBe(3);
     expect(derived.bhr).toBe("1d6");
     expect(derived.healingrate).toBe("1d6");
   });
 
-  test("a character with automatic movement off keeps its stored speeds", async ({ page }) => {
+  test("a character's own Walking Speed is slowed by encumbrance, each speed rounded down", async ({ page }) => {
     const id = await createActor(page, {
       ...CHARACTER,
-      system: {
-        ...CHARACTER.system,
-        config: { movementAuto: false },
-        movement: { base: 90 },
-        movementacks: { exploration: 90, combat: 30, chargerun: 90, expedition: 18, stealth: 1, climb: 2 },
-      },
+      system: { ...CHARACTER.system, movement: { walking: { speed: 90 } } },
     });
     const derived = await readDerived(page, id);
 
-    expect(derived.movement).toEqual({ base: 90, encounter: 30 });
-    expect(derived.movementacks).toEqual({
-      exploration: 90,
-      combat: 30,
-      chargerun: 90,
-      expedition: 18,
-      stealth: 1,
-      climb: 2,
-    });
-    expect(derived.encumbrance.value).toBe(8);
+    // Medium Encumbrance: 90 × ½ = 45
+    expect(derived.walking).toEqual({ speed: 90, exploration: 45, combat: 15, running: 45, expedition: 9 });
+    expect(derived.spelunking).toBe(5);
+    expect(derived.sneaking).toBe(7);
   });
 
-  test("a monster derives initiative and encounter movement", async ({ page }) => {
+  test("a monster derives initiative and movement", async ({ page }) => {
     const id = await createActor(page, {
       name: "Derived Monster",
       type: "monster",
-      system: { initiative: { mod: 2 }, movement: { base: 90 } },
+      system: { initiative: { mod: 2 }, movement: { walking: { speed: 90 } } },
     });
     const derived = await readDerived(page, id);
 
     expect(derived.initiative).toBe(2);
-    expect(derived.movement).toEqual({ base: 90, encounter: 30 });
+    expect(derived.walking).toEqual({ speed: 90, exploration: 90, combat: 30, running: 90, expedition: 18 });
   });
 
   test("preparing a character never updates the database", async ({ page }) => {

@@ -59,10 +59,10 @@
               {{/if}}
 
               <div>
-                <i class="fas fa-shoe-prints" data-tooltip="{{localize 'ACKS.movement.base'}}"></i>
-                <span data-tooltip="{{localize 'ACKS.movement.combat'}}">{{system.movement.encounter}}</span>
+                <i class="fas fa-shoe-prints" data-tooltip="{{localize 'ACKS.movement.mode.walking'}}"></i>
+                <span data-tooltip="{{localize 'ACKS.movement.combat'}}">{{system.movement.walking.combat}}</span>
                 /
-                <span data-tooltip="{{localize 'ACKS.movement.exploration'}}">{{system.movement.base}}</span>
+                <span data-tooltip="{{localize 'ACKS.movement.exploration'}}">{{system.movement.walking.exploration}}</span>
               </div>
 
               {{#if (eq type "character")}}

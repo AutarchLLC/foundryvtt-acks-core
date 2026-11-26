@@ -1,6 +1,7 @@
 {{!--
   Primary Characteristics tab, shared by the character and monster sheets.
-  Context: creatureTypes (see partials/creature-types.hbs), bodyWeight and normalLoad (see partials/stone-weight-input.hbs)
+  Context: creatureTypes (see partials/creature-types.hbs), bodyWeight and normalLoad (see partials/stone-weight-input.hbs),
+  movement (see ActorSheetV2#_prepareMovement)
 --}}
 <section class="tab {{ tab.cssClass }} sheet-primary-characteristics" data-group="primary"
          data-tab="primaryCharacteristics">
@@ -20,5 +21,49 @@
     {{>stoneWeightInput name="system.encumbrance.normalLoad6" id="normalLoad" label="ACKS.normalLoad.label"
                         cssClass="normal-load" weight=normalLoad}}
 
+  </div>
+
+  <!-- Movement: one row per Movement Mode -->
+  <div class="movement">
+    <table class="movement__table">
+      <thead>
+        <tr>
+          <th class="movement__mode">{{localize "ACKS.movement.label"}}</th>
+          <th data-tooltip="{{localize 'ACKS.movement.unit.turn'}}">{{localize "ACKS.movement.exploration"}}</th>
+          <th data-tooltip="{{localize 'ACKS.movement.unit.round'}}">{{localize "ACKS.movement.combat"}}</th>
+          <th data-tooltip="{{localize 'ACKS.movement.unit.round'}}">{{localize "ACKS.movement.running"}}</th>
+          <th data-tooltip="{{localize 'ACKS.movement.unit.day'}}">{{localize "ACKS.movement.expedition"}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each movement.modes as |row|}}
+          <tr class="movement__row {{#if row.unused}}movement__row--unused{{/if}}" data-mode="{{row.mode}}">
+            <th class="movement__mode" scope="row">
+              <label for="{{@root.partId}}-movement-{{row.mode}}">{{row.label}}</label>
+            </th>
+            <td class="movement__speed">
+              <input type="number" name="{{row.name}}" id="{{@root.partId}}-movement-{{row.mode}}" min="0" step="1"
+                     value="{{row.storedSpeed}}" data-dtype="Number"/>
+              {{#if row.changed}}
+                <span class="movement__effective"
+                      data-tooltip="{{localize 'ACKS.movement.effective'}}">{{row.exploration}}</span>
+              {{/if}}
+            </td>
+            <td class="movement__combat">{{row.combat}}</td>
+            <td class="movement__running">{{row.running}}</td>
+            <td class="movement__expedition">{{row.expedition}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <div class="movement__extra">
+      <span class="movement__spelunking" data-tooltip="{{localize 'ACKS.movement.spelunking.hint'}}">
+        {{localize "ACKS.movement.spelunking.label"}}: <strong>{{movement.spelunking}}</strong>
+      </span>
+      <span class="movement__sneaking" data-tooltip="{{localize 'ACKS.movement.sneaking.hint'}}">
+        {{localize "ACKS.movement.sneaking.label"}}: <strong>{{movement.sneaking}}</strong>
+      </span>
+    </div>
   </div>
 </section>
