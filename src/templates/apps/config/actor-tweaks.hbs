@@ -37,12 +37,5 @@
     {{formGroup docFields.save.fields.mod label="ACKS.SaveBonus"
                 value=system.save.mod rootId=@root.partId localize=true}}
 
-    {{formGroup docFields.movement.fields.mod label="ACKS.movement.bonus"
-                value=system.movement.mod rootId=@root.partId localize=true}}
-
-    {{formGroup docFields.config.fields.movementAuto label="ACKS.Setting.MovementAuto"
-                value=system.config.movementAuto rootId=@root.partId localize=true
-                disabled=(not isGM) }}
-
   {{/if}}
 </section>

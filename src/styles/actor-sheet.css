@@ -467,6 +467,60 @@
   .stone-weight__sixths {
     flex: 0 0 5rem;
   }
+
+  /* Movement table of the Primary Characteristics tab */
+  .movement {
+    margin-top: 0.75rem;
+    max-width: 32rem;
+  }
+
+  .movement__table {
+    margin: 0;
+    border: 1px solid var(--color-fieldset-border);
+    border-radius: 4px;
+
+    th,
+    td {
+      padding: 0.125rem 0.375rem;
+      text-align: center;
+    }
+
+    .movement__mode {
+      text-align: left;
+      white-space: nowrap;
+    }
+  }
+
+  .movement__speed {
+    white-space: nowrap;
+
+    input {
+      width: 4.5rem;
+    }
+  }
+
+  .movement__effective {
+    margin-left: 0.25rem;
+    font-weight: bold;
+  }
+
+  .movement__row--unused {
+    color: var(--color-text-subtle);
+
+    input {
+      opacity: 0.6;
+    }
+  }
+
+  .movement__extra {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.375rem;
+  }
+
+  .header-movement__value {
+    white-space: nowrap;
+  }
 }
 
 .acks2 .actor-portrait > img,

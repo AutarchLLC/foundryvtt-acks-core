@@ -1,6 +1,7 @@
 /* global foundry */
 import { ACKS } from "../../../config.mjs";
 import { CREATURE_SIZE, CREATURE_SIZE_CHOICES } from "../../../constants.mjs";
+import MovementField from "../fields/movement-field.mjs";
 
 const { BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
@@ -166,20 +167,11 @@ export default class ActorCommonTemplate {
   }
 
   /**
-   * Movement speed
+   * Movement: a Speed in every Movement Mode, see {@link MovementData}
+   * @return {{movement: MovementField}}
    */
   static get movement() {
-    return {
-      movement: new SchemaField({
-        // base movement speed. same as exploration speed I guess. Seems like remnant from OSE but used in monster sheet and
-        // party overview
-        base: new NumberField({ initial: 120 }),
-        // movement modifier, configured via Actor Tweaks
-        mod: new NumberField({ initial: 0 }),
-        // used only in monster sheet now
-        value: new StringField({}),
-      }),
-    };
+    return { movement: new MovementField({ required: true, nullable: false }) };
   }
 
   /**

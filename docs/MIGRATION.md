@@ -123,7 +123,7 @@ For each phase, the runner processes these targets in order:
 
 1. **World Actors** — including all their embedded items.
 2. **World Items** — standalone items in the Items sidebar.
-3. **Unlinked Token Deltas** — `ActorDelta` data for unlinked tokens in every scene. Linked tokens are skipped because they derive their data from the world actor. A delta that only adds or overrides effects (no `system` overrides behind the current schema) is migrated for its effects alone: migrations see the synthetic actor's `system` for context, but only effect changes are written.
+3. **Unlinked Token Deltas** — `ActorDelta` data for unlinked tokens in every scene. A delta stores no actor type, so the runner gives its source the synthetic actor's `type` (not written back). Linked tokens are skipped because they derive their data from the world actor. A delta that only adds or overrides effects (no `system` overrides behind the current schema) is migrated for its effects alone: migrations see the synthetic actor's `system` for context, but only effect changes are written.
 4. **World-owned Compendium Packs** — packs whose `packageType === "world"`. System and module packs are **read-only** at runtime and are not touched here; they rely on `migrateData()` instead.
 
 For actors, the runner:

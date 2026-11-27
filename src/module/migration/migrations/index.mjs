@@ -8,3 +8,4 @@ export { Migration7RepairLostMigrations } from "./m7-repair-lost-migrations.mjs"
 export { Migration8QuantityAsNumber } from "./m8-quantity-as-number.mjs";
 export { Migration9NewActorFlag } from "./m9-new-actor-flag.mjs";
 export { Migration10DropForcedMaxEncumbrance } from "./m10-drop-forced-max-encumbrance.mjs";
+export { Migration11MovementModes } from "./m11-movement-modes.mjs";

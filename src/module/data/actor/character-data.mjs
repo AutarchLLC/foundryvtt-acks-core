@@ -6,18 +6,15 @@ import SavingThrowsTemplate from "./templates/saving-throws.mjs";
 import AttackModifiers from "./templates/attack-modifiers.mjs";
 import { creatureTypesField } from "./templates/creature-types.mjs";
 import { isCurrentSchema } from "../../migration/schema-version.mjs";
+import { MovementData } from "./fields/movement-field.mjs";
 import {
   ATTACK_TYPE,
   ATTRIBUTE_MODIFIERS,
   CREATURE_TYPE,
   ENCUMBRANCE_LEVEL,
-  ENCUMBRANCE_LEVEL_SPEED,
   ITEM_TYPE,
   PHYSICAL_ITEM_TYPES,
 } from "../../constants.mjs";
-
-/** A character's speed in feet per turn when Unencumbered, before `movement.mod`. */
-const CHARACTER_FULL_SPEED = 120;
 
 /**
  * Multiples of its Normal Load at which a character leaves Unencumbered, Low and Medium Encumbrance. Low Encumbrance
@@ -66,10 +63,10 @@ export default class CharacterData extends ActorBaseData {
   /**
    * Define the data schema for documents of this type. The schema is populated the first time it is accessed and cached for future reuse.
    * @override
-   * @return {{size, bodyWeight6, encumbrance, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, config, henchmenList, details, movementacks, adventuring, fight, scores}}
+   * @return {{size, bodyWeight6, encumbrance, retainer, hp, ac, damage, attack, saves, save, movement, initiative, surprise, spells, henchmenList, details, adventuring, fight, scores}}
    */
   static defineSchema() {
-    const { ArrayField, BooleanField, NumberField, SchemaField, StringField } = foundry.data.fields;
+    const { ArrayField, NumberField, SchemaField, StringField } = foundry.data.fields;
 
     return {
       ...super.defineSchema(),
@@ -92,11 +89,6 @@ export default class CharacterData extends ActorBaseData {
 
       // spellcaster actor template
       ...actorSpellcasterSchema(),
-      // character config
-      config: new SchemaField({
-        // Automatically calculate movement speed based on encumbrance, configured via Actor Tweaks
-        movementAuto: new BooleanField({ initial: true }),
-      }),
       // array of hireling actor ids that belong to this character
       // TODO: change to array of DocumentUUIDField
       henchmenList: new ArrayField(new StringField(), { required: true, initial: [] }),
@@ -137,21 +129,6 @@ export default class CharacterData extends ActorBaseData {
           // bonus XP received, percentage, configured in Actor Tweaks
           bonus: new NumberField({ required: true, initial: 0 }),
         }),
-      }),
-      // ACKS II movement speed (RR 17, RR 263)
-      movementacks: new SchemaField({
-        // Exploration speed is measured in feet per turn
-        exploration: new NumberField({ initial: 0 }),
-        // Combat speed is measured in feet per round
-        combat: new NumberField({ initial: 0 }),
-        // Running speed is measured in feet per round
-        chargerun: new NumberField({ initial: 0 }),
-        // Expedition speed is measured in miles per day
-        expedition: new NumberField({ initial: 0 }),
-        // sneaking speed (RR 32)
-        stealth: new NumberField({ initial: 0 }),
-        // climbing speed (RR 268)
-        climb: new NumberField({ initial: 0 }),
       }),
       // Adventuring proficiency throws
       adventuring: new SchemaField({
@@ -218,9 +195,6 @@ export default class CharacterData extends ActorBaseData {
     }
     this.#prepareAC();
     this.#prepareEncumbrance();
-    if (this.config.movementAuto) {
-      this.#prepareMovement();
-    }
     this.#prepareBHR();
   }
 
@@ -292,23 +266,6 @@ export default class CharacterData extends ActorBaseData {
         high: percentOfMax(breakpoints6[2]),
       },
     });
-  }
-
-  /**
-   * Movement speeds from the Encumbrance Level: full speed (120' plus `movement.mod`) times the level's share,
-   * rounded down to whole feet.
-   */
-  #prepareMovement() {
-    const fullSpeed = CHARACTER_FULL_SPEED + this.movement.mod;
-    const baseSpeed = Math.max(0, Math.floor(fullSpeed * ENCUMBRANCE_LEVEL_SPEED[this.encumbrance.level]));
-
-    this.movementacks.exploration = baseSpeed;
-    this.movementacks.combat = Math.floor((baseSpeed / 3) * 10) / 10;
-    this.movementacks.chargerun = baseSpeed;
-    this.movementacks.expedition = Math.floor((baseSpeed / 5) * 10) / 10;
-    this.movementacks.stealth = Math.floor((this.movementacks.combat / 2) * 10) / 10;
-    this.movementacks.climb = Math.floor((this.movementacks.combat / 3) * 10) / 10;
-    this.movement.base = baseSpeed;
   }
 
   /**
@@ -422,6 +379,9 @@ export default class CharacterData extends ActorBaseData {
     // Migration 5: thac0 → attack, aac → ac
     ActorCommonTemplate.migrateThac0ToAttack(source);
     ActorCommonTemplate.migrateAacToAc(source);
+
+    // Migration 11: old movement fields → Speeds by Movement Mode
+    MovementData.migrateInMemory(source, MovementData.migrateCharacterMovement);
 
     return super.migrateData(source);
   }

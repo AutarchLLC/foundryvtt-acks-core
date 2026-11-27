@@ -783,6 +783,29 @@ export const ENCUMBRANCE_LEVEL_SPEED = Object.freeze({
   [ENCUMBRANCE_LEVEL.OVERBURDENED]: 0,
 });
 
+/**
+ * Movement Mode: a way a creature can move. A creature has a Speed in each; 0 means it cannot move that way.
+ * The keys are in the order sheets list them.
+ * @readonly
+ * @enum {string}
+ */
+export const MOVEMENT_MODE = Object.freeze({
+  WALKING: "walking",
+  BURROWING: "burrowing",
+  CLIMBING: "climbing",
+  FLYING: "flying",
+  HOVERING: "hovering",
+  SWIMMING: "swimming",
+  WEBCRAWLING: "webcrawling",
+});
+
+export const MOVEMENT_MODE_CHOICES = Object.freeze(
+  Object.fromEntries(Object.values(MOVEMENT_MODE).map((mode) => [mode, `ACKS.movement.mode.${mode}`])),
+);
+
+/** A new creature's Walking Speed, in feet per turn. */
+export const DEFAULT_WALKING_SPEED = 120;
+
 // Handlebars partial names.
 export const HB_PARTIAL_NAME = Object.freeze({
   ITEM_WEAPON_DESC: "descriptionWeapon",
